@@ -15,6 +15,7 @@ updated: 2026-10-24
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
+- Who does what (recommended): Leo = custody contract + unit tests; Pedro's sessions = testnet harness, Radox API connection, README; Vhendala = deck, video, pitch.
 - Stop criterion: if by Sun 25 18:00 Lisbon no two-custodian handover has run on testnet, cut the API connection and deliver contract + harness + recorded demo (recommended).
 - Target (proposal, to be confirmed in stage 1): the full lifecycle mint → 4 handovers (warehouse, port, carrier, customs) → delivery burn, 6 signed testnet transactions, each verifiable by hash on the public RPC.
 
