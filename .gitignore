@@ -1,0 +1,13 @@
+.dispatch.lock/
+.dispatch.log
+.dispatch-*.out
+.protocol.log
+knowledge/inbox/*
+!knowledge/inbox/.gitkeep
+.env
+.env.*
+*.pem
+*.key
+*.p12
+node_modules/
+.DS_Store
