@@ -20,7 +20,7 @@ green. Project opened on 2026-10-24, hacking starts Sun 25 Oct 09:00 Lisbon; not
 - Kind: real project. Track: hackathon (builder track Scale, thematic Stellar Unlocked).
 - Investment: the weekend (Sun 25 09:00 to Mon 26 10:00 Lisbon), team Pedro + Leo (+ Vhendala); money: zero (testnet only).
 - "Done" for the current stage: stage 1 of TRACK.md closed.
-- Stop criterion (proposal, on the card for the owner): if by Sun 25 18:00 Lisbon no handover signed by two custodians has run on testnet, cut the API connection and deliver contract + harness + recorded demo only.
+- Stop criterion (owner, 2026-10-25): if by Sun 25 18:00 Lisbon no handover signed by two custodians has run on testnet, cut the API connection and deliver contract + harness + recorded demo only.
 
 ## 3. What is true now
 - Deadline: owner said 10:00 on 26/10; hackmeridian.com says hacking ends Mon 12:00, no late submissions. 10:00 kept as 2 h buffer. Lisbon is UTC+0 on 26/10 (summer time ends 25/10).
