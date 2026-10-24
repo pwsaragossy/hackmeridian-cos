@@ -21,10 +21,15 @@ Done = the 4 checks at the bottom pass, with testnet hashes.
 
 1. **No code before Sun 25 Oct 09:00 Lisbon.** The rules require showing what was built during the
    event; the first commit in the repo must be after that time.
-2. **Do not touch, copy or reimplement `transfer_agent`.** It is prior work, closed source, money path.
-   The registry only *reads* the world through its own storage; the burn stays in `transfer_agent.redeem`
-   (testnet `CAF4JIUZBLTQCSL2ZOX4ZEZ7FQDCGVBDVCBXRAJJRM6RW77BBX44SFC7`), co-signed by the Radox backend
-   only after the registry says `Delivered`. That co-sign lives in the private Radox backend (Pedro's side).
+2. **Do not change, copy or reimplement `transfer_agent`.** It is prior work, closed source, money path.
+   The burn stays in its `redeem`. Its compiled code is already on testnet (wasm hash
+   `3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1`, checked 2026-10-25), so the
+   harness **deploys its own instance** from that hash with test keys
+   (`stellar contract deploy --wasm-hash 3870748b… -- --config '{"admin":"<G>","operator":"<G>"}'`) —
+   no Radox key, no Radox source. Read its interface with
+   `stellar contract info interface --wasm-hash 3870748b… --network testnet`. Never use the Radox
+   instance `CAF4JIUZ…SFC7`. In production the Radox backend co-signs `redeem` only after the registry
+   says `Delivered` (Pedro's side, private).
 3. `soroban-sdk = "29.0.1"` (crates.io, 2026-10-21; testnet RPC reports protocol 29). **Do not add
    OpenZeppelin `stellar-*` 0.8.0**: they require `soroban-sdk ^28` and will not build with 29.
    Events with `#[contractevent]`.
@@ -86,9 +91,15 @@ cancelled delivery request stays `Open`.
 1. Contract + unit tests (`cargo test`), including every refusal path and the `head` recompute.
 2. Build `wasm32v1-none --release`; deploy to testnet; write contract ID + wasm hash in `DEPLOYMENTS.md`.
 3. Testnet harness `scripts/lifecycle.mjs` (js-stellar-sdk; each custodian signs its own auth entry
-   with `authorizeEntry`): creates/funds 7 test accounts (operator, holder, warehouse, port, carrier,
-   customs, recipient) with friendbot, then `open` → 4 `handover` → `deliver`, and writes every tx hash
-   to `proofs/lifecycle.json`. Also the failure branches: wrong signer, out-of-route, after freeze,
+   with `authorizeEntry`). **Setup** (hashes kept apart under `setup` in the proof file): friendbot-fund
+   the test accounts (issuer, agent admin, operator, seller, holder, warehouse, port, carrier, customs,
+   recipient); issuer flags `auth_required` + `auth_revocable` + `auth_clawback_enabled` **before any
+   trustline** (a trustline created before clawback is on makes `redeem` fail with `SAC #10` — this cost
+   Radox a ceremony once); trustlines of seller and holder; deploy the asset's SAC; issuer `set_admin`
+   → the harness's own `transfer_agent` instance; `register_token`; `mint` to the seller; `deliver` to
+   the holder. **Lifecycle** (the 7 that count): `open` → 4 `handover` (route warehouse → port → carrier
+   → customs → recipient) → `deliver` → `transfer_agent.redeem(token, holder, amount, ref_id)` with
+   operator + holder auth, burning the title. Write every hash to `proofs/lifecycle.json`. Also the failure branches: wrong signer, out-of-route, after freeze,
    while paused — each with the failing tx or simulation result recorded.
 4. `scripts/verify-head.mjs`: reads the events of a shipment and recomputes `head`; exit 0 when it
    matches the on-chain `head`.
@@ -99,8 +110,8 @@ connection and the demo, so keep those two file names.
 ## Checks (done when all pass)
 
 - `cargo test` green.
-- `proofs/lifecycle.json` holds 6 hashes (open, 4 handovers, deliver), each `SUCCESS` on the public
-  testnet RPC.
+- `proofs/lifecycle.json` holds the 7 lifecycle hashes (open, 4 handovers, deliver, redeem), each
+  `SUCCESS` on the public testnet RPC, and the holder's token balance is 0 after `redeem`.
 - `node scripts/verify-head.mjs <key>` exits 0.
 - Failure branches recorded with their error codes.
 

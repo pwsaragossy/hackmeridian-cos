@@ -29,12 +29,14 @@ milestone completion against the intake) is:
 
 The README must say this split in one table: "existed before / built at HackMeridian".
 
-## 2. Target (proposal, waits for owner approval on the card)
+## 2. Target (owner, 2026-10-25)
 
-Full lifecycle on testnet: open → 4 dual-signed handovers (warehouse, port, carrier, customs) →
-deliver = **6 signed testnet transactions** (burn by the existing `redeem` shown after), each verifiable by hash on the public RPC.
-`check:` will be a script that reads the 6 hashes from a file and asks the public RPC for each
-(exit 0 when all 6 are SUCCESS). Written in stage 1, frozen when the owner approves.
+Full lifecycle on testnet: open → 4 dual-signed handovers (warehouse → port → carrier → customs →
+recipient) → deliver → burn (`redeem` on the harness's own instance of the existing `transfer_agent`) =
+**7 signed testnet transactions**, each verifiable by hash on the public RPC. The burn is in so the
+judges see the whole cycle without reading Radox.
+`check:` will be a script that reads the 7 hashes from `proofs/lifecycle.json` and asks the public RPC
+for each (exit 0 when all 7 are SUCCESS). Written in stage 1, frozen when the owner approves it.
 
 ## 3. Design — decided, in LEO-BRIEF.md
 
