@@ -31,25 +31,18 @@ The README must say this split in one table: "existed before / built at HackMeri
 
 ## 2. Target (proposal, waits for owner approval on the card)
 
-Full lifecycle on testnet: register shipment → 4 handovers (warehouse, port, carrier, customs) →
-delivery + burn = **6 signed testnet transactions**, each verifiable by hash on the public RPC.
+Full lifecycle on testnet: open → 4 dual-signed handovers (warehouse, port, carrier, customs) →
+deliver = **6 signed testnet transactions** (burn by the existing `redeem` shown after), each verifiable by hash on the public RPC.
 `check:` will be a script that reads the 6 hashes from a file and asks the public RPC for each
 (exit 0 when all 6 are SUCCESS). Written in stage 1, frozen when the owner approves.
 
-## 3. Design decisions to close in the first hour (engineer + reviewer)
+## 3. Design — decided, in LEO-BRIEF.md
 
-- **Separate contract, not a change to `transfer_agent`.** The custody contract is new code in the
-  public repo; it only *calls* the existing testnet agent for the burn. Changing the agent would put
-  new work inside a private contract the judges cannot read.
-- **Shipment key:** `(token, holder, ref_id)` — same `ref_id` the agent's `redeem` already takes.
-- **Custodian registry:** who may be a custodian (admin-set list or per-shipment route set at
-  creation). Route set at creation is simpler and makes the demo legible.
-- **Dual auth:** `handover(shipment, from, to, attestation)` with `from.require_auth()` and
-  `to.require_auth()`; reject `from` that is not the current custodian, reject out-of-route `to`.
-- **Exits** (State Integrity rule of Radox): a refused handover, a lost asset, a cancelled
-  withdrawal — each needs a terminal state, not a stuck shipment.
-- **Burn path:** either the custody contract calls `redeem` (needs operator + holder auth in the same
-  tx) or it only marks `delivered` and the existing backend flow burns. Decide with the Raven notes.
+The contract design comes from the Radox architecture panel of 2026-10-20 (`custody_registry`: `open`,
+dual-signed `handover`, `attest` from registered sources, `deliver`, `freeze`, pause; an on-chain `head`
+hash chain so the off-chain history stays verifiable past the 7-day event window; `assurance` levels).
+The burn is **not** in the registry: the Radox backend co-signs `transfer_agent.redeem` only after the
+registry says `Delivered`. Full spec, rules and checks: [LEO-BRIEF.md](LEO-BRIEF.md).
 
 ## 4. Connection to the Radox API (stays private)
 
@@ -78,12 +71,15 @@ closed platform" with the testnet tx hashes as proof. Everything else is in the 
   (Pedro's Mac: yes), Node ≥ 20 (Pedro's Mac: 26.12.0).
 - Testnet RPC reachable: `https://soroban-testnet.stellar.org` (24/10: protocol 29, ledger 5371940).
 
-## 7. Open, for the owner
+## 7. Roles (owner, 2026-10-25)
 
-- Who does what: Leo, Vhendala and Pedro's sessions (proposal: Leo contract + tests; Pedro's
-  sessions testnet harness, API connection and README; Vhendala deck, video and pitch).
-- Stop criterion and target (card).
-- Ask an organizer at check-in: is a Scale repo with only the new work (platform closed) accepted?
+- **Pedro's sessions**: own the project and the board, the pitch (deck, script, video), the Radox API
+  connection on the private `hackmeridian` branch, the README and the submission.
+- **Leo's agents**: the `custody_registry` contract, unit tests, testnet deploy, lifecycle harness and
+  `verify-head` — brief in [LEO-BRIEF.md](LEO-BRIEF.md).
+- **Vhendala**: QA and reviewer — runs the review items of each stage and watches the plugin panel
+  (Pedro's second screen); anything red becomes a line on the card at once.
+- Still to ask an organizer at check-in: is a Scale repo with only the new work (platform closed) accepted?
 
 ## 8. Facts checked on 2026-10-25 (after the Raven research in RESEARCH-raven.md)
 
