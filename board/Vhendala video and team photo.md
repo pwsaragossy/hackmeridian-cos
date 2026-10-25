@@ -21,6 +21,18 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 17:26 UTC (vhendala-agent): **18:00 check DONE** — `https://rio-miami-rail.vercel.app` and `/snapshot.json` return 200 OK logged out (both shipments present: TEST4627832 and the three-machine shipment); `check.py` is 7/7 PASS.
+- 17:26 UTC (vhendala-agent): **README fresh-run on Windows DONE** (`rio-miami-rail` main `5e91bae`):
+  - `npm ci` -> PASS (41 packages, 0 vulnerabilities)
+  - `node scripts/verify-head.mjs --selftest` -> PASS (all 3 vectors ok)
+  - `node scripts/verify-head.mjs 31b4cff7...5e37` -> PASS (`MATCH` `2d74fec0...5414`)
+  - `PROOF_FILE=proofs/three-machine.json node scripts/verify-head.mjs 8f32b176...3aae` -> PASS (`MATCH` `d9cf3a5f...614d`)
+  - `cargo test` -> PASS (24/24 passed in 0.19s)
+  - **1 step FAILED on Windows:** `node scripts/handover-signers.mjs` (with no `PROOF_FILE` env) crashes with `ENOENT: no such file or directory, open 'C:\C:\projects\rio-miami-rail\proofs\lifecycle.json'` because line 14 uses `new URL('../proofs/lifecycle.json', import.meta.url).pathname` instead of `fileURLToPath(new URL('../proofs/lifecycle.json', import.meta.url))` from `node:url` (`verify-head.mjs` and `remote-auth.mjs` already use `fileURLToPath`, only `handover-signers.mjs` and `page-snapshot.mjs` use `.pathname`). With `PROOF_FILE=proofs/lifecycle.json`, `handover-signers.mjs` exits 0 (`every handover and deliver: both custodians signed`).
+- 17:26 UTC (vhendala-agent): **Judge review of DEMO-SCRIPT.md, PITCH-FINAL.md (deck v7) and README.md DONE**:
+  - All contract IDs (`CCBJVXMJ...H4LII`, `CD7BUCY3...NH3F`, `CBCWTIT5...Q22Z`, `CAYD3EFT...SJWH`), shipment keys and 7+4 tx hashes match across README, DEMO-SCRIPT and PITCH-FINAL.
+  - Prior-work vs HackMeridian split, AI voice disclosure ('AI voice generated from Pedro\'s voice') and hypothesis framing ('No customer has confirmed it yet.') are clear, honest and consistent.
+  - Only remaining placeholders in `README.md` lines 7 and 27 are `{{fill: video URL}}` (waiting for the final YouTube link), plus the `fileURLToPath` one-line fix in `scripts/handover-signers.mjs` so Windows judges can run it without `PROOF_FILE`.
 - 16:50 UTC (vhendala-agent): no login (portal dry-run stays with Pedro).
 - 16:10 UTC (session-hackmeridian-rail): THREE-MACHINE SHIPMENT DONE, thank you. Leo's and Vhendala's responses checked independently (invocation bytes, nonces, ed25519 signatures under their own keys), then submitted from Pedro's Mac: handover 1 Warehouse->Leo 861544e4…, handover 2 Leo->Vhendala 9214980e…, handover 3 Vhendala->Recipient 850da342…, deliver 849c268d…, all successful on Horizon (ledgers 5384199-5384202). verify-head MATCH (head d9cf3a5f…614d); handover-signers shows Leo GDWN…TPPW and Vhendala GAUK…CEFR in the auth entries. Proof: rio-miami-rail branch three-machine d02424d, proofs/three-machine.json + proofs/tx/ (pushed). Frozen 7 untouched, check.py 7.
 - 16:00 UTC (session-hackmeridian-rail): Vhendala's response CHECKED and valid (response-vhendala.json, commit 1ad0d6f): entries h2-to and h3-from, registry CD7BUCY3…NH3F, invocation bytes and nonces identical to the request, ed25519 signatures valid under GAUKDWMR…CEFR (CAP-71 address-bound payload), expiry ledger 5405258. Nothing more to do on her side; submit runs after Leo's response.
@@ -57,11 +69,11 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - DONE 15:16 UTC: Vhendala: first, steps 1–3 of the 14:37 line and post ONLY your public key (output of `stellar keys address vhendala`) on this card; the shipment cannot be prepared without it, by Sun 18:00
 - DONE 15:50 UTC (shipment SUCCESS 16:10): Vhendala: then sign your handover when the REQUEST READY line appears on this card, by Sun 23:30
 - 16:46 UTC (Pedro, via his session): Vhendala, the 8 lines below are yours, in order of deadline. Start now with the test clip and the team photo (Sun 18:00); the key and the signature are done, thank you.
-- Vhendala: run the README on your own computer from a clean clone, as a judge would, and write each step that fails on this card (fresh-run), Mon 00:00
+- DONE 17:26 UTC (see Sunday notes — 1 Windows bug found in handover-signers.mjs): Vhendala: run the README on your own computer from a clean clone, as a judge would, and write each step that fails on this card (fresh-run), Mon 00:00
 - Vhendala: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, link on this card, by Sun 18:00
 - Vhendala: team photo of Pedro, Leo and Vhendala for the team slide, by Sun 18:00
-- Vhendala: open https://rio-miami-rail.vercel.app logged out and read the check.py result on the cards; anything red becomes a card line, at Sun 18:00
-- Vhendala: read the finished demo script, deck draft and README as a judge, notes on this card, by Mon 01:00
+- DONE 17:26 UTC (200 OK logged out, both shipments + snapshot.json live, check.py 7/7): Vhendala: open https://rio-miami-rail.vercel.app logged out and read the check.py result on the cards; anything red becomes a card line, at Sun 18:00
+- DONE 17:26 UTC (judge notes below): Vhendala: read the finished demo script, deck draft and README as a judge, notes on this card, by Mon 01:00
 - Vhendala: timed rehearsal (track item pitch): play the final video twice against a clock, log both run times on this card; a live pitch by Pedro only if we reach the 28 Oct final, by Mon 06:00
 - Vhendala: upload the final video (unlisted) to Pedro's YouTube (her 16:12 line), link on this card, play it once against the scrub list, by Mon 08:00
 - DONE 16:50 UTC (no login — Pedro keeps the portal dry-run): Vhendala: if you have your own portal login as a team member, do the portal dry-run with placeholder links and write any field that fails on this card; if not, write "no login" here and Pedro keeps it, by Sun 22:00
