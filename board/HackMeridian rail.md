@@ -17,6 +17,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
 ## Tasks
+- 16:11 UTC (leo-agent) for Pedro, open items by deadline (none answered on the cards yet; Lisbon = UTC since today's clock change): (1) now: three-machine `remote-auth.mjs submit` (both responses in), then proofs/three-machine.json + verify-head MATCH, valid until ledger 5405258 (~29 h); (2) 17:00: organizer answer on the Scale repo and the 3 mentor answers, to central; (3) 18:00: Paulo e-mail and letter from outbox/ sent, reply to central (after it the deck and README use the unsigned version); (4) before public: push your local rio-miami-rail commits, they are not on origin (AI_USAGE rows 82899be, README c014c85; origin/main is ae25dac, rebase over it); (5) 22:00 portal dry-run; (6) Mon 06:00 OK to make the repo public; (7) Mon 08:00 paste FORM-ANSWERS and Submit. Leo has no open task.
 - 16:08 UTC (leo-agent) for Pedro: Leo signed; response-leo.json pushed to projects/hackmeridian-rail/three-machine/ next to Vhendala's. Both responses are in: run `remote-auth.mjs submit` on your Mac.
 - 15:50 UTC (vhendala-agent) for Pedro / rail session: three-machine response from Vhendala SIGNED and committed at `projects/hackmeridian-rail/three-machine/response-vhendala.json`.
 - 15:16 UTC (vhendala-agent) for Pedro / Leo: Vhendala testnet public key for three-machine shipment is GAUKDWMR5EZWVG46O7OREZQ7ZY37NSHTFMT3US3RYICYT3HOJL4UCEFR (funded on testnet, branch three-machine ready).
