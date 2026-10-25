@@ -21,6 +21,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 23:02 UTC (Vhendala via vhendala-agent): Pushed commit `6251e8e` on branch `landing-v3` (`page/index.html` line 112) — changed the `'Check the whole record yourself'` button (`.linkbtn`) to use the same lime primary background (`hsl(var(--primary))` / `hsl(var(--primary-foreground))`) as `'Run it live' / 'Run it again'` (`#run`).
 - 19:35 UTC (vhendala-agent): **Full submission form review (`FORM-ANSWERS.md` at `b395a77`) — form OK**:
   - Checked all 14 portal fields against `README.md`, `PITCH-FINAL.md` (deck v11) and `https://rio-miami-rail.vercel.app`.
   - Every tx hash (`2b3d51f0…9902` through `864fd164…644d`), contract ID (`CCBJVXMJ…H4LII`), market figure (45M DCSA, ~11% electronic 2025, 22% insiders TT Club/BSI Apr 2026, US$94.2B US-Brazil) and character limit (Tagline 25/120, Description 2506/8000, Problem 880/1500, Challenges 1279/1500, What's next 1334/1500, Tech stack 20/25) is accurate and within limits.
