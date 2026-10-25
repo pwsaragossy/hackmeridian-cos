@@ -22,4 +22,4 @@ Consequence for the Rio-Miami deck: slide 3 (problem) cites "US$2.5T global trad
 
 Not checked: the full PDF of the December 2025 brief (only the page summary), and whether a newer brief appears before Monday.
 
-Compared: [[wording-the-rio-miami-deck-readme-ef38]] coexists (that howto holds 16 wording rules and this note is only the newer source for its rule 11, which should cite it)
+Compared: [[wording-the-rio-miami-deck-readme-ef38]] coexists (that howto holds 16 wording rules and this note is only the newer source for its rule 11, which should cite it) ; [[brazil-to-us-corridor-sizes-census-cc8c]] coexists (different subject, no overlap in what it states)

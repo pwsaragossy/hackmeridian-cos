@@ -1,14 +1,14 @@
 ---
 tags:
   - board
-status: in-progress
+status: waiting-owner
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
 due: 2026-10-26
 since: 2026-10-24
 updated: 2026-10-25
-asked: 
+asked: 2026-10-25 19:13 +0000
 ---
 
 # HackMeridian rail
