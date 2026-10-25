@@ -77,6 +77,9 @@ const CLIPS = {
     await zoom(p, "1.5");
     await p.evaluate(() => {
       document.querySelector("body > div:last-child[style*='pointer-events']")?.remove();   // no cursor dot: nothing is clicked on screen
+      for (const li of document.querySelectorAll("#history li")) {             // the teammates' handovers, outlined like the explorer clips' call
+        if (/Leo|Vhendala/.test(li.firstChild.textContent)) { li.style.outline = "3px solid #C6F24E"; li.style.outlineOffset = "4px"; }
+      }
       document.getElementById("result").scrollIntoView({ block: "end" });
       scrollBy({ top: 15, behavior: "instant" });
     });
