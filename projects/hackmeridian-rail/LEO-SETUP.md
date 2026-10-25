@@ -18,18 +18,27 @@ Read this file now with:
 ## A. Setup (target: done by 11:45 UTC)
 
 1. `gh auth status` shows leo-schlanger. If not: `gh auth login` (Leo's login, the one human step).
+   Then `gh auth setup-git` (so `git clone` of the private repos works) and check
+   `gh api repos/pwsaragossy/hackmeridian-cos --jq .permissions.push` prints `true`; a 404 or `false`
+   means the collaborator invite is not accepted: error on the card, stop.
 2. The chief-of-staff plugin is installed (Leo did this). Find its script:
-   `ls ~/.claude/plugins/cache/chief-of-staff/chief-of-staff/` → take the highest version `<v>`.
+   `v=$(ls ~/.claude/plugins/cache/chief-of-staff/chief-of-staff/ | sort -V | tail -1)`.
+   `~/hackmeridian` must be missing or empty (`ls -A ~/hackmeridian`); if it holds something that is
+   not this workspace, `mv ~/hackmeridian ~/hackmeridian.old` first.
 3. Connect the shared workspace (board, projects, library; it syncs at every session start and turn end):
-   `sh ~/.claude/plugins/cache/chief-of-staff/chief-of-staff/<v>/scripts/setup.sh join ~/hackmeridian https://github.com/pwsaragossy/hackmeridian-cos.git --member leo`
+   `sh ~/.claude/plugins/cache/chief-of-staff/chief-of-staff/$v/scripts/setup.sh join ~/hackmeridian https://github.com/pwsaragossy/hackmeridian-cos.git --member leo`
    Pass = `~/hackmeridian/projects/hackmeridian-rail/LEO-BRIEF.md` exists.
 4. Git identity for the code (no history rewrite later, so do it before the first commit):
    `gh api user --jq '"\(.id)+\(.login)@users.noreply.github.com"'` → set it with
    `git config --global user.email <that>` and `git config --global user.name leo-schlanger`.
 5. Clone the code repo **outside** the workspace: `git clone https://github.com/pwsaragossy/rio-miami-rail ~/code/rio-miami-rail`.
    It already has Pedro's `page/` commits; your work goes in `contracts/`, `scripts/`, `proofs/`.
-6. Toolchain: `stellar --version` (expect 28.1.0), `rustup target add wasm32v1-none`, `node --version` (≥ 20).
-7. Push your line to the card: `- HH:MM UTC (leo-agent): setup done — workspace ok, email <noreply>, stellar <v>, node <v>, rio-miami-rail cloned at <commit>`.
+6. Toolchain: check `stellar --version` (expect 28.1.0), `rustup --version`, `node --version` (≥ 20).
+   Install what is missing: Rust with `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y; . ~/.cargo/env`;
+   then `rustup target add wasm32v1-none`; Node and the CLI with `brew install node stellar-cli`
+   (Homebrew's stellar-cli is 28.1.0, checked 2026-10-25 11:10 UTC).
+7. Append your line under `## Sunday` in `~/hackmeridian/board/Leo contract and testnet proofs.md`
+   (the workspace pushes it at turn end): `- HH:MM UTC (leo-agent): setup done — workspace ok, email <noreply>, stellar <v>, node <v>, rio-miami-rail cloned at <commit>`.
    If any step fails: the exact error on the card, then stop that step.
 
 ## B. The work — all in [LEO-BRIEF.md](LEO-BRIEF.md)
