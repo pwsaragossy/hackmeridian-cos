@@ -1,7 +1,7 @@
 ---
 status: in-progress
 updated: 2026-10-25
-next: Pedro's session builds the shipment page against registry CCBJVXMJ… and closes `skeleton` when the page shows a real testnet handover, then secrets re-run and review-2; Leo's contract side is done (check.py 7/7).
+next: video final cut with the rail reframe (rows 0:20 and 2:30, rail-page-host) → Pedro uploads tonight → video URL into README and FORM → Leo's scrub by 23:00, scrub re-run on the final commit → Pedro's OK: repo public → Vhendala's two timed plays (pitch) → deck → review-3 → package → review-4 → Pedro submits by Mon 08:00 (portal edits allowed until 12:00).
 dispatch: off
 member: pedro
 ---
@@ -19,7 +19,7 @@ member: pedro
 - Fact checked on disk: deck/radox-custody-rail.pdf is 677768 bytes (0.65 MiB), as the brief said.
 
 ## 1. State in one line
-green. Contract side done: custody_registry deployed on testnet, 7 lifecycle txs SUCCESS (check.py 7/7, 12:15 UTC), verify-head MATCH, 9 failure branches recorded; open in stage 2: skeleton (page), secrets, review-2.
+green, stage 3 (Demo and pitch), track 15/22 at 2026-10-25 18:2x UTC. Done: both shipments on testnet (7 lifecycle txs, check.py 7; second shipment with teammates' own keys, verify-head MATCH both), page live, README and FORM-ANSWERS reviewed, private main pushed, fresh-run PASS on Windows (FRESH-RUN.md). Open: final video cut, pitch (two timed plays of the final video, TRACK.md rule), deck, review-3, repo public (after Leo's scrub and Pedro's OK), package, review-4, submit. Paulo's letter: past the 18:00 cut-off, unsigned wording locked (no ZIS anywhere; the only bridge is the deck's unnamed line); a signed letter becomes an edit before the deadline.
 
 ## 2. Intent (what counts as "done")
 - What the owner wants, in their words (Scale intake, sent 2026-10-21 about 14:25 UTC, before the event): "a chain-of-custody contract for a tokenized physical asset in transit (Rio-Miami). Each handover between custodians (warehouse, port, carrier, customs) is signed by both the outgoing and incoming custodian with an event attestation; ownership stays with the token holder and final delivery burns the token. Proven end to end on testnet with signed transactions and connected to our API."
