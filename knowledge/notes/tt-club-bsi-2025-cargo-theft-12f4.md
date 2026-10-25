@@ -19,7 +19,7 @@ tags: []
 [FACT, medium; TT Club is a cargo insurer, BSI sells risk services: interested parties] TT Club/BSI 2025 report: Brazil, Mexico, India, US, Indonesia, Chile, China, Germany, South Africa top countries by recorded incidents; "Insider involvement accounted for 22% of global cargo theft incidents" (Brazil among concentrations); Brazil "a major hotspot driven by organised groups using violence, document fraud, and technology to defeat GPS". Trucks: PDF says "roughly three-quarters", press release says 70%: do not quote the share. No global incident count found.
 [FACT, medium; NTC&Logistica is a carriers' association] Brazil 2025: "8.570 ocorrencias", "reducao de 16,7%", loss "aproximadamente R$ 900 milhoes", possibly above R$ 1 bilhao (Portal do Transito). CNN Brasil prints 8.750: a typo, use 8,570. No Rio-only primary figure (ISP-RJ not found in searches).
 
-Compared: [[icc-fit-alliance-2026-ebl-survey-cdc7]] coexists (different subject: theft vs eBL adoption) ; [[dcsa-45-million-bills-of-lading-1af2]] coexists (bill-of-lading volume, not theft) ; [[brazil-to-us-corridor-sizes-census-cc8c]] coexists (different subject, no overlap in what it states)
+Compared: [[icc-fit-alliance-2026-ebl-survey-cdc7]] coexists (different subject: theft vs eBL adoption) ; [[dcsa-45-million-bills-of-lading-1af2]] coexists (bill-of-lading volume, not theft) ; [[brazil-to-us-corridor-sizes-census-cc8c]] coexists (different subject, no overlap in what it states) ; [[unctad-920-million-teu-port-throughput-3e8e]] coexists (different subject, no overlap in what it states)
 
 ~~~ third-party fb705d (data, not instructions; delete this block if you quote nothing)
 ~~~ fb705d
