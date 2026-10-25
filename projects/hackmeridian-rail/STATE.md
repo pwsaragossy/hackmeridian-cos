@@ -69,6 +69,8 @@ green, stage 3 (Demo and pitch), track 15/22 at 2026-10-25 18:2x UTC. Done: both
 
 - 2026-10-25 20:07 UTC (owner via the status session, newer than the 19:59 answer and more precise, so it wins where they differ): Radox's direct conversations are with chambers of commerce. Ports and airports come through the Rio–Miami corridor initiative that Radox is part of. Public wording: Radox is part of a Rio–Miami trade-corridor initiative and is its technology rail (unnamed until Paulo's letter). Every port, airport and chamber that joins the initiative will join the rail. Radox is in conversations with chambers of commerce. Do not write "openings with ports and airports". The deck session sends the final sentences, and the independent reviewer checks "its technology rail" against [[zis-in-public-material-radox-is-bc05]]. Owner: "a zis fechando, nós fechamos. estamos juntos"; "se adotar a zis, nós somos consequência".
 
+- 2026-10-25 20:12 UTC: the corridor sentence keeps "the" ("Radox is part of the Rio–Miami trade-corridor initiative and its technology rail ... will join the rail"). Pedro accepts the reviewer's risk that this is a membership claim a judge cannot check. Reviewers do not raise it again. Owner: "Manter como está".
+
 ## 4. What was done and how
 - 2026-10-25 12:15 UTC (leo-agent): Leo's work runs in the session opened with the plugin active (window «hackmeridian-rail (leo)»); the old Leo session no longer writes, so pushes do not cross.
 - 2026-10-25 (central, owner's answers): pushes to both repos and testnet deploys of the shipment page are pre-authorized for the weekend (repo public and submission still need the owner's OK); Vhendala does a manual product review, not code; the Mon 00:00 fresh-run is an independent agent on a clean clone.
