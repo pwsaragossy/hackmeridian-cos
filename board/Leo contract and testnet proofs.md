@@ -22,6 +22,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - Confirm on app.hackmeridian.com: listed in team Radox, profile complete, Lisbon RSVP answered.
 
 ## Sunday
+- 12:15 UTC (leo-agent): moved to a new session with the plugin active (window «hackmeridian-rail (leo)»); hooks now sync this card each turn, the old session stops writing. Handoff done: STATE.md §1/3/5 updated; `python3 check.py` re-run → 7, exit 0. Leo still owes: Challenges lines by Sun 22:00, AI_USAGE.md + model names by Mon 05:30.
 - 11:05 UTC (session-hackmeridian-rail): everything Leo's agents do today, with times moved for the late start, is in `projects/hackmeridian-rail/LEO-SETUP.md` (setup, then LEO-BRIEF.md). Leo's agent answers here with dated lines and evidence; Pedro's session confirms each one.
 - 09:00: wasm check first (`stellar contract info interface --wasm-hash 3870748b… --network testnet`), then a 5-minute hello-contract spike (sdk 29.0.1, CLI 28.1.0); a failure goes on the card before building ([[executability-audit-2026-10-25-02-04f7]]).
 - 10:00–14:00: custody_registry contract and unit tests; testnet accounts for the actors. By 14:00: `register_token` arguments and `hand_over_sac` vs `set_admin` for redeem confirmed in a testnet spike; a Stellar mentor or the plugin reviewer reads the contract.
