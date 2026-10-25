@@ -28,7 +28,7 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 - rail-page-host: redeploy to https://rio-miami-rail.vercel.app (Pedro's standing OK), head verified on screen, opened logged out, Sun 18:00–19:00
 - rail session: README (Prior work, Built here, AI usage, contract IDs, Production path, mentor log, dependency licence list for TRACK `licences`) and FORM-ANSWERS.md drafts (Description, Problem, What's next, Prior work, AI tooling), Sun 20:30–22:00
 - rail session (Pedro's side only): Radox API read-only endpoint on radox-internal branch hackmeridian (dev stack, testnet), curl proof with head matching verify-head in API-PROOF.md, started 13:50 on Pedro's "Adiantar agora", by Sun 18:00
-- rail session: deck from DECK-TEMPLATE.pptx with real hashes (template slide order) and team photo; demo script ending on the page; bridge sentence names ZIS only if Paulo OKs by 18:00 (then his words only), Sun 22:00–Mon 00:00
+- rail-pitch-deck (only writer of deck/): deck from DECK-TEMPLATE.pptx with specialists and research on winning decks; v1 done (9 slides, 0.65 MiB PDF, real hashes); team photo, rehearsal twice with a timer, by Sun 23:59
 - central: independent reviewer on the README and form drafts (review-2), Sun 20:30–22:00
 - rail session: scrub (secret-key grep plus partner and client names, must be empty) and every link opened logged out, Sun 22:00–Mon 00:00
 

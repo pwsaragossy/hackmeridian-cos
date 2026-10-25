@@ -21,7 +21,7 @@ What the agent sessions deliver on Monday, through the submission (Sunday's line
 - rail session: AI disclosure "narration: AI voice cloned from Pedro's voice with Voicebox" in the video credit, the deck and the README, Mon 06:00
 - rail-page-host: generate the 3:00 narration in Pedro's cloned voice (Voicebox) from the final DEMO-SCRIPT.md, lay it over the screen recording, offline copy kept, Mon 00:00–03:00
 - central: independent agent that wrote no code runs the README on a clean clone (review-3), Mon 00:00
-- rail session: deck PDF ≤ 20 MiB, tech stack from Cargo.toml and package.json, Challenges from Leo's lines, AI tooling final with model names and the Voicebox narration; scrub grep re-run on commits after Sun 22:00; every outward text through the independent reviewer (review-4), Mon 06:00
+- rail-pitch-deck: final deck PDF ≤ 20 MiB; rail session: tech stack from Cargo.toml and package.json, Challenges from Leo's lines, AI tooling final with model names and the Voicebox narration; scrub grep re-run on commits after Sun 22:00; every outward text through the independent reviewer (review-4), Mon 06:00
 - central: ask Pedro to make the repo public, run track.sh verify, then ask Pedro to paste FORM-ANSWERS.md into the portal (his login) and submit at 08:00, Mon 06:00–08:00
 
 ## Decided
