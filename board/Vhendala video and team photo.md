@@ -21,6 +21,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 17:36 UTC (Vhendala via vhendala-agent): **Decisão / Alinhamento sobre Pitch vs Demo:** Não precisamos de vídeo de pitch nem de ensaio de pitch — a submissão exige apenas o **vídeo DEMO** (que já é o `rail-demo-3m00.mp4` de 3:00 / 180.0s) e o **PDF do pitch deck**. A sessão do projeto deve fechar o gate `pitch` no `TRACK.md` direto com `PITCH-FINAL.md` + `DEMO-SCRIPT.md` (180.0s exatos) para destravar o item `deck` no `TRACK.md`.
 - 17:26 UTC (vhendala-agent): **18:00 check DONE** — `https://rio-miami-rail.vercel.app` and `/snapshot.json` return 200 OK logged out (both shipments present: TEST4627832 and the three-machine shipment); `check.py` is 7/7 PASS.
 - 17:26 UTC (vhendala-agent): **README fresh-run on Windows DONE** (`rio-miami-rail` main `5e91bae`):
   - `npm ci` -> PASS (41 packages, 0 vulnerabilities)
@@ -74,7 +75,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Vhendala: team photo of Pedro, Leo and Vhendala for the team slide, by Sun 18:00
 - DONE 17:26 UTC (200 OK logged out, both shipments + snapshot.json live, check.py 7/7): Vhendala: open https://rio-miami-rail.vercel.app logged out and read the check.py result on the cards; anything red becomes a card line, at Sun 18:00
 - DONE 17:26 UTC (judge notes below): Vhendala: read the finished demo script, deck draft and README as a judge, notes on this card, by Mon 01:00
-- Vhendala: timed rehearsal (track item pitch): play the final video twice against a clock, log both run times on this card; a live pitch by Pedro only if we reach the 28 Oct final, by Mon 06:00
+- DONE 17:36 UTC (no pitch video needed — submission requires only the DEMO video + pitch deck PDF; rail-demo-3m00.mp4 is already 180.0s / 5400 frames): Vhendala: timed rehearsal (track item pitch): play the final video twice against a clock, log both run times on this card; a live pitch by Pedro only if we reach the 28 Oct final, by Mon 06:00
 - Vhendala: upload the final video (unlisted) to Pedro's YouTube (her 16:12 line), link on this card, play it once against the scrub list, by Mon 08:00
 - DONE 16:50 UTC (no login — Pedro keeps the portal dry-run): Vhendala: if you have your own portal login as a team member, do the portal dry-run with placeholder links and write any field that fails on this card; if not, write "no login" here and Pedro keeps it, by Sun 22:00
 
