@@ -54,6 +54,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- Leo: loosen the AI_USAGE.md header line ("Claude Opus 5.5 ... including its review subagents"): the page row's subagents ran on claude-sonnet-5-5 (rail-page-host, 262ab17), by Mon 05:30
 - Leo: decide keep or drop line 4 of the Challenges draft (12:55 line), by Sun 22:00
 - Leo: confirm each "Human review" cell naming you in rio-miami-rail AI_USAGE.md, or it becomes "not reviewed line by line", by Mon 05:30
 
