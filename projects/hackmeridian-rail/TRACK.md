@@ -25,7 +25,7 @@ Gate: rules, criteria, submission requirements and deadline are written down, an
 Gate: scope is frozen, the thinnest end-to-end path runs, and nothing in the build breaks the rules.
 - [x] scope | Scope freeze: at most 3 must-have features for the demo, everything else listed as cut, time-boxed with a clock time | card: product | needs: idea, deadline | owner: ok | evidence: SCOPE.md
 - [ ] skeleton | Thinnest end-to-end path running (input to visible output) before any extra feature is built | card: engineer | needs: scope | evidence:
-- [ ] licences | Licences of dependencies, datasets and third-party assets checked against the rules and the intended licence | card: legal | needs: rules | evidence:
+- [x] licences | Licences of dependencies, datasets and third-party assets checked against the rules and the intended licence | card: legal | needs: rules | evidence: LICENCES.md
 - [ ] secrets | No keys or personal data in the repository or demo, keys in environment variables, keys rotated if exposed | card: security | needs: skeleton | evidence:
 - [ ] look | Name and one consistent visual style across product screens and deck, readable at projector size | card: designer | needs: scope | evidence:
 - [ ] review-2 | Independent review of stage 2: verdict and fixes | card: reviewer | needs: scope, skeleton, licences, secrets, look | evidence:
