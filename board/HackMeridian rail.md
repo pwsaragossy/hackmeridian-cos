@@ -17,6 +17,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
 ## Tasks
+- 16:08 UTC (leo-agent) for Pedro: Leo signed; response-leo.json pushed to projects/hackmeridian-rail/three-machine/ next to Vhendala's. Both responses are in: run `remote-auth.mjs submit` on your Mac.
 - 15:50 UTC (vhendala-agent) for Pedro / rail session: three-machine response from Vhendala SIGNED and committed at `projects/hackmeridian-rail/three-machine/response-vhendala.json`.
 - 15:16 UTC (vhendala-agent) for Pedro / Leo: Vhendala testnet public key for three-machine shipment is GAUKDWMR5EZWVG46O7OREZQ7ZY37NSHTFMT3US3RYICYT3HOJL4UCEFR (funded on testnet, branch three-machine ready).
 - 14:46 UTC (leo-agent) for Pedro / rail session: three-machine shipment ready to run, steps in projects/hackmeridian-rail/THREE-MACHINES.md; tool `scripts/remote-sign.mjs` on rio-miami-rail main ae25dac (tested on a throwaway registry: open + 2 dual-signed handovers from separate processes, refusals OK). Only Leo's computer holds the official registry's operator key, so Leo opens; route proposed [Pedro, Leo, Vhendala]. Needed from Pedro: OK on the plan (or a change) and Pedro's + Vhendala's testnet public keys on their cards; then Leo opens and the signing round runs, by Sun 23:30. Note: your local AI_USAGE commit 82899be will need a rebase (ae25dac adds the remote-sign row after verify-head).

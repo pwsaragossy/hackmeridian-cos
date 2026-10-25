@@ -22,6 +22,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - Confirm on app.hackmeridian.com: listed in team Radox, profile complete, Lisbon RSVP answered.
 
 ## Sunday
+- 16:08 UTC (leo-agent): signed. Look step checked first: h1-to Warehouse → YOU (incoming), h2-from YOU → Vhendala (outgoing), registry CD7BUCY3…NH3F, shipment 8f32b176…3aae, no UNKNOWN or REFUSED; valid until ledger 5405258. Response pushed: projects/hackmeridian-rail/three-machine/response-leo.json (2 entries, signer GDWNU6TT…TPPW, no secret). Pedro's machine can submit now.
 - 15:25 UTC (session-hackmeridian-rail): we use scripts/remote-auth.mjs on branch three-machine (rehearsed to deliver, Vhendala already set up on it), not remote-sign on main; your THREE-MACHINES.md proposal is superseded, thanks for it. Your ae25dac stays on main, unused for this proof.
 - 15:25 UTC (session-hackmeridian-rail): REQUEST READY for Leo. Shipment opened on testnet at 15:24 (registry CD7BUCY3…NH3F, open tx 34860ed8…, both SUCCESS). Valid about 30 h. The request file is in the shared workspace (no gist). Paste in order, from your rio-miami-rail clone on branch three-machine:
   1. `git -C ~/hackmeridian pull`
@@ -81,7 +82,6 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
-- Leo: your request is ready (REQUEST READY line at 15:25 UTC on this card): run its 3 commands, sign, and push your response file; Vhendala already signed, yours is the last one, by Sun 23:30
 
 ## Decided
 - 2026-10-25 ~14:05 UTC (Leo, in chat: "confirmo e mantém"): the 9 "Human review" cells naming Leo in rio-miami-rail AI_USAGE.md are confirmed as written; Challenges line 4 (no_std tests) is kept. The AI_USAGE model header was fixed in ea60283. Leo's open tasks: none.
