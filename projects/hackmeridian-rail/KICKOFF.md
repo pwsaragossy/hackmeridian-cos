@@ -68,7 +68,8 @@ The event itself ends 16:00, but only the 12:00 submission time matters.
 | Sun 09:00–10:00 | Check-in; ask the organizers (not mentors: they start 11:00) the repo question (§7); Pedro logs into the portal, opens the rules page and the submission form, saves the field list, the editing-window dates, the rules text and the rubric scale it states (1–5 or 1–10) to `PORTAL-SEEN.md` here; Leo: wasm check first (§8); Pedro: form dry-run in the same login | Vhendala manual product review of REVIEW-1 and of the page, deck, video and README (does not delay Leo's start) |
 | Sun 10:00–14:00 | Leo: contract + unit tests, testnet accounts for the 6 actors. Pedro: shipment page skeleton against a labelled sample fixture. Mentor user test (IDEA.md) at 11:30-11:45, 13:30-14:00, 15:00-17:00 (11:00-12:00 is the opening ceremony and team formation); a Stellar mentor or the plugin reviewer reads the contract by 14:00 (someone who did not write it); keep a mentor log for the README | 14:00 checkpoint: no dual-signed handover on testnet yet → one line on the card |
 | Sun 14:00–18:00 | Leo: full lifecycle, hashes in `proofs/lifecycle.json`. Pedro: page wired to the testnet contract (reads real data) | **18:00 stop line**: no dual-signed handover on testnet, then cut the API connection |
-| Sun 18:00–19:00 | Page deployed to a public URL, `head` verified on screen | |
+| Sun 09:00 | Placeholder page live on the host named in §6 (Vercel), URL on the card, opened logged out | |
+| Sun 18:00–19:00 | Page redeployed to the same URL (§6 steps), `head` verified on screen | |
 | Sun 19:00–20:30 | Dinner, no work | |
 | Sun 20:30–22:00 | README sections (Prior work, Built at HackMeridian, AI usage, contract IDs) + Production path (§9); dry-run the submission form with placeholder links. API connection only if the lifecycle ran by 18:00, hard stop 21:00; "connected" = a read-only Radox testnet endpoint returning custodian, status and head, shown as curl output | review-2 |
 | Sun 22:00–Mon 00:00 | Deck draft with the real hashes; demo script with the page as the last scene | |
@@ -97,6 +98,26 @@ The page is a must-have (frozen scope), so it has its own lines above; if Leo's 
 - `stellar --version` (Pedro's Mac: 28.1.0), `rustup target list --installed` includes `wasm32v1-none`
   (Pedro's Mac: yes), Node ≥ 20 (Pedro's Mac: 26.12.0).
 - Testnet RPC reachable: `https://soroban-testnet.stellar.org` (re-checked 25/10 00:49 UTC: protocol 29).
+
+Page host (decided 2026-10-25 08:50, session-hackmeridian-rail, engineer card): **Vercel, Pedro's
+personal Hobby account** (free plan, no team; already authenticated in the sessions' Vercel
+connector, so no new login). The page is static files deployed straight through the Vercel API, not
+through the Git integration: the code repo is private and the Vercel account is linked to a
+different GitHub account, so Git import would need Pedro's login. GitHub Pages is out (private repo
+needs a paid plan); Cloudflare Pages and Netlify need a new login. Only the production alias is
+public; Vercel's per-deployment URLs are behind Vercel login (Standard Protection), so the link that
+goes to judges is always the production alias.
+
+Deploy steps (any Pedro session, no login needed):
+1. The page source lives in `rio-miami-rail/page/` (static `index.html` + JS, no build step). Commit
+   and push it to `main` first, so the deployed page matches the repo.
+2. Vercel connector `create_deployment` with `name: rio-miami-rail`, `project: rio-miami-rail`,
+   `target: production`, `projectSettings.framework: null`, and `files` = every file in `page/`
+   inline (`encoding: utf-8`).
+3. Wait for state `READY` (`get_deployment`), then open the production alias logged out
+   (`curl -sI` must return 200, then a private browser window) and put the URL on the card.
+4. Rollback: Hobby keeps only the previous production deployment for rollback, so if a deploy breaks
+   the page, redeploy the last good commit of `page/` with step 2.
 
 ## 7. Roles (owner, 2026-10-25)
 
