@@ -1,0 +1,7 @@
+handover 635c99ac  from warehouse GAJT…F3K2  to port GCRB…SH4D  auth entries: warehouse, port  both signed
+handover 56a0f006  from port GCRB…SH4D  to carrier GBSR…BMFE  auth entries: port, carrier  both signed
+handover ac268a49  from carrier GBSR…BMFE  to customs GA6J…TIEW  auth entries: carrier, customs  both signed
+handover 5199d4fb  from customs GA6J…TIEW  to recipient GAG5…35P7  auth entries: customs, recipient  both signed
+deliver  919def8c  from recipient GAG5…35P7  to holder GBPF…IGDJ  auth entries: recipient, holder  both signed
+every handover and deliver: both custodians signed
+rc=0

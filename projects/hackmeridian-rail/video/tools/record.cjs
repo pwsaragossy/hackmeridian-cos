@@ -45,7 +45,8 @@ const markCall = (p) => p.evaluate(() => {
   const el = els[els.length - 1];
   el.style.outline = "4px solid #C6F24E";
   el.style.outlineOffset = "6px";
-  el.scrollIntoView({ block: "center", behavior: "smooth" });
+  // bottom of the frame, so the Signatures box (operator only) stays out of shot
+  el.scrollIntoView({ block: "end", behavior: "smooth" });
 });
 
 async function verify(p) {

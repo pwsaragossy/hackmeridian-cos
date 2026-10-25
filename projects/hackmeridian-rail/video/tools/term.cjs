@@ -7,18 +7,21 @@ const rd = (f) => fs.readFileSync(path.join(W, f), "utf8").replace(/\nrc=0\n?$/,
 const short = (s) => s.replace(/head ([0-9a-f]{64})/g, (_, h) => `head ${h.slice(0, 8)}…${h.slice(-4)}`);
 const CLIPS = [
   { name: "02-terminal-list", len: 20, steps: [[`jq -r '.lifecycle[] | "\\(.step)  \\(.hash[0:8])"' proofs/lifecycle.json`, rd("t1.txt")]] },
-  { name: "05-terminal-verify", len: 25, steps: [["node scripts/verify-head.mjs 31b4cff7…5e37", short(rd("t2.txt"))], ["echo $?", "0\n"]] },
-  { name: "06b-terminal-balance", len: 17, steps: [["stellar contract invoke --id CBCWTIT5…Q22Z --network testnet --source-account alice --send=no -- balance --id GBPFJMZ7…IGDJ", rd("t3.txt")]] },
+  { name: "03b-terminal-signers", len: 10, font: 22, steps: [["node scripts/handover-signers.mjs", rd("t4.txt")]] },
+  { name: "05-terminal-verify", len: 25, steps: [["node scripts/verify-head.mjs 31b4cff785831659b4ecb8fd3e7382f9760a12ef45ef7eb30f45b3b6911a5e37", short(rd("t2.txt"))], ["echo $?", "0\n"]] },
+  { name: "06b-terminal-balance", len: 17, steps: [["stellar contract invoke --id CBCWTIT5YNPNSA4ZSJJXUFZKGQROZPWNWYNZ4CSO7HLWJXU7Z6N5Q22Z --network testnet --source-account alice --send=no -- balance --id GBPFJMZ7DACIYVNW4TCAHMJ3OT5DU37M4TANIYBGHJ543X673RLIIGDJ", rd("t3.txt")]] },
 ];
-const HTML = `<body style="margin:0;background:#0E0F11;color:#E7E8EA;font:30px/1.45 'JetBrains Mono',Menlo,monospace;padding:56px 64px;box-sizing:border-box;height:1080px;overflow:hidden">
-<pre id="t" style="margin:0;white-space:pre-wrap;word-break:break-all;font:inherit"></pre></body>`;
+const TAKEN = fs.readFileSync(path.join(W, "term-time.txt"), "utf8").trim();
+const html = (px) => `<body style="margin:0;background:#0E0F11;color:#E7E8EA;font:${px}px/1.45 'JetBrains Mono',Menlo,monospace;padding:56px 64px;box-sizing:border-box;height:1080px;overflow:hidden">
+<pre id="t" style="margin:0;white-space:pre-wrap;word-break:break-all;font:inherit"></pre>
+<div style="position:fixed;right:64px;bottom:40px;font:600 22px Inter,system-ui,sans-serif;color:#A3A8B0">Recorded output, replayed · run ${TAKEN}</div></body>`;
 (async () => {
   const b = await chromium.launch();
   for (const c of CLIPS) {
     const raw = path.join(OUT, "raw", c.name); fs.mkdirSync(raw, { recursive: true });
     const ctx = await b.newContext({ viewport: { width: 1920, height: 1080 }, recordVideo: { dir: raw, size: { width: 1920, height: 1080 } } });
     const p = await ctx.newPage(); const t0 = Date.now();
-    await p.setContent(HTML);
+    await p.setContent(html(c.font ?? 30));
     const start = (Date.now() - t0) / 1000;
     await p.evaluate(async (steps) => {
       const t = document.getElementById("t"), sleep = (ms) => new Promise((r) => setTimeout(r, ms));

@@ -9,7 +9,10 @@ member: pedro
 # HackMeridian — rail Rio-Miami — state
 
 ## Arrival synthesis
-(empty: the next session writes its arrival synthesis here)
+- 2026-10-25 (deck session, started by central): I own the pitch deck. Understood: rebuild the 9-slide deck on DECK-TEMPLATE.pptx, max 10 slides, Claims guard binding, real testnet hashes, no partner names, ZIS only if Paulo's written OK lands, AI line required; done = PDF + deck/REVIEW.md + `deck` [x].
+- First action: read PITCH-FINAL.md, LOOK.md and the current deck render, then research winning decks.
+- Disagree: the brief asks for a legal specialist on claims, but STATE §6 says no legal work during the hackathon (owner); the reviewer checks claims against the Claims guard instead. `deck` needs `pitch`, which is still open while PITCH-FINAL.md exists; I close `deck` only and flag `pitch` (needs two timed rehearsals).
+- Fact checked on disk: deck/radox-custody-rail.pdf is 677768 bytes (0.65 MiB), as the brief said.
 
 ## 1. State in one line
 green. Contract side done: custody_registry deployed on testnet, 7 lifecycle txs SUCCESS (check.py 7/7, 12:15 UTC), verify-head MATCH, 9 failure branches recorded; open in stage 2: skeleton (page), secrets, review-2.
