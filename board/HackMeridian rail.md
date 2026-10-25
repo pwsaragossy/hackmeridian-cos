@@ -39,6 +39,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 ~11:00 WET: Pedro approves every redeploy of the public page (rio-miami-rail.vercel.app, Vercel Hobby, free) until Mon 26 12:00 WET (owner: "Libera todos"). The Claude Code permission prompt may still appear; Pedro clicks it in that session.
 - 2026-10-25: portal form (Pedro's paste, PORTAL-SEEN.md): submissions open Sun 25 Oct 11:30 WET; deadline Mon 26 Oct 12:00 WET; editing allowed until close after submitting. This replaces the earlier "editing window closes Mon 10:00" as the portal fact; Mon 10:00 stays our internal target and we submit at 08:00. Only Pedro checks the terms box and submits, as his OK at delivery.
 - 2026-10-25 09:06 UTC: Vercel deploy of the public page allowed (owner, in this session: "Pode fazer o deploy do placeholder no Vercel por esta sessão; eu aprovo o create_deployment."; to central: "Libera, publica"). Placeholder live at https://rio-miami-rail.vercel.app, 200 logged out; steps in KICKOFF §6.
 - 2026-10-25 08:43 UTC: Leo (leo-schlanger) is a collaborator on rio-miami-rail and the team board; no pending invites (gh api, central). The Paulo item is now the e-mail line above.
