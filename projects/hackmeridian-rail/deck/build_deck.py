@@ -277,7 +277,7 @@ for i, (n_, name, desc) in enumerate(rows):
     text(s, 8.6, y + 0.02, 10.4, 1.3, [desc], size=24, color=INK)
 hline(s, 1.0, 7.93, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.12, 18.0, 1.5, [
-    [("Nearest neighbours we found on Stellar ", {"bold": True}), ("(LumenLoop, SCF, Scout; searched 24–25 Oct 2026): ", {"color": SEC_C}),
+    [("Nearest neighbours we found on Stellar ", {"bold": True}), ("(LumenLoop, SCF, Scout, 24–25 Oct): ", {"color": SEC_C}),
      ("Kutana and Trustless Work release escrow on trade milestones; Pipeline finances commodity trade. We found none that records a custody handover signed by two custodians, and no SEP.", {})],
     [("Open source, Apache-2.0: ", {"bold": True, "color": LIME_C}), ("a custody primitive other Stellar real-world-asset issuers can reuse.", {})]],
     size=21, after=6)
@@ -338,8 +338,8 @@ for i, (k, v) in enumerate(phases):
     dot(s, x + 0.2, 5.3, 0.34 if i == 0 else 0.26, LIME_C)
     text(s, x, 5.55, 4.3, 0.5, [k], size=20, font=MONO, bold=True, color=LIME_C)
     text(s, x, 6.0, 4.3, 1.5, [v], size=22)
-box(s, 1.0, 7.75, 18.0, 1.45, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, 1.45, 7.75, 17.1, 1.45, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
+box(s, 1.0, 7.9, 18.0, 1.35, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, 1.45, 7.9, 17.1, 1.35, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
                                   ("Introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, and a Stellar engineer's review of the design.", {"bold": True})]],
      size=24, anchor=MSO_ANCHOR.MIDDLE)
 
