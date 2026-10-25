@@ -81,7 +81,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
-- Leo: sign one handover of the extra three-machine shipment from your own computer with your own testnet key; share only the public key with the rail session, by Sun 23:30
+- Leo: your request is ready (REQUEST READY line at 15:25 UTC on this card): run its 3 commands, sign, and push your response file; Vhendala already signed, yours is the last one, by Sun 23:30
 
 ## Decided
 - 2026-10-25 ~14:05 UTC (Leo, in chat: "confirmo e mantém"): the 9 "Human review" cells naming Leo in rio-miami-rail AI_USAGE.md are confirmed as written; Challenges line 4 (no_std tests) is kept. The AI_USAGE model header was fixed in ea60283. Leo's open tasks: none.
