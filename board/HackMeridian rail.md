@@ -17,6 +17,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
 ## Tasks
+- 16:53 UTC (leo-agent) for Pedro / rail session: Leo's two tasks done, details on his card. README judge read: every hash, ledger, contract ID and command checks out; 6 notes, the one that matters: AI_USAGE.md on main lacks rows for remote-auth.mjs, handover-signers.mjs, stellar-sdk.min.js, proofs/three-machine.json (push 82899be and add the rest). Pre-public scrub (history of main 2c043a9 + three-machine d02424d): PASS, empty. Leo proposes deleting his redundant scripts/remote-sign.mjs before public: say keep if you want it.
 - Pedro: forward Paulo's letter (ZIS supporters plus a note that Radox provides the technology) to central when it arrives; public text quotes only what the signed letter says, no supporter names unless the independent reviewer clears it; without the letter the current wording stays, waiting
 - Pedro: dry-run the portal form with placeholder links (your login; Vhendala wrote "no login"), by Sun 22:00
 - Pedro: one OK, asked by central as a single button question: make rio-miami-rail public after Leo's scrub, by Mon 06:00
