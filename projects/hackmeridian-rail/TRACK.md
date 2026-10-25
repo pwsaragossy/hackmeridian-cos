@@ -32,7 +32,7 @@ Gate: scope is frozen, the thinnest end-to-end path runs, and nothing in the bui
 ## Stage 3: Demo and pitch
 Gate: the demo runs without live dependencies, a recorded backup exists, and the pitch has been rehearsed against the clock.
 - [x] demo-script | Demo script with timings under the time limit, following the criteria order, with the success path only | card: product | needs: criteria, scope | evidence: DEMO-SCRIPT.md
-- [ ] demo-offline | Demo runs without internet or live third-party services (cached or local data), and a screen recording of the full flow exists as backup | card: engineer | needs: skeleton, demo-script | evidence:
+- [x] demo-offline | Demo runs without internet or live third-party services (cached or local data), and a screen recording of the full flow exists as backup | card: engineer | needs: skeleton, demo-script | evidence: video/README.md
 - [ ] fresh-run | Product runs from the README on a clean machine or account by someone who did not build it | card: engineer | needs: demo-offline | evidence:
 - [ ] pitch | Pitch covering problem, solution, demo, why this team, next step, rehearsed at least twice with a timer | card: marketing | needs: demo-script | evidence:
 - [ ] deck | Slide deck of at most 10 slides (default), one message per slide, readable at distance, exported as the format the rules require | card: designer | needs: pitch, look | evidence:
