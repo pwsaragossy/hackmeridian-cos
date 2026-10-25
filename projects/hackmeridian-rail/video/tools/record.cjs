@@ -66,7 +66,7 @@ const CLIPS = {
     await wait(p, 20500);
   } },
   // 0:40-1:05, replaces the 03c terminal clip at the same 119 frames: shipment 2 on the page, keys per handover and MATCH
-  "03c-page-shipment-2": { len: 119 / 30, run: async (p, ready) => {
+  "03c-page-shipment-2": { len: 119.5 / 30, run: async (p, ready) => {
     await p.goto(PAGE + "/#shipment-2", { waitUntil: "networkidle" });
     await verify(p);
     const src = await p.textContent("#source");
@@ -77,7 +77,7 @@ const CLIPS = {
     await p.evaluate(() => {
       document.querySelector("body > div:last-child[style*='pointer-events']")?.remove();   // no cursor dot: nothing is clicked on screen
       document.getElementById("result").scrollIntoView({ block: "end" });
-      scrollBy({ top: 60, behavior: "instant" });
+      scrollBy({ top: 15, behavior: "instant" });
     });
     await p.evaluate(() => document.fonts.ready);
     await wait(p, 500); ready();
