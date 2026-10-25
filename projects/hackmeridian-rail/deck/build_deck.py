@@ -7,11 +7,12 @@ Every fact on a slide has its source in deck/REVIEW.md (claims table).
 """
 import copy
 import io
+import math
 import os
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
-from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.shapes import MSO_CONNECTOR, MSO_SHAPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Emu, Inches, Pt
 
@@ -282,24 +283,46 @@ text(s, 1.0, 8.12, 18.0, 1.5, [
     [("Open source, Apache-2.0: ", {"bold": True, "color": LIME_C}), ("a custody primitive other Stellar real-world-asset issuers can reuse.", {})]],
     size=21, after=6)
 
-# ---------- 7. Users and business model ----------
-s = content_slide(7, "USERS · BUSINESS MODEL", "Custodians sign. Financiers check.", "NEXT ▸ BUILT THIS WEEKEND")
-users = [("CUSTODIANS", "Warehouse, port, carrier, customs: sign each handover."),
-         ("EXPORTER · BUYER", "See where the goods are and who holds them."),
-         ("FINANCIER", "Checks the custody chain before paying."),
-         ("CLIENT", "A financial institution pays to use the rail for its trade flows.")]
-for i, (k, v) in enumerate(users):
-    y = 3.6 + i * 1.5
-    hline(s, 1.0, y - 0.14, 9.6, LINE_C, 0.02)
-    text(s, 1.0, y, 3.3, 0.5, [k], size=18, font=MONO, bold=True, color=LIME_C)
-    text(s, 4.3, y - 0.04, 6.3, 1.2, [v], size=24)
-box(s, 11.4, 3.45, 7.6, 5.7, fill=CARD, line=LINE_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, 11.85, 3.75, 6.8, 5.5, [
-    [("MODEL · THE CLIENT PAYS", {"font": MONO, "size": 18, "bold": True, "color": LIME_C})],
-    [("SWIFT-style: the record format is public; Radox operates the rail and the API.", {"bold": True})],
-    "Revenue: a fee from the financial institution that uses the rail. Not priced yet.",
-    [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C, "size": 22})]],
-    size=26, after=18)
+# ---------- 7. Value: integrate once; open vs operated (canon: public standard on a Radox-operated rail) ----------
+s = content_slide(7, "USERS · BUSINESS MODEL", "Integrate once, reach every party", "NEXT ▸ BUILT THIS WEEKEND")
+text(s, 1.0, 3.35, 18.0, 1.2, [[("Today each pair of parties builds its own link. ", {"bold": True}),
+                                ("With one public custody standard, a port, airport, carrier, chamber or financier would integrate once "
+                                 "and reach every other party: adopt without a custom project.", {})]], size=24, color=INK)
+
+
+def link(x1, y1, x2, y2, color, w=1.5):
+    c = s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
+    c.line.color.rgb = rgb(color)
+    c.line.width = Pt(w)
+
+
+R = 0.95
+for cx, hub, head in ((2.55, False, "TODAY · 10 LINKS"), (6.65, True, "STANDARD · 5 LINKS")):
+    cy = 5.95
+    pts = [(cx + R * math.sin(2 * math.pi * k / 5), cy - R * math.cos(2 * math.pi * k / 5)) for k in range(5)]
+    if hub:
+        for x, y in pts:
+            link(cx, cy, x, y, LIME_C, 2.0)
+        dot(s, cx, cy, 0.42, LIME)
+    else:
+        for i in range(5):
+            for j in range(i + 1, 5):
+                link(*pts[i], *pts[j], SEC_C, 1.25)
+    for x, y in pts:
+        dot(s, x, y, 0.26, INK)
+    text(s, cx - 1.8, 4.45, 3.6, 0.45, [head], size=18, font=MONO, bold=True, color=LIME_C if hub else SEC_C, align=PP_ALIGN.CENTER)
+text(s, 1.0, 7.2, 7.8, 0.9, ["Example, 5 parties: 10 custom links, or 5 links to one standard."], size=20, color=SEC_C, align=PP_ALIGN.CENTER)
+cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events", "custody_registry contract (Apache-2.0)", "Verify any chain, no permission (slide 4)"]),
+        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Custodian onboarding", "The API, issuance controls, operation", "Closed, not self-hostable", "Fee from the financial institution; not priced yet"])]
+for x, head, hc, items in cols:
+    text(s, x, 4.45, 4.8, 0.45, [head], size=18, font=MONO, bold=True, color=hc)
+    hline(s, x, 4.98, 4.65, hc, 0.03)
+    text(s, x, 5.15, 4.75, 3.0, [[("— ", {"color": hc}), (t_, {})] for t_ in items], size=21, after=8)
+hline(s, 1.0, 8.3, 18.0, LINE_C, 0.02)
+text(s, 1.0, 8.42, 18.0, 0.9, [
+    "Adoption still takes work: a key per party, its own signatures, a connection to the Radox API.",
+    [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C})]],
+    size=18, after=2)
 
 # ---------- 8. Hackathon progress ----------
 s = content_slide(8, "HACKATHON PROGRESS", "Built this weekend, on disclosed prior work", "NEXT ▸ VISION AND ASK")
