@@ -5,7 +5,7 @@ Paste this whole file as the first prompt of Leo's project session (opened in
 session on 2026-10-25; Pedro's session owns the project, the pitch and the Radox API connection.
 Questions for Pedro go on the project card (`board/HackMeridian rail.md`), never to Pedro directly.
 
-Role card: engineer. Reviewer: Vhendala's session (QA) plus the plugin reviewer.
+Role card: engineer. Reviewer: a Stellar mentor or the plugin reviewer (contract read by 14:00); Vhendala does a manual product review only.
 
 ## Mission
 

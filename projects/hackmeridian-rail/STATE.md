@@ -1,7 +1,7 @@
 ---
 status: in-progress
 updated: 2026-10-25
-next: Sun 09:00 — Pedro pastes portal rules + form fields + editing-window dates into PORTAL-SEEN.md; Leo re-runs the wasm check, then starts LEO-BRIEF.md; Vhendala human pass on REVIEW-1.md, then stage 2. Pedro asks an organizer at check-in: is a Scale repo with only the new work (backend closed) accepted? Portal capture: rubric scale shown (1-5 or 1-10), thematic track saved, editing-window dates, form fields, then form dry-run.
+next: Sun 09:00 — Pedro pastes portal rules + form fields + editing-window dates into PORTAL-SEEN.md; Leo re-runs the wasm check, then starts LEO-BRIEF.md; Vhendala manual product review of REVIEW-1.md, then stage 2. Pedro asks an organizer at check-in: is a Scale repo with only the new work (backend closed) accepted? Portal capture: rubric scale shown (1-5 or 1-10), thematic track saved, editing-window dates, form fields, then form dry-run.
 dispatch: off
 member: pedro
 ---
@@ -21,7 +21,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 - Also wanted at the event: Stellar engineers review the design; meet anchors/ramps for the USD leg and logistics / trade-finance partners; improve the pitch.
 - Kind: real project. Track: hackathon (builder track Scale; thematic track Stellar Unlocked (optional for Scale), chosen by Pedro 2026-10-24).
 - Investment: the weekend (Sun 25 09:00 to Mon 26 10:00 Lisbon), team Pedro, Leo, Vhendala (3); money: zero (testnet only).
-- "Done" for the current stage: stage 1 of TRACK.md closed (done 2026-10-25); stage moves to 2 after Vhendala's human pass.
+- "Done" for the current stage: stage 1 of TRACK.md closed (done 2026-10-25); stage moves to 2 after Vhendala's manual product review.
 - Stop criterion (owner, 2026-10-25): if by Sun 25 18:00 Lisbon no handover signed by two custodians has run on testnet, cut the API connection and deliver contract + harness + recorded demo only.
 
 ## 3. What is true now
@@ -44,7 +44,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 ## 5. Next actions
 1. **Pedro (via central), Sun 09:00:** portal rules + form fields + editing window into `PORTAL-SEEN.md`; organizer question on the closed-platform repo.
 2. **session-hackmeridian-rail, after deploy:** propose the "each tx calls our contract" check to the owner via the card. If the wasm is gone at 09:00, the redeem fallback goes back on the card.
-3. **Vhendala:** human pass on REVIEW-1.md and the five files; then stage → 2.
+3. **Vhendala:** manual product review of REVIEW-1.md and, later, the page, deck, video and README as a judge would (no code review, no repo invite); then stage → 2. The Mon 00:00 fresh run of the README on a clean clone is an independent agent that wrote none of the code, launched by central. The contract is read by a Stellar mentor or the plugin reviewer by 14:00.
 4. **Leo:** Sun 09:00 re-run the wasm check (KICKOFF §8), then LEO-BRIEF.md.
 
 ## 6. If X, then Y
@@ -54,7 +54,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 - If check.py is below 7/7 when Pedro gives the submit OK (Mon 08:00), track.sh refuses unless the OK words start with 'waive: <reason>' (track.sh:289-298); central runs track.sh verify first and puts the count in the question; Leo must push proofs/lifecycle.json to main.
 - If the portal shows the editing window closed or closing before Mon 10:00: ask an organizer at ONE16 the same hour and email meridian@growwithguava.com how a late edit is submitted; write the answer in PORTAL-SEEN.md.
 - If an organizer refuses a Scale repo without the closed backend: cut the API connection and deliver the registry as infrastructure; do not publish the backend.
-- Vhendala's human pass does not block Leo's start at 09:00; if she cannot be reached Pedro closes the pass himself.
+- Vhendala's manual product review does not block Leo's start at 09:00; if she cannot be reached Pedro closes the pass himself.
 
 ## 7. What I did not verify
 - Whether the organizers accept a Scale repo that holds only the new work, with the platform backend closed. Ask an organizer at check-in.
