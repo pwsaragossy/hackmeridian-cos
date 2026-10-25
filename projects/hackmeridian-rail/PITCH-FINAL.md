@@ -78,7 +78,7 @@ Deck v8 (deck/build_deck.py) puts the problem before the solution, in two slides
 
 ## Pitch item (portal)
 
-- Problem: About 45 million ocean bills of lading are issued a year (DCSA, 2023), and DCSA reports only about 11% were electronic in 2025; insiders were involved in 22% of recorded cargo thefts in 2025 (TT Club & BSI, Apr 2026). These are market figures, not our traction. Our hypothesis: a financier cannot easily see who holds the goods (no customers yet).
+- Problem: About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023), and DCSA reports only about 11% were electronic in 2025; insiders were involved in 22% of recorded cargo thefts in 2025 (TT Club & BSI, Apr 2026). These are market figures, not our traction. Our hypothesis: a financier cannot easily see who holds the goods (no customers yet).
 - Solution: `custody_registry`: both custodians sign every handover in one Stellar transaction; a hash chain makes the history checkable; the existing `redeem` burns the token after Delivered.
 - Demo: Rio–Miami lifecycle on testnet: 7 successful transactions, 9 refusals, `verify-head` MATCH, public shipment page; test keys, one harness.
 - Why this team: Pedro runs Radox with 3 Soroban contracts on mainnet; Leo and Vhendala joined this weekend; AI agents wrote the code and we say so.
@@ -88,13 +88,13 @@ Deck v8 (deck/build_deck.py) puts the problem before the solution, in two slides
 
 Rehearsal: not yet; timed reads by Pedro needed twice.
 
-Words (395, counted by script 2026-10-25; about 3:00 at 2.2 words a second):
+Words (388, wc -w from "A container" to "Thank you.", 2026-10-25; limit 396 for 3:00 at 2.2 words a second):
 
-A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. About 45 million ocean bills of lading are issued a year, and DCSA says only about 11% of bills of lading were electronic in 2025. In more than one in five recorded cargo thefts, insiders were involved. Those are market figures, not our results. Our hypothesis is that a financier cannot easily see who holds the goods. No customer has confirmed it yet.
+A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. DCSA reports about 45 million ocean bills of lading are issued a year, and only about 11% of bills of lading were electronic in 2025. In 2025, insiders were involved in more than one in five recorded cargo thefts, TT Club and BSI report. Those are market figures, not our results. Our hypothesis is that a financier cannot easily see who holds the goods. No customer has confirmed it yet.
 
 So we built a public record of the chain on Stellar. It is called Radox Custody Rail. Its contract, custody registry, has one rule: every handover needs both signatures, the custodian handing over and the custodian receiving, in the same transaction. If either one is missing, the call fails.
 
-Here is what ran on Stellar testnet. One shipment, seven successful transactions: open, four dual-signed handovers, deliver, and a burn. Nine invalid cases were refused: the wrong custodian, out of route, a wrong signer, early delivery, and five more. Twenty-four contract tests pass. And one command recomputes the whole history from the chain and matches the contract's head hash. Anyone can run it. The public shipment page does the same with a button.
+Here is what ran on Stellar testnet. One shipment, seven successful transactions: open, four dual-signed handovers, deliver, and a burn. Nine invalid cases were refused: the wrong custodian, out of route, a wrong signer, early delivery, and more. Twenty-four contract tests pass. And one command recomputes the whole history from the chain and matches the contract's head hash. The public shipment page does the same with a button.
 
 I want to be exact about what this proves. All six actors are test keys held by one harness. This proves the mechanism, not independent custodians. The burn is the existing redeem from our platform; the operator runs it only after the registry shows Delivered. That is our platform policy, not something the registry enforces. And the record is not a bill of lading. In production it would sit beside the carrier's one.
 
@@ -119,7 +119,7 @@ Count: 27 claims (numbers and factual assertions on slides). Sources are files i
 | 7 | 2 | Innovation hedge: none found in directories searched 2026-10-25 | RESEARCH-raven.md §5; PITCH.md script notes |
 | 8 | 3 | Handover chain: warehouse, port, carrier, customs | proofs/lifecycle.json actors; DEMO-SCRIPT.md 0:00 row |
 | 9 | 3 | "Several times" (fallback, not "4+") | SUBMISSION.md Problem solved row |
-| 10 | deck 2-3, spoken | 45M, ~11%, 22%, R$900M, US$85M (market figures, not traction) | PROBLEM-NUMBERS.md rows 1, 2, 3, 7, 5; REVIEW-PROBLEM.md; deck/REVIEW.md round 4 |
+| 10 | deck 2-3, spoken | 45M, ~11%, 22%, R$900M, US$85M (market figures, not traction) | PROBLEM-NUMBERS.md rows 1, 2, 3, 7, 5 (45M ocean, 2021 data; ~11% unscoped, 2025); REVIEW-PROBLEM.md; deck/REVIEW.md round 4 |
 | 11 | deck 3 | US$2.5T global trade finance gap, market size only | [[adb-trade-finance-gap-survey-dec-d033]] (ADB, Dec 2025) |
 | 12 | 3, spoken | No customers yet; hypothesis only | CRITERIA.md (evidence is an assumption); STATE.md line 74; claims note, Problem evidence row |
 | 13 | 4 | 7 successful testnet transactions | proofs/lifecycle.json; VERIFY-LEO.md b (Horizon `successful` true for all 7) |

@@ -75,6 +75,8 @@ Open:
 - PITCH.md slide row 3 still cites the ADB 2022 figure (Sept 2023). That file belongs to the pitch work.
 - The reviewer's full report is in its note [[problem-slides-review-2026-10-25-2478]].
 
+Round 4b (same day): the spoken script PITCH-FINAL.md was moved to the same wording. An independent reviewer approved it with changes, all applied: each DCSA figure keeps its year, the TT Club figure names its year and source, and the script is 388 words.
+
 ## Findings (ranked)
 1. [major, FACT] Slide 8 prior-work list is incomplete against the disqualifier ("Undisclosed prior work is a disqualification", PORTAL-PASTE.md:47). Missing: (a) the explainer video and the Rio-Miami initiative that slide 2's bridge cites ("our explainer video") - pre-event work shown as context; (b) the chief-of-staff plugin (public repo, first commit 2026-10-22, SUBMISSION.md:55 says "declared as prior work"; it ran the team's work); (c) the 2026-10-20 architecture panel (wording note rule 9); (d) the sentence "no contract code before Sun 09:00" (rule 9). Git supports it: rio-miami-rail first commit is 2026-10-25T09:00:17Z (placeholder page); contract commit 11:29Z. Slide shows only "Planning files, 24-25 Oct". Fix with no new fact: add those items and "first commit 25 Oct 09:00 UTC".
 2. [major, FACT] Slide 10 shows a dashed "Team photo" placeholder in a final deck; card says photo is Vhendala's, due Sun 09:00. Replace or remove the box before sending.
