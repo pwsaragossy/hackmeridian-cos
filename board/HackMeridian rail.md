@@ -16,6 +16,7 @@ asked: 2026-10-25 02:59 +0000
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
+- Pedro: the WhatsApp export shows the guiding text and letter draft were never sent to Paulo (he asked for them on 23/10); send them now, or the letter cannot be signed by Sun noon ([[zis-rio-miami-context-from-paulo-4c79]]).
 - Pedro, now: tell Leo to accept both GitHub invites (rio-miami-rail and hackmeridian-cos); at 02:53 UTC he is still a pending invitee on both, and his proofs only count once pushed to main ([[review-of-executability-audit-2026-10-6701]]).
 
 ## Next (2026-10-25, session-hackmeridian-rail)
