@@ -1,7 +1,7 @@
 ---
 tags:
   - board
-status: waiting-owner
+status: in-progress
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
@@ -16,9 +16,6 @@ asked: 2026-10-25 14:38 +0000
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
-- AI tool names (session-hackmeridian-rail, 14:38 UTC): the public AI_USAGE.md in rio-miami-rail names the models (Claude Opus 5.5, claude-sonnet-5-5); your rule says public material does not name Claude, while the hackathon asks to note which AI generated code. Keep the model names there (recommended: the judges asked for it, and the form field already names them), or replace them with "AI coding agents"?
-- Team titles (session-hackmeridian-rail, 14:38 UTC): README says "Leo Schlanger, developer" and "Vhendala, supervision and product review". The reviewer suggests adding "(joined for the hackathon)" to both, and "product review" for Vhendala. Keep as is, or change?
-- Push (session-hackmeridian-rail, 14:39 UTC): push the branch `three-machine` of rio-miami-rail (not main) so Leo and Vhendala can pull the signing tool and each authorise one handover from their own computer. The branch adds scripts/remote-auth.mjs and does not change the 7 frozen transactions or check.py; rehearsed on testnet, all successful. Main (README) stays unpushed. Push the branch now?
 ## Tasks
 - 14:31 UTC (leo-agent) for Pedro / rail session, from Leo's re-validation (rio-miami-rail 54dc401: check.py 7, verify-head MATCH, cargo test 24/24): (1) three-machine shipment: Leo's public key is GDWNU6TTJCZOQ3ZQI5NYALATL7IVMHR4PWEP5E3TXEK7EKOJNDORTPPW (testnet, funded); send Leo the steps on his card (shipment key, route slot, sign-entry-only or submit), by Sun 23:30. (2) Live page is still the old build: index.html and app.js served differ from page/ at 54dc401 and /stellar-sdk.min.js is 404, so be4bcb9 is not deployed (Vercel login on Pedro's Mac). (3) AI_USAGE.md still has no row for `scripts/handover-signers.mjs` nor `page/stellar-sdk.min.js` (checked at 54dc401), before the repo goes public.
 - Leo's part is closed (Leo, ~14:10 UTC): contract, 7/7 lifecycle, verify-head, refusal branches, Challenges (4 final lines, Leo card 12:55; line 4 kept), AI_USAGE.md (Human review cells confirmed by Leo, model header ea60283). Leo has no open task. Only Pedro's side remains on AI_USAGE.md: rows for `scripts/handover-signers.mjs` and `page/stellar-sdk.min.js` before the repo goes public.
@@ -65,6 +62,9 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 14:41 UTC: push the rio-miami-rail branch `three-machine` (not main) so Leo and Vhendala can sign from their own computers; repo stays private, main stays unpushed. Owner: "Sim, pode enviar (Recomendado)".
+- 2026-10-25 14:41 UTC: README team lines stay name and role only, no "(joined for the hackathon)". Owner: "Não, só nome e papel".
+- 2026-10-25 14:41 UTC (central): AI_USAGE.md keeps the model names; it follows the owner's 11:15 decision that AI tooling names everything, and the hackathon asks which AI generated code. No question to Pedro.
 - 2026-10-25 14:30 UTC: Pedro asks the 3 mentors himself at the event ("would you accept this signature instead of a scanned stamp?") and forwards the answers verbatim, each with the mentor's OK, to central. Owner: "Eu pergunto no evento (Recomendado)".
 - 2026-10-25 14:29 UTC: custody_registry stays on testnet, no mainnet deploy before submission (no audit; testnet proves the mechanism). Owner: "Não, fica na testnet (Recomendado)". Confirmed via the status session: "Não fazemos deploy na mainnet; fica só testnet, e o README explica o caminho para produção." README Production path says plainly: testnet only this weekend, no audit yet, and the steps to mainnet. Mainnet question closed.
 - 2026-10-25 before 14:21 UTC (stamp corrected from ~14:30): the cloned-voice test sounds like Pedro; generate the full 3:00 narration once DEMO-SCRIPT.md is final (owner: "Sim, pode gerar").
