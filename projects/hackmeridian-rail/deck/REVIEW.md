@@ -252,3 +252,6 @@ Judge: check_deck exit 0 (10 slides, 759,297 bytes). Mutants on a scratch copy, 
 | Total | 100 | 84.5 |
 
 User Value stays at 8: 9 needs one first-hand user fact (a port or chamber that spoke with Radox, quotable without a name), which only the owner can give. Owner questions on the card: "in conversations" true for each type; that user fact.
+
+### Round 7 delta (owner answers via central)
+Slide 4, pitch and COPY-V13 §4 now say "Radox has openings with ports and airports, and chambers of commerce in Brazil and Miami are opening doors" (owner wording; no chamber, ZIS or Paulo named). Reviewer delta (REVIEW-V13-DELTA.md): approve, no must-fix. check_deck exit 0; mutant "chambers ... have joined the rail" exits 1; pitch 395 words. User Value 8 to 8.5; total 85.5/100 (reviewer estimate).

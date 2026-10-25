@@ -28,7 +28,7 @@ const BASE = `*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,
 const pill = (text, css) => `${FONT}<style>${BASE}html,body{background:transparent}
   div{position:absolute;bottom:8px;${css};padding:8px 20px;border-radius:10px;background:#0E0F11;color:#E7E8EA;font-size:24px;font-weight:600;white-space:nowrap}</style><div>${text}</div>`;
 const OVER = {
-  label: pill("Testnet - test keys - not real custodians", "left:40px;border:2px solid #C6F24E"),
+  label: pill("Stellar testnet · test keys", "left:40px;border:2px solid #C6F24E"),
   lower: pill("Narration: AI voice generated from Pedro's voice", "left:50%;transform:translateX(-50%)"),
   source: pill(source, "left:50%;transform:translateX(-50%);font-weight:400;color:#A3A8B0"),
   cap03c: pill("Public page, captured 2026-10-25 17:14 UTC", "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
