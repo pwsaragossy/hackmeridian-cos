@@ -72,6 +72,19 @@ def main():
             if re.search(pat, t, re.I):
                 fails.append(f"slide {i}: banned /{pat}/ in {t[:60]!r}")
 
+    # Partners (owner, 2026-10-25): open conversations are the founder's statement, never a signed or confirmed partner.
+    SIGNED_PARTNER = (r"\b(?:(?:signed|agreed|confirmed|committed|onboarded|joined)\s+(?:partners?|ports?|airports?|chambers?|carriers?|banks?|institutions?|operators?)\b"
+                      r"|(?:ports?|airports?|chambers?(?:\s+of\s+commerce)?|carriers?|banks?|institutions?)\s+(?:have|has|had)\s+(?:signed|agreed|joined|committed|confirmed)\b"
+                      r"|(?:signed|agreed)\s+with\s+(?:a|an|the|several|one)?\s*(?:ports?|airports?|chambers?|banks?|institutions?|operators?))")
+    by_slide = {}
+    for i, t in texts:
+        by_slide[i] = by_slide.get(i, "") + " " + t
+    for i, t in sorted(by_slide.items()):
+        if re.search(SIGNED_PARTNER, t, re.I):
+            fails.append(f"slide {i}: reads as a signed partner")
+        if re.search(r"\bconversations?\b", t, re.I) and not (re.search(r"none signed", t, re.I) and re.search(r"founder", t, re.I)):
+            fails.append(f"slide {i}: 'conversations' needs 'none signed' and the founder label on the same slide")
+
     for req in REQUIRED:
         if req.lower() not in full.lower():
             fails.append(f"required text missing: {req!r}")

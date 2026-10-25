@@ -12,7 +12,7 @@ const painted = () => { const c = document.getElementById("globe"); const d = c.
 
 (async () => {
   // 3: size of what this work added (files new to the page, gzip -9)
-  const added = ["globe.js", "vendor/d3-array.min.js", "vendor/d3-geo.min.js", "vendor/land-110m.geo.json"];
+  const added = ["globe.js", "chains.js", "multichain.json", "vendor/d3-array.min.js", "vendor/d3-geo.min.js", "vendor/land-110m.geo.json"];
   const kb = added.reduce((n, f) => n + zlib.gzipSync(fs.readFileSync(path.join(DIR, f)), { level: 9 }).length, 0) / 1024;
   say(kb <= 200, `added JS + data ${kb.toFixed(1)} KB gzip (${added.join(", ")})`);
 
@@ -41,7 +41,10 @@ const painted = () => { const c = document.getElementById("globe"); const d = c.
   }
   // full motion: the story plays and ends lit
   { const p = await b.newPage({ viewport: { width: 375, height: 812 } });
-    await p.goto(BASE); await p.waitForFunction(() => /^Done\./.test(caption.textContent), null, { timeout: 60000 });
+    // v2: the story is driven by scroll, so scroll to the last step
+    await p.goto(BASE); await p.waitForFunction(() => steps.children.length > 0, null, { timeout: 40000 });
+    await p.evaluate(() => steps.lastElementChild.scrollIntoView({ block: "center" }));
+    await p.waitForFunction(() => /^Done\./.test(caption.textContent), null, { timeout: 10000 });
     const done = await p.evaluate(() => [steps.querySelectorAll("li.done").length, steps.children.length]);
     say(done[0] === done[1], `motion 375px: story ends with ${done[0]}/${done[1]} steps lit`); await p.close(); }
   // 4: throttled 4G, cold cache
