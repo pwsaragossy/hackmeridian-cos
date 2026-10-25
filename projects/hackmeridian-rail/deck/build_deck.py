@@ -285,7 +285,7 @@ text(s, 1.0, 8.12, 18.0, 1.5, [
 
 # ---------- 7. Value: integrate once; open vs operated (canon: public standard on a Radox-operated rail) ----------
 s = content_slide(7, "USERS · BUSINESS MODEL", "Integrate once, reach every party", "NEXT ▸ BUILT THIS WEEKEND")
-text(s, 1.0, 3.35, 18.0, 1.2, [[("Today each pair of parties builds its own link. ", {"bold": True}),
+text(s, 1.0, 3.35, 18.0, 1.2, [[("Today, parties often connect pair by pair. ", {"bold": True}),
                                 ("With one public custody standard, a port, airport, carrier, chamber or financier would integrate once "
                                  "and reach every other party: adopt without a custom project.", {})]], size=24, color=INK)
 
@@ -297,7 +297,7 @@ def link(x1, y1, x2, y2, color, w=1.5):
 
 
 R = 0.95
-for cx, hub, head in ((2.55, False, "TODAY · 10 LINKS"), (6.65, True, "STANDARD · 5 LINKS")):
+for cx, hub, head in ((2.55, False, "TODAY · 10 LINKS"), (6.65, True, "ONE RAIL · 5 LINKS")):
     cy = 5.95
     pts = [(cx + R * math.sin(2 * math.pi * k / 5), cy - R * math.cos(2 * math.pi * k / 5)) for k in range(5)]
     if hub:
@@ -312,8 +312,8 @@ for cx, hub, head in ((2.55, False, "TODAY · 10 LINKS"), (6.65, True, "STANDARD
         dot(s, x, y, 0.26, INK)
     text(s, cx - 1.8, 4.45, 3.6, 0.45, [head], size=18, font=MONO, bold=True, color=LIME_C if hub else SEC_C, align=PP_ALIGN.CENTER)
 text(s, 1.0, 7.2, 7.8, 0.9, ["Example, 5 parties: 10 custom links, or 5 links to one standard."], size=20, color=SEC_C, align=PP_ALIGN.CENTER)
-cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events", "custody_registry contract (Apache-2.0)", "Verify any chain, no permission (slide 4)"]),
-        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Custodian onboarding", "The API, issuance controls, operation", "Closed, not self-hostable", "Fee from the financial institution; not priced yet"])]
+cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events: the custody_registry contract (Apache-2.0)", "Verify any shipment, no login (slide 4)"]),
+        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Custodian onboarding", "The API, issuance controls, operation", "Closed, not self-hostable", "Paid by the financial institution; not priced"])]
 for x, head, hc, items in cols:
     text(s, x, 4.45, 4.8, 0.45, [head], size=18, font=MONO, bold=True, color=hc)
     hline(s, x, 4.98, 4.65, hc, 0.03)
