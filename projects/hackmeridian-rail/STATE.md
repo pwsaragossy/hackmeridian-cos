@@ -71,6 +71,8 @@ green, stage 3 (Demo and pitch), track 15/22 at 2026-10-25 18:2x UTC. Done: both
 
 - 2026-10-25 20:12 UTC: the corridor sentence keeps "the" ("Radox is part of the Rio–Miami trade-corridor initiative and its technology rail ... will join the rail"). Pedro accepts the reviewer's risk that this is a membership claim a judge cannot check. Reviewers do not raise it again. Owner: "Manter como está".
 
+- 2026-10-25 20:57 UTC: the 20:47 video cut is rejected and will not be uploaded. Order now: (1) landing page v2 until Pedro approves it, with Leo's agent as the single writer; (2) only then a new video built around the approved page, from a fresh brief (no re-cut). The video deadline stays Mon 08:00. Owner: "O VIDEO ESTÁ UMA MERDA, NÃO VAI SUBIR ASSIM! vamos resolver a landing page primeiro."
+
 ## 4. What was done and how
 - 2026-10-25 12:15 UTC (leo-agent): Leo's work runs in the session opened with the plugin active (window «hackmeridian-rail (leo)»); the old Leo session no longer writes, so pushes do not cross.
 - 2026-10-25 (central, owner's answers): pushes to both repos and testnet deploys of the shipment page are pre-authorized for the weekend (repo public and submission still need the owner's OK); Vhendala does a manual product review, not code; the Mon 00:00 fresh-run is an independent agent on a clean clone.

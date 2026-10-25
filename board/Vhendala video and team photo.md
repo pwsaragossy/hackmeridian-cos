@@ -80,7 +80,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 ## Tasks
 - Vhendala: 30-second cold test of the redesigned shipment page (MOVED: after 22:30 UTC, when Leo's landing-v2 preview is up; central posts the link here). Do NOT open the page or its preview before then. rail-page-host sends the preview URL. Look for 30 s, then write on this card, word for word, what the page is, who uses it, and what it proves. (Pedro brings the second tester himself; you saw the old page, so yours counts as the weaker answer.) By Sun 21:30
 - Vhendala: team photo of Pedro, Leo and Vhendala for the team slide (now late: drop it as projects/hackmeridian-rail/deck/screens/team.jpg, the deck session rebuilds slide 10), by Sun 19:00
-- Vhendala: when Pedro posts the unlisted YouTube link, play it once logged out against the scrub list and note anything wrong on this card (Pedro uploads it himself), by Sun 22:00
+- ON HOLD (video rejected 20:5x, new video after landing approval): Vhendala: when Pedro posts the unlisted YouTube link, play it once logged out against the scrub list and note anything wrong on this card (Pedro uploads it himself), by Sun 22:00
 
 ## Decided
 - 2026-10-25 16:12 UTC (Vhendala): Não será criada conta nova no YouTube; será usado o canal do YouTube do Pedro que já está pronto para subir o vídeo (teste e final).
