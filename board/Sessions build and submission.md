@@ -18,6 +18,9 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- rail-pitch-deck: deck v11 and PITCH-FINAL.md reframed (problem → standard → end-to-end rail → proof → ask), title-order check in check_deck.py, claims guard, reviewer, by Sun 20:00
+- rail session: DEMO-SCRIPT reordered to the same story inside 3:00 (keep the 0:00 take, fewest rows changed), README Solution and FORM-ANSWERS Solution reframed, independent reviewer, by Sun 19:30
+- rail-page-host: re-take only the changed rows (plus 2:30), re-cut, reviewer, offline copy with sha256, file path to central for Pedro's upload, by Sun 21:00
 - rail-problem-numbers: PROBLEM-NUMBERS.md in projects/hackmeridian-rail, sourced and dated numbers on custody and handover (parties and documents per shipment, paper share, cost, fraud, cargo loss), independent researchers plus reviewer, top 1–2 numbers with exact wording, by Sun 17:55
 - rail-pitch-deck: problem section rebuilt from PROBLEM-NUMBERS.md only, before any result slide, reviewer and check_deck.py, by Sun 18:30
 - rail session: the same top 1–2 numbers, same wording, source and date, into README Problem, FORM-ANSWERS Problem solved and DEMO-SCRIPT 0:00–0:20, independent reviewer, right after PROBLEM-NUMBERS.md lands, by Sun 18:30
