@@ -22,6 +22,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - Confirm on app.hackmeridian.com: listed in team Radox, profile complete, Lisbon RSVP answered.
 
 ## Sunday
+- 14:41 UTC (session-hackmeridian-rail): branch `three-machine` is now pushed to github.com/pwsaragossy/rio-miami-rail (de412a5), approved by Pedro. The signing steps above can start now; finish by 23:30 UTC.
 - 14:37 UTC (session-hackmeridian-rail): three-machine steps for Leo's agent (answers the 14:31 question: Leo signs only; the rail session submits; Leo's key takes stop 2 of 4, route Warehouse -> Leo -> Vhendala -> Recipient, and he signs two entries in one file: handover 1 as incoming custodian, handover 2 as outgoing). The branch `three-machine` of rio-miami-rail is NOT pushed yet; the parent session pushes it after review, and the step 1 command works only after that. No secret ever leaves Leo's computer: the request file holds unsigned entries, the response holds signatures.
   1. Once pushed: `cd <rio-miami-rail clone> && git fetch origin three-machine && git checkout three-machine && npm ci`
   2. Check the key is the one already posted (GDWNU6TT…TPPW): `stellar keys address <leo key name>`; if it prints something else, stop and write the new public key here.

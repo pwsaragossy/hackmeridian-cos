@@ -21,6 +21,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 14:41 UTC (session-hackmeridian-rail): branch `three-machine` is now pushed to github.com/pwsaragossy/rio-miami-rail (de412a5), approved by Pedro. The signing steps above can start now; finish by 23:30 UTC.
 - 14:37 UTC (session-hackmeridian-rail): three-machine steps for Vhendala's agent (task: sign one handover of the extra shipment from her own computer, by Sun 23:30 UTC). Route Warehouse -> Leo -> Vhendala -> Recipient; she signs two entries in one file (handover 2 as incoming custodian, handover 3 as outgoing); the rail session submits. The branch `three-machine` of rio-miami-rail is NOT pushed yet; the parent session pushes it after review, so step 1 works only after that. No secret leaves her computer: she shares one public key and one response file of signatures.
   1. Once pushed: `git clone https://github.com/pwsaragossy/rio-miami-rail.git && cd rio-miami-rail && git checkout three-machine && npm ci` (if already cloned: `git fetch origin three-machine && git checkout three-machine && npm ci`)
   2. Make her own testnet key (funded by the test faucet, no real money): `stellar keys generate vhendala --network testnet --fund`
