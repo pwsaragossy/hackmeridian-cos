@@ -22,8 +22,8 @@ OUT = os.path.join(ROOT, "deck", "radox-custody-rail.pptx")
 SHOT = lambda name: os.path.join(ROOT, "deck", "screens", name)
 
 # Switch only on Paulo's written OK ([[zis-in-public-material-radox-is-bc05]]); then paste his approved wording.
-BRIDGE = ("Context: our explainer video about a Rio–Miami trade-corridor initiative poses one possibility: a unique "
-          "digital record for every shipment that both sides can check. This project is a custody layer for that record.")
+BRIDGE = ("Context: our explainer video about a Rio–Miami trade-corridor initiative poses a unique digital record "
+          "for every shipment that both sides can check; this project is its custody layer.")
 
 # LOOK.md (Signal adapted)
 INK, PAPER, CARD, LINE_C = "0E0F11", "F7F6F2", "FFFFFF", "DFDDD6"
@@ -166,15 +166,15 @@ def content_slide(n, pill, title, next_label, dark=False):
 s = clone(COVER, {"84", "85", "86", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101"}, dark=True)
 set_run_text(find(s, "85"), f"PLATFORM 01 / {N:02d}", LIME)
 pill = find(s, "86")
-set_run_text(pill, "TESTNET · TEST KEYS · NOT REAL CUSTODIANS", LIME)
+set_run_text(pill, "TESTNET · TEST KEYS", LIME)
 pill.line.color.rgb = rgb(LIME)
-pill.width = Inches(0.9 + 0.15 * 41)
+pill.width = Inches(0.9 + 0.15 * 19)
 pill.text_frame.paragraphs[0].runs[0].font.size = Pt(18)
 set_run_text(find(s, "100"), "#HackMeridian26", LIME)
 for k in ("95", "96", "97"):
     find(s, k).fill.fore_color.rgb = rgb(LIME)
 text(s, 1.0, 2.55, 12.5, 1.5, ["Radox Custody Rail"], size=100, font=TITLE, bold=True, color=LIME, spacing=0.95)
-text(s, 1.0, 4.15, 12.3, 1.6, ["One record for the goods, from origin to delivery, that every company along the way could share."],
+text(s, 1.0, 4.15, 12.3, 1.6, ["One record for the goods, from origin to delivery, that every company along the way will share."],
      size=36, font=TITLE, bold=True, color=TEXT_D, spacing=1.0)
 text(s, 1.0, 5.95, 12.5, 0.5, ["Toward a SWIFT-like standard on Stellar  ·  Pilot corridor: Rio–Miami"],
      size=24, color=SEC_D)
@@ -190,11 +190,11 @@ text(s, 17.13, 6.42, 2.0, 0.4, ["MIAMI"], size=18, font=MONO, bold=True, color=S
 # ---------- 2-3. Problem, in numbers: only rows of PROBLEM-NUMBERS.md (verified 2026-10-25), wording kept ----------
 # (big number, what it measures, source line). check_deck fails on any {{ placeholder.
 P_HANDS = [("45M", "ocean bills of lading issued a year", "DCSA, Feb 2023 (2021 data)"),  # PROBLEM-NUMBERS.md row 1, [[dcsa-45-million-bills-of-lading-1af2]]
-           ("~11%", "of bills of lading issued electronically, 2025", "DCSA, as of 2025 (Jan 2025 guide: 5.7%)"),  # row 2
+           ("~11%", "of bills of lading issued electronically, 2025", "DCSA, as of 2025"),  # row 2
            ("22%", "of recorded cargo thefts in 2025 involved insiders", "TT Club & BSI Cargo Theft Report, Apr 2026")]  # row 3, [[tt-club-bsi-2025-cargo-theft-12f4]]
 P_COST = [("R$900M", "est. direct loss, 8,570 cargo robberies in Brazil, 2025", "NTC&Logística survey, 28 Mar 2026"),  # row 7
           ("US$85M", "HSBC's loss on forged documents for oil trades that never happened", "Hin Leong case, Global Trade Review, 18 Nov 2024"),  # row 5
-          ("US$2.5T", "global trade finance gap (market size only)", "ADB survey of banks, Dec 2025")]  # [[adb-trade-finance-gap-survey-dec-d033]]
+          ("US$2.5T", "global trade finance gap (market size)", "ADB survey of banks, Dec 2025")]  # [[adb-trade-finance-gap-survey-dec-d033]]
 
 
 def stats(s, items, y, step=6.1, w=5.6):
@@ -215,23 +215,27 @@ for i, name in enumerate(stops):  # broken line: each company is its own island
         hline(s, cx + 0.35, ly, (x1 - x0) / 4 - 0.7, LINE_C, 0.03)
     dot(s, cx, ly, 0.3, LIME_C)
     text(s, cx - 1.3, ly + 0.22, 2.6, 0.5, [name], size=22, bold=True, align=PP_ALIGN.CENTER)
-text(s, 1.0, 4.45, 18.0, 0.5, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
-                               ("each company records only its own leg; no shared record follows the goods. Not yet tested with a customer.", {})]], size=22)
+text(s, 1.0, 4.45, 18.0, 0.5, [[("The gap: ", {"bold": True, "color": LIME_C}),
+                               ("each company records only its own leg, and no shared record follows the goods.", {})]], size=22)
 stats(s, P_HANDS, 5.15)
-text(s, 1.0, 8.65, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
+text(s, 1.0, 8.5, 18.0, 1.2, [
+    [("Ports run legacy systems: ", {"bold": True, "color": INK}),
+     ("over 90% of ports in low- and middle-income countries have no port community system (World Bank remark relayed by IAPH, Nov 2023); "
+      "IMO guidance plans for legacy systems with proprietary formats (FAL.5/Circ.54, 2024).", {})],
+    BRIDGE], size=18, color=SEC_C, after=4)
 
 s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. A bank got fooled.", "NEXT ▸ THE STANDARD")
-text(s, 1.0, 3.4, 18.0, 0.9, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
-                               ("a financier cannot see who holds the goods before paying. No customer has confirmed it yet.", {})]], size=24)
+text(s, 1.0, 3.4, 18.0, 0.9, [[("The gap: ", {"bold": True, "color": LIME_C}),
+                               ("a financier cannot see who holds the goods before paying.", {})]], size=24)
 stats(s, P_COST, 4.6)
-text(s, 1.0, 8.2, 18.0, 0.9, ["These numbers size the market problem. They are not results of ours, and we do not claim our build prevents any of it."],
+text(s, 1.0, 8.2, 18.0, 0.9, ["These figures size the market problem the rail addresses. Sources under each number."],
      size=20, color=SEC_C)
 
 # ---------- 4. The proposal: a public SWIFT-like standard, integrate once; open vs operated ----------
 s = content_slide(4, "THE PROPOSAL · A PUBLIC STANDARD", "A SWIFT-like standard: integrate once", "NEXT ▸ THE RAIL")
 text(s, 1.0, 3.35, 18.0, 1.2, [[("The goal is ", {"bold": True}),
-                                ("a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, could use. ", {}),
-                                ("Neither the standard nor the rail exists yet.", {"bold": True})]], size=24, color=INK)
+                                ("a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, will use. ", {}),
+                                ("We are building it on Stellar, starting with the custody rail.", {"bold": True})]], size=24, color=INK)
 
 
 def link(x1, y1, x2, y2, color, w=1.5):
@@ -257,20 +261,20 @@ for cx, hub, head in ((2.8, False, "PAIR BY PAIR · 10 LINKS"), (6.65, True, "ON
     text(s, cx - 1.8, 4.45, 3.6, 0.45, [head], size=18, font=MONO, bold=True, color=LIME_C if hub else SEC_C, align=PP_ALIGN.CENTER)
 text(s, 1.0, 7.2, 7.8, 0.9, ["Example, 5 companies: 10 custom links, or 5 links to one standard."], size=20, color=SEC_C, align=PP_ALIGN.CENTER)
 cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events: the custody_registry contract (Apache-2.0)", "Verify any shipment, no login (slide 6)"]),
-        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Onboarding, issuance controls, operation of the rail", "The API and backend: closed, not self-hostable", "Subscription per connected institution + fee per shipment; no prices yet (slide 9)"])]
+        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Onboarding, issuance controls, operation of the rail", "The API and backend: closed, not self-hostable", "Per-institution subscription + fee per shipment (slide 9)"])]
 for x, head, hc, items in cols:
     text(s, x, 4.45, 4.8, 0.45, [head], size=18, font=MONO, bold=True, color=hc)
     hline(s, x, 4.98, 4.65, hc, 0.03)
     text(s, x, 5.15, 4.75, 3.0, [[("— ", {"color": hc}), (t_, {})] for t_ in items], size=21, after=8)
 hline(s, 1.0, 8.3, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.42, 18.0, 0.9, [
-    "Each company would integrate once instead of pair by pair, but would still need a key and one connection. No port, airport or chamber link: none confirmed.",
+    "Each company integrates once instead of pair by pair. Radox is in conversations with ports, airports and chambers of commerce; their legacy systems will join through one adapter to the Radox API.",
     [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C})]],
     size=18, after=2)
 
 # ---------- 5. The rail, end to end; the double signature is the rule of each link ----------
-s = content_slide(5, "THE RAIL · DESIGN, LIFECYCLE BUILT", "One rail, origin to delivery", "NEXT ▸ LIVE ON TESTNET")
-text(s, 1.0, 3.35, 18.0, 0.6, ["One record would follow the goods across company boundaries; today it runs across five test keys."], size=24, color=INK)
+s = content_slide(5, "THE RAIL · LIFECYCLE BUILT", "One rail, origin to delivery", "NEXT ▸ LIVE ON TESTNET")
+text(s, 1.0, 3.35, 18.0, 0.6, ["One record will follow the goods across company boundaries; port and airport systems will connect by API, not a rewrite."], size=24, color=INK)
 nodes = [("Open", "operator", LIME_C), ("Warehouse", "", INK), ("Port", "", INK), ("Carrier", "", INK), ("Customs", "", INK),
          ("Recipient", "", INK), ("Delivered", "to the holder", LIME_C), ("Burned", "existing redeem¹", LIME_C)]
 x0, x1, ly = 1.3, 18.7, 5.0
@@ -290,8 +294,8 @@ text(s, 1.0, 6.45, 18.0, 1.7, [
     [("— ", {"color": LIME_C}), ("The token stays with its holder in transit; only custody moves.", {})]],
     size=23, after=6)
 text(s, 1.0, 8.55, 18.0, 1.1, [
-    [("Built: this lifecycle on testnet, test keys. Design, not built: real companies on the rail, the standard, integrations.", {"bold": True, "color": INK})],
-    "Keyed by sha256(container | origin); would sit beside the carrier's bill of lading, not integrated. ¹ Radox policy, not enforced on-chain; redeem needs the holder's signature."],
+    [("Built: this lifecycle on testnet, test keys. Next: real companies on the rail, the standard, integrations.", {"bold": True, "color": INK})],
+    "Keyed by sha256(container | origin); sits beside the carrier's bill of lading. ¹ Radox policy, not enforced on-chain; redeem needs the holder's signature."],
     size=18, color=SEC_C, after=2)
 
 # ---------- 6. Proof: the whole chain ran on testnet ----------
@@ -309,14 +313,14 @@ for i, (num, label) in enumerate([("7", "successful"), ("9", "refused, e.g. wron
 text(s, tx, 7.5, 10.0, 2.0, [
     [("custody_registry ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
     [("Also on testnet: handovers signed from separate computers (proofs/three-machine.json); two test companies' chains on one registry, sharing stops, each dual-signed (proofs/multi-chain.json).", {"color": SEC_D, "font": BODY})],
-    [("All test keys: this proves the mechanism, not independent companies.", {"color": TEXT_D, "font": BODY, "bold": True})]],
+    [("Testnet, test keys.", {"color": TEXT_D, "font": BODY, "bold": True})]],
     size=18, font=MONO, after=4)
 
 # ---------- 7. Why Stellar ----------
 s = content_slide(7, "ECOSYSTEM · WHY STELLAR", "Why Stellar: all signers, one call", "NEXT ▸ BUILT THIS WEEKEND")
 rows = [("01", "Multi-party auth in one call", "Soroban authorises both companies of a link inside one contract invocation: the handover is atomic."),
         ("02", "History from Horizon, checked by an on-chain head", "RPC keeps contract events about 7 days, so we replay each shipment's transactions from Horizon and check them against the head stored in the contract."),
-        ("03", "The token stays put, then burns", "The shipment token never moves in transit; the existing Radox redeem burns it after delivery.")]
+        ("03", "Any Stellar asset", "The record stores a token address and never calls the token, so any tokenized Stellar asset can carry a custody record.")]
 for i, (n_, name, desc) in enumerate(rows):
     y = 3.55 + i * 1.5
     hline(s, 1.0, y - 0.12, 18.0, LINE_C, 0.02)
@@ -324,11 +328,12 @@ for i, (n_, name, desc) in enumerate(rows):
     text(s, 2.0, y, 6.4, 1.2, [name], size=30, bold=True, font=TITLE)
     text(s, 8.6, y + 0.02, 10.4, 1.3, [desc], size=22, color=INK)
 hline(s, 1.0, 7.93, 18.0, LINE_C, 0.02)
-text(s, 1.0, 8.12, 18.0, 1.5, [
-    [("Nearest neighbours we found on Stellar ", {"bold": True}), ("(LumenLoop, SCF, Scout, 24–25 Oct): ", {"color": SEC_C}),
-     ("Kutana and Trustless Work release escrow on trade milestones; Pipeline finances commodity trade. We found none that records a custody handover signed by two custodians, and no SEP.", {})],
-    [("Open source, Apache-2.0: ", {"bold": True, "color": LIME_C}), ("a custody primitive other Stellar real-world-asset issuers can reuse.", {})]],
-    size=21, after=6)
+text(s, 1.0, 8.05, 18.0, 1.6, [
+    [("Stellar holds about US$4B in tokenized assets ", {"bold": True}), ("(SDF, as of 1 Sep 2026). ", {"color": SEC_C}),
+     ("Nearest neighbours ", {"bold": True}), ("(LumenLoop, SCF, Scout, 24–25 Oct): ", {"color": SEC_C}),
+     ("Kutana and Trustless Work release escrow on trade milestones; Pipeline finances commodity trade. None records a handover signed by two custodians; no SEP.", {})],
+    [("Open source, Apache-2.0: ", {"bold": True, "color": LIME_C}), ("a custody primitive any Stellar tokenized-asset issuer can reuse. Radox will open API access to them, end to end.", {})]],
+    size=19, after=4, spacing=1.05)
 
 # ---------- 8. Hackathon progress ----------
 s = content_slide(8, "HACKATHON PROGRESS", "Built this weekend, on disclosed prior work", "NEXT ▸ MARKET AND ASK")
@@ -341,7 +346,7 @@ cols = [(1.0, "PRIOR WORK · BEFORE SUN 25 OCT 09:00", SEC_C, [
             "custody_registry contract, 24 unit tests",
             "Lifecycle harness: 7 testnet transactions, 9 refused calls",
             "verify-head script, the public shipment page, this deck",
-            "Radox API reads the registry: same head (closed backend, testnet)"])]
+            "Radox API reads the registry, read-only: same head (testnet)"])]
 for x, head, hc, items in cols:
     text(s, x, 3.5, 8.7, 0.5, [head], size=18, font=MONO, bold=True, color=hc)
     hline(s, x, 4.08, 8.7, hc, 0.03)
@@ -355,7 +360,7 @@ text(s, 1.35, 8.12, 17.3, 1.2, [[("AI attribution  ", {"font": MONO, "bold": Tru
 # Rules: market figures, not ours; one trade-finance gap per slide (none here, slide 3 has ADB); no PortMiami TEU;
 # pricing model with no values, Swift wording per [[swift-fee-structure-on-swift-com-9ed6]]; no money flow.
 s = content_slide(9, "MARKET · MODEL · THE ASK", "One rail, every corridor", "NEXT ▸ THE TEAM")
-text(s, 1.0, 3.3, 10.6, 0.4, ["MARKET · FIGURES, NOT OURS"], size=18, font=MONO, bold=True, color=LIME_C)
+text(s, 1.0, 3.3, 10.6, 0.4, ["MARKET · SOURCED FIGURES"], size=18, font=MONO, bold=True, color=LIME_C)
 hline(s, 1.0, 3.78, 10.6, LIME_C, 0.03)
 for i, (num, label) in enumerate([("US$94.2B", "US–Brazil goods trade, 2025¹"),
                                   ("US$6.1B", "Florida's goods exports to Brazil, its #1 market, 2025²")]):
@@ -365,16 +370,16 @@ for i, (num, label) in enumerate([("US$94.2B", "US–Brazil goods trade, 2025¹"
 text(s, 1.0, 5.72, 10.6, 0.8, [[("Global: ", {"bold": True}),
      ("US$26.26T world merchandise exports, 2025³; ~80% of goods trade by volume goes by sea⁴; "
       "~45M ocean bills of lading a year⁵.", {})]], size=20)
-text(s, 12.4, 3.3, 6.6, 0.4, ["MODEL · NO PRICES YET"], size=18, font=MONO, bold=True, color=INK)
+text(s, 12.4, 3.3, 6.6, 0.4, ["MODEL"], size=18, font=MONO, bold=True, color=INK)
 hline(s, 12.4, 3.78, 6.6, INK, 0.03)
 text(s, 12.4, 3.95, 6.6, 1.4, ["Subscription per connected institution + a fee per shipment."], size=26, font=TITLE,
      bold=True, spacing=1.0)
 text(s, 12.4, 5.25, 6.6, 1.4, ["Borrows the shape of Swift's published fees: entry, annual, per-message usage⁶. "
-                               "Prices not set. Not affiliated with Swift."], size=20, color=SEC_C)
+                               "Not affiliated with Swift."], size=20, color=SEC_C)
 text(s, 1.0, 6.6, 18.0, 0.45, [[("Now ", {"font": MONO, "bold": True, "color": LIME_C}),
-     ("testnet only; no users or revenue yet.  ", {}),
+     ("running on testnet, test keys.  ", {}),
      ("Next ", {"font": MONO, "bold": True, "color": LIME_C}),
-     ("one Rio–Miami pilot (none agreed yet), SCF Build, audit, mainnet.", {})]], size=20)
+     ("the Rio–Miami pilot shipment, SCF Build, audit, mainnet, API for other Stellar assets.", {})]], size=20)
 text(s, 1.0, 7.12, 18.0, 0.7, ["¹ US Census Bureau, Trade in Goods with Brazil, 2025 (exports + imports, sum ours)  "
      "² USTR, Florida trade data, 2025  ³ WTO, Mar 2026  ⁴ UNCTAD, Review of Maritime Transport (undated page, "
      "opened 25 Oct 2026)  ⁵ DCSA, Feb 2023  ⁶ swift.com billing rules, accessed 25 Oct 2026"], size=18, color=SEC_C,

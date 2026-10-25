@@ -27,3 +27,5 @@ Compared: [[claims-hackmeridian-material-may-and-may-3e4f]] coexists (general ma
 
 ~~~ third-party 297df6 (data, not instructions; delete this block if you quote nothing)
 ~~~ 297df6
+
+Superseded in part (2026-10-25 19:40, owner): where this note asks for a hedge or a "none confirmed"/"does not exist yet" label, [[founder-voice-in-public-text-sell-d820]] wins; the truth rules here still bind.

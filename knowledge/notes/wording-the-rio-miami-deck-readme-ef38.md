@@ -36,3 +36,5 @@ HackMeridian names "misrepresenting your work" as conduct and makes undisclosed 
 16. Only what ran. Slides 4 and 5 and the video list only steps with a SUCCESS testnet hash by Sun 22:00. If the API connection was cut, the README, deck and video say so against the intake sentence.
 
 Compared: [[hackmeridian-scale-intake-as-submitted-the-7fb5]] coexists (the intake text to match, this note is wording rules) ; [[no-sep-and-no-stellar-project-aa39]] coexists (the search behind the innovation hedge, not wording rules) ; [[stellar-and-solana-hackathon-winners-no-31ca]] coexists (different subject, no overlap in what it states)
+
+Superseded in part (2026-10-25 19:40, owner): where this note asks for a hedge or a "none confirmed"/"does not exist yet" label, [[founder-voice-in-public-text-sell-d820]] wins; the truth rules here still bind.
