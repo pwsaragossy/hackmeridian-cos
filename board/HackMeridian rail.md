@@ -17,9 +17,9 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
 ## Tasks
-- Pedro: send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/, forward his reply to central, by Sun 18:00 Lisbon (15:00 Rio)
+- Pedro: forward Paulo's letter (ZIS supporters plus a note that Radox provides the technology) to central when it arrives; public text quotes only what the signed letter says, no supporter names unless the independent reviewer clears it; without the letter the current wording stays, waiting
 - Pedro: dry-run the portal form with placeholder links (your login), only if Vhendala writes "no login" on her card, by Sun 22:00
-- Pedro: one OK, asked by central as a single button question: merge branch three-machine into main (deck v7 slide 5 cites proofs/three-machine.json), push main, and make rio-miami-rail public after the scrub, by Mon 06:00
+- Pedro: one OK, asked by central as a single button question: make rio-miami-rail public after Leo's scrub, by Mon 06:00
 - Pedro: paste FORM-ANSWERS.md into the portal, check the terms box, Submit (after track.sh verify), by Mon 08:00
 
 ## Next (2026-10-25, session-hackmeridian-rail)
@@ -69,6 +69,8 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 16:46 UTC: Paulo e-mail task closed; Pedro already spoke to Paulo, who will send a letter with the ZIS supporters and a note that Radox provides the technology. Owner: "ele falou que vai mandar uma carta com os apoiadores da ZIS, com uma nota dizendo que a Radox está provendo a tech". Wording follows [[zis-in-public-material-radox-is-bc05]].
+- 2026-10-25 16:46 UTC: merge branch three-machine into main and push main to the private rio-miami-rail now; making it public stays a separate OK after Leo's scrub. Owner: "é só juntar, já não foi assinado?"
 - 2026-10-25 16:32 UTC: mentor test closed as approved, no verbatim quotes and no consent, so no mentor is named or quoted. SUPERSEDED by the owner in the deck session: no mention of mentors anywhere public ("nao coloque isso, os mentores não tem valor nenhum nisso"); the line is "No customer has confirmed it yet." Organizer repo question dropped from Pedro's list. Owner: "eles aprovam isso, já falei, eles sabem da importancia de blockchain nesse tipo de coisa, dê como aprovado, mas siga, não se prenda por isso." Do not ask again.
 - 2026-10-25 14:41 UTC: push the rio-miami-rail branch `three-machine` (not main) so Leo and Vhendala can sign from their own computers; repo stays private, main stays unpushed. Owner: "Sim, pode enviar (Recomendado)".
 - 2026-10-25 14:41 UTC: README team lines stay name and role only, no "(joined for the hackathon)". Owner: "Não, só nome e papel".
