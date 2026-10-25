@@ -6,7 +6,7 @@ status: active
 origin: hackmeridian-rail
 provenance: agent
 confidence: medium
-sources: ["https://developers.stellar.org/docs/build/guides/events/publish", "https://developers.stellar.org/docs/build/guides/events/replay-ledger-close-meta", "https://developers.stellar.org/docs/build/smart-contracts/example-contracts/events"]
+sources: ["https://developers.stellar.org/docs/data/apis/rpc/admin-guide/configuring (default retention 120960 ledgers, about 7 days, operator-configurable; read 2026-10-25)","https://developers.stellar.org/docs/build/guides/events/publish", "https://developers.stellar.org/docs/build/guides/events/replay-ledger-close-meta", "https://developers.stellar.org/docs/build/smart-contracts/example-contracts/events"]
 created: 2026-10-25
 updated: 2026-10-25
 review_by: 2027-01-25
