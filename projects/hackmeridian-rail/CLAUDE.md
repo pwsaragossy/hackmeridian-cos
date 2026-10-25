@@ -50,3 +50,4 @@ A conversation opened here handles **one thing only**: the HackMeridian 2026 sub
 - Code lives in `github.com/pwsaragossy/rio-miami-rail` (private until submission; the rules require it public). Only this project's code goes there. The Radox backend (`radox-internal`) never becomes public; it is prior work, disclosed and linked, not published.
 - Prior work to disclose: the Radox platform and its three Soroban contracts on mainnet, public since 2026-08-19 at `github.com/pwsaragossy/radox` (contracts only).
 - Stellar facts (SDK, Soroban, SEPs, anchors) are looked up live, never answered from memory.
+- Never commit to `pwsaragossy/radox` for this work: it is a one-way mirror of `radox-internal` maintained by Radox, and the harness, page and API client have no place in it. `custody_registry` lives only in `rio-miami-rail` (owner, 2026-10-25).
