@@ -24,4 +24,4 @@ Older SDK lines: advisory GHSA-x2hw-px52-wp4m (CVE-2026-32322) is fixed in 25.3.
 
 Re-check before relying on it: these numbers change every few weeks, and a protocol 30 vote on testnet changes the SDK choice. Dual-signer auth is in [[two-signers-in-one-soroban-call-1b93]].
 
-Compared: [[hackmeridian-2026-rules-and-submission-requirement-5868]] coexists (event rules, other topic) ; [[hackmeridian-rubric-7-criteria-weights-scored-50e2]] coexists (event rubric, other topic)
+Compared: [[hackmeridian-2026-rules-and-submission-requirement-5868]] coexists (event rules, other topic) ; [[hackmeridian-rubric-7-criteria-weights-scored-50e2]] coexists (event rubric, other topic) ; [[icc-fit-alliance-2026-ebl-survey-cdc7]] coexists (different subject)
