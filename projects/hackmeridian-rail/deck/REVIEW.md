@@ -107,6 +107,21 @@ Open:
 
 Round 5b (Leo's technical pass): a 32-byte head verifies history and cannot rebuild it. The deck now says history is replayed from Horizon and checked against the head (verify-head.mjs reads Horizon, line 53). The three-machine line now cites proofs/three-machine.json, and the shipment key is sha256(container | origin). 'rebuild' is banned in check_deck, and a mutant containing it fails.
 
+### v11 rubric per criterion (reviewer, round 5)
+The scores are the reviewer's own estimates, not a judge's. Weights are from [[hackmeridian-rubric-7-criteria-weights-scored-50e2]]. The "Reason" column is the reviewer's evidence. The "To reach 10" column is this session's reading and was not in the reviewer's output.
+
+| Criterion (weight) | v10 | v11 | Reason (reviewer) | To reach 10 |
+|---|---|---|---|---|
+| Ecosystem Alignment (20) | 7 | 8 | The standard slide and the "many companies, one ledger" framing are new; the Stellar neighbours stay. | One named ecosystem partner (anchor, wallet or SEP issuer) that commits to read or write the rail, with written OK to name it. |
+| User Value and Problem (20) | 6 | 7 | The problem now leads and the rail fits the supply chain; the hypothesis is still untested. | A real shipper, forwarder or bank confirms the pain in writing or runs one shipment. Capped near 7 until a customer exists. |
+| Technical Execution (15) | 8 | 7 (~8 with the restored line) | The atomic dual-sign visual and the "fails" line were dropped. Fix 4 restored the substance as "both sides sign one Stellar transaction ... or the call fails". | Handovers signed by independent organisations' keys, plus the head check run by an outsider from the public page. |
+| Innovation (15) | 6 | 6 | "Found none in directories searched" stays; the standard is only a proposal. | A published draft spec of the standard (schema and auth rules) that someone else implements against. |
+| Hackathon Progress (10) | 8 | 8 | Same 7 transactions and 24 tests. The overclaim in the slide 6 title was fixed ("The lifecycle ran on testnet"). | The second shipment from separate machines shown live on the public page, with the fresh run reproducible from the README. |
+| Market and Ecosystem (10) | 5 | 6 | "Integrate once": 10 links vs 5; still no customer. | A sized first segment for the pilot corridor and a price, from a source, with one paying or committed user. |
+| Product Design and UX (10) | 7 | 8 | The skim story is clearer; slides 4 and 5 are denser. | Slides 4 and 5 carry less text; the public shipment page is linked from the deck and works on a phone. |
+
+Weighted: v10 = 67, v11 = 71.5. The reviewer expected about 73 with fixes 1-7, mostly from Technical going back to 8. All seven fixes were applied (see above).
+
 ## Findings (ranked)
 1. [major, FACT] Slide 8 prior-work list is incomplete against the disqualifier ("Undisclosed prior work is a disqualification", PORTAL-PASTE.md:47). Missing: (a) the explainer video and the Rio-Miami initiative that slide 2's bridge cites ("our explainer video") - pre-event work shown as context; (b) the chief-of-staff plugin (public repo, first commit 2026-10-22, SUBMISSION.md:55 says "declared as prior work"; it ran the team's work); (c) the 2026-10-20 architecture panel (wording note rule 9); (d) the sentence "no contract code before Sun 09:00" (rule 9). Git supports it: rio-miami-rail first commit is 2026-10-25T09:00:17Z (placeholder page); contract commit 11:29Z. Slide shows only "Planning files, 24-25 Oct". Fix with no new fact: add those items and "first commit 25 Oct 09:00 UTC".
 2. [major, FACT] Slide 10 shows a dashed "Team photo" placeholder in a final deck; card says photo is Vhendala's, due Sun 09:00. Replace or remove the box before sending.
