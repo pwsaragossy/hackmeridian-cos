@@ -83,6 +83,8 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- Leo: read the README as an SDF judge: check every contract ID, tx hash and command against the chain and the repo (main e5c2942 or later, plus branch three-machine), notes on this card, by Sun 21:00
+- Leo: pre-public scrub of rio-miami-rail (main and three-machine): secrets, personal paths, partner or client names, radox-internal content; report on this card (empty = pass), by Sun 23:00
 
 ## Decided
 - 2026-10-25 ~14:05 UTC (Leo, in chat: "confirmo e mantém"): the 9 "Human review" cells naming Leo in rio-miami-rail AI_USAGE.md are confirmed as written; Challenges line 4 (no_std tests) is kept. The AI_USAGE model header was fixed in ea60283. Leo's open tasks: none.

@@ -53,14 +53,16 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 
 ## Tasks
 - 14:46 UTC (leo-agent): for your three-machine handover: steps in projects/hackmeridian-rail/THREE-MACHINES.md. First step: on your computer `stellar keys generate <alias> --network testnet --fund`, then post `stellar keys address <alias>` (public key only) here.
-- Vhendala: first, steps 1–3 of the 14:37 line and post ONLY your public key (output of `stellar keys address vhendala`) on this card; the shipment cannot be prepared without it, by Sun 18:00
-- Vhendala: then sign your handover when the REQUEST READY line appears on this card, by Sun 23:30
+- DONE 15:16 UTC: Vhendala: first, steps 1–3 of the 14:37 line and post ONLY your public key (output of `stellar keys address vhendala`) on this card; the shipment cannot be prepared without it, by Sun 18:00
+- DONE 15:50 UTC (shipment SUCCESS 16:10): Vhendala: then sign your handover when the REQUEST READY line appears on this card, by Sun 23:30
 - Vhendala: run the README on your own computer from a clean clone, as a judge would, and write each step that fails on this card (fresh-run), Mon 00:00
 - Vhendala: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, link on this card, by Sun 18:00
 - Vhendala: team photo of Pedro, Leo and Vhendala for the team slide, by Sun 18:00
-- Vhendala: open https://rio-miami-rail.vercel.app logged out and read the check.py result on the cards; anything red becomes a card line, at Sun 14:00 and 18:00
+- Vhendala: open https://rio-miami-rail.vercel.app logged out and read the check.py result on the cards; anything red becomes a card line, at Sun 18:00
 - Vhendala: read the finished demo script, deck draft and README as a judge, notes on this card, by Mon 01:00
-- Vhendala: upload the final video (unlisted), link on this card, play it once against the scrub list, by Mon 08:00
+- Vhendala: timed rehearsal (track item pitch): play the final video twice against a clock, log both run times on this card; a live pitch by Pedro only if we reach the 28 Oct final, by Mon 06:00
+- Vhendala: upload the final video (unlisted) to Pedro's YouTube (her 16:12 line), link on this card, play it once against the scrub list, by Mon 08:00
+- Vhendala: if you have your own portal login as a team member, do the portal dry-run with placeholder links and write any field that fails on this card; if not, write "no login" here and Pedro keeps it, by Sun 22:00
 
 ## Decided
 - 2026-10-25 16:12 UTC (Vhendala): Não será criada conta nova no YouTube; será usado o canal do YouTube do Pedro que já está pronto para subir o vídeo (teste e final).
