@@ -65,8 +65,9 @@ const CLIPS = {
     await markCall(p);
     await wait(p, 20500);
   } },
-  // 0:40-1:05, replaces the 03c terminal clip at the same 119 frames: shipment 2 on the page, keys per handover and MATCH
-  "03c-page-shipment-2": { len: 119.5 / 30, run: async (p, ready) => {
+  // 0:40-1:05, replaces the 03c terminal clip at the same 119 frames: shipment 2 on the page, keys per handover and MATCH.
+  // A held still of the live page: the frame does not move, and a still cannot be trimmed before the framing.
+  "03c-page-shipment-2": { still: true, frames: 119, run: async (p, ready, png) => {
     await p.goto(PAGE + "/#shipment-2", { waitUntil: "networkidle" });
     await verify(p);
     const src = await p.textContent("#source");
@@ -80,8 +81,8 @@ const CLIPS = {
       scrollBy({ top: 15, behavior: "instant" });
     });
     await p.evaluate(() => document.fonts.ready);
-    await wait(p, 500); ready();
-    await wait(p, 4500);
+    await wait(p, 500);
+    await p.screenshot({ path: png });
     return p.textContent("#result");
   } },
   // 1:05-1:25, 20 s: attest 8, deliver 8, three handovers 1.33 each (joined after recording)
@@ -141,13 +142,14 @@ async function pageTake(p, ready, expect) {
     const t0 = Date.now();
     let start = 0;
     const p = await ctx.newPage();
-    const res = await c.run(p, () => { start = (Date.now() - t0) / 1000; });
+    const png = path.join(raw, `${name}.png`);
+    const res = await c.run(p, () => { start = (Date.now() - t0) / 1000; }, png);
     const video = await p.video().path();
     await ctx.close();
     const out = path.join(c.part ? path.join(OUT, "raw") : OUT, `${name}.mp4`);
-    execFileSync("/opt/homebrew/bin/ffmpeg", ["-v", "error", "-y", "-ss", String(start), "-i", video, "-t", String(c.len),
-      "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", "-r", "30", out]);
-    log.push(`${name}\t${c.len}s\tstart ${start.toFixed(2)}s${res ? "\t" + res.trim() : ""}`);
+    const input = c.still ? ["-loop", "1", "-framerate", "30", "-i", png, "-frames:v", String(c.frames)] : ["-ss", String(start), "-i", video, "-t", String(c.len)];
+    execFileSync("/opt/homebrew/bin/ffmpeg", ["-v", "error", "-y", ...input, "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", "-r", "30", out]);
+    log.push(`${name}\t${c.still ? c.frames + " frames, still" : c.len + "s"}\tstart ${start.toFixed(2)}s${res ? "\t" + res.trim() : ""}`);
     console.log(log[log.length - 1]);
   }
   await b.close();
