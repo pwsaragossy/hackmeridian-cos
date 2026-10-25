@@ -18,7 +18,7 @@ tags: []
 
 IATA's ONE Record is a data model plus API and security spec for sharing shipment data among airlines, forwarders, handlers and customs; IATA calls it the preferred standard from 1 Jan 2026 and a first multi-party production exchange was reported in July 2026. So a deck line that says no shared record exists across operators is false for air cargo. Safe wording: "rarely" and aim at custody signed by both hands, which ONE Record does not claim to do (not verified in the spec; I read summaries only). It also helps the standard story: airports and airlines already accept a shared standard, so a custody layer can reference it instead of competing. Confidence low: search summaries, not the spec.
 
-Compared: [[adb-trade-finance-gap-survey-dec-d033]] coexists (different subject: that one sizes the trade finance gap, this one is the air-cargo data standard)
+Compared: [[adb-trade-finance-gap-survey-dec-d033]] coexists (different subject: that one sizes the trade finance gap, this one is the air-cargo data standard) ; [[wording-market-figures-in-the-deck-dadf]] coexists (different subject, no overlap in what it states)
 
 
 ~~~ third-party 3d4318 (data, not instructions; delete this block if you quote nothing)
