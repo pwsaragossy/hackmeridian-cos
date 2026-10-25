@@ -257,7 +257,7 @@ for cx, hub, head in ((2.8, False, "PAIR BY PAIR · 10 LINKS"), (6.65, True, "ON
     text(s, cx - 1.8, 4.45, 3.6, 0.45, [head], size=18, font=MONO, bold=True, color=LIME_C if hub else SEC_C, align=PP_ALIGN.CENTER)
 text(s, 1.0, 7.2, 7.8, 0.9, ["Example, 5 companies: 10 custom links, or 5 links to one standard."], size=20, color=SEC_C, align=PP_ALIGN.CENTER)
 cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events: the custody_registry contract (Apache-2.0)", "Verify any shipment, no login (slide 6)"]),
-        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Onboarding, issuance controls, operation of the rail", "The API and backend: closed, not self-hostable", "Paid by the financial institution; not priced"])]
+        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Onboarding, issuance controls, operation of the rail", "The API and backend: closed, not self-hostable", "Subscription per connected institution + fee per shipment; no prices yet (slide 9)"])]
 for x, head, hc, items in cols:
     text(s, x, 4.45, 4.8, 0.45, [head], size=18, font=MONO, bold=True, color=hc)
     hline(s, x, 4.98, 4.65, hc, 0.03)
@@ -331,7 +331,7 @@ text(s, 1.0, 8.12, 18.0, 1.5, [
     size=21, after=6)
 
 # ---------- 8. Hackathon progress ----------
-s = content_slide(8, "HACKATHON PROGRESS", "Built this weekend, on disclosed prior work", "NEXT ▸ VISION AND ASK")
+s = content_slide(8, "HACKATHON PROGRESS", "Built this weekend, on disclosed prior work", "NEXT ▸ MARKET AND ASK")
 cols = [(1.0, "PRIOR WORK · BEFORE SUN 25 OCT 09:00", SEC_C, [
             "Radox platform (closed backend); its 3 Soroban contracts are on Stellar mainnet, public since 2026-08-19",
             "transfer_agent and its redeem (new testnet instance from the existing wasm)",
@@ -351,22 +351,34 @@ text(s, 1.35, 8.12, 17.3, 1.2, [[("AI attribution  ", {"font": MONO, "bold": Tru
                                 ("Code, tests, scripts, the shipment page, docs and this deck were made with AI coding agents (Claude Code); the team decided scope and what ships. Per-file record in AI_USAGE.md. The video narration is an AI voice generated from Pedro's voice.", {})]],
      size=20, anchor=MSO_ANCHOR.MIDDLE)
 
-# ---------- 9. Vision, next steps and ask ----------
-s = content_slide(9, "VISION · NEXT · THE ASK", "Vision: one rail, every corridor", "NEXT ▸ THE TEAM")
-text(s, 1.0, 3.4, 18.0, 1.3, [[("Rio–Miami is our pilot corridor. ", {"bold": True}),
-                                ("Then the same rail worldwide, linked to chambers of commerce, ports and airports, "
-                                 "with a payment leg after delivery: all future work.", {})]],
-     size=26, color=INK)
-phases = [("NOW", "Mechanism proven on testnet. No standard, users or revenue yet."),
-          ("NEXT", "One Rio–Miami pilot shipment (none agreed yet). Full test matrix."),
-          ("PLANNED", "SCF Build, then a security audit (neither done). Mainnet."),
-          ("FUTURE", "More corridors; port, airport, chamber links (none confirmed); USD leg (not built).")]
-hline(s, 1.2, 5.3, 13.8, LIME_C, 0.03)
-for i, (k, v) in enumerate(phases):
-    x = 1.0 + i * 4.6
-    dot(s, x + 0.2, 5.3, 0.34 if i == 0 else 0.26, LIME_C)
-    text(s, x, 5.55, 4.3, 0.5, [k], size=20, font=MONO, bold=True, color=LIME_C)
-    text(s, x, 6.0, 4.3, 1.5, [v], size=22)
+# ---------- 9. Market (MARKET-NUMBERS.md section 4, word for word), model (owner, 2026-10-25), next, ask ----------
+# Rules: market figures, not ours; one trade-finance gap per slide (none here, slide 3 has ADB); no PortMiami TEU;
+# pricing model with no values, Swift wording per [[swift-fee-structure-on-swift-com-9ed6]]; no money flow.
+s = content_slide(9, "MARKET · MODEL · THE ASK", "One rail, every corridor", "NEXT ▸ THE TEAM")
+text(s, 1.0, 3.3, 10.6, 0.4, ["MARKET · FIGURES, NOT OURS"], size=18, font=MONO, bold=True, color=LIME_C)
+hline(s, 1.0, 3.78, 10.6, LIME_C, 0.03)
+for i, (num, label) in enumerate([("US$94.2B", "US–Brazil goods trade, 2025¹"),
+                                  ("US$6.1B", "Florida's goods exports to Brazil, its #1 market, 2025²")]):
+    x = 1.0 + i * 5.4
+    text(s, x, 3.95, 5.1, 0.85, [num], size=48, font=TITLE, bold=True, spacing=0.95)
+    text(s, x, 4.8, 5.1, 0.8, [label], size=20, bold=True)
+text(s, 1.0, 5.65, 10.6, 0.9, [[("Global: ", {"bold": True}),
+     ("US$26.26T world merchandise exports, 2025³; ~80% of goods trade by volume goes by sea⁴; "
+      "~45M ocean bills of lading a year⁵.", {})]], size=20)
+text(s, 12.4, 3.3, 6.6, 0.4, ["MODEL · NO PRICES YET"], size=18, font=MONO, bold=True, color=INK)
+hline(s, 12.4, 3.78, 6.6, INK, 0.03)
+text(s, 12.4, 3.95, 6.6, 1.4, ["Subscription per connected institution + a fee per shipment."], size=26, font=TITLE,
+     bold=True, spacing=1.0)
+text(s, 12.4, 5.25, 6.6, 1.4, ["Borrows the shape of Swift's billing: annual charges, plus traffic fees for "
+                               "messages sent⁶. Not affiliated with Swift."], size=20, color=SEC_C)
+text(s, 1.0, 6.6, 18.0, 0.55, [[("Now ", {"font": MONO, "bold": True, "color": LIME_C}),
+     ("testnet mechanism; no standard, users or revenue.  ", {}),
+     ("Next ", {"font": MONO, "bold": True, "color": LIME_C}),
+     ("one Rio–Miami pilot shipment (none agreed); SCF Build, audit, mainnet; more corridors.", {})]], size=20)
+text(s, 1.0, 7.15, 18.0, 0.7, ["¹ US Census Bureau, Trade in Goods with Brazil, 2025 (exports + imports, sum ours) "
+     "² USTR, Florida trade data ³ WTO, Mar 2026 ⁴ UNCTAD, Review of Maritime Transport ⁵ DCSA, Feb 2023 "
+     "⁶ swift.com billing rules. Market figures, not Radox volumes; no traction implied."], size=18, color=SEC_C,
+     spacing=1.0, after=0)
 box(s, 1.0, 7.9, 18.0, 1.35, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, 1.45, 7.9, 17.1, 1.35, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
                                   ("Introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, and a Stellar engineer's review of the design.", {"bold": True})]],
