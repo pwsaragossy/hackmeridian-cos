@@ -28,7 +28,12 @@ BANNED = [r"\btitle to\b", r"document of title", r"digital bill of lading", r"re
           r"\badopted\b", r"\bin talks\b", r"agreed with", r"\bmentors?\b", r"\{\{", r"\brebuild"]  # mentors: owner, 2026-10-25, no value as evidence; rebuild: a 32-byte head verifies history, it cannot rebuild it (Leo, 2026-10-25)
 # Disclosures the rules and the Claims guard require (REVIEW.md finding 4: without these a stripped deck passed).
 REQUIRED = ["Pedro Wakigawa Saragossy", "Claude Code", "AI_USAGE.md", "AI voice", "PRIOR WORK", "first repo commit",
-            "explainer video", "users or revenue yet", "none agreed yet", "none confirmed", "The goal is", "test key", "not built", "24 unit tests"]
+            "explainer video", "testnet", "test key", "24 unit tests"]
+# Founder's voice (owner, 2026-10-25: "NÃO É PRA LOWBALL NOSSO PROJETO, VENDA APENAS A PARTE BOA"): no self-deprecating hedges.
+# Saying less is fine; a false claim is not (BANNED above and SIGNED_PARTNER below still fail).
+HEDGES = [r"none signed", r"not yet tested", r"no customer has confirmed", r"neither the standard nor the rail", r"users or revenue yet",
+          r"\bnot done\b", r"not priced", r"no prices yet", r"we do not claim", r"not (?:results )?(?:of )?ours", r"not independent",
+          r"none agreed", r"none confirmed", r"not real custodians", r"\bour hypothesis\b", r"\bnot built\b", r"proves the mechanism, not"]
 TEMPLATE_SMALL = {"107", "108", "109", "122", "84", "85", "99", "100", "101"}  # template's decorative 12-14 pt labels
 
 
@@ -72,7 +77,7 @@ def main():
             if re.search(pat, t, re.I):
                 fails.append(f"slide {i}: banned /{pat}/ in {t[:60]!r}")
 
-    # Partners (owner, 2026-10-25): open conversations are the founder's statement, never a signed or confirmed partner.
+    # Partners (owner, 2026-10-25): conversations with ports, airports and chambers may be stated; a signed or confirmed partner may not.
     SIGNED_PARTNER = (r"\b(?:(?:signed|agreed|confirmed|committed|onboarded|joined)\s+(?:partners?|ports?|airports?|chambers?|carriers?|banks?|institutions?|operators?)\b"
                       r"|(?:ports?|airports?|chambers?(?:\s+of\s+commerce)?|carriers?|banks?|institutions?)\s+(?:have|has|had)\s+(?:signed|agreed|joined|committed|confirmed)\b"
                       r"|(?:signed|agreed)\s+with\s+(?:a|an|the|several|one)?\s*(?:ports?|airports?|chambers?|banks?|institutions?|operators?))")
@@ -82,8 +87,9 @@ def main():
     for i, t in sorted(by_slide.items()):
         if re.search(SIGNED_PARTNER, t, re.I):
             fails.append(f"slide {i}: reads as a signed partner")
-        if re.search(r"\bconversations?\b", t, re.I) and not (re.search(r"none signed", t, re.I) and re.search(r"founder", t, re.I)):
-            fails.append(f"slide {i}: 'conversations' needs 'none signed' and the founder label on the same slide")
+        for h in HEDGES:
+            if re.search(h, t, re.I):
+                fails.append(f"slide {i}: hedge /{h}/ (owner: sell the good part, no lowballing)")
 
     for req in REQUIRED:
         if req.lower() not in full.lower():
