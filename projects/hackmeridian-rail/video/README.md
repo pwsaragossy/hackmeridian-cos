@@ -12,9 +12,9 @@ Each clip is cut to its row of DEMO-SCRIPT.md, so the editor lays the AI narrati
 | 05-terminal-verify.mp4 | 1:25-1:50 | 25 s | `verify-head.mjs` output ending MATCH, then `echo $?` = 0 |
 | 06-explorer-redeem.mp4 | 1:50-1:58 | 8 s | tx 864fd164, `redeem(...)` call outlined (Radox transfer_agent, prior work) |
 | 06b-terminal-balance.mp4 | 1:58-2:15 | 17 s | holder balance `"0"` |
-| 08-page-live.mp4 | 2:30-3:00 | 30 s | https://rio-miami-rail.vercel.app at 225% zoom (150% of a 1280 frame). The current take shows the page before be4bcb9 and clicks at 20 s; `tools/record.cjs` now times it for DEMO-SCRIPT 6f674db (state 0-8 s, page under the 08b overlay 8-15 s, "Verify head" in view at 15 s, click at about 16.5 s = 2:46.5, MATCH held to the end); re-record after the redeploy |
+| 08-page-live.mp4 | 2:30-3:00 | 30 s | https://rio-miami-rail.vercel.app (deploy of rio-miami-rail 54dc401, recorded 2026-10-25 14:50 UTC) at 225% zoom (150% of a 1280 frame): "Live from Stellar testnet", label, state and assurance per handover 0-8 s; page under the 08b overlay 8-15 s; "Verify head" in view at 15 s, click at about 16 s, MATCH on screen from 16.2 s (2:46.2) and held to the end |
 | 08b-terminal-radox-api.mp4 | 2:38-2:45, over 08 | 7 s | Replay of the Radox backend response recorded in `API-PROOF.md` ("Full backend boot", 2026-10-25 13:23 UTC; backend not run for the clip): `curl -s …/api/custody/shipments/31b4…5e37 | jq .` with `"status": "Delivered"` and `"head": "2d74fec0…95414"` highlighted; caption "Radox backend (private), local test run · recorded output, replayed · 2026-10-25 13:23 UTC". `t5.json` is that response body. |
-| 09-page-snapshot.mp4 | fallback for 2:30-3:00 | 30 s | same take with horizon-testnet and soroban-testnet blocked: "Snapshot, not live: testnet could not be reached", then MATCH against the saved head |
+| 09-page-snapshot.mp4 | fallback for 2:30-3:00 | 30 s | same take and timing with horizon-testnet and soroban-testnet blocked: "Snapshot, not live: testnet could not be reached", then MATCH against the saved head |
 
 Row 2:15-2:30 (GitHub README) is not recorded: the repo is private until submission.
 
