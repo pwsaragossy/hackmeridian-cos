@@ -68,15 +68,40 @@ Shipment {
 Functions:
 
 - `__constructor(admin, operator)`.
-- `open(key, token, route, docs_root)` — `operator.require_auth()`; **refuse a repeated key**; first
-  custodian = `route[0]`; `head = sha256(docs_root)`; event `opened`.
-- `handover(key, from, to, evidence_hash, assurance)` — `from.require_auth()` **and** `to.require_auth()`;
+- `open(key, token, route, docs_root: BytesN<32>)` — `operator.require_auth()`; **refuse a repeated key**; first
+  custodian = `route[0]`; `head` per the layout below; event `opened`.
+- `handover(key, from, to, evidence_hash: BytesN<32>, assurance: u32)` — `from.require_auth()` **and** `to.require_auth()`;
   require `status == Open`, `from == current_custodian`, `to == route[seq + 1]`;
-  `seq += 1`; `head = sha256(head || from || to || evidence_hash || seq)`; event `handover` with
+  `seq += 1`; `head` per the layout below; event `handover` with
   `assurance` (3 = both signed in person; 2 = one by delegation; 1 = external attestation only).
   Asset ownership does not change.
-- `attest(key, source, kind, event_hash)` — only a `source` the admin registered (`add_source` /
-  `remove_source`); updates `head` and emits `attested`; blocks nothing.
+- `attest(key, source, kind: u32, event_hash: BytesN<32>)` — `source.require_auth()`; only a `source` the admin registered (`add_source` /
+  `remove_source`); updates `head` per the layout below (does not change `seq`) and emits `attested`; blocks nothing.
+
+### `key` recipe (off-chain, fixed)
+
+`key = sha256(utf8(UPPER(container_or_awb) + "|" + UPPER(origin_unlocode)))`, no spaces, e.g. (made up)
+`sha256("TEST1234567|BRRIO")`. The harness computes it and passes the 32 bytes; the contract never
+sees the plain identifier.
+
+### `head` byte layout (contract, verify-head and the page must all use exactly this)
+
+`||` is plain byte concatenation into one `Bytes`, then `env.crypto().sha256(&bytes).to_bytes()`.
+- `addr(x)` = `x.to_xdr(&env)` (`use soroban_sdk::xdr::ToXdr`; the XDR bytes of the address as an
+  `ScVal`, per developers.stellar.org/docs/build/guides/conversions/address-conversions). In JS:
+  `nativeToScVal(x, { type: "address" }).toXDR()`.
+- `be32(n)` = the `u32` as 4 bytes big-endian (`n.to_be_bytes()`; JS `DataView.setUint32(0, n, false)`).
+- `BytesN<32>` values enter as their raw 32 bytes. The first byte is a tag so the three kinds never collide.
+
+```
+open:     head = sha256( 0x01 || key || docs_root )
+handover: head = sha256( 0x02 || head || addr(from) || addr(to) || evidence_hash || be32(seq) || be32(assurance) )   // seq = value after += 1
+attest:   head = sha256( 0x03 || head || addr(source) || be32(kind) || event_hash || be32(seq) )                    // seq = current, unchanged
+```
+
+`deliver`, `freeze`, `unfreeze` do not change `head`. Unit test 1 pins this: a fixed key, docs_root,
+two test addresses and one handover, with the expected 32-byte `head` written as a hex constant in
+the test; `verify-head.mjs` runs the same vector with `--selftest` and must print the same hex.
 - `deliver(key, final_custodian, holder)` — `final_custodian` must be the last of the route and the
   current custodian; `final_custodian.require_auth()` and `holder.require_auth()`; `status = Delivered`;
   event `delivered`. (The burn is *not* here.)
@@ -87,12 +112,62 @@ Functions:
 Errors: one `#[contracterror]` enum; every refusal has its own code (wrong custodian, out of route,
 not open, duplicate key, unknown source, paused, frozen).
 
-Why `head`: RPC `getEvents` keeps only ~7 days, so the full history lives off-chain; the on-chain
-`head` lets anyone recompute and verify that history from the events.
+Why `head`: RPC `getEvents` keeps only ~7 days, so events are not the history source. The history is
+the arguments of the shipment's own transactions, read from **Horizon**
+(`GET https://horizon-testnet.stellar.org/transactions/<hash>/operations`: the `invoke_host_function`
+record carries `function` and `parameters`, each a base64 `ScVal`), for the hashes listed in
+`proofs/lifecycle.json` (`open` + the 4 `handover`, plus a top-level `"attest": [{ "hash": "…" }]`
+if any attest ran). `verify-head.mjs` and the public page read the **same** list from the **same**
+Horizon endpoint, recompute `head` with the layout above, and compare with the on-chain `head(key)`
+(simulated read). SDF's public Horizon keeps one year of history; the next testnet reset
+(scheduled 2026-12-16, [[stellar-testnet-resets-wipe-contracts-and-dfe4]]) wipes it anyway, and the
+saved `proofs/tx/<hash>.json` copies are the fallback (`verify-head.mjs --offline`).
 
 Every exit has a terminal or recoverable state: a handover that is never signed leaves the shipment
 `Open` with the same custodian (nothing to clean); a lost shipment is `Frozen` by the admin; a
 cancelled delivery request stays `Open`.
+
+## Step 0 — toolchain spike, 5 minutes, before any real code (Sun 09:00)
+
+Nobody has yet deployed an sdk-29 wasm with stellar CLI 28.1.0 (the newest CLI) on protocol 29.
+Prove it in a throwaway folder **outside** the repo (so the repo's first commit stays clean):
+
+1. `stellar --version` → 28.1.0; `rustup target add wasm32v1-none`.
+2. `stellar contract init /tmp/hello-spike`; in its `contracts/hello-world/Cargo.toml` (and the workspace
+   `Cargo.toml`) set `soroban-sdk = "29.0.1"`; `stellar contract build`.
+3. `stellar keys generate spike --network testnet --fund`; `stellar contract deploy --wasm <the .wasm>
+   --source spike --network testnet` → contract ID.
+4. `stellar contract invoke --id <C…> --source spike --network testnet -- hello --to spike` → tx hash.
+5. `curl -s https://horizon-testnet.stellar.org/transactions/<hash>/operations` shows `parameters`
+   (this is the history source for verify-head and the page).
+
+Pass = all five ran; write CLI version, sdk version and the tx hash as one line on the card. Fail at
+any step = one card line with the exact error before building anything else (fallbacks: build with
+`cargo build --target wasm32v1-none --release`; deploy with js-stellar-sdk).
+
+## Step 0b — `transfer_agent` spike on testnet, done before 12:00 (7 of 7 depends on it)
+
+The interface read at 2026-10-25 08:50 UTC (`stellar contract info interface --wasm-hash
+3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1 --network testnet`) gives:
+
+- `__constructor(config: Config { admin, operator })`
+- `register_token(token, seller, settlement, payment_asset)`, all `Address`; stored as
+  `TokenReg { payment_asset, seller, settlement }`. For the harness: `token` = the shipment SAC,
+  `seller` = exporter, `settlement` = exporter, `payment_asset` = the native XLM SAC
+  (`stellar contract id asset --asset native --network testnet`).
+- `mint(token, to, amount)`, `deliver(token, to, amount)`, `redeem(token, holder, amount, ref_id: u64)`.
+- `hand_over_sac(token, new_admin)`: moves the SAC admin **away** from the agent (the exit path). It is
+  **not** how the agent gets control. For `redeem` to burn, the issuer calls the SAC's own
+  `set_admin(<transfer_agent instance>)` in setup; `hand_over_sac` is not used in the demo.
+
+Not in the interface, so the spike decides it: who must sign each call (admin, operator, seller,
+holder) and whether `register_token` needs the agent to already be SAC admin. Method: on a throwaway
+asset, run setup → `set_admin` → `register_token` → `mint` 1 → `deliver` 1 → `redeem` 1, each with a
+**simulation first** (`--send=no`, or js-stellar-sdk `simulateTransaction`) and record the auth
+entries it asks for. Write the result as one card line ("register_token auth: …; redeem auth: …;
+set_admin before register_token: yes/no") and keep the script as the harness's setup. If `redeem`
+fails, the card line carries the error code (`AgentError` enum, or `SAC #10` = trustline made before
+clawback was on) and the redeem fallback goes back to the card for Pedro's session.
 
 ## Deliverables, in order (commit each one when it passes)
 
@@ -109,8 +184,8 @@ cancelled delivery request stays `Open`.
    operator + holder auth, burning the token. Write every hash to `proofs/lifecycle.json`. Also the failure branches: wrong signer, out-of-route, after freeze,
    while paused — each with the failing tx or simulation result recorded.
    Before `redeem`, the harness reads `custody_registry.get(key)` and aborts unless status is Delivered; it records "redeem_precondition": "Delivered" as an extra top-level key in proofs/lifecycle.json (check.py reads only `lifecycle`). It also saves each lifecycle tx's Horizon JSON to proofs/tx/<hash>.json (verify-head unchanged). After `set_admin`, record whether the issuer account was locked. Name the keys so the demo reads owner-operated: issuer and agent admin = 'exporter', operator = 'rail operator'.
-4. `scripts/verify-head.mjs`: reads the events of a shipment and recomputes `head`; exit 0 when it
-   matches the on-chain `head`.
+4. `scripts/verify-head.mjs <key>`: reads the shipment's transactions from Horizon (list and layout
+   in Design above, not events) and recomputes `head`; exit 0 when it matches the on-chain `head`.
 
 Pedro's session uses `proofs/lifecycle.json` and the contract ID for the README, the Radox API
 connection, the public shipment page and the demo, so keep those two file names. The proof file
