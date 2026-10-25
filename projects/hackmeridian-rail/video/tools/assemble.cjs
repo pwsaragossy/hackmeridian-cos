@@ -1,5 +1,6 @@
 // Lays the clips out row by row of DEMO-SCRIPT.md (3:00, 5400 frames at 30 fps), burns the overlays the script asks for
 // and puts the narration under it. Usage: node assemble.cjs <outdir> <rio-miami-rail clone>
+// The picture is scaled to 94% so the overlays sit in their own 64 px strip at the bottom and never cover content.
 // Overlays: bottom label for the whole video; lower third 0:00-0:08; source line 0:08-0:20 (read from the 0:00 row of
 // DEMO-SCRIPT.md, so a script change carries over); captions on 03c (held still) and on the README row.
 const { chromium } = require(process.env.PW);
@@ -25,13 +26,13 @@ const readmeHtml = execFileSync("gh", ["api", "-X", "POST", "markdown", "-F", `t
 const FONT = `<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">`;
 const BASE = `*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}`;
 const pill = (text, css) => `${FONT}<style>${BASE}html,body{background:transparent}
-  div{position:absolute;${css};padding:14px 28px;border-radius:12px;background:rgba(14,15,17,.88);color:#E7E8EA;font-size:30px;font-weight:600}</style><div>${text}</div>`;
+  div{position:absolute;bottom:8px;${css};padding:8px 20px;border-radius:10px;background:#0E0F11;color:#E7E8EA;font-size:24px;font-weight:600;white-space:nowrap}</style><div>${text}</div>`;
 const OVER = {
-  label: pill("Testnet - test keys - not real custodians", "left:50%;transform:translateX(-50%);bottom:28px;border:2px solid #C6F24E"),
-  lower: pill("Narration: AI voice generated from Pedro's voice", "left:60px;bottom:120px"),
-  source: pill(source, "left:60px;bottom:120px;font-weight:400;color:#A3A8B0"),
-  cap03c: pill("Public page, captured 2026-10-25 17:14 UTC", "right:40px;top:32px;font-size:26px"),
-  capreadme: pill(`README.md, rio-miami-rail ${commit}, rendered by GitHub (repo private until submission)`, "right:40px;top:32px;font-size:26px"),
+  label: pill("Testnet - test keys - not real custodians", "left:50%;transform:translateX(-50%);border:2px solid #C6F24E"),
+  lower: pill("Narration: AI voice generated from Pedro's voice", "left:40px"),
+  source: pill(source, "left:40px;font-weight:400;color:#A3A8B0"),
+  cap03c: pill("Public page, captured 2026-10-25 17:14 UTC", "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
+  capreadme: pill(`README.md, rio-miami-rail ${commit}, rendered by GitHub (repo private until submission)`, "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
 };
 const TITLE = `${FONT}<style>${BASE}body{background:#0E0F11;color:#E7E8EA;height:1080px;display:flex;flex-direction:column;justify-content:center;padding:0 200px}
   h1{margin:0 0 90px;font-size:120px;font-weight:700;letter-spacing:-.03em}
@@ -93,7 +94,7 @@ const README = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github
   for (const o of ov) args.push("-loop", "1", "-framerate", "30", "-t", "180", "-i", path.join(W, o + ".png"));
   args.push("-i", M("narration-full-3m00.wav"));
   let g = segs.map(([, s, n], i) =>
-    `[${i}:v]trim=start_frame=${s},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop=30,trim=end_frame=${n},setpts=PTS-STARTPTS,fps=30,scale=1920:1080,setsar=1,format=yuv420p[s${i}];`).join("");
+    `[${i}:v]trim=start_frame=${s},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop=30,trim=end_frame=${n},setpts=PTS-STARTPTS,fps=30,scale=1806:1016,pad=1920:1080:57:0:color=0x0E0F11,setsar=1,format=yuv420p[s${i}];`).join("");
   g += segs.map((_, i) => `[s${i}]`).join("") + `concat=n=${segs.length}:v=1:a=0[v0];`;
   const when = { label: [0, 180], lower: [0, 8], source: [8, 20], cap03c: [at(4), at(5)], capreadme: [at(9), at(12)] };
   ov.forEach((o, k) => {

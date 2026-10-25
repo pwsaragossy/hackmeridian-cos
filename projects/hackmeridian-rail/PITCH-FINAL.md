@@ -34,12 +34,11 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 - Proof element: screenshot `shot-handover-expert.png` (one dual-signed handover on stellar.expert, both auth entries visible; handover 1, hash 635c99ac...).
 - Speaker notes : Two custodians must authorise one call, or it fails. The record keeps a hash chain, `head`. The burn is the existing `redeem`. The operator runs it only after the registry shows Delivered. That is Radox platform policy, not enforced on-chain by the registry, and `redeem` still needs the holder's signature. We found none in the directories searched 2026-10-25.
 
-### 3. PMF (problem): Who holds the cargo right now? (cream)
-- Title: Who holds the cargo right now?
-- On-slide : A shipment changes hands several times: warehouse, port, carrier, customs. Handovers are mostly paper or sit in one operator's system. Our hypothesis: a financier cannot easily see who holds it.
-- Proof element: small footnote line: "Context only: global trade finance gap US$2.5T (ADB Global Trade Finance Gap Survey, Dec 2025). Sizes the financing gap; not evidence of the custody pain." Source note [[adb-trade-finance-gap-survey-dec-d033]] (second-hand page read; re-open the ADB page before export).
-- Source decision: no source for "4+ times" or for paper/closed-system handovers exists in the folder or library, so the SUBMISSION.md fallback is used ("several times", not "4+"), and the paper/closed-system line is framed as a hypothesis, not a fact.
-- Speaker notes : No customers yet, and no financier has told us this pain is real. It is a hypothesis; no customer has confirmed it yet. Today each handover is recorded on paper or inside one operator's own system. This build records each handover in one public place. The US$2.5 trillion figure sizes trade finance generally. It does not prove this problem.
+### 3. PMF (problem), now deck slides 2 and 3 (cream)
+Deck v8 (deck/build_deck.py) puts the problem before the solution, in two slides. Every number is a row of PROBLEM-NUMBERS.md, wording per REVIEW-PROBLEM.md and deck/REVIEW.md round 4. Do not write "paper" or "inside job".
+- Slide 2 "Who holds the cargo right now?": 45M ocean bills of lading issued a year (DCSA, Feb 2023, 2021 data); ~11% of bills of lading issued electronically, 2025 (DCSA, as of 2025; Jan 2025 guide: 5.7%); 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI, Apr 2026). The two DCSA figures are separate scopes and years, never one population.
+- Slide 3 "Cargo goes missing. A bank got fooled.": R$900M est. direct loss, 8,570 cargo robberies in Brazil, 2025 (NTC&Logística, 28 Mar 2026); US$85M HSBC loss on forged documents for oil trades that never happened (Hin Leong, Global Trade Review, 18 Nov 2024); US$2.5T global trade finance gap, market size only (ADB, Dec 2025). Hypothesis line: a financier cannot see who holds the goods before paying; no customer has confirmed it. Closing line: "These numbers size the market problem. They are not results of ours, and we do not claim our build prevents any of it."
+- Speaker notes : These are market figures, not our results. No number here measures the handover itself; the insider share is the closest. Our hypothesis is that a financier cannot easily see who holds the goods. No customer has confirmed it yet.
 
 ### 4. Technical workflow: How it runs on Stellar (dark)
 - Title: How it runs on Stellar
@@ -79,7 +78,7 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 
 ## Pitch item (portal)
 
-- Problem: A shipment changes hands several times; the chain of who held it sits on paper or in one operator's system. A financier cannot easily see it (hypothesis, no customers yet).
+- Problem: About 45 million ocean bills of lading are issued a year (DCSA, 2023), and DCSA reports only about 11% were electronic in 2025; insiders were involved in 22% of recorded cargo thefts in 2025 (TT Club & BSI, Apr 2026). These are market figures, not our traction. Our hypothesis: a financier cannot easily see who holds the goods (no customers yet).
 - Solution: `custody_registry`: both custodians sign every handover in one Stellar transaction; a hash chain makes the history checkable; the existing `redeem` burns the token after Delivered.
 - Demo: Rio–Miami lifecycle on testnet: 7 successful transactions, 9 refusals, `verify-head` MATCH, public shipment page; test keys, one harness.
 - Why this team: Pedro runs Radox with 3 Soroban contracts on mainnet; Leo and Vhendala joined this weekend; AI agents wrote the code and we say so.
@@ -89,9 +88,9 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 
 Rehearsal: not yet; timed reads by Pedro needed twice.
 
-Words (368, counted):
+Words (395, counted by script 2026-10-25; about 3:00 at 2.2 words a second):
 
-A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. Today those handovers sit on paper, or inside one operator's own system. Our hypothesis is that a financier cannot easily see who holds the goods. We have no customers yet, and no financier has told us otherwise. No customer has confirmed it yet.
+A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. About 45 million ocean bills of lading are issued a year, and DCSA says only about 11% of bills of lading were electronic in 2025. In more than one in five recorded cargo thefts, insiders were involved. Those are market figures, not our results. Our hypothesis is that a financier cannot easily see who holds the goods. No customer has confirmed it yet.
 
 So we built a public record of the chain on Stellar. It is called Radox Custody Rail. Its contract, custody registry, has one rule: every handover needs both signatures, the custodian handing over and the custodian receiving, in the same transaction. If either one is missing, the call fails.
 
@@ -120,8 +119,8 @@ Count: 27 claims (numbers and factual assertions on slides). Sources are files i
 | 7 | 2 | Innovation hedge: none found in directories searched 2026-10-25 | RESEARCH-raven.md §5; PITCH.md script notes |
 | 8 | 3 | Handover chain: warehouse, port, carrier, customs | proofs/lifecycle.json actors; DEMO-SCRIPT.md 0:00 row |
 | 9 | 3 | "Several times" (fallback, not "4+") | SUBMISSION.md Problem solved row |
-| 10 | 3 | Paper / one operator's system, stated as hypothesis; no source | IDEA.md (assumption); wording note rule 10. No evidence: framed as hypothesis |
-| 11 | 3 | US$2.5T global trade finance gap, context only | [[adb-trade-finance-gap-survey-dec-d033]] (ADB, Dec 2025, second-hand; re-open before export) |
+| 10 | deck 2-3, spoken | 45M, ~11%, 22%, R$900M, US$85M (market figures, not traction) | PROBLEM-NUMBERS.md rows 1, 2, 3, 7, 5; REVIEW-PROBLEM.md; deck/REVIEW.md round 4 |
+| 11 | deck 3 | US$2.5T global trade finance gap, market size only | [[adb-trade-finance-gap-survey-dec-d033]] (ADB, Dec 2025) |
 | 12 | 3, spoken | No customers yet; hypothesis only | CRITERIA.md (evidence is an assumption); STATE.md line 74; claims note, Problem evidence row |
 | 13 | 4 | 7 successful testnet transactions | proofs/lifecycle.json; VERIFY-LEO.md b (Horizon `successful` true for all 7) |
 | 14 | 4 | Contract ID CCBJVXMJ…H4LII | proofs/lifecycle.json; VERIFY-LEO.md a |
