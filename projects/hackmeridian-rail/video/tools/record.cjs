@@ -65,6 +65,25 @@ const CLIPS = {
     await markCall(p);
     await wait(p, 20500);
   } },
+  // 0:40-1:05, replaces the 03c terminal clip at the same 119 frames: shipment 2 on the page, keys per handover and MATCH
+  "03c-page-shipment-2": { len: 119 / 30, run: async (p, ready) => {
+    await p.goto(PAGE + "/#shipment-2", { waitUntil: "networkidle" });
+    await verify(p);
+    const src = await p.textContent("#source");
+    if (!src.startsWith("Live from Stellar testnet")) throw new Error(`source says "${src}"`);
+    await p.click("#verify");
+    await p.getByText("MATCH", { exact: true }).waitFor({ timeout: 10000 });
+    await zoom(p, "1.5");
+    await p.evaluate(() => {
+      document.querySelector("body > div:last-child[style*='pointer-events']")?.remove();   // no cursor dot: nothing is clicked on screen
+      document.getElementById("result").scrollIntoView({ block: "end" });
+      scrollBy({ top: 60, behavior: "instant" });
+    });
+    await p.evaluate(() => document.fonts.ready);
+    await wait(p, 500); ready();
+    await wait(p, 4500);
+    return p.textContent("#result");
+  } },
   // 1:05-1:25, 20 s: attest 8, deliver 8, three handovers 1.33 each (joined after recording)
   "04a-attest": { len: 8, part: true, run: async (p, ready) => { await explorer(p, TX.attest); ready(); await markCall(p); await wait(p, 8500); } },
   "04b-deliver": { len: 8, part: true, run: async (p, ready) => { await explorer(p, TX.deliver); ready(); await markCall(p); await wait(p, 8500); } },
