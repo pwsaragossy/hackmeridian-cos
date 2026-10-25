@@ -15,7 +15,7 @@ Deliverables (SUBMISSION.md): deck as **PDF or PPTX ≤ 20 MiB** (export from DE
 
 Copy rules (Radox canon): Radox is the **rail**, never the issuer; the partner is a **financial
 institution / client** (never "sponsor" outside); regulation and licences are the client's and local
-counsel's, in every external material; a token is never title by itself — possession of cargo only
+counsel's, in every external material; a token alone says nothing about ownership of the cargo — possession of cargo only
 when tied to the bailee's document (carrier or warehouse). No partner or client names. Every number
 comes from a source in this folder or the proofs; `{{fill}}` marks what only the build can give.
 

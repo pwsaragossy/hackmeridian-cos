@@ -62,4 +62,4 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 - Any evidence that a financier or buyer has the custody-visibility pain (IDEA.md: assumption; mentor test planned).
 - SCF Build eligibility criteria themselves.
 - PITCH.md slide 3 (problem) still has a {{source needed}} marker for how handovers are documented today.
-- Open-slot markers in PITCH use {{fill}}; [[ ]] is parsed as a library citation by the checker.
+- Open-slot markers in PITCH use {{fill}}; double square brackets are parsed as a library citation by the checker.
