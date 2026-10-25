@@ -32,7 +32,7 @@ Claims guard (reviewed 2026-10-25). Say: 'Radox: 3 Soroban contracts deployed on
 | 5 | (added) What we built this weekend | Prior work vs HackMeridian | table: existed (3 mainnet contracts, transfer_agent on testnet, phygital whole-asset flow) / built here (custody_registry, harness, verify-head, API connection) | commit timeline after Sun 09:00; AI usage: code, tests and scripts were written by AI coding agents; AI_USAGE.md says per file what a named person read |
 | 6 | (added) Users and value | Who uses it | exporter, custodians (warehouse/port/carrier/customs), buyer, financier; value: a financier can see where the goods are and who signed for them before paying | — |
 | 7 | (added) Business model and go-to-market | The rail is ours, the standard is public | SWIFT model: public record format, roles and events; Radox operates the rail and the API; first corridor Rio → Miami; next step: a first pilot shipment with one producer (none agreed yet); revenue: fee paid by the institution that operates the rail; not priced yet | {{fill: pricing line only if Pedro confirms}} |
-| 8 | (added) Market and next steps | From one corridor to a standard | USD leg (future): an on-ramp from the SCF Integration List; planned: this contract is the proposed first milestone of an SCF Build application (not yet submitted); then the full testnet matrix, then mainnet | link to the mentor question on ramps |
+| 8 | (added) Market and next steps | From one corridor to a standard | USD leg (future): an on-ramp from the SCF Integration List; planned: this contract is the proposed first milestone of an SCF Build application (not yet submitted); then the full testnet matrix, then mainnet | — |
 | 9 | Team | Why us | Pedro Saragossy, founder and team captain; Leo Schlanger, developer; Vhendala, project supervision, product review and team photo. Leo and Vhendala joined for the hackathon. Radox: 3 Soroban contracts deployed on Stellar mainnet | photos only with each person's consent; max 3 lines per member |
 
 ## Demo video (backup and async judging)
@@ -50,7 +50,6 @@ Rules: 2–4 min, YouTube or Vimeo — target 3:00.
 - We use Stellar's core features together: multi-party `require_auth` in one invocation,
   SAC admin control (freeze/clawback) for the token, and events with an on-chain hash
   chain. We found no dual-signed custody in the directories searched on 2026-10-25 (RESEARCH-raven.md §5).
-- Ask the mentors: which ramp delivers USD to a C-address (SEP-45 draft).
 
 ## Open
 
