@@ -13,7 +13,7 @@ Self-score against the rubric (1–10, before building; the reviewer redoes it a
 User value 7 · Technical 8 if the 7 txs land · Innovation 8 · Progress 9 (clean split) · Market 6
 (no pilot customer to show) · UX **3 without a screen, 7 with one**.
 
-## Scope proposal (for the stage-2 freeze, owner OK)
+## Scope — approved by the owner on 2026-10-25 (recorded in central at stage 2)
 
 Max 3 must-haves:
 1. `custody_registry` + tests, deployed on testnet (Leo's agents, LEO-BRIEF.md).
