@@ -1,7 +1,7 @@
 ---
 status: in-progress
 updated: 2026-10-25
-next: Sun 09:00 — Pedro pastes portal rules + form fields + editing-window dates into PORTAL-SEEN.md; Leo re-runs the wasm check, then starts LEO-BRIEF.md; Vhendala manual product review of REVIEW-1.md, then stage 2. Pedro asks an organizer at check-in: is a Scale repo with only the new work (backend closed) accepted? Portal capture: rubric scale shown (1-5 or 1-10), thematic track saved, editing-window dates, form fields, then form dry-run.
+next: Sun 09:00 — Pedro pastes the submission form fields into PORTAL-SEEN.md; Leo re-runs the wasm check, then starts LEO-BRIEF.md; Vhendala manual product review of REVIEW-1.md, then stage 2. Pedro asks an organizer at check-in: is a Scale repo with only the new work (backend closed) accepted? Portal capture: thematic track saved and form fields, then form dry-run.
 dispatch: off
 member: pedro
 ---
@@ -25,7 +25,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 - Stop criterion (owner, 2026-10-25): if by Sun 25 18:00 Lisbon no handover signed by two custodians has run on testnet, cut the API connection and deliver contract + harness + recorded demo only.
 
 ## 3. What is true now
-- Deadline: the portal's project editing window runs Sun 25 09:00 to Mon 26 10:00 Lisbon (owner, 2026-10-25: "9am do dia 25 até 10am do dia 26, já falamos disso"). Mon 10:00 is the hard close, not a buffer; the event's Mon 12:00 is when hacking ends and gives no extra time to us. Submit at 08:00. Lisbon is UTC+0 for the whole event (summer time ended Sun 25 Oct 01:00 UTC).
+- Deadline: the portal's project editing window runs Sun 25 09:00 to Mon 26 10:00 Lisbon (owner, 2026-10-25: "9am do dia 25 até 10am do dia 26, já falamos disso"). Mon 10:00 is the hard close, not a buffer; the event's Mon 12:00 is when hacking ends and gives no extra time to us. Submit at 08:00. Rubric: 1–10 per criterion (portal rules page, settled 2026-10-25). Lisbon is UTC+0 for the whole event (summer time ended Sun 25 Oct 01:00 UTC).
 - Rubric: 7 criteria, weights 20/20/15/15/10/10/10; scale 1–5 on hackmeridian.com/build but 1–10 in the portal rules (PORTAL-PASTE.md), checked at Sun 09:00. Self-score 72/100 ceiling, 66 if the API connection is cut (IDEA.md).
 - Requirements verified in the portal PDF and public pages: RULES.md, SUBMISSION.md. Video 2–4 min YouTube/Vimeo, deck ≤20 MiB, mandatory AI attribution and the prior-work disqualifier come from Pedro's paste of the portal rules, now verbatim on disk in PORTAL-PASTE.md; binding.
 - Portal rules page and submission form need login: not seen by any agent.
