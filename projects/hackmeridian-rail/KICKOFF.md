@@ -65,17 +65,17 @@ The event itself ends 16:00, but only the 12:00 submission time matters.
 
 | When | What | Gate |
 |---|---|---|
-| Sun 09:00–10:00 | Check-in; ask the organizers (not mentors: they start 11:00) the repo question (§7); Pedro logs into the portal, opens the rules page and the submission form, saves the field list, the editing-window dates, the rules text and the rubric scale it states (1–5 or 1–10) to `PORTAL-SEEN.md` here; Leo: wasm check first (§8); Pedro: form dry-run in the same login | Vhendala manual product review of REVIEW-1 and of the page, deck, video and README (does not delay Leo's start) |
+| Sun 09:00–10:00 | Check-in; Vhendala takes the team photo (Pedro, Leo, Vhendala) for the team slide and uploads a 10-second unlisted test clip to the team's YouTube or Vimeo account, link opened logged out; ask the organizers (not mentors: they start 11:00) the repo question (§7); Pedro logs into the portal, opens the rules page and the submission form, saves the field list, the editing-window dates, the rules text and the rubric scale it states (1–5 or 1–10) to `PORTAL-SEEN.md` here; Leo: wasm check first (§8); Pedro: form dry-run in the same login | Vhendala manual product review of REVIEW-1 and of the page, deck, video and README (does not delay Leo's start) |
 | Sun 10:00–14:00 | Leo: contract + unit tests, testnet accounts for the 6 actors. Pedro: shipment page skeleton against a labelled sample fixture. Mentor user test (IDEA.md) at 11:30-11:45, 13:30-14:00, 15:00-17:00 (11:00-12:00 is the opening ceremony and team formation); a Stellar mentor or the plugin reviewer reads the contract by 14:00 (someone who did not write it); keep a mentor log for the README | 14:00 checkpoint: no dual-signed handover on testnet yet → one line on the card |
 | Sun 14:00–18:00 | Leo: full lifecycle, hashes in `proofs/lifecycle.json`. Pedro: page wired to the testnet contract (reads real data) | **18:00 stop line**: no dual-signed handover on testnet, then cut the API connection |
 | Sun 09:00 | Placeholder page live on the host named in §6 (Vercel), URL on the card, opened logged out | |
 | Sun 18:00–19:00 | Page redeployed to the same URL (§6 steps), `head` verified on screen | |
 | Sun 19:00–20:30 | Dinner, no work | |
 | Sun 20:30–22:00 | README sections (Prior work, Built at HackMeridian, AI usage, contract IDs) + Production path (§9); dry-run the submission form with placeholder links. API connection only if the lifecycle ran by 18:00, hard stop 21:00; "connected" = a read-only Radox testnet endpoint returning custodian, status and head, shown as curl output | review-2 |
-| Sun 22:00–Mon 00:00 | Deck draft with the real hashes; demo script with the page as the last scene | |
-| Mon 00:00–03:00 | Record the video (target 3:00, rehearsed twice, offline backup); an independent agent that wrote none of the code, launched by central, runs the README on a clean clone | review-3 |
+| Sun 22:00–Mon 00:00 | Deck draft with the real hashes; demo script with the page as the last scene; Vhendala rehearses the narration twice (target 3:00). Scrub, moved from Mon 06:00: `grep -rE "S[A-Z2-7]{55}"` plus partner and client names over the rio-miami-rail tree (must be empty); every link that exists opened in a logged-out browser (page production alias, test video, radox.net, demo.radox.net, github.com/pwsaragossy/radox) | scrub empty, links open |
+| Mon 00:00–03:00 | Video: Pedro's session makes the screen recording, Vhendala records the narration over it (target 3:00, offline backup); an independent agent that wrote none of the code, launched by central, runs the README on a clean clone | review-3 |
 | Mon 03:00–06:00 | Rest, or fixes from review-3 only | |
-| Mon 06:00–08:00 | Repo public after scrub; deck as PDF; video on YouTube or Vimeo; every link opened logged out | review-4 |
+| Mon 06:00–08:00 | Repo public (owner OK; re-run the scrub grep only on commits after Sun 22:00); deck as PDF; Vhendala uploads the final video (unlisted) to the team account and puts the link on the card; open logged out only the two links that could not exist on Sunday night: the public repo and the final video | review-4 |
 | Mon 08:00 | Submit | owner OK |
 | Mon 08:00–10:00 | Buffer for our deadline (2 h); 10:00–12:00 is the event's own margin, not to be used | |
 
@@ -130,7 +130,7 @@ Deploy steps (any Pedro session, no login needed):
   slips, it outranks the API connection and the deck polish.
 - **Leo's agents**: the `custody_registry` contract, unit tests, testnet deploy, lifecycle harness and
   `verify-head` — brief in [LEO-BRIEF.md](LEO-BRIEF.md).
-- **Vhendala**: manual product review only, reading the page, deck, video and README as a judge would; no code review, no repo invite. A Stellar mentor or the plugin reviewer reads the contract by 14:00; an independent agent (central launches it) runs the README on a clean clone at Mon 00:00. Anything red becomes a line on the card at once.
+- **Vhendala**: manual product review, reading the page, deck, video and README as a judge would; no code review, no repo invite. She also owns the video account, the upload, the narration and the team photo (owner, 2026-10-25; card `board/Vhendala video and team photo.md`). A Stellar mentor or the plugin reviewer reads the contract by 14:00; an independent agent (central launches it) runs the README on a clean clone at Mon 00:00. Anything red becomes a line on the card at once.
 - Still to ask an organizer at check-in: is a Scale repo with only the new work (platform closed) accepted?
 
 ## 8. Facts re-checked live on 2026-10-25 00:49 UTC (RPC, crates.io API, Raven stellarDocs)
