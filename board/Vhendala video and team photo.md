@@ -7,7 +7,7 @@ owner: session-hackmeridian-rail
 member: vhendala
 due: 2026-10-25
 since: 2026-10-25
-updated: 2026-10-25
+updated: 2026-10-25T23:50Z
 asked: 
 ---
 
@@ -79,10 +79,25 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
-- 21:36 UTC (leo-agent, for Vhendala; asked by Leo, read-only, nothing in page/ touched): elite UI/UX design spec for landing v3, by the plugin designer specialist: projects/hackmeridian-rail/DESIGN-REVIEW-V3.md. Per scene 1–8: layout at 390 and 1440 px, the exact words (103 total, under the 120 budget), the type scale, GSAP ScrollTrigger choreography, the reduced-motion frame, and the premium detail. Also a measured contrast table (WCAG 2.2), the keyboard and screen-reader path, a three.js performance budget (≤12 draw calls, DPR cap 1.5 on mobile and 2 on desktop, one ~300 KB texture), and a `?film=1` mode for recording the video. Top 5 vs today's v2 (a235cb5, which measures 796 visible words): (1) cut to ≤103 words, exact copy in the file (drop 'still paper': the DCSA source says 'not electronic'); (2) really close the drawer and move #about and the long result inside it; (3) the Earth in the first screen; (4) 3D graphics at least 3:1 contrast (v2 land 1.17, route 2.91); (5) lazy-load stellar-sdk (177 KB gzip) and keep the H1 at first paint (v2 Lighthouse mobile 76, LCP 6.6 s locally, without compression). WATCH OUT: a really closed drawer (`hidden`/`<details>`) breaks the 17 pagetest cases, because page-check/pagetest.cjs reads `innerText` of #state and #history. Change the test to `textContent`, or open the drawer before reading; that is the rail session's call, since the test is theirs. Questions in the file for Pedro: what counts as 'visible' in the word counter; 'not electronic' vs 'paper'; and whether team names may show for shipment 2.
-- Vhendala: 30-second cold test of the redesigned shipment page (MOVED: after 22:30 UTC, when Leo's landing-v2 preview is up; central posts the link here). Do NOT open the page or its preview before then. rail-page-host sends the preview URL. Look for 30 s, then write on this card, word for word, what the page is, who uses it, and what it proves. (Pedro brings the second tester himself; you saw the old page, so yours counts as the weaker answer.) By Sun 21:30
-- Vhendala: team photo of Pedro, Leo and Vhendala for the team slide (now late: drop it as projects/hackmeridian-rail/deck/screens/team.jpg, the deck session rebuilds slide 10), by Sun 19:00
-- ON HOLD (video rejected 20:5x, new video after landing approval): Vhendala: when Pedro posts the unlisted YouTube link, play it once logged out against the scrub list and note anything wrong on this card (Pedro uploads it himself), by Sun 22:00
+Updated Sun 23:50 UTC by Pedro's session, asked by Pedro. This list replaces every older task line. Do them in this order.
+
+1. NOW: cold test of landing v3, by Mon 01:00 UTC.
+   - Pedro sends you a link in the chat. Open it on your phone and stay logged out.
+   - Before the test, do not open page/ or the landing-v3 branch.
+   - Scroll from the top to the bottom one time, at your own speed (about 60 seconds). Press "Run it live" when you get to it.
+   - Then write four lines on this card, in your own words, without reading the page again:
+     (a) What does this company do?
+     (b) Who uses it, and who pays?
+     (c) What does the page prove?
+     (d) What was confusing, or what did you skip?
+   - You edited a button on this page at 23:02 UTC (6251e8e), so you already know part of it. Write that down too. Pedro brings a second tester who has not seen the page.
+2. Until Pedro approves the landing page, do not push to page/ on landing-v3. Pedro's session is the one writer there. Write a suggestion as a line on this card, and that session applies it.
+3. By Mon 02:00 UTC: one line, as Vhendala, that answers: "Did you use Google Antigravity? For what?" If you write yes, it goes into the AI tooling note and into AI_USAGE.md. If there is no line, it stays out.
+4. By Mon 02:00 UTC: the team photo of Pedro, Leo and Vhendala. If one was taken today, put it at projects/hackmeridian-rail/deck/screens/team.jpg, push it, and write "photo pushed" here. If there is none, write "no photo". The deck then keeps names without a photo.
+5. ON HOLD: the video. Start only when Pedro's session writes "VIDEO GO" on this card. That line will have the screen recording and the script. Then make the narration with Voicebox from that script and keep a copy offline. Until then, do nothing on the video.
+6. ON HOLD: after Pedro uploads the final video as unlisted on his YouTube, play it one time logged out. Write anything wrong (sound, a name, a number, a cut) on this card. Mon 06:00 UTC.
+
+Not your task: mainnet. Pedro decided at 23:45 UTC that the contract stays on testnet, with a mainnet rehearsal on a local fork only.
 
 ## Decided
 - 2026-10-25 16:12 UTC (Vhendala): Não será criada conta nova no YouTube; será usado o canal do YouTube do Pedro que já está pronto para subir o vídeo (teste e final).
@@ -96,6 +111,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - 20:11 UTC (rail session): thanks, form suggestion (1) applied (prior work names redeem on CAYD3EFT…SJWH and GET /api/custody/shipments/:key). For (2) Antigravity: please confirm in one line, as Vhendala herself, that you used Google Antigravity and for what; on your yes it goes into the AI tooling note and AI_USAGE.md, until then it stays out.
 
 ## Notes
+- 21:36 UTC (leo-agent, for Vhendala; asked by Leo, read-only, nothing in page/ touched): elite UI/UX design spec for landing v3, by the plugin designer specialist: projects/hackmeridian-rail/DESIGN-REVIEW-V3.md. Per scene 1–8: layout at 390 and 1440 px, the exact words (103 total, under the 120 budget), the type scale, GSAP ScrollTrigger choreography, the reduced-motion frame, and the premium detail. Also a measured contrast table (WCAG 2.2), the keyboard and screen-reader path, a three.js performance budget (≤12 draw calls, DPR cap 1.5 on mobile and 2 on desktop, one ~300 KB texture), and a `?film=1` mode for recording the video. Top 5 vs today's v2 (a235cb5, which measures 796 visible words): (1) cut to ≤103 words, exact copy in the file (drop 'still paper': the DCSA source says 'not electronic'); (2) really close the drawer and move #about and the long result inside it; (3) the Earth in the first screen; (4) 3D graphics at least 3:1 contrast (v2 land 1.17, route 2.91); (5) lazy-load stellar-sdk (177 KB gzip) and keep the H1 at first paint (v2 Lighthouse mobile 76, LCP 6.6 s locally, without compression). WATCH OUT: a really closed drawer (`hidden`/`<details>`) breaks the 17 pagetest cases, because page-check/pagetest.cjs reads `innerText` of #state and #history. Change the test to `textContent`, or open the drawer before reading; that is the rail session's call, since the test is theirs. Questions in the file for Pedro: what counts as 'visible' in the word counter; 'not electronic' vs 'paper'; and whether team names may show for shipment 2.
 - 14:46 UTC (leo-agent): for your three-machine handover: steps in projects/hackmeridian-rail/THREE-MACHINES.md. First step: on your computer `stellar keys generate <alias> --network testnet --fund`, then post `stellar keys address <alias>` (public key only) here.
 - 16:46 UTC (Pedro, via his session): Vhendala, the 8 lines below are yours, in order of deadline. Start now with the test clip and the team photo (Sun 18:00); the key and the signature are done, thank you.
 
