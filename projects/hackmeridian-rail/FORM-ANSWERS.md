@@ -66,7 +66,7 @@ Testnet only, test keys, no audit. Everything on testnet runs with test accounts
 
 ### Tech stack (from Cargo.toml, package.json and the page, 2026-10-25)
 
-Stellar, Soroban, Rust, soroban-sdk, Stellar CLI, Stellar Asset Contract, Stellar RPC, Horizon, JavaScript, Node.js, @stellar/stellar-sdk, Vercel
+Stellar testnet, Soroban, Rust, soroban-sdk 29.0.1, wasm32v1-none, Cargo, Stellar CLI 28.1.0, Soroban authorization (require_auth), Stellar Asset Contract, Stellar RPC, Horizon, Friendbot, JavaScript, Node.js, npm, @stellar/stellar-sdk 17.3.0, HTML, CSS, Vercel, Radox transfer_agent (prior work)
 
 ### Prior work disclosure (draft 2026-10-25, review-4 pending)
 
