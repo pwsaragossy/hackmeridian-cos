@@ -8,7 +8,7 @@ Plan, sources and limits: SUBMISSION.md "Portal form, field by field". Only Pedr
 | Project title | unseen | 72 | Pedro's text |
 | Tagline | 120 | 25 | Pedro's text |
 | Description | 8000, Markdown | 3098 | draft, review-4 |
-| Problem solved | unseen, keep < 1500 | 589 (draft) | review-4 |
+| Problem solved | unseen, keep < 1500 | 673 (draft) | review-4 |
 | Challenges | unseen, keep < 1500 | 1279 | draft, review-4 |
 | What's next | unseen, keep < 1500 | 810 (draft) | review-4 |
 | Repository link | HTTPS, public | https://github.com/pwsaragossy/rio-miami-rail | public after Leo's scrub and Pedro's OK |
@@ -78,7 +78,7 @@ Tools: Claude Code (Anthropic's coding agent) mainly with Claude Opus 5.5 (`clau
 
 ### Problem solved (draft 2026-10-25, review-4 pending)
 
-Goods in transit change hands on paper: about 45 million ocean bills of lading a year, only about 11% electronic in 2025 (DCSA), and 22% of cargo thefts involve insiders (TT Club & BSI, 2026). In our working assumption, a container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it. No customer has confirmed it yet.
+About 45 million ocean bills of lading are issued a year, and DCSA reports only about 11% were electronic in 2025; TT Club & BSI report that insiders were involved in 22% of global cargo thefts in 2025 (report published April 2026). These are market figures, not our traction. In our working assumption, a container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it. No customer has confirmed it yet.
 
 ### Technical, fragment for the three-machine proof (draft 2026-10-25, review-4 pending)
 
