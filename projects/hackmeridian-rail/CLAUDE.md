@@ -47,6 +47,7 @@ A conversation opened here handles **one thing only**: the HackMeridian 2026 sub
 - **On close:** run the `handoff` skill. STATE.md is a snapshot of now; the diary lives in git.
 
 ## Project rules (from the owner)
+- Until submission, after every card line from Leo's agent, the page session or this session, check whether a TRACK.md item has closed and close it at once with its proof file through the normal track flow (skeleton when the page shows the first real testnet handover, then re-run secrets). Reason: the map stood at 6/22 while the work was ahead, because no session turned card progress into track marks (central, 2026-10-25).
 - Code lives in `github.com/pwsaragossy/rio-miami-rail` (private until submission; the rules require it public). Only this project's code goes there. The Radox backend (`radox-internal`) never becomes public; it is prior work, disclosed and linked, not published.
 - Prior work to disclose: the Radox platform and its three Soroban contracts on mainnet, public since 2026-08-19 at `github.com/pwsaragossy/radox` (contracts only).
 - Stellar facts (SDK, Soroban, SEPs, anchors) are looked up live, never answered from memory.
