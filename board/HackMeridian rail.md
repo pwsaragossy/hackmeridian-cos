@@ -1,14 +1,14 @@
 ---
 tags:
   - board
-status: in-progress
+status: waiting-owner
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
 due: 2026-10-26
 since: 2026-10-24
 updated: 2026-10-25
-asked: 
+asked: 2026-10-25 01:05 +0000
 ---
 
 # HackMeridian rail
@@ -16,11 +16,17 @@ asked:
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
-- (nothing)
+- **Check OK re-record (one click):** `check.py` changed only in its docstring (the `LEO-BRIEF.md` mention removed; it now names only `proofs/lifecycle.json`, what it measures). Logic unchanged. Central re-records the check OK with track.sh.
+- **check.py strength (reopens the check OK if yes):** today 7 copies of any successful testnet hash pass. Add "the 7 hashes are distinct" and "each tx calls our contract"? Recommendation: yes, distinct hashes at least (5 lines, same check). (reviewer finding 7)
+- **Portal copy at check-in (Pedro, ~10 min, Sun 09:00):** log in, copy the rules page, the submission form fields and the "project editing window" dates into `projects/hackmeridian-rail/PORTAL-SEEN.md`. No agent can see them (login). (finding 1)
+- **README "Production path" section** (mainnet plan, audit status, what is testnet-only, SCF Build eligibility): README text only, no new feature; Scale judges "production readiness" and "SCF eligibility". OK to include? Recommendation: yes. (finding 2)
+- **Redeem fallback:** the burn's `transfer_agent` wasm is on testnet today (checked 01:02 UTC); if it is gone at Sun 09:00, the 7th tx needs a fallback (redeploy from the private source = prior work). Decide only if it happens.
 
-## Next (from central, 2026-10-25)
-- session-hackmeridian-rail: redo stage 1 with the specialists skill (researcher: RULES, SUBMISSION; product: CRITERIA, IDEA, KICKOFF/deadline) and an independent reviewer subagent for review-1, before stage 2. Process `knowledge/inbox/raven-custody-research.md` into library notes. Vhendala's human review stays as the final pass. Owner's words: "Refaz também a etapa 1 com especialistas e revisor antes de seguir."
-- If the redo changes the target or the scope, put it back here as a question (status: waiting-owner). Editing files that check.py reaches (it names LEO-BRIEF.md) voids the check OK: make check.py name only what it measures, then central re-records the check OK.
+## Next (2026-10-25, session-hackmeridian-rail)
+- Stage 1 redo done: researcher + product subagents re-checked RULES, SUBMISSION, CRITERIA, IDEA, KICKOFF; reviewer verdict "approve with changes", all fixes applied: `projects/hackmeridian-rail/REVIEW-1.md`. review-1 closed with that evidence. Target and scope unchanged.
+- Main changes: rubric is scored 1–5 (not 1–10); video/deck specs, AI attribution and the prior-work disqualifier are only in Pedro's paste (planned to anyway); Scale needs no thematic track; timeline now has the event programme, a 14:00 checkpoint, mentors from 11:00, the form dry-run; self-score 72/100 ceiling, 64 if the API connection is cut; User value evidence is an assumption (mentor test Sun 11:00).
+- Vhendala: human final pass on REVIEW-1.md and the five files; then stage → 2.
+- Raven research processed into 5 library notes (+3 from the specialists). The inbox file stays until central retires it (same text as `RESEARCH-raven.md`).
 
 ## Decided
 - 2026-10-25: target + check OK recorded with track.sh (frozen with check.py) — owner's words: "acho que pode colocar o burn aí no último, para fechar o ciclo".

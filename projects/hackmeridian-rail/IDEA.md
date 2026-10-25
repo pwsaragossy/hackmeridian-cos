@@ -38,7 +38,9 @@ Ecosystem 4 · User value 3 (assumption, no behavior evidence) · Technical 4 if
 not · Innovation 4 (new on a directory search only) · Progress 4 (clean split, but the burn and token
 admin are prior work) · Market 3 (no pilot customer) · UX 3 with the page, 1 without.
 Weighted with the page and 7 txs: (4·20 + 3·20 + 4·15 + 4·15 + 4·10 + 3·10 + 3·10) / 5 = **72 / 100**
-(3.6 of 5). The cheapest points: User value from one sourced number and one mentor quote; UX
+(3.6 of 5 average; 20/100 is the floor). If the API connection is cut at 18:00: Ecosystem 3,
+Progress 3 → **64 / 100** (3.2 of 5), since Scale scores milestones against the intake that promised
+it. Each score is the author's own, unvalidated; 72 is the ceiling, not the forecast. The cheapest points: User value from one sourced number and one mentor quote; UX
 from the page.
 
 ## Scope — approved by the owner on 2026-10-25 (frozen)

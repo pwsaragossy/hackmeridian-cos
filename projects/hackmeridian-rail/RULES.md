@@ -8,8 +8,9 @@ The portal rules page (app.hackmeridian.com/portal/rules) needs login: not reach
 
 ## Our entry
 - Builder track Scale, "assigned" [PDF p4]. Thematic Stellar Unlocked, saved on the team or submission page;
-  changes follow "the project editing window" [PDF p4]. The PDF says Genesis and Scale "can also enter" a
-  thematic track [PDF p2]; the home page is said to say Scale does not pick one [WEB home] — conflict, see Open items.
+  changes follow "the project editing window" [PDF p4]. Scale needs no thematic track: "Thematic tracks do not
+  apply to Scale projects" [WEB /build and home, read directly by the reviewer 2026-10-25]; the PDF says Scale "can
+  also enter" one [PDF p2]. Optional and unscored for Scale: do not design for it.
 - Team: Pedro (captain), Leo, Vhendala = 3. Limit: up to 5 people [WEB /faq]. Event: Warehouse ONE16, Lisbon [WEB /build].
 - Hacking: Sun 25 Oct 09:00 → Mon 26 Oct 12:00, "No late submissions" [WEB /build, /schedule]. **All times are Lisbon local time** [WEB /schedule]
   (no UTC stated). Lisbon is UTC+0 from 25 Oct 01:00 UTC [[lisbon-is-utc-0-for-the-9963]], so deadline = 12:00 UTC.
@@ -45,5 +46,5 @@ The portal rules page (app.hackmeridian.com/portal/rules) needs login: not reach
 
 ## Open items (not verified)
 - Does a Scale entry need a public repo for the platform that existed before? Not answered in any source read; PDF only says repo with "the project source code" and prior work disclosed. Plan stays: public repo with new work, prior work linked and disclosed. Ask an organizer at check-in.
-- Track conflict (Scale picks a thematic track: PDF yes, home page no). PDF is the portal's own text; check the portal team page that Stellar Unlocked is saved.
+- The PDF ends "Read the event rules for participation, submission integrity and conduct requirements": unseen rules exist. Pedro copies them at check-in into `PORTAL-SEEN.md` (KICKOFF §5).
 - Portal rules text, KYC, exact disqualifier list, video and deck specs: see SUBMISSION.md.

@@ -20,7 +20,7 @@ Gate: rules, criteria, submission requirements and deadline are written down, an
 - [x] submission-reqs | Submission package requirements listed: form fields, video length, repo, deck, links, file formats, platform | card: researcher | needs: rules | evidence: SUBMISSION.md
 - [x] deadline | Deadline written as `deadline: YYYY-MM-DD HH:MM` in this file's front matter, in local time, or with the offset when teammates are in other time zones (`2026-10-25 18:00 -0300`); the panel counts down to it, and a backward timeline with at least 2 hours of buffer before it (default, adjust to the case) | card: product | needs: submission-reqs | evidence: KICKOFF.md
 - [x] idea | One-sentence idea, user and problem, scored against the criteria | card: product | needs: criteria | evidence: IDEA.md
-- [ ] review-1 | Independent review of stage 1: verdict and fixes | card: reviewer | needs: rules, criteria, submission-reqs, deadline, idea | evidence:
+- [x] review-1 | Independent review of stage 1: verdict and fixes | card: reviewer | needs: rules, criteria, submission-reqs, deadline, idea | evidence: REVIEW-1.md
 ## Stage 2: Scope and build
 Gate: scope is frozen, the thinnest end-to-end path runs, and nothing in the build breaks the rules.
 - [ ] scope | Scope freeze: at most 3 must-have features for the demo, everything else listed as cut, time-boxed with a clock time | card: product | needs: idea, deadline | owner: ok | evidence:

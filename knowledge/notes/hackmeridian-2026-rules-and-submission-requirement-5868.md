@@ -22,6 +22,6 @@ Portal tracks PDF (24 Oct): Scale needs an existing Stellar project, scoped new 
 
 Not on any public page and not in the PDF: video 2 to 4 minutes on YouTube or Vimeo, deck up to 20 MiB in PDF/PPTX/PPT/HTML, mandatory AI attribution, disqualification for undisclosed prior work. These came from a paste of the portal rules that is not on disk, so they stay unverified. The portal rules page needs login and was not opened.
 
-Open: the home page says Scale projects do not pick a track, the PDF says Scale can enter a thematic track. Whether a Scale repo may hold only new work with the platform closed is not answered anywhere found.
+Thematic track for Scale, settled by the reviewer reading /build directly: "Thematic tracks do not apply to Scale projects", while the PDF says Scale "can also enter" one, so it is optional and unscored for Scale. Open: whether a Scale repo may hold only new work with the platform closed is not answered anywhere found.
 
 Compared: [[hackmeridian-rubric-7-criteria-weights-scored-50e2]] coexists (rubric only while this note covers rules and submission) ; [[no-sep-and-no-stellar-project-aa39]] coexists (Stellar standards research, other topic) ; [[soroban-versions-on-2026-10-25-9619]] coexists (tool versions, other topic) ; [[brl-and-usd-ramps-on-stellar-1e41]] coexists (ramps research, other topic)

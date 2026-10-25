@@ -1,7 +1,7 @@
 ---
-status: in-progress
-updated: 2026-10-24
-next: Sun 09:00 — review-1 by Vhendala (reviewer card) on RULES, SUBMISSION, CRITERIA, IDEA, KICKOFF; owner approves the check in central; Leo starts LEO-BRIEF.md
+status: waiting-owner
+updated: 2026-10-25
+next: Sun 09:00 — Pedro copies the portal rules + submission form fields + editing-window dates into PORTAL-SEEN.md; central re-records the check OK (check.py changed); Vhendala's human pass on REVIEW-1.md; Leo starts LEO-BRIEF.md
 dispatch: off
 member: pedro
 ---
@@ -14,34 +14,45 @@ What looks wrong: section 3 still says the full rules are "not read yet", but RU
 Fact checked on disk: `deadline: 2026-10-26 10:00 +0000` is in TRACK.md front matter (matches KICKOFF.md); `RESEARCH-raven.md` and `knowledge/inbox/raven-custody-research.md` are the same research.
 
 ## 1. State in one line
-green. Project opened on 2026-10-24, hacking starts Sun 25 Oct 09:00 Lisbon; nothing built yet.
+green. Stage 1 redone with specialists and an independent reviewer (approve with changes, fixes applied, REVIEW-1.md); all stage-1 items closed; nothing built yet. Waiting on the owner for the check OK re-record and the questions on the card.
 
 ## 2. Intent (what counts as "done")
 - What the owner wants, in their words (Scale intake, sent before the event): "a chain-of-custody contract for a tokenized physical asset in transit (Rio-Miami). Each handover between custodians (warehouse, port, carrier, customs) is signed by both the outgoing and incoming custodian with an event attestation; ownership stays with the token holder and final delivery burns the token. Proven end to end on testnet with signed transactions and connected to our API."
 - Also wanted at the event: Stellar engineers review the design; meet anchors/ramps for the USD leg and logistics / trade-finance partners; improve the pitch.
-- Kind: real project. Track: hackathon (builder track Scale, thematic Stellar Unlocked).
+- Kind: real project. Track: hackathon (builder track Scale; no thematic track needed for Scale, RULES.md).
 - Investment: the weekend (Sun 25 09:00 to Mon 26 10:00 Lisbon), team Pedro + Leo (+ Vhendala); money: zero (testnet only).
-- "Done" for the current stage: stage 1 of TRACK.md closed.
+- "Done" for the current stage: stage 1 of TRACK.md closed (done 2026-10-25); stage moves to 2 after Vhendala's human pass.
 - Stop criterion (owner, 2026-10-25): if by Sun 25 18:00 Lisbon no handover signed by two custodians has run on testnet, cut the API connection and deliver contract + harness + recorded demo only.
 
 ## 3. What is true now
-- Deadline: owner said 10:00 on 26/10; hackmeridian.com says hacking ends Mon 12:00, no late submissions. 10:00 kept as 2 h buffer. Lisbon is UTC+0 on 26/10 (summer time ends 25/10).
-- Requirement for every project (portal PDF, 24/10): public GitHub repo with the project source; README with summary, problem, setup, env vars, demo; architecture overview with contract IDs; live demo or video, public URL for user-facing apps; evidence of an onchain testnet tx; disclose prior work.
-- Scale is judged on: milestone completion against the intake goals, SCF eligibility, production readiness, ecosystem impact (hackmeridian.com). Async judging of video, deck, repo, answers; finalists pitch Wed 28.
-- Full event rules are behind the portal login (app.hackmeridian.com/portal/rules); not read yet.
+- Deadline: ours Mon 10:00, the event's Mon 12:00 "no late submissions"; submit at 08:00. Lisbon is UTC+0 for the whole event (summer time ended Sun 25 Oct 01:00 UTC).
+- Rubric: 7 criteria scored 1–5, weights 20/20/15/15/10/10/10 (hackmeridian.com/build, read directly). Self-score 72/100 ceiling, 64 if the API connection is cut (IDEA.md).
+- Requirements verified in the portal PDF and public pages: RULES.md, SUBMISSION.md. Video 2–4 min YouTube/Vimeo, deck ≤20 MiB, mandatory AI attribution and the prior-work disqualifier come only from Pedro's paste of the portal rules (in the central session transcript); planned to anyway.
+- Portal rules page and submission form need login: not seen by any agent.
+- The burn's `transfer_agent` wasm (`3870748b…`) is on testnet with `fn redeem` (checked 2026-10-25 01:02 UTC).
+- check.py no longer names any document (only the proof file it reads); its OK must be re-recorded by central.
+- Library: 8 notes from this project (Raven research processed, rubric, rules, time zone).
 - Repos: `pwsaragossy/rio-miami-rail` (private, empty, created 24/10); team board `pwsaragossy/hackmeridian-cos`. leo-schlanger invited with write to both on 24/10.
 - `radox-internal` branch `hackmeridian` exists (from main), only for a backend change the API connection may need; never public.
 
 ## 4. What was done and how
 - Workspace created with `setup.sh create ~/hackmeridian --share <hackmeridian-cos> --member pedro`.
+- Stage 1 redo: researcher and product subagents with role cards rewrote the five files; reviewer subagent attacked them; fixes applied (REVIEW-1.md lists each).
 
 ## 5. Next actions
-1. **session-hackmeridian-rail (researcher):** read the full rules in the portal once the owner is logged in; close `rules` and `submission-reqs` in TRACK.md.
-2. **session-hackmeridian-rail (product):** criteria with weights, idea scored, target + check proposed on the card.
+1. **Pedro (via central), Sun 09:00:** portal rules + form fields + editing window into `PORTAL-SEEN.md`; organizer question on the closed-platform repo.
+2. **central:** re-record the check OK (check.py changed); ask the card's waiting-owner questions.
+3. **Vhendala:** human pass on REVIEW-1.md and the five files; then stage → 2.
+4. **Leo:** Sun 09:00 re-run the wasm check (KICKOFF §8), then LEO-BRIEF.md.
 
 ## 6. If X, then Y
 - If something needs the owner, it becomes a line on the card with `status: waiting-owner`. Do not ask.
 - If the rules forbid code written before the event, list exactly what reused code comes from the public radox repo.
+- If the portal rules contradict RULES.md or SUBMISSION.md, the portal wins: fix the files the same hour.
 
 ## 7. What I did not verify
 - Whether the organizers accept a Scale repo that holds only the new work, with the platform backend closed. Ask an organizer at check-in.
+- Portal rules, submission form and its editing window (login).
+- Any evidence that a financier or buyer has the custody-visibility pain (IDEA.md: assumption; mentor test planned).
+- SCF Build eligibility criteria themselves.
+- PITCH.md slide 2 still has `[[fill]]` for the cost of today's alternative.

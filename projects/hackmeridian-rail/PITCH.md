@@ -9,7 +9,7 @@ So the deck keeps the template's look and order and adds 4 slides. Max 10 (track
 
 Judging is async (video, deck, repo, answers); live pitch only for finalists, Wed 28 Oct.
 Rubric (CRITERIA.md): Ecosystem Alignment 20 · User Value & Problem 20 · Technical Execution 15 ·
-Innovation 15 · Hackathon Progress 10 · Market & Ecosystem 10 · Product Design & UX 10 (each 1–10).
+Innovation 15 · Hackathon Progress 10 · Market & Ecosystem 10 · Product Design & UX 10 (each scored 1–5).
 Deliverables (SUBMISSION.md): deck as **PDF ≤ 20 MiB** (export from Google Slides); demo video
 **2–4 min on YouTube or Vimeo**; the deck and the README both state where AI generated code or assets.
 
@@ -23,10 +23,10 @@ comes from a source in this folder or the proofs; `[[fill]]` marks what only the
 
 | # | Template slot | Title | Message (one per slide) | Proof on the slide |
 |---|---|---|---|---|
-| 1 | Cover | Radox — the custody rail for real-world goods in transit | Rio → Miami, on Stellar | team, track (Scale · Stellar Unlocked) |
+| 1 | Cover | Radox — the custody rail for real-world goods in transit | Rio → Miami, on Stellar | team, track (Scale) |
 | 2 | PMF (problem) | Who holds the cargo right now? | Between seller and buyer a shipment changes hands 4+ times (warehouse, port, carrier, customs); each handover is paper, and nobody can prove the chain to a financier in real time | `[[fill: one sourced number on trade-finance gap or document delays]]` |
 | 3 | Solution | Every handover, signed by both hands | `custody_registry`: outgoing and incoming custodian sign the same transaction; ownership stays with the token holder; delivery unlocks the burn | screenshot of one dual-signed handover on stellar.expert |
-| 4 | Technical workflow | How it runs on Stellar | open → 4 dual-signed handovers → deliver → burn (existing `redeem`, run live in the same harness); `head` hash chain survives the 7-day event window; passkey smart accounts for custodians | diagram + contract ID + 7 tx hashes `[[fill: proofs/lifecycle.json]]` |
+| 4 | Technical workflow | How it runs on Stellar | open → 4 dual-signed handovers → deliver → burn (existing `redeem`, run live in the same harness); `head` hash chain survives the 7-day event window | diagram + contract ID + 7 tx hashes `[[fill: proofs/lifecycle.json]]` |
 | 5 | (added) What we built this weekend | Prior work vs HackMeridian | table: existed (3 mainnet contracts, transfer_agent on testnet, phygital whole-asset flow) / built here (custody_registry, harness, verify-head, API connection) | commit timeline after Sun 09:00; one line on AI usage (built with Claude Code agents, human-reviewed) |
 | 6 | (added) Users and value | Who uses it | exporter, custodians (warehouse/port/carrier/customs), buyer, financier; value: a financier can see where the goods are and who signed for them before paying | — |
 | 7 | (added) Business model and go-to-market | The rail is ours, the standard is public | SWIFT model: public record format, roles and events; Radox operates the rail and the API; first corridor Rio → Miami; pilot with one producer | `[[fill: pricing line only if Pedro confirms]]` |
@@ -40,13 +40,13 @@ comes from a source in this folder or the proofs; `[[fill]]` marks what only the
    tab on each hash.
 3. 1:30–2:00 `verify-head` recomputing the chain from events (exit 0).
 4. 2:00–2:30 the burn (`redeem`) closing the cycle, holder balance 0.
-5. 2:30–3:00 the public shipment page (if built) and, if done, the Radox API reading the registry.
+5. 2:30–3:00 the public shipment page (must-have) and, if done, the Radox API reading the registry.
 Rules: 2–4 min, YouTube or Vimeo — target 3:00.
 
 ## Script notes for the SDF judges
 
 - "Stellar Unlocked": we use core features together — multi-party `require_auth` in one invocation,
-  SAC admin control (freeze/clawback) for title, passkey smart accounts, and events with an on-chain hash
+  SAC admin control (freeze/clawback) for title, and events with an on-chain hash
   chain. Nobody in the ecosystem indexes we checked does dual-signed custody (RESEARCH-raven.md §5).
 - Ask the mentors: which ramp delivers USD to a C-address (SEP-45 draft).
 
