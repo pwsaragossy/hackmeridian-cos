@@ -16,7 +16,6 @@ asked: 2026-10-25 02:59 +0000
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
-- Pedro, look of "Radox Custody Rail" (page + deck): use Radox's own identity "Signal" (radox-internal DESIGN.md), adapted for the projector? Effect: "sóbrio, tipo terminal de porto: grafite com uma só linha lime marcando o corredor Rio-Miami, legível do fundo da sala." Page and dark deck slides: background #0E0F11, card #131517, text #E7E8EA (15.6:1), secondary text #A3A8B0 (8.0:1, raised from #8A8F98 for the projector), accent lime #C6F24E with dark text (14.8:1), passive status #9FB2CC (8.9:1). Deck text slides keep the template's cream #F7F6F2: text #0E0F11 (17.7:1), secondary #4D5560 (7.0:1), dark lime #556F00 for text accents (5.3:1). Page in Inter; deck keeps the template fonts. Minimum sizes: deck body 24 pt, page body 18 px. Only one direction, because Radox already has a palette and the template accepts it (designer, contrast recomputed by the session). Recommended: yes ([[radox-custody-rail-look-signal-adapted-d030]]).
 - Pedro, by Sun 18:00 Lisbon (15:00 Rio): send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/ (email-paulo.md, carta-participacao-radox-zis.docx); forward his reply to central, which records his words per point. No OK, no ZIS in public material.
 - Pedro: where did you hear that Joe Chi (Camacol president, per ~/brain-radox, unconfirmed) received the videos well? Did Paulo answer the English v2 after 24/10 21:59?
 - Pedro: which Portuguese Rio–Miami video did you send Paulo on 23/10 06:08? (the other one of the pair is the bioceanic)
@@ -48,6 +47,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 ~12:00 UTC: look of page and deck = Radox "Signal" adapted for the projector ([[radox-custody-rail-look-signal-adapted-d030]]); text slides keep the template cream with the darker accents. Owner: "Usar Signal (Recomendado)".
 - 2026-10-25 11:40 UTC: every pending task, including the submission, is on the panel with who does it (owner: "todas as demandas precisam estar no panel, incluindo de submissão, e quem deve faze-la"). Pedro's on this card, Leo's and Vhendala's on theirs, the sessions' on `Sessions build and submission.md`.
 - 2026-10-25: github.com/pwsaragossy/chief-of-staff is public (scrub clean: 55 commits, only fake test keys; central flipped it on Pedro's "Sim, publica"); licence Apache-2.0 (owner), LICENSE added by the plugin session.
 - 2026-10-25: make github.com/pwsaragossy/chief-of-staff public before submission (owner: "Tornar público"), after a scrub for secrets, personal paths and Radox-internal content; central asks Pedro for the final OK on the visibility change once the scrub is clean.
