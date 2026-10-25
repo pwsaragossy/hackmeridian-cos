@@ -24,10 +24,11 @@ BANNED = [r"\btitle to\b", r"document of title", r"digital bill of lading", r"re
           r"proof of ownership", r"legally recognised", r"\bUCC\b", r"\bMLETR\b", r"\bcustomers\b(?! has)",
           r"\binvestors?\b", r"\btraction\b", r"live pilot", r"\bendorse", r"\bbacked by\b", r"\bpartner(s)?\b",
           r"\bZIS\b", r"\bPaulo\b", r"none exists", r"\bmainnet-ready\b", r"\bsponsor", r"\bour users\b",
-          r"revenue is growing", r"\bintegrated with\b"]
+          r"revenue is growing", r"\bintegrated (with|into)\b", r"partnership", r"\bworking with\b", r"already use",
+          r"\badopted\b", r"\bin talks\b", r"agreed with"]
 # Disclosures the rules and the Claims guard require (REVIEW.md finding 4: without these a stripped deck passed).
 REQUIRED = ["Pedro Wakigawa Saragossy", "Claude Code", "AI_USAGE.md", "AI voice", "PRIOR WORK", "first repo commit",
-            "explainer video", "users or revenue yet", "none agreed yet", "test key", "not built", "24 unit tests"]
+            "explainer video", "users or revenue yet", "none agreed yet", "none confirmed", "The goal is", "test key", "not built", "24 unit tests"]
 TEMPLATE_SMALL = {"107", "108", "109", "122", "84", "85", "99", "100", "101"}  # template's decorative 12-14 pt labels
 
 

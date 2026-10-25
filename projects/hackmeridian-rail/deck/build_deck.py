@@ -277,7 +277,7 @@ for i, (n_, name, desc) in enumerate(rows):
     text(s, 8.6, y + 0.02, 10.4, 1.3, [desc], size=24, color=INK)
 hline(s, 1.0, 7.93, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.12, 18.0, 1.5, [
-    [("Nearest neighbours we found ", {"bold": True}), ("(LumenLoop, SCF, Scout; searched 24–25 Oct 2026): ", {"color": SEC_C}),
+    [("Nearest neighbours we found on Stellar ", {"bold": True}), ("(LumenLoop, SCF, Scout; searched 24–25 Oct 2026): ", {"color": SEC_C}),
      ("Kutana and Trustless Work release escrow on trade milestones; Pipeline finances commodity trade. We found none that records a custody handover signed by two custodians, and no SEP.", {})],
     [("Open source, Apache-2.0: ", {"bold": True, "color": LIME_C}), ("a custody primitive other Stellar real-world-asset issuers can reuse.", {})]],
     size=21, after=6)
@@ -287,7 +287,7 @@ s = content_slide(7, "USERS · BUSINESS MODEL", "Custodians sign. Financiers che
 users = [("CUSTODIANS", "Warehouse, port, carrier, customs: sign each handover."),
          ("EXPORTER · BUYER", "See where the goods are and who holds them."),
          ("FINANCIER", "Checks the custody chain before paying."),
-         ("OPERATOR", "A financial institution, the client, would run the rail for its trade flows.")]
+         ("CLIENT", "A financial institution pays to use the rail for its trade flows.")]
 for i, (k, v) in enumerate(users):
     y = 3.6 + i * 1.5
     hline(s, 1.0, y - 0.14, 9.6, LINE_C, 0.02)
@@ -295,9 +295,9 @@ for i, (k, v) in enumerate(users):
     text(s, 4.3, y - 0.04, 6.3, 1.2, [v], size=24)
 box(s, 11.4, 3.45, 7.6, 5.7, fill=CARD, line=LINE_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, 11.85, 3.75, 6.8, 5.5, [
-    [("MODEL · THE OPERATOR PAYS", {"font": MONO, "size": 18, "bold": True, "color": LIME_C})],
-    [("SWIFT-style: the record format is public; Radox builds the rail and the API.", {"bold": True})],
-    "Revenue: a fee from the financial institution that operates the rail. Not priced yet.",
+    [("MODEL · THE CLIENT PAYS", {"font": MONO, "size": 18, "bold": True, "color": LIME_C})],
+    [("SWIFT-style: the record format is public; Radox operates the rail and the API.", {"bold": True})],
+    "Revenue: a fee from the financial institution that uses the rail. Not priced yet.",
     [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C, "size": 22})]],
     size=26, after=18)
 
@@ -325,13 +325,13 @@ text(s, 1.35, 8.12, 17.3, 1.2, [[("AI attribution  ", {"font": MONO, "bold": Tru
 # ---------- 9. Vision, next steps and ask ----------
 s = content_slide(9, "VISION · NEXT · THE ASK", "Vision: one custody standard, every corridor", "NEXT ▸ THE TEAM")
 text(s, 1.0, 3.4, 18.0, 1.3, [[("Rio–Miami is our pilot corridor. ", {"bold": True}),
-                                ("The goal is an open, SWIFT-like custody standard on Stellar for tokenized goods in transit worldwide, "
+                                ("The goal is a public, SWIFT-like custody standard on Stellar for tokenized goods in transit worldwide, "
                                  "to integrate with the systems of chambers of commerce, ports and airports.", {})]],
      size=26, color=INK)
 phases = [("NOW", "Mechanism proven on testnet. No standard, users or revenue yet."),
           ("NEXT", "One Rio–Miami pilot shipment (none agreed yet). Full test matrix."),
-          ("PLANNED", "SCF Build, then a security audit (neither done). Mainnet; USD leg (not built)."),
-          ("FUTURE", "More corridors, one standard. Port, airport, chamber links (none started).")]
+          ("PLANNED", "SCF Build, then a security audit (neither done). Mainnet."),
+          ("FUTURE", "More corridors; port, airport, chamber links (none confirmed); USD leg (not built).")]
 hline(s, 1.2, 5.3, 13.8, LIME_C, 0.03)
 for i, (k, v) in enumerate(phases):
     x = 1.0 + i * 4.6

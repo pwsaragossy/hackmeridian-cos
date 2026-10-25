@@ -1,14 +1,14 @@
 ---
 tags:
   - board
-status: waiting-owner
+status: in-progress
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
 due: 2026-10-26
 since: 2026-10-24
 updated: 2026-10-25
-asked: 2026-10-25 13:37 +0000
+asked: 
 ---
 
 # HackMeridian rail
@@ -16,9 +16,6 @@ asked: 2026-10-25 13:37 +0000
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
-- Privacy (rail-page-host, 2026-10-25 13:40 UTC): the turn-end sync pushed Pedro's voice sample (18.6 s WAV) and the Voicebox database, plus demo .mp4 clips, to the private repo pwsaragossy/hackmeridian-cos (commits a49ee25 and d7f88cc). The files are now outside the workspace and untracked, but they stay in that repo's history. Removing them needs a history rewrite and a forced push of hackmeridian-cos. Recommendation: rewrite, so the repo does not keep a sample of Pedro's voice. Mechanism: [[the-workspace-turn-end-sync-pushes-7635]].
-- Deploy (rail-page-host): approve the production redeploy of rio-miami-rail be4bcb9 (review-2 fixes) in session rail-page-host; the Vercel connector also needs its team access re-authorized (one click).
-- Voice (rail-page-host via session-hackmeridian-rail, 14:15 UTC): listen to `~/Movies/hackmeridian-rail-video/voice-test-15s.wav` (12.6 s, your cloned voice) and say if it sounds like you; the full narration waits on this, by Sun 20:00.
 ## Tasks
 - Leo's part is closed (Leo, 14:35 UTC): contract, 7/7 lifecycle, verify-head, refusal branches, Challenges (4 final lines, Leo card 12:55; line 4 kept), AI_USAGE.md (Human review cells confirmed by Leo, model header ea60283). Leo has no open task. Only Pedro's side remains on AI_USAGE.md: rows for `scripts/handover-signers.mjs` and `page/stellar-sdk.min.js` before the repo goes public.
 - Report from Leo's side (leo-agent, 14:20 UTC). Done: contract, 7/7 lifecycle (`check.py` re-run now: 7), verify-head, 9 refusal branches, Challenges draft reviewed (Leo card 12:55 line), AI_USAGE model header fixed (rio-miami-rail ea60283: Opus 5.5 for contract/harness/proofs, other rows name their model). Nothing blocks Leo's side; Leo needs nothing to advance. Still open on Leo, tracked on his card: (a) keep/drop Challenges line 4, by Sun 22:00; (b) confirm the 9 "Human review" cells that name him in AI_USAGE.md or they become "not reviewed line by line", by Mon 05:30, before the repo goes public. Needs Pedro: AI_USAGE.md has no row for `scripts/handover-signers.mjs` (5069654) and `page/stellar-sdk.min.js` (vendored, NOTICE names it); add both before the repo goes public. Note: STATE.md §1 still says "open in stage 2" while TRACK is at stage 3; Pedro's session owns that line.
@@ -60,6 +57,9 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 ~14:30 UTC: the cloned-voice test sounds like Pedro; generate the full 3:00 narration once DEMO-SCRIPT.md is final (owner: "Sim, pode gerar").
+- 2026-10-25 ~14:30 UTC: the voice sample and demo clips pushed by the sync to the private team-board repo stay in its history; no history rewrite (owner: "Deixar como está").
+- 2026-10-25 ~14:30 UTC (central): the page redeploy of be4bcb9 is covered by Pedro's standing redeploy OK until Mon 12:00; rail-page-host deploys by the Vercel CLI path it already used, no question to Pedro.
 - 2026-10-25 ~13:50 UTC: the Radox API connection (conditional 4th item) starts now, not at 20:30 (owner: "Adiantar agora"): read-only endpoint on radox-internal branch hackmeridian, dev stack on this Mac, testnet; commit and push on that branch only; no merge, no deploy.
 - 2026-10-25 ~13:35 UTC: the voice clone is made locally with Voicebox (open source), not ElevenLabs; the sample never leaves this machine and costs nothing (owner: "voicebox é opensource"). Disclosure: "narration: AI voice cloned from Pedro's voice with Voicebox"; licences listed in LICENCES.md.
 - 2026-10-25 ~13:20 UTC: the 3:00 video narration is an AI voice cloned from Pedro's own voice (owner: "voz de IA, a partir da minha voz"); replaces the generic Voicebox voice. Video, deck and README say the narration is AI-generated from Pedro's voice. Paid plan or real cost stops for Pedro's OK.
