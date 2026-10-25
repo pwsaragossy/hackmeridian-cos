@@ -49,6 +49,9 @@ green, stage 3 (Demo and pitch), track 15/22 at 2026-10-25 18:2x UTC. Done: both
 
 - 2026-10-25 14:29 UTC (owner): custody_registry stays on testnet; no mainnet deploy before submission ("Não, fica na testnet").
 
+- 2026-10-25 18:26 UTC: no early submission and edit. Every portal field is prepared outside the portal, in FORM-ANSWERS.md, in portal order and as final text only, so Pedro pastes once on Monday. Owner: "vamos preparar tudo por fora, organizado, e depois copiamos."
+- 2026-10-25 18:26 UTC: the repo goes public at 06:00 Mon as planned, not earlier. Owner: "Manter 06:00".
+
 ## 4. What was done and how
 - 2026-10-25 12:15 UTC (leo-agent): Leo's work runs in the session opened with the plugin active (window «hackmeridian-rail (leo)»); the old Leo session no longer writes, so pushes do not cross.
 - 2026-10-25 (central, owner's answers): pushes to both repos and testnet deploys of the shipment page are pre-authorized for the weekend (repo public and submission still need the owner's OK); Vhendala does a manual product review, not code; the Mon 00:00 fresh-run is an independent agent on a clean clone.
