@@ -17,6 +17,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 
 ## Before Sun 09:00
 - Done 08:43 UTC: both GitHub invites accepted.
+- 11:01 UTC check (session-hackmeridian-rail): no sign yet of the workspace setup or the Step 0 spike: no commit by Leo in hackmeridian-cos or rio-miami-rail, GitHub shows 0 clones of either repo today (traffic data can lag), no card line from him.
 - Install the chief-of-staff plugin and join the workspace as member leo (KICKOFF §6 step 2); set git user.email to the GitHub noreply address.
 - Confirm on app.hackmeridian.com: listed in team Radox, profile complete, Lisbon RSVP answered.
 
