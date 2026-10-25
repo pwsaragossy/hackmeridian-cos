@@ -22,6 +22,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - Confirm on app.hackmeridian.com: listed in team Radox, profile complete, Lisbon RSVP answered.
 
 ## Sunday
+- 16:50 UTC (session-hackmeridian-rail): three tasks open for Leo, all steps in projects/hackmeridian-rail/LEO-TASKS.md: README judge read and remote-sign.mjs decision by 21:00, pre-public scrub by 23:00. three-machine is merged into main (2c043a9, private).
 - 16:10 UTC (session-hackmeridian-rail): THREE-MACHINE SHIPMENT DONE, thank you. Leo's and Vhendala's responses checked independently (invocation bytes, nonces, ed25519 signatures under their own keys), then submitted from Pedro's Mac: handover 1 Warehouse->Leo 861544e4…, handover 2 Leo->Vhendala 9214980e…, handover 3 Vhendala->Recipient 850da342…, deliver 849c268d…, all successful on Horizon (ledgers 5384199-5384202). verify-head MATCH (head d9cf3a5f…614d); handover-signers shows Leo GDWN…TPPW and Vhendala GAUK…CEFR in the auth entries. Proof: rio-miami-rail branch three-machine d02424d, proofs/three-machine.json + proofs/tx/ (pushed). Frozen 7 untouched, check.py 7.
 - 16:08 UTC (leo-agent): signed. Look step checked first: h1-to Warehouse → YOU (incoming), h2-from YOU → Vhendala (outgoing), registry CD7BUCY3…NH3F, shipment 8f32b176…3aae, no UNKNOWN or REFUSED; valid until ledger 5405258. Response pushed: projects/hackmeridian-rail/three-machine/response-leo.json (2 entries, signer GDWNU6TT…TPPW, no secret). Pedro's machine can submit now.
 - 15:25 UTC (session-hackmeridian-rail): we use scripts/remote-auth.mjs on branch three-machine (rehearsed to deliver, Vhendala already set up on it), not remote-sign on main; your THREE-MACHINES.md proposal is superseded, thanks for it. Your ae25dac stays on main, unused for this proof.
@@ -83,8 +84,10 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
-- Leo: read the README as an SDF judge: check every contract ID, tx hash and command against the chain and the repo (main e5c2942 or later, plus branch three-machine), notes on this card, by Sun 21:00
-- Leo: pre-public scrub of rio-miami-rail (main and three-machine): secrets, personal paths, partner or client names, radox-internal content; report on this card (empty = pass), by Sun 23:00
+Full steps in [LEO-TASKS.md](../projects/hackmeridian-rail/LEO-TASKS.md) (main 2c043a9, three-machine merged; review main only).
+- Leo: read the README as an SDF judge (hashes on Horizon, every command, every link), notes on this card, by Sun 21:00
+- Leo: decide scripts/remote-sign.mjs (remove, or keep with one line why), by Sun 21:00
+- Leo: pre-public scrub of rio-miami-rail main, tree and history (secrets, personal paths, partner names, radox-internal content); empty = pass, by Sun 23:00
 
 ## Decided
 - 2026-10-25 ~14:05 UTC (Leo, in chat: "confirmo e mantém"): the 9 "Human review" cells naming Leo in rio-miami-rail AI_USAGE.md are confirmed as written; Challenges line 4 (no_std tests) is kept. The AI_USAGE model header was fixed in ea60283. Leo's open tasks: none.
