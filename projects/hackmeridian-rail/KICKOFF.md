@@ -120,7 +120,7 @@ The page is a must-have (frozen scope), so it has its own lines above; if Leo's 
   contract (stellarDocs, authorization page, "authorizing multiple addresses").
 - No Stellar SEP for attestations was found, and no ecosystem project found doing dual-signed
   custody (RESEARCH-raven.md §5) — a directory search, so say "we found none", never "none exists".
-- Claim to drop: PITCH.md slide 4 and the script notes still list "passkey smart accounts"; passkey
-  signing is cut from scope, so the claim would be false. Owner of PITCH.md to remove it.
+- Passkey smart accounts: removed from PITCH.md slide 4 and the script notes on 2026-10-25 (passkey
+  signing is cut from scope, so the claim would be false).
 - Wording: "burn" is prior work (`redeem`); say so on the slide (PITCH.md slide 5 does).
 - Mentor question ready: which ramp covers USD to a C-address (SEP-45 is Draft; candidates in §6).

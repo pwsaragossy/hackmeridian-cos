@@ -1,7 +1,7 @@
 """Target check: the 7 lifecycle transactions are SUCCESS on the public testnet RPC.
 
 Reads proofs/lifecycle.json from github.com/pwsaragossy/rio-miami-rail (main) through `gh`,
-then asks testnet Horizon for each hash. Exit 0 when all 7 steps succeeded; last line = the count.
+then asks testnet Horizon for each hash. Exit 0 when all 7 steps succeeded with 7 distinct hashes; last line = the count.
 Expected file shape: {"lifecycle": [{"step": "open", "hash": "<64 hex>"}, ...]}
 with the steps open, handover x4, deliver, redeem, in that order.
 """
@@ -43,6 +43,8 @@ except Exception as e:  # no file yet, no gh, bad JSON: the target is not met
 
 if [r.get("step") for r in rows] != STEPS:
     done(0, f"steps are {[r.get('step') for r in rows]}, expected {STEPS}")
+if len({r.get("hash") for r in rows}) != len(STEPS):  # one tx copied 7 times must not pass
+    done(0, "the 7 hashes are not distinct")
 
 ok = 0
 for r in rows:
