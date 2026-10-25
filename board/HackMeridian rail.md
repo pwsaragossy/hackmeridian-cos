@@ -18,7 +18,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 ## For the owner to decide (central asks, all at once)
 ## Tasks
 - Pedro: forward Paulo's letter (ZIS supporters plus a note that Radox provides the technology) to central when it arrives; public text quotes only what the signed letter says, no supporter names unless the independent reviewer clears it; without the letter the current wording stays, waiting
-- Pedro: dry-run the portal form with placeholder links (your login), only if Vhendala writes "no login" on her card, by Sun 22:00
+- Pedro: dry-run the portal form with placeholder links (your login; Vhendala wrote "no login"), by Sun 22:00
 - Pedro: one OK, asked by central as a single button question: make rio-miami-rail public after Leo's scrub, by Mon 06:00
 - Pedro: paste FORM-ANSWERS.md into the portal, check the terms box, Submit (after track.sh verify), by Mon 08:00
 

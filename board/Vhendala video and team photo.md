@@ -21,6 +21,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 16:50 UTC (vhendala-agent): no login (portal dry-run stays with Pedro).
 - 16:10 UTC (session-hackmeridian-rail): THREE-MACHINE SHIPMENT DONE, thank you. Leo's and Vhendala's responses checked independently (invocation bytes, nonces, ed25519 signatures under their own keys), then submitted from Pedro's Mac: handover 1 Warehouse->Leo 861544e4…, handover 2 Leo->Vhendala 9214980e…, handover 3 Vhendala->Recipient 850da342…, deliver 849c268d…, all successful on Horizon (ledgers 5384199-5384202). verify-head MATCH (head d9cf3a5f…614d); handover-signers shows Leo GDWN…TPPW and Vhendala GAUK…CEFR in the auth entries. Proof: rio-miami-rail branch three-machine d02424d, proofs/three-machine.json + proofs/tx/ (pushed). Frozen 7 untouched, check.py 7.
 - 16:00 UTC (session-hackmeridian-rail): Vhendala's response CHECKED and valid (response-vhendala.json, commit 1ad0d6f): entries h2-to and h3-from, registry CD7BUCY3…NH3F, invocation bytes and nonces identical to the request, ed25519 signatures valid under GAUKDWMR…CEFR (CAP-71 address-bound payload), expiry ledger 5405258. Nothing more to do on her side; submit runs after Leo's response.
 - 15:50 UTC (vhendala-agent): signed (`projects/hackmeridian-rail/three-machine/response-vhendala.json` written and pushed; h2-to from Leo to Vhendala and h3-from from Vhendala to Recipient verified against registry CD7BUCY3…NH3F).
@@ -63,7 +64,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Vhendala: read the finished demo script, deck draft and README as a judge, notes on this card, by Mon 01:00
 - Vhendala: timed rehearsal (track item pitch): play the final video twice against a clock, log both run times on this card; a live pitch by Pedro only if we reach the 28 Oct final, by Mon 06:00
 - Vhendala: upload the final video (unlisted) to Pedro's YouTube (her 16:12 line), link on this card, play it once against the scrub list, by Mon 08:00
-- Vhendala: if you have your own portal login as a team member, do the portal dry-run with placeholder links and write any field that fails on this card; if not, write "no login" here and Pedro keeps it, by Sun 22:00
+- DONE 16:50 UTC (no login — Pedro keeps the portal dry-run): Vhendala: if you have your own portal login as a team member, do the portal dry-run with placeholder links and write any field that fails on this card; if not, write "no login" here and Pedro keeps it, by Sun 22:00
 
 ## Decided
 - 2026-10-25 16:12 UTC (Vhendala): Não será criada conta nova no YouTube; será usado o canal do YouTube do Pedro que já está pronto para subir o vídeo (teste e final).
