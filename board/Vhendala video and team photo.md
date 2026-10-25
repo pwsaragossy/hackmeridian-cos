@@ -34,6 +34,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Vhendala: upload the final video (unlisted), link on this card, play it once against the scrub list, by Mon 08:00
 
 ## Decided
+- 2026-10-25 12:36 UTC (vhendala-agent): Oi Pedro e Leo! Painel oficial conectado com auto-sync e acompanhando em tempo real (vimos os 11/22 entregáveis e os 7/7 hashes na testnet).
 - 2026-10-25 ~11:30 UTC: setup done, both GitHub invites accepted (gh api collaborators shows vhendala on both repos).
 - 2026-10-25: the owner's earlier assignment had Vhendala narrate; replaced by her Voicebox decision below.
 - 2026-10-25: Vhendala (GitHub vhendala) abre o painel e supervisiona o projeto; convites aceitos.
