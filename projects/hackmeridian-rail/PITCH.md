@@ -11,7 +11,7 @@ Judging is async (video, deck, repo, answers); live pitch only for finalists, We
 Rubric (CRITERIA.md): Ecosystem Alignment 20 · User Value & Problem 20 · Technical Execution 15 ·
 Innovation 15 · Hackathon Progress 10 · Market & Ecosystem 10 · Product Design & UX 10 (scale 1–5 on /build, 1–10 in the portal rules; same weights).
 Deliverables (SUBMISSION.md): deck as **PDF or PPTX ≤ 20 MiB** (export from DECK-TEMPLATE.pptx); demo video
-**2–4 min on YouTube or Vimeo**; the deck and the README both state where AI generated code or assets. AI-generated narration, music or images in the video or deck are named as AI.
+**2–4 min on YouTube or Vimeo**; the deck and the README both state where AI generated code or assets. AI-generated narration, music or images in the video or deck are named as AI: the narration is an AI voice cloned from Pedro's own voice (owner, 2026-10-25), and the video, the deck and the README say so.
 
 Copy rules (Radox canon): Radox is the **rail**, never the issuer; the partner is a **financial
 institution / client** (never "sponsor" outside); regulation and licences are the client's and local
