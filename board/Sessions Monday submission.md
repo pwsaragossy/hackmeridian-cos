@@ -18,6 +18,7 @@ What the agent sessions deliver on Monday, through the submission (Sunday's line
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- central: before the repo goes public (Mon 06:00), delete remote branch globe, or confirm it has been rebased on main with no internal name in the tree. It was pushed 20:49 UTC as Leo's base and carries the pre-scrub app.js comment. Mon 05:45
 - central: Claude model IDs of Pedro's sessions (read from each session's metadata) to the rail session for the AI tooling field, Mon 05:30
 - rail session: AI disclosure "narration: AI voice cloned from Pedro's voice with Voicebox" in the video credit, the deck and the README, Mon 06:00
 - rail-page-host: generate the 3:00 narration in Pedro's cloned voice (Voicebox) from the final DEMO-SCRIPT.md, lay it over the screen recording, offline copy kept, Mon 00:00–03:00
