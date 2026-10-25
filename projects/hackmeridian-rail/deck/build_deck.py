@@ -199,7 +199,7 @@ for i, name in enumerate(stops):
     text(s, cx - 1.2, ly + 0.32, 2.4, 0.5, [name], size=22, bold=True, align=PP_ALIGN.CENTER)
 text(s, 1.0, 6.2, 11.2, 1.0, ["Handovers are mostly paper, or sit inside each operator's own system: rarely one shared record across borders."], size=26, color=SEC_C)
 text(s, 1.0, 7.3, 11.2, 1.4, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
-                                ("a financier cannot see who holds the goods before paying. Mentors we spoke with at the event saw the need; no customer has confirmed it yet.", {})]],
+                                ("a financier cannot see who holds the goods before paying. Mentors were supportive; informal feedback, no customer has confirmed the need yet.", {})]],
      size=24, color=INK)
 text(s, 13.2, 3.55, 5.8, 1.1, ["US$2.5T"], size=64, font=TITLE, bold=True, color=INK, spacing=0.95)
 text(s, 13.2, 4.6, 5.8, 2.6, ["Global trade finance gap.",

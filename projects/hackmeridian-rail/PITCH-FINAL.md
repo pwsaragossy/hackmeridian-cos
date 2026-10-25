@@ -39,7 +39,7 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 - On-slide : A shipment changes hands several times: warehouse, port, carrier, customs. Handovers are mostly paper or sit in one operator's system. Our hypothesis: a financier cannot easily see who holds it.
 - Proof element: small footnote line: "Context only: global trade finance gap US$2.5T (ADB Global Trade Finance Gap Survey, Dec 2025). Sizes the financing gap; not evidence of the custody pain." Source note [[adb-trade-finance-gap-survey-dec-d033]] (second-hand page read; re-open the ADB page before export).
 - Source decision: no source for "4+ times" or for paper/closed-system handovers exists in the folder or library, so the SUBMISSION.md fallback is used ("several times", not "4+"), and the paper/closed-system line is framed as a hypothesis, not a fact.
-- Speaker notes : No customers yet, and no financier has told us this pain is real. It is a hypothesis: mentors we spoke with at the event saw the need; no customer has confirmed it yet. Today each handover is recorded on paper or inside one operator's own system. This build records each handover in one public place. The US$2.5 trillion figure sizes trade finance generally. It does not prove this problem.
+- Speaker notes : No customers yet, and no financier has told us this pain is real. It is a hypothesis: mentors we spoke with at the event were supportive of the idea; this is informal feedback, and no customer has confirmed the need yet. Today each handover is recorded on paper or inside one operator's own system. This build records each handover in one public place. The US$2.5 trillion figure sizes trade finance generally. It does not prove this problem.
 
 ### 4. Technical workflow: How it runs on Stellar (dark)
 - Title: How it runs on Stellar
@@ -91,7 +91,7 @@ Rehearsal: not yet; timed reads by Pedro needed twice.
 
 Words (368, counted):
 
-A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. Today those handovers sit on paper, or inside one operator's own system. Our hypothesis is that a financier cannot easily see who holds the goods. We have no customers yet, and no financier has told us otherwise. Mentors we spoke with at the event saw the need; no customer has confirmed it yet.
+A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. Today those handovers sit on paper, or inside one operator's own system. Our hypothesis is that a financier cannot easily see who holds the goods. We have no customers yet, and no financier has told us otherwise. Mentors we spoke with at the event were supportive of the idea; this is informal feedback, and no customer has confirmed the need yet.
 
 So we built a public record of the chain on Stellar. It is called Radox Custody Rail. Its contract, custody registry, has one rule: every handover needs both signatures, the custodian handing over and the custodian receiving, in the same transaction. If either one is missing, the call fails.
 
@@ -122,7 +122,7 @@ Count: 27 claims (numbers and factual assertions on slides). Sources are files i
 | 9 | 3 | "Several times" (fallback, not "4+") | SUBMISSION.md Problem solved row |
 | 10 | 3 | Paper / one operator's system, stated as hypothesis; no source | IDEA.md (assumption); wording note rule 10. No evidence: framed as hypothesis |
 | 11 | 3 | US$2.5T global trade finance gap, context only | [[adb-trade-finance-gap-survey-dec-d033]] (ADB, Dec 2025, second-hand; re-open before export) |
-| 12 | 3, spoken | No customers yet; mentors we spoke with at the event saw the need (owner, 2026-10-25; no names, no quotes) | CRITERIA.md (evidence is an assumption); STATE.md line 74; claims note, Problem evidence row |
+| 12 | 3, spoken | No customers yet; mentors were supportive, informal feedback (central, 2026-10-25; no names, no quotes) | CRITERIA.md (evidence is an assumption); STATE.md line 74; claims note, Problem evidence row |
 | 13 | 4 | 7 successful testnet transactions | proofs/lifecycle.json; VERIFY-LEO.md b (Horizon `successful` true for all 7) |
 | 14 | 4 | Contract ID CCBJVXMJ…H4LII | proofs/lifecycle.json; VERIFY-LEO.md a |
 | 15 | 4 | Seven hashes listed | proofs/lifecycle.json lifecycle |
