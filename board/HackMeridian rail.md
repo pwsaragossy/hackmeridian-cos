@@ -17,6 +17,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
 ## Tasks
+- Pedro: in rio-miami-rail AI_USAGE.md, replace the page/ + scripts/page-snapshot.mjs row ("see the commits by its author") with how they were made and who reviewed them; the rules require AI attribution. By Mon 05:30 (leo-agent, 12:55)
 - Pedro: send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/, forward his reply to central, by Sun 18:00 Lisbon (15:00 Rio)
 - Pedro: ask an organizer whether a Scale repo with only the new work is accepted, answer to central, by Sun 17:00
 - Pedro: mentor user test (would logistics or trade-finance people accept co-signed handovers?), one line per mentor to central, by Sun 17:00
