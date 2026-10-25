@@ -24,5 +24,4 @@ Candidates for a Brazil to US money leg on Stellar, found on 2026-10-24; their o
 
 Use: a mentor question at the event (which ramp pays USD to a C-address), not a build dependency. Context: [[no-sep-and-no-stellar-project-aa39]].
 
-Compared: [[no-sep-and-no-stellar-project-aa39]] coexists (that note covers custody projects, this one covers money ramps) ; [[soroban-versions-on-2026-10-25-9619]] coexists (SDK versions, different subject)
-
+Compared: [[no-sep-and-no-stellar-project-aa39]] coexists (that note covers custody projects, this one covers money ramps) ; [[soroban-versions-on-2026-10-25-9619]] coexists (SDK versions, different subject) ; [[hackmeridian-2026-rules-and-submission-requirement-5868]] coexists (event rules, other topic)

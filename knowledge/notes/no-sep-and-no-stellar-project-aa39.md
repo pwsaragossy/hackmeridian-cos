@@ -22,5 +22,4 @@ Nearest neighbours, by semantic similarity only (not equivalence): AgTrail (food
 
 This is "not found in LumenLoop, SCF and Scout", not "does not exist": projects outside those directories, and private pilots, were not searched. Pipeline and Trustless Work are the closest substitutes a judge may name; the difference to state is custody of the physical object with two signers per step, not payment or financing. Ramps for the money leg: [[brl-and-usd-ramps-on-stellar-1e41]].
 
-Compared: [[soroban-versions-on-2026-10-25-9619]] coexists (different subject: SDK versions, not the ecosystem)
-
+Compared: [[soroban-versions-on-2026-10-25-9619]] coexists (different subject: SDK versions, not the ecosystem) ; [[hackmeridian-2026-rules-and-submission-requirement-5868]] coexists (event rules, other topic)
