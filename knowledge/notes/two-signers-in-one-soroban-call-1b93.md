@@ -27,5 +27,5 @@ G-accounts and C-addresses (smart accounts with `__check_auth`, for example pass
 
 Step 4 is my inference from the pattern, not a quoted passage: both signers must sign entries for the same arguments, so the payload has to travel between them. Versions in [[soroban-versions-on-2026-10-25-9619]].
 
-Compared: none similar
+Compared: [[swift-fee-structure-on-swift-com-9ed6]] coexists (different subject, no overlap in what it states)
 
