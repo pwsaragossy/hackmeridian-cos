@@ -11,7 +11,7 @@ Judging is async (video, deck, repo, answers); live pitch only for finalists, We
 Rubric (CRITERIA.md): Ecosystem Alignment 20 · User Value & Problem 20 · Technical Execution 15 ·
 Innovation 15 · Hackathon Progress 10 · Market & Ecosystem 10 · Product Design & UX 10 (scale 1–5 on /build, 1–10 in the portal rules; same weights).
 Deliverables (SUBMISSION.md): deck as **PDF or PPTX ≤ 20 MiB** (export from DECK-TEMPLATE.pptx); demo video
-**2–4 min on YouTube or Vimeo**; the deck and the README both state where AI generated code or assets.
+**2–4 min on YouTube or Vimeo**; the deck and the README both state where AI generated code or assets. AI-generated narration, music or images in the video or deck are named as AI.
 
 Copy rules (Radox canon): Radox is the **rail**, never the issuer; the partner is a **financial
 institution / client** (never "sponsor" outside); regulation and licences are the client's and local
@@ -33,7 +33,7 @@ Claims guard (reviewed 2026-10-25). Say: 'Radox: 3 Soroban contracts deployed on
 | 6 | (added) Users and value | Who uses it | exporter, custodians (warehouse/port/carrier/customs), buyer, financier; value: a financier can see where the goods are and who signed for them before paying | — |
 | 7 | (added) Business model and go-to-market | The rail is ours, the standard is public | SWIFT model: public record format, roles and events; Radox operates the rail and the API; first corridor Rio → Miami; next step: a first pilot shipment with one producer (none agreed yet); revenue: fee paid by the institution that operates the rail; not priced yet | {{fill: pricing line only if Pedro confirms}} |
 | 8 | (added) Market and next steps | From one corridor to a standard | USD leg (future): an on-ramp from the SCF Integration List; planned: this contract is the proposed first milestone of an SCF Build application (not yet submitted); then the full testnet matrix, then mainnet | link to the mentor question on ramps |
-| 9 | Team | Why us | Pedro Saragossy, founder and team captain; Leo Schlanger, developer; Vhendala, QA and review. Leo and Vhendala joined for the hackathon. Radox: 3 Soroban contracts deployed on Stellar mainnet | photos only with each person's consent; max 3 lines per member |
+| 9 | Team | Why us | Pedro Saragossy, founder and team captain; Leo Schlanger, developer; Vhendala, product review. Leo and Vhendala joined for the hackathon. Radox: 3 Soroban contracts deployed on Stellar mainnet | photos only with each person's consent; max 3 lines per member |
 
 ## Demo video (backup and async judging)
 
@@ -49,7 +49,7 @@ Rules: 2–4 min, YouTube or Vimeo — target 3:00.
 
 - We use Stellar's core features together: multi-party `require_auth` in one invocation,
   SAC admin control (freeze/clawback) for the token, and events with an on-chain hash
-  chain. Nobody in the ecosystem indexes we checked does dual-signed custody (RESEARCH-raven.md §5).
+  chain. We found no dual-signed custody in the directories searched on 2026-10-25 (RESEARCH-raven.md §5).
 - Ask the mentors: which ramp delivers USD to a C-address (SEP-45 draft).
 
 ## Open

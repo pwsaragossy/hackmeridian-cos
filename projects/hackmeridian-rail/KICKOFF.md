@@ -47,7 +47,7 @@ and asks testnet Horizon for each (exit 0 when all 7 are SUCCESS).
 The contract design comes from the Radox architecture panel of 2026-10-20 (`custody_registry`: `open`,
 dual-signed `handover`, `attest` from registered sources, `deliver`, `freeze`, pause; an on-chain `head`
 hash chain so the off-chain history stays verifiable past the 7-day event window; `assurance` levels).
-The burn is **not** in the registry: the Radox backend co-signs `transfer_agent.redeem` only after the
+The burn is **not** in the registry: the Radox backend is meant to co-sign `transfer_agent.redeem` (policy, not enforced on-chain) only after the
 registry says `Delivered`. Full spec, rules and checks: [LEO-BRIEF.md](LEO-BRIEF.md).
 
 ## 4. Connection to the Radox API (stays private)
@@ -132,8 +132,8 @@ The page is a must-have (frozen scope), so it has its own lines above; if Leo's 
   custody (RESEARCH-raven.md §5) — a directory search, so say "we found none", never "none exists".
 - Passkey smart accounts: removed from PITCH.md slide 4 and the script notes on 2026-10-25 (passkey
   signing is cut from scope, so the claim would be false).
-- Wording: "burn" is prior work (`redeem`); say so on the slide (PITCH.md slide 5 does).
-- Mentor question ready: which ramp covers USD to a C-address (SEP-45 is Draft; candidates in §6).
+- Wording: "burn" is prior work (`redeem`); say so on the slide (PITCH.md slides 2, 4 and 5 do).
+- Mentor question ready: which ramp covers USD to a C-address (SEP-45 is Draft; candidates in RESEARCH-raven.md).
 
 ## 9. Production path (README section text)
 

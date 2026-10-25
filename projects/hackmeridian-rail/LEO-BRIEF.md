@@ -1,5 +1,7 @@
 # Brief for Leo's agents — `custody_registry` contract
 
+Internal: contains Radox-internal references (paths, instance IDs). Never copy into rio-miami-rail.
+
 Paste this whole file as the first prompt of Leo's project session (opened in
 `~/hackmeridian/projects/hackmeridian-rail`), or point the session to it. Written by Pedro's
 session on 2026-10-25; Pedro's session owns the project, the pitch and the Radox API connection.
@@ -28,7 +30,7 @@ Done = the 4 checks at the bottom pass, with testnet hashes.
    (`stellar contract deploy --wasm-hash 3870748b… -- --config '{"admin":"<G>","operator":"<G>"}'`) —
    no Radox key, no Radox source. Read its interface with
    `stellar contract info interface --wasm-hash 3870748b… --network testnet`. Never use the Radox
-   instance `CAF4JIUZ…SFC7`. In production the Radox backend co-signs `redeem` only after the registry
+   instance `CAF4JIUZ…SFC7`. In production the intended policy (not enforced on-chain) is that the Radox backend co-signs `redeem` only after the registry
    says `Delivered` (Pedro's side, private).
 3. `soroban-sdk = "29.0.1"` (crates.io, 2026-10-21; testnet RPC reports protocol 29). **Do not add
    OpenZeppelin `stellar-*` 0.8.0**: they require `soroban-sdk ^28` and will not build with 29.

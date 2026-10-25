@@ -17,7 +17,7 @@ burns the token.**
 - **Problem, one falsifiable sentence:** a party paying against goods in transit cannot check, without
   trusting one intermediary, who signed for the goods at each handover.
 - **Current alternative and its cost:** bill of lading plus courier or carrier tracking plus
-  insurer or surveyor inspection. Cost in time or money: **not sourced** — PITCH.md slide 2 still
+  insurer or surveyor inspection. Cost in time or money: **not sourced** — PITCH.md slide 3 still
   needs one sourced number.
 - **Evidence of the problem:** *assumption.* What exists: (a) the owner's view; (b) Radox built a
   physical-asset withdrawal flow (ship, deliver, confirm "received", burn) in `radox-internal`:
