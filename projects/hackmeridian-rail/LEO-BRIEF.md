@@ -214,7 +214,7 @@ shape is fixed — the target check (`check.py` in this folder) reads it from `m
 
 ## Timeline (Lisbon)
 
-Sun 09:00 first command: `stellar contract info interface --wasm-hash 3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1 --network testnet`; if it fails, write a card line before building. By 14:00 a Stellar mentor or the plugin reviewer reads the contract. Sun 09:00–10:00 design review with Pedro's session (card) · 10:00–14:00 contract + tests ·
+Sun 09:00 first command: `stellar contract info interface --wasm-hash 3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1 --network testnet`; if it fails, write a card line before building. Then Step 0 (5 min). Step 0b runs in parallel with the contract work and is done before 12:00. By 14:00 a Stellar mentor or the plugin reviewer reads the contract. Sun 09:00–10:00 design review with Pedro's session (card) · 10:00–14:00 contract + tests ·
 14:00–18:00 deploy + full lifecycle on testnet (**18:00 is the stop line**: if no two-signature
 handover ran on testnet by then, tell the card at once) · after 18:00 failure branches and
 `verify-head`.
