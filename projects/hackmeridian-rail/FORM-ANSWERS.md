@@ -7,9 +7,9 @@ Plan, sources and limits: SUBMISSION.md "Portal form, field by field". Only Pedr
 |---|---|---|---|
 | Project title | unseen | 72 | Pedro's text |
 | Tagline | 120 | 25 | Pedro's text |
-| Description | 8000, Markdown | 3076 | draft, review-4 |
+| Description | 8000, Markdown | 3098 | draft, review-4 |
 | Problem solved | unseen, keep < 1500 | 396 (draft) | review-4 |
-| Challenges | unseen, keep < 1500 | 1306 | draft, review-4 |
+| Challenges | unseen, keep < 1500 | 1279 | draft, review-4 |
 | What's next | unseen, keep < 1500 | 810 (draft) | review-4 |
 | Repository link | HTTPS, public | https://github.com/pwsaragossy/rio-miami-rail | public after Leo's scrub and Pedro's OK |
 | Demo link | — | https://rio-miami-rail.vercel.app | live (llms.txt, robots.txt, sitemap.xml served) |
@@ -17,8 +17,8 @@ Plan, sources and limits: SUBMISSION.md "Portal form, field by field". Only Pedr
 | Deck file | ≤ 20 MiB | — | Mon 06:00 |
 | Thematic track | one | — | Stellar Unlocked |
 | Tech stack | ≤ 25 items | 12 items | from the repo |
-| Prior work disclosure | unseen | 1096 | draft, review-4 |
-| AI tooling note | unseen | 835 | draft, review-4 |
+| Prior work disclosure | unseen | 1306 | draft, review-4 |
+| AI tooling note | unseen | 1083 | draft, review-4 |
 
 ## Answers
 
@@ -48,7 +48,7 @@ One shipment is one record in our `custody_registry` contract. The operator open
 | deliver | [919def8c…4e37](https://stellar.expert/explorer/testnet/tx/919def8c0b3f29ae650f5f1ea6d632e49efd4a9442381c84c83d858ad2144e37) |
 | redeem (burn) | [864fd164…644d](https://stellar.expert/explorer/testnet/tx/864fd1644d30bf708a59f94ca5b0fc303a50deccfd96099bd32dfb67e215644d) |
 
-Nine refusal branches are recorded with their error codes in `proofs/lifecycle.json`. In a second shipment, two teammates authorised their handovers from their own computers with their own testnet keys, by their account; only public keys and signed authorisation entries were exchanged (`proofs/three-machine.json`).
+Nine refusal branches, run by simulation, are recorded with their error results in `proofs/lifecycle.json`. In a second shipment, two teammates authorised their handovers from their own computers with their own testnet keys, by their account; only public keys and signed authorisation entries were exchanged (`proofs/three-machine.json`).
 
 **Check it yourself.** `node scripts/verify-head.mjs <key>` reads the shipment's transactions from Horizon, recomputes the head and compares it with the value on the contract (MATCH). The public page, https://rio-miami-rail.vercel.app, does the same in the browser with its Verify head button. `node scripts/handover-signers.mjs` lists who authorised each handover.
 
@@ -62,7 +62,7 @@ Testnet only, test keys, no audit. Everything on testnet runs with test accounts
 2. `stellar contract invoke` on a read-only call only simulates and returns no hash; `--send=yes` was needed to get on-chain proof.
 3. An AI reviewer agent found two major bugs before deploy: a route that revisits an address let `deliver` succeed with zero handovers, and the contract instance TTL was never extended, so it could have archived about a week after deploy, possibly during judging. Both fixed with tests before deploy.
 4. The first unit tests did not compile: the contract is `no_std`, so the test module needed `extern crate std`, and the `try_` assertions only type-checked once entry points returned `Result<_, Error>` instead of panicking.
-5. For the second shipment, our independent check of the teammates' signatures first rejected valid ones: address-bound credentials sign a different payload (the preimage includes the signer's address) from legacy credentials. Fixed by building the address-bound preimage; a wrong key is still rejected.
+5. For the second shipment, our check of the teammates' signed entries first rejected valid signatures. Protocol 29 address-bound credentials are signed over a different payload than the legacy ones; we changed the check to use that payload, and a wrong key is still rejected.
 
 ### Tech stack (from Cargo.toml, package.json and the page, 2026-10-25)
 
@@ -70,11 +70,11 @@ Stellar, Soroban, Rust, soroban-sdk, Stellar CLI, Stellar Asset Contract, Stella
 
 ### Prior work disclosure (draft 2026-10-25, review-4 pending)
 
-Before HackMeridian (2026-10-25 09:00 UTC) we built Radox, a platform for tokenized real-world assets. Its three Soroban contracts (token_sale, yield_distributor, maturity_settlement) run on Stellar mainnet since June-July 2026; their source is public, contracts only, at https://github.com/pwsaragossy/radox since 2026-08-19. The Radox backend is closed and not published. The burn in our redeem transaction calls an instance of Radox's existing transfer_agent contract, deployed on testnet from its existing wasm; its source is closed and we did not write it at the event. A read-only Radox API endpoint that reads this registry was added on a private branch of the closed backend and is not part of this repo. Nothing from the public Radox repo was copied into this repo. Before the event we also wrote design notes (2026-10-20, no code) and planning documents (2026-10-24 and 25), and chief-of-staff, a Claude Code plugin we use for planning and review (first commit 2026-10-22). The GitHub repository was created empty on 2026-10-24 22:49 UTC; the first commit is at 2026-10-25 09:00:17 UTC.
+Before HackMeridian (2026-10-25 09:00 UTC) we built Radox, a platform for tokenized real-world assets. Its three Soroban contracts (token_sale, yield_distributor, maturity_settlement) run on Stellar mainnet since June-July 2026; their source is public, contracts only, at https://github.com/pwsaragossy/radox since 2026-08-19 (the published token_sale is a newer version, v8, than the deployed v7; the other two match). That repo carries its own, different licence. The Radox backend is closed and not published. The burn in our redeem transaction calls an instance of Radox's existing transfer_agent contract, deployed on testnet from its existing wasm; its source is closed and we did not write it at the event. A read-only Radox API endpoint that reads this registry was written during the event, on a private branch of the closed Radox backend (2026-10-25); it is not part of this repo and its source is not published. Nothing from the public Radox repo was copied into this repo. Before the event we also wrote design notes (2026-10-20, no code) and planning documents (2026-10-24 and 25), and chief-of-staff, a Claude Code plugin we use for planning and review (first commit 2026-10-22). The GitHub repository was created empty on 2026-10-24 22:49 UTC; the first commit is at 2026-10-25 09:00:17 UTC.
 
 ### AI tooling note (draft 2026-10-25, review-4 pending; Pedro: name everything)
 
-Tools: Claude Code (Anthropic's coding agent) with Claude Opus 5.5 (`claude-opus-5-5`), and Claude Sonnet 5.5 for some review subagents; chief-of-staff, a Claude Code plugin we wrote before the event (declared as prior work); Voicebox 0.5.0 with Qwen3-TTS 1.7B, run locally, for the video narration in Pedro's cloned voice. What they did: Claude Code agents wrote the Soroban contract, unit tests, testnet harness, verification scripts, shipment page and documentation, and separate AI reviewer agents checked the contract, the scripts and every public text. A human developer reviewed the contract's functions, auth checks and error codes, the dependency pin and the signing logic; the page and the later scripts were not reviewed line by line by a human. AI_USAGE.md in the repo lists every file, how it was made and who reviewed it.
+Tools: Claude Code (Anthropic's coding agent) mainly with Claude Opus 5.5 (`claude-opus-5-5`), and Claude Sonnet 5.5 for some review subagents; chief-of-staff, a Claude Code plugin we wrote before the event (declared as prior work); Voicebox 0.5.0 (Qwen3-TTS 1.7B via mlx-audio), run locally on Pedro's Mac, for the video narration ("Narration: AI voice generated from Pedro's voice"); Playwright for the screen recordings; python-pptx scripts, written by Claude Code, for the deck; Raven, a Stellar documentation gateway, for Stellar lookups. What they did: Claude Code agents wrote the Soroban contract, unit tests, testnet harness, verification scripts, shipment page, documentation, the deck and its build script, and separate AI reviewer agents checked the contract, the scripts and every public text. A human developer reviewed the contract's functions, auth checks and error codes, the dependency pin and the signing logic; the page and the later scripts were not reviewed line by line by a human. AI_USAGE.md in the repo lists every file, how it was made and who reviewed it.
 
 ### Problem solved (draft 2026-10-25, review-4 pending)
 
