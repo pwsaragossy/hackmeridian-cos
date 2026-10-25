@@ -107,6 +107,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 Full steps in [LEO-TASKS.md](../projects/hackmeridian-rail/LEO-TASKS.md) (main 2c043a9, three-machine merged; review main only).
 
 ## Decided
+- 2026-10-25 19:53 UTC (Leo, in chat: "Confirmo"): Leo confirms in writing that he signed his three-machine handovers on his own computer and that the secret key never left it. Evidence from his session: key `leo-handover` (GDWNU6TT…TPPW) generated and funded there at 14:31 UTC (stellar keys, ~/.config/stellar on Leo's PC, WSL); response signed there and pushed at 16:08 UTC (hackmeridian-cos 1d06d6c), only signatures in the file. Answers REVIEW-FOUNDER-VOICE-TEXT.md question 1 for Leo (Vhendala answers for herself).
 - 2026-10-25 ~14:05 UTC (Leo, in chat: "confirmo e mantém"): the 9 "Human review" cells naming Leo in rio-miami-rail AI_USAGE.md are confirmed as written; Challenges line 4 (no_std tests) is kept. The AI_USAGE model header was fixed in ea60283. Leo's open tasks: none.
 - 2026-10-25 ~13:00 UTC: the track-gate warning on Leo's computer stays a warning on his side; copying the owner OKs there would need Pedro's click on Leo's machine and nothing is blocked (owner: "Deixa como aviso", central). The Radox API connection is Pedro's sessions' only (Leo, 12:45).
 - 2026-10-25 11:09–11:30 UTC: setup done, Step 0, Step 0b and the two-signature spike passed, contract + 16 tests on main (card lines above).
