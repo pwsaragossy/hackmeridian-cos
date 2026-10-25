@@ -54,6 +54,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 ~12:40 UTC: Radox is part of the ZIS project with Paulo, not outside support (owner: "paulo não só apoia, como fazemos parte do projeto ZIS"). Private fact: public wording still follows the claims guard; the reviewer re-checks it against this fact.
 - 2026-10-25 ~12:30 UTC: the track-gate warning on Leo's computer (owner OKs live only on Pedro's machine) stays a warning; no re-recording on Leo's side; the official map is Pedro's (owner: "Deixa como aviso (Recomendado)").
 - 2026-10-25 ~12:20 UTC: Joe Chi liking the videos is secondhand, from Paulo, not written (owner: "paulo falou"). Never used in deck, README or video. Whether Paulo answered the English v2 stays unconfirmed: treat as not approved.
 - 2026-10-25 ~12:20 UTC: on 23/10 Paulo received two Portuguese videos, ZIS Rio–Miami and ZIS Rio–Peru (vertical axis), "mesma tech" (owner: "ele recebeu um video da zis rio miami e do zis rio peru (eixo vertical) que ajuda a validar mais ainda, mesma tech."). His "Nada a alterar" covers those two; no endorsement goes into public material.

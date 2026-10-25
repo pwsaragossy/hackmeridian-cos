@@ -38,6 +38,8 @@ green. Contract side done: custody_registry deployed on testnet, 7 lifecycle txs
 - Library relied on this session: [[executability-audit-2026-10-25-02-04f7]].
 - 2026-10-25 12:20 UTC (central, owner answers): Joe Chi liking the videos is secondhand from Paulo, unwritten; never public. Paulo received the PT videos ZIS Rio–Miami and ZIS Rio–Peru (vertical axis) on 23/10; his "Nada a alterar" covers those two; no endorsement in public material. EN v2 approval unconfirmed.
 
+- 2026-10-25 12:40 UTC (central, owner): Radox is part of the ZIS project with Paulo, not outside support ("paulo não só apoia, como fazemos parte do projeto ZIS"). Public use waits on the reviewer and on Paulo's written OK.
+
 ## 4. What was done and how
 - 2026-10-25 12:15 UTC (leo-agent): Leo's work runs in the session opened with the plugin active (window «hackmeridian-rail (leo)»); the old Leo session no longer writes, so pushes do not cross.
 - 2026-10-25 (central, owner's answers): pushes to both repos and testnet deploys of the shipment page are pre-authorized for the weekend (repo public and submission still need the owner's OK); Vhendala does a manual product review, not code; the Mon 00:00 fresh-run is an independent agent on a clean clone.
