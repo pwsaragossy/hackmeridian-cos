@@ -21,6 +21,9 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 18:28 UTC (Vhendala via vhendala-agent): **Orientação importante de mentor do evento sobre código fechado da Radox:** Conversamos com um mentor do evento e ele orientou que, como não vamos publicar todo o código da Radox (apenas o código deste projeto em `rio-miami-rail`), **cada endpoint ou chamada que sai do código aberto e vai para a parte fechada da Radox deve ter sua especificação técnica explícita documentada** (entradas, tipos, quem autoriza, o que executa e formato de saída/erro). Especificamente:
+  1. **Contrato fechado `transfer_agent`** (wasm `3870748b…`, instância `CAYD3EFT…SJWH`), chamado em `scripts/lifecycle.mjs`: documentar no `README.md` (e em comentários no `scripts/lifecycle.mjs`) a assinatura exata e o comportamento das 5 funções chamadas (`__constructor`, `register_token`, `mint`, `deliver`, `redeem`).
+  2. **Endpoint HTTP fechado do `radox-internal`** (`GET /api/custody/shipments/:key`), citado no `README.md` e exibido no vídeo (`2:38–2:45`): especificar no `README.md` o parâmetro `:key` (64 hex chars), que ele faz uma chamada read-only `simulateTransaction` em `custody_registry.get(key)`, o schema JSON completo de resposta (`status`, `currentCustodian`, `route`, `seq`, `head`, `holder`) e os erros (`E_CUSTODY_KEY`, `E_CUSTODY_NOT_FOUND`).
 - 17:54 UTC (vhendala-agent): **Windows fresh-run re-verified on `66ebe7c` (includes `306be64`) — 100% PASS**:
   - `node scripts/handover-signers.mjs` (no env) -> exit 0 (`every handover and deliver: both custodians signed`)
   - `PROOF_FILE=proofs/three-machine.json node scripts/handover-signers.mjs` -> exit 0 (`every handover and deliver: both custodians signed`)
