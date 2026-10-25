@@ -1,7 +1,7 @@
 ---
 tags:
   - board
-status: waiting-owner
+status: in-progress
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
@@ -16,7 +16,6 @@ asked: 2026-10-25 02:59 +0000
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
-- Pedro (heads-up from Leo, 12:25 UTC, optional): on Leo's computer the track gate fails at every turn, because your approvals (scope OK; target "7 lifecycle txs SUCCESS on testnet", command `python3 check.py`, today 7/7) live only in local files on your machine, and the plugin rightly blocks Leo's session from restoring them. Nothing is blocked: Leo's contract work is done. If you want the warning gone, central records the same two OKs on Leo's computer with `track.sh ok hackmeridian-rail check` and the scope OK, with your confirmation. If not, it stays a warning on his side only. Details on Leo's card (12:20 line).
 ## Tasks
 - Pedro: send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/, forward his reply to central, by Sun 18:00 Lisbon (15:00 Rio)
 - Pedro: ask an organizer whether a Scale repo with only the new work is accepted, answer to central, by Sun 17:00
@@ -51,6 +50,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 ~12:30 UTC: the track-gate warning on Leo's computer (owner OKs live only on Pedro's machine) stays a warning; no re-recording on Leo's side; the official map is Pedro's (owner: "Deixa como aviso (Recomendado)").
 - 2026-10-25 ~12:20 UTC: Joe Chi liking the videos is secondhand, from Paulo, not written (owner: "paulo falou"). Never used in deck, README or video. Whether Paulo answered the English v2 stays unconfirmed: treat as not approved.
 - 2026-10-25 ~12:20 UTC: on 23/10 Paulo received two Portuguese videos, ZIS Rio–Miami and ZIS Rio–Peru (vertical axis), "mesma tech" (owner: "ele recebeu um video da zis rio miami e do zis rio peru (eixo vertical) que ajuda a validar mais ainda, mesma tech."). His "Nada a alterar" covers those two; no endorsement goes into public material.
 - 2026-10-25 ~12:00 UTC: look of page and deck = Radox "Signal" adapted for the projector ([[radox-custody-rail-look-signal-adapted-d030]]); text slides keep the template cream with the darker accents. Owner: "Usar Signal (Recomendado)".
