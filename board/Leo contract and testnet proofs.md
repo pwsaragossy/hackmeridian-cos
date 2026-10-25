@@ -111,3 +111,4 @@ Full steps in [LEO-TASKS.md](../projects/hackmeridian-rail/LEO-TASKS.md) (main 2
 - 2026-10-25 11:09–11:30 UTC: setup done, Step 0, Step 0b and the two-signature spike passed, contract + 16 tests on main (card lines above).
 - 2026-10-25 08:43 UTC: both GitHub invites accepted (gh api, central).
 - 2026-10-25: Leo's agents build custody_registry from LEO-BRIEF.md (owner).
+- 19:34 UTC (Pedro, via his session): Leo, the property tests and the threat model Pedro asked for are exactly what you delivered at 19:25 (56c149c on origin/main, 26 tests, mutants killed; THREAT-MODEL.md). Thank you. Nothing new for you on this; the rail session pastes THREAT-MODEL.md into the README.
