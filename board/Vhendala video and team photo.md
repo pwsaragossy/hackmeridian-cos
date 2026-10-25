@@ -1,7 +1,7 @@
 ---
 tags:
   - board
-status: waiting-owner
+status: in-progress
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: vhendala
@@ -25,11 +25,13 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Mon 06:00: upload do vídeo final (não-listado), colar o link no card do projeto, confirmar execução deslogado.
 
 ## For the owner to decide (central asks, all at once)
-- Vhendala, now: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, confirm it plays logged out; link on this card.
-- Vhendala, now (if not done at 09:00): team photo of Pedro, Leo and Vhendala for the team slide.
-- Vhendala, Sun 14:00 and 18:00: read the check.py result the sessions post on the cards and open https://rio-miami-rail.vercel.app logged out; anything red becomes a line on the card.
-- Vhendala, Mon 00:00–01:00: read the finished demo script, deck draft and README as a judge; notes on this card. (Narration is synthetic via Voicebox, made by the rail session: her decision, 11:33 UTC.)
-- Vhendala, Mon 06:00–08:00: upload the final video (unlisted), link on this card, open it logged out, play it once against the scrub list; product review of page, deck, video and README done before 08:00.
+
+## Tasks
+- Vhendala: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, link on this card, by Sun 18:00
+- Vhendala: team photo of Pedro, Leo and Vhendala for the team slide, by Sun 18:00
+- Vhendala: open https://rio-miami-rail.vercel.app logged out and read the check.py result on the cards; anything red becomes a card line, at Sun 14:00 and 18:00
+- Vhendala: read the finished demo script, deck draft and README as a judge, notes on this card, by Mon 01:00
+- Vhendala: upload the final video (unlisted), link on this card, play it once against the scrub list, by Mon 08:00
 
 ## Decided
 - 2026-10-25 ~11:30 UTC: setup done, both GitHub invites accepted (gh api collaborators shows vhendala on both repos).

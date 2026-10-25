@@ -16,15 +16,17 @@ asked: 2026-10-25 02:59 +0000
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
-- Pedro, by Sun 18:00 Lisbon (15:00 Rio): send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/ (email-paulo.md, carta-participacao-radox-zis.docx); forward his reply to central, which records his words per point. No OK, no ZIS in public material.
 - Pedro: where did you hear that Joe Chi (Camacol president, per ~/brain-radox, unconfirmed) received the videos well? Did Paulo answer the English v2 after 24/10 21:59?
 - Pedro: which Portuguese Rio–Miami video did you send Paulo on 23/10 06:08? (the other one of the pair is the bioceanic)
-- Pedro, Sun (if not done at check-in): ask an organizer whether a Scale repo with only the new work (Radox platform closed) is accepted; answer to central.
-- Pedro, Sun 13:30–14:00 or 15:00–17:00: mentor user test (IDEA.md): would logistics or trade-finance people accept co-signed handovers? One line per mentor to central (feeds the README mentor log and User Value).
-- Pedro, Sun 20:30–22:00: dry-run the portal form with placeholder links (your login); tell central any field limit you see.
-- Pedro, Mon 06:00: OK to make rio-miami-rail public, after the scrub is empty (central asks with the scrub result).
-- Pedro, by Mon 05:30: exact Claude model names used in your sessions, for the AI tooling field.
-- Pedro, Mon 08:00: paste FORM-ANSWERS.md into the portal, check the terms box and press Submit on the portal (central runs track.sh verify first and shows the result; only Pedro does this). Portal closes Mon 12:00.
+
+## Tasks
+- Pedro: send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/, forward his reply to central, by Sun 18:00 Lisbon (15:00 Rio)
+- Pedro: ask an organizer whether a Scale repo with only the new work is accepted, answer to central, by Sun 17:00
+- Pedro: mentor user test (would logistics or trade-finance people accept co-signed handovers?), one line per mentor to central, by Sun 17:00
+- Pedro: dry-run the portal form with placeholder links (your login), by Sun 22:00
+- Pedro: exact Claude model names used in your sessions, to central, by Mon 05:30
+- Pedro: OK to make rio-miami-rail public after the scrub (central asks), by Mon 06:00
+- Pedro: paste FORM-ANSWERS.md into the portal, check the terms box, Submit (after track.sh verify), by Mon 08:00
 
 ## Next (2026-10-25, session-hackmeridian-rail)
 - Look applied (2026-10-25 11:58 UTC): Signal live on https://rio-miami-rail.vercel.app (200 logged out, with llms/robots/sitemap; contract ID now in the page and llms.txt); deck rules in `projects/hackmeridian-rail/LOOK.md`; track item "look" can close with LOOK.md + [[radox-custody-rail-look-signal-adapted-d030]].
