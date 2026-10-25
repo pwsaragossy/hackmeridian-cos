@@ -25,11 +25,14 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Mon 06:00: upload do vídeo final (não-listado), colar o link no card do projeto, confirmar execução deslogado.
 
 ## For the owner to decide (central asks, all at once)
-- Vhendala, now: GitHub invites aceitos, conexão estabelecida. Narração será feita via Voicebox (decidido por Vhendala, Pedro central notificado).
-- Vhendala, now: pick the YouTube or Vimeo account and upload a 10-second unlisted test clip; confirm the link plays logged out.
-- Vhendala, Sun 09:00: team photo of Pedro, Leo and Vhendala for the team slide.
-- Equipe / Sessão Pedro: gerar o áudio via Voicebox quando o demo script estiver pronto (Sun 22:00 onward).
+- Vhendala, now: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, confirm it plays logged out; link on this card.
+- Vhendala, now (if not done at 09:00): team photo of Pedro, Leo and Vhendala for the team slide.
+- Vhendala, Sun 14:00 and 18:00: read the check.py result the sessions post on the cards and open https://rio-miami-rail.vercel.app logged out; anything red becomes a line on the card.
+- Vhendala, Sun 22:00–Mon 00:00: read the demo script, deck and README as a judge; notes on this card. (Narration is synthetic via Voicebox, made by the rail session: her decision, 11:33 UTC.)
+- Vhendala, Mon 06:00–08:00: upload the final video (unlisted), link on this card, open it logged out, play it once against the scrub list; product review of page, deck, video and README done before 08:00.
 
 ## Decided
+- 2026-10-25 ~11:30 UTC: setup done, both GitHub invites accepted (gh api collaborators shows vhendala on both repos).
+- 2026-10-25: the owner's earlier assignment had Vhendala narrate; replaced by her Voicebox decision below.
 - 2026-10-25: Vhendala (GitHub vhendala) abre o painel e supervisiona o projeto; convites aceitos.
 - 2026-10-25: Vhendala comunicou formalmente que a narração NÃO será feita por sua voz; o vídeo deve usar Voicebox para sintetizar o áudio da demonstração a partir do roteiro. Vhendala mantém o apoio na conta de vídeo, teste, foto do time e na revisão de produto.

@@ -35,11 +35,14 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - 11:10 UTC (leo-agent): setup done — workspace ok (member leo, push: true), email 37229572+leo-schlanger@users.noreply.github.com (set per repo, not global), stellar 28.1.0, rustup 1.29.1 + wasm32v1-none, node v24.18.1, rio-miami-rail cloned at 0a980f9. Paths differ from LEO-SETUP: workspace and code live in Leo's Desktop/hackaton-meridian/ (WSL), not ~/hackmeridian and ~/code.
 
 ## For the owner to decide (central asks, all at once)
-- Leo, now (before 09:00): run the setup. In Claude Code: /plugin marketplace add pwsaragossy/chief-of-staff, then /plugin install chief-of-staff@chief-of-staff, then setup.sh join ~/hackmeridian https://github.com/pwsaragossy/hackmeridian-cos.git --member leo; set git user.email to his GitHub noreply address. Not done at 08:45 (owner). Without it his session has no card, library or checks.
-- Leo, Sun 09:00: wasm check and hello-contract spike before any contract code.
-- Leo, Sun 14:00: register_token and redeem path confirmed on testnet; contract read by a mentor or the reviewer.
-- Leo, Sun 18:00: 7 lifecycle hashes in proofs/lifecycle.json on main (check.py 7/7), or the stop-line note on the card.
+- Leo, now: the plugin reviewer (someone who did not write it) reads the contract; verdict on this card before 14:00, then deploy custody_registry on testnet; contract ID on this card.
+- Leo, Sun 14:00 checkpoint: first dual-signed handover on testnet, or one line on this card saying why not.
+- Leo, Sun 14:00–18:00: lifecycle harness, 7 distinct hashes in proofs/lifecycle.json on main (check.py 7/7), verify-head exits 0, failure branches recorded.
+- Leo, Sun 18:00 stop line: no dual-signed handover on testnet → say so here at once (the API connection is cut).
+- Leo, Sun 20:30–22:00: one line here per thing that really broke (Step 0, 0b, two-signature, failure branches): it is the portal's Challenges field.
+- Leo, Mon 06:00: AI_USAGE.md per-file list matches the repo, and the Claude model names you used, for the AI tooling field.
 
 ## Decided
+- 2026-10-25 11:09–11:30 UTC: setup done, Step 0, Step 0b and the two-signature spike passed, contract + 16 tests on main (card lines above).
 - 2026-10-25 08:43 UTC: both GitHub invites accepted (gh api, central).
 - 2026-10-25: Leo's agents build custody_registry from LEO-BRIEF.md (owner).
