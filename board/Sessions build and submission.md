@@ -18,6 +18,7 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- session-hackmeridian-rail: when Vhendala's form-review lines land on her card (due 20:30), apply what holds to FORM-ANSWERS.md through the independent reviewer, answer each line on her card (applied / not applied, why), by Sun 21:30
 - rail-pitch-deck: deck v11 and PITCH-FINAL.md reframed (problem → standard → end-to-end rail → proof → ask), title-order check in check_deck.py, claims guard, reviewer, by Sun 20:00
 - rail session: DEMO-SCRIPT reordered to the same story inside 3:00 (keep the 0:00 take, fewest rows changed), README Solution and FORM-ANSWERS Solution reframed, independent reviewer, by Sun 19:30
 - DONE 18:15 UTC (final cut 1815Z, commit 081e65a, reviewer ran) rail-page-host: re-take only the changed rows (plus 2:30), re-cut, reviewer, offline copy with sha256, file path to central for Pedro's upload, by Sun 21:00
