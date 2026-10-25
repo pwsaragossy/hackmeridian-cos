@@ -22,8 +22,7 @@ OUT = os.path.join(ROOT, "deck", "radox-custody-rail.pptx")
 SHOT = lambda name: os.path.join(ROOT, "deck", "screens", name)
 
 # Switch only on Paulo's written OK ([[zis-in-public-material-radox-is-bc05]]); then paste his approved wording.
-BRIDGE = ("Context: our explainer video about a Rio–Miami trade-corridor initiative poses a unique digital record "
-          "for every shipment that both sides can check; this project is its custody layer.")
+BRIDGE = "Context: our explainer video on a Rio–Miami trade-corridor initiative; this project is its custody layer."
 
 # LOOK.md (Signal adapted)
 INK, PAPER, CARD, LINE_C = "0E0F11", "F7F6F2", "FFFFFF", "DFDDD6"
@@ -189,7 +188,7 @@ text(s, 17.13, 6.42, 2.0, 0.4, ["MIAMI"], size=18, font=MONO, bold=True, color=S
 
 # ---------- 2-3. Problem, in numbers: only rows of PROBLEM-NUMBERS.md (verified 2026-10-25), wording kept ----------
 # (big number, what it measures, source line). check_deck fails on any {{ placeholder.
-P_HANDS = [("45M", "ocean bills of lading issued a year", "DCSA, Feb 2023 (2021 data)"),  # PROBLEM-NUMBERS.md row 1, [[dcsa-45-million-bills-of-lading-1af2]]
+P_HANDS = [("45M", "ocean bills of lading issued a year", "DCSA, Feb 2023"),  # PROBLEM-NUMBERS.md row 1, [[dcsa-45-million-bills-of-lading-1af2]]
            ("~11%", "of bills of lading issued electronically, 2025", "DCSA, as of 2025"),  # row 2
            ("22%", "of recorded cargo thefts in 2025 involved insiders", "TT Club & BSI Cargo Theft Report, Apr 2026")]  # row 3, [[tt-club-bsi-2025-cargo-theft-12f4]]
 P_COST = [("R$900M", "est. direct loss, 8,570 cargo robberies in Brazil, 2025", "NTC&Logística survey, 28 Mar 2026"),  # row 7
@@ -261,14 +260,14 @@ for cx, hub, head in ((2.8, False, "PAIR BY PAIR · 10 LINKS"), (6.65, True, "ON
     text(s, cx - 1.8, 4.45, 3.6, 0.45, [head], size=18, font=MONO, bold=True, color=LIME_C if hub else SEC_C, align=PP_ALIGN.CENTER)
 text(s, 1.0, 7.2, 7.8, 0.9, ["Example, 5 companies: 10 custom links, or 5 links to one standard."], size=20, color=SEC_C, align=PP_ALIGN.CENTER)
 cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events: the custody_registry contract (Apache-2.0)", "Verify any shipment, no login (slide 6)"]),
-        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Onboarding, issuance controls, operation of the rail", "The API and backend: closed, not self-hostable", "Per-institution subscription + fee per shipment (slide 9)"])]
+        (14.35, "RADOX WILL OPERATE · CLIENT PAYS", INK, ["Onboarding, issuance controls, operation of the rail", "The API and backend: closed, not self-hostable", "Per-institution subscription + fee per shipment (slide 9)"])]
 for x, head, hc, items in cols:
     text(s, x, 4.45, 4.8, 0.45, [head], size=18, font=MONO, bold=True, color=hc)
     hline(s, x, 4.98, 4.65, hc, 0.03)
     text(s, x, 5.15, 4.75, 3.0, [[("— ", {"color": hc}), (t_, {})] for t_ in items], size=21, after=8)
 hline(s, 1.0, 8.3, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.42, 18.0, 0.9, [
-    "Each company integrates once instead of pair by pair. Radox is in conversations with ports, airports and chambers of commerce; their legacy systems will join through one adapter to the Radox API.",
+    "Each company integrates once instead of pair by pair. Radox is in conversations with ports, airports and chambers of commerce; legacy systems will join through one adapter to the Radox API.",
     [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C})]],
     size=18, after=2)
 
@@ -346,7 +345,7 @@ cols = [(1.0, "PRIOR WORK · BEFORE SUN 25 OCT 09:00", SEC_C, [
             "custody_registry contract, 24 unit tests",
             "Lifecycle harness: 7 testnet transactions, 9 refused calls",
             "verify-head script, the public shipment page, this deck",
-            "Radox API reads the registry, read-only: same head (testnet)"])]
+            "Radox API custody route reads the registry, read-only: same head (testnet)"])]
 for x, head, hc, items in cols:
     text(s, x, 3.5, 8.7, 0.5, [head], size=18, font=MONO, bold=True, color=hc)
     hline(s, x, 4.08, 8.7, hc, 0.03)
@@ -374,7 +373,7 @@ text(s, 12.4, 3.3, 6.6, 0.4, ["MODEL"], size=18, font=MONO, bold=True, color=INK
 hline(s, 12.4, 3.78, 6.6, INK, 0.03)
 text(s, 12.4, 3.95, 6.6, 1.4, ["Subscription per connected institution + a fee per shipment."], size=26, font=TITLE,
      bold=True, spacing=1.0)
-text(s, 12.4, 5.25, 6.6, 1.4, ["Borrows the shape of Swift's published fees: entry, annual, per-message usage⁶. "
+text(s, 12.4, 5.25, 6.6, 1.4, ["Borrows the shape of Swift's billing rules: entry, annual, per-message usage⁶. "
                                "Not affiliated with Swift."], size=20, color=SEC_C)
 text(s, 1.0, 6.6, 18.0, 0.45, [[("Now ", {"font": MONO, "bold": True, "color": LIME_C}),
      ("running on testnet, test keys.  ", {}),

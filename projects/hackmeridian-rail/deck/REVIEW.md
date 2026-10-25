@@ -229,3 +229,26 @@ Files are in projects/hackmeridian-rail/ unless stated; proofs/ is in pwsaragoss
 | 26 | 9 | No users or revenue; pilot none agreed; SCF not submitted; audit not done; USD leg not built | PITCH.md Claims guard; wording note rules 4-6 | rule |
 | 27 | 9 | The ask (introductions, engineer review) | Scale intake "also wanted at the event", STATE.md §2 | file |
 | 28 | 10 | Pedro Wakigawa Saragossy founder and captain; Leo Schlanger developer; Vhendala QA and product review; Leo and Vhendala joined for the hackathon | board (full name, 2026-10-25); wording note rule 7 | rule |
+
+## Seventh round (v13, founder voice, 2026-10-25)
+
+Owner rule in force: "NÃO É PRA LOWBALL NOSSO PROJETO, VENDA APENAS A PARTE BOA". Hedges are now defects (check_deck HEDGES); the false-claim line holds: no partner named, no signed deal, no users or revenue, no testnet called mainnet ([[founder-voice-in-public-text-sell-d820]]).
+
+v13 changes: slide 2 legacy-ports line (World Bank via IAPH, IMO FAL.5/Circ.54); slide 4 "Radox is in conversations with ports, airports and chambers of commerce", "Radox will operate"; slide 7 any Stellar asset, US$4B (SDF, 1 Sep 2026), open API for issuers; slide 9 market, Swift-shaped model, roadmap. Spoken pitch rewritten (394 words, limit 396).
+
+Independent reviewer (REVIEW-V13.md): approve with changes; all six fixes applied (no "their" before legacy systems; "Radox API custody route"; "Swift's billing rules"; shorter context line; "DCSA, Feb 2023"; "RADOX WILL OPERATE"). Every number re-opened at its source except R$900M, US$85M, US$2.5T and the slide 9 trade figures (checked in earlier rounds).
+
+Judge: check_deck exit 0 (10 slides, 759,297 bytes). Mutants on a scratch copy, all exit 1: "Two ports have signed with Radox", "A bank signed a letter of intent with Radox", "The Port of Santos signed on to the rail", "The lifecycle ran on mainnet", "Radox has paying clients in three ports", "The rail is live on mainnet", "none signed" (hedge).
+
+| Criterion | Weight | v13 score |
+|---|---|---|
+| Ecosystem | 20 | 9 |
+| User Value | 20 | 8 |
+| Technical Execution | 15 | 9 |
+| Innovation | 15 | 8 |
+| Progress | 10 | 9 |
+| Market | 10 | 8 |
+| UX (slides only) | 10 | 8 |
+| Total | 100 | 84.5 |
+
+User Value stays at 8: 9 needs one first-hand user fact (a port or chamber that spoke with Radox, quotable without a name), which only the owner can give. Owner questions on the card: "in conversations" true for each type; that user fact.

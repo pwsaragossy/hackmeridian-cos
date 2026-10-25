@@ -81,12 +81,17 @@ def main():
     SIGNED_PARTNER = (r"\b(?:(?:signed|agreed|confirmed|committed|onboarded|joined)\s+(?:partners?|ports?|airports?|chambers?|carriers?|banks?|institutions?|operators?)\b"
                       r"|(?:ports?|airports?|chambers?(?:\s+of\s+commerce)?|carriers?|banks?|institutions?)\s+(?:have|has|had)\s+(?:signed|agreed|joined|committed|confirmed)\b"
                       r"|(?:signed|agreed)\s+with\s+(?:a|an|the|several|one)?\s*(?:ports?|airports?|chambers?|banks?|institutions?|operators?))")
+    # Shapes that passed in review v13 (REVIEW-V13.md finding 2); bare "paying" is allowed: slide 3 says "before paying".
+    FALSE_CLAIMS = [r"\b(?:ran|runs|running|live|deployed|settled|operat\w+)\b[^.;]{0,40}\bmainnet",
+                    r"\b(?:port|bank|airport|chamber|carrier)s?\b[^.;]{0,40}\b(?:signed|agreed|committed|joined)\b",
+                    r"\b(?:signed|agreed|committed)\s+(?:a|an|the)?\s*(?:letter|loi|mou|contract|agreement|deal|pilot)",
+                    r"\b(?:paying|our|first|signed)\s+clients?\b"]
     by_slide = {}
     for i, t in texts:
         by_slide[i] = by_slide.get(i, "") + " " + t
     for i, t in sorted(by_slide.items()):
-        if re.search(SIGNED_PARTNER, t, re.I):
-            fails.append(f"slide {i}: reads as a signed partner")
+        if re.search(SIGNED_PARTNER, t, re.I) or any(re.search(p, t, re.I) for p in FALSE_CLAIMS):
+            fails.append(f"slide {i}: reads as a signed partner, a client or mainnet")
         for h in HEDGES:
             if re.search(h, t, re.I):
                 fails.append(f"slide {i}: hedge /{h}/ (owner: sell the good part, no lowballing)")

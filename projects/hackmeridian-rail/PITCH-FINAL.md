@@ -25,12 +25,12 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 1. Cover: "Radox Custody Rail". One record for the goods, from origin to delivery, that every company along the way will share. Toward a SWIFT-like standard on Stellar; pilot corridor Rio–Miami. Pill: testnet, test keys.
 2. Problem, "Who holds the whole chain?": the gap (each company records only its own leg); 45M ocean bills of lading a year (DCSA); ~11% electronic, 2025 (DCSA); 22% of cargo thefts with insiders (TT Club & BSI); ports run legacy systems: over 90% of ports in low- and middle-income countries have no port community system (World Bank remark relayed by IAPH, Nov 2023), IMO FAL.5/Circ.54 plans for legacy proprietary systems; unnamed bridge line.
 3. What it costs: the gap (a financier cannot see who holds the goods before paying); R$900M, US$85M, US$2.5T (market size); "These figures size the market problem the rail addresses."
-4. The proposal: the goal is a shared, SWIFT-like custody standard that companies along a supply chain will use; "We are building it on Stellar, starting with the custody rail." 10 vs 5 links; open vs Radox operates (per-institution subscription + fee per shipment). Radox is in conversations with ports, airports and chambers of commerce; their legacy systems will join through one adapter to the Radox API.
+4. The proposal: the goal is a shared, SWIFT-like custody standard that companies along a supply chain will use; "We are building it on Stellar, starting with the custody rail." 10 vs 5 links; open vs Radox operates (per-institution subscription + fee per shipment). Radox is in conversations with ports, airports and chambers of commerce; legacy systems will join through one adapter to the Radox API.
 5. The rail: one record will follow the goods; port and airport systems will connect by API. Rule of every link, head hash chain, token stays with holder. Built: the lifecycle on testnet, test keys. Next: real companies, the standard, integrations.
 6. The proof: 7 hashes, 7 successful, 9 refused (simulated), 24 unit tests, MATCH; separate computers (three-machine.json) and two test companies on one registry (multi-chain.json); testnet, test keys.
 7. Why Stellar: multi-party auth; history from Horizon checked by the head; any Stellar asset (the record stores a token address and never calls the token); Stellar holds about US$4B in tokenized assets (SDF, 1 Sep 2026); neighbours, no SEP; Apache-2.0, Radox will open API access to Stellar issuers.
-8. Built this weekend on disclosed prior work; Radox API reads the registry, read-only (testnet); AI attribution.
-9. "One rail, every corridor": sourced market figures; the model (subscription per connected institution + a fee per shipment, shape of Swift's published fees, not affiliated); Now: running on testnet; Next: the Rio–Miami pilot shipment, SCF Build, audit, mainnet, API for other Stellar assets; the ask (locked).
+8. Built this weekend on disclosed prior work; Radox API custody route reads the registry, read-only (testnet); AI attribution.
+9. "One rail, every corridor": sourced market figures; the model (subscription per connected institution + a fee per shipment, shape of Swift's billing rules, not affiliated); Now: running on testnet; Next: the Rio–Miami pilot shipment, SCF Build, audit, mainnet, API for other Stellar assets; the ask (locked).
 10. Team: unchanged.
 
 ## Pitch item (portal)
@@ -41,11 +41,11 @@ The README and FORM wording for User Value and Ecosystem is in COPY-V13.md secti
 
 Rehearsal: timed reads by Pedro needed twice.
 
-Words (395, counted 2026-10-25; limit 396 for 3:00 at 2.2 words a second):
+Words (394, counted 2026-10-25; limit 396 for 3:00 at 2.2 words a second):
 
 A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. DCSA reports about 45 million ocean bills of lading are issued a year, and only about 11% were electronic in 2025. TT Club and BSI report insiders were involved in 22% of recorded cargo thefts in 2025. Each company keeps its own record of its own leg, nobody holds the chain end to end, and a financier cannot see who holds the goods before paying.
 
-So our goal is a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, will use: each integrates once, not pair by pair. Ports and airports run legacy systems that are hard to integrate. Radox is in conversations with ports, airports and chambers of commerce, and their legacy systems will join through one adapter to the Radox API.
+So our goal is a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, will use: each integrates once, not pair by pair. Ports and airports run legacy systems that are hard to integrate. Radox is in conversations with ports, airports and chambers of commerce, and legacy systems will join through one adapter to the Radox API.
 
 We are building one rail, origin to delivery, across the companies in the chain. The double signature is the rule of each link: both sides sign one Stellar transaction, or the call fails.
 

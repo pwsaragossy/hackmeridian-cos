@@ -87,7 +87,7 @@ const README = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github
     [path.join(W, "readme3.png"), 0, 150],
     [M("08-page-live.mp4"), 0, 240],                                       // 2:30-3:00
     [M("08b-terminal-radox-api.mp4"), 90, 120],                            // 2:38-2:42, the last 4 s: response and highlight
-    [M("08-page-live.mp4"), 420, 540],                                     // back to the page at 2:42 (08 at 14 s): click at 2:44, MATCH held to the end
+    [M("08-page-live.mp4"), 440, 540],                                     // back to the page at 2:42 (08 at 14.7 s): MATCH from 2:43.4, before "Verify head: match" at 2:43.6
   ];
   const at = (i) => segs.slice(0, i).reduce((s, x) => s + x[2], 0) / 30;   // segment start in seconds
   const args = ["-v", "error", "-y"];
