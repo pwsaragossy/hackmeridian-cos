@@ -12,3 +12,9 @@ https://rio-miami-rail.vercel.app (production alias, no login):
   deliver (919def…), redeem, token burned (864fd1…). The hashes match proofs/lifecycle.json (VERIFY-LEO.md).
 - Clicking "Verify head" shows MATCH; the page session reports recomputed = on-chain =
   2d74fec064a6796c34be93ede6241e0e067650dcfb2e058382f2f9cf83195414, the same as scripts/verify-head.mjs.
+
+Live vs snapshot (REVIEW-2 m1, from the reviewer's reading of page/app.js at rio-miami-rail 262ab17):
+live from testnet = shipment state, on-chain head and each transaction's parameters (RPC simulation of
+`get` plus Horizon `/operations`); from page/snapshot.json = the transaction list, the role names and
+the "Redeemed: token burned" row. The page's offline fallback needs the stellar-sdk bundle from
+jsDelivr (REVIEW-2 M3), so it does not yet work with the network off; the page session owns that fix.

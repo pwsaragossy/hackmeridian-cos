@@ -1,6 +1,6 @@
 ---
 track: hackathon
-stage: 2
+stage: 3
 delivery: 4
 stale_hours: 3
 owner_wait_minutes: 20
@@ -28,10 +28,10 @@ Gate: scope is frozen, the thinnest end-to-end path runs, and nothing in the bui
 - [x] licences | Licences of dependencies, datasets and third-party assets checked against the rules and the intended licence | card: legal | needs: rules | evidence: LICENCES.md
 - [x] secrets | No keys or personal data in the repository or demo, keys in environment variables, keys rotated if exposed | card: security | needs: skeleton | evidence: SECRETS-SCAN.md
 - [x] look | Name and one consistent visual style across product screens and deck, readable at projector size | card: designer | needs: scope | evidence: LOOK.md
-- [ ] review-2 | Independent review of stage 2: verdict and fixes | card: reviewer | needs: scope, skeleton, licences, secrets, look | evidence:
+- [x] review-2 | Independent review of stage 2: verdict and fixes | card: reviewer | needs: scope, skeleton, licences, secrets, look | evidence: REVIEW-2.md
 ## Stage 3: Demo and pitch
 Gate: the demo runs without live dependencies, a recorded backup exists, and the pitch has been rehearsed against the clock.
-- [ ] demo-script | Demo script with timings under the time limit, following the criteria order, with the success path only | card: product | needs: criteria, scope | evidence:
+- [x] demo-script | Demo script with timings under the time limit, following the criteria order, with the success path only | card: product | needs: criteria, scope | evidence: DEMO-SCRIPT.md
 - [ ] demo-offline | Demo runs without internet or live third-party services (cached or local data), and a screen recording of the full flow exists as backup | card: engineer | needs: skeleton, demo-script | evidence:
 - [ ] fresh-run | Product runs from the README on a clean machine or account by someone who did not build it | card: engineer | needs: demo-offline | evidence:
 - [ ] pitch | Pitch covering problem, solution, demo, why this team, next step, rehearsed at least twice with a timer | card: marketing | needs: demo-script | evidence:

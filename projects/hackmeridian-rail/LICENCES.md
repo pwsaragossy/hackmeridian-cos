@@ -236,9 +236,63 @@ find . -name package.json -o -name package-lock.json | grep -v "^./.git/"    # n
 | zeroize_derive | 1.5.0 | Apache-2.0 OR MIT |
 | zmij | 1.0.23 | MIT |
 
-## npm
+## npm (re-run at 262ab1727abbd99f3e96aa321c95f06d42d33a17, 2026-10-25T13:01:44Z UTC, after REVIEW-2 M1)
 
-none in the repo at 179bb9cfc3b85bc37fe0af2ea8eeee4dfb29532f (no package.json or package-lock.json; the page/ folder has none)
+package.json and package-lock.json arrived after 179bb9c (scripts/ use @stellar/stellar-sdk 17.3.0). package-lock.json lists 41 packages: MIT x38, Apache-2.0 x2, BSD-3-Clause x1, 0 missing. Cargo.lock unchanged at 215.
+Command: `jq -r '.packages|to_entries[]|select(.key!="")|...license' package-lock.json` (script kept in the session scratchpad).
+
+| name | version | licence |
+|---|---|---|
+| @exodus/bytes | 1.16.0 | MIT |
+| @noble/ed25519 | 3.2.0 | MIT |
+| @noble/hashes | 2.4.0 | MIT |
+| @stellar/js-xdr | 5.0.0 | Apache-2.0 |
+| @stellar/stellar-sdk | 17.3.0 | Apache-2.0 |
+| @types/json-schema | 7.0.15 | MIT |
+| agent-base | 6.0.2 | MIT |
+| asynckit | 0.4.0 | MIT |
+| axios | 1.20.0 | MIT |
+| bignumber.js | 11.1.5 | MIT |
+| call-bind-apply-helpers | 1.0.2 | MIT |
+| combined-stream | 1.0.8 | MIT |
+| commander | 14.0.3 | MIT |
+| debug | 4.4.3 | MIT |
+| delayed-stream | 1.0.0 | MIT |
+| dunder-proto | 1.0.1 | MIT |
+| es-define-property | 1.0.1 | MIT |
+| es-errors | 1.3.0 | MIT |
+| es-object-atoms | 1.1.2 | MIT |
+| es-set-tostringtag | 2.1.0 | MIT |
+| eventsource | 4.1.1 | MIT |
+| eventsource-parser | 3.1.1 | MIT |
+| feaxios | 0.0.23 | MIT |
+| follow-redirects | 1.16.1 | MIT |
+| form-data | 4.0.6 | MIT |
+| function-bind | 1.1.2 | MIT |
+| get-intrinsic | 1.3.0 | MIT |
+| get-proto | 1.0.1 | MIT |
+| gopd | 1.2.0 | MIT |
+| has-symbols | 1.1.0 | MIT |
+| has-tostringtag | 1.0.2 | MIT |
+| hasown | 2.0.4 | MIT |
+| https-proxy-agent | 5.0.1 | MIT |
+| is-retry-allowed | 3.0.0 | MIT |
+| math-intrinsics | 1.1.0 | MIT |
+| mime-db | 1.52.0 | MIT |
+| mime-types | 2.1.35 | MIT |
+| ms | 2.1.3 | MIT |
+| proxy-from-env | 2.1.0 | MIT |
+| smol-toml | 1.9.1 | BSD-3-Clause |
+| uint8array-extras | 1.6.0 | MIT |
+
+## Assets the page loads from a CDN at run time (not in the repo)
+
+| asset | source | licence |
+|---|---|---|
+| @stellar/stellar-sdk 17.3.0 dist/stellar-sdk.min.js | cdn.jsdelivr.net | Apache-2.0 (same package as the npm row) |
+| Inter 400/600/700 | fonts.googleapis.com / fonts.gstatic.com | SIL Open Font License 1.1 |
+
+No copyleft licence (GPL, LGPL, AGPL, MPL) in Cargo, npm or the CDN assets.
 
 ## Distinct licence strings (counts)
 
