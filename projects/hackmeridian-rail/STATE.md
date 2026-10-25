@@ -25,7 +25,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 - Stop criterion (owner, 2026-10-25): if by Sun 25 18:00 Lisbon no handover signed by two custodians has run on testnet, cut the API connection and deliver contract + harness + recorded demo only.
 
 ## 3. What is true now
-- Deadline: ours Mon 10:00, the event's Mon 12:00 "no late submissions"; submit at 08:00. Lisbon is UTC+0 for the whole event (summer time ended Sun 25 Oct 01:00 UTC).
+- Deadline: the portal's project editing window runs Sun 25 09:00 to Mon 26 10:00 Lisbon (owner, 2026-10-25: "9am do dia 25 até 10am do dia 26, já falamos disso"). Mon 10:00 is the hard close, not a buffer; the event's Mon 12:00 is when hacking ends and gives no extra time to us. Submit at 08:00. Lisbon is UTC+0 for the whole event (summer time ended Sun 25 Oct 01:00 UTC).
 - Rubric: 7 criteria, weights 20/20/15/15/10/10/10; scale 1–5 on hackmeridian.com/build but 1–10 in the portal rules (PORTAL-PASTE.md), checked at Sun 09:00. Self-score 72/100 ceiling, 66 if the API connection is cut (IDEA.md).
 - Requirements verified in the portal PDF and public pages: RULES.md, SUBMISSION.md. Video 2–4 min YouTube/Vimeo, deck ≤20 MiB, mandatory AI attribution and the prior-work disqualifier come from Pedro's paste of the portal rules, now verbatim on disk in PORTAL-PASTE.md; binding.
 - Portal rules page and submission form need login: not seen by any agent.
@@ -53,7 +53,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 - If the rules forbid code written before the event, list exactly what reused code comes from the public radox repo.
 - If the portal rules contradict RULES.md or SUBMISSION.md, the portal wins: fix the files the same hour.
 - If check.py is below 7/7 when Pedro gives the submit OK (Mon 08:00), track.sh refuses unless the OK words start with 'waive: <reason>' (track.sh:289-298); central runs track.sh verify first and puts the count in the question; Leo must push proofs/lifecycle.json to main.
-- If the portal shows the editing window closed or closing before Mon 10:00: ask an organizer at ONE16 the same hour and email meridian@growwithguava.com how a late edit is submitted; write the answer in PORTAL-SEEN.md.
+- If the portal shows the editing window closing earlier than Mon 10:00: ask an organizer at ONE16 the same hour and email meridian@growwithguava.com how a late edit is submitted; write the answer in PORTAL-SEEN.md.
 - If an organizer refuses a Scale repo without the closed backend: cut the API connection and deliver the registry as infrastructure; do not publish the backend.
 - Vhendala's manual product review does not block Leo's start at 09:00; if she cannot be reached Pedro closes the pass himself.
 

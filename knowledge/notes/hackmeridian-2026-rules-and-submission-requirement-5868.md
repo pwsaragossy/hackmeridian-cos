@@ -22,6 +22,8 @@ Portal tracks PDF (24 Oct): Scale needs an existing Stellar project, scoped new 
 
 Not on any public page and not in the PDF, but in Pedro's verbatim paste of the portal rules (2026-10-24, on disk as projects/hackmeridian-rail/PORTAL-PASTE.md): video 2 to 4 minutes on YouTube or Vimeo, deck up to 20 MiB in PDF/PPTX/PPT/HTML, AI attribution required, disqualification for undisclosed prior work. The same paste says the rubric uses a 1 to 10 scale, against 1 to 5 on /build. The live portal rules page needs login and no agent opened it.
 
+Project editing window in the portal, per Pedro on 2026-10-25 (he has seen the portal): Sun 25 Oct 09:00 to Mon 26 Oct 10:00 Lisbon, so submissions close at 10:00 even though /schedule says hacking ends at 12:00.
+
 Thematic track for Scale, settled by the reviewer reading /build directly: "Thematic tracks do not apply to Scale projects", while the PDF says Scale "can also enter" one, so it is optional and unscored for Scale. Open: whether a Scale repo may hold only new work with the platform closed is not answered anywhere found.
 
 Compared: [[hackmeridian-rubric-7-criteria-weights-scored-50e2]] coexists (rubric only while this note covers rules and submission) ; [[no-sep-and-no-stellar-project-aa39]] coexists (Stellar standards research, other topic) ; [[soroban-versions-on-2026-10-25-9619]] coexists (tool versions, other topic) ; [[brl-and-usd-ramps-on-stellar-1e41]] coexists (ramps research, other topic)
