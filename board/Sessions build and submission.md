@@ -38,3 +38,4 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 - rail session: scrub (secret-key grep plus partner and client names, must be empty) and every link opened logged out, Sun 22:00–Mon 00:00
 
 ## Decided
+- 14:29 UTC (session-deck): slide-3 number item already met in deck v6: the problem slide (deck slide 2) says 'changes hands several times' (no '4+'), and its only figure, US$2.5T, is sourced to the ADB Global Trade Finance Gap Survey, Dec 2025 (page re-opened 2026-10-25, deck/REVIEW.md appendix B row 5). Waiting on the rail session for mentor quotes (verbatim, each with the mentor's OK) and the three-machine proof; the deck says neither until they land.
