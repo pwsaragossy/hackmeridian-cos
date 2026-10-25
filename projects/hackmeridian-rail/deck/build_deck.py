@@ -162,7 +162,7 @@ def content_slide(n, pill, title, next_label, dark=False):
     return s
 
 
-# ---------- 1. Cover ----------
+# ---------- 1. Cover: the rail, not the handover (owner, 2026-10-25) ----------
 s = clone(COVER, {"84", "85", "86", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101"}, dark=True)
 set_run_text(find(s, "85"), f"PLATFORM 01 / {N:02d}", LIME)
 pill = find(s, "86")
@@ -174,9 +174,9 @@ set_run_text(find(s, "100"), "#HackMeridian26", LIME)
 for k in ("95", "96", "97"):
     find(s, k).fill.fore_color.rgb = rgb(LIME)
 text(s, 1.0, 2.55, 12.5, 1.5, ["Radox Custody Rail"], size=100, font=TITLE, bold=True, color=LIME, spacing=0.95)
-text(s, 1.0, 4.15, 12.0, 1.6, ["Know who holds the goods: every handover signed by both custodians."],
-     size=44, font=TITLE, bold=True, color=TEXT_D, spacing=1.0)
-text(s, 1.0, 5.95, 12.5, 0.5, ["Toward a SWIFT-like custody standard on Stellar  ·  Pilot corridor: Rio–Miami"],
+text(s, 1.0, 4.15, 12.3, 1.6, ["One record for the goods, from origin to delivery, across every company that touches them."],
+     size=36, font=TITLE, bold=True, color=TEXT_D, spacing=1.0)
+text(s, 1.0, 5.95, 12.5, 0.5, ["Toward a SWIFT-like standard on Stellar  ·  Pilot corridor: Rio–Miami"],
      size=24, color=SEC_D)
 s.shapes.add_picture(SHOT("qr-page-dark.png"), Inches(15.75), Inches(1.75), Inches(2.6), Inches(2.6))
 text(s, 14.3, 4.5, 5.5, 0.9, ["Scan: the live shipment", [("rio-miami-rail.vercel.app", {"font": MONO, "color": LIME, "size": 18})]],
@@ -206,48 +206,96 @@ def stats(s, items, y, step=6.1, w=5.6):
         text(s, x, y + 2.45, w, 0.9, [src], size=18, color=SEC_C)
 
 
-s = content_slide(2, "PMF · THE PROBLEM", "Who holds the cargo right now?", "NEXT ▸ WHAT IT COSTS")
+s = content_slide(2, "PMF · THE PROBLEM", "Who holds the whole chain?", "NEXT ▸ WHAT IT COSTS")
 stops = ["Warehouse", "Port", "Carrier", "Customs", "Recipient"]
-x0, x1, ly = 1.6, 18.4, 3.75
-hline(s, x0, ly, x1 - x0, LIME_C, 0.03)
-for i, name in enumerate(stops):
+x0, x1, ly = 1.6, 18.4, 3.6
+for i, name in enumerate(stops):  # broken line: each company is its own island
     cx = x0 + i * (x1 - x0) / 4
+    if i < 4:
+        hline(s, cx + 0.35, ly, (x1 - x0) / 4 - 0.7, LINE_C, 0.03)
     dot(s, cx, ly, 0.3, LIME_C)
-    text(s, cx - 1.3, ly + 0.25, 2.6, 0.5, [name], size=22, bold=True, align=PP_ALIGN.CENTER)
-stats(s, P_HANDS, 4.85)
-text(s, 1.0, 8.6, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
+    text(s, cx - 1.3, ly + 0.22, 2.6, 0.5, [name], size=22, bold=True, align=PP_ALIGN.CENTER)
+text(s, 1.0, 4.45, 18.0, 0.5, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
+                               ("each company keeps its own record of its own leg; nobody holds the chain end to end.", {})]], size=22)
+stats(s, P_HANDS, 5.15)
+text(s, 1.0, 8.65, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
 
-s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. A bank got fooled.", "NEXT ▸ THE SOLUTION")
+s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. A bank got fooled.", "NEXT ▸ THE STANDARD")
 text(s, 1.0, 3.4, 18.0, 0.9, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
                                ("a financier cannot see who holds the goods before paying. No customer has confirmed it yet.", {})]], size=24)
 stats(s, P_COST, 4.6)
 text(s, 1.0, 8.2, 18.0, 0.9, ["These numbers size the market problem. They are not results of ours, and we do not claim our build prevents any of it."],
      size=20, color=SEC_C)
 
-# ---------- 3. Solution ----------
-s = content_slide(4, "THE SOLUTION", "Both custodians sign, or nothing changes", "NEXT ▸ LIVE ON TESTNET")
-y = 3.6
-for x, w, label, sub, fill, lc in [(1.0, 4.9, "Outgoing custodian", "signs", CARD, LINE_C),
-                                   (6.55, 6.9, "One Stellar transaction", "custody_registry.handover", LIME, None),
-                                   (14.1, 4.9, "Incoming custodian", "signs", CARD, LINE_C)]:
-    box(s, x, y, w, 1.45, fill=fill, line=lc, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-    text(s, x, y + 0.2, w, 1.1, [[(label, {"bold": True, "size": 28})], [(sub, {"font": MONO, "size": 18, "color": INK if fill == LIME else SEC_C})]],
-         align=PP_ALIGN.CENTER, after=2)
-hline(s, 5.9, y + 0.72, 0.65, INK, 0.04)
-hline(s, 13.45, y + 0.72, 0.65, INK, 0.04)
-text(s, 1.0, 5.45, 18.0, 0.6, [[("Either signature missing → the call fails.", {"bold": True})]], size=30, align=PP_ALIGN.CENTER)
-text(s, 1.0, 6.45, 18.0, 1.8, [
-    [("— ", {"color": LIME_C}), ("Each handover moves custody and extends an on-chain hash chain, the ", {}), ("head", {"font": MONO}), (".", {})],
-    [("— ", {"color": LIME_C}), ("The token stays with its holder in transit; only custody changes.", {})],
-    [("— ", {"color": LIME_C}), ("After Delivered, the operator burns the token with the existing ", {}), ("redeem", {"font": MONO}), ("¹.", {})]],
-    size=26, after=8)
-text(s, 1.0, 8.65, 18.0, 1.0, [
-    "A custody record keyed to the container number. In production it would sit beside the carrier's bill of lading; not integrated in this build.",
-    "¹ Radox platform policy, not enforced on-chain by the registry; redeem still needs the holder's signature."],
+# ---------- 4. The proposal: a public SWIFT-like standard, integrate once; open vs operated ----------
+s = content_slide(4, "THE PROPOSAL · A PUBLIC STANDARD", "A SWIFT-like standard: integrate once", "NEXT ▸ THE RAIL")
+text(s, 1.0, 3.35, 18.0, 1.2, [[("The goal is ", {"bold": True}),
+                                ("a public, SWIFT-like custody standard on Stellar: a port, airport, carrier, chamber of commerce or financier "
+                                 "would integrate once and reach every company that joins, corridor after corridor.", {})]], size=24, color=INK)
+
+
+def link(x1, y1, x2, y2, color, w=1.5):
+    c = s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
+    c.line.color.rgb = rgb(color)
+    c.line.width = Pt(w)
+
+
+R = 0.95
+for cx, hub, head in ((2.8, False, "PAIR BY PAIR · 10 LINKS"), (6.65, True, "ONE STANDARD · 5 LINKS")):
+    cy = 5.95
+    pts = [(cx + R * math.sin(2 * math.pi * k / 5), cy - R * math.cos(2 * math.pi * k / 5)) for k in range(5)]
+    if hub:
+        for x, y in pts:
+            link(cx, cy, x, y, LIME_C, 2.0)
+        dot(s, cx, cy, 0.42, LIME)
+    else:
+        for i in range(5):
+            for j in range(i + 1, 5):
+                link(*pts[i], *pts[j], SEC_C, 1.25)
+    for x, y in pts:
+        dot(s, x, y, 0.26, INK)
+    text(s, cx - 1.8, 4.45, 3.6, 0.45, [head], size=18, font=MONO, bold=True, color=LIME_C if hub else SEC_C, align=PP_ALIGN.CENTER)
+text(s, 1.0, 7.2, 7.8, 0.9, ["Example, 5 companies: 10 custom links, or 5 links to one standard."], size=20, color=SEC_C, align=PP_ALIGN.CENTER)
+cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events: the custody_registry contract (Apache-2.0)", "Verify any shipment, no login (slide 6)"]),
+        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Onboarding, issuance controls, operation of the rail", "The API and backend: closed, not self-hostable", "Paid by the financial institution; not priced"])]
+for x, head, hc, items in cols:
+    text(s, x, 4.45, 4.8, 0.45, [head], size=18, font=MONO, bold=True, color=hc)
+    hline(s, x, 4.98, 4.65, hc, 0.03)
+    text(s, x, 5.15, 4.75, 3.0, [[("— ", {"color": hc}), (t_, {})] for t_ in items], size=21, after=8)
+hline(s, 1.0, 8.3, 18.0, LINE_C, 0.02)
+text(s, 1.0, 8.42, 18.0, 0.9, [
+    "Future tense: no standard, port, airport or chamber link exists yet (none confirmed). Each company would still need a key and one connection to the rail.",
+    [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C})]],
+    size=18, after=2)
+
+# ---------- 5. The rail, end to end; the double signature is the rule of each link ----------
+s = content_slide(5, "THE RAIL · END TO END", "One rail, origin to delivery", "NEXT ▸ LIVE ON TESTNET")
+text(s, 1.0, 3.35, 18.0, 0.6, ["One record follows the goods across company boundaries, not inside one company's system."], size=24, color=INK)
+nodes = [("Open", "operator", LIME_C), ("Warehouse", "", INK), ("Port", "", INK), ("Carrier", "", INK), ("Customs", "", INK),
+         ("Recipient", "", INK), ("Delivered", "to the holder", LIME_C), ("Burned", "existing redeem¹", LIME_C)]
+x0, x1, ly = 1.3, 18.7, 5.0
+gap = (x1 - x0) / (len(nodes) - 1)
+hline(s, x0, ly, x1 - x0, LIME_C, 0.04)
+for i, (name, sub, c) in enumerate(nodes):
+    cx = x0 + i * gap
+    dot(s, cx, ly, 0.34, c)
+    text(s, cx - 1.25, ly + 0.28, 2.5, 0.5, [name], size=21, bold=True, align=PP_ALIGN.CENTER)
+    if sub:
+        text(s, cx - 1.25, ly + 0.72, 2.5, 0.5, [sub], size=18, color=SEC_C, align=PP_ALIGN.CENTER)
+    if 1 <= i <= 5:  # the four handovers plus delivery: each signed by both sides (proofs: "both signed")
+        text(s, cx + 0.15, ly - 0.62, gap - 0.3, 0.45, ["2 signatures"], size=18, font=MONO, color=LIME_C, align=PP_ALIGN.CENTER)
+text(s, 1.0, 6.45, 18.0, 1.7, [
+    [("— ", {"color": LIME_C}), ("Rule of every link: ", {"bold": True}), ("both companies sign the same Stellar transaction, or custody does not move.", {})],
+    [("— ", {"color": LIME_C}), ("Each step extends an on-chain hash chain, the ", {}), ("head", {"font": MONO}), (": anyone can rebuild the history.", {})],
+    [("— ", {"color": LIME_C}), ("The token stays with its holder in transit; only custody moves.", {})]],
+    size=24, after=6)
+text(s, 1.0, 8.45, 18.0, 1.2, [
+    [("Built: this lifecycle on testnet, test keys. Design, not built: real companies on the rail, the standard, integrations.", {"bold": True, "color": INK})],
+    "Keyed to the container number; would sit beside the carrier's bill of lading, not integrated. ¹ Radox policy, not enforced on-chain; redeem needs the holder's signature."],
     size=18, color=SEC_C, after=2)
 
-# ---------- 5. Result: live on testnet (product page + technical workflow, merged to make room for the problem) ----------
-s = content_slide(5, "THE PRODUCT · LIVE ON TESTNET", "7 testnet transactions. Anyone can check them.", "NEXT ▸ WHY STELLAR", dark=True)
+# ---------- 6. Proof: the whole chain ran on testnet ----------
+s = content_slide(6, "THE PROOF · LIVE ON TESTNET", "The whole chain ran on testnet", "NEXT ▸ WHY STELLAR", dark=True)
 s.shapes.add_picture(SHOT("page-handovers-rows.png"), Inches(1.0), Inches(3.4), width=Inches(7.4))
 box(s, 1.0, 3.4, 7.4, 7.4 * 950 / 1400, line=LINE_D)
 tx = 9.0
@@ -258,15 +306,15 @@ for i, (num, label) in enumerate([("7", "successful"), ("9", "refused (simulated
     x = tx + i * 2.55
     text(s, x, 6.3, 2.5, 0.8, [num], size=44, font=TITLE, bold=True, color=LIME, spacing=0.9)
     text(s, x, 7.1, 2.45, 0.7, [label], size=18, color=TEXT_D)
-text(s, tx, 7.55, 10.0, 1.6, [
+text(s, tx, 7.5, 10.0, 1.6, [
     [("custody_registry ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
-    [("Plus attestation 33379211. Second run (branch three-machine): two team members authorised handovers on their own computers and testnet keys.", {"color": SEC_D, "font": BODY})],
-    [("All test keys, mostly in one harness: it proves the mechanism, not independent custodians.", {"color": TEXT_D, "font": BODY, "bold": True})]],
+    [("Second run (branch three-machine): two team members, as two companies, signed from their own computers and testnet keys.", {"color": SEC_D, "font": BODY})],
+    [("All test keys: this proves the mechanism, not independent companies.", {"color": TEXT_D, "font": BODY, "bold": True})]],
     size=18, font=MONO, after=4)
 
-# ---------- 6. Why Stellar ----------
-s = content_slide(6, "ECOSYSTEM · WHY STELLAR", "Why Stellar: two signers, one call", "NEXT ▸ USERS AND MODEL")
-rows = [("01", "Multi-party auth in one call", "Soroban authorises both custodians inside one contract invocation: the handover is atomic."),
+# ---------- 7. Why Stellar ----------
+s = content_slide(7, "ECOSYSTEM · WHY STELLAR", "Why Stellar: many companies, one ledger", "NEXT ▸ BUILT THIS WEEKEND")
+rows = [("01", "Multi-party auth in one call", "Soroban authorises both companies of a link inside one contract invocation: the handover is atomic."),
         ("02", "Events plus an on-chain head", "RPC keeps contract events about 7 days. The head stored in the contract lets anyone rebuild the full history later."),
         ("03", "The token stays put, then burns", "The shipment token never moves in transit; the existing Radox redeem burns it after delivery.")]
 for i, (n_, name, desc) in enumerate(rows):
@@ -281,46 +329,6 @@ text(s, 1.0, 8.12, 18.0, 1.5, [
      ("Kutana and Trustless Work release escrow on trade milestones; Pipeline finances commodity trade. We found none that records a custody handover signed by two custodians, and no SEP.", {})],
     [("Open source, Apache-2.0: ", {"bold": True, "color": LIME_C}), ("a custody primitive other Stellar real-world-asset issuers can reuse.", {})]],
     size=21, after=6)
-
-# ---------- 7. Value: integrate once; open vs operated (canon: public standard on a Radox-operated rail) ----------
-s = content_slide(7, "USERS · BUSINESS MODEL", "Integrate once, reach every party that joins", "NEXT ▸ BUILT THIS WEEKEND")
-text(s, 1.0, 3.35, 18.0, 1.2, [[("With one public custody standard, a port, airport, carrier, chamber or financier would integrate once "
-                                 "and reach every other party: adopt without a custom project.", {})]], size=24, color=INK)
-
-
-def link(x1, y1, x2, y2, color, w=1.5):
-    c = s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
-    c.line.color.rgb = rgb(color)
-    c.line.width = Pt(w)
-
-
-R = 0.95
-for cx, hub, head in ((2.8, False, "PAIR BY PAIR · 10 LINKS"), (6.65, True, "ONE RADOX RAIL · 5 LINKS")):
-    cy = 5.95
-    pts = [(cx + R * math.sin(2 * math.pi * k / 5), cy - R * math.cos(2 * math.pi * k / 5)) for k in range(5)]
-    if hub:
-        for x, y in pts:
-            link(cx, cy, x, y, LIME_C, 2.0)
-        dot(s, cx, cy, 0.42, LIME)
-    else:
-        for i in range(5):
-            for j in range(i + 1, 5):
-                link(*pts[i], *pts[j], SEC_C, 1.25)
-    for x, y in pts:
-        dot(s, x, y, 0.26, INK)
-    text(s, cx - 1.8, 4.45, 3.6, 0.45, [head], size=18, font=MONO, bold=True, color=LIME_C if hub else SEC_C, align=PP_ALIGN.CENTER)
-text(s, 1.0, 7.2, 7.8, 0.9, ["Example, 5 parties: 10 custom links, or 5 links to one standard."], size=20, color=SEC_C, align=PP_ALIGN.CENTER)
-cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events: the custody_registry contract (Apache-2.0)", "Verify any shipment, no login (slide 5)"]),
-        (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Custodian onboarding, issuance controls, operation", "The API and backend: closed, not self-hostable", "Paid by the financial institution; not priced"])]
-for x, head, hc, items in cols:
-    text(s, x, 4.45, 4.8, 0.45, [head], size=18, font=MONO, bold=True, color=hc)
-    hline(s, x, 4.98, 4.65, hc, 0.03)
-    text(s, x, 5.15, 4.75, 3.0, [[("— ", {"color": hc}), (t_, {})] for t_ in items], size=21, after=8)
-hline(s, 1.0, 8.3, 18.0, LINE_C, 0.02)
-text(s, 1.0, 8.42, 18.0, 0.9, [
-    "Adoption still takes work: a key per party, its own signatures, one connection to the rail (the Radox API).",
-    [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C})]],
-    size=18, after=2)
 
 # ---------- 8. Hackathon progress ----------
 s = content_slide(8, "HACKATHON PROGRESS", "Built this weekend, on disclosed prior work", "NEXT ▸ VISION AND ASK")
@@ -344,10 +352,10 @@ text(s, 1.35, 8.12, 17.3, 1.2, [[("AI attribution  ", {"font": MONO, "bold": Tru
      size=20, anchor=MSO_ANCHOR.MIDDLE)
 
 # ---------- 9. Vision, next steps and ask ----------
-s = content_slide(9, "VISION · NEXT · THE ASK", "Vision: one custody standard, every corridor", "NEXT ▸ THE TEAM")
+s = content_slide(9, "VISION · NEXT · THE ASK", "Vision: one rail, every corridor", "NEXT ▸ THE TEAM")
 text(s, 1.0, 3.4, 18.0, 1.3, [[("Rio–Miami is our pilot corridor. ", {"bold": True}),
-                                ("The goal is a public, SWIFT-like custody standard on Stellar for tokenized goods in transit worldwide, "
-                                 "to integrate with the systems of chambers of commerce, ports and airports.", {})]],
+                                ("Then the same rail worldwide, linked to chambers of commerce, ports and airports, "
+                                 "with a payment leg after delivery: all future work.", {})]],
      size=26, color=INK)
 phases = [("NOW", "Mechanism proven on testnet. No standard, users or revenue yet."),
           ("NEXT", "One Rio–Miami pilot shipment (none agreed yet). Full test matrix."),
@@ -378,7 +386,7 @@ if os.path.exists(SHOT("team.jpg")):  # drop the photo in deck/screens/team.jpg 
 else:
     box(s, 12.4, 3.4, 6.6, 4.0, line=SEC_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE, dash=True)
     text(s, 12.4, 3.4, 6.6, 4.0, ["Team photo"], size=22, color=SEC_C, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-text(s, 1.0, 7.65, 18.0, 0.6, ["Rio–Miami first. Our goal: one custody standard for every corridor."], size=28, font=TITLE, bold=True, color=LIME_C)
+text(s, 1.0, 7.65, 18.0, 0.6, ["Rio–Miami first. Our goal: one rail for goods, every corridor."], size=28, font=TITLE, bold=True, color=LIME_C)
 hline(s, 1.0, 8.35, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.45, 18.0, 1.2, [
     [("Live page  ", {"bold": True, "color": LIME_C}), ("rio-miami-rail.vercel.app", {}), ("     Code  ", {"bold": True, "color": LIME_C}),
