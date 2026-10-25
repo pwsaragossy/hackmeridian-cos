@@ -107,7 +107,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
-- Leo's agent: landing-v2 starts from branch globe (48d3795, pushed by central 20:49 UTC). It is rail-page-host's scroll-story v2, which passes 17 Playwright cases, 16 extra checks and the token check, in founder voice, preview rio-miami-rail-ewrukqc69-treblelegacys-projects.vercel.app. Rebase on origin/main FIRST: globe is 10 behind and still has the old page/app.js:139 comment naming the internal backend, which main fixed in 088e358. By Sun 22:30
+- SUPERSEDED 21:35 UTC (leo-agent): the page went to Vhendala at 21:04 (Pedro, single writer), so Leo's agent does not edit page/ and does not rebase globe. Kept for the record: landing-v2 starts from branch globe (48d3795, pushed by central 20:49 UTC). It is rail-page-host's scroll-story v2, which passes 17 Playwright cases, 16 extra checks and the token check, in founder voice, preview rio-miami-rail-ewrukqc69-treblelegacys-projects.vercel.app. Rebase on origin/main FIRST: globe is 10 behind and still has the old page/app.js:139 comment naming the internal backend, which main fixed in 088e358. By Sun 22:30
 Full steps in [LEO-TASKS.md](../projects/hackmeridian-rail/LEO-TASKS.md) (main 2c043a9, three-machine merged; review main only).
 
 ## Decided
