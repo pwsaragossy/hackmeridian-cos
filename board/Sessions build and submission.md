@@ -18,6 +18,7 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- rail-page-host: three-machine shipment on the public page with its own Verify head (MATCH), independent reviewer, then redeploy (Pedro's OK); in the video, swap clip 03c at 0:40 for the page view of this shipment at the same length, no timing change, by Sun 22:00
 - rail session: README.md in rio-miami-rail is missing and is the biggest gap (ambition 14:28 UTC): summary, problem, setup, env, demo, architecture with contract IDs, tx hashes, Prior work, Built here, AI usage, Production path, Future with the standard vision in future tense, by Sun 22:00
 - rail session: extra three-machine shipment, Leo and Vhendala each sign one handover from their own computer with their own testnet key (only public keys shared); new proof file, check.py and the frozen 7 untouched; then deck and video may say "signed on three different machines", by Sun 23:30
 - rail session: remove every mentor mention from public drafts (FORM-ANSWERS, README, SUBMISSION "mentor log", PITCH.md, DEMO-SCRIPT if any); the line is "No customer has confirmed it yet." (owner: "nao coloque isso, os mentores não tem valor nenhum nisso"), by Sun 22:00
