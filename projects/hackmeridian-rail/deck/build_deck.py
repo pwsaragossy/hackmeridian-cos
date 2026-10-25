@@ -187,23 +187,22 @@ for i in range(6):
 text(s, 13.87, 6.42, 2.0, 0.4, ["RIO"], size=18, font=MONO, bold=True, color=SEC_D)
 text(s, 17.13, 6.42, 2.0, 0.4, ["MIAMI"], size=18, font=MONO, bold=True, color=SEC_D, align=PP_ALIGN.RIGHT)
 
-# ---------- 2-3. Problem, in numbers (each number from PROBLEM-NUMBERS.md, footnoted; {{...}} = not yet sourced) ----------
-# (big number, what it measures, source line). check_deck fails while any {{ remains.
-P_HANDS = [("{{N1}}", "{{parties one shipment touches}}", "{{source, publisher, date}}"),
-           ("{{N2}}", "{{documents per shipment}}", "{{source, publisher, date}}"),
-           ("{{N3}}", "{{share still on paper}}", "{{source, publisher, date}}")]
-P_COST = [("{{N4}}", "{{fraud from duplicate or forged documents}}", "{{source, publisher, date}}"),
-          ("{{N5}}", "{{cargo theft or loss in transit}}", "{{source, publisher, date}}"),
-          ("US$2.5T", "global trade finance gap", "ADB Global Trade Finance Gap Survey, Dec 2025")]
+# ---------- 2-3. Problem, in numbers (each opened at origin 2026-10-25; library notes cited per line) ----------
+# (big number, what it measures, source line). check_deck fails on any {{ placeholder.
+P_HANDS = [("5.7%", "of bills of lading issued electronically", "DCSA, Jan 2025"),  # [[dcsa-ebl-5-7-percent-jan-6e39]]
+           ("11.2%", "of surveyed firms use only electronic bills", "ICC / FIT Alliance survey, 190 replies, Oct 2026"),  # [[icc-fit-alliance-2026-ebl-survey-cdc7]]
+           ("22%", "of cargo thefts worldwide involve an insider", "TT Club & BSI Cargo Theft Report, Apr 2026")]  # [[tt-club-bsi-2025-cargo-theft-12f4]]
+P_COST = [("R$900M", "direct loss from 8,570 cargo robberies in Brazil, 2025", "NTC&Logística survey, published 28 Mar 2026"),  # [[tt-club-bsi-2025-cargo-theft-12f4]]
+          ("US$2.5T", "global trade finance gap", "ADB Global Trade Finance Gap Survey, Dec 2025")]  # [[adb-trade-finance-gap-survey-dec-d033]]
 
 
-def stats(s, items, y):
+def stats(s, items, y, step=6.1, w=5.6):
     for i, (num, label, src) in enumerate(items):
-        x = 1.0 + i * 6.1
-        hline(s, x, y, 5.6, LIME_C, 0.03)
-        text(s, x, y + 0.2, 5.6, 1.2, [num], size=64, font=TITLE, bold=True, color=INK, spacing=0.95)
-        text(s, x, y + 1.45, 5.6, 1.0, [label], size=24, bold=True, color=INK)
-        text(s, x, y + 2.45, 5.6, 0.9, [src], size=18, color=SEC_C)
+        x = 1.0 + i * step
+        hline(s, x, y, w, LIME_C, 0.03)
+        text(s, x, y + 0.2, w, 1.2, [num], size=64, font=TITLE, bold=True, color=INK, spacing=0.95)
+        text(s, x, y + 1.45, w, 1.0, [label], size=24, bold=True, color=INK)
+        text(s, x, y + 2.45, w, 0.9, [src], size=18, color=SEC_C)
 
 
 s = content_slide(2, "PMF · THE PROBLEM", "Who holds the cargo right now?", "NEXT ▸ WHAT IT COSTS")
@@ -217,11 +216,11 @@ for i, name in enumerate(stops):
 stats(s, P_HANDS, 4.85)
 text(s, 1.0, 8.6, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
 
-s = content_slide(3, "PMF · WHAT IT COSTS", "Paper custody leaks money", "NEXT ▸ THE SOLUTION")
+s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. Finance waits.", "NEXT ▸ THE SOLUTION")
 text(s, 1.0, 3.4, 18.0, 0.9, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
                                ("a financier cannot see who holds the goods before paying. No customer has confirmed it yet.", {})]], size=24)
-stats(s, P_COST, 4.6)
-text(s, 1.0, 8.2, 18.0, 0.9, ["These numbers size the market problem. They are not our traction, and this build does not solve all of it."],
+stats(s, P_COST, 4.6, step=9.2, w=8.8)
+text(s, 1.0, 8.2, 18.0, 0.9, ["These numbers size the problem in the market, not results of ours. This build does not solve all of it."],
      size=20, color=SEC_C)
 
 # ---------- 3. Solution ----------
@@ -254,14 +253,14 @@ tx = 9.0
 for i, (step, who, h) in enumerate(HASHES):
     y = 3.35 + i * 0.4
     text(s, tx, y, 10.0, 0.4, [[(h, {"color": LIME, "font": MONO}), (f"   {step} · {who}", {"color": TEXT_D})]], size=18)
-for i, (num, label) in enumerate([("7", "successful"), ("9", "refused (simulated)"), ("24", "unit tests"), ("MATCH", "verify-head, live 25 Oct")]):
+for i, (num, label) in enumerate([("7", "successful"), ("9", "refused (simulated)"), ("24", "unit tests"), ("MATCH", "head check, 25 Oct")]):
     x = tx + i * 2.55
     text(s, x, 6.3, 2.5, 0.8, [num], size=44, font=TITLE, bold=True, color=LIME, spacing=0.9)
     text(s, x, 7.1, 2.45, 0.7, [label], size=18, color=TEXT_D)
-text(s, tx, 7.85, 10.0, 1.6, [
+text(s, tx, 7.55, 10.0, 1.6, [
     [("custody_registry ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
-    [("Plus an attestation (33379211). A second run (branch three-machine): two team members authorised handovers on their own computers, with their own testnet keys.", {"color": SEC_D, "font": BODY})],
-    [("All test keys, most held by one harness: this proves the mechanism, not independent custodians.", {"color": TEXT_D, "font": BODY, "bold": True})]],
+    [("Plus attestation 33379211. Second run (branch three-machine): two team members authorised handovers on their own computers and testnet keys.", {"color": SEC_D, "font": BODY})],
+    [("All test keys, mostly in one harness: it proves the mechanism, not independent custodians.", {"color": TEXT_D, "font": BODY, "bold": True})]],
     size=18, font=MONO, after=4)
 
 # ---------- 6. Why Stellar ----------
@@ -310,7 +309,7 @@ for cx, hub, head in ((2.8, False, "PAIR BY PAIR · 10 LINKS"), (6.65, True, "ON
         dot(s, x, y, 0.26, INK)
     text(s, cx - 1.8, 4.45, 3.6, 0.45, [head], size=18, font=MONO, bold=True, color=LIME_C if hub else SEC_C, align=PP_ALIGN.CENTER)
 text(s, 1.0, 7.2, 7.8, 0.9, ["Example, 5 parties: 10 custom links, or 5 links to one standard."], size=20, color=SEC_C, align=PP_ALIGN.CENTER)
-cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events: the custody_registry contract (Apache-2.0)", "Verify any shipment, no login (slide 4)"]),
+cols = [(9.3, "OPEN · ANYONE", LIME_C, ["Record format, roles and events: the custody_registry contract (Apache-2.0)", "Verify any shipment, no login (slide 5)"]),
         (14.35, "RADOX OPERATES · CLIENT PAYS", INK, ["Custodian onboarding, issuance controls, operation", "The API and backend: closed, not self-hostable", "Paid by the financial institution; not priced"])]
 for x, head, hc, items in cols:
     text(s, x, 4.45, 4.8, 0.45, [head], size=18, font=MONO, bold=True, color=hc)
