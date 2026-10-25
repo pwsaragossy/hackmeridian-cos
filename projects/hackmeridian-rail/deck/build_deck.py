@@ -196,7 +196,7 @@ for i, name in enumerate(stops):
     cx = x0 + i * (x1 - x0) / 4
     dot(s, cx, ly, 0.34, LIME_C)
     text(s, cx - 1.2, ly + 0.32, 2.4, 0.5, [name], size=22, bold=True, align=PP_ALIGN.CENTER)
-text(s, 1.0, 6.4, 11.2, 1.0, ["Handovers are mostly paper, or sit inside each operator's own system: no shared record crosses borders."], size=26, color=SEC_C)
+text(s, 1.0, 6.4, 11.2, 1.0, ["Handovers are mostly paper, or sit inside each operator's own system: rarely one shared record across borders."], size=26, color=SEC_C)
 text(s, 1.0, 7.6, 11.2, 1.2, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
                                 ("a financier cannot see who holds the goods before paying. No customer has confirmed it yet; we are testing it with mentors.", {})]],
      size=24, color=INK)
@@ -296,7 +296,7 @@ for i, (k, v) in enumerate(users):
 box(s, 11.4, 3.45, 7.6, 5.7, fill=CARD, line=LINE_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, 11.85, 3.75, 6.8, 5.5, [
     [("MODEL · THE OPERATOR PAYS", {"font": MONO, "size": 18, "bold": True, "color": LIME_C})],
-    [("SWIFT-style: the record format is public; Radox runs the rail and the API.", {"bold": True})],
+    [("SWIFT-style: the record format is public; Radox builds the rail and the API.", {"bold": True})],
     "Revenue: a fee from the financial institution that operates the rail. Not priced yet.",
     [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C, "size": 22})]],
     size=26, after=18)
@@ -324,14 +324,14 @@ text(s, 1.35, 8.12, 17.3, 1.2, [[("AI attribution  ", {"font": MONO, "bold": Tru
 
 # ---------- 9. Vision, next steps and ask ----------
 s = content_slide(9, "VISION · NEXT · THE ASK", "Vision: one custody standard, every corridor", "NEXT ▸ THE TEAM")
-text(s, 1.0, 3.4, 18.0, 1.3, [[("Rio–Miami is the first corridor and the pilot. ", {"bold": True}),
-                                ("The goal is an open, SWIFT-like standard for tokenized goods moving on rails anywhere, "
-                                 "built to integrate with the systems of chambers of commerce, ports and airports.", {})]],
+text(s, 1.0, 3.4, 18.0, 1.3, [[("Rio–Miami is our pilot corridor. ", {"bold": True}),
+                                ("The goal is an open, SWIFT-like custody standard on Stellar for tokenized goods in transit worldwide, "
+                                 "to integrate with the systems of chambers of commerce, ports and airports.", {})]],
      size=26, color=INK)
-phases = [("NOW", "Mechanism proven on testnet. No users or revenue yet."),
+phases = [("NOW", "Mechanism proven on testnet. No standard, users or revenue yet."),
           ("NEXT", "One Rio–Miami pilot shipment (none agreed yet). Full test matrix."),
-          ("PLANNED", "SCF Build application, then a security audit (neither done). Mainnet."),
-          ("FUTURE", "More corridors on the same standard. A USD leg (not built).")]
+          ("PLANNED", "SCF Build, then a security audit (neither done). Mainnet; USD leg (not built)."),
+          ("FUTURE", "More corridors, one standard. Port, airport, chamber links (none started).")]
 hline(s, 1.2, 5.3, 13.8, LIME_C, 0.03)
 for i, (k, v) in enumerate(phases):
     x = 1.0 + i * 4.6
@@ -340,7 +340,7 @@ for i, (k, v) in enumerate(phases):
     text(s, x, 6.0, 4.3, 1.5, [v], size=22)
 box(s, 1.0, 7.75, 18.0, 1.45, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, 1.45, 7.75, 17.1, 1.45, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
-                                  ("Introductions to one financial institution and one logistics operator for a first pilot shipment, and a Stellar engineer's review of the design.", {"bold": True})]],
+                                  ("Introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, and a Stellar engineer's review of the design.", {"bold": True})]],
      size=24, anchor=MSO_ANCHOR.MIDDLE)
 
 # ---------- 10. Team ----------
@@ -357,7 +357,7 @@ if os.path.exists(SHOT("team.jpg")):  # drop the photo in deck/screens/team.jpg 
 else:
     box(s, 12.4, 3.4, 6.6, 4.0, line=SEC_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE, dash=True)
     text(s, 12.4, 3.4, 6.6, 4.0, ["Team photo"], size=22, color=SEC_C, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-text(s, 1.0, 7.65, 18.0, 0.6, ["Rio–Miami first. Then one custody standard for every corridor."], size=28, font=TITLE, bold=True, color=LIME_C)
+text(s, 1.0, 7.65, 18.0, 0.6, ["Rio–Miami first. Our goal: one custody standard for every corridor."], size=28, font=TITLE, bold=True, color=LIME_C)
 hline(s, 1.0, 8.35, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.45, 18.0, 1.2, [
     [("Live page  ", {"bold": True, "color": LIME_C}), ("rio-miami-rail.vercel.app", {}), ("     Code  ", {"bold": True, "color": LIME_C}),
