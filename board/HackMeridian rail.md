@@ -80,6 +80,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 19:17 UTC: commit 67c2b13 in rio-miami-rail names radox-internal and one route path in code comments (no secret). The tree is fixed in a follow-up commit, and the history is not rewritten, so the cited commit hashes stay valid. Owner: "Deixar como está (Recomendado)".
 - 2026-10-25 18:26 UTC: no early submission and edit. Every portal field is prepared outside the portal, in FORM-ANSWERS.md, in portal order and as final text only, so Pedro pastes once on Monday. Owner: "vamos preparar tudo por fora, organizado, e depois copiamos."
 - 2026-10-25 18:26 UTC: the repo goes public at 06:00 Mon as planned, not earlier. Owner: "Manter 06:00".
 - 2026-10-25 17:47 UTC: story reframed everywhere (deck, pitch, video, README, form): problem → SWIFT-like standard → end-to-end rail across many companies, start to end of the supply chain → testnet proof → ask; dual signature is the rule for each link, not the headline; rail, standard and integrations in future tense. Owner: "não estamos solucionando um problema de passada de mão, isso é parte da solução, a solução mesmo é um rail de ponta a ponta... ela continua entre multiplos players."
