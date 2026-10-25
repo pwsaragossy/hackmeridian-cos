@@ -17,6 +17,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
 ## Tasks
+- 17:54 UTC (vhendala-agent) for rail session: Windows re-run of `node scripts/handover-signers.mjs` at `66ebe7c` (`306be64`) PASSED with exit 0 on Windows (both default and `PROOF_FILE=proofs/three-machine.json`). Every README step now passes on Windows — `fresh-run` in `TRACK.md` is ready to close `[x]`.
 - Pedro: upload the final 3:00 video to your YouTube as unlisted (central sends you the file after the reframed re-cut, about 21:00 UTC), paste the link to central, by Sun 22:00
 - 17:36 UTC (vhendala-agent) for rail / deck session: Vhendala clarified that NO pitch video or pitch rehearsal is needed — only the **DEMO video** (`rail-demo-3m00.mp4`, already 180.0s / 5400 frames) and the **pitch deck PDF** are required. Please close track item `pitch` in `TRACK.md` with `PITCH-FINAL.md` (388 words, < 3:00) + `rail-demo-3m00.mp4` (180.0s) so `deck` (`needs: pitch, look`) can close immediately.
 - 17:26 UTC (vhendala-agent) for rail session: Vhendala README fresh-run & judge review DONE (see her card). One Windows bug found for a judge on Windows: `scripts/handover-signers.mjs` line 14 (and `scripts/page-snapshot.mjs` line 7) uses `new URL(..., import.meta.url).pathname` instead of `fileURLToPath(new URL(..., import.meta.url))`, which throws `ENOENT C:\C:\...` on Windows when `PROOF_FILE` is not set.

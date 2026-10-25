@@ -21,6 +21,10 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 17:54 UTC (vhendala-agent): **Windows fresh-run re-verified on `66ebe7c` (includes `306be64`) — 100% PASS**:
+  - `node scripts/handover-signers.mjs` (no env) -> exit 0 (`every handover and deliver: both custodians signed`)
+  - `PROOF_FILE=proofs/three-machine.json node scripts/handover-signers.mjs` -> exit 0 (`every handover and deliver: both custodians signed`)
+  - Track item `fresh-run` can now be closed `[x]` in `TRACK.md`.
 - 17:36 UTC (Vhendala via vhendala-agent): **Decisão / Alinhamento sobre Pitch vs Demo:** Não precisamos de vídeo de pitch nem de ensaio de pitch — a submissão exige apenas o **vídeo DEMO** (que já é o `rail-demo-3m00.mp4` de 3:00 / 180.0s) e o **PDF do pitch deck**. A sessão do projeto deve fechar o gate `pitch` no `TRACK.md` direto com `PITCH-FINAL.md` + `DEMO-SCRIPT.md` (180.0s exatos) para destravar o item `deck` no `TRACK.md`.
 - 17:26 UTC (vhendala-agent): **18:00 check DONE** — `https://rio-miami-rail.vercel.app` and `/snapshot.json` return 200 OK logged out (both shipments present: TEST4627832 and the three-machine shipment); `check.py` is 7/7 PASS.
 - 17:26 UTC (vhendala-agent): **README fresh-run on Windows DONE** (`rio-miami-rail` main `5e91bae`):
@@ -70,8 +74,8 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - DONE 15:16 UTC: Vhendala: first, steps 1–3 of the 14:37 line and post ONLY your public key (output of `stellar keys address vhendala`) on this card; the shipment cannot be prepared without it, by Sun 18:00
 - DONE 15:50 UTC (shipment SUCCESS 16:10): Vhendala: then sign your handover when the REQUEST READY line appears on this card, by Sun 23:30
 - 16:46 UTC (Pedro, via his session): Vhendala, the 8 lines below are yours, in order of deadline. Start now with the test clip and the team photo (Sun 18:00); the key and the signature are done, thank you.
-- DONE 17:26 UTC (see Sunday notes — 1 Windows bug found in handover-signers.mjs): Vhendala: run the README on your own computer from a clean clone, as a judge would, and write each step that fails on this card (fresh-run), Mon 00:00
-- Vhendala: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, link on this card, by Sun 18:00
+- DONE 17:54 UTC (100% PASS on Windows at 66ebe7c after 306be64 fix): Vhendala: run the README on your own computer from a clean clone, as a judge would, and write each step that fails on this card (fresh-run), Mon 00:00
+- DONE 17:43 UTC (superseded by Pedro's 17:43 decision "Eu subo como não listado" — Pedro uploads to his own YouTube): Vhendala: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, link on this card, by Sun 18:00
 - Vhendala: team photo of Pedro, Leo and Vhendala for the team slide, by Sun 18:00
 - DONE 17:26 UTC (200 OK logged out, both shipments + snapshot.json live, check.py 7/7): Vhendala: open https://rio-miami-rail.vercel.app logged out and read the check.py result on the cards; anything red becomes a card line, at Sun 18:00
 - DONE 17:26 UTC (judge notes below): Vhendala: read the finished demo script, deck draft and README as a judge, notes on this card, by Mon 01:00
