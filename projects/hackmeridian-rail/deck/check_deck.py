@@ -23,7 +23,11 @@ PDF = os.path.join(HERE, "radox-custody-rail.pdf")
 BANNED = [r"\btitle to\b", r"document of title", r"digital bill of lading", r"replaces? the bill of lading",
           r"proof of ownership", r"legally recognised", r"\bUCC\b", r"\bMLETR\b", r"\bcustomers\b(?! has)",
           r"\binvestors?\b", r"\btraction\b", r"live pilot", r"\bendorse", r"\bbacked by\b", r"\bpartner(s)?\b",
-          r"\bZIS\b", r"\bPaulo\b", r"none exists", r"\bmainnet-ready\b", r"\bsponsor"]
+          r"\bZIS\b", r"\bPaulo\b", r"none exists", r"\bmainnet-ready\b", r"\bsponsor", r"\bour users\b",
+          r"revenue is growing", r"\bintegrated with\b"]
+# Disclosures the rules and the Claims guard require (REVIEW.md finding 4: without these a stripped deck passed).
+REQUIRED = ["Pedro Wakigawa Saragossy", "Claude Code", "AI_USAGE.md", "AI voice", "PRIOR WORK", "first repo commit",
+            "explainer video", "No users or revenue yet", "none agreed yet", "test key", "not built", "24 unit tests"]
 TEMPLATE_SMALL = {"107", "108", "109", "122", "84", "85", "99", "100", "101"}  # template's decorative 12-14 pt labels
 
 
@@ -66,6 +70,10 @@ def main():
         for i, t in texts:
             if re.search(pat, t, re.I):
                 fails.append(f"slide {i}: banned /{pat}/ in {t[:60]!r}")
+
+    for req in REQUIRED:
+        if req.lower() not in full.lower():
+            fails.append(f"required text missing: {req!r}")
 
     lc = lifecycle(sys.argv)
     real = [x["hash"] for x in lc["lifecycle"]]

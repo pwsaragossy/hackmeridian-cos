@@ -189,7 +189,7 @@ text(s, 17.13, 6.42, 2.0, 0.4, ["MIAMI"], size=18, font=MONO, bold=True, color=S
 # ---------- 2. Problem (template: PMF) ----------
 s = content_slide(2, "PMF · THE PROBLEM", "Who holds the cargo right now?", "NEXT ▸ THE SOLUTION")
 text(s, 1.0, 3.55, 11.2, 1.2, ["Between seller and buyer, a shipment changes hands several times."], size=30, color=INK)
-stops = ["Warehouse", "Port", "Carrier", "Customs", "Buyer"]
+stops = ["Warehouse", "Port", "Carrier", "Customs", "Recipient"]
 x0, x1, ly = 1.9, 11.4, 5.35
 hline(s, x0, ly, x1 - x0, LIME_C, 0.03)
 for i, name in enumerate(stops):
@@ -278,7 +278,7 @@ for i, (n_, name, desc) in enumerate(rows):
 hline(s, 1.0, 7.93, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.12, 18.0, 1.5, [
     [("Nearest neighbours we found ", {"bold": True}), ("(LumenLoop, SCF, Scout; searched 24–25 Oct 2026): ", {"color": SEC_C}),
-     ("Kutana and Trustless Work release escrow on trade milestones. We found none that records a custody handover signed by two custodians, and no SEP for it.", {})],
+     ("Kutana and Trustless Work release escrow on trade milestones; Pipeline finances commodity trade. We found none that records a custody handover signed by two custodians, and no SEP for it.", {})],
     [("Open source, Apache-2.0: ", {"bold": True, "color": LIME_C}), ("a custody primitive other Stellar real-world-asset issuers can reuse.", {})]],
     size=21, after=6)
 
@@ -304,21 +304,22 @@ text(s, 11.85, 3.75, 6.8, 5.5, [
 # ---------- 8. Hackathon progress ----------
 s = content_slide(8, "HACKATHON PROGRESS", "Built this weekend, on disclosed prior work", "NEXT ▸ VISION AND ASK")
 cols = [(1.0, "PRIOR WORK · BEFORE SUN 25 OCT 09:00", SEC_C, [
-            "Radox platform and 3 Soroban contracts on Stellar mainnet (public repo, created 2026-08-19)",
+            "Radox platform (closed backend); its 3 Soroban contracts are on Stellar mainnet, public since 2026-08-19",
             "transfer_agent and its redeem (new testnet instance from the existing wasm)",
-            "Planning files, 24–25 Oct"]),
+            "Architecture notes (20 Oct), planning files (24–25 Oct), the explainer video, our agent tooling (from 22 Oct)",
+            "No contract code before then: first repo commit 25 Oct 09:00 UTC"]),
         (10.3, "BUILT AT HACKMERIDIAN", LIME_C, [
             "custody_registry contract, 24 unit tests",
             "Lifecycle harness: 7 testnet transactions, 9 refused calls",
-            "verify-head script and the public shipment page",
+            "verify-head script, the public shipment page, this deck",
             "Radox API reads the registry: same head (closed backend, testnet)"])]
 for x, head, hc, items in cols:
     text(s, x, 3.5, 8.7, 0.5, [head], size=18, font=MONO, bold=True, color=hc)
     hline(s, x, 4.08, 8.7, hc, 0.03)
-    text(s, x, 4.3, 8.7, 3.8, [[("— ", {"color": hc}), (t, {})] for t in items], size=24, after=14)
+    text(s, x, 4.25, 8.7, 3.7, [[("— ", {"color": hc}), (t, {})] for t in items], size=21, after=8)
 box(s, 1.0, 8.0, 18.0, 1.45, fill=CARD, line=LINE_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, 1.35, 8.12, 17.3, 1.2, [[("AI attribution  ", {"font": MONO, "bold": True, "color": LIME_C, "size": 18}),
-                                ("Code, tests and scripts were written with AI coding agents (Claude Code); the team decided scope and what ships. Per-file record in AI_USAGE.md. The video narration is an AI voice generated from Pedro's voice.", {})]],
+                                ("Code, tests, scripts, the shipment page, docs and this deck were made with AI coding agents (Claude Code); the team decided scope and what ships. Per-file record in AI_USAGE.md. The video narration is an AI voice generated from Pedro's voice.", {})]],
      size=20, anchor=MSO_ANCHOR.MIDDLE)
 
 # ---------- 9. Vision, next steps and ask ----------
@@ -351,14 +352,17 @@ for i, (name, role) in enumerate(team):
     y = 3.4 + i * 1.25
     text(s, 1.0, y, 10.8, 1.3, [[(name, {"bold": True, "size": 30, "font": TITLE})], [(role, {})]], size=21, color=INK, after=4)
 text(s, 1.0, 7.15, 10.6, 0.5, ["Leo and Vhendala joined for the hackathon."], size=20, color=SEC_C)
-box(s, 12.4, 3.4, 6.6, 4.0, line=SEC_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE, dash=True)
-text(s, 12.4, 3.4, 6.6, 4.0, ["Team photo"], size=22, color=SEC_C, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+if os.path.exists(SHOT("team.jpg")):  # drop the photo in deck/screens/team.jpg and rebuild
+    s.shapes.add_picture(SHOT("team.jpg"), Inches(12.4), Inches(3.4), Inches(6.6), Inches(4.0))
+else:
+    box(s, 12.4, 3.4, 6.6, 4.0, line=SEC_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE, dash=True)
+    text(s, 12.4, 3.4, 6.6, 4.0, ["Team photo"], size=22, color=SEC_C, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 text(s, 1.0, 7.65, 18.0, 0.6, ["Rio–Miami first. Then one custody standard for every corridor."], size=28, font=TITLE, bold=True, color=LIME_C)
 hline(s, 1.0, 8.35, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.45, 18.0, 1.2, [
     [("Live page  ", {"bold": True, "color": LIME_C}), ("rio-miami-rail.vercel.app", {}), ("     Code  ", {"bold": True, "color": LIME_C}),
      ("github.com/pwsaragossy/rio-miami-rail (Apache-2.0)", {})],
-    [("AI  ", {"bold": True, "color": LIME_C}), ("Code written with AI coding agents (Claude Code). Narration: an AI voice from Pedro's voice. No AI-generated images in this deck.", {"font": BODY})]],
+    [("AI  ", {"bold": True, "color": LIME_C}), ("Code, page, docs and deck made with AI coding agents (Claude Code). Narration: an AI voice from Pedro's voice. No AI-generated images in this deck.", {"font": BODY})]],
     size=18, font=MONO, after=6)
 
 # drop the template's five original slides
