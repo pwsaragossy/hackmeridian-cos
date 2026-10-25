@@ -6,12 +6,12 @@ Criteria and weights: CRITERIA.md (scale 1–5 on /build, 1–10 in the portal r
 
 **Every handover of a tokenized physical shipment between Rio and Miami is signed by both the
 outgoing and the incoming custodian on Stellar, ownership stays with the token holder, and delivery
-burns the title.**
+burns the token.**
 
 ## User and problem
 
 - **Beachhead user (behavioral):** a trade financier or buyer who pays against goods still in transit
-  and today relies on paper handover documents and the carrier's own tracking page to know who holds
+  and today relies on paper documents or one carrier's own tracking to know who holds
   the cargo. The exporter and the four custodians (warehouse, port, carrier, customs) are the people
   who must sign; they are not the buyer of the product.
 - **Problem, one falsifiable sentence:** a party paying against goods in transit cannot check, without
@@ -38,7 +38,7 @@ Ecosystem 4 · User value 3 (assumption, no behavior evidence) · Technical 4 if
 not · Innovation 4 (new on a directory search only) · Progress 4 (clean split, but the burn and token
 admin are prior work) · Market 3 (no pilot customer) · UX 3 with the page, 1 without.
 Weighted with the page and 7 txs: (4·20 + 3·20 + 4·15 + 4·15 + 4·10 + 3·10 + 3·10) / 5 = **72 / 100**
-(3.6 of 5 average; 20/100 is the floor). If the API connection is cut at 18:00: Ecosystem 3,
+(3.6 of 5 average; the floor is 20/100 on a 1-5 scale, 10/100 on 1-10). If the API connection is cut at 18:00: Ecosystem 3,
 Progress 3 → **66 / 100** (3.3 of 5), since Scale scores milestones against the intake that promised
 it. Each score is the author's own, unvalidated; 72 is the ceiling, not the forecast. The cheapest points: User value from one sourced number and one mentor quote; UX
 from the page.
@@ -56,4 +56,4 @@ Conditional 4th: **the Radox API connection** (private branch). The intake promi
 scores milestone completion against the intake, so it stays in — but the approved stop criterion
 cuts it if no dual-signed handover runs on testnet by Sun 18:00. If cut, the README says so.
 
-Cut / later: passkey signing by the custodians in a phone UI, event-source adapters, the USD leg.
+Cut / later: Not new work, never presented as event work: the TokenSale escrow / all-or-nothing DvP (public in the radox README since 2026-08-19). Passkey signing by the custodians in a phone UI, event-source adapters, the USD leg.

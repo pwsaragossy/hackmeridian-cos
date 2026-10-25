@@ -1,5 +1,7 @@
 # Kickoff — Sun 25 Oct 09:00 Lisbon (= 09:00 UTC)
 
+Contains Radox-internal references (paths, commits). Never copy this file or LEO-BRIEF.md into rio-miami-rail.
+
 Written on 2026-10-24/25, before the event. No code exists yet; the first commit in
 `pwsaragossy/rio-miami-rail` happens after 09:00 Sun.
 
@@ -24,10 +26,12 @@ milestone completion against the intake) is:
    carrier → customs → recipient) signed by **both** outgoing and incoming custodian in one call,
    with an attestation (document hash, location, timestamp) emitted as an event;
 2. ownership never moves during transit (the holder keeps the token the whole time);
-3. the last handover to the recipient is what unlocks the burn (calling or gating `redeem`);
+3. the last handover to the recipient authorises the burn: the harness reads status == Delivered, then the operator calls the existing `redeem`;
 4. proof on testnet, hash by hash, and a connection to the Radox API.
 
 The README must say this split in one table: "existed before / built at HackMeridian".
+
+Pre-event design and planning exists: the Radox architecture panel of 2026-10-20 and the planning files in hackmeridian-cos dated 24-25 Oct (KICKOFF, LEO-BRIEF, PITCH outline, check.py). No contract code before Sun 09:00.
 
 ## 2. Target (owner, 2026-10-25)
 
@@ -61,10 +65,12 @@ The event itself ends 16:00, but only the 12:00 submission time matters.
 
 | When | What | Gate |
 |---|---|---|
-| Sun 09:00–10:00 | Check-in; ask the organizers (not mentors: they start 11:00) the repo question (§7); Pedro logs into the portal, opens the rules page and the submission form, saves the field list, the editing-window dates, the rules text and the rubric scale it states (1–5 or 1–10) to `PORTAL-SEEN.md` here; review-1 | review-1 |
-| Sun 10:00–14:00 | Leo: contract + unit tests, testnet accounts for the 6 actors. Pedro: shipment page skeleton against a labelled sample fixture. Mentor user test (IDEA.md) at 11:00–12:00 and 13:30–14:00 | 14:00 checkpoint: no dual-signed handover on testnet yet → one line on the card |
+| Sun 09:00–10:00 | Check-in; ask the organizers (not mentors: they start 11:00) the repo question (§7); Pedro logs into the portal, opens the rules page and the submission form, saves the field list, the editing-window dates, the rules text and the rubric scale it states (1–5 or 1–10) to `PORTAL-SEEN.md` here; Leo: wasm check first (§8); Pedro: form dry-run in the same login | Vhendala human pass on REVIEW-1 (does not delay Leo's start) |
+| Sun 10:00–14:00 | Leo: contract + unit tests, testnet accounts for the 6 actors. Pedro: shipment page skeleton against a labelled sample fixture. Mentor user test (IDEA.md) at 11:30-11:45, 13:30-14:00, 15:00-17:00 (11:00-12:00 is the opening ceremony and team formation); a Stellar mentor or the plugin reviewer reads the contract by 14:00 (someone who did not write it); keep a mentor log for the README | 14:00 checkpoint: no dual-signed handover on testnet yet → one line on the card |
 | Sun 14:00–18:00 | Leo: full lifecycle, hashes in `proofs/lifecycle.json`. Pedro: page wired to the testnet contract (reads real data) | **18:00 stop line**: no dual-signed handover on testnet, then cut the API connection |
-| Sun 18:00–22:00 | Page deployed to a public URL, `head` verified on screen; README (Prior work, Built at HackMeridian, AI usage, contract IDs, Production path: mainnet plan, audit status, what is testnet-only, SCF Build eligibility). Dry-run the submission form with placeholder links. API connection only if not cut | review-2 |
+| Sun 18:00–19:00 | Page deployed to a public URL, `head` verified on screen | |
+| Sun 19:00–20:30 | Dinner, no work | |
+| Sun 20:30–22:00 | README sections (Prior work, Built at HackMeridian, AI usage, contract IDs) + Production path (§9); dry-run the submission form with placeholder links. API connection only if the lifecycle ran by 18:00, hard stop 21:00; "connected" = a read-only Radox testnet endpoint returning custodian, status and head, shown as curl output | review-2 |
 | Sun 22:00–Mon 00:00 | Deck draft with the real hashes; demo script with the page as the last scene | |
 | Mon 00:00–03:00 | Record the video (target 3:00, rehearsed twice, offline backup); Vhendala runs the README on a clean machine | review-3 |
 | Mon 03:00–06:00 | Rest, or fixes from review-3 only | |
@@ -77,13 +83,17 @@ Event programme inside these blocks (hackmeridian.com/schedule, read 2026-10-25)
 19:00–20:30, Mon briefing 09:00–09:15; mentors 11:00–23:00. Count about 3 h of Sun 10:00–22:00 as
 not building.
 
+Shipment page brief. Entry: opens the demo shipment, no input. Primary action: 'Verify head' recomputes the chain on screen. Loading: skeleton plus text. Empty: open shipment, 0 handovers. Error: RPC or Horizon unreachable shows the proofs snapshot labelled 'snapshot, not live'; an unknown key gets its own message. Head mismatch: visible failure. Fixed label: 'Testnet - test keys - not real custodians'. State via getLedgerEntries or simulate; history via Horizon, not getEvents. Contrast 4.5:1, keyboard focus, no colour-only status, readable at projector size.
+
 The page is a must-have (frozen scope), so it has its own lines above; if Leo's lifecycle slips past
 18:00, the page still ships on the contract's first handovers and the README says what ran.
 
 ## 6. Ready on each machine before 09:00
 
-- Accept the GitHub invites (`rio-miami-rail`, `hackmeridian-cos`).
-- Plugin installed and `setup.sh join ~/hackmeridian https://github.com/pwsaragossy/hackmeridian-cos.git --member <name>`.
+1. Accept both invites (rio-miami-rail, hackmeridian-cos) at github.com/notifications.
+2. In Claude Code: /plugin marketplace add pwsaragossy/chief-of-staff, then /plugin install chief-of-staff@chief-of-staff, then setup.sh join ~/hackmeridian https://github.com/pwsaragossy/hackmeridian-cos.git --member leo (vhendala for her).
+3. Before the first commit: git config user.email to the GitHub noreply address on every machine (no history rewrite or force-push after Sun 09:00).
+4. Leo and Vhendala each confirm on app.hackmeridian.com that they are listed in team Radox, completed the profile and answered the Lisbon RSVP, and are in person at ONE16.
 - `stellar --version` (Pedro's Mac: 28.1.0), `rustup target list --installed` includes `wasm32v1-none`
   (Pedro's Mac: yes), Node ≥ 20 (Pedro's Mac: 26.12.0).
 - Testnet RPC reachable: `https://soroban-testnet.stellar.org` (re-checked 25/10 00:49 UTC: protocol 29).
@@ -102,6 +112,7 @@ The page is a must-have (frozen scope), so it has its own lines above; if Leo's 
 
 ## 8. Facts re-checked live on 2026-10-25 00:49 UTC (RPC, crates.io API, Raven stellarDocs)
 
+- Testnet is wiped on the scheduled reset of 2026-12-16 [[stellar-testnet-resets-wipe-contracts-and-dfe4]].
 - Testnet RPC `getVersionInfo`: node build stellar-core 30.0.0, **protocolVersion 29** (re-run, same).
 - The burn's wasm is still on testnet: `stellar contract info interface --wasm-hash 3870748b…
   --network testnet` returned the spec with `fn redeem` (2026-10-25 01:02 UTC). Re-run it at Sun 09:00.
@@ -124,3 +135,7 @@ The page is a must-have (frozen scope), so it has its own lines above; if Leo's 
   signing is cut from scope, so the claim would be false).
 - Wording: "burn" is prior work (`redeem`); say so on the slide (PITCH.md slide 5 does).
 - Mentor question ready: which ramp covers USD to a C-address (SEP-45 is Draft; candidates in §6).
+
+## 9. Production path (README section text)
+
+Production path (README section). Mainnet: not this weekend; testnet only. Physical-asset offers on the Radox platform are blocked outside testnet until the full test matrix is proven (re-check against origin/main before publishing; no flag names or file paths in the public README). On mainnet the asset issuer account must be locked after the SAC admin handover; the testnet demo does not do this (record in proofs whether it was locked). Audit: none. The SCF Audit Bank serves SCF-awarded projects, so it can start only after an award. A paper bill or a second token for the same cargo is not prevented on chain. Evidence lifetime: testnet resets about quarterly (next 2026-12-16) and getEvents keeps about 7 days; the committed Horizon JSON of the 7 txs and the video are what remain. SCF Build: planned, not submitted; no eligibility claim. The older public radox repo (all rights reserved) is a different repo from this Apache-2.0 one; nothing was copied.

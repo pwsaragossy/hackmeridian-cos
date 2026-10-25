@@ -39,11 +39,13 @@ Done = the 4 checks at the bottom pass, with testnet hashes.
    and its hash written down.
 6. No secrets in the repo: keys in env vars or `stellar keys`, `.env` gitignored.
 7. No partner or client names in code, README or commits — roles only (exporter, warehouse, port,
-   carrier, customs, event source, operator).
+   carrier, customs, event source, operator); use made-up container, AWB and port identifiers; no real carrier, port or bill-of-lading numbers.
 8. **AI attribution is required by the rules** (RULES.md, SUBMISSION.md). Keep `AI_USAGE.md` at the repo
-   root: one line per file or folder saying it was generated with AI (tool + model) and what a human
+   root: one line per file or folder saying it was generated with AI ("AI coding agent"; no vendor or model name unless Pedro lifts that rule on the card) and what a human
    reviewed. Undisclosed prior work disqualifies; so add nothing written before Sun 09:00.
 9. Commit small and often: the commit history is the judges' evidence of work during the event.
+10. Before the first commit set git user.email to the GitHub noreply address; no rewrite or force-push after Sun 09:00. Before every push run grep -rE "S[A-Z2-7]{55}" over the tree; keys live only in env or `stellar keys`.
+11. LICENSE = full Apache-2.0 text in the first commit; license = "Apache-2.0" in Cargo.toml and package.json; copyright line "Copyright 2026 the rio-miami-rail contributors"; copy nothing from pwsaragossy/radox (all rights reserved) or radox-internal.
 
 ## Design (decided; change only with a reason written on the card)
 
@@ -52,7 +54,7 @@ State per shipment, persistent storage, TTL extended on read and write:
 ```
 Shipment {
   key: BytesN<32>,          // sha256 of container/AWB number + origin; must be unique
-  token: Address,           // the SAC title token (prior work)
+  token: Address,           // the SAC asset token (prior work)
   current_custodian: Address,
   route: Vec<Address>,      // custodians in order, fixed at open
   seq: u32,                 // handovers done
@@ -100,11 +102,11 @@ cancelled delivery request stays `Open`.
    recipient); issuer flags `auth_required` + `auth_revocable` + `auth_clawback_enabled` **before any
    trustline** (a trustline created before clawback is on makes `redeem` fail with `SAC #10` — this cost
    Radox a ceremony once); trustlines of seller and holder; deploy the asset's SAC; issuer `set_admin`
-   → the harness's own `transfer_agent` instance; `register_token`; `mint` to the seller; `deliver` to
-   the holder. **Lifecycle** (the 7 that count): `open` → 4 `handover` (route warehouse → port → carrier
+   → the harness's own `transfer_agent` instance; `register_token`; `mint` to the seller; `transfer_agent.deliver` (sends the minted token to the holder; not the registry's `deliver`). **Lifecycle** (the 7 that count): `open` → 4 `handover` (route warehouse → port → carrier
    → customs → recipient) → `deliver` → `transfer_agent.redeem(token, holder, amount, ref_id)` with
-   operator + holder auth, burning the title. Write every hash to `proofs/lifecycle.json`. Also the failure branches: wrong signer, out-of-route, after freeze,
+   operator + holder auth, burning the token. Write every hash to `proofs/lifecycle.json`. Also the failure branches: wrong signer, out-of-route, after freeze,
    while paused — each with the failing tx or simulation result recorded.
+   Before `redeem`, the harness reads `custody_registry.get(key)` and aborts unless status is Delivered; it records "redeem_precondition": "Delivered" as an extra top-level key in proofs/lifecycle.json (check.py reads only `lifecycle`). It also saves each lifecycle tx's Horizon JSON to proofs/tx/<hash>.json (verify-head unchanged). After `set_admin`, record whether the issuer account was locked. Name the keys so the demo reads owner-operated: issuer and agent admin = 'exporter', operator = 'rail operator'.
 4. `scripts/verify-head.mjs`: reads the events of a shipment and recomputes `head`; exit 0 when it
    matches the on-chain `head`.
 
@@ -135,7 +137,7 @@ shape is fixed — the target check (`check.py` in this folder) reads it from `m
 
 ## Timeline (Lisbon)
 
-Sun 09:00–10:00 design review with Pedro's session (card) · 10:00–14:00 contract + tests ·
+Sun 09:00 first command: `stellar contract info interface --wasm-hash 3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1 --network testnet`; if it fails, write a card line before building. By 14:00 a Stellar mentor or the plugin reviewer reads the contract. Sun 09:00–10:00 design review with Pedro's session (card) · 10:00–14:00 contract + tests ·
 14:00–18:00 deploy + full lifecycle on testnet (**18:00 is the stop line**: if no two-signature
 handover ran on testnet by then, tell the card at once) · after 18:00 failure branches and
 `verify-head`.

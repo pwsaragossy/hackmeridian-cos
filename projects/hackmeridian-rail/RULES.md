@@ -7,10 +7,7 @@ not re-checked against the live portal. Details: [[hackmeridian-2026-rules-and-s
 The portal rules page (app.hackmeridian.com/portal/rules) needs login: not reachable, not opened.
 
 ## Our entry
-- Builder track Scale, "assigned" [PDF p4]. Thematic Stellar Unlocked, saved on the team or submission page;
-  changes follow "the project editing window" [PDF p4]. Scale needs no thematic track: "Thematic tracks do not
-  apply to Scale projects" [WEB /build and home, read directly by the reviewer 2026-10-25]; the PDF says Scale "can
-  also enter" one [PDF p2]. Optional and unscored for Scale: do not design for it.
+- Builder track Scale, "assigned" [PDF p4]. Thematic track: Pedro chose Stellar Unlocked (his message 2026-10-24 22:37 UTC). The PDF says Scale can also enter one; public /build says it does not apply; the portal wins. Optional, no extra build work. Not confirmed that it is saved on the team or submission page: capture which track the portal shows at Sun 09:00; if blank and allowed, select Stellar Unlocked before the editing window closes. Name no track in the deck until the portal shows it saved.
 - Team: Pedro (captain), Leo, Vhendala = 3. Limit: up to 5 people [WEB /faq]. Event: Warehouse ONE16, Lisbon [WEB /build].
 - Hacking: Sun 25 Oct 09:00 → Mon 26 Oct 12:00, "No late submissions" [WEB /build, /schedule]. **All times are Lisbon local time** [WEB /schedule]
   (no UTC stated). Lisbon is UTC+0 from 25 Oct 01:00 UTC [[lisbon-is-utc-0-for-the-9963]], so deadline = 12:00 UTC.
@@ -42,6 +39,7 @@ The portal rules page (app.hackmeridian.com/portal/rules) needs login: not reach
 - KYC / payout identity checks: not stated on any page read. Not verified (home, /faq, /terms.html, PDF). Ask meridian@growwithguava.com.
 
 ## Eligibility
+- In person only, no remote option [WEB /faq, read 25/10]; each participant answers the Lisbon RSVP.
 - 18 or the local age of majority; acceptance discretionary, "review and verification" possible [WEB /terms.html sec 03]. Portal sign-up requires accepting a Code of Conduct and Liability Waiver [WEB portal login page].
 
 ## Open items (not verified)
