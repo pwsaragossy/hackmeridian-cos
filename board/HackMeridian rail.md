@@ -30,7 +30,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Pedro: ask an organizer whether a Scale repo with only the new work is accepted, answer to central, by Sun 17:00
 - Pedro: ask 3 logistics or trade-finance mentors at the event "would you accept this signature instead of a scanned stamp?", forward each answer word for word with the mentor's OK to central, by Sun 17:00
 - Pedro: dry-run the portal form with placeholder links (your login), by Sun 22:00
-- Pedro: OK to make rio-miami-rail public after the scrub (central asks), by Mon 06:00
+- Pedro: one OK, asked by central as a single button question: merge branch three-machine into main (deck v7 slide 5 cites proofs/three-machine.json), push main, and make rio-miami-rail public after the scrub, by Mon 06:00
 - Pedro: paste FORM-ANSWERS.md into the portal, check the terms box, Submit (after track.sh verify), by Mon 08:00
 
 ## Next (2026-10-25, session-hackmeridian-rail)
