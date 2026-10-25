@@ -36,6 +36,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 - `radox-internal` branch `hackmeridian` exists (from main), only for a backend change the API connection may need; never public.
 
 ## 4. What was done and how
+- 2026-10-25 (central, owner's answers): `check.py` requires 7 distinct hashes, check OK re-recorded with track.sh; README gets a "Production path" section; Pedro pastes the portal rules, form fields and editing-window dates into `PORTAL-SEEN.md` at Sun 09:00.
 - Workspace created with `setup.sh create ~/hackmeridian --share <hackmeridian-cos> --member pedro`.
 - Stage 1 redo: researcher and product subagents with role cards rewrote the five files; reviewer subagent attacked them; fixes applied (REVIEW-1.md lists each).
 
