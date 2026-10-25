@@ -94,7 +94,7 @@ The page is a must-have (frozen scope), so it has its own lines above; if Leo's 
 1. Leo accepts both invites (rio-miami-rail, hackmeridian-cos) at github.com/notifications.
 2. In Claude Code: /plugin marketplace add pwsaragossy/chief-of-staff, then /plugin install chief-of-staff@chief-of-staff, then setup.sh join ~/hackmeridian https://github.com/pwsaragossy/hackmeridian-cos.git --member leo.
 3. Before the first commit: git config user.email to the GitHub noreply address on every machine that commits (no history rewrite or force-push after Sun 09:00).
-4. Leo and Vhendala each confirm on app.hackmeridian.com that they are listed in team Radox, completed the profile and answered the Lisbon RSVP, and are in person at ONE16. Vhendala needs no repo invite and no plugin: she does a manual product review only.
+4. Leo and Vhendala each confirm on app.hackmeridian.com that they are listed in team Radox, completed the profile and answered the Lisbon RSVP, and are in person at ONE16. Vhendala (GitHub `vhendala`, invited with write to rio-miami-rail and hackmeridian-cos on 2026-10-25) accepts both invites at github.com/notifications, installs the chief-of-staff plugin as in step 2, connects the shared workspace as member `vhendala` (same setup command, `--member vhendala`) and opens the panel (`/chief-of-staff:panel`). She supervises; she does not change code.
 - `stellar --version` (Pedro's Mac: 28.1.0), `rustup target list --installed` includes `wasm32v1-none`
   (Pedro's Mac: yes), Node ≥ 20 (Pedro's Mac: 26.12.0).
 - Testnet RPC reachable: `https://soroban-testnet.stellar.org` (re-checked 25/10 00:49 UTC: protocol 29).
@@ -129,7 +129,7 @@ Deploy steps (any Pedro session, no login needed):
   slips, it outranks the API connection and the deck polish.
 - **Leo's agents**: the `custody_registry` contract, unit tests, testnet deploy, lifecycle harness and
   `verify-head` — brief in [LEO-BRIEF.md](LEO-BRIEF.md).
-- **Vhendala**: manual product review, reading the page, deck, video and README as a judge would; no code review, no repo invite. She also owns the video account, the upload, the narration and the team photo (owner, 2026-10-25; card `board/Vhendala video and team photo.md`). A Stellar mentor or the plugin reviewer reads the contract by 14:00; an independent agent (central launches it) runs the README on a clean clone at Mon 00:00. Anything red becomes a line on the card at once.
+- **Vhendala**: supervises the project from the panel (cards waiting, track progress, deadline) and does the manual product review, reading the page, deck, video and README as a judge would; write access to both repos, but she does not change code (owner, 2026-10-25, via central). She also owns the video account, the upload, the narration and the team photo (owner, 2026-10-25; card `board/Vhendala video and team photo.md`). A Stellar mentor or the plugin reviewer reads the contract by 14:00; an independent agent (central launches it) runs the README on a clean clone at Mon 00:00. Anything red becomes a line on the card at once.
 - Still to ask an organizer at check-in: is a Scale repo with only the new work (platform closed) accepted?
 
 ## 8. Facts re-checked live on 2026-10-25 00:49 UTC (RPC, crates.io API, Raven stellarDocs)
