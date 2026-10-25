@@ -8,7 +8,7 @@ Plan, sources and limits: SUBMISSION.md "Portal form, field by field". Only Pedr
 | Project title | unseen | 0 | waiting on Pedro's pick (card) |
 | Tagline | 120 | 0 | draft in SUBMISSION.md |
 | Description | 8000, Markdown | 0 | Sun 20:30–22:00 |
-| Problem solved | unseen, keep < 1500 | 445 (draft) | review-4 |
+| Problem solved | unseen, keep < 1500 | 497 (draft) | review-4 |
 | Challenges | unseen, keep < 1500 | 0 | Mon 06:00 |
 | What's next | unseen, keep < 1500 | 810 (draft) | review-4 |
 | Repository link | HTTPS, public | — | Mon 06:00 |
@@ -24,7 +24,7 @@ Plan, sources and limits: SUBMISSION.md "Portal form, field by field". Only Pedr
 
 ### Problem solved (draft 2026-10-25, review-4 pending)
 
-In our working assumption, a container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it. Mentors we spoke with at the event saw the need; no customer has confirmed it yet.
+In our working assumption, a container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it. Mentors we spoke with at the event were supportive of the idea; this is informal feedback, and no customer has confirmed the need yet.
 
 ### Technical, fragment for the three-machine proof (draft 2026-10-25, review-4 pending)
 
