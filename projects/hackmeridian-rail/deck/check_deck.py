@@ -75,7 +75,7 @@ def main():
         if h[:8] not in full:
             fails.append(f"hash {h[:8]} from proofs not on any slide")
     for h in set(re.findall(r"\b[0-9a-f]{8}\b", full)):
-        if not any(r.startswith(h) for r in real) and h not in lc.get("custody_registry", "").lower():
+        if not any(r.startswith(h) for r in real + [x["hash"] for x in lc.get("attest", [])]) and h not in lc.get("custody_registry", "").lower():
             fails.append(f"8-hex token {h} on a slide is not a lifecycle hash")
     contract = lc["custody_registry"] if isinstance(lc["custody_registry"], str) else lc["custody_registry"].get("id", "")
     if contract and contract not in full:

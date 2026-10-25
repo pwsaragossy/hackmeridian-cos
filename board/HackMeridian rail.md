@@ -1,14 +1,14 @@
 ---
 tags:
   - board
-status: in-progress
+status: waiting-owner
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
 due: 2026-10-26
 since: 2026-10-24
 updated: 2026-10-25
-asked: 
+asked: 2026-10-25 13:37 +0000
 ---
 
 # HackMeridian rail
@@ -16,6 +16,8 @@ asked:
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
+- Privacy (rail-page-host, 2026-10-25 13:40 UTC): the turn-end sync pushed Pedro's voice sample (18.6 s WAV) and the Voicebox database, plus demo .mp4 clips, to the private repo pwsaragossy/hackmeridian-cos (commits a49ee25 and d7f88cc). The files are now outside the workspace and untracked, but they stay in that repo's history. Removing them needs a history rewrite and a forced push of hackmeridian-cos. Recommendation: rewrite, so the repo does not keep a sample of Pedro's voice. Mechanism: [[the-workspace-turn-end-sync-pushes-7635]].
+- Deploy (rail-page-host): approve the production redeploy of rio-miami-rail be4bcb9 (review-2 fixes) in session rail-page-host; the Vercel connector also needs its team access re-authorized (one click).
 ## Tasks
 - Pedro: send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/, forward his reply to central, by Sun 18:00 Lisbon (15:00 Rio)
 - Pedro: ask an organizer whether a Scale repo with only the new work is accepted, answer to central, by Sun 17:00
@@ -25,7 +27,9 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Pedro: paste FORM-ANSWERS.md into the portal, check the terms box, Submit (after track.sh verify), by Mon 08:00
 
 ## Next (2026-10-25, session-hackmeridian-rail)
-- 2026-10-25 13:12 UTC (rail-page-host): demo backup recorded, timed to DEMO-SCRIPT.md: `projects/hackmeridian-rail/video/` has 8 clips at 1080p (explorer rows, terminal rows, page live 30 s ending MATCH, page snapshot 30 s with RPC and Horizon blocked ending MATCH against the saved head); README there says what each is and how to re-record. The .mp4 files stay out of git. Not recorded: the GitHub README row (repo private). Proposed evidence for track item demo-offline: video/README.md (closes after demo-script).
+- 2026-10-25 13:40 UTC (rail-page-host): demo backup clips, timed to DEMO-SCRIPT.md and fixed after an independent review: 9 clips at 1080p in `~/Movies/hackmeridian-rail-video/` (outside the workspace, see the privacy item under "For the owner to decide"); index, provenance and re-record commands in `projects/hackmeridian-rail/video/README.md`. Explorer clips end on the outlined call and keep the operator-only Signatures entry out of shot; new clip 03b runs `scripts/handover-signers.mjs` (rio-miami-rail 5069654), which lists both custodians' signed auth entries for every handover and the deliver; terminal clips carry "Recorded output, replayed · run 2026-10-25 13:17 UTC" and show full commands. Page clips 08 (live) and 09 (snapshot) end on MATCH but show the page before be4bcb9: re-record after the redeploy. Not recorded: the GitHub README row (repo private). Proposed evidence for demo-offline: video/README.md.
+- 2026-10-25 13:40 UTC (rail-page-host): review-2 page fixes committed and pushed to rio-miami-rail: be4bcb9 (M3 SDK bundle served from page/ with the same SRI, offline snapshot tested with every non-local request blocked: MATCH; m7 parallel Horizon reads, live load about 1.3 s; m2 "assurance 3" on each handover row; M2 transfer_agent prior-work line on the page and in llms.txt; m5 "private until submission" removed), 9cf9301 (NOTICE names the vendored SDK); LICENCES.md updated. NOT DEPLOYED: the Vercel connector now returns 403 for the team scope, and the CLI deploy was blocked by the permission classifier (production deploy). The deploy waits for Pedro's approval in session rail-page-host.
+- 2026-10-25 13:40 UTC (rail-page-host): narration voice cloned locally with Voicebox from 18.6 s of `~/Movies/FINAL youtube.mp4` (Pedro, English); profile "Pedro (cloned, rail video)"; 12.6 s test line at `~/Movies/hackmeridian-rail-video/voice-test-15s.wav`, which a local transcription reads back word for word; no upload, no cost. Licences in LICENCES.md (Voicebox MIT, Qwen3-TTS Apache-2.0, mlx-audio MIT). The full narration waits for DEMO-SCRIPT.md final and Pedro's OK that the test sounds like him. How-to: [[clone-a-voice-locally-with-voicebox-556a]].
 - 2026-10-25 13:12 UTC (rail-page-host): for the video editor: stellar.expert's Signatures box shows only the operator, not the two custodians; both custodian signatures are Soroban auth entries (checked in the 635c99ac envelope: GAJT…F3K2 warehouse, GCRB…SH4D port). DEMO-SCRIPT row 0:40 should frame the `handover(...)` arguments, not "the two signers in the auth section"; clip 03 already does.
 - 2026-10-25 13:12 UTC (rail-page-host): voice sample for the Voicebox clone: `~/Movies/FINAL youtube.mp4` (244 s, English, one speaker, Pedro narrating the Agent Pay demo; speech about -20 dB, pauses about -83 dB). Nothing was uploaded. ElevenLabs check, for the record: cloning needs the paid Starter plan and the attached connector cannot clone ([[elevenlabs-voice-cloning-needs-a-paid-fe7a]]).
 - 2026-10-25 12:36 UTC (vhendala-agent): Oi Pedro! Ping de teste da sessão da Vhendala — painel oficial aberto e sincronizado em tempo real (vimos que o Voicebox.app já foi configurado no KICKOFF/SUBMISSION e que o Stage 2 está em 11/22).

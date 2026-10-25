@@ -115,7 +115,7 @@ def text(s, x, y, w, h, paras, size=26, color=INK, font=BODY, bold=False, align=
 def box(s, x, y, w, h, fill=None, line=None, shape=MSO_SHAPE.RECTANGLE, weight=1.0, dash=False):
     b = s.shapes.add_shape(shape, Inches(x), Inches(y), Inches(w), Inches(h))
     if shape == MSO_SHAPE.ROUNDED_RECTANGLE:
-        b.adjustments[0] = 0.12
+        b.adjustments[0] = min(0.12, 0.16 / min(w, h))
     if fill:
         b.fill.solid()
         b.fill.fore_color.rgb = rgb(fill)
@@ -129,6 +129,7 @@ def box(s, x, y, w, h, fill=None, line=None, shape=MSO_SHAPE.RECTANGLE, weight=1
     else:
         b.line.fill.background()
     b.shadow.inherit = False
+    b._element.xpath(".//a:effectRef")[0].set("idx", "0")  # else LibreOffice draws the theme shadow
     return b
 
 
@@ -150,7 +151,7 @@ def content_slide(n, pill, title, next_label, dark=False):
     set_run_text(p, pill, INK)
     p.text_frame.paragraphs[0].runs[0].font.size = Pt(18)
     p.fill.fore_color.rgb = rgb(LIME)
-    p.width = Inches(0.8 + 0.215 * len(pill))
+    p.width = Inches(0.9 + 0.15 * len(pill))
     if dark:
         find(s, "106").fill.fore_color.rgb = rgb(PANEL_D)
         find(s, "121").fill.fore_color.rgb = rgb(LINE_D)
@@ -166,7 +167,7 @@ set_run_text(find(s, "85"), f"PLATFORM 01 / {N:02d}", LIME)
 pill = find(s, "86")
 set_run_text(pill, "TESTNET · TEST KEYS · NOT REAL CUSTODIANS", LIME)
 pill.line.color.rgb = rgb(LIME)
-pill.width = Inches(9.4)
+pill.width = Inches(0.9 + 0.15 * 41)
 pill.text_frame.paragraphs[0].runs[0].font.size = Pt(18)
 set_run_text(find(s, "100"), "#HackMeridian26", LIME)
 for k in ("95", "96", "97"):
@@ -182,14 +183,14 @@ text(s, 14.3, 4.5, 5.5, 0.9, ["Scan: the live shipment", [("rio-miami-rail.verce
 hline(s, 14.0, 6.15, 5.0, LIME_C, 0.03)
 for i in range(6):
     dot(s, 14.0 + i * 1.0, 6.15, 0.26 if i in (0, 5) else 0.16, LIME)
-text(s, 13.7, 6.42, 2.0, 0.4, ["RIO"], size=18, font=MONO, bold=True, color=SEC_D)
-text(s, 17.3, 6.42, 2.0, 0.4, ["MIAMI"], size=18, font=MONO, bold=True, color=SEC_D, align=PP_ALIGN.RIGHT)
+text(s, 13.87, 6.42, 2.0, 0.4, ["RIO"], size=18, font=MONO, bold=True, color=SEC_D)
+text(s, 17.13, 6.42, 2.0, 0.4, ["MIAMI"], size=18, font=MONO, bold=True, color=SEC_D, align=PP_ALIGN.RIGHT)
 
 # ---------- 2. Problem (template: PMF) ----------
 s = content_slide(2, "PMF · THE PROBLEM", "Who holds the cargo right now?", "NEXT ▸ THE SOLUTION")
 text(s, 1.0, 3.55, 11.2, 1.2, ["Between seller and buyer, a shipment changes hands several times."], size=30, color=INK)
 stops = ["Warehouse", "Port", "Carrier", "Customs", "Buyer"]
-x0, x1, ly = 1.4, 11.4, 5.35
+x0, x1, ly = 1.9, 11.4, 5.35
 hline(s, x0, ly, x1 - x0, LIME_C, 0.03)
 for i, name in enumerate(stops):
     cx = x0 + i * (x1 - x0) / 4
@@ -199,9 +200,9 @@ text(s, 1.0, 6.4, 11.2, 1.0, ["Handovers are mostly paper, or sit inside one ope
 text(s, 1.0, 7.6, 11.2, 1.2, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
                                 ("a financier cannot see who holds the goods before paying. No customer has confirmed it yet; we are testing it with mentors.", {})]],
      size=24, color=INK)
-text(s, 13.2, 3.45, 5.8, 1.3, ["US$2.5T"], size=96, font=TITLE, bold=True, color=INK, spacing=0.95)
-text(s, 13.2, 4.95, 5.8, 2.6, ["Global trade finance gap.",
-                               [("ADB Global Trade Finance Gap Survey, Dec 2025. It sizes the financing gap; it is not evidence of the custody problem.", {"size": 18, "color": SEC_C})]],
+text(s, 13.2, 3.55, 5.8, 1.1, ["US$2.5T"], size=64, font=TITLE, bold=True, color=INK, spacing=0.95)
+text(s, 13.2, 4.6, 5.8, 2.6, ["Global trade finance gap.",
+                               [("ADB Global Trade Finance Gap Survey, Dec 2025. It sizes the financing gap; it is not evidence of the custody problem.", {"size": 18, "color": SEC_C, "bold": False})]],
      size=24, bold=True, after=10)
 text(s, 1.0, 8.75, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
 
@@ -218,9 +219,9 @@ hline(s, 5.9, y + 0.72, 0.65, INK, 0.04)
 hline(s, 13.45, y + 0.72, 0.65, INK, 0.04)
 text(s, 1.0, 5.45, 18.0, 0.6, [[("Either signature missing → the call fails.", {"bold": True})]], size=30, align=PP_ALIGN.CENTER)
 text(s, 1.0, 6.45, 18.0, 1.8, [
-    [("■ ", {"color": LIME_C, "size": 20}), ("Each handover moves custody and extends an on-chain hash chain, the ", {}), ("head", {"font": MONO}), (".", {})],
-    [("■ ", {"color": LIME_C, "size": 20}), ("The token stays with its holder in transit; only custody changes.", {})],
-    [("■ ", {"color": LIME_C, "size": 20}), ("After Delivered, the operator burns the token with the existing ", {}), ("redeem", {"font": MONO}), ("¹.", {})]],
+    [("— ", {"color": LIME_C}), ("Each handover moves custody and extends an on-chain hash chain, the ", {}), ("head", {"font": MONO}), (".", {})],
+    [("— ", {"color": LIME_C}), ("The token stays with its holder in transit; only custody changes.", {})],
+    [("— ", {"color": LIME_C}), ("After Delivered, the operator burns the token with the existing ", {}), ("redeem", {"font": MONO}), ("¹.", {})]],
     size=26, after=8)
 text(s, 1.0, 8.65, 18.0, 1.0, [
     "A custody record keyed to the container number. In production it would sit beside the carrier's bill of lading; not integrated in this build.",
@@ -229,30 +230,29 @@ text(s, 1.0, 8.65, 18.0, 1.0, [
 
 # ---------- 4. Product ----------
 s = content_slide(4, "THE PRODUCT · LIVE ON TESTNET", "Anyone can check the chain. No login.", "NEXT ▸ TECHNICAL WORKFLOW", dark=True)
-s.shapes.add_picture(SHOT("page-handovers.png"), Inches(1.0), Inches(3.45), height=Inches(6.0))
-box(s, 1.0, 3.45, 6.0 * 1400 / 1290, 6.0, line=LINE_D)
-tx = 8.2
-text(s, tx, 3.55, 10.8, 3.0, [
-    "One public page per shipment: every handover, who signed it, and its Stellar transaction.",
-    [("Verify head", {"bold": True, "color": LIME}), (" recomputes the hash chain in the browser and compares it with the contract.", {})]],
-    size=28, color=TEXT_D, after=18)
-text(s, tx, 6.25, 6.0, 1.2, ["MATCH"], size=80, font=MONO, bold=True, color=LIME, spacing=0.9)
-text(s, tx, 7.45, 6.6, 1.3, ["recomputed from 7 transactions, checked live 25 Oct 2026",
-                             "Reads Stellar RPC and Horizon directly; read-only."], size=18, color=SEC_D, after=4)
-s.shapes.add_picture(SHOT("qr-page-dark.png"), Inches(16.6), Inches(6.25), Inches(2.4), Inches(2.4))
-text(s, 14.6, 8.75, 4.4, 0.4, ["rio-miami-rail.vercel.app"], size=18, font=MONO, color=LIME, align=PP_ALIGN.RIGHT)
+s.shapes.add_picture(SHOT("page-handovers-rows.png"), Inches(1.0), Inches(3.45), width=Inches(8.9))
+box(s, 1.0, 3.45, 8.9, 8.9 * 950 / 1400, line=LINE_D)
+tx = 10.6
+text(s, tx, 3.45, 8.4, 2.2, [[("Verify head", {"bold": True, "color": LIME}),
+                              (" recomputes the hash chain in the browser and compares it with the head stored in the contract.", {})]],
+     size=26, color=TEXT_D)
+text(s, tx, 5.75, 6.0, 1.2, ["MATCH"], size=80, font=MONO, bold=True, color=LIME, spacing=0.9)
+text(s, tx, 6.95, 5.6, 1.6, ["Clicked live on 25 Oct 2026.", "Read-only: Stellar RPC and Horizon, no wallet."],
+     size=20, color=SEC_D, after=6)
+s.shapes.add_picture(SHOT("qr-page-dark.png"), Inches(16.8), Inches(6.2), Inches(2.2), Inches(2.2))
+text(s, 14.0, 8.6, 5.0, 0.4, ["rio-miami-rail.vercel.app"], size=18, font=MONO, color=LIME, align=PP_ALIGN.RIGHT)
 
 # ---------- 5. Technical workflow ----------
-s = content_slide(5, "TECHNICAL WORKFLOW", "7 transactions on Stellar testnet. All successful.", "NEXT ▸ WHY STELLAR", dark=True)
-w, gap, y = 2.37, 0.235, 3.55
-hline(s, 1.0, y + 1.0, 18.0, LINE_D, 0.03)
+s = content_slide(5, "TECHNICAL WORKFLOW", "7 testnet transactions. All successful.", "NEXT ▸ WHY STELLAR", dark=True)
+w, y = 18.0 / 7, 3.6
+hline(s, 1.0 + w / 2, y + 0.15, 18.0 - w, LIME_C, 0.03)
 for i, (step, who, h) in enumerate(HASHES):
-    x = 1.0 + i * (w + gap)
+    x = 1.0 + i * w
     edge = i in (0, 6)
-    box(s, x, y, w, 2.0, fill=PANEL_D, line=LIME if edge else LINE_D, shape=MSO_SHAPE.ROUNDED_RECTANGLE, weight=1.5 if edge else 1.0)
-    text(s, x + 0.1, y + 0.16, w - 0.2, 1.75, [[(step, {"bold": True, "size": 24})], [(who, {"size": 18, "color": SEC_D})],
-                                              [(h, {"font": MONO, "size": 18, "color": SLATE_D})]],
-         color=TEXT_D, align=PP_ALIGN.CENTER, after=3)
+    dot(s, x + w / 2, y + 0.15, 0.4 if edge else 0.26, LIME)
+    text(s, x + 0.05, y + 0.5, w - 0.1, 1.0, [[(step, {"bold": True, "size": 24})], [(who, {"size": 18, "color": SEC_D})]],
+         color=TEXT_D, align=PP_ALIGN.CENTER, after=2)
+    text(s, x + 0.05, y + 1.5, w - 0.1, 0.4, [h], size=18, font=MONO, color=SLATE_D, align=PP_ALIGN.CENTER)
 for i, (num, label) in enumerate([("7", "successful testnet transactions"), ("9", "invalid calls refused (simulated)"),
                                   ("24", "contract unit tests pass"), ("MATCH", "verify-head rebuilds the chain")]):
     x = 1.0 + i * 4.6
@@ -260,19 +260,19 @@ for i, (num, label) in enumerate([("7", "successful testnet transactions"), ("9"
     text(s, x, 7.0, 4.3, 0.8, [label], size=22, color=TEXT_D)
 text(s, 1.0, 8.05, 18.0, 1.6, [
     [("custody_registry  ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
-    [("Each hash opens at stellar.expert/explorer/testnet/tx/<hash>; full hashes in the repo's proofs/lifecycle.json.", {"color": SEC_D, "font": BODY})],
+    [("Plus one event attestation by a source custodian (33379211), also on chain. Full hashes: the repo's proofs/lifecycle.json.", {"color": SEC_D, "font": BODY})],
     [("Every actor is a test key held by one harness: this proves the mechanism, not independent custodians.", {"color": TEXT_D, "font": BODY, "bold": True})]],
     size=18, font=MONO, after=6)
 
 # ---------- 6. Why Stellar ----------
 s = content_slide(6, "ECOSYSTEM · WHY STELLAR", "Why Stellar: two signers, one call", "NEXT ▸ USERS AND MODEL")
-rows = [("01", "Two signers, one call", "Soroban authorises both custodians inside one contract invocation: the handover is atomic."),
+rows = [("01", "Multi-party auth in one call", "Soroban authorises both custodians inside one contract invocation: the handover is atomic."),
         ("02", "Events plus an on-chain head", "RPC keeps contract events about 7 days. The head stored in the contract lets anyone rebuild the full history later."),
         ("03", "The token stays put, then burns", "The shipment token never moves in transit; the existing Radox redeem burns it after delivery.")]
 for i, (n_, name, desc) in enumerate(rows):
     y = 3.55 + i * 1.5
     hline(s, 1.0, y - 0.12, 18.0, LINE_C, 0.02)
-    text(s, 1.0, y, 1.0, 0.6, [n_], size=24, font=MONO, bold=True, color=LIME_C)
+    text(s, 1.0, y + 0.08, 1.0, 0.6, [n_], size=24, font=MONO, bold=True, color=LIME_C)
     text(s, 2.0, y, 6.4, 1.2, [name], size=30, bold=True, font=TITLE)
     text(s, 8.6, y + 0.02, 10.4, 1.3, [desc], size=24, color=INK)
 hline(s, 1.0, 7.93, 18.0, LINE_C, 0.02)
@@ -289,17 +289,17 @@ users = [("CUSTODIANS", "Warehouse, port, carrier, customs: sign each handover."
          ("FINANCIER", "Checks the custody chain before paying."),
          ("OPERATOR", "A financial institution, the client, would run the rail for its trade flows.")]
 for i, (k, v) in enumerate(users):
-    y = 3.6 + i * 1.32
+    y = 3.6 + i * 1.5
     hline(s, 1.0, y - 0.14, 9.6, LINE_C, 0.02)
     text(s, 1.0, y, 3.3, 0.5, [k], size=18, font=MONO, bold=True, color=LIME_C)
     text(s, 4.3, y - 0.04, 6.3, 1.2, [v], size=24)
-box(s, 11.4, 3.45, 7.6, 4.9, fill=CARD, line=LINE_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+box(s, 11.4, 3.45, 7.6, 5.7, fill=CARD, line=LINE_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, 11.85, 3.75, 6.8, 5.5, [
     [("MODEL · THE OPERATOR PAYS", {"font": MONO, "size": 18, "bold": True, "color": LIME_C})],
     [("SWIFT-style: the record format is public; Radox runs the rail and the API.", {"bold": True})],
     "Revenue: a fee from the financial institution that operates the rail. Not priced yet.",
-    [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C, "size": 20})]],
-    size=24, after=16)
+    [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C, "size": 22})]],
+    size=26, after=18)
 
 # ---------- 8. Hackathon progress ----------
 s = content_slide(8, "HACKATHON PROGRESS", "Built this weekend, on disclosed prior work", "NEXT ▸ WHAT COMES NEXT")
@@ -315,9 +315,9 @@ cols = [(1.0, "PRIOR WORK · BEFORE SUN 25 OCT 09:00", SEC_C, [
 for x, head, hc, items in cols:
     text(s, x, 3.5, 8.7, 0.5, [head], size=18, font=MONO, bold=True, color=hc)
     hline(s, x, 4.08, 8.7, hc, 0.03)
-    text(s, x, 4.3, 8.7, 3.8, [[("— ", {"color": hc}), (t, {})] for t in items], size=23, after=12)
-box(s, 1.0, 8.15, 18.0, 1.3, fill=CARD, line=LINE_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, 1.35, 8.3, 17.3, 1.1, [[("AI attribution  ", {"font": MONO, "bold": True, "color": LIME_C, "size": 18}),
+    text(s, x, 4.3, 8.7, 3.8, [[("— ", {"color": hc}), (t, {})] for t in items], size=24, after=14)
+box(s, 1.0, 8.0, 18.0, 1.45, fill=CARD, line=LINE_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, 1.35, 8.12, 17.3, 1.2, [[("AI attribution  ", {"font": MONO, "bold": True, "color": LIME_C, "size": 18}),
                                 ("Code, tests and scripts were written with AI coding agents (Claude Code); the team decided scope and what ships. Per-file record in AI_USAGE.md. The video narration is an AI voice generated from Pedro's voice.", {})]],
      size=20, anchor=MSO_ANCHOR.MIDDLE)
 
@@ -327,26 +327,26 @@ phases = [("NOW", "Testnet this weekend: contract, 7 transactions, public page, 
           ("NEXT", "Full testnet test matrix. A first pilot shipment with one producer (none agreed yet)."),
           ("PLANNED", "SCF Build application (not yet submitted). Security audit before mainnet (not done)."),
           ("FUTURE", "Mainnet. A USD on-ramp leg (not built).")]
-hline(s, 1.2, 3.75, 17.4, LIME_C, 0.03)
+hline(s, 1.2, 3.75, 13.8, LIME_C, 0.03)
 for i, (k, v) in enumerate(phases):
     x = 1.0 + i * 4.6
     dot(s, x + 0.2, 3.75, 0.34 if i == 0 else 0.26, LIME_C)
     text(s, x, 4.1, 4.3, 0.5, [k], size=20, font=MONO, bold=True, color=LIME_C)
     text(s, x, 4.6, 4.3, 2.2, [v], size=24)
 text(s, 1.0, 6.85, 18.0, 0.6, [[("No users or revenue yet. ", {"bold": True}), ("First users come from one pilot shipment in the Rio–Miami corridor.", {"color": SEC_C})]], size=24)
-box(s, 1.0, 7.75, 18.0, 1.65, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, 1.45, 7.85, 17.1, 1.45, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
+box(s, 1.0, 7.6, 18.0, 1.55, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, 1.45, 7.65, 17.1, 1.45, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
                                   ("Introductions to one financial institution and one logistics operator for a first pilot shipment, and a Stellar engineer's review of the design.", {"bold": True})]],
      size=26, anchor=MSO_ANCHOR.MIDDLE)
 
 # ---------- 10. Team ----------
 s = content_slide(10, "THE TEAM", "Why us: a founder already on Stellar mainnet", "FINAL STOP")
-team = [("Pedro Wakigawa Saragossy", "Founder and team captain. Built Radox: 3 Soroban contracts on Stellar mainnet."),
-        ("Leo Schlanger", "Developer. Led custody_registry, the testnet harness and the proofs this weekend."),
+team = [("Pedro Wakigawa Saragossy", "Founder, captain. Built Radox: 3 Soroban contracts on Stellar mainnet."),
+        ("Leo Schlanger", "Developer: custody_registry, the testnet harness and the proofs."),
         ("Vhendala", "QA and product review: reads every deliverable as a judge would.")]
 for i, (name, role) in enumerate(team):
-    y = 3.45 + i * 1.4
-    text(s, 1.0, y, 10.8, 1.3, [[(name, {"bold": True, "size": 30, "font": TITLE})], [(role, {})]], size=22, color=INK, after=2)
+    y = 3.45 + i * 1.5
+    text(s, 1.0, y, 10.8, 1.3, [[(name, {"bold": True, "size": 30, "font": TITLE})], [(role, {})]], size=21, color=INK, after=4)
 text(s, 1.0, 7.65, 10.6, 0.5, ["Leo and Vhendala joined for the hackathon."], size=20, color=SEC_C)
 box(s, 12.4, 3.5, 6.6, 4.5, line=SEC_C, shape=MSO_SHAPE.ROUNDED_RECTANGLE, dash=True)
 text(s, 12.4, 3.5, 6.6, 4.5, ["Team photo"], size=22, color=SEC_C, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)

@@ -1,6 +1,6 @@
 # Demo recordings (backup for DEMO-SCRIPT.md)
 
-Recorded 2026-10-25 between 13:00 and 13:30 UTC, headless Chromium (Playwright 1.58.2), 1920x1080, 30 fps, H.264. The `.mp4` files stay out of git (about 16 MB); re-record with the commands below.
+Recorded 2026-10-25 between 13:00 and 13:30 UTC, headless Chromium (Playwright 1.58.2), 1920x1080, 30 fps, H.264. The clips live outside the workspace, in `~/Movies/hackmeridian-rail-video/` on Pedro's Mac (the workspace turn-end sync sends every file under ~/hackmeridian to the team repo and ignores .gitignore, so large or private media cannot stay here). Re-record with the commands below, run from this folder with the output folder as argument.
 Each clip is cut to its row of DEMO-SCRIPT.md, so the editor lays the AI narration over them in order. No narration and no overlay are burned in: the lower third and the bottom label "Testnet - test keys - not real custodians" go on in the edit.
 
 | File | Script row | Length | What it shows |
@@ -27,8 +27,16 @@ Row 2:15-2:30 (GitHub README) is not recorded: the repo is private until submiss
 ## Re-record
 
 ```sh
-PW=~/.npm/_npx/ec0ab2283efe73f6/node_modules/playwright-core node tools/record.cjs "$PWD"          # explorer + page clips
-PW=~/.npm/_npx/ec0ab2283efe73f6/node_modules/playwright-core node tools/term.cjs "$PWD" "$PWD/tools" # terminal clips
+OUT=~/Movies/hackmeridian-rail-video
+PW=~/.npm/_npx/ec0ab2283efe73f6/node_modules/playwright-core node tools/record.cjs "$OUT"            # explorer + page clips
+PW=~/.npm/_npx/ec0ab2283efe73f6/node_modules/playwright-core node tools/term.cjs "$OUT" "$PWD/tools"  # terminal clips
 ```
 
 `record.cjs` takes clip names to record only some (for example `08-page-live`). It fails if the page source line does not say what the take expects.
+
+## Narration voice (Voicebox, local)
+
+- Profile "Pedro (cloned, rail video)" in a Voicebox data folder at `~/Movies/hackmeridian-rail-video/voicebox-data/` (not the app's default folder). Start the server on it with `/Applications/Voicebox.app/Contents/MacOS/voicebox-server --host 127.0.0.1 --port 17493 --data-dir ~/Movies/hackmeridian-rail-video/voicebox-data`, then `POST /generate` with the profile id, `engine: qwen`, `model_size: 1.7B`.
+- Reference sample: 18.6 s cut from `~/Movies/FINAL youtube.mp4` (0.2-18.8 s, Pedro narrating the Agent Pay demo in English), with its transcript. Nothing was uploaded; the model runs on the Mac (mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16).
+- Test line: `~/Movies/hackmeridian-rail-video/voice-test-15s.wav`, 12.6 s, the first three sentences of row 0:00; a local transcription reads back the exact words. About 177 words per minute, so the 325-word script runs about 1:50 of speech inside 3:00.
+- Disclosure for the video credit, deck and README: "narration: AI voice cloned from Pedro's voice with Voicebox".
