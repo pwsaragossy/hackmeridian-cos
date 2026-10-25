@@ -25,7 +25,7 @@ BANNED = [r"\btitle to\b", r"document of title", r"digital bill of lading", r"re
           r"\binvestors?\b", r"\btraction\b", r"live pilot", r"\bendorse", r"\bbacked by\b", r"\bpartner(s)?\b",
           r"\bZIS\b", r"\bPaulo\b", r"none exists", r"\bmainnet-ready\b", r"\bsponsor", r"\bour users\b",
           r"revenue is growing", r"\bintegrated (with|into)\b", r"partnership", r"\bworking with\b", r"already use",
-          r"\badopted\b", r"\bin talks\b", r"agreed with"]
+          r"\badopted\b", r"\bin talks\b", r"agreed with", r"\bmentors?\b"]  # mentors: owner, 2026-10-25, no value as evidence
 # Disclosures the rules and the Claims guard require (REVIEW.md finding 4: without these a stripped deck passed).
 REQUIRED = ["Pedro Wakigawa Saragossy", "Claude Code", "AI_USAGE.md", "AI voice", "PRIOR WORK", "first repo commit",
             "explainer video", "users or revenue yet", "none agreed yet", "none confirmed", "The goal is", "test key", "not built", "24 unit tests"]
