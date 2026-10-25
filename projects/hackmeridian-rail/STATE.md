@@ -9,7 +9,9 @@ member: pedro
 # HackMeridian — rail Rio-Miami — state
 
 ## Arrival synthesis
-(the next session writes here before acting: what it understood, first action, what looks wrong, one fact checked against the disk)
+2026-10-25 (redo of stage 1): the owner asked to redo stage 1 with specialists and an independent reviewer, because the first pass had none. First action: library search, then process the Raven inbox into notes, then researcher + product subagents on the five files, reviewer on all five.
+What looks wrong: section 3 still says the full rules are "not read yet", but RULES.md says Pedro pasted them on 25/10, so STATE is stale there. check.py names LEO-BRIEF.md in its docstring, which freezes docs it does not measure.
+Fact checked on disk: `deadline: 2026-10-26 10:00 +0000` is in TRACK.md front matter (matches KICKOFF.md); `RESEARCH-raven.md` and `knowledge/inbox/raven-custody-research.md` are the same research.
 
 ## 1. State in one line
 green. Project opened on 2026-10-24, hacking starts Sun 25 Oct 09:00 Lisbon; nothing built yet.

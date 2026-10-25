@@ -2,7 +2,7 @@
 
 Reads proofs/lifecycle.json from github.com/pwsaragossy/rio-miami-rail (main) through `gh`,
 then asks testnet Horizon for each hash. Exit 0 when all 7 steps succeeded; last line = the count.
-Expected file shape (LEO-BRIEF.md): {"lifecycle": [{"step": "open", "hash": "<64 hex>"}, ...]}
+Expected file shape: {"lifecycle": [{"step": "open", "hash": "<64 hex>"}, ...]}
 with the steps open, handover x4, deliver, redeem, in that order.
 """
 import json
