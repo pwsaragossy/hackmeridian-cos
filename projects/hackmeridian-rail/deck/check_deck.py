@@ -23,7 +23,7 @@ PDF = os.path.join(HERE, "radox-custody-rail.pdf")
 BANNED = [r"\btitle to\b", r"document of title", r"digital bill of lading", r"replaces? the bill of lading",
           r"proof of ownership", r"legally recognised", r"\bUCC\b", r"\bMLETR\b", r"\bcustomers\b(?! has)",
           r"\binvestors?\b", r"\btraction\b", r"live pilot", r"\bendorse", r"\bbacked by\b", r"\bpartner(s)?\b",
-          r"\bZIS\b", r"\bPaulo\b", r"none exists", r"\bmainnet-ready\b", r"\bsponsor", r"\bour users\b",
+          r"\bZIS\b", r"\bPaulo\b", r"none exists", r"\bmainnet-ready\b", r"\b(live|running|deployed|launched|in production) on (Stellar )?mainnet", r"\bsponsor", r"\bour users\b",
           r"revenue is growing", r"\bintegrated (with|into)\b", r"partnership", r"\bworking with\b", r"already use",
           r"\badopted\b", r"\bin talks\b", r"agreed with", r"\bmentors?\b", r"\{\{", r"\brebuild"]  # mentors: owner, 2026-10-25, no value as evidence; rebuild: a 32-byte head verifies history, it cannot rebuild it (Leo, 2026-10-25)
 # Disclosures the rules and the Claims guard require (REVIEW.md finding 4: without these a stripped deck passed).
