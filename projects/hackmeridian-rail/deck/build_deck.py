@@ -306,10 +306,9 @@ for i, (num, label) in enumerate([("7", "successful"), ("9", "refused, e.g. wron
     x = tx + i * 2.55
     text(s, x, 5.95, 2.5, 0.8, [num], size=44, font=TITLE, bold=True, color=LIME, spacing=0.9)
     text(s, x, 6.72, 2.45, 0.7, [label], size=18, color=TEXT_D, spacing=1.0, after=0)
-text(s, tx, 7.45, 10.0, 2.2, [
+text(s, tx, 7.5, 10.0, 2.0, [
     [("custody_registry ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
-    [("Second shipment (proofs/three-machine.json): two team members each signed their handovers from their own computers and keys; still test keys.", {"color": SEC_D, "font": BODY})],
-    [("Two test companies' chains on one registry, sharing stops, each handover dual-signed (proofs/multi-chain.json).", {"color": SEC_D, "font": BODY})],
+    [("Also on testnet: handovers signed from separate computers (proofs/three-machine.json); two test companies' chains on one registry, sharing stops, each dual-signed (proofs/multi-chain.json).", {"color": SEC_D, "font": BODY})],
     [("All test keys: this proves the mechanism, not independent companies.", {"color": TEXT_D, "font": BODY, "bold": True})]],
     size=18, font=MONO, after=4)
 
