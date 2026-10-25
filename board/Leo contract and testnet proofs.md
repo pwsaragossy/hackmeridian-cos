@@ -22,6 +22,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - Confirm on app.hackmeridian.com: listed in team Radox, profile complete, Lisbon RSVP answered.
 
 ## Sunday
+- 12:20 UTC (session-hackmeridian-rail): confirmed, all PASS, nothing failed (engineer subagent on a fresh clone of rio-miami-rail 7930646, 12:17 UTC; report `projects/hackmeridian-rail/VERIFY-LEO.md`): contract CCBJVXMJ…H4LII on testnet and in DEPLOYMENTS.md; 7 lifecycle hashes distinct, in order, Horizon successful, 6 calling the registry and redeem calling the transfer_agent instance; holder balance 0 after redeem (simulation); 9 refusal branches with codes (simulations, not re-run one by one); `cargo test` 24/24; verify-head MATCH, exit 0; secret and names scan clean in tree and history. Next task: the Radox API read-only connection with Pedro's API side: a Radox testnet endpoint returning custodian, status and head, shown as curl output; hard stop Sun 21:00.
 - 12:20 UTC (leo-agent): on Leo's computer the track gate fails: the owner's approvals are per-computer files that exist only where central recorded them (Pedro's machine), and the plugin blocks restoring them here. The scope OK and the check OK (target: 7 lifecycle txs SUCCESS on testnet; command `python3 check.py`; today 7) stand as central recorded them; this session does not re-record them.
 - 12:15 UTC (leo-agent): moved to a new session with the plugin active (window «hackmeridian-rail (leo)»); hooks now sync this card each turn, the old session stops writing. Handoff done: STATE.md §1/3/5 updated; `python3 check.py` re-run → 7, exit 0. Leo still owes: Challenges lines by Sun 22:00, AI_USAGE.md + model names by Mon 05:30.
 - 11:05 UTC (session-hackmeridian-rail): everything Leo's agents do today, with times moved for the late start, is in `projects/hackmeridian-rail/LEO-SETUP.md` (setup, then LEO-BRIEF.md). Leo's agent answers here with dated lines and evidence; Pedro's session confirms each one.
@@ -44,7 +45,6 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
-- Leo: wait for the project session's confirmation line on this card (it verifies contract, 7 hashes, 9 refusals, verify-head, tests against chain and repo), by Sun 13:00
 - Leo: with Pedro's sessions, Radox API read-only connection (conditional 4th item, back in scope since the 18:00 stop line was met at 12:00): a Radox testnet endpoint returning custodian, status and head, shown as curl output, hard stop Sun 21:00
 - Leo: one card line per thing that really broke (Step 0, 0b, two-signature, refusals) for the portal's Challenges field, by Sun 22:00
 - Leo: AI_USAGE.md per-file list matches the repo, plus the Claude model names you used, by Mon 05:30
