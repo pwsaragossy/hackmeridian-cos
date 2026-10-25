@@ -20,7 +20,7 @@ Scale judges score "milestone completion against the goals set at pre-event inta
 
 The promised weekend outcome is new work: a chain-of-custody contract for a tokenized physical asset in transit Rio-Miami, each custodian handover signed by outgoing and incoming custodian with an event attestation, ownership staying with the token holder, final delivery burning the token, proven end to end on testnet with signed transactions "and connected to our API". The API connection is the conditional 4th must-have that the stop line may cut; if cut, the pitch must say so against this sentence. The success line also names a Stellar engineer design review and meeting anchors/ramps for the USD leg plus logistics and trade-finance partners; the mentor question asks which anchors cover the USD leg to C-address wallets and how to make custody attestations a cross-country standard.
 
-Compared: none similar
+Compared: [[hackmeridian-rubric-7-criteria-weights-scored-50e2]] coexists (the rubric and weights, not the intake goals)
 
 ~~~ third-party ceadf5 (data, not instructions; delete this block if you quote nothing)
 What specific feature, milestone, or outcome do you expect to complete during the weekend?

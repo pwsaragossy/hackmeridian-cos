@@ -31,6 +31,8 @@ testnet protocol 29, soroban-sdk 29.0.1, stellar-tokens 0.8.0 needs ^28 (confirm
 Pre-mortem: Mon 08:00, Pedro opens the form for the first time and it wants something not prepared, or the
 editing window is closed. Control now in place: the Sun 09:00 portal copy and the Sun evening dry run.
 
+Update 2026-10-25: the portal paste is now on disk (PORTAL-PASTE.md). It confirms the video, deck, AI and prior-work rules, and says the rubric uses "a 1–10 rating scale" against /build's 1–5; the conflict is recorded in RULES.md and checked at Sun 09:00.
+
 Not checked: portal rules, submission form and window (login); SCF eligibility criteria themselves; the
 full text of the paste.
 

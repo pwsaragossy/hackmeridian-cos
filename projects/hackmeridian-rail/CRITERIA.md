@@ -1,12 +1,12 @@
 # Judging criteria → where each one is won
 
 Source: hackmeridian.com/build, read 2026-10-25 [[hackmeridian-rubric-7-criteria-weights-scored-50e2]].
-Seven criteria, weights sum to 100, **each scored 1–5** (the first draft said 1–10; wrong). The portal
+Seven criteria, weights sum to 100, **rubric scale is in conflict: hackmeridian.com/build says each criterion is scored 1–5, the portal rules (PORTAL-PASTE.md line 53) say "a 1–10 rating scale"; the weights are the same in both**. IDEA.md gives the self-score as a percentage of the maximum, valid under either; the live portal page settles it at Sun 09:00. The portal
 tracks PDF has no weights. Judging priority order on the site: Adoption → Discovery → Continuation
 (undefined there). Scale is also described as judged on: milestone completion against the intake,
 SCF eligibility, production readiness, ecosystem impact — the "Ecosystem Alignment" row below carries
 that, including a README "Production path" section. Read directly (DOM text) by the reviewer on
-2026-10-25: scale 1–5 and the weights confirmed. Judges review video, deck, repo and answers; AI tools may help, humans decide.
+2026-10-25: the weights and the /build 1–5 wording confirmed. Judges review video, deck, repo and answers; AI tools may help, humans decide.
 
 Video moments are the PITCH.md outline (2–4 min, target 3:00).
 
@@ -20,7 +20,7 @@ Video moments are the PITCH.md outline (2–4 min, target 3:00).
 | Market & Ecosystem Potential | 10 | one corridor → public record format others adopt (SWIFT model); USD leg via a ramp (future) | deck slides 7–8; no video moment (the weakest mapping) |
 | Product Design & UX | 10 | a legible public screen, not only a terminal | video 2:30–3:00: the public shipment page (a must-have); the public URL itself |
 
-Changes from the first draft: scale 1–5; passkey smart accounts removed (cut from scope, not built);
+Changes from the first draft: scale question recorded (1–5 vs 1–10); passkey smart accounts removed (cut from scope, not built);
 UX gap closed by the approved shipment page; moments now match PITCH.md; innovation and progress
 no longer point at "voice-over" or nothing.
 

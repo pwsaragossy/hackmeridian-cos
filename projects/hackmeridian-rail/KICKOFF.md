@@ -61,7 +61,7 @@ The event itself ends 16:00, but only the 12:00 submission time matters.
 
 | When | What | Gate |
 |---|---|---|
-| Sun 09:00–10:00 | Check-in; ask the organizers (not mentors: they start 11:00) the repo question (§7); Pedro logs into the portal, opens the rules page and the submission form, saves the field list, the editing-window dates and the rules text to `PORTAL-SEEN.md` here; review-1 | review-1 |
+| Sun 09:00–10:00 | Check-in; ask the organizers (not mentors: they start 11:00) the repo question (§7); Pedro logs into the portal, opens the rules page and the submission form, saves the field list, the editing-window dates, the rules text and the rubric scale it states (1–5 or 1–10) to `PORTAL-SEEN.md` here; review-1 | review-1 |
 | Sun 10:00–14:00 | Leo: contract + unit tests, testnet accounts for the 6 actors. Pedro: shipment page skeleton against a labelled sample fixture. Mentor user test (IDEA.md) at 11:00–12:00 and 13:30–14:00 | 14:00 checkpoint: no dual-signed handover on testnet yet → one line on the card |
 | Sun 14:00–18:00 | Leo: full lifecycle, hashes in `proofs/lifecycle.json`. Pedro: page wired to the testnet contract (reads real data) | **18:00 stop line**: no dual-signed handover on testnet, then cut the API connection |
 | Sun 18:00–22:00 | Page deployed to a public URL, `head` verified on screen; README (Prior work, Built at HackMeridian, AI usage, contract IDs, Production path: mainnet plan, audit status, what is testnet-only, SCF Build eligibility). Dry-run the submission form with placeholder links. API connection only if not cut | review-2 |

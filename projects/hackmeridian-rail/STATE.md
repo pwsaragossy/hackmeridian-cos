@@ -26,8 +26,8 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 
 ## 3. What is true now
 - Deadline: ours Mon 10:00, the event's Mon 12:00 "no late submissions"; submit at 08:00. Lisbon is UTC+0 for the whole event (summer time ended Sun 25 Oct 01:00 UTC).
-- Rubric: 7 criteria scored 1–5, weights 20/20/15/15/10/10/10 (hackmeridian.com/build, read directly). Self-score 72/100 ceiling, 66 if the API connection is cut (IDEA.md).
-- Requirements verified in the portal PDF and public pages: RULES.md, SUBMISSION.md. Video 2–4 min YouTube/Vimeo, deck ≤20 MiB, mandatory AI attribution and the prior-work disqualifier come only from Pedro's paste of the portal rules (in the central session transcript); planned to anyway.
+- Rubric: 7 criteria, weights 20/20/15/15/10/10/10; scale 1–5 on hackmeridian.com/build but 1–10 in the portal rules (PORTAL-PASTE.md), checked at Sun 09:00. Self-score 72/100 ceiling, 66 if the API connection is cut (IDEA.md).
+- Requirements verified in the portal PDF and public pages: RULES.md, SUBMISSION.md. Video 2–4 min YouTube/Vimeo, deck ≤20 MiB, mandatory AI attribution and the prior-work disqualifier come from Pedro's paste of the portal rules, now verbatim on disk in PORTAL-PASTE.md; binding.
 - Portal rules page and submission form need login: not seen by any agent.
 - The burn's `transfer_agent` wasm (`3870748b…`) is on testnet with `fn redeem` (checked 2026-10-25 01:02 UTC).
 - check.py names only the proof file it reads and requires 7 distinct hashes; check OK re-recorded by central (owner: "Sim, travar"). Do not edit it without a new OK; propose the "each tx calls our contract" check after deploy.

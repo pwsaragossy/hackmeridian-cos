@@ -1,7 +1,7 @@
 # HackMeridian 2026 — submission requirements (re-checked 2026-10-25)
 
 Tags as in RULES.md: [PDF] portal tracks PDF 2026-10-24 (read in full), [WEB] hackmeridian.com 2026-10-25
-(second-hand summaries), [PASTE] Pedro's paste of the portal rules (not on disk): **not verified**.
+(second-hand summaries), [PASTE, on disk] Pedro's paste of the portal rules, verbatim in PORTAL-PASTE.md.
 Portal rules and the submission form need login: not reached. Library: [[hackmeridian-2026-rules-and-submission-requirement-5868]].
 
 ## Verified (PDF and/or web)
@@ -16,11 +16,11 @@ Portal rules and the submission form need login: not reached. Library: [[hackmer
 - Deadline: Mon 26 Oct 12:00 Lisbon time = 12:00 UTC, "No late submissions" [WEB /build, /schedule]. Judging starts 13:30 [WEB /schedule]. Our own cutoff: 10:00 +0000.
 - Scale answers are scored against "goals set at pre-event intake" [WEB home]: keep the intake text (STATE.md §2) as the milestone list.
 
-## Not verified (only in the paste, or nowhere)
-- Demo video 2–4 minutes, YouTube or Vimeo: [PASTE] only. Public pages say nothing on length or host. Plan to it anyway (PITCH.md 2:30), upload as YouTube unlisted or public, check the form accepts the link.
-- Deck as PDF, PPTX, PPT or HTML up to 20 MiB: [PASTE] only. Plan: PDF under 20 MiB.
-- Form fields, number of questions, link fields, platform name: not seen. Not verified (home, /faq, /build, PDF). The form is inside the portal ("project editing window", PDF p4); when that window closes is not known. Pedro saves the field list and the window dates to `PORTAL-SEEN.md` at Sun 09:00, and the form is dry-run with placeholder links before Sun 22:00 (KICKOFF §5). The paste itself is only in the central session's transcript, not in this folder.
-- AI attribution required and undisclosed prior work disqualifying: [PASTE] only (see RULES.md). Treat both as binding.
+## From the portal paste (on disk), or not seen
+- Demo video 2–4 minutes, YouTube or Vimeo: [PASTE, on disk] (PORTAL-PASTE.md line 49). Public pages say nothing on length or host. Plan to it (PITCH.md 2:30), upload as YouTube unlisted or public, check the form accepts the link.
+- Deck as PDF, PPTX, PPT or HTML up to 20 MiB: [PASTE, on disk] (line 49). Plan: PDF under 20 MiB.
+- Form fields, number of questions, link fields, platform name: not seen. Not verified (home, /faq, /build, PDF). The form is inside the portal ("project editing window", PDF p4); when that window closes is not known. Pedro saves the field list and the window dates to `PORTAL-SEEN.md` at Sun 09:00, and the form is dry-run with placeholder links before Sun 22:00 (KICKOFF §5). The paste is in PORTAL-PASTE.md.
+- AI attribution required and undisclosed prior work disqualifying: [PASTE, on disk] (lines 47–48, see RULES.md). Binding.
 - Repo must stay open after the event, licence requirement: not found.
 
 ## What this means for us

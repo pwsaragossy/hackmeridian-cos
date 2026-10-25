@@ -1,6 +1,6 @@
 # Idea, scored against the criteria
 
-Criteria and weights: CRITERIA.md (scored 1–5).
+Criteria and weights: CRITERIA.md (scale 1–5 on /build, 1–10 in the portal rules; totals below are a percentage of the maximum, valid under both).
 
 ## Idea (one sentence)
 
@@ -32,7 +32,7 @@ burns the title.**
   pitch changes from "custodians sign" to "an event source attests" (assurance level 1 exists).
   The demo uses test keys for all six actors: say so, never imply real custodians.
 
-## Self-score (1–5, before building; the reviewer redoes it after)
+## Self-score (on 1–5, before building; the reviewer redoes it after)
 
 Ecosystem 4 · User value 3 (assumption, no behavior evidence) · Technical 4 if the 7 txs land, 2 if
 not · Innovation 4 (new on a directory search only) · Progress 4 (clean split, but the burn and token

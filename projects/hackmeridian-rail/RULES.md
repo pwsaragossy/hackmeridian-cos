@@ -2,8 +2,8 @@
 
 Tags: [PDF] = portal tracks PDF saved 2026-10-24 23:41 (app.hackmeridian.com/portal/tracks), read in full.
 [WEB] = public page on hackmeridian.com fetched 2026-10-25 (home, /faq, /build, /schedule, /terms.html);
-the fetch tool summarises, so wording is second-hand. [PASTE] = text Pedro pasted from the portal rules;
-the paste is not on disk, so anything only from it is **not verified**. Details: [[hackmeridian-2026-rules-and-submission-requirement-5868]].
+the fetch tool summarises, so wording is second-hand. [PASTE, on disk] = Pedro's paste of the portal rules (2026-10-24), verbatim in PORTAL-PASTE.md;
+not re-checked against the live portal. Details: [[hackmeridian-2026-rules-and-submission-requirement-5868]].
 The portal rules page (app.hackmeridian.com/portal/rules) needs login: not reachable, not opened.
 
 ## Our entry
@@ -27,8 +27,8 @@ The portal rules page (app.hackmeridian.com/portal/rules) needs login: not reach
 
 ## Code, AI, IP
 - Prior work: "Disclose prior work and show what you built during the event" [PDF p4]. Reusing an existing codebase if declared, and
-  "undisclosed prior work is a disqualification": [PASTE] only, not verified (not in PDF, FAQ or terms.html).
-- AI: "AI-assisted development is allowed", Claude Code named [WEB home, /faq]. A duty to say where AI generated code or assets: [PASTE] only, not verified. We declare it anyway.
+  "Undisclosed prior work is a disqualification": [PASTE, on disk] (PORTAL-PASTE.md line 47; not in PDF, FAQ or terms.html).
+- AI: "AI-assisted development is allowed", Claude Code named [WEB home, /faq]. "Attribution is required": note where AI meaningfully generated code or assets [PASTE, on disk] (line 48). README "AI usage" covers it.
 - IP: "You own what you build" [WEB home]. terms.html sec 06 (13 Aug 2026): you keep IP, subject to third-party and open-source licences;
   Guava and event partners get a non-exclusive, worldwide, royalty-free licence to show and promote the submission, team name and description.
   You warrant the work is original or properly licensed. [WEB /terms.html]
@@ -45,6 +45,7 @@ The portal rules page (app.hackmeridian.com/portal/rules) needs login: not reach
 - 18 or the local age of majority; acceptance discretionary, "review and verification" possible [WEB /terms.html sec 03]. Portal sign-up requires accepting a Code of Conduct and Liability Waiver [WEB portal login page].
 
 ## Open items (not verified)
+- Rubric scale: rubric scale is in conflict: hackmeridian.com/build says each criterion is scored 1–5, the portal rules (PORTAL-PASTE.md line 53) say "a 1–10 rating scale"; the weights are the same in both. Self-scores are kept as a percentage of the maximum, valid under both. Pedro checks which scale the live portal rules page states at Sun 09:00 (KICKOFF §5).
 - Does a Scale entry need a public repo for the platform that existed before? Not answered in any source read; PDF only says repo with "the project source code" and prior work disclosed. Plan stays: public repo with new work, prior work linked and disclosed. Ask an organizer at check-in.
 - The PDF ends "Read the event rules for participation, submission integrity and conduct requirements": unseen rules exist. Pedro copies them at check-in into `PORTAL-SEEN.md` (KICKOFF §5).
 - Portal rules text, KYC, exact disqualifier list, video and deck specs: see SUBMISSION.md.

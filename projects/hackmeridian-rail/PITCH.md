@@ -9,7 +9,7 @@ So the deck keeps the template's look and order and adds 4 slides. Max 10 (track
 
 Judging is async (video, deck, repo, answers); live pitch only for finalists, Wed 28 Oct.
 Rubric (CRITERIA.md): Ecosystem Alignment 20 · User Value & Problem 20 · Technical Execution 15 ·
-Innovation 15 · Hackathon Progress 10 · Market & Ecosystem 10 · Product Design & UX 10 (each scored 1–5).
+Innovation 15 · Hackathon Progress 10 · Market & Ecosystem 10 · Product Design & UX 10 (scale 1–5 on /build, 1–10 in the portal rules; same weights).
 Deliverables (SUBMISSION.md): deck as **PDF ≤ 20 MiB** (export from Google Slides); demo video
 **2–4 min on YouTube or Vimeo**; the deck and the README both state where AI generated code or assets.
 

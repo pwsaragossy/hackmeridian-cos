@@ -20,7 +20,7 @@ Public pages (fetched 2026-10-25 through a summarising fetch tool, so wording is
 
 Portal tracks PDF (24 Oct): Scale needs an existing Stellar project, scoped new work clearly distinguished from the old, and a deck; every project needs a public GitHub repo, README, architecture overview, demo video or live demo, and an onchain testnet or mainnet transaction; prior work must be disclosed.
 
-Not on any public page and not in the PDF: video 2 to 4 minutes on YouTube or Vimeo, deck up to 20 MiB in PDF/PPTX/PPT/HTML, mandatory AI attribution, disqualification for undisclosed prior work. These came from a paste of the portal rules that is not on disk, so they stay unverified. The portal rules page needs login and was not opened.
+Not on any public page and not in the PDF, but in Pedro's verbatim paste of the portal rules (2026-10-24, on disk as projects/hackmeridian-rail/PORTAL-PASTE.md): video 2 to 4 minutes on YouTube or Vimeo, deck up to 20 MiB in PDF/PPTX/PPT/HTML, AI attribution required, disqualification for undisclosed prior work. The same paste says the rubric uses a 1 to 10 scale, against 1 to 5 on /build. The live portal rules page needs login and no agent opened it.
 
 Thematic track for Scale, settled by the reviewer reading /build directly: "Thematic tracks do not apply to Scale projects", while the PDF says Scale "can also enter" one, so it is optional and unscored for Scale. Open: whether a Scale repo may hold only new work with the platform closed is not answered anywhere found.
 
