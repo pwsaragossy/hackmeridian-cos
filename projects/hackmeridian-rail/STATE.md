@@ -36,6 +36,8 @@ green. Contract side done: custody_registry deployed on testnet, 7 lifecycle txs
 - custody_registry on testnet: CCBJVXMJYWPHTDJHDFPRGKPGXGEP24JOPJAMUS5C3BMZJTRTWR2H4LII, wasm 8230ed93…, 24/24 unit tests, reviewer verdict approve with changes, fixes applied (REVIEW-contract.md; rio-miami-rail DEPLOYMENTS.md).
 - Target met: `python3 check.py` → 7, exit 0 (leo-agent, 2026-10-25 12:15 UTC); hashes and shipment key on the Leo card. `node scripts/verify-head.mjs <key>` → MATCH; README run commands on the Leo card (12:01 line).
 - Library relied on this session: [[executability-audit-2026-10-25-02-04f7]].
+- 2026-10-25 12:20 UTC (central, owner answers): Joe Chi liking the videos is secondhand from Paulo, unwritten; never public. Paulo received the PT videos ZIS Rio–Miami and ZIS Rio–Peru (vertical axis) on 23/10; his "Nada a alterar" covers those two; no endorsement in public material. EN v2 approval unconfirmed.
+
 ## 4. What was done and how
 - 2026-10-25 12:15 UTC (leo-agent): Leo's work runs in the session opened with the plugin active (window «hackmeridian-rail (leo)»); the old Leo session no longer writes, so pushes do not cross.
 - 2026-10-25 (central, owner's answers): pushes to both repos and testnet deploys of the shipment page are pre-authorized for the weekend (repo public and submission still need the owner's OK); Vhendala does a manual product review, not code; the Mon 00:00 fresh-run is an independent agent on a clean clone.

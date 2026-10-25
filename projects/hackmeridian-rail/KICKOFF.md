@@ -109,8 +109,10 @@ public; Vercel's per-deployment URLs are behind Vercel login (Standard Protectio
 goes to judges is always the production alias.
 
 Deploy steps (any Pedro session, no login needed):
-1. The page source lives in `rio-miami-rail/page/` (static `index.html` + JS, no build step). Commit
-   and push it to `main` first, so the deployed page matches the repo.
+1. The page source lives in `rio-miami-rail/page/` (static `index.html` + `app.js`, no build step).
+   After any change to `proofs/`, run `node scripts/page-snapshot.mjs` (rewrites `page/snapshot.json`,
+   the "snapshot, not live" fallback). Commit and push to `main` first, so the deployed page matches
+   the repo.
 2. Vercel connector `create_deployment` with `name: rio-miami-rail`, `project: rio-miami-rail`,
    `target: production`, `projectSettings.framework: null`, and `files` = every file in `page/`
    inline (`encoding: utf-8`).
