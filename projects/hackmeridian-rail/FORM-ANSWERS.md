@@ -24,7 +24,7 @@ Plan, sources and limits: SUBMISSION.md "Portal form, field by field". Only Pedr
 
 ### Technical, fragment for the three-machine proof (draft 2026-10-25, review-4 pending)
 
-In a second testnet shipment, two team members authorised their own handovers from their own computers, each with a testnet key that never left that computer; only public keys and signed authorisation entries were exchanged, and the operator's machine checked each entry before submitting. Four transactions, all successful, and verify-head recomputes the same head (proof: proofs/three-machine.json on the repo's three-machine branch, also in the README).
+In a second testnet shipment, two team members authorised their own handovers from their own computers, each with a testnet key that, by their account, never left that computer; only public keys and signed authorisation entries were exchanged, and the operator's machine checked each entry before submitting. The other keys in that shipment (warehouse, recipient, holder and operator) are our test keys on one machine. Four transactions, all successful, and verify-head recomputes the same head (proof: proofs/three-machine.json on the repo's three-machine branch, also in the README).
 
 ### What's next (draft 2026-10-25, review-4 pending)
 
