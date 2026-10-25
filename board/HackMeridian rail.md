@@ -1,14 +1,14 @@
 ---
 tags:
   - board
-status: in-progress
+status: waiting-owner
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
 due: 2026-10-26
 since: 2026-10-24
 updated: 2026-10-25
-asked: 
+asked: 2026-10-25 02:59 +0000
 ---
 
 # HackMeridian rail
@@ -16,8 +16,10 @@ asked:
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
+- Pedro, now: tell Leo to accept both GitHub invites (rio-miami-rail and hackmeridian-cos); at 02:53 UTC he is still a pending invitee on both, and his proofs only count once pushed to main ([[review-of-executability-audit-2026-10-6701]]).
 
 ## Next (2026-10-25, session-hackmeridian-rail)
+- From the engineer + reviewer audit ([[executability-audit-2026-10-25-02-04f7]], [[review-of-executability-audit-2026-10-6701]]), fix before Sun 10:00: (1) LEO-BRIEF: exact byte layout for `head` (Address, u32), the missing `attest` head formula and the `key` recipe; verify-head and the page read history from the same source (Horizon, not 7-day events). (2) Name the page host and do a placeholder deploy at 09:00 (Vercel personal scope first; repo is private so GitHub Pages is unlikely). (3) Leo's 5-minute hello-contract spike (sdk 29.0.1, CLI 28.1.0, protocol 29) before real work. (4) `register_token` arguments and `hand_over_sac` vs `set_admin` for redeem confirmed in a testnet spike before 14:00 (7 of 7 depends on it). (5) KICKOFF/SUBMISSION name Vhendala for the video and team photo. (6) Scrub grep and logged-out link test on Sun night, not Mon 06:00.
 - Redeem fallback: the burn's `transfer_agent` wasm was on testnet at 01:02 UTC; if it is gone at Sun 09:00, put the fallback question back here.
 - Stage 1 redo done: researcher + product subagents re-checked RULES, SUBMISSION, CRITERIA, IDEA, KICKOFF; reviewer verdict "approve with changes", all fixes applied: `projects/hackmeridian-rail/REVIEW-1.md`. review-1 closed with that evidence. Target and scope unchanged.
 - Main changes: rubric scale in conflict (/build says 1–5, the portal paste says 1–10, same weights; Pedro reads the live portal at Sun 09:00); video/deck specs, AI attribution and the prior-work disqualifier are only in Pedro's paste (planned to anyway); thematic track Stellar Unlocked is Pedro's choice (2026-10-24), optional for Scale; timeline now has the event programme, a 14:00 checkpoint, mentors from 11:00, the form dry-run; self-score 72/100 ceiling, 66 if the API connection is cut; User value evidence is an assumption (mentor test Sun 11:00).
@@ -28,6 +30,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25: Vhendala owns the video (account, test upload now, narration, final upload) and the team photo, besides the manual product review; tracked on the card `Vhendala video and team photo.md`. KICKOFF §5 and §7 must name her for the Mon 00:00 recording and the Mon 06:00 upload. Owner's words: "esse é o tipo de pedido que a vhendala deve cuidar".
 - 2026-10-25: rubric scale settled — the portal rules page (Pedro's paste, PORTAL-PASTE.md) says each criterion is scored 1–10; it governs over the 1–5 on the public /build page. PORTAL-SEEN.md at Sun 09:00 now needs only the submission form fields. Owner: "you got this" with the portal text.
 - 2026-10-25: portal editing window = Sun 25 09:00 to Mon 26 10:00 Lisbon; 10:00 is the hard close, so there is no margin after it (KICKOFF line "10:00–12:00 is the event's own margin" and SUBMISSION "our own cutoff" must say so). PORTAL-SEEN.md now needs only the form fields and the rubric scale. Owner's words: "9am do dia 25 até 10am do dia 26, já falamos disso".
 - 2026-10-25: project rule added to projects/hackmeridian-rail/CLAUDE.md: never commit this work to `pwsaragossy/radox` (one-way mirror); `custody_registry` lives only in rio-miami-rail. Owner's words (to session-hackmeridian-rail): "Sim, adiciona a regra 16 no CLAUDE.md do projeto."
