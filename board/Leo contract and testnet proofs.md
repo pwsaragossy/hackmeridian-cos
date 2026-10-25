@@ -54,11 +54,11 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
-- (moved off Leo, 12:45 UTC, Leo's words: "Não é para Internal... tudo que faz isso é o Pedro") Radox API read-only connection is Pedro's sessions' alone (roles decision 2026-10-25); Leo's agents write nothing for it, in radox-internal or in rio-miami-rail. What it needs from Leo's side is already public: registry CCBJVXMJ…H4LII, read `get(key)` / `head(key)` by simulation with a random source (as page/app.js does), shipment key in proofs/lifecycle.json.
-- Leo: one card line per thing that really broke (Step 0, 0b, two-signature, refusals) for the portal's Challenges field, by Sun 22:00
-- Leo: AI_USAGE.md per-file list matches the repo, plus the Claude model names you used, by Mon 05:30
+- Leo: decide keep or drop line 4 of the Challenges draft (12:55 line), by Sun 22:00
+- Leo: confirm each "Human review" cell naming you in rio-miami-rail AI_USAGE.md, or it becomes "not reviewed line by line", by Mon 05:30
 
 ## Decided
+- 2026-10-25 ~13:00 UTC: the track-gate warning on Leo's computer stays a warning on his side; copying the owner OKs there would need Pedro's click on Leo's machine and nothing is blocked (owner: "Deixa como aviso", central). The Radox API connection is Pedro's sessions' only (Leo, 12:45).
 - 2026-10-25 11:09–11:30 UTC: setup done, Step 0, Step 0b and the two-signature spike passed, contract + 16 tests on main (card lines above).
 - 2026-10-25 08:43 UTC: both GitHub invites accepted (gh api, central).
 - 2026-10-25: Leo's agents build custody_registry from LEO-BRIEF.md (owner).

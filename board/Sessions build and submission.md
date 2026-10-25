@@ -18,11 +18,13 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- rail-page-host: fill the AI_USAGE.md row for page/ and scripts/page-snapshot.mjs in rio-miami-rail (how made, model, who reviewed), before the repo goes public, by Sun 22:00
+- rail session: paste Leo's Challenges lines (12:55 line on his card, after his line-4 call) into FORM-ANSWERS.md, by Sun 22:00
 - rail-page-host: page skeleton against a labelled sample fixture (TRACK `skeleton`), Sun 10:00–14:00
 - rail-page-host: page reads the testnet contract (real data, Verify head on screen) once Leo posts the contract ID; llms.txt gets the contract ID; robots.txt and sitemap.xml stay in the deploy, Sun 14:00–18:00
 - rail-page-host: redeploy to https://rio-miami-rail.vercel.app (Pedro's standing OK), head verified on screen, opened logged out, Sun 18:00–19:00
 - rail session: README (Prior work, Built here, AI usage, contract IDs, Production path, mentor log, dependency licence list for TRACK `licences`) and FORM-ANSWERS.md drafts (Description, Problem, What's next, Prior work, AI tooling), Sun 20:30–22:00
-- rail session: Radox API read-only connection, only if the lifecycle ran by 18:00, conditional, Sun 20:30–21:00 hard stop
+- rail session (Pedro's side only; Leo has no radox-internal access): Radox API read-only connection, only if the lifecycle ran by 18:00, conditional, Sun 20:30–21:00 hard stop
 - rail session: deck from DECK-TEMPLATE.pptx with real hashes (template slide order) and team photo; demo script ending on the page; bridge sentence names ZIS only if Paulo OKs by 18:00 (then his words only), Sun 22:00–Mon 00:00
 - central: independent reviewer on the README and form drafts (review-2), Sun 20:30–22:00
 - rail session: scrub (secret-key grep plus partner and client names, must be empty) and every link opened logged out, Sun 22:00–Mon 00:00
