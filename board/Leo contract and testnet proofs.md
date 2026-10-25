@@ -101,6 +101,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- Leo: property/fuzz tests on custody_registry (route invariants, head chain, auth: a wrong signer always fails) plus a short Threat model section for the README with the known limits from JUDGE-QA.md. The scrub comes first; this comes after it. By Sun 23:00 (added 19:11 UTC, rubric: Technical)
 Full steps in [LEO-TASKS.md](../projects/hackmeridian-rail/LEO-TASKS.md) (main 2c043a9, three-machine merged; review main only).
 
 ## Decided
