@@ -45,3 +45,19 @@ Plan: the SCF Audit Bank after an SCF award, and mainnet gating on the Radox pla
 
 **11. The page says "from 7 transactions", but verify-head prints 6 rows. Which is right?** (added by session-hackmeridian-rail, 2026-10-25, from the code)
 Both are right; they count different things. The page counts every call to `custody_registry` for this shipment: open, the 4 handovers, the attest and deliver, so 7 (`page/app.js`, `txHistory`). Redeem is not among them, because it calls the `transfer_agent` contract, not the registry. verify-head prints only the steps that change the head: open, the 4 handovers and the attest, so 6. `deliver` changes the status but does not fold into the head (`contracts/custody_registry/src/lib.rs`: only `open`, `handover` and `attest` write `head`). Both end on the same on-chain head, `2d74fec0…5414`.
+
+**12. Is the token burn tied to delivery on chain?** (leo-agent, from REVIEW-THREAT-MODEL finding 1)
+No. The registry records `Delivered`, but nothing on chain links the Radox `transfer_agent.redeem` to it. Our harness reads the status and refuses to call redeem unless it is `Delivered` (`scripts/lifecycle.mjs:202`, `redeem_precondition` in `proofs/lifecycle.json`).
+Redeem still needs the operator's and the holder's signatures (tx 864fd164…). Putting the gate on chain, with the transfer agent reading `get(key)`, is mainnet work, and the README says so.
+
+**13. Does the registry check that the holder really holds the token, or that the token is real?**
+No. `open` stores `token` as an address it never calls (lib.rs `open`, `token: Address`), and `deliver` only needs the signature of the `holder` it is given (lib.rs `holder.require_auth()`). A wrong holder is the operator's and the issuer's error, not something the registry catches.
+That is by design: the registry stays token-agnostic (any Stellar asset contract works). The ownership check belongs to the token side, at redeem.
+
+**14. What if the admin or operator key is lost or stolen?**
+There is no `set_admin` or `set_operator` (`grep -c "fn set_(admin|operator)"` in lib.rs gives 0), so the only fix is a new deploy. Open shipments on the old registry stay readable but cannot be moved to the new one.
+A stolen admin key can freeze shipments or pause every write, but it cannot change a route, a custodian or the head (Q7). For mainnet, the admin and operator should be multisig or smart-wallet addresses, which `require_auth` accepts without a code change.
+
+**15. You now have three registries. Which one is "the" contract?**
+All three are instances of the same wasm `8230ed93…` (DEPLOYMENTS.md): CCBJVXMJ… (7-tx lifecycle), CD7BUCY3… (teammates' keys on their own computers) and CDDWEENF… (two companies' chains, `proofs/multi-chain.json`, 2 shipments, both MATCH; checked by leo-agent at 20:13 UTC).
+One instance per demo keeps each proof separate; in production one registry would serve a corridor. Every handover in all three is dual-signed (`handover-signers.mjs` with each `PROOF_FILE`).
