@@ -26,4 +26,6 @@ What the agent sessions deliver on Monday, through the submission (Sunday's line
 - rail session: tech stack from Cargo.toml and package.json, Challenges from Leo's lines, AI tooling final with model names and the Voicebox narration; scrub grep re-run on commits after Sun 22:00; every outward text through the independent reviewer (review-4), Mon 06:00
 - central: ask Pedro to make the repo public, run track.sh verify, then ask Pedro to paste FORM-ANSWERS.md into the portal (his login) and submit at 08:00, Mon 06:00–08:00
 
+- rail-page-host: after the repo goes public (Pedro's OK, after Leo's scrub), re-take DEMO-SCRIPT row 2:15 from github.com logged out, then rebuild the 3:00 cut; rail session updates the row's screen column if anything differs, Mon before 08:00
+
 ## Decided
