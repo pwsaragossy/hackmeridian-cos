@@ -1,10 +1,10 @@
 # Market numbers: pilot corridor and global layer
 
-Verified 2026-10-25, 19:11–19:25 UTC. Three researcher subagents opened the sources. An independent reviewer subagent then re-opened every URL, read the UNCTAD and WTO PDFs as text, and compared each quote word for word.
+Verified 2026-10-25, 19:11–19:16 UTC. Three researcher subagents opened the sources. An independent reviewer subagent then re-opened every URL, read the UNCTAD and WTO PDFs as text, and compared each quote word for word.
 
 Claims guard: these are market figures, not ours. They size the trade our registry is built for. They are not our traction and not our revenue, and no sentence may say that we serve, process or capture any share of them. There is no price in this file: pricing is Pedro's decision.
 
-## 1. Pilot corridor (Brazil–US, Miami)
+## 1. Target corridor (Brazil–US, Miami; no pilot yet)
 
 | # | Number | Exact claim (use this wording) | Source (verbatim on page) | Date | Reviewer |
 |---|---|---|---|---|---|
@@ -46,10 +46,13 @@ Also dropped: the World Shipping Council's "about 250 million containers a year"
 
 ## 4. Ready sentences (market figures, not ours)
 
-- Deck (market slide): "Pilot corridor: US–Brazil goods trade was about US$94 billion in 2025¹, and Brazil was Florida's largest export market². Global layer: US$26.3 trillion of merchandise exports³; around 80% of goods trade by volume moves by sea⁴, under around 45 million ocean bills of lading a year⁵." Footnotes: ¹ US Census Bureau, 2025. ² USTR, 2025. ³ WTO, Mar 2026. ⁴ UNCTAD. ⁵ DCSA, 2023. Small print: "Market figures, not Radox volumes."
-- Deck (optional bottom-up line, small print, labelled "illustration"): the B1 sentence above, word for word.
-- README (Market section): "The pilot corridor carries about US$94 billion a year in US–Brazil goods trade (US Census Bureau, 2025), and Brazil is Florida's largest goods export market at US$6.1 billion (USTR, 2025). Worldwide, merchandise exports reached US$26.26 trillion in 2025 (WTO), and ocean carriers issue around 45 million bills of lading a year (DCSA, 2023). These are market figures, not our volumes."
-- Form (Market / ecosystem potential field): "We start on a corridor of about US$94 billion a year in US–Brazil goods trade (US Census, 2025), where Brazil is Florida's top export market (USTR). The same custody standard applies to the around 45 million ocean bills of lading issued worldwide each year (DCSA). Market figures, not our traction."
+Reviewed by a second independent reviewer, which checked every sentence against the tables above.
+
+- Deck (market slide): "Target corridor: US–Brazil goods trade was about US$94.2 billion in 2025¹. Brazil was Florida's largest goods export market in 2025, at US$6.1 billion². Global layer: world merchandise exports were US$26.26 trillion in 2025³. Around 80% of international goods trade by volume is carried by sea⁴. Ocean carriers issue around 45 million bills of lading a year⁵." Footnotes: "¹ US Census Bureau, Trade in Goods with Brazil, annual 2025 (exports plus imports, sum ours). ² USTR, Florida trade data, 2025. ³ WTO, Global Trade Outlook and Statistics, Mar 2026. ⁴ UNCTAD, Review of Maritime Transport (undated page, opened 25 Oct 2026). ⁵ DCSA, 15 Feb 2023." Small print: "Market figures, not Radox volumes. No traction implied." If space is short, "about US$94 billion" and "US$26.3 trillion" are fine only when the footnote carries the exact figure.
+- Deck (optional bottom-up line, small print, labelled "illustration, not a forecast"): the B1 sentence in section 3, word for word.
+- README (Market section): "The corridor we target, US–Brazil goods trade, was about US$94.2 billion in 2025 (exports plus imports, US Census Bureau). Brazil was Florida's largest goods export market in 2025 at US$6.1 billion (USTR). World merchandise exports were US$26.26 trillion in 2025 (WTO, Mar 2026), and ocean carriers issue around 45 million bills of lading a year (DCSA, Feb 2023). These are market figures, not our volumes, and we have no pilot or traction yet."
+- Form (Market / ecosystem potential field): "Our design target is the US–Brazil goods corridor, which was about US$94.2 billion in 2025 (US Census Bureau, exports plus imports). Brazil was Florida's largest goods export market in 2025 (USTR). Beyond that corridor, ocean carriers issue around 45 million bills of lading a year (DCSA, 2023). Today we have a testnet demo and no pilot, partner or traction. These are market figures, not our volumes." Short variant: "The market we are built for: US–Brazil goods trade, about US$94.2 billion in 2025 (US Census Bureau), and around 45 million ocean bills of lading issued a year worldwide (DCSA, 2023). Market figures only. We have a testnet demo, not traction."
+- Never in one sentence: a value figure (US$) with a volume figure (tonnes, TEU) or a document count, as if one carried the other. PortMiami (C4) and the Vizion TEU (C3) stay out of all ready sentences.
 
 ## Sources
 
