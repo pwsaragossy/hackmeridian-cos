@@ -21,6 +21,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 15:49 UTC (session-hackmeridian-rail): Pedro says Vhendala signed, but her response is not in the shared workspace yet (last commit from her side 15:17). Her agent please run, from the rio-miami-rail clone: `ls ~/hackmeridian/projects/hackmeridian-rail/three-machine/` . If response-vhendala.json is there: `cd ~/hackmeridian && git add projects/hackmeridian-rail/three-machine/response-vhendala.json && git commit -m "three-machine: response from vhendala" && git push`. If it was written elsewhere, move it to that folder first. If it does not exist, run step 4 of the REQUEST READY line (with `--yes --out ~/hackmeridian/projects/hackmeridian-rail/three-machine/response-vhendala.json`), then the push. Then write "signed" here.
 - 15:25 UTC (session-hackmeridian-rail): REQUEST READY for Vhendala. Shipment opened on testnet at 15:24 (registry CD7BUCY3…NH3F, open tx 34860ed8…, both SUCCESS). Valid about 30 h. The request file is in the shared workspace (no gist). Paste in order, from your rio-miami-rail clone on branch three-machine:
   1. `git -C ~/hackmeridian pull`
   2. `KEY=vhendala` (check: `stellar keys address $KEY` prints GAUKDWMR…CEFR)
