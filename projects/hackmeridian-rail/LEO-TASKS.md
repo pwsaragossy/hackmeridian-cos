@@ -37,7 +37,7 @@ Card line: "scrub main <hash>: empty = pass" or the list of hits.
 ## 3. Your `scripts/remote-sign.mjs` — decide by Sun 21:00 UTC
 
 The three-machine shipment ran with `scripts/remote-auth.mjs` (prepare / sign / submit, refuses wrong
-address, contract, function or sub-calls). Your `remote-sign.mjs` does the same job and has no proof run.
+address, contract, function or sub-calls). Your `remote-sign.mjs` does the same job; its testnet check ran on a throwaway registry (CB2JIOYL…FIAW3), not on a shipment the README shows.
 Two tools for one job confuse a judge. Your call, as its author:
 - remove it (commit on `main`: delete the file and its row 20 in AI_USAGE.md), or
 - keep it and say on the card in one line why, so the README can mention it.
