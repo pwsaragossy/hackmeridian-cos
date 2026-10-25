@@ -41,7 +41,7 @@ The README and FORM wording for User Value and Ecosystem is in COPY-V13.md secti
 
 Rehearsal: timed reads by Pedro needed twice.
 
-Words (396, counted 2026-10-25; limit 396 for 3:00 at 2.2 words a second):
+Words (392, counted 2026-10-25; limit 396 for 3:00 at 2.2 words a second):
 
 A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. DCSA reports about 45 million ocean bills of lading are issued a year, and only about 11% were electronic in 2025. TT Club and BSI report insiders were involved in 22% of recorded cargo thefts in 2025. Each company keeps its own record of its own leg, nobody holds the chain end to end, and a financier cannot see who holds the goods before paying.
 
@@ -57,7 +57,7 @@ This weekend we built the custody registry contract, the testnet harness and the
 
 Next: the Rio-Miami pilot shipment, then the Stellar Community Fund, audit and mainnet. Our ask: introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, and a Stellar engineer's review of the design.
 
-Pedro built Radox; Leo and Vhendala joined for this hackathon. One rail, every corridor. Thank you.
+Pedro built Radox; Leo and Vhendala joined for this hackathon. Thank you.
 
 ## Claims check
 
