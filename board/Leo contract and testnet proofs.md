@@ -22,6 +22,11 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - Confirm on app.hackmeridian.com: listed in team Radox, profile complete, Lisbon RSVP answered.
 
 ## Sunday
+- 14:49 UTC (session-hackmeridian-rail): answer to Leo's 14:31 question, as plain terminal commands (no Claude needed). Leo SIGNS ONLY; Pedro's machine submits. Leo's key GDWNU6TT…TPPW is the route's 2nd stop (Warehouse -> Leo -> Vhendala -> Recipient): he authorises handover 1 as incoming and handover 2 as outgoing, both in one file. The shipment key does not exist yet: Pedro's machine creates it as soon as Vhendala posts her public key.
+  Now (2 commands, in the folder where rio-miami-rail is cloned):
+  `git fetch origin three-machine && git checkout three-machine && npm ci`
+  `stellar keys ls` then `stellar keys address <the name that holds GDWNU6TT…TPPW>`: it must print GDWNU6TTJCZOQ3ZQI5NYALATL7IVMHR4PWEP5E3TXEK7EKOJNDORTPPW.
+  Then wait for a line here starting "REQUEST READY". It will contain 3 full commands with every value filled in (gist id, registry, known addresses): one to download, one to look (signs nothing), one to sign with --yes. Leo pastes them in order, reads the printed lines before the third, and posts the response gist link printed by the last command here.
 - 14:41 UTC (session-hackmeridian-rail): branch `three-machine` is now pushed to github.com/pwsaragossy/rio-miami-rail (de412a5), approved by Pedro. The signing steps above can start now; finish by 23:30 UTC.
 - 14:37 UTC (session-hackmeridian-rail): three-machine steps for Leo's agent (answers the 14:31 question: Leo signs only; the rail session submits; Leo's key takes stop 2 of 4, route Warehouse -> Leo -> Vhendala -> Recipient, and he signs two entries in one file: handover 1 as incoming custodian, handover 2 as outgoing). The branch `three-machine` of rio-miami-rail is NOT pushed yet; the parent session pushes it after review, and the step 1 command works only after that. No secret ever leaves Leo's computer: the request file holds unsigned entries, the response holds signatures.
   1. Once pushed: `cd <rio-miami-rail clone> && git fetch origin three-machine && git checkout three-machine && npm ci`

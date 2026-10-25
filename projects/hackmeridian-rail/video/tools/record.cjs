@@ -105,7 +105,7 @@ async function pageTake(p, ready, expect) {
   await p.mouse.click(b.x + b.width / 2, b.y + b.height / 2);
   await p.getByText("MATCH", { exact: true }).waitFor({ timeout: 10000 });
   await p.evaluate(() => document.getElementById("result").scrollIntoView({ block: "center", behavior: "smooth" }));
-  await wait(p, 13500);
+  await wait(p, 14500);
   return p.textContent("#result");
 }
 
