@@ -1,4 +1,4 @@
-# Kickoff — Sun 25 Oct 09:00 Lisbon
+# Kickoff — Sun 25 Oct 09:00 Lisbon (= 09:00 UTC)
 
 Written on 2026-10-24/25, before the event. No code exists yet; the first commit in
 `pwsaragossy/rio-miami-rail` happens after 09:00 Sun.
@@ -35,8 +35,8 @@ Full lifecycle on testnet: open → 4 dual-signed handovers (warehouse → port 
 recipient) → deliver → burn (`redeem` on the harness's own instance of the existing `transfer_agent`) =
 **7 signed testnet transactions**, each verifiable by hash on the public RPC. The burn is in so the
 judges see the whole cycle without reading Radox.
-`check:` will be a script that reads the 7 hashes from `proofs/lifecycle.json` and asks the public RPC
-for each (exit 0 when all 7 are SUCCESS). Written in stage 1, frozen when the owner approves it.
+`check:` is `python3 check.py` (approved, frozen): it reads the 7 hashes from `proofs/lifecycle.json`
+and asks testnet Horizon for each (exit 0 when all 7 are SUCCESS).
 
 ## 3. Design — decided, in LEO-BRIEF.md
 
@@ -53,17 +53,27 @@ withdrawal reading or writing the custody contract. That change, if needed, goes
 branch `hackmeridian` of `radox-internal` and is disclosed in the README as "integration in the
 closed platform" with the testnet tx hashes as proof. Everything else is in the public repo.
 
-## 5. Timeline (Lisbon time; hard stop Mon 10:00, site says 12:00)
+## 5. Timeline (all times UTC+0 = Lisbon: summer time ended Sun 25 Oct 01:00 UTC [[lisbon-is-utc-0-for-the-9963]])
+
+Two deadlines: **ours Mon 10:00** (TRACK.md) and the **event's Mon 12:00**, "no late submissions"
+(hackmeridian.com). Submitting at **08:00** leaves 2 h to our deadline and 4 h to the event's.
+The event itself ends 16:00, but only the 12:00 submission time matters.
 
 | When | What | Gate |
 |---|---|---|
-| Sun 09:00–10:00 | Read full rules in the portal; close stage 1; design decisions above | review-1 |
-| Sun 10:00–14:00 | Contract + unit tests; testnet accounts for the 6 actors | first handover on testnet |
-| Sun 14:00–18:00 | Full lifecycle on testnet, hashes recorded | **18:00 stop criterion** (proposal) |
-| Sun 18:00–23:00 | API connection; README; architecture section with contract IDs | review-2 |
-| Mon 00:00–06:00 | Demo (offline-safe) + screen recording; deck ≤10 slides; pitch | review-3 |
-| Mon 06:00–08:00 | Repo public after scrub; package; links opened logged out | review-4 |
-| Mon 08:00 | Submit (2 h before own deadline) | owner OK |
+| Sun 09:00–10:00 | Check-in; ask the organizers the repo question (§7); review-1; stage-1 files frozen | review-1 |
+| Sun 10:00–14:00 | Leo: contract + unit tests, testnet accounts for the 6 actors. Pedro: shipment page skeleton against a labelled sample fixture | first dual-signed handover on testnet |
+| Sun 14:00–18:00 | Leo: full lifecycle, hashes in `proofs/lifecycle.json`. Pedro: page wired to the testnet contract (reads real data) | **18:00 stop line**: no dual-signed handover on testnet, then cut the API connection |
+| Sun 18:00–22:00 | Page deployed to a public URL, `head` verified on screen; README (Prior work, Built at HackMeridian, AI usage, contract IDs). API connection only if not cut | review-2 |
+| Sun 22:00–Mon 00:00 | Deck draft with the real hashes; demo script with the page as the last scene | |
+| Mon 00:00–03:00 | Record the video (target 3:00, rehearsed twice, offline backup); Vhendala runs the README on a clean machine | review-3 |
+| Mon 03:00–06:00 | Rest, or fixes from review-3 only | |
+| Mon 06:00–08:00 | Repo public after scrub; deck as PDF; video on YouTube or Vimeo; every link opened logged out | review-4 |
+| Mon 08:00 | Submit | owner OK |
+| Mon 08:00–10:00 | Buffer for our deadline (2 h); 10:00–12:00 is the event's own margin, not to be used | |
+
+The page is a must-have (frozen scope), so it has its own lines above; if Leo's lifecycle slips past
+18:00, the page still ships on the contract's first handovers and the README says what ran.
 
 ## 6. Ready on each machine before 09:00
 
@@ -71,30 +81,39 @@ closed platform" with the testnet tx hashes as proof. Everything else is in the 
 - Plugin installed and `setup.sh join ~/hackmeridian https://github.com/pwsaragossy/hackmeridian-cos.git --member <name>`.
 - `stellar --version` (Pedro's Mac: 28.1.0), `rustup target list --installed` includes `wasm32v1-none`
   (Pedro's Mac: yes), Node ≥ 20 (Pedro's Mac: 26.12.0).
-- Testnet RPC reachable: `https://soroban-testnet.stellar.org` (24/10: protocol 29, ledger 5371940).
+- Testnet RPC reachable: `https://soroban-testnet.stellar.org` (re-checked 25/10 00:49 UTC: protocol 29).
 
 ## 7. Roles (owner, 2026-10-25)
 
-- **Pedro's sessions**: own the project and the board, the pitch (deck, script, video), the Radox API
-  connection on the private `hackmeridian` branch, the README and the submission.
+- **Pedro's sessions**: own the project and the board, the public shipment page, the pitch (deck,
+  script, video), the Radox API connection on the private `hackmeridian` branch (conditional), the
+  README and the submission. Load risk: this is a lot for one person across the same 27 h; if the page
+  slips, it outranks the API connection and the deck polish.
 - **Leo's agents**: the `custody_registry` contract, unit tests, testnet deploy, lifecycle harness and
   `verify-head` — brief in [LEO-BRIEF.md](LEO-BRIEF.md).
 - **Vhendala**: QA and reviewer — runs the review items of each stage and watches the plugin panel
   (Pedro's second screen); anything red becomes a line on the card at once.
 - Still to ask an organizer at check-in: is a Scale repo with only the new work (platform closed) accepted?
 
-## 8. Facts checked on 2026-10-25 (after the Raven research in RESEARCH-raven.md)
+## 8. Facts re-checked live on 2026-10-25 00:49 UTC (RPC, crates.io API, Raven stellarDocs)
 
-- Testnet RPC `getVersionInfo`: stellar-core 30.0.0, **protocolVersion 29**.
-- crates.io: `soroban-sdk` latest **29.0.1**; OpenZeppelin `stellar-tokens` / `stellar-access` / `stellar-macros`
-  latest **0.8.0**, which require `soroban-sdk ^28.0.0` — **they do not build together with 29.x**.
+- Testnet RPC `getVersionInfo`: node build stellar-core 30.0.0, **protocolVersion 29** (re-run, same).
+- crates.io: `soroban-sdk` latest **29.0.1** (2026-10-21); `stellar-tokens` latest **0.8.0**
+  (2026-10-20), whose dependency is `soroban-sdk ^28.0.0` (read from its 0.8.0 dependency list) —
+  **it does not build together with 29.x**. `stellar-access` / `stellar-macros` 0.8.0 were
+  not re-read this time: unverified here, same family and version as `stellar-tokens`.
 - Decision from that: **no OpenZeppelin token**. The asset is already a SAC token managed by the Radox
   `transfer_agent` (prior work); the custody contract only tracks who holds the physical object and
   never mints. Use `soroban-sdk = "29.0.1"` and `#[contractevent]` for the attestation events.
 - Dual signature: `require_auth()` on both custodians; each signs its own auth entry
   (js-stellar-sdk `authorizeEntry`); G-accounts and C-addresses both work (RESEARCH-raven.md §3).
-- `getEvents` keeps about 7 days: the demo must not depend on events older than that; store the
+- `getEvents` keeps about 7 days (stellarDocs re-read: "7 day retention window"): the demo must not depend on events older than that; store the
   current custodian and the handover count in contract storage too.
-- No Stellar SEP for attestations exists; nobody in the ecosystem does dual-signed custody handover
-  (RESEARCH-raven.md §5) — this is the "new" claim for the pitch, worth saying to the SDF judges.
+- Dual auth confirmed again in the docs: no limit on how many addresses call `require_auth` in one
+  contract (stellarDocs, authorization page, "authorizing multiple addresses").
+- No Stellar SEP for attestations was found, and no ecosystem project found doing dual-signed
+  custody (RESEARCH-raven.md §5) — a directory search, so say "we found none", never "none exists".
+- Claim to drop: PITCH.md slide 4 and the script notes still list "passkey smart accounts"; passkey
+  signing is cut from scope, so the claim would be false. Owner of PITCH.md to remove it.
+- Wording: "burn" is prior work (`redeem`); say so on the slide (PITCH.md slide 5 does).
 - Mentor question ready: which ramp covers USD to a C-address (SEP-45 is Draft; candidates in §6).
