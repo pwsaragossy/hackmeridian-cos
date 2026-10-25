@@ -33,7 +33,7 @@ All texts below were opened on 2026-10-25 (page text, not recalled). Jurisdictio
 - Not opened: the bill-of-lading statute (Decreto 19.473/1930), maritime transport law, the crypto-asset law (Lei 14.478/2022), customs rules.
 
 **Wording that follows**
-- Say: "tokenized registry linked to the carrier's electronic bill of lading"; "records who held the cargo and who signed for each handover"; "the token stays with its holder during transit"; "after the registry shows Delivered, the operator burns the token (operator policy, not enforced on-chain by the registry)".
+- Say: "a custody record for the shipment, keyed to the container or AWB number; in production it would sit beside the carrier's bill of lading (not integrated in this build)"; "records who held the cargo and who signed for each handover"; "the token stays with its holder during transit"; "after the registry shows Delivered, the operator burns the token (operator policy, not enforced on-chain by the registry)".
 - Do not say: title, document of title, digital bill of lading, replaces the bill of lading, proof of ownership, legally binding or recognised, UCC- or MLETR-compliant. Keep the intake sentences ("ownership stays with the token holder", "final delivery burns the token") only as a quote of what was submitted, marked as such ([[hackmeridian-scale-intake-as-submitted-the-7fb5]]).
 - Counter-argument: the dual-signed handovers are signed by real bailees in production (warehouse, carrier). A court or a custodian's lawyer could ask whether that signature is an acknowledgment of possession that creates duties; 7-102(a)(1) also requires a contract to deliver, which the signature alone does not show. Open question for counsel; the demo uses test keys and says so.
 
