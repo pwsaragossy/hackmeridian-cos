@@ -326,19 +326,19 @@ s = content_slide(9, "VISION · NEXT · THE ASK", "Vision: one custody standard,
 text(s, 1.0, 3.4, 18.0, 1.3, [[("Rio–Miami is the first corridor and the pilot. ", {"bold": True}),
                                 ("The goal is an open, SWIFT-like standard for tokenized goods moving on rails anywhere, "
                                  "built to integrate with the systems of chambers of commerce, ports and airports.", {})]],
-     size=28, color=INK)
+     size=26, color=INK)
 phases = [("NOW", "Mechanism proven on testnet. No users or revenue yet."),
           ("NEXT", "One Rio–Miami pilot shipment (none agreed yet). Full test matrix."),
           ("PLANNED", "SCF Build application, then a security audit (neither done). Mainnet."),
           ("FUTURE", "More corridors on the same standard. A USD leg (not built).")]
-hline(s, 1.2, 5.05, 13.8, LIME_C, 0.03)
+hline(s, 1.2, 5.3, 13.8, LIME_C, 0.03)
 for i, (k, v) in enumerate(phases):
     x = 1.0 + i * 4.6
-    dot(s, x + 0.2, 5.05, 0.34 if i == 0 else 0.26, LIME_C)
-    text(s, x, 5.35, 4.3, 0.5, [k], size=20, font=MONO, bold=True, color=LIME_C)
-    text(s, x, 5.85, 4.3, 1.6, [v], size=22)
-box(s, 1.0, 7.7, 18.0, 1.5, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
-text(s, 1.45, 7.73, 17.1, 1.44, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
+    dot(s, x + 0.2, 5.3, 0.34 if i == 0 else 0.26, LIME_C)
+    text(s, x, 5.55, 4.3, 0.5, [k], size=20, font=MONO, bold=True, color=LIME_C)
+    text(s, x, 6.0, 4.3, 1.5, [v], size=22)
+box(s, 1.0, 7.75, 18.0, 1.45, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
+text(s, 1.45, 7.75, 17.1, 1.45, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
                                   ("Introductions to one financial institution and one logistics operator for a first pilot shipment, and a Stellar engineer's review of the design.", {"bold": True})]],
      size=24, anchor=MSO_ANCHOR.MIDDLE)
 
