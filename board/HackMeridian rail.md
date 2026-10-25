@@ -70,6 +70,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 17:09 UTC: page with the three-machine shipment (rio-miami-rail cbd0dd3) published to production by central; live files byte-identical to cbd0dd3; logged out, shipment 1 MATCH (7 txs) and shipment 2 MATCH (5 txs). Owner, after auto mode blocked rail-page-host: "Sim, publica agora (Recomendado)".
 - 2026-10-25 16:51 UTC: the three-machine shipment goes on the public page with Verify head, published after the reviewer. Owner: "Sim, coloca o embarque das três máquinas na página pública, com o Verify head nele também, e publica depois do revisor."
 - 2026-10-25 16:46 UTC: Paulo e-mail task closed; Pedro already spoke to Paulo, who will send a letter with the ZIS supporters and a note that Radox provides the technology. Owner: "ele falou que vai mandar uma carta com os apoiadores da ZIS, com uma nota dizendo que a Radox está provendo a tech". Wording follows [[zis-in-public-material-radox-is-bc05]].
 - 2026-10-25 16:46 UTC: merge branch three-machine into main and push main to the private rio-miami-rail now; making it public stays a separate OK after Leo's scrub. Owner: "é só juntar, já não foi assinado?"
