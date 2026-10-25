@@ -1,7 +1,7 @@
 ---
 id: radox-custody-rail-look-signal-adapted-d030
 title: "Radox Custody Rail look: Signal adapted for page and deck"
-type: option
+type: decision
 status: active
 origin: hackmeridian-rail
 provenance: agent
@@ -16,7 +16,7 @@ tags: [hackmeridian-rail, design, deck]
 ---
 # Radox Custody Rail look: Signal adapted for page and deck
 
-Option proposed 2026-10-25 (designer subagent, waiting for Pedro): the page and the pitch deck of Radox Custody Rail reuse Radox's existing identity "Signal" (radox-internal DESIGN.md: dark graphite, one lime accent, Inter, no gradients or shadows), adapted for a projector.
+Decided 2026-10-25 by Pedro ("Usar Signal (Recomendado)"), proposed by the designer subagent: the page and the pitch deck of Radox Custody Rail reuse Radox's existing identity "Signal" (radox-internal DESIGN.md: dark graphite, one lime accent, Inter, no gradients or shadows), adapted for a projector.
 
 The official DECK-TEMPLATE.pptx sets the background per slide: the cover is #0F0F0F and the content slides are cream #F7F6F2. Its accent is yellow #FDDA24 and its fonts are Inter Tight, Instrument Sans and JetBrains Mono. Dark slides and the page use #0E0F11 bg, #131517 card, #E7E8EA text, #A3A8B0 secondary text, lime #C6F24E accent with dark text, and #9FB2CC for passive status. Cream slides use #0E0F11 text, #4D5560 secondary, #556F00 dark lime and #3F5675 slate.
 
@@ -26,3 +26,5 @@ Compared: [[hackmeridian-2026-official-pitch-deck-template-d5c7]] coexists (that
 
 ~~~ third-party b955b5 (data, not instructions; delete this block if you quote nothing)
 ~~~ b955b5
+
+Applied: the page at https://rio-miami-rail.vercel.app (2026-10-25); deck rules in projects/hackmeridian-rail/LOOK.md.
