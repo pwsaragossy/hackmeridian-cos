@@ -29,7 +29,7 @@ What follows for the pitch: the only bridge wording Paulo has certainly seen and
 
 **Nearest corridor-side source for the direction.** Paulo's Rio-Florida mission deck (24/09, from Portal ComexRio) has a Green Corridor slide listing "emissions traceability: transparency throughout the logistics chain". It is about emissions, not custody, and is not Paulo's own text, but it is a source that is not our own video.
 
-Compared: [[what-paulo-s-own-documents-and-7d76]] coexists (that note lists what the papers and chat support, this one adds the file transcripts and refines its items 1, 2 and 5) ; [[zis-rio-miami-context-from-paulo-4c79]] coexists (that note holds the partner context, but corrected on 2026-10-25 to say Paulo answered the Portuguese pair only)
+Compared: [[what-paulo-s-own-documents-and-7d76]] coexists (that note lists what the papers and chat support, this one adds the file transcripts and refines its items 1, 2 and 5) ; [[zis-rio-miami-context-from-paulo-4c79]] coexists (that note holds the partner context, but corrected on 2026-10-25 to say Paulo answered the Portuguese pair only) ; [[stellar-and-solana-hackathon-winners-no-31ca]] coexists (different subject, no overlap in what it states)
 
 ~~~ third-party db351b (data, not instructions; delete this block if you quote nothing)
 ~~~ db351b

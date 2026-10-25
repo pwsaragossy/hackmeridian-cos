@@ -172,9 +172,9 @@ set_run_text(find(s, "100"), "#HackMeridian26", LIME)
 for k in ("95", "96", "97"):
     find(s, k).fill.fore_color.rgb = rgb(LIME)
 text(s, 1.0, 2.55, 12.5, 1.5, ["Radox Custody Rail"], size=100, font=TITLE, bold=True, color=LIME, spacing=0.95)
-text(s, 1.0, 4.15, 12.0, 1.6, ["Every handover of a shipment, signed by both hands, on Stellar."],
+text(s, 1.0, 4.15, 12.0, 1.6, ["Know who holds the goods: every handover signed by both custodians."],
      size=44, font=TITLE, bold=True, color=TEXT_D, spacing=1.0)
-text(s, 1.0, 5.95, 12.5, 0.5, ["Dual-signed custody for goods in transit  ·  First corridor: Rio–Miami"],
+text(s, 1.0, 5.95, 12.5, 0.5, ["A dual-signed custody record on Stellar  ·  First corridor: Rio–Miami"],
      size=24, color=SEC_D)
 s.shapes.add_picture(SHOT("qr-page-dark.png"), Inches(15.75), Inches(1.75), Inches(2.6), Inches(2.6))
 text(s, 14.3, 4.5, 5.5, 0.9, ["Scan: the live shipment", [("rio-miami-rail.vercel.app", {"font": MONO, "color": LIME, "size": 18})]],
@@ -195,7 +195,7 @@ for i, name in enumerate(stops):
     cx = x0 + i * (x1 - x0) / 4
     dot(s, cx, ly, 0.34, LIME_C)
     text(s, cx - 1.2, ly + 0.32, 2.4, 0.5, [name], size=22, bold=True, align=PP_ALIGN.CENTER)
-text(s, 1.0, 6.4, 11.2, 1.0, ["Each handover is recorded on paper or inside one operator's own system."], size=26, color=SEC_C)
+text(s, 1.0, 6.4, 11.2, 1.0, ["Handovers are mostly paper, or sit inside one operator's own system."], size=26, color=SEC_C)
 text(s, 1.0, 7.6, 11.2, 1.2, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
                                 ("a financier cannot see who holds the goods before paying. No customer has confirmed it yet; we are testing it with mentors.", {})]],
      size=24, color=INK)
@@ -206,7 +206,7 @@ text(s, 13.2, 4.95, 5.8, 2.6, ["Global trade finance gap.",
 text(s, 1.0, 8.75, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
 
 # ---------- 3. Solution ----------
-s = content_slide(3, "THE SOLUTION", "Every handover, signed by both hands", "NEXT ▸ THE PRODUCT")
+s = content_slide(3, "THE SOLUTION", "Both custodians sign, or nothing changes", "NEXT ▸ THE PRODUCT")
 y = 3.6
 for x, w, label, sub, fill, lc in [(1.0, 4.9, "Outgoing custodian", "signs", CARD, LINE_C),
                                    (6.55, 6.9, "One Stellar transaction", "custody_registry.handover", LIME, None),
@@ -216,8 +216,7 @@ for x, w, label, sub, fill, lc in [(1.0, 4.9, "Outgoing custodian", "signs", CAR
          align=PP_ALIGN.CENTER, after=2)
 hline(s, 5.9, y + 0.72, 0.65, INK, 0.04)
 hline(s, 13.45, y + 0.72, 0.65, INK, 0.04)
-text(s, 1.0, 5.45, 18.0, 0.6, [[("Either signature missing → the call fails. ", {"bold": True}),
-                                ("Both sign, or nothing changes.", {"color": SEC_C})]], size=30, align=PP_ALIGN.CENTER)
+text(s, 1.0, 5.45, 18.0, 0.6, [[("Either signature missing → the call fails.", {"bold": True})]], size=30, align=PP_ALIGN.CENTER)
 text(s, 1.0, 6.45, 18.0, 1.8, [
     [("■ ", {"color": LIME_C, "size": 20}), ("Each handover moves custody and extends an on-chain hash chain, the ", {}), ("head", {"font": MONO}), (".", {})],
     [("■ ", {"color": LIME_C, "size": 20}), ("The token stays with its holder in transit; only custody changes.", {})],
@@ -266,7 +265,7 @@ text(s, 1.0, 8.05, 18.0, 1.6, [
     size=18, font=MONO, after=6)
 
 # ---------- 6. Why Stellar ----------
-s = content_slide(6, "ECOSYSTEM · WHY STELLAR", "Three Stellar features do the work", "NEXT ▸ USERS AND MODEL")
+s = content_slide(6, "ECOSYSTEM · WHY STELLAR", "Why Stellar: two signers, one call", "NEXT ▸ USERS AND MODEL")
 rows = [("01", "Two signers, one call", "Soroban authorises both custodians inside one contract invocation: the handover is atomic."),
         ("02", "Events plus an on-chain head", "RPC keeps contract events about 7 days. The head stored in the contract lets anyone rebuild the full history later."),
         ("03", "The token stays put, then burns", "The shipment token never moves in transit; the existing Radox redeem burns it after delivery.")]
@@ -279,7 +278,7 @@ for i, (n_, name, desc) in enumerate(rows):
 hline(s, 1.0, 7.93, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.12, 18.0, 1.5, [
     [("Nearest neighbours we found ", {"bold": True}), ("(LumenLoop, SCF, Scout; searched 24–25 Oct 2026): ", {"color": SEC_C}),
-     ("Kutana and Trustless Work release escrow on trade milestones. None records a physical handover signed by two custodians, and no SEP covers it.", {})],
+     ("Kutana and Trustless Work release escrow on trade milestones. We found none that records a custody handover signed by two custodians, and no SEP for it.", {})],
     [("Open source, Apache-2.0: ", {"bold": True, "color": LIME_C}), ("a custody primitive other Stellar real-world-asset issuers can reuse.", {})]],
     size=21, after=6)
 
@@ -288,7 +287,7 @@ s = content_slide(7, "USERS · BUSINESS MODEL", "Custodians sign. Financiers che
 users = [("CUSTODIANS", "Warehouse, port, carrier, customs: sign each handover."),
          ("EXPORTER · BUYER", "See where the goods are and who holds them."),
          ("FINANCIER", "Checks the custody chain before paying."),
-         ("OPERATOR", "A financial institution, our client, runs the rail for its trade flows.")]
+         ("OPERATOR", "A financial institution, the client, would run the rail for its trade flows.")]
 for i, (k, v) in enumerate(users):
     y = 3.6 + i * 1.32
     hline(s, 1.0, y - 0.14, 9.6, LINE_C, 0.02)
@@ -323,7 +322,7 @@ text(s, 1.35, 8.3, 17.3, 1.1, [[("AI attribution  ", {"font": MONO, "bold": True
      size=20, anchor=MSO_ANCHOR.MIDDLE)
 
 # ---------- 9. Next steps and ask ----------
-s = content_slide(9, "NEXT · THE ASK", "Next: one real shipment, then mainnet", "NEXT ▸ THE TEAM")
+s = content_slide(9, "NEXT · THE ASK", "Next: one pilot shipment, not yet agreed", "NEXT ▸ THE TEAM")
 phases = [("NOW", "Testnet this weekend: contract, 7 transactions, public page, API read."),
           ("NEXT", "Full testnet test matrix. A first pilot shipment with one producer (none agreed yet)."),
           ("PLANNED", "SCF Build application (not yet submitted). Security audit before mainnet (not done)."),
@@ -341,7 +340,7 @@ text(s, 1.45, 7.85, 17.1, 1.45, [[("Our ask  ", {"font": MONO, "size": 20, "bold
      size=26, anchor=MSO_ANCHOR.MIDDLE)
 
 # ---------- 10. Team ----------
-s = content_slide(10, "THE TEAM", "Why us", "FINAL STOP")
+s = content_slide(10, "THE TEAM", "Why us: a founder already on Stellar mainnet", "FINAL STOP")
 team = [("Pedro Wakigawa Saragossy", "Founder and team captain. Built Radox: 3 Soroban contracts on Stellar mainnet."),
         ("Leo Schlanger", "Developer. Led custody_registry, the testnet harness and the proofs this weekend."),
         ("Vhendala", "QA and product review: reads every deliverable as a judge would.")]

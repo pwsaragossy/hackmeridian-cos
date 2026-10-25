@@ -35,4 +35,4 @@ HackMeridian names "misrepresenting your work" as conduct and makes undisclosed 
 15. Track name. Name "Stellar Unlocked" in the deck only after the portal shows it saved on the team or submission page. Until then describe the capabilities used (multi-party auth in one call, SAC authorize and clawback, events with a hash chain) without naming a track.
 16. Only what ran. Slides 4 and 5 and the video list only steps with a SUCCESS testnet hash by Sun 22:00. If the API connection was cut, the README, deck and video say so against the intake sentence.
 
-Compared: [[hackmeridian-scale-intake-as-submitted-the-7fb5]] coexists (the intake text to match, this note is wording rules) ; [[no-sep-and-no-stellar-project-aa39]] coexists (the search behind the innovation hedge, not wording rules)
+Compared: [[hackmeridian-scale-intake-as-submitted-the-7fb5]] coexists (the intake text to match, this note is wording rules) ; [[no-sep-and-no-stellar-project-aa39]] coexists (the search behind the innovation hedge, not wording rules) ; [[stellar-and-solana-hackathon-winners-no-31ca]] coexists (different subject, no overlap in what it states)
