@@ -32,6 +32,8 @@ const OVER = {
   lower: pill("Narration: AI voice generated from Pedro's voice", "left:50%;transform:translateX(-50%)"),
   source: pill(source, "left:50%;transform:translateX(-50%);font-weight:400;color:#A3A8B0"),
   cap03c: pill("Public page, captured 2026-10-25 17:14 UTC", "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
+  cap08: pill("Public page, recorded 2026-10-25 17:21 UTC", "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
+  cap08b: pill("Radox backend (private), local test run · recorded output, replayed · 2026-10-25 13:23 UTC", "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
   capreadme: pill(`README.md, rio-miami-rail ${commit}, rendered by GitHub (repo private until submission)`, "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
 };
 const TITLE = `${FONT}<style>${BASE}body{background:#0E0F11;color:#E7E8EA;height:1080px;display:flex;flex-direction:column;justify-content:center;padding:0 200px}
@@ -73,9 +75,9 @@ const README = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github
   const segs = [
     [path.join(W, "title.png"), 0, 600],                                   // 0:00-0:20
     [M("02-terminal-list.mp4"), 0, 600],                                   // 0:20-0:40
-    [M("03-explorer-handover.mp4"), 0, 331],                               // 0:40-1:05: call outlined from 5 s
-    [M("03b-terminal-signers.mp4"), 0, 300],
-    [M("03c-page-shipment-2.mp4"), 0, 119],
+    [M("03-explorer-handover.mp4"), 0, 270],                               // 0:40-1:05: call outlined from 5 s
+    [M("03b-terminal-signers.mp4"), 149, 150],                             // last 5 s: every line printed
+    [M("03c-page-shipment-2.mp4"), 0, 330],                                // 0:54-1:05, under "In a second shipment, two teammates..."
     [M("04-explorer-cuts.mp4"), 0, 600],                                   // 1:05-1:25
     [M("05-terminal-verify.mp4"), 0, 750],                                 // 1:25-1:50
     [M("06-explorer-redeem.mp4"), 0, 240],                                 // 1:50-2:15
@@ -90,13 +92,13 @@ const README = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github
   const at = (i) => segs.slice(0, i).reduce((s, x) => s + x[2], 0) / 30;   // segment start in seconds
   const args = ["-v", "error", "-y"];
   for (const [f] of segs) args.push(...(f.endsWith(".png") ? ["-loop", "1", "-framerate", "30", "-t", "21", "-i", f] : ["-i", f]));
-  const ov = ["label", "lower", "source", "cap03c", "capreadme"];
+  const ov = ["label", "lower", "source", "cap03c", "cap08", "cap08b", "capreadme"];
   for (const o of ov) args.push("-loop", "1", "-framerate", "30", "-t", "180", "-i", path.join(W, o + ".png"));
   args.push("-i", M("narration-full-3m00.wav"));
   let g = segs.map(([, s, n], i) =>
-    `[${i}:v]trim=start_frame=${s},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop=30,trim=end_frame=${n},setpts=PTS-STARTPTS,fps=30,scale=1806:1016,pad=1920:1080:57:0:color=0x0E0F11,setsar=1,format=yuv420p[s${i}];`).join("");
+    `[${i}:v]trim=start_frame=${s},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop=${n},trim=end_frame=${n},setpts=PTS-STARTPTS,fps=30,scale=1806:1016,pad=1920:1080:57:0:color=0x0E0F11,setsar=1,format=yuv420p[s${i}];`).join("");
   g += segs.map((_, i) => `[s${i}]`).join("") + `concat=n=${segs.length}:v=1:a=0[v0];`;
-  const when = { label: [0, 180], lower: [0, 8], source: [8, 20], cap03c: [at(4), at(5)], capreadme: [at(9), at(12)] };
+  const when = { label: [0, 180], lower: [0, 8], source: [8, 20], cap03c: [at(4), at(5)], cap08: [at(12), 180], cap08b: [at(13), at(14)], capreadme: [at(9), at(12)] };
   ov.forEach((o, k) => {
     const [a, z] = when[o];
     g += `[v${k}][${segs.length + k}:v]overlay=0:0:enable='between(t,${a.toFixed(3)},${(z - 0.001).toFixed(3)})'[v${k + 1}];`;
