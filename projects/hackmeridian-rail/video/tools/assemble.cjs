@@ -15,7 +15,7 @@ fs.mkdirSync(W, { recursive: true });
 
 const script = fs.readFileSync(path.join(__dirname, "../../DEMO-SCRIPT.md"), "utf8");
 const row0 = script.split("\n").find((l) => l.startsWith("| 0:00"));
-const source = /source line[^:]*: "([^"]+)"/.exec(row0)?.[1];
+const source = /source line[^"]*"([^"]+)"/.exec(row0)?.[1];
 if (!source) throw new Error("no source line in the 0:00 row of DEMO-SCRIPT.md");
 const commit = execFileSync("git", ["-C", REPO, "rev-parse", "--short", "origin/main"]).toString().trim();
 fs.writeFileSync(path.join(W, "README.md"), execFileSync("git", ["-C", REPO, "show", "origin/main:README.md"]));
