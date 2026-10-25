@@ -33,7 +33,7 @@ Claims guard (reviewed 2026-10-25). Say: 'Radox: 3 Soroban contracts deployed on
 | 6 | (added) Users and value | Who uses it | exporter, custodians (warehouse/port/carrier/customs), buyer, financier; value: a financier can see where the goods are and who signed for them before paying | — |
 | 7 | (added) Business model and go-to-market | The rail is ours, the standard is public | SWIFT model: public record format, roles and events; Radox operates the rail and the API; first corridor Rio → Miami; next step: a first pilot shipment with one producer (none agreed yet); revenue: fee paid by the institution that operates the rail; not priced yet | {{fill: pricing line only if Pedro confirms}} |
 | 8 | (added) Market and next steps | From one corridor to a standard | USD leg (future): an on-ramp from the SCF Integration List; planned: this contract is the proposed first milestone of an SCF Build application (not yet submitted); then the full testnet matrix, then mainnet | link to the mentor question on ramps |
-| 9 | Team | Why us | Pedro Saragossy, founder and team captain; Leo Schlanger, developer; Vhendala, product review, video narration and team photo. Leo and Vhendala joined for the hackathon. Radox: 3 Soroban contracts deployed on Stellar mainnet | photos only with each person's consent; max 3 lines per member |
+| 9 | Team | Why us | Pedro Saragossy, founder and team captain; Leo Schlanger, developer; Vhendala, project supervision, product review and team photo. Leo and Vhendala joined for the hackathon. Radox: 3 Soroban contracts deployed on Stellar mainnet | photos only with each person's consent; max 3 lines per member |
 
 ## Demo video (backup and async judging)
 
