@@ -5,7 +5,7 @@ type: finding
 status: active
 origin: hackmeridian-rail
 provenance: agent
-confidence: medium
+confidence: high
 sources: ["WhatsApp export Pedro-Paulo to 24/10/2026 (text search)", "brain-radox SCF forms and tax form file names, read 2026-10-25", "Workforce Brasil programme p1, 24/10"]
 created: 2026-10-25
 updated: 2026-10-25
@@ -26,3 +26,5 @@ Compared: [[where-the-letter-titles-and-the-34f2]] coexists (that note says wher
 
 ~~~ third-party fe53f7 (data, not instructions; delete this block if you quote nothing)
 ~~~ fe53f7
+
+Confirmed by Pedro on 2026-10-25: "Sim, o nome na carta é Pedro Wakigawa Saragossy."
