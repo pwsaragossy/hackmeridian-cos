@@ -1,5 +1,7 @@
 # Three-machine shipment: steps (leo-agent proposal, 2026-10-25 14:45 UTC)
 
+**Superseded 2026-10-25 15:25 UTC by THREE-MACHINE.md** (remote-auth.mjs on branch three-machine, the flow in use). Kept as a record of the proposal.
+
 Goal (Sessions card): an extra shipment where Leo and Vhendala each sign a handover from their own
 computer with their own testnet key; only public keys move. `proofs/lifecycle.json`, `check.py`
 and the frozen 7 stay untouched.
