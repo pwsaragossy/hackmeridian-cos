@@ -80,6 +80,10 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 19:18 UTC: no payment demo and no new money flow. The Innovation lever is interoperability: many supply chains on one rail, with internal and external handovers. Testnet only, timeboxed to Mon 04:00. If it does not close, it stays a future-tense design line. Owner: "não funciona assim, a ideia é poder conectar múltiplos supply chains dentro do mesmo rail, com passadas de mão interna e externa. não vejo necessidade de pagamento no meio. a carga já foi paga para estar em transito".
+- 2026-10-25 19:18 UTC: the pricing model is a subscription per connected institution plus a fee per shipment, after SWIFT. Public text names the model with no values, and the SWIFT comparison is checked against a primary source. Owner: "assinatura + embarque, como uma maquininha + taxa. precisamos copiar o modelo swift".
+- 2026-10-25 19:18 UTC: Pedro asks a Stellar engineer at the venue for a review. The rail session prepares a one-page brief by 21:00. What the engineer says goes in the README only with that person's OK.
+- 2026-10-25 19:18 UTC: Pedro chases Paulo's letter himself today. If it arrives signed by Mon 08:00, we quote only what it says.
 - 2026-10-25 19:17 UTC: commit 67c2b13 in rio-miami-rail names radox-internal and one route path in code comments (no secret). The tree is fixed in a follow-up commit, and the history is not rewritten, so the cited commit hashes stay valid. Owner: "Deixar como está (Recomendado)".
 - 2026-10-25 18:26 UTC: no early submission and edit. Every portal field is prepared outside the portal, in FORM-ANSWERS.md, in portal order and as final text only, so Pedro pastes once on Monday. Owner: "vamos preparar tudo por fora, organizado, e depois copiamos."
 - 2026-10-25 18:26 UTC: the repo goes public at 06:00 Mon as planned, not earlier. Owner: "Manter 06:00".

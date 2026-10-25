@@ -54,6 +54,11 @@ green, stage 3 (Demo and pitch), track 15/22 at 2026-10-25 18:2x UTC. Done: both
 
 - 2026-10-25 19:17 UTC: commit 67c2b13 in rio-miami-rail names radox-internal and one route path in code comments (no secret). The tree is fixed in a follow-up commit, and the history is not rewritten, so the cited commit hashes stay valid. Owner: "Deixar como está (Recomendado)".
 
+- 2026-10-25 19:18 UTC: no payment demo and no new money flow. The Innovation lever is interoperability: many supply chains on one rail, with internal and external handovers. Testnet only, timeboxed to Mon 04:00. If it does not close, it stays a future-tense design line. Owner: "não funciona assim, a ideia é poder conectar múltiplos supply chains dentro do mesmo rail, com passadas de mão interna e externa. não vejo necessidade de pagamento no meio. a carga já foi paga para estar em transito".
+- 2026-10-25 19:18 UTC: the pricing model is a subscription per connected institution plus a fee per shipment, after SWIFT. Public text names the model with no values, and the SWIFT comparison is checked against a primary source. Owner: "assinatura + embarque, como uma maquininha + taxa. precisamos copiar o modelo swift".
+- 2026-10-25 19:18 UTC: Pedro asks a Stellar engineer at the venue for a review. The rail session prepares a one-page brief by 21:00. What the engineer says goes in the README only with that person's OK.
+- 2026-10-25 19:18 UTC: Pedro chases Paulo's letter himself today. If it arrives signed by Mon 08:00, we quote only what it says.
+
 ## 4. What was done and how
 - 2026-10-25 12:15 UTC (leo-agent): Leo's work runs in the session opened with the plugin active (window «hackmeridian-rail (leo)»); the old Leo session no longer writes, so pushes do not cross.
 - 2026-10-25 (central, owner's answers): pushes to both repos and testnet deploys of the shipment page are pre-authorized for the weekend (repo public and submission still need the owner's OK); Vhendala does a manual product review, not code; the Mon 00:00 fresh-run is an independent agent on a clean clone.
