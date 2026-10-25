@@ -18,6 +18,11 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- rail session: README.md in rio-miami-rail is missing and is the biggest gap (ambition 14:28 UTC): summary, problem, setup, env, demo, architecture with contract IDs, tx hashes, Prior work, Built here, AI usage, Production path, Future with the standard vision in future tense, by Sun 22:00
+- rail session: extra three-machine shipment, Leo and Vhendala each sign one handover from their own computer with their own testnet key (only public keys shared); new proof file, check.py and the frozen 7 untouched; then deck and video may say "signed on three different machines", by Sun 23:30
+- rail session: mentor answers to "would you accept this signature instead of a scanned stamp?", verbatim and with each mentor's OK, into FORM-ANSWERS.md (User value), by Sun 22:00
+- rail-pitch-deck: slide 3 gets one sourced number or the figure is cut (SUBMISSION.md); mentor quotes on the problem slide once the rail session has them, by Sun 22:00
+- rail-page-host: video 2:30–3:00 shows the Radox API curl from API-PROOF.md (head matches verify-head), by Mon 03:00
 - rail-page-host: clone Pedro's voice locally in Voicebox from an existing clean recording, plus a 15 s test line (in progress), by Sun 20:00
 - rail-page-host: Voicebox and its TTS model licences as plain lines in LICENCES.md, by Sun 20:00
 - rail-page-host: screen recording of the full page flow plus the snapshot-fallback take (demo-offline, in progress), by Sun 22:00
