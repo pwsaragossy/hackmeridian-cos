@@ -22,6 +22,10 @@ Plan, sources and limits: SUBMISSION.md "Portal form, field by field". Only Pedr
 
 ## Answers
 
+### Technical, fragment for the three-machine proof (draft 2026-10-25, review-4 pending)
+
+In a second testnet shipment, two team members authorised their own handovers from their own computers, each with a testnet key that never left that computer; only public keys and signed authorisation entries were exchanged, and the operator's machine checked each entry before submitting. Four transactions, all successful, and verify-head recomputes the same head (proof: proofs/three-machine.json on the repo's three-machine branch, also in the README).
+
 ### What's next (draft 2026-10-25, review-4 pending)
 
 Rio–Miami is our first corridor, not the product. Next we will connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint already reads this registry on testnet), ask logistics and trade-finance mentors whether a custodian's signature could replace a scanned stamp, and prepare an SCF Build application. Mainnet waits for an audit and the issuer-account lock described in the README. Longer term, we aim to grow this into a shared standard for custody of tokenized goods across trade corridors, as SWIFT did for payment messages, and we intend to approach chambers of commerce, ports and airports to integrate with their systems. Today no such standard, adoption or partnership exists: this weekend proves the record on Stellar testnet with test keys.

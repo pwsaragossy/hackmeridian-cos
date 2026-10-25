@@ -261,8 +261,8 @@ for i, (num, label) in enumerate([("7", "successful testnet transactions"), ("9"
     text(s, x, 7.0, 4.3, 0.8, [label], size=22, color=TEXT_D)
 text(s, 1.0, 8.05, 18.0, 1.6, [
     [("custody_registry  ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
-    [("Plus one event attestation by a source custodian (33379211), also on chain. Full hashes: the repo's proofs/lifecycle.json.", {"color": SEC_D, "font": BODY})],
-    [("Every actor is a test key held by one harness: this proves the mechanism, not independent custodians.", {"color": TEXT_D, "font": BODY, "bold": True})]],
+    [("Plus an attestation (33379211); full hashes in proofs/lifecycle.json. A second run (proofs/three-machine.json): two team members authorised handovers on their own computers, with their own testnet keys.", {"color": SEC_D, "font": BODY})],
+    [("All are test keys, most held by one harness: this proves the mechanism, not independent custodians.", {"color": TEXT_D, "font": BODY, "bold": True})]],
     size=18, font=MONO, after=6)
 
 # ---------- 6. Why Stellar ----------
