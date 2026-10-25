@@ -22,4 +22,6 @@ The ElevenLabs connector attached to Claude Code (the "creative" voice tools) of
 
 A clean sample of the owner's voice exists locally: ~/Movies/FINAL youtube.mp4 (244 s, English, one speaker, an Agent Pay demo narration, speech about -20 dB with pauses near -83 dB). Not uploaded anywhere.
 
+After this check the owner chose a local clone with Voicebox (open source) instead, so ElevenLabs is not used for the rail video.
+
 Compared: none similar
