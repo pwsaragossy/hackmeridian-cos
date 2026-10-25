@@ -18,6 +18,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 ## For the owner to decide (central asks, all at once)
 - Pedro: where did you hear that Joe Chi (Camacol president, per ~/brain-radox, unconfirmed) received the videos well? Did Paulo answer the English v2 after 24/10 21:59?
 - Pedro: which Portuguese Rio–Miami video did you send Paulo on 23/10 06:08? (the other one of the pair is the bioceanic)
+- Pedro (heads-up from Leo, 12:25 UTC, optional): on Leo's computer the track gate fails at every turn, because your approvals (scope OK; target "7 lifecycle txs SUCCESS on testnet", command `python3 check.py`, today 7/7) live only in local files on your machine, and the plugin rightly blocks Leo's session from restoring them. Nothing is blocked: Leo's contract work is done. If you want the warning gone, central records the same two OKs on Leo's computer with `track.sh ok hackmeridian-rail check` and the scope OK, with your confirmation. If not, it stays a warning on his side only. Details on Leo's card (12:20 line).
 
 ## Tasks
 - Pedro: send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/, forward his reply to central, by Sun 18:00 Lisbon (15:00 Rio)
