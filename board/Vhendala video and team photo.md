@@ -40,7 +40,8 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
-- Vhendala: sign one handover of the extra three-machine shipment from your own computer with your own testnet key (the rail session sends the steps; share only the public key), by Sun 23:30
+- Vhendala: first, steps 1–3 of the 14:37 line and post ONLY your public key (output of `stellar keys address vhendala`) on this card; the shipment cannot be prepared without it, by Sun 18:00
+- Vhendala: then sign your handover when the REQUEST READY line appears on this card, by Sun 23:30
 - Vhendala: run the README on your own computer from a clean clone, as a judge would, and write each step that fails on this card (fresh-run), Mon 00:00
 - Vhendala: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, link on this card, by Sun 18:00
 - Vhendala: team photo of Pedro, Leo and Vhendala for the team slide, by Sun 18:00
