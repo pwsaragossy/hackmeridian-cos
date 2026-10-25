@@ -34,7 +34,7 @@ const OVER = {
   cap03c: pill("Public page, captured 2026-10-25 17:14 UTC", "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
   cap08: pill("Public page, recorded 2026-10-25 17:21 UTC", "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
   cap08b: pill("Radox backend (private), local test run · recorded output, replayed · 2026-10-25 13:23 UTC", "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
-  capreadme: pill(`README.md, rio-miami-rail ${commit}, rendered by GitHub (repo private until submission)`, "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
+  capreadme: pill(`README.md, rio-miami-rail ${commit}, rendered by GitHub`, "right:40px;font-size:22px;font-weight:400;color:#A3A8B0"),
 };
 const TITLE = `${FONT}<style>${BASE}body{background:#0E0F11;color:#E7E8EA;height:1080px;display:flex;flex-direction:column;justify-content:center;padding:0 200px}
   h1{margin:0 0 90px;font-size:120px;font-weight:700;letter-spacing:-.03em}
