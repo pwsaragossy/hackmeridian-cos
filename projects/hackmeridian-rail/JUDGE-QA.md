@@ -42,3 +42,6 @@ No. Each Soroban auth entry carries a nonce and an expiry ledger and is bound to
 **10. What is between this and mainnet? Has it been audited?**
 It has not been audited and runs only on testnet. Two other gaps are known: the testnet issuer keeps its master key (it must be locked on mainnet), and a paper bill of lading or a second token for the same cargo is not prevented on chain (README "Production path").
 Plan: the SCF Audit Bank after an SCF award, and mainnet gating on the Radox platform until the test matrix passes. The redeem burn uses Radox's existing `transfer_agent` (prior work, tx 864fd164…).
+
+**11. The page says "from 7 transactions", but verify-head prints 6 rows. Which is right?** (added by session-hackmeridian-rail, 2026-10-25, from the code)
+Both are right; they count different things. The page counts every call to `custody_registry` for this shipment: open, the 4 handovers, the attest and deliver, so 7 (`page/app.js`, `txHistory`). Redeem is not among them, because it calls the `transfer_agent` contract, not the registry. verify-head prints only the steps that change the head: open, the 4 handovers and the attest, so 6. `deliver` changes the status but does not fold into the head (`contracts/custody_registry/src/lib.rs`: only `open`, `handover` and `attest` write `head`). Both end on the same on-chain head, `2d74fec0…5414`.
