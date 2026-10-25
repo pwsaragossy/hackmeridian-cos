@@ -42,10 +42,10 @@ Nine refusal branches, run by simulation, are recorded with their error results 
 Testnet only, test keys, no audit. Everything on testnet runs with test accounts, not real companies.
 ```
 
-## Problem solved (optional; 692 chars)
+## Problem solved (optional; 880 chars)
 
 ```text
-About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 data); in 2025 about 11% were issued electronically (DCSA, as of 2025). 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI Cargo Theft Report, Apr 2026). These are market figures, not our traction. In our working assumption, a container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it. No customer has confirmed it yet.
+About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 data); in 2025 about 11% were issued electronically (DCSA, as of 2025). 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI Cargo Theft Report, Apr 2026). Our design target is the US–Brazil goods corridor, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports); Brazil was Florida's largest goods export market in 2025 (USTR). These are market figures, not our traction. In our working assumption, a container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it. No customer has confirmed it yet.
 ```
 
 ## Challenges (optional; 1279 chars)
@@ -58,10 +58,10 @@ About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 d
 5. For the second shipment, our check of the teammates' signed entries first rejected valid signatures. Protocol 29 address-bound credentials are signed over a different payload than the legacy ones; we changed the check to use that payload, and a wrong key is still rejected.
 ```
 
-## What's next (optional; 899 chars)
+## What's next (optional; 1334 chars)
 
 ```text
-Rio–Miami is our first corridor, not the product. Our goal is a shared, SWIFT-like custody standard and an end-to-end rail that companies along a supply chain could use; neither exists yet. Next we will connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint already reads this registry in a local development run, not reproducible from this repo), seek introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, ask a Stellar engineer to review the design, and prepare an SCF Build application. Mainnet waits for an audit and the issuer-account lock described in the README. We intend to approach chambers of commerce, ports and airports about integrating their systems. Today no such standard, integration, adoption or partnership exists: this weekend proves the record on Stellar testnet with test keys.
+Rio–Miami is our first corridor, not the product. Our goal is a shared, SWIFT-like custody standard and an end-to-end rail that companies along a supply chain could use; neither exists yet. Next we will connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint already reads this registry in a local development run, not reproducible from this repo), seek introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, ask a Stellar engineer to review the design, and prepare an SCF Build application. Mainnet waits for an audit and the issuer-account lock described in the README. We intend to approach chambers of commerce, ports and airports about integrating their systems. Today no such standard, integration, adoption or partnership exists: this weekend proves the record on Stellar testnet with test keys. Business model: our model borrows the shape of SWIFT's published fee structure. Swift, a cooperative owned by its members, charges an entry fee, annual charges (including network connection) and network-usage fees on message traffic (swift.com billing rules, accessed 25 October 2026). We plan a similar shape: a recurring fee per connected institution and a fee per shipment. Our prices are not set. We are not affiliated with Swift.
 ```
 
 ## Repository link (required, public HTTPS)

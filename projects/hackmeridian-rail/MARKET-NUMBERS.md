@@ -56,7 +56,7 @@ Reviewed by a second independent reviewer, which checked every sentence against 
 
 ## 5. Pricing model comparison: SWIFT (shape only, no prices)
 
-Pedro's decision: a subscription per connected institution plus a fee per shipment, after SWIFT, with no values yet. A researcher subagent found SWIFT's fee structure. An independent reviewer approved the wording, conditional on a verbatim check, but swift.com returned 403 to it. The check was then done in a real browser on 2026-10-25 at 19:30 UTC, and every quote below was found on the page word for word.
+Pedro's decision: a subscription per connected institution plus a fee per shipment, after SWIFT, with no values yet. A researcher subagent found SWIFT's fee structure. An independent reviewer approved the wording, conditional on a verbatim check, but swift.com returned 403 to it. The check was then done in a real browser on 2026-10-25 at 19:20 UTC, and every quote below was found on the page word for word.
 
 | # | Fact | Verbatim on swift.com | Page | Date |
 |---|---|---|---|---|
