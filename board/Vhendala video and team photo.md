@@ -76,7 +76,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - DONE 17:26 UTC (200 OK logged out, both shipments + snapshot.json live, check.py 7/7): Vhendala: open https://rio-miami-rail.vercel.app logged out and read the check.py result on the cards; anything red becomes a card line, at Sun 18:00
 - DONE 17:26 UTC (judge notes below): Vhendala: read the finished demo script, deck draft and README as a judge, notes on this card, by Mon 01:00
 - DONE 17:36 UTC (no pitch video needed — submission requires only the DEMO video + pitch deck PDF; rail-demo-3m00.mp4 is already 180.0s / 5400 frames): Vhendala: timed rehearsal (track item pitch): play the final video twice against a clock, log both run times on this card; a live pitch by Pedro only if we reach the 28 Oct final, by Mon 06:00
-- Vhendala: upload the final video (unlisted) to Pedro's YouTube (her 16:12 line), link on this card, play it once against the scrub list, by Mon 08:00
+- Vhendala: when Pedro posts the unlisted YouTube link, play it once logged out against the scrub list and note anything wrong on this card (Pedro uploads it himself), by Sun 22:00
 - DONE 16:50 UTC (no login — Pedro keeps the portal dry-run): Vhendala: if you have your own portal login as a team member, do the portal dry-run with placeholder links and write any field that fails on this card; if not, write "no login" here and Pedro keeps it, by Sun 22:00
 
 ## Decided
