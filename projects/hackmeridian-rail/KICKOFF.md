@@ -75,7 +75,7 @@ The event itself ends 16:00, but only the 12:00 submission time matters.
 | Sun 22:00–Mon 00:00 | Deck draft with the real hashes; demo script with the page as the last scene; Vhendala rehearses the narration twice (target 3:00). Scrub, moved from Mon 06:00: `grep -rE "S[A-Z2-7]{55}"` plus partner and client names over the rio-miami-rail tree (must be empty); every link that exists opened in a logged-out browser (page production alias, test video, radox.net, demo.radox.net, github.com/pwsaragossy/radox) | scrub empty, links open |
 | Mon 00:00–03:00 | Video: Pedro's session makes the screen recording, Vhendala records the narration over it (target 3:00, offline backup); an independent agent that wrote none of the code, launched by central, runs the README on a clean clone | review-3 |
 | Mon 03:00–06:00 | Rest, or fixes from review-3 only | |
-| Mon 06:00–08:00 | Repo public (owner OK; re-run the scrub grep only on commits after Sun 22:00); deck as PDF; Vhendala uploads the final video (unlisted) to the team account and puts the link on the card; open logged out only the two links that could not exist on Sunday night: the public repo and the final video | review-4 |
+| Mon 06:00–08:00 | Repo public (owner OK; re-run the scrub grep only on commits after Sun 22:00); deck as PDF; Vhendala uploads the final video (unlisted) to the team account and puts the link on the card; open logged out only the two links that could not exist on Sunday night: the public repo and the final video; play the final video once against the scrub list (no key, partner or client name on screen or in the narration) | review-4 |
 | Mon 08:00 | Submit | owner OK |
 | Mon 08:00–10:00 | Buffer for our deadline (2 h); 10:00–12:00 is the event's own margin, not to be used | |
 
