@@ -5,7 +5,7 @@ const { chromium } = require(process.env.PW);
 const fs = require("fs"); const zlib = require("zlib"); const path = require("path");
 const [BASE, DIR] = process.argv.slice(2);
 const ALLOW = [new URL(BASE).host, "soroban-testnet.stellar.org", "horizon-testnet.stellar.org"];
-const IDLE = /^Done\. One shared record followed the goods/;
+const IDLE = /^Done\. One shared record followed the test shipment/;
 let fail = 0; const say = (ok, msg) => { if (!ok) fail++; console.log(ok ? "PASS" : "FAIL", msg); };
 const painted = () => { const c = document.getElementById("globe"); const d = c.getContext("2d").getImageData(0, 0, c.width, c.height).data;
   let n = 0; for (let i = 3; i < d.length; i += 400) if (d[i]) n++; return n; };
