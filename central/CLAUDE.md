@@ -60,6 +60,7 @@ The `ask-guard` hook enforces this outside `central/`.
 - The plugin asks pedro for one click on every `track.sh ... ok` and on `library.sh`
   offload/use/join/leave/trust (`protocol.sh` lines 180-187). That click is the owner's OK and
   cannot be made permanent; ask for it only when pedro gave that OK.
+- No legal work during the hackathon (pedro, 2026-10-25): "regra daqui pra frente no hackathon: não é momento de envolver jurídico." No legal specialist, no legal research (UCC, Brazilian law, KYC, IP terms), no legal questions to pedro. The track's `licences` item is done by the engineer card as a plain list of dependency licences (the repo is Apache-2.0), with no legal analysis. Legal library notes already written stay as they are and are not used.
 
 ## Projects
 

@@ -48,6 +48,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 4. **Leo:** Sun 09:00 re-run the wasm check (KICKOFF §8), then LEO-BRIEF.md.
 
 ## 6. If X, then Y
+- No legal work during the hackathon (pedro, 2026-10-25): "regra daqui pra frente no hackathon: não é momento de envolver jurídico." No legal specialist, no legal research (UCC, Brazilian law, KYC, IP terms), no legal questions to pedro. The track's `licences` item is done by the engineer card as a plain list of dependency licences (the repo is Apache-2.0), with no legal analysis. Legal library notes already written stay as they are and are not used.
 - If something needs the owner, it becomes a line on the card with `status: waiting-owner`. Do not ask.
 - If the rules forbid code written before the event, list exactly what reused code comes from the public radox repo.
 - If the portal rules contradict RULES.md or SUBMISSION.md, the portal wins: fix the files the same hour.
