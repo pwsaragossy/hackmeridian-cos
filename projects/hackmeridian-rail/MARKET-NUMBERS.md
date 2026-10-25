@@ -54,6 +54,32 @@ Reviewed by a second independent reviewer, which checked every sentence against 
 - Form (Market / ecosystem potential field): "Our design target is the US–Brazil goods corridor, which was about US$94.2 billion in 2025 (US Census Bureau, exports plus imports). Brazil was Florida's largest goods export market in 2025 (USTR). Beyond that corridor, ocean carriers issue around 45 million bills of lading a year (DCSA, 2023). Today we have a testnet demo and no pilot, partner or traction. These are market figures, not our volumes." Short variant: "The market we are built for: US–Brazil goods trade, about US$94.2 billion in 2025 (US Census Bureau), and around 45 million ocean bills of lading issued a year worldwide (DCSA, 2023). Market figures only. We have a testnet demo, not traction."
 - Never in one sentence: a value figure (US$) with a volume figure (tonnes, TEU) or a document count, as if one carried the other. PortMiami (C4) and the Vizion TEU (C3) stay out of all ready sentences.
 
+## 5. Pricing model comparison: SWIFT (shape only, no prices)
+
+Pedro's decision: a subscription per connected institution plus a fee per shipment, after SWIFT, with no values yet. A researcher subagent found SWIFT's fee structure. An independent reviewer approved the wording, conditional on a verbatim check, but swift.com returned 403 to it. The check was then done in a real browser on 2026-10-25 at 19:30 UTC, and every quote below was found on the page word for word.
+
+| # | Fact | Verbatim on swift.com | Page | Date |
+|---|---|---|---|---|
+| W1 | One-time entry fee | "Entry fees are invoiced after receipt of the Swift Undertaking." | billing rules [13] | undated page, opened 25 Oct 2026 |
+| W2 | Recurring annual charges | "Annual charges (including Swift BIC costs, network connection costs, software maintenance, documentation subscriptions) are in principle invoiced shortly after the service has been initially provided and, subsequently, they are invoiced in January of each year" | billing rules [13] | same |
+| W3 | Usage fee on traffic | "network usage part (message transmission traffic) of the invoice covers messages sent, system messages received and retrievals delivered to the customer" (billed per calendar month) | billing rules [13] | same |
+| W4 | Ownership | "a global cooperative owned by our members and governed by the world's central banks" | about us [14] | undated page, opened 25 Oct 2026 |
+| W5 | Scale (optional) | "A globally inclusive cooperative made up of over 12,500 institutions across more than 200 countries and territories." / "53 million+ FIN messages sent every day on average" | who we are [15] | undated page, opened 25 Oct 2026 |
+
+Reviewer rules:
+- Say "borrows the shape of", not "follows SWIFT".
+- Say "a cooperative owned by its members", not "member-owned".
+- SWIFT's annual charges are a bundle, so keep "subscription" for our side only.
+- Add "Not affiliated with Swift".
+- No SWIFT amounts are public, so quote none.
+- The PDF revenue split (EUR 473.7m traffic, and so on), the 59.8M-a-day figure and the 68M record day are dropped: the PDFs did not open and the search results were not confirmed.
+- The scale line W5 is optional and must carry "swift.com, accessed 25 October 2026".
+
+Ready sentences (approved by the reviewer, now confirmed on the page):
+- Deck, README, form (long): "Our model borrows the shape of SWIFT's published fee structure. Swift, a cooperative owned by its members, charges an entry fee, annual charges (including network connection) and network-usage fees on message traffic (swift.com billing rules, accessed 25 October 2026). We plan a similar shape: a recurring fee per connected institution and a fee per shipment. Our prices are not set. We are not affiliated with Swift."
+- Short (slide): "Same shape as Swift's published fees (entry, annual, per-message usage); for us, a recurring fee per institution plus a fee per shipment. Prices not set. Not affiliated with Swift."
+- Optional scale clause, only with its source: "Swift connects over 12,500 institutions across more than 200 countries and territories (swift.com, accessed 25 October 2026)."
+
 ## Sources
 
 [1] US Census Bureau, "Trade in Goods with Brazil": https://www.census.gov/foreign-trade/balance/c3510.html (opened 2026-10-25)
@@ -68,5 +94,8 @@ Reviewed by a second independent reviewer, which checked every sentence against 
 [10] WTO, trade finance page: https://www.wto.org/english/thewto_e/coher_e/tr_finance_e.htm (opened 2026-10-25)
 [11] MIGA press release, 5 May 2025: https://miga.org/press-release/miga-and-idb-invest-sign-first-ever-trade-finance-guarantee-framework (opened 2026-10-25)
 [12] UNCITRAL, MLETR status: https://uncitral.un.org/en/texts/ecommerce/modellaw/electronic_transferable_records/status (opened 2026-10-25)
+[13] Swift, Billing rules: https://www.swift.com/myswift/billing/billing-information/billing-rules (opened in a browser 2026-10-25)
+[14] Swift, About us: https://www.swift.com/about-us (opened in a browser 2026-10-25)
+[15] Swift, Who we are: https://www.swift.com/about-us/who-we-are (opened in a browser 2026-10-25)
 
-Library: [[brazil-to-us-corridor-sizes-census-cc8c]], [[unctad-920-million-teu-port-throughput-3e8e]], [[wto-80-to-90-percent-of-98f6]], [[dcsa-45-million-bills-of-lading-1af2]], [[adb-trade-finance-gap-survey-dec-d033]], [[market-numbers-reviewer-pass-corridor-teu-2a95]].
+Library: [[brazil-to-us-corridor-sizes-census-cc8c]], [[unctad-920-million-teu-port-throughput-3e8e]], [[wto-80-to-90-percent-of-98f6]], [[dcsa-45-million-bills-of-lading-1af2]], [[adb-trade-finance-gap-survey-dec-d033]], [[market-numbers-reviewer-pass-corridor-teu-2a95]], [[swift-fee-structure-on-swift-com-9ed6]], [[wording-market-figures-in-the-deck-dadf]].
