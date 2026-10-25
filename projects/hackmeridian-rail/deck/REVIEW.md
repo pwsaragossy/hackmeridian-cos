@@ -54,6 +54,27 @@ Reason: Every number and hash I re-checked is true. The weak points are disclosu
 
 Question/conclusion: can v3 go to judges without overclaim, undisclosed prior work or missing AI attribution? Conclusion: no overclaim found; prior-work and AI disclosure are incomplete against the rules.
 
+## Fourth round (v8: problem section in numbers, 2026-10-25 ~17:30 UTC)
+
+Two problem slides were added before any result, and the product and workflow slides were merged into slide 5, so the deck stays at 10 slides. Every number is a row of PROBLEM-NUMBERS.md, which another session's reviewer verified. The deck session re-opened NTC, ICC, DCSA and the TT Club PDF itself.
+- Slide 2: 45M ocean bills of lading a year (DCSA, Feb 2023, 2021 data); ~11% issued electronically (DCSA, as of 2025, with the Jan 2025 5.7% shown); 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI, Apr 2026).
+- Slide 3: R$900M est. direct loss from 8,570 cargo robberies in Brazil, 2025 (NTC&Logística, 28 Mar 2026); US$85M HSBC loss on forged documents (Hin Leong, GTR, 18 Nov 2024); US$2.5T trade finance gap, market size only (ADB, Dec 2025).
+
+Independent reviewer verdict: approve with changes. All of the changes were applied:
+- the 45M and the 11% are no longer tied together;
+- "thefts" became "robberies" (the source says "roubo");
+- "Banks get fooled" became "A bank got fooled";
+- the closing line no longer implies the build solves part of the problem;
+- the ADB figure is labelled market size only;
+- the TT Club figure is labelled "recorded".
+
+check_deck.py exits 0. "{{" placeholders and "traction" are banned.
+
+Open:
+- None of these numbers measures the handover itself; the 22% insider figure is the closest. This limit is honest and no slide claims more.
+- PITCH.md slide row 3 still cites the ADB 2022 figure (Sept 2023). That file belongs to the pitch work.
+- The reviewer's full report is in its note [[problem-slides-review-2026-10-25-2478]].
+
 ## Findings (ranked)
 1. [major, FACT] Slide 8 prior-work list is incomplete against the disqualifier ("Undisclosed prior work is a disqualification", PORTAL-PASTE.md:47). Missing: (a) the explainer video and the Rio-Miami initiative that slide 2's bridge cites ("our explainer video") - pre-event work shown as context; (b) the chief-of-staff plugin (public repo, first commit 2026-10-22, SUBMISSION.md:55 says "declared as prior work"; it ran the team's work); (c) the 2026-10-20 architecture panel (wording note rule 9); (d) the sentence "no contract code before Sun 09:00" (rule 9). Git supports it: rio-miami-rail first commit is 2026-10-25T09:00:17Z (placeholder page); contract commit 11:29Z. Slide shows only "Planning files, 24-25 Oct". Fix with no new fact: add those items and "first commit 25 Oct 09:00 UTC".
 2. [major, FACT] Slide 10 shows a dashed "Team photo" placeholder in a final deck; card says photo is Vhendala's, due Sun 09:00. Replace or remove the box before sending.
