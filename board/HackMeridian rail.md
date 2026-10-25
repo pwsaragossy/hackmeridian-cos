@@ -36,6 +36,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 09:06 UTC: Vercel deploy of the public page allowed (owner, in this session: "Pode fazer o deploy do placeholder no Vercel por esta sessão; eu aprovo o create_deployment."; to central: "Libera, publica"). Placeholder live at https://rio-miami-rail.vercel.app, 200 logged out; steps in KICKOFF §6.
 - 2026-10-25 08:43 UTC: Leo (leo-schlanger) is a collaborator on rio-miami-rail and the team board; no pending invites (gh api, central). The Paulo item is now the e-mail line above.
 - 2026-10-25: the name on Paulo's letter and in all public material is "Pedro Wakigawa Saragossy" (owner: "Sim, o nome na carta é Pedro Wakigawa Saragossy.").
 - 2026-10-25: Paulo's signed ZIS letter is expected by Sun 25 noon at the latest (owner at ~03:00 Sun: "amanha meio dia no maximo"; if Rio time, 15:00 Lisbon). Deck and README quote it when the signed PDF arrives; if it has not arrived by Sun 18:00, they use the version without it and the letter goes to the Meridian talk. Source of the request: Pedro's WhatsApp to Paulo, 23/10 15:49, and Paulo's answer asking for a guiding text and a draft.
