@@ -114,10 +114,9 @@ Deploy steps (any Pedro session, no login needed):
 2. Vercel connector `create_deployment` with `name: rio-miami-rail`, `project: rio-miami-rail`,
    `target: production`, `projectSettings.framework: null`, and `files` = every file in `page/`
    inline (`encoding: utf-8`).
-3. Wait for state `READY` (`get_deployment`); `get_project` must show no `ssoProtection` or
-   `passwordProtection` on production. Use the alias the deployment returns (expected
-   `https://rio-miami-rail.vercel.app`). Testnet RPC and Horizon send CORS headers for that origin
-   (curl, 2026-10-25 08:55). Then open the production alias logged out
+3. Wait for state `READY` (`get_deployment`); `get_project` must show `passwordProtection`
+   disabled. The public URL is `https://rio-miami-rail.vercel.app` (live since 2026-10-25 09:06 UTC). The project keeps `ssoProtection: all_except_custom_domains`, so the `-treblelegacys-projects` alias and per-deployment URLs redirect to a Vercel login; the short domain answers 200 logged out. Never hand out the other two. Testnet RPC and Horizon send CORS headers for that origin
+   (curl, 2026-10-25 08:55). Then open `https://rio-miami-rail.vercel.app` logged out
    (`curl -sI` must return 200, then a private browser window) and put the URL on the card.
 4. Rollback: Hobby keeps only the previous production deployment for rollback, so if a deploy breaks
    the page, redeploy the last good commit of `page/` with step 2.
