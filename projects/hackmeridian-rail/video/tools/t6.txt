@@ -1,0 +1,5 @@
+handover 861544e4  from warehouse GAVD…5UTZ  to leo GDWN…TPPW  auth entries: warehouse, leo  both signed
+handover 9214980e  from leo GDWN…TPPW  to vhendala GAUK…CEFR  auth entries: leo, vhendala  both signed
+handover 850da342  from vhendala GAUK…CEFR  to recipient GD54…2CO4  auth entries: vhendala, recipient  both signed
+deliver  849c268d  from recipient GD54…2CO4  to holder GDL4…WBSK  auth entries: recipient, holder  both signed
+every handover and deliver: both custodians signed

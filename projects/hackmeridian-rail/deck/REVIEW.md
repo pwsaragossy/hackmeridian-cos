@@ -1,7 +1,7 @@
-# Deck review: Radox Custody Rail (v6)
+# Deck review: Radox Custody Rail (v7)
 
-Deck: deck/radox-custody-rail.pdf (10 slides, 639952 bytes), built by deck/build_deck.py on DECK-TEMPLATE.pptx.
-Judge: `python deck/check_deck.py proofs/lifecycle.json` exits 0 on v6 (2026-10-25). A stripped copy (users claim, no Claude Code, short name) now fails with 4 failures.
+Deck: deck/radox-custody-rail.pdf (10 slides, 742096 bytes), built by deck/build_deck.py on DECK-TEMPLATE.pptx.
+Judge: `python deck/check_deck.py proofs/lifecycle.json` exits 0 on v7 (2026-10-25). A stripped copy (users claim, no Claude Code, short name) now fails with 4 failures.
 
 ## Verdict
 Independent reviewer (fresh-context subagent, reviewer card) on v3: approve with changes. No on-chain claim false; all 7 lifecycle hashes and the attestation re-checked on Horizon testnet, successful=true.
@@ -35,6 +35,13 @@ Independent reviewer (fresh-context subagent, reviewer card) on v3: approve with
   - USD leg moved to FUTURE; slide 6 scopes the neighbours to "on Stellar".
   - check_deck.py now bans partnership, working with, already use, adopted, in talks, agreed with, integrated into, and requires "none confirmed" and "The goal is". All 6 of the reviewer's mutants now fail (they all passed or 5 of 6 passed before).
 - Left open: DEMO-SCRIPT.md 2:30 "with chambers of commerce, ports and airports" reads as a present partnership (owner of that file: rail session; on the board). A judge may ask about IATA ONE Record: answer in Q&A, no slide claim until its spec is read.
+
+## Third round (v7: core value on slide 7, three-machine proof on slide 5)
+- Pedro via central: the core value ("o valor está todo aí") is integrate once with a public standard on a Radox-operated rail, like SWIFT, instead of N bilateral integrations; split what is open from what Radox operates.
+- Slide 7 rebuilt: title "Integrate once, reach every party that joins"; diagram (example, 5 parties: 10 pair-by-pair links vs 5 links to one Radox rail; 5·4/2 = 10); OPEN · ANYONE (record format, roles and events = the custody_registry contract, Apache-2.0; verify any shipment, no login) vs RADOX OPERATES · CLIENT PAYS (onboarding, issuance controls, operation; the API and backend closed, not self-hostable; paid by the financial institution, not priced). Footer: adoption still takes a key, own signatures and one connection to the rail; Radox never the issuer; regulation with the client and counsel.
+- Marketing specialist (S/marketing-s7.md, [[slide-7-hub-and-spoke-claim-ba2f]]) and independent reviewer (S/review-s7.md): approve with changes; applied all fixes (unsourced "today pairs connect" sentence removed, hub named "ONE RADOX RAIL", "closed" scoped to the API and backend so it does not contradict the Apache-2.0 contract, "one connection to the rail", title conditioned by "that joins"). The reviewer read the contract source: record = Shipment struct; events Opened, Handover, Attested, Delivered, StatusChanged; roles admin, operator, sources.
+- Slide 5: three-machine run added as "two team members authorised handovers on their own computers, with their own testnet keys". Horizon (checked here and by the reviewer): 861544e4, 9214980e, 850da342, 849c268d successful, ledgers 5384199-202; leo key in handovers 1-2, vhendala in 2-3. "Most held by one harness" is true (4 of 6 actors). Where the signing happened rests on the proof file, not on chain.
+- Open: proofs/three-machine.json is only on branch three-machine; the slide names the branch. Merge to main before the repo goes public (a push: Pedro's OK, rail session).
 
 ---
 

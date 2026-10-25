@@ -8,6 +8,10 @@ const short = (s) => s.replace(/head ([0-9a-f]{64})/g, (_, h) => `head ${h.slice
 const CLIPS = [
   { name: "02-terminal-list", len: 20, steps: [[`jq -r '.lifecycle[] | "\\(.step)  \\(.hash[0:8])"' proofs/lifecycle.json`, rd("t1.txt")]] },
   { name: "03b-terminal-signers", len: 10, font: 22, steps: [["node scripts/handover-signers.mjs", rd("t4.txt")]] },
+  // second shipment, branch three-machine d02424d: Leo and Vhendala authorised from their own computers (run 2026-10-25 16:15 UTC)
+  { name: "03c-terminal-signers-3m", len: 4, font: 22, fast: true, mark: "leo|vhendala",
+    caption: "Second shipment (branch three-machine, d02424d) · recorded output, replayed · run 2026-10-25 16:15 UTC",
+    steps: [["PROOF_FILE=proofs/three-machine.json node scripts/handover-signers.mjs", rd("t6.txt")]] },
   { name: "05-terminal-verify", len: 25, steps: [["node scripts/verify-head.mjs 31b4cff785831659b4ecb8fd3e7382f9760a12ef45ef7eb30f45b3b6911a5e37", short(rd("t2.txt"))], ["echo $?", "0\n"]] },
   // 2:38-2:45: Radox backend response recorded in API-PROOF.md ("Full backend boot", 13:23 UTC); the backend is not run for this
   { name: "08b-terminal-radox-api", len: 7, font: 26, prompt: "radox % ", fast: true, mark: '"(status|head)":',
@@ -44,7 +48,7 @@ const html = (px, caption) => `<body style="margin:0;background:#0E0F11;color:#E
       prompt();
     }, { steps: c.steps, prompt: c.prompt ?? "rail % ", mark: c.mark, fast: c.fast });
     const used = (Date.now() - t0) / 1000 - start;
-    await p.waitForTimeout(Math.max(0, (c.len - used) * 1000) + 500);
+    await p.waitForTimeout(Math.max(0, (c.len - used) * 1000) + 1500);
     const video = await p.video().path(); await ctx.close();
     execFileSync("/opt/homebrew/bin/ffmpeg", ["-v", "error", "-y", "-ss", String(start), "-i", video, "-t", String(c.len), "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", "-r", "30", path.join(OUT, c.name + ".mp4")]);
     console.log(c.name, c.len, "typed+output", used.toFixed(1) + "s");
