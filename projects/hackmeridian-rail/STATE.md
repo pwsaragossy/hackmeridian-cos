@@ -9,6 +9,10 @@ member: pedro
 # HackMeridian — rail Rio-Miami — state
 
 ## Arrival synthesis
+- 2026-10-25 17:16 UTC (problem-numbers session, started by the rail session): I own PROBLEM-NUMBERS.md, 4-6 market numbers on the custody/handover problem, each re-opened at its primary source by an independent reviewer; deadline 17:55 UTC.
+- First action: library search (only the ADB note has content; the DCSA, ICC FIT and TT Club notes are empty stubs), then 3 researchers in parallel.
+- Disagree: none; the numbers describe the market, never our traction (Claims guard).
+- Fact checked on disk: `date -u` gave 17:15 UTC; library note adb-trade-finance-gap-survey-dec-d033 exists with the US$2.5T Dec 2025 figure, as the brief said.
 - 2026-10-25 (deck session, started by central): I own the pitch deck. Understood: rebuild the 9-slide deck on DECK-TEMPLATE.pptx, max 10 slides, Claims guard binding, real testnet hashes, no partner names, ZIS only if Paulo's written OK lands, AI line required; done = PDF + deck/REVIEW.md + `deck` [x].
 - First action: read PITCH-FINAL.md, LOOK.md and the current deck render, then research winning decks.
 - Disagree: the brief asks for a legal specialist on claims, but STATE §6 says no legal work during the hackathon (owner); the reviewer checks claims against the Claims guard instead. `deck` needs `pitch`, which is still open while PITCH-FINAL.md exists; I close `deck` only and flag `pitch` (needs two timed rehearsals).

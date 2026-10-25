@@ -187,28 +187,45 @@ for i in range(6):
 text(s, 13.87, 6.42, 2.0, 0.4, ["RIO"], size=18, font=MONO, bold=True, color=SEC_D)
 text(s, 17.13, 6.42, 2.0, 0.4, ["MIAMI"], size=18, font=MONO, bold=True, color=SEC_D, align=PP_ALIGN.RIGHT)
 
-# ---------- 2. Problem (template: PMF) ----------
-s = content_slide(2, "PMF · THE PROBLEM", "Who holds the cargo right now?", "NEXT ▸ THE SOLUTION")
-text(s, 1.0, 3.55, 11.2, 1.2, ["Between seller and buyer, a shipment changes hands several times."], size=30, color=INK)
+# ---------- 2-3. Problem, in numbers (each number from PROBLEM-NUMBERS.md, footnoted; {{...}} = not yet sourced) ----------
+# (big number, what it measures, source line). check_deck fails while any {{ remains.
+P_HANDS = [("{{N1}}", "{{parties one shipment touches}}", "{{source, publisher, date}}"),
+           ("{{N2}}", "{{documents per shipment}}", "{{source, publisher, date}}"),
+           ("{{N3}}", "{{share still on paper}}", "{{source, publisher, date}}")]
+P_COST = [("{{N4}}", "{{fraud from duplicate or forged documents}}", "{{source, publisher, date}}"),
+          ("{{N5}}", "{{cargo theft or loss in transit}}", "{{source, publisher, date}}"),
+          ("US$2.5T", "global trade finance gap", "ADB Global Trade Finance Gap Survey, Dec 2025")]
+
+
+def stats(s, items, y):
+    for i, (num, label, src) in enumerate(items):
+        x = 1.0 + i * 6.1
+        hline(s, x, y, 5.6, LIME_C, 0.03)
+        text(s, x, y + 0.2, 5.6, 1.2, [num], size=64, font=TITLE, bold=True, color=INK, spacing=0.95)
+        text(s, x, y + 1.45, 5.6, 1.0, [label], size=24, bold=True, color=INK)
+        text(s, x, y + 2.45, 5.6, 0.9, [src], size=18, color=SEC_C)
+
+
+s = content_slide(2, "PMF · THE PROBLEM", "Who holds the cargo right now?", "NEXT ▸ WHAT IT COSTS")
 stops = ["Warehouse", "Port", "Carrier", "Customs", "Recipient"]
-x0, x1, ly = 1.9, 11.4, 5.35
+x0, x1, ly = 1.6, 18.4, 3.75
 hline(s, x0, ly, x1 - x0, LIME_C, 0.03)
 for i, name in enumerate(stops):
     cx = x0 + i * (x1 - x0) / 4
-    dot(s, cx, ly, 0.34, LIME_C)
-    text(s, cx - 1.2, ly + 0.32, 2.4, 0.5, [name], size=22, bold=True, align=PP_ALIGN.CENTER)
-text(s, 1.0, 6.2, 11.2, 1.0, ["Handovers are mostly paper, or sit inside each operator's own system: rarely one shared record across borders."], size=26, color=SEC_C)
-text(s, 1.0, 7.3, 11.2, 1.4, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
-                                ("a financier cannot see who holds the goods before paying. No customer has confirmed it yet.", {})]],
-     size=24, color=INK)
-text(s, 13.2, 3.55, 5.8, 1.1, ["US$2.5T"], size=64, font=TITLE, bold=True, color=INK, spacing=0.95)
-text(s, 13.2, 4.6, 5.8, 2.6, ["Global trade finance gap.",
-                               [("ADB Global Trade Finance Gap Survey, Dec 2025. It sizes the financing gap; it is not evidence of the custody problem.", {"size": 18, "color": SEC_C, "bold": False})]],
-     size=24, bold=True, after=10)
-text(s, 1.0, 8.75, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
+    dot(s, cx, ly, 0.3, LIME_C)
+    text(s, cx - 1.3, ly + 0.25, 2.6, 0.5, [name], size=22, bold=True, align=PP_ALIGN.CENTER)
+stats(s, P_HANDS, 4.85)
+text(s, 1.0, 8.6, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
+
+s = content_slide(3, "PMF · WHAT IT COSTS", "Paper custody leaks money", "NEXT ▸ THE SOLUTION")
+text(s, 1.0, 3.4, 18.0, 0.9, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
+                               ("a financier cannot see who holds the goods before paying. No customer has confirmed it yet.", {})]], size=24)
+stats(s, P_COST, 4.6)
+text(s, 1.0, 8.2, 18.0, 0.9, ["These numbers size the market problem. They are not our traction, and this build does not solve all of it."],
+     size=20, color=SEC_C)
 
 # ---------- 3. Solution ----------
-s = content_slide(3, "THE SOLUTION", "Both custodians sign, or nothing changes", "NEXT ▸ THE PRODUCT")
+s = content_slide(4, "THE SOLUTION", "Both custodians sign, or nothing changes", "NEXT ▸ LIVE ON TESTNET")
 y = 3.6
 for x, w, label, sub, fill, lc in [(1.0, 4.9, "Outgoing custodian", "signs", CARD, LINE_C),
                                    (6.55, 6.9, "One Stellar transaction", "custody_registry.handover", LIME, None),
@@ -229,41 +246,23 @@ text(s, 1.0, 8.65, 18.0, 1.0, [
     "¹ Radox platform policy, not enforced on-chain by the registry; redeem still needs the holder's signature."],
     size=18, color=SEC_C, after=2)
 
-# ---------- 4. Product ----------
-s = content_slide(4, "THE PRODUCT · LIVE ON TESTNET", "Anyone can check the chain. No login.", "NEXT ▸ TECHNICAL WORKFLOW", dark=True)
-s.shapes.add_picture(SHOT("page-handovers-rows.png"), Inches(1.0), Inches(3.45), width=Inches(8.9))
-box(s, 1.0, 3.45, 8.9, 8.9 * 950 / 1400, line=LINE_D)
-tx = 10.6
-text(s, tx, 3.45, 8.4, 2.2, [[("Verify head", {"bold": True, "color": LIME}),
-                              (" recomputes the hash chain in the browser and compares it with the head stored in the contract.", {})]],
-     size=26, color=TEXT_D)
-text(s, tx, 5.75, 6.0, 1.2, ["MATCH"], size=80, font=MONO, bold=True, color=LIME, spacing=0.9)
-text(s, tx, 6.95, 5.6, 1.6, ["Clicked live on 25 Oct 2026.", "Read-only: Stellar RPC and Horizon, no wallet."],
-     size=20, color=SEC_D, after=6)
-s.shapes.add_picture(SHOT("qr-page-dark.png"), Inches(16.8), Inches(6.2), Inches(2.2), Inches(2.2))
-text(s, 14.0, 8.6, 5.0, 0.4, ["rio-miami-rail.vercel.app"], size=18, font=MONO, color=LIME, align=PP_ALIGN.RIGHT)
-
-# ---------- 5. Technical workflow ----------
-s = content_slide(5, "TECHNICAL WORKFLOW", "7 testnet transactions. All successful.", "NEXT ▸ WHY STELLAR", dark=True)
-w, y = 18.0 / 7, 3.6
-hline(s, 1.0 + w / 2, y + 0.15, 18.0 - w, LIME_C, 0.03)
+# ---------- 5. Result: live on testnet (product page + technical workflow, merged to make room for the problem) ----------
+s = content_slide(5, "THE PRODUCT · LIVE ON TESTNET", "7 testnet transactions. Anyone can check them.", "NEXT ▸ WHY STELLAR", dark=True)
+s.shapes.add_picture(SHOT("page-handovers-rows.png"), Inches(1.0), Inches(3.4), width=Inches(7.4))
+box(s, 1.0, 3.4, 7.4, 7.4 * 950 / 1400, line=LINE_D)
+tx = 9.0
 for i, (step, who, h) in enumerate(HASHES):
-    x = 1.0 + i * w
-    edge = i in (0, 6)
-    dot(s, x + w / 2, y + 0.15, 0.4 if edge else 0.26, LIME)
-    text(s, x + 0.05, y + 0.5, w - 0.1, 1.0, [[(step, {"bold": True, "size": 24})], [(who, {"size": 18, "color": SEC_D})]],
-         color=TEXT_D, align=PP_ALIGN.CENTER, after=2)
-    text(s, x + 0.05, y + 1.5, w - 0.1, 0.4, [h], size=18, font=MONO, color=SLATE_D, align=PP_ALIGN.CENTER)
-for i, (num, label) in enumerate([("7", "successful testnet transactions"), ("9", "invalid calls refused (simulated)"),
-                                  ("24", "contract unit tests pass"), ("MATCH", "verify-head rebuilds the chain")]):
-    x = 1.0 + i * 4.6
-    text(s, x, 5.85, 4.4, 1.1, [num], size=72, font=TITLE, bold=True, color=LIME, spacing=0.9)
-    text(s, x, 7.0, 4.3, 0.8, [label], size=22, color=TEXT_D)
-text(s, 1.0, 8.05, 18.0, 1.6, [
-    [("custody_registry  ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
-    [("Plus an attestation (33379211); full hashes in proofs/lifecycle.json. A second run (branch three-machine, proofs/three-machine.json): two team members authorised handovers on their own computers, with their own testnet keys.", {"color": SEC_D, "font": BODY})],
-    [("All are test keys, most held by one harness: this proves the mechanism, not independent custodians.", {"color": TEXT_D, "font": BODY, "bold": True})]],
-    size=18, font=MONO, after=6)
+    y = 3.35 + i * 0.4
+    text(s, tx, y, 10.0, 0.4, [[(h, {"color": LIME, "font": MONO}), (f"   {step} · {who}", {"color": TEXT_D})]], size=18)
+for i, (num, label) in enumerate([("7", "successful"), ("9", "refused (simulated)"), ("24", "unit tests"), ("MATCH", "verify-head, live 25 Oct")]):
+    x = tx + i * 2.55
+    text(s, x, 6.3, 2.5, 0.8, [num], size=44, font=TITLE, bold=True, color=LIME, spacing=0.9)
+    text(s, x, 7.1, 2.45, 0.7, [label], size=18, color=TEXT_D)
+text(s, tx, 7.85, 10.0, 1.6, [
+    [("custody_registry ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
+    [("Plus an attestation (33379211). A second run (branch three-machine): two team members authorised handovers on their own computers, with their own testnet keys.", {"color": SEC_D, "font": BODY})],
+    [("All test keys, most held by one harness: this proves the mechanism, not independent custodians.", {"color": TEXT_D, "font": BODY, "bold": True})]],
+    size=18, font=MONO, after=4)
 
 # ---------- 6. Why Stellar ----------
 s = content_slide(6, "ECOSYSTEM · WHY STELLAR", "Why Stellar: two signers, one call", "NEXT ▸ USERS AND MODEL")
