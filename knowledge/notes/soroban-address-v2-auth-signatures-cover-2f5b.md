@@ -20,4 +20,4 @@ On protocol 29 testnet, simulation and the SDK produce `sorobanCredentialsAddres
 
 How to verify a signed entry from another machine without trusting its tool: decode the entry, compare `rootInvocation.toXDR()` bytes and the nonce with the unsigned entry you prepared, then check the ed25519 signature in the `signature` ScVal against the WithAddress payload above. In js-stellar-sdk 17.3.0, XDR values are plain objects (`entry.credentials.addressV2`, `entry.rootInvocation`), see [[two-signers-in-one-soroban-call-1b93]] and [[sign-soroban-auth-entries-on-another-e4dd]].
 
-Compared: [[two-signers-in-one-soroban-call-1b93]] coexists (how to sign two entries in one call; this note is how to verify a V2 signature) ; [[sign-soroban-auth-entries-on-another-e4dd]] coexists (the remote signing flow; this note is the payload detail its checker needs)
+Compared: [[two-signers-in-one-soroban-call-1b93]] coexists (how to sign two entries in one call, this note is how to verify one) ; [[sign-soroban-auth-entries-on-another-e4dd]] coexists (the remote signing flow, this note is the payload detail a checker needs)
