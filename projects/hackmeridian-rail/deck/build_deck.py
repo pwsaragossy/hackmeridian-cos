@@ -362,7 +362,7 @@ for i, (num, label) in enumerate([("US$94.2B", "US–Brazil goods trade, 2025¹"
     x = 1.0 + i * 5.4
     text(s, x, 3.95, 5.1, 0.85, [num], size=48, font=TITLE, bold=True, spacing=0.95)
     text(s, x, 4.8, 5.1, 0.8, [label], size=20, bold=True)
-text(s, 1.0, 5.65, 10.6, 0.9, [[("Global: ", {"bold": True}),
+text(s, 1.0, 5.72, 10.6, 0.8, [[("Global: ", {"bold": True}),
      ("US$26.26T world merchandise exports, 2025³; ~80% of goods trade by volume goes by sea⁴; "
       "~45M ocean bills of lading a year⁵.", {})]], size=20)
 text(s, 12.4, 3.3, 6.6, 0.4, ["MODEL · NO PRICES YET"], size=18, font=MONO, bold=True, color=INK)
@@ -371,13 +371,13 @@ text(s, 12.4, 3.95, 6.6, 1.4, ["Subscription per connected institution + a fee p
      bold=True, spacing=1.0)
 text(s, 12.4, 5.25, 6.6, 1.4, ["Borrows the shape of Swift's billing: annual charges, plus traffic fees for "
                                "messages sent⁶. Not affiliated with Swift."], size=20, color=SEC_C)
-text(s, 1.0, 6.6, 18.0, 0.55, [[("Now ", {"font": MONO, "bold": True, "color": LIME_C}),
-     ("testnet mechanism; no standard, users or revenue.  ", {}),
+text(s, 1.0, 6.6, 18.0, 0.45, [[("Now ", {"font": MONO, "bold": True, "color": LIME_C}),
+     ("testnet only; no users or revenue yet.  ", {}),
      ("Next ", {"font": MONO, "bold": True, "color": LIME_C}),
-     ("one Rio–Miami pilot shipment (none agreed); SCF Build, audit, mainnet; more corridors.", {})]], size=20)
-text(s, 1.0, 7.15, 18.0, 0.7, ["¹ US Census Bureau, Trade in Goods with Brazil, 2025 (exports + imports, sum ours) "
-     "² USTR, Florida trade data ³ WTO, Mar 2026 ⁴ UNCTAD, Review of Maritime Transport ⁵ DCSA, Feb 2023 "
-     "⁶ swift.com billing rules. Market figures, not Radox volumes; no traction implied."], size=18, color=SEC_C,
+     ("one Rio–Miami pilot (none agreed yet), SCF Build, audit, mainnet.", {})]], size=20)
+text(s, 1.0, 7.12, 18.0, 0.7, ["¹ US Census Bureau, Trade in Goods with Brazil, 2025 (exports + imports, sum ours)  "
+     "² USTR, Florida trade data  ³ WTO, Mar 2026  ⁴ UNCTAD, Review of Maritime Transport  ⁵ DCSA, Feb 2023  "
+     "⁶ swift.com billing rules. Not Radox volumes."], size=18, color=SEC_C,
      spacing=1.0, after=0)
 box(s, 1.0, 7.9, 18.0, 1.35, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, 1.45, 7.9, 17.1, 1.35, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
