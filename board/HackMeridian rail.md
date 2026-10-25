@@ -55,6 +55,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
+- 2026-10-25 ~13:35 UTC: the voice clone is made locally with Voicebox (open source), not ElevenLabs; the sample never leaves this machine and costs nothing (owner: "voicebox é opensource"). Disclosure: "narration: AI voice cloned from Pedro's voice with Voicebox"; licences listed in LICENCES.md.
 - 2026-10-25 ~13:20 UTC: the 3:00 video narration is an AI voice cloned from Pedro's own voice (owner: "voz de IA, a partir da minha voz"); replaces the generic Voicebox voice. Video, deck and README say the narration is AI-generated from Pedro's voice. Paid plan or real cost stops for Pedro's OK.
 - 2026-10-25 ~12:50 UTC: ask Paulo to sign the stronger line "Radox ... is part of the ZIS Rio–Miami project" (owner: "Pedir frase mais forte"); e-mail and letter in outbox/ updated. Public text quotes only what he signs ([[zis-in-public-material-radox-is-bc05]]).
 - 2026-10-25 ~12:40 UTC: Radox is part of the ZIS project with Paulo, not outside support (owner: "paulo não só apoia, como fazemos parte do projeto ZIS"). Private fact: public wording still follows the claims guard; the reviewer re-checks it against this fact.
