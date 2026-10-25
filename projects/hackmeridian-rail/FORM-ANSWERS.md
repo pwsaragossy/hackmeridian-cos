@@ -7,7 +7,7 @@ Plan, sources and limits: SUBMISSION.md "Portal form, field by field". Only Pedr
 |---|---|---|---|
 | Project title | unseen | 72 | Pedro's text |
 | Tagline | 120 | 25 | Pedro's text |
-| Description | 8000, Markdown | 3287 | draft, review-4 |
+| Description | 8000, Markdown | 3309 | draft, review-4 |
 | Problem solved | unseen, keep < 1500 | 692 (draft) | review-4 |
 | Challenges | unseen, keep < 1500 | 1279 | draft, review-4 |
 | What's next | unseen, keep < 1500 | 810 (draft) | review-4 |
@@ -32,7 +32,7 @@ First corridor: Rio–Miami
 
 ### Description (draft 2026-10-25, review-4 pending)
 
-**Our goal is an end-to-end custody rail for goods in transit: one shared, SWIFT-like standard that every company in a supply chain would join once, from origin to destination. None of it exists yet. This repo is its first link, proven on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
+**Our goal is an end-to-end custody rail for goods in transit: a shared, SWIFT-like standard that companies along a supply chain, from origin to destination, could use. Neither the standard nor the rail exists yet. This repo is the first piece we built, run on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
 
 One shipment is one record in our `custody_registry` contract. The operator opens it with an ordered route of custodians. Each handover calls the contract once, and the call requires `require_auth()` from both the outgoing and the incoming custodian; a wrong custodian, an out-of-route step or a bad assurance level is refused. Delivery needs the final custodian and the token holder. Every step folds into one 32-byte `head` kept on the contract, so one value commits to the whole history. After delivery, the cargo token is burned through Radox's existing transfer agent (prior work, disclosed below).
 
