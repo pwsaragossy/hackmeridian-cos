@@ -1,7 +1,7 @@
-# Deck review: Radox Custody Rail (v4)
+# Deck review: Radox Custody Rail (v6)
 
-Deck: deck/radox-custody-rail.pdf (10 slides, 639587 bytes), built by deck/build_deck.py on DECK-TEMPLATE.pptx.
-Judge: `python deck/check_deck.py proofs/lifecycle.json` exits 0 on v4 (2026-10-25). A stripped copy (users claim, no Claude Code, short name) now fails with 4 failures.
+Deck: deck/radox-custody-rail.pdf (10 slides, 639952 bytes), built by deck/build_deck.py on DECK-TEMPLATE.pptx.
+Judge: `python deck/check_deck.py proofs/lifecycle.json` exits 0 on v6 (2026-10-25). A stripped copy (users claim, no Claude Code, short name) now fails with 4 failures.
 
 ## Verdict
 Independent reviewer (fresh-context subagent, reviewer card) on v3: approve with changes. No on-chain claim false; all 7 lifecycle hashes and the attestation re-checked on Horizon testnet, successful=true.
@@ -26,6 +26,15 @@ Independent reviewer (fresh-context subagent, reviewer card) on v3: approve with
 
 ## Sources
 [[deck-and-video-rules-for-async-8b70]] [[stellar-and-solana-hackathon-winners-no-31ca]] [[wording-the-rio-miami-deck-readme-ef38]] [[zis-in-public-material-radox-is-bc05]] [[no-sep-and-no-stellar-project-aa39]] [[adb-trade-finance-gap-survey-dec-d033]] [[hackmeridian-rubric-7-criteria-weights-scored-50e2]] [[python-pptx-shadow-inherit-false-still-499c]]
+
+## Second round (v5 to v6, same day)
+- Marketing specialist on the v4 vision copy (S/marketing-v4.md): applied "our pilot corridor", "on Stellar", "to integrate with" (no "built to"), NOW "No standard, users or revenue yet", ask widened to "one port, airport or logistics operator", slide 2 "rarely one shared record across borders" (IATA ONE Record exists for air cargo, [[iata-one-record-is-a-live-e27f]]), slide 10 "Our goal: …".
+- Independent reviewer on v5: approve with changes. Applied in v6:
+  - Slide 7 now follows canon (Radox-operated rail, public format): "Radox operates the rail and the API"; the financial institution is the CLIENT that pays to use it. Slide 9 says "public" standard, not "open".
+  - "(none started)" became "(none confirmed)" (canon: nobody named until it confirms in writing; does not assert that no conversation exists).
+  - USD leg moved to FUTURE; slide 6 scopes the neighbours to "on Stellar".
+  - check_deck.py now bans partnership, working with, already use, adopted, in talks, agreed with, integrated into, and requires "none confirmed" and "The goal is". All 6 of the reviewer's mutants now fail (they all passed or 5 of 6 passed before).
+- Left open: DEMO-SCRIPT.md 2:30 "with chambers of commerce, ports and airports" reads as a present partnership (owner of that file: rail session; on the board). A judge may ask about IATA ONE Record: answer in Q&A, no slide claim until its spec is read.
 
 ---
 
