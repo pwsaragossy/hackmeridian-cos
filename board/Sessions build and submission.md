@@ -18,6 +18,9 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- rail-pitch-deck: problem section rebuilt with sourced numbers on custody and handover (parties and documents per shipment, paper share, cost, fraud, cargo loss), before any result slide; each number with source and date; post the top 1–2 numbers and their exact wording on this card (internal feedback: convince on the problem before results; no mentor named), by Sun 21:00
+- rail session: same top 1–2 numbers, same wording, source and date, into the README Problem section, FORM-ANSWERS Problem solved and DEMO-SCRIPT 0:00–0:20, independent reviewer, after the deck posts them, by Sun 22:30
+- rail-page-host: one Voicebox re-take of the 0:00–0:20 narration row with the new numbers, only if it fits the window, after the rail session changes DEMO-SCRIPT, by Mon 01:00
 - rail-page-host: three-machine shipment on the public page with its own Verify head (MATCH), independent reviewer, then redeploy (Pedro's OK); in the video, swap clip 03c at 0:40 for the page view of this shipment at the same length, no timing change, by Sun 22:00
 - rail session: README.md in rio-miami-rail is missing and is the biggest gap (ambition 14:28 UTC): summary, problem, setup, env, demo, architecture with contract IDs, tx hashes, Prior work, Built here, AI usage, Production path, Future with the standard vision in future tense, by Sun 22:00
 - rail session: extra three-machine shipment, Leo and Vhendala each sign one handover from their own computer with their own testnet key (only public keys shared); new proof file, check.py and the frozen 7 untouched; then deck and video may say "signed on three different machines", by Sun 23:30
