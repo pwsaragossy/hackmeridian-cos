@@ -27,6 +27,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - After 18:00: failure branches recorded and `scripts/verify-head.mjs` exits 0.
 
 ## For the owner to decide (central asks, all at once)
+- Leo, now (before 09:00): run the setup. In Claude Code: /plugin marketplace add pwsaragossy/chief-of-staff, then /plugin install chief-of-staff@chief-of-staff, then setup.sh join ~/hackmeridian https://github.com/pwsaragossy/hackmeridian-cos.git --member leo; set git user.email to his GitHub noreply address. Not done at 08:45 (owner). Without it his session has no card, library or checks.
 - Leo, Sun 09:00: wasm check and hello-contract spike before any contract code.
 - Leo, Sun 14:00: register_token and redeem path confirmed on testnet; contract read by a mentor or the reviewer.
 - Leo, Sun 18:00: 7 lifecycle hashes in proofs/lifecycle.json on main (check.py 7/7), or the stop-line note on the card.
