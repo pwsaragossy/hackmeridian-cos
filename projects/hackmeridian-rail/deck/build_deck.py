@@ -306,9 +306,10 @@ for i, (num, label) in enumerate([("7", "successful"), ("9", "refused, e.g. wron
     x = tx + i * 2.55
     text(s, x, 5.95, 2.5, 0.8, [num], size=44, font=TITLE, bold=True, color=LIME, spacing=0.9)
     text(s, x, 6.72, 2.45, 0.7, [label], size=18, color=TEXT_D, spacing=1.0, after=0)
-text(s, tx, 7.6, 10.0, 1.6, [
+text(s, tx, 7.45, 10.0, 2.2, [
     [("custody_registry ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
     [("Second shipment (proofs/three-machine.json): two team members each signed their handovers from their own computers and keys; still test keys.", {"color": SEC_D, "font": BODY})],
+    [("Two test companies' chains on one registry, sharing stops, each handover dual-signed (proofs/multi-chain.json).", {"color": SEC_D, "font": BODY})],
     [("All test keys: this proves the mechanism, not independent companies.", {"color": TEXT_D, "font": BODY, "bold": True})]],
     size=18, font=MONO, after=4)
 
@@ -369,15 +370,15 @@ text(s, 12.4, 3.3, 6.6, 0.4, ["MODEL · NO PRICES YET"], size=18, font=MONO, bol
 hline(s, 12.4, 3.78, 6.6, INK, 0.03)
 text(s, 12.4, 3.95, 6.6, 1.4, ["Subscription per connected institution + a fee per shipment."], size=26, font=TITLE,
      bold=True, spacing=1.0)
-text(s, 12.4, 5.25, 6.6, 1.4, ["Borrows the shape of Swift's billing: annual charges, plus traffic fees for "
-                               "messages sent⁶. Not affiliated with Swift."], size=20, color=SEC_C)
+text(s, 12.4, 5.25, 6.6, 1.4, ["Borrows the shape of Swift's published fees: entry, annual, per-message usage⁶. "
+                               "Prices not set. Not affiliated with Swift."], size=20, color=SEC_C)
 text(s, 1.0, 6.6, 18.0, 0.45, [[("Now ", {"font": MONO, "bold": True, "color": LIME_C}),
      ("testnet only; no users or revenue yet.  ", {}),
      ("Next ", {"font": MONO, "bold": True, "color": LIME_C}),
      ("one Rio–Miami pilot (none agreed yet), SCF Build, audit, mainnet.", {})]], size=20)
 text(s, 1.0, 7.12, 18.0, 0.7, ["¹ US Census Bureau, Trade in Goods with Brazil, 2025 (exports + imports, sum ours)  "
-     "² USTR, Florida trade data  ³ WTO, Mar 2026  ⁴ UNCTAD, Review of Maritime Transport  ⁵ DCSA, Feb 2023  "
-     "⁶ swift.com billing rules. Not Radox volumes."], size=18, color=SEC_C,
+     "² USTR, Florida trade data, 2025  ³ WTO, Mar 2026  ⁴ UNCTAD, Review of Maritime Transport (undated page, "
+     "opened 25 Oct 2026)  ⁵ DCSA, Feb 2023  ⁶ swift.com billing rules, accessed 25 Oct 2026"], size=18, color=SEC_C,
      spacing=1.0, after=0)
 box(s, 1.0, 7.9, 18.0, 1.35, fill=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE)
 text(s, 1.45, 7.9, 17.1, 1.35, [[("Our ask  ", {"font": MONO, "size": 20, "bold": True}),
