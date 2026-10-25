@@ -14,7 +14,7 @@ Os 7 passos rodaram na testnet, todos com chaves de teste. Contrato: `CCBJVXMJYW
 
 **As 3 perguntas, nesta ordem:**
 1. Assinatura: o contrato já aceita contas-contrato. A dúvida real é como duas empresas assinam a mesma transação na prática.
-2. Histórico: os dados ficam no contrato por cerca de 30 dias e são renovados a cada uso. Para guardar anos, qual é o caminho certo?
+2. Histórico: o Horizon público guarda só um ano e vai ser descontinuado, e é dele que hoje refazemos o histórico. Para guardar anos, qual é o caminho certo?
 3. Padrão: isso vira um SEP ou basta uma interface de contrato? Por onde se começa, e quem deveria ler o rascunho primeiro?
 
 **Regra:** nada que o engenheiro disser vai para o deck, o vídeo ou o README sem o OK da pessoa, e o nome dela também não. Anote a resposta e quem respondeu; depois a sessão do deck decide o que usar.
@@ -36,13 +36,14 @@ O texto em inglês abaixo é para mostrar na tela do celular.
 
 **Three questions.**
 1. **Co-signing in practice.** `require_auth` already works with contract accounts, so we expect the design to hold. Our concern is operations: two companies must co-sign one invocation. Is the normal pattern for each side to sign its auth entry separately and one party to submit? Or is there a better pattern?
-2. **History over years.** Shipments live in persistent storage with a TTL of about 30 days, bumped on access. RPC keeps events for about 7 days by default, so today we replay from Horizon and check against the head. For years of history, would you rely on TTL extension and restore, on Horizon, or on our own indexer?
+2. **History over years.** Shipments live in persistent storage. Each write or read in a transaction extends the TTL to about 30 days once fewer than 7 days remain. Expired persistent entries are archived, not deleted, and are restored when a transaction touches them. The chain of handovers is also in events, and RPC keeps events for about 7 days by default. Horizon is documented as "soon to be deprecated", and SDF's public Horizon keeps one year of history. For years of history, would you rely on archival and restore, on our own indexer fed by Galexie, or on a third-party Horizon?
 3. **A standard.** If several companies should integrate once, is a SEP the right vehicle, or only a contract interface (as SEP-41 is for tokens)? Where would you start, and who should review a first draft?
 
 We will not quote you or use your name anywhere without your OK.
 
 ## Sources
 - Many addresses can call `require_auth` in one invocation, and contract accounts can set their own policies: developers.stellar.org/docs/learn/fundamentals/contract-development/authorization (read 2026-10-25 19:18 UTC); [[two-signers-in-one-soroban-call-1b93]].
+- Horizon "will soon be deprecated" (developers.stellar.org/docs/data/indexers, undated); SDF's public Horizon "had its historical data truncated to one year" (developers.stellar.org/docs/data/apis/horizon, note of 2024-08-01). Archived persistent entries are restored on access (developers.stellar.org/docs/learn/fundamentals/contract-development/storage/state-archival). All three were read by the engineer specialist on 2026-10-25: [[horizon-public-history-one-year-and-983a]].
 - `getEvents` keeps a default of 120,960 ledgers, about 7 days, and the RPC operator can change it: developers.stellar.org/docs/data/apis/rpc/api-reference/methods/getEvents (read by the reviewer, 2026-10-25); [[stellar-rpc-getevents-keeps-about-7-187e]].
 - A SEP is an open document in the stellar-protocol GitHub repository with a "lightweight approval process"; a CAP changes the core protocol: developers.stellar.org/docs/learn/fundamentals/stellar-ecosystem-proposals (read 2026-10-25); [[seps-are-open-github-documents-with-ee26]].
 - No SEP for chain of custody was found (search of 2026-10-24): [[no-sep-and-no-stellar-project-aa39]].
