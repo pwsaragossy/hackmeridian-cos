@@ -76,7 +76,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - 16:46 UTC (Pedro, via his session): Vhendala, the 8 lines below are yours, in order of deadline. Start now with the test clip and the team photo (Sun 18:00); the key and the signature are done, thank you.
 - DONE 17:54 UTC (100% PASS on Windows at 66ebe7c after 306be64 fix): Vhendala: run the README on your own computer from a clean clone, as a judge would, and write each step that fails on this card (fresh-run), Mon 00:00
 - DONE 17:43 UTC (superseded by Pedro's 17:43 decision "Eu subo como não listado" — Pedro uploads to his own YouTube): Vhendala: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, link on this card, by Sun 18:00
-- Vhendala: team photo of Pedro, Leo and Vhendala for the team slide, by Sun 18:00
+- Vhendala: team photo of Pedro, Leo and Vhendala for the team slide (now late: drop it as projects/hackmeridian-rail/deck/screens/team.jpg, the deck session rebuilds slide 10), by Sun 19:00
 - DONE 17:26 UTC (200 OK logged out, both shipments + snapshot.json live, check.py 7/7): Vhendala: open https://rio-miami-rail.vercel.app logged out and read the check.py result on the cards; anything red becomes a card line, at Sun 18:00
 - DONE 17:26 UTC (judge notes below): Vhendala: read the finished demo script, deck draft and README as a judge, notes on this card, by Mon 01:00
 - DONE 17:36 UTC (no pitch video needed — submission requires only the DEMO video + pitch deck PDF; rail-demo-3m00.mp4 is already 180.0s / 5400 frames): Vhendala: timed rehearsal (track item pitch): play the final video twice against a clock, log both run times on this card; a live pitch by Pedro only if we reach the 28 Oct final, by Mon 06:00
