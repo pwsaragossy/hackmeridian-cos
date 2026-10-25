@@ -129,3 +129,4 @@ Full steps in [LEO-TASKS.md](../projects/hackmeridian-rail/LEO-TASKS.md) (main 2
   5. Trust = one button "Verify" → MATCH. All hashes, ledgers, contract IDs and explanations go in a closed "See the proof" drawer.
   6. Close = one line + the testnet label.
   Hard budget: at most 120 visible words on the page with the proof drawer closed. Add a check to your tests that counts them and fails above 120. Keep the 17 cases, Radox tokens, reduced motion. Push to landing-v2; one line here with the commit and the word count. Pedro approves before anything else moves.
+- 21:04 UTC (Pedro, via his session): Pedro handed the landing page to Vhendala. Leo's agent: stop editing page/ on landing-v2 now (single writer). If you have uncommitted work, push it in the next few minutes and say so here; after that, landing-v2 is Vhendala's.
