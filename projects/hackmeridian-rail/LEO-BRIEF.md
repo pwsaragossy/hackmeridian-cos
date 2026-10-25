@@ -161,7 +161,8 @@ The interface read at 2026-10-25 08:50 UTC (`stellar contract info interface --w
   `TokenReg { payment_asset, seller, settlement }`. For the harness: `token` = the shipment SAC,
   `seller` = exporter, `settlement` = exporter, `payment_asset` = the native XLM SAC
   (`stellar contract id asset --asset native --network testnet`).
-- `mint(token, to, amount)`, `deliver(token, to, amount)`, `redeem(token, holder, amount, ref_id: u64)`.
+- `mint(token, to, amount)`, `deliver(token, to, amount)`, `redeem(token, holder, amount, ref_id: u64)`,
+  `set_authorized(token, addr, authorized: bool)`.
 - `hand_over_sac(token, new_admin)`: by its name and signature it moves the SAC admin **away** from the
   agent (the exit path; inference, the spike confirms). It is **not** how the agent gets control. For `redeem` to burn, the issuer calls the SAC's own
   `set_admin(<transfer_agent instance>)` in setup; `hand_over_sac` is not used in the demo.
@@ -180,7 +181,7 @@ clawback was on) and the redeem fallback goes back to the card for Pedro's sessi
 ## Deliverables, in order (commit each one when it passes)
 
 1. Contract + unit tests (`cargo test`), including every refusal path and the `head` recompute.
-2. Build `wasm32v1-none --release`; deploy to testnet; write contract ID + wasm hash in `DEPLOYMENTS.md`.
+2. `stellar contract build`; `stellar contract deploy --wasm target/wasm32v1-none/release/custody_registry.wasm --source exporter --network testnet -- --admin <G of exporter> --operator <G of rail operator>`; write contract ID + wasm hash (from the deploy output) in `DEPLOYMENTS.md`.
 3. Testnet harness `scripts/lifecycle.mjs` (js-stellar-sdk; each custodian signs its own auth entry
    with `authorizeEntry`). **Setup** (hashes kept apart under `setup` in the proof file): friendbot-fund
    the test accounts (issuer, agent admin, operator, seller, holder, warehouse, port, carrier, customs,
@@ -192,7 +193,7 @@ clawback was on) and the redeem fallback goes back to the card for Pedro's sessi
    `stellar tx new set-trustline-flags --set-authorize` before `set_admin`, or
    `transfer_agent.set_authorized(token, addr, true)` after it — Step 0b records which one works;
    deploy the asset's SAC (`stellar contract asset deploy`); issuer `set_admin`
-   → the harness's own `transfer_agent` instance; `register_token`; `mint` to the seller; `transfer_agent.deliver` (sends the minted token to the holder; not the registry's `deliver`). **Lifecycle** (the 7 that count): `open` → 4 `handover` (route warehouse → port → carrier
+   → the harness's own `transfer_agent` instance; `register_token`; `mint` `AMOUNT = 10000000` to the seller; `transfer_agent.deliver` the same `AMOUNT` to the holder (not the registry's `deliver`); `redeem` below uses the same `AMOUNT` and `ref_id = 1`. **Lifecycle** (the 7 that count): `open` → 4 `handover` (route warehouse → port → carrier
    → customs → recipient) → `deliver` → `transfer_agent.redeem(token, holder, amount, ref_id)` with
    operator + holder auth, burning the token. Write every hash to `proofs/lifecycle.json`. Also the failure branches: wrong signer, out-of-route, after freeze,
    while paused — each with the failing tx or simulation result recorded.
@@ -211,6 +212,7 @@ shape is fixed — the target check (`check.py` in this folder) reads it from `m
   "setup":     [{ "step": "issuer_flags", "hash": "<64 hex>" }, "…"],
   "lifecycle": [{ "step": "open", "hash": "…" }, { "step": "handover", "hash": "…" }, "×4",
                 { "step": "deliver", "hash": "…" }, { "step": "redeem", "hash": "…" }],
+  "attest":    [{ "hash": "…" }],   // optional, only if attest ran
   "failures":  [{ "case": "wrong_signer", "error": "…", "hash_or_sim": "…" }, "…"]
 }
 ```
@@ -228,8 +230,10 @@ shape is fixed — the target check (`check.py` in this folder) reads it from `m
 ## Timeline (Lisbon)
 
 Sun 09:00 first command: `stellar contract info interface --wasm-hash 3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1 --network testnet`; if it fails, write a card line before building. Then Step 0 (5 min). Step 0b runs in parallel with the contract work and is done before 12:00. By 14:00 a Stellar mentor or the plugin reviewer reads the contract. Sun 09:00–10:00 design review with Pedro's session (card) · 10:00–14:00 contract + tests ·
-14:00–18:00 deploy + full lifecycle on testnet (**18:00 is the stop line**: if no two-signature
-handover ran on testnet by then, tell the card at once) · after 18:00 failure branches and
+14:00–18:00 deploy + full lifecycle on testnet (**16:00 is the first alarm, 18:00 the stop line**: if no
+two-signature handover ran on testnet by 16:00, tell the card at once. Early signal: right after Step 0,
+add to the throwaway spike contract a function that calls `require_auth()` on two addresses and run it
+on testnet with two `authorizeEntry` signatures by 10:30; write the hash, or the exact error, on the card) · after 18:00 failure branches and
 `verify-head`.
 
 Close each session with `/chief-of-staff:handoff`.
