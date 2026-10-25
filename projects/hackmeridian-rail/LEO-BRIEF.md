@@ -2,7 +2,7 @@
 
 Internal: contains Radox-internal references (paths, instance IDs). Never copy into rio-miami-rail.
 
-Paste this whole file as the first prompt of Leo's project session (opened in
+Setup first: [LEO-SETUP.md](LEO-SETUP.md). Then paste this whole file as the first prompt of Leo's project session (opened in
 `~/hackmeridian/projects/hackmeridian-rail`), or point the session to it. Written by Pedro's
 session on 2026-10-25; Pedro's session owns the project, the pitch and the Radox API connection.
 Questions for Pedro go on the project card (`board/HackMeridian rail.md`), never to Pedro directly.
@@ -151,7 +151,7 @@ Pass = all five ran; write CLI version, sdk version and the tx hash as one line 
 any step = one card line with the exact error before building anything else (fallbacks: build with
 `cargo build --target wasm32v1-none --release`; deploy with js-stellar-sdk).
 
-## Step 0b — `transfer_agent` spike on testnet, done before 12:00 (7 of 7 depends on it)
+## Step 0b — `transfer_agent` spike on testnet, done by 13:30 UTC (7 of 7 depends on it)
 
 The interface read at 2026-10-25 08:50 UTC (`stellar contract info interface --wasm-hash
 3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1 --network testnet`) gives:
@@ -229,11 +229,11 @@ shape is fixed — the target check (`check.py` in this folder) reads it from `m
 
 ## Timeline (Lisbon)
 
-Sun 09:00 first command: `stellar contract info interface --wasm-hash 3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1 --network testnet`; if it fails, write a card line before building. Then Step 0 (5 min). Step 0b runs in parallel with the contract work and is done before 12:00. By 14:00 a Stellar mentor or the plugin reviewer reads the contract. Sun 09:00–10:00 design review with Pedro's session (card) · 10:00–14:00 contract + tests ·
+Sun 09:00 first command: `stellar contract info interface --wasm-hash 3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1 --network testnet`; if it fails, write a card line before building. Then Step 0 (5 min). Step 0b runs in parallel with the contract work and is done by 13:30 (times moved 2026-10-25 11:05 because the start slipped; current table in LEO-SETUP.md §B). By 14:00 a Stellar mentor or the plugin reviewer reads the contract. Sun 09:00–10:00 design review with Pedro's session (card) · 10:00–14:00 contract + tests ·
 14:00–18:00 deploy + full lifecycle on testnet (**16:00 is the first alarm, 18:00 the stop line**: if no
 two-signature handover ran on testnet by 16:00, tell the card at once. Early signal: right after Step 0,
 add to the throwaway spike contract a function that calls `require_auth()` on two addresses and run it
-on testnet with two `authorizeEntry` signatures by 10:30; write the hash, or the exact error, on the card) · after 18:00 failure branches and
+on testnet with two `authorizeEntry` signatures by 12:45; write the hash, or the exact error, on the card) · after 18:00 failure branches and
 `verify-head`.
 
 Close each session with `/chief-of-staff:handoff`.
