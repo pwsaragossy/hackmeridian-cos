@@ -286,12 +286,12 @@ for i, (name, sub, c) in enumerate(nodes):
         text(s, cx + 0.15, ly - 0.62, gap - 0.3, 0.45, ["2 signatures"], size=18, font=MONO, color=LIME_C, align=PP_ALIGN.CENTER)
 text(s, 1.0, 6.45, 18.0, 1.7, [
     [("— ", {"color": LIME_C}), ("Rule of every link: ", {"bold": True}), ("both sides sign one Stellar transaction (delivery: recipient and holder), or the call fails.", {})],
-    [("— ", {"color": LIME_C}), ("Each step extends an on-chain hash chain, the ", {}), ("head", {"font": MONO}), (": anyone can rebuild the history.", {})],
+    [("— ", {"color": LIME_C}), ("Each step extends the on-chain ", {}), ("head", {"font": MONO}), (": anyone can replay the history from Horizon and check it against the head.", {})],
     [("— ", {"color": LIME_C}), ("The token stays with its holder in transit; only custody moves.", {})]],
     size=23, after=6)
 text(s, 1.0, 8.55, 18.0, 1.1, [
     [("Built: this lifecycle on testnet, test keys. Design, not built: real companies on the rail, the standard, integrations.", {"bold": True, "color": INK})],
-    "Keyed to the container number; would sit beside the carrier's bill of lading, not integrated. ¹ Radox policy, not enforced on-chain; redeem needs the holder's signature."],
+    "Keyed by sha256(container | origin); would sit beside the carrier's bill of lading, not integrated. ¹ Radox policy, not enforced on-chain; redeem needs the holder's signature."],
     size=18, color=SEC_C, after=2)
 
 # ---------- 6. Proof: the whole chain ran on testnet ----------
@@ -308,21 +308,21 @@ for i, (num, label) in enumerate([("7", "successful"), ("9", "refused, e.g. wron
     text(s, x, 6.72, 2.45, 0.7, [label], size=18, color=TEXT_D, spacing=1.0, after=0)
 text(s, tx, 7.6, 10.0, 1.6, [
     [("custody_registry ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
-    [("Second run, own registry (branch three-machine): two team members each signed their handovers from their own computers and keys; still test keys.", {"color": SEC_D, "font": BODY})],
+    [("Second shipment (proofs/three-machine.json): two team members each signed their handovers from their own computers and keys; still test keys.", {"color": SEC_D, "font": BODY})],
     [("All test keys: this proves the mechanism, not independent companies.", {"color": TEXT_D, "font": BODY, "bold": True})]],
     size=18, font=MONO, after=4)
 
 # ---------- 7. Why Stellar ----------
 s = content_slide(7, "ECOSYSTEM · WHY STELLAR", "Why Stellar: all signers, one call", "NEXT ▸ BUILT THIS WEEKEND")
 rows = [("01", "Multi-party auth in one call", "Soroban authorises both companies of a link inside one contract invocation: the handover is atomic."),
-        ("02", "Events plus an on-chain head", "RPC keeps contract events about 7 days. The head stored in the contract lets anyone rebuild the full history later."),
+        ("02", "History from Horizon, checked by an on-chain head", "RPC keeps contract events about 7 days, so we replay each shipment's transactions from Horizon and check them against the head stored in the contract."),
         ("03", "The token stays put, then burns", "The shipment token never moves in transit; the existing Radox redeem burns it after delivery.")]
 for i, (n_, name, desc) in enumerate(rows):
     y = 3.55 + i * 1.5
     hline(s, 1.0, y - 0.12, 18.0, LINE_C, 0.02)
     text(s, 1.0, y + 0.08, 1.0, 0.6, [n_], size=24, font=MONO, bold=True, color=LIME_C)
     text(s, 2.0, y, 6.4, 1.2, [name], size=30, bold=True, font=TITLE)
-    text(s, 8.6, y + 0.02, 10.4, 1.3, [desc], size=24, color=INK)
+    text(s, 8.6, y + 0.02, 10.4, 1.3, [desc], size=22, color=INK)
 hline(s, 1.0, 7.93, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.12, 18.0, 1.5, [
     [("Nearest neighbours we found on Stellar ", {"bold": True}), ("(LumenLoop, SCF, Scout, 24–25 Oct): ", {"color": SEC_C}),

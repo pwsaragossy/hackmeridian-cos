@@ -27,7 +27,7 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 3. What it costs, "Cargo goes missing. A bank got fooled.": R$900M (NTC, 8,570 robberies, 2025); US$85M HSBC, Hin Leong (GTR); US$2.5T gap, market size only (ADB). "Not results of ours."
 4. The proposal, "A SWIFT-like standard: integrate once": the goal is a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, could use. Neither the standard nor the rail exists yet. 10 vs 5 links; open (contract, Apache-2.0; verify without login) vs Radox operates (onboarding, closed API, paid by the financial institution, not priced).
 5. The rail, "One rail, origin to delivery": open → warehouse → port → carrier → customs → recipient → delivered → burned; rule of every link: both sides sign one transaction (delivery: recipient and holder), or the call fails; head hash chain; token stays with holder. Built: the lifecycle on testnet; design: real companies, standard, integrations.
-6. The proof, "The lifecycle ran on testnet": 7 hashes, 7 successful, 9 refused (simulated), 24 unit tests, verify-head MATCH; second run on its own registry (branch three-machine), two team members signing from their own computers; all test keys.
+6. The proof, "The lifecycle ran on testnet": 7 hashes, 7 successful, 9 refused (simulated), 24 unit tests, verify-head MATCH; second shipment (proofs/three-machine.json), two team members signing from their own computers; all test keys.
 7. "Why Stellar: all signers, one call": multi-party auth, events plus head, token stays then burns; nearest neighbours, no SEP; Apache-2.0.
 8. "Built this weekend, on disclosed prior work": prior work, built here, AI attribution.
 9. "Vision: one rail, every corridor": now, next, planned, future; the ask (locked: the video 2:30 row quotes it).
@@ -55,7 +55,7 @@ What we are building toward is one rail, origin to delivery, across the companie
 
 On Stellar testnet, one shipment: seven successful transactions, open, four dual-signed handovers, deliver, and a burn. Nine invalid calls refused. Twenty-four unit tests pass. All keys are test keys: this proves the mechanism, not independent companies. The burn is our existing redeem, Radox policy, not enforced on-chain. The record would sit beside the carrier's bill of lading, not replace it.
 
-Why Stellar. Soroban authorizes both companies of a link in one call, so the handover is atomic. The on-chain head lets anyone rebuild the history later. We found no Stellar project recording a handover signed by two custodians.
+Why Stellar. Soroban authorizes both companies of a link in one call, so the handover is atomic. We replay the history from Horizon and check it against the head stored in the contract. We found no Stellar project recording a handover signed by two custodians.
 
 This weekend we built the custody registry contract, the testnet harness and the public shipment page, on disclosed prior work: Radox, with three Soroban contracts on mainnet. AI coding agents wrote the code; the video narration is an AI voice generated from Pedro's voice.
 
