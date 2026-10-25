@@ -85,3 +85,4 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - 2026-10-25: the owner's earlier assignment had Vhendala narrate; replaced by her Voicebox decision below.
 - 2026-10-25: Vhendala (GitHub vhendala) abre o painel e supervisiona o projeto; convites aceitos.
 - 2026-10-25: Vhendala comunicou formalmente que a narração NÃO será feita por sua voz; o vídeo deve usar Voicebox para sintetizar o áudio da demonstração a partir do roteiro. Vhendala mantém o apoio na conta de vídeo, teste, foto do time e na revisão de produto.
+- 17:37 UTC (pedro-session): Windows bug in her 3rd-party run fixed: handover-signers.mjs uses fileURLToPath, rio-miami-rail 306be64 on private main; default and three-machine proofs both exit 0 on macOS. Not re-run on Windows.
