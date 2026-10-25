@@ -33,8 +33,11 @@ const wait = (p, ms) => p.waitForTimeout(ms);
 const zoom = (p, z) => p.evaluate((z) => { document.documentElement.style.zoom = z; }, z);
 
 async function explorer(p, hash, z = "1.875") {
-  await p.goto(EXP + hash, { waitUntil: "networkidle", timeout: 60000 });
-  await p.getByText("Successful").first().waitFor({ timeout: 30000 });
+  for (let i = 0; ; i++) {
+    await p.goto(EXP + hash, { waitUntil: "networkidle", timeout: 60000 });
+    try { await p.getByText("Successful").first().waitFor({ timeout: 30000 }); break; }
+    catch (e) { if (i === 2) throw e; }                                      // the explorer sometimes renders empty; reload
+  }
   await zoom(p, z);
   await p.evaluate(() => document.fonts.ready);
 }
