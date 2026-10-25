@@ -9,6 +9,10 @@ member: pedro
 # HackMeridian — rail Rio-Miami — state
 
 ## Arrival synthesis
+- 2026-10-25 (soroban-sim session, owner request): set up github.com/theahaco/soroban-sim so we can call a Stellar RPC that is a local fork of mainnet (`soroban-sim serve --fork mainnet`). Nothing is submitted to mainnet; it is a local tool, outside the frozen submission scope (owner: custody_registry stays on testnet).
+- First action: build the CLI from source (no crates.io release yet per its README), start `serve`, prove getLatestLedger/getLedgerEntries answer with mainnet data.
+- Disagree: none. It does not touch the submission track.
+- Fact checked on disk: the soroban-sim README pins soroban-env-host 29.0.2 (protocol 29), consistent with [[soroban-versions-on-2026-10-25-9619]] (testnet protocol 29).
 - 2026-10-25 17:16 UTC (problem-numbers session, started by the rail session): I own PROBLEM-NUMBERS.md, 4-6 market numbers on the custody/handover problem, each re-opened at its primary source by an independent reviewer; deadline 17:55 UTC.
 - First action: library search (only the ADB note has content; the DCSA, ICC FIT and TT Club notes are empty stubs), then 3 researchers in parallel.
 - Disagree: none; the numbers describe the market, never our traction (Claims guard).
