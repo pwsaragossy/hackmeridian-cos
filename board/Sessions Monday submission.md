@@ -18,6 +18,7 @@ What the agent sessions deliver on Monday, through the submission (Sunday's line
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- central: Claude model IDs of Pedro's sessions (read from each session's metadata) to the rail session for the AI tooling field, Mon 05:30
 - rail session: AI disclosure "narration: AI voice cloned from Pedro's voice with Voicebox" in the video credit, the deck and the README, Mon 06:00
 - rail-page-host: generate the 3:00 narration in Pedro's cloned voice (Voicebox) from the final DEMO-SCRIPT.md, lay it over the screen recording, offline copy kept, Mon 00:00–03:00
 - central: independent agent that wrote no code runs the README on a clean clone (review-3), Mon 00:00
