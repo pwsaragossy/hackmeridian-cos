@@ -28,3 +28,11 @@ git check-ignore -v .env     # .gitignore:3:.env	.env   (also .gitignore:4 .env.
 ```
 
 Verdict: clean
+
+## Re-run after skeleton — 2026-10-25T12:27:32Z, rio-miami-rail HEAD bebf6d11aeca0885c4552edd89f427dfa68ac439 (13 commits, fresh clone)
+
+Commands (session-hackmeridian-rail): `grep -rnE "S[A-Z2-7]{55}" --exclude-dir=.git --exclude-dir=target --exclude-dir=node_modules .` → no output;
+`git log -p --all | grep -cE "S[A-Z2-7]{55}"` → 0; names `grep -rniwE "ZIS|Paulo|Protasio|Protásio|CISBRA|CAERJ|Camacol|OAS|RITLA|Glocal|UpShift|radox-internal|CAF4JIUZ"` over the tree → no output, over history → 0;
+no .env file; `git check-ignore -v .env` → `.gitignore:3:.env`. Keys live only in env and `stellar keys`.
+
+Verdict: clean.
