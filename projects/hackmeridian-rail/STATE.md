@@ -55,4 +55,4 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 - Portal rules, submission form and its editing window (login).
 - Any evidence that a financier or buyer has the custody-visibility pain (IDEA.md: assumption; mentor test planned).
 - SCF Build eligibility criteria themselves.
-- PITCH.md slide 2 still has `[[fill]]` for the cost of today's alternative.
+- PITCH.md slide 2 still has a fill marker for the cost of today's alternative.
