@@ -255,3 +255,6 @@ User Value stays at 8: 9 needs one first-hand user fact (a port or chamber that 
 
 ### Round 7 delta (owner answers via central)
 Slide 4, pitch and COPY-V13 §4 now say "Radox has openings with ports and airports, and chambers of commerce in Brazil and Miami are opening doors" (owner wording; no chamber, ZIS or Paulo named). Reviewer delta (REVIEW-V13-DELTA.md): approve, no must-fix. check_deck exit 0; mutant "chambers ... have joined the rail" exits 1; pitch 395 words. User Value 8 to 8.5; total 85.5/100 (reviewer estimate).
+
+### Round 7 delta 2 (20:09 UTC, owner answers via chief of staff)
+Direct conversations are with chambers of commerce; ports and airports come through the corridor initiative ("a zis fechando, nós fechamos"; "se adotar a zis, nós somos consequência"). Slide 4, pitch and COPY-V13 §4 now read: "Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it joins the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami." Initiative unnamed. This replaces delta 1 ("openings with ports and airports"), which overstated direct contact. Reviewer (REVIEW-V13-DELTA2.md): pass, its safer "part of ... and its technology rail" applied. check_deck exit 0; signed-ports mutant fails; pitch 394 words. User Value 8.5.

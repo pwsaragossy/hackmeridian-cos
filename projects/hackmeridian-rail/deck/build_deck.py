@@ -267,7 +267,7 @@ for x, head, hc, items in cols:
     text(s, x, 5.15, 4.75, 3.0, [[("— ", {"color": hc}), (t_, {})] for t_ in items], size=21, after=8)
 hline(s, 1.0, 8.3, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.42, 18.0, 0.9, [
-    "Each company integrates once instead of pair by pair. Radox is the technology rail of the Rio–Miami trade-corridor initiative: every port, airport and chamber that joins it joins the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami.",
+    "Each company integrates once instead of pair by pair. Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it joins the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami.",
     [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C})]],
     size=18, after=2)
 
