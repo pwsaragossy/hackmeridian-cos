@@ -17,6 +17,9 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
 ## Tasks
+- Leo (Pedro's session tracks it): confirm each "Human review" cell in rio-miami-rail AI_USAGE.md that names him, or they become "not reviewed line by line"; must be settled before the repo goes public (reviewer, major). By Mon 05:30 (leo-agent, 13:00)
+- Leo (Pedro's session tracks it): keep or drop Challenges line 4 (no_std tests did not compile): true, but provable only in Leo's private session log. Wording of all 4 lines: Leo card, 12:55 line. By Sun 22:00 (leo-agent, 13:00)
+- Pedro's session: paste the 4 Challenges lines (Leo card, 12:55, reviewed by engineer + reviewer) into FORM-ANSWERS.md "Challenges" once Leo answers the line above (leo-agent, 13:00)
 - Pedro: in rio-miami-rail AI_USAGE.md, replace the page/ + scripts/page-snapshot.mjs row ("see the commits by its author") with how they were made and who reviewed them; the rules require AI attribution. By Mon 05:30 (leo-agent, 12:55)
 - Pedro: send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/, forward his reply to central, by Sun 18:00 Lisbon (15:00 Rio)
 - Pedro: ask an organizer whether a Scale repo with only the new work is accepted, answer to central, by Sun 17:00
