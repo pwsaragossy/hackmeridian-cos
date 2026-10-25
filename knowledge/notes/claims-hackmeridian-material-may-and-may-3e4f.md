@@ -39,4 +39,7 @@ Why no names even if friendly: [INFERENCE] naming a third party without its writ
 
 Counter-argument: judges reward traction and a stretch might win points. The cost asymmetry is the answer: a stretch can move at most the User Value (20), Market (10) and Hackathon Progress (10) criteria by some points, while a misrepresentation finding can remove the whole entry.
 
+
+Owner decision 2026-10-25 19:59 UTC (board, Sessions build and submission, lines 56-57): public text may say "Radox has openings with ports and airports, and chambers of commerce are opening doors" and that chambers of commerce in Brazil and in Miami are engaged with Radox on the corridor. Still no chamber, ZIS or Paulo named, and no concrete ask. This overrides the chambers line under "must not say".
+
 Compared: [[hackmeridian-scale-intake-as-submitted-the-7fb5]] coexists (that note is what was submitted, this one is what may be said now) ; [[ucc-article-7-and-brazilian-rules-77dd]] coexists (title wording only) ; [[wording-the-rio-miami-deck-readme-ef38]] coexists (that howto lists replacement wording per slide and file, this note gives the legal basis, the verification trail and the table of what may and may not be said, and both agree on the wording) ; [[wording-market-figures-in-the-deck-dadf]] coexists (different subject, no overlap in what it states)
