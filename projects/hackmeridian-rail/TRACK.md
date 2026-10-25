@@ -1,6 +1,6 @@
 ---
 track: hackathon
-stage: 1
+stage: 2
 delivery: 4
 stale_hours: 3
 owner_wait_minutes: 20
@@ -23,7 +23,7 @@ Gate: rules, criteria, submission requirements and deadline are written down, an
 - [x] review-1 | Independent review of stage 1: verdict and fixes | card: reviewer | needs: rules, criteria, submission-reqs, deadline, idea | evidence: REVIEW-1.md
 ## Stage 2: Scope and build
 Gate: scope is frozen, the thinnest end-to-end path runs, and nothing in the build breaks the rules.
-- [ ] scope | Scope freeze: at most 3 must-have features for the demo, everything else listed as cut, time-boxed with a clock time | card: product | needs: idea, deadline | owner: ok | evidence:
+- [x] scope | Scope freeze: at most 3 must-have features for the demo, everything else listed as cut, time-boxed with a clock time | card: product | needs: idea, deadline | owner: ok | evidence: SCOPE.md
 - [ ] skeleton | Thinnest end-to-end path running (input to visible output) before any extra feature is built | card: engineer | needs: scope | evidence:
 - [ ] licences | Licences of dependencies, datasets and third-party assets checked against the rules and the intended licence | card: legal | needs: rules | evidence:
 - [ ] secrets | No keys or personal data in the repository or demo, keys in environment variables, keys rotated if exposed | card: security | needs: skeleton | evidence:
