@@ -14,7 +14,7 @@ Radox Custody Rail: dual-signed custody for goods in transit, on Stellar
 First corridor: Rio–Miami
 ```
 
-## Description (required, Markdown, up to 8000 chars; 3773 chars)
+## Description (required, Markdown, up to 8000 chars; 3768 chars)
 
 ```text
 **We are building the end-to-end custody rail for goods in transit: a shared, SWIFT-like standard for every company along a supply chain, from origin to destination. This repo is its first piece, running on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
@@ -33,7 +33,7 @@ One shipment is one record in our `custody_registry` contract. The operator open
 | deliver | [919def8c…4e37](https://stellar.expert/explorer/testnet/tx/919def8c0b3f29ae650f5f1ea6d632e49efd4a9442381c84c83d858ad2144e37) |
 | redeem (burn) | [864fd164…644d](https://stellar.expert/explorer/testnet/tx/864fd1644d30bf708a59f94ca5b0fc303a50deccfd96099bd32dfb67e215644d) |
 
-Nine refusal branches, run by simulation, are recorded with their error results in `proofs/lifecycle.json`. In a second shipment, two teammates signed their own handovers with their own testnet keys; only public keys and signed authorisation entries were exchanged (`proofs/three-machine.json`). The Radox backend, in a local development run, read the first shipment's record and returned the same head as `verify-head` (curl output in the README).
+Nine refusal branches, run by simulation, are recorded with their error results in `proofs/lifecycle.json`. In a second shipment, two teammates signed their own handovers with their own testnet keys; only public keys and signed authorisation entries were exchanged (`proofs/three-machine.json`). The Radox backend, in a local development run, read the first shipment's record and returned the same head as `verify-head` (README, Architecture).
 
 **One rail, many supply chains.** On a third registry, two test companies' chains ran side by side: internal handovers between units of the same company, an external handover joining them, and a second shipment sharing two stops. Ten successful transactions, both heads MATCH, no new contract code (`proofs/multi-chain.json`). The record format is published as an open spec, `CUSTODY-SPEC.md`, so any Stellar issuer can implement it or reuse the contract under Apache-2.0.
 
@@ -50,20 +50,20 @@ Runs on Stellar testnet.
 About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 data); in 2025 about 11% were issued electronically (DCSA, as of 2025). 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI Cargo Theft Report, Apr 2026). Our design target is the US–Brazil goods corridor, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports); Brazil was Florida's largest goods export market in 2025 (USTR). A container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it.
 ```
 
-## Challenges (optional; 1279 chars)
+## Challenges (optional; 1327 chars)
 
 ```text
 1. Our first two-signer script crashed before submitting anything: with js-stellar-sdk 17.3.0 the simulated auth entries are plain objects, not accessor methods, and protocol 29 returns `sorobanCredentialsAddressV2`. Fixed by signing each custodian's entry with `authorizeEntry` and passing them to `Operation.invokeContractFunction({ auth })`.
 2. `stellar contract invoke` on a read-only call only simulates and returns no hash; `--send=yes` was needed to get on-chain proof.
-3. An AI reviewer agent found two major bugs before deploy: a route that revisits an address let `deliver` succeed with zero handovers, and the contract instance TTL was never extended, so it could have archived about a week after deploy, possibly during judging. Both fixed with tests before deploy.
+3. An AI reviewer agent found, before the testnet deploy, that a route that revisits an address let `deliver` succeed with zero handovers, and that the contract instance TTL was never extended, so it could have archived about a week after deploy, possibly during judging. Both were fixed with tests (commit `9b66e00`, with three more review fixes).
 4. The first unit tests did not compile: the contract is `no_std`, so the test module needed `extern crate std`, and the `try_` assertions only type-checked once entry points returned `Result<_, Error>` instead of panicking.
 5. For the second shipment, our check of the teammates' signed entries first rejected valid signatures. Protocol 29 address-bound credentials are signed over a different payload than the legacy ones; we changed the check to use that payload, and a wrong key is still rejected.
 ```
 
-## What's next (optional; 1067 chars)
+## What's next (optional; 1082 chars)
 
 ```text
-Rio–Miami is our first corridor, not the product. We are building the end-to-end custody rail for goods in transit: a shared, SWIFT-like standard for every company along a supply chain. Radox is in conversations with ports, airports and chambers of commerce, and the next step is integrating their systems with the rail. Next we connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint already reads this registry), run the first live shipment with a financial institution and a port or logistics operator, have a Stellar engineer review the design, and apply to SCF Build. Mainnet follows an audit and the issuer-account lock described in the README. Business model: a recurring fee per connected institution plus a fee per shipment. It borrows the shape of SWIFT's published fee structure: Swift, a cooperative owned by its members, charges an entry fee, annual charges (including network connection) and network-usage fees on message traffic (swift.com billing rules, accessed 25 October 2026). We are not affiliated with Swift.
+Rio–Miami is our first corridor, not the product. We are building the end-to-end custody rail for goods in transit: a shared, SWIFT-like standard for every company along a supply chain. Radox is in conversations with ports, airports and chambers of commerce, and our goal is to integrate their systems with the rail. Next we connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint reads this registry in a local development run), run the first live shipment with a financial institution and a port or logistics operator, have a Stellar engineer review the design, and apply to SCF Build. Mainnet follows an audit and the issuer-account lock described in the README. Business model: a recurring fee per connected institution plus a fee per shipment. It borrows the shape of SWIFT's published fee structure: Swift, a cooperative owned by its members, charges an entry fee, annual charges (including network connection) and network-usage fees on message traffic (swift.com billing rules, accessed 25 October 2026). We are not affiliated with Swift.
 ```
 
 ## Repository link (required, public HTTPS)
