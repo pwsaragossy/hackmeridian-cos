@@ -76,6 +76,30 @@ def main():
         if req.lower() not in full.lower():
             fails.append(f"required text missing: {req!r}")
 
+    # Story order (owner, 2026-10-25): problem -> standard -> end-to-end rail -> proof, read from the pills;
+    # nothing headline-sized (>= 36 pt) before the rail slide talks about signatures: the double sign is a rule of the rail.
+    pills = []
+    for i, s in enumerate(prs.slides, 1):
+        p = next((sh.text_frame.text for sh in s.shapes if sh.has_text_frame and ";" in sh.name and sh.name.split(";")[1] == "110"), "")
+        pills.append((i, p.upper()))
+    pos = []
+    for key in ("PROBLEM", "STANDARD", "RAIL", "TESTNET"):
+        hit = next((i for i, p in pills if key in p and (not pos or i > pos[-1])), None)
+        if hit is None:
+            fails.append(f"story order: no slide pill with {key!r} after slide {pos[-1] if pos else 0}")
+            break
+        pos.append(hit)
+    rail = pos[2] if len(pos) > 2 else n + 1
+    for i, s in enumerate(prs.slides, 1):
+        if i >= rail:
+            break
+        for sh in s.shapes:
+            if sh.has_text_frame:
+                for p in sh.text_frame.paragraphs:
+                    for r in p.runs:
+                        if r.font.size is not None and r.font.size >= Pt(36) and re.search(r"sign", r.text, re.I):
+                            fails.append(f"slide {i}: headline before the rail slide mentions signing: {r.text[:50]!r}")
+
     lc = lifecycle(sys.argv)
     real = [x["hash"] for x in lc["lifecycle"]]
     if len(real) != 7:
