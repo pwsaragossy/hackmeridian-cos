@@ -25,7 +25,7 @@ The portal rules page (app.hackmeridian.com/portal/rules) needs login: not reach
 ## Code, AI, IP
 - Prior work: "Disclose prior work and show what you built during the event" [PDF p4]. Reusing an existing codebase if declared, and
   "Undisclosed prior work is a disqualification": [PASTE, on disk] (PORTAL-PASTE.md line 47; not in PDF, FAQ or terms.html).
-- AI: "AI-assisted development is allowed", Claude Code named [WEB home, /faq]. "Attribution is required": note where AI meaningfully generated code or assets [PASTE, on disk] (line 48). README "AI usage" covers it.
+- AI: "AI-assisted development is allowed", Claude Code named [WEB home, /faq]. "Attribution is required": note where AI meaningfully generated code or assets [PASTE, on disk] (line 48). README "AI usage" covers it. The form's AI tooling field names Claude Code, the models and our chief-of-staff plugin (Pedro, 2026-10-25; replaces the earlier generic-wording rule; SUBMISSION.md field table).
 - IP: "You own what you build" [WEB home]. terms.html sec 06 (13 Aug 2026): you keep IP, subject to third-party and open-source licences;
   Guava and event partners get a non-exclusive, worldwide, royalty-free licence to show and promote the submission, team name and description.
   You warrant the work is original or properly licensed. [WEB /terms.html]
