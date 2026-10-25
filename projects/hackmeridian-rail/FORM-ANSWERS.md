@@ -14,7 +14,7 @@ Radox Custody Rail: dual-signed custody for goods in transit, on Stellar
 First corridor: Rio–Miami
 ```
 
-## Description (required, Markdown, up to 8000 chars; 3482 chars)
+## Description (required, Markdown, up to 8000 chars; 3560 chars)
 
 ```text
 **Our goal is an end-to-end custody rail for goods in transit: a shared, SWIFT-like standard that companies along a supply chain, from origin to destination, could use. Neither the standard nor the rail exists yet. This repo is the first piece we built, run on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
@@ -33,7 +33,7 @@ One shipment is one record in our `custody_registry` contract. The operator open
 | deliver | [919def8c…4e37](https://stellar.expert/explorer/testnet/tx/919def8c0b3f29ae650f5f1ea6d632e49efd4a9442381c84c83d858ad2144e37) |
 | redeem (burn) | [864fd164…644d](https://stellar.expert/explorer/testnet/tx/864fd1644d30bf708a59f94ca5b0fc303a50deccfd96099bd32dfb67e215644d) |
 
-Nine refusal branches, run by simulation, are recorded with their error results in `proofs/lifecycle.json`. In a second shipment, two teammates authorised their handovers from their own computers with their own testnet keys, by their account; only public keys and signed authorisation entries were exchanged (`proofs/three-machine.json`). In a local test run, a read-only endpoint of the closed Radox backend read the same record and returned the same head; its curl output, in the README, is the only evidence.
+Nine refusal branches, run by simulation, are recorded with their error results in `proofs/lifecycle.json`. In a second shipment, two teammates authorised their handovers from their own computers with their own testnet keys, by their account; only public keys and signed authorisation entries were exchanged (`proofs/three-machine.json`). In a local development run, a read-only endpoint of the closed Radox backend read the first shipment's record and returned the same head as `verify-head`; the curl output in the README is the only evidence, and it cannot be reproduced from this repo.
 
 **Check it yourself.** `node scripts/verify-head.mjs <key>` reads the shipment's transactions from Horizon, recomputes the head and compares it with the value on the contract (MATCH). The public page, https://rio-miami-rail.vercel.app, does the same in the browser with its Verify head button. `node scripts/handover-signers.mjs` lists who authorised each handover.
 
@@ -58,10 +58,10 @@ About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 d
 5. For the second shipment, our check of the teammates' signed entries first rejected valid signatures. Protocol 29 address-bound credentials are signed over a different payload than the legacy ones; we changed the check to use that payload, and a wrong key is still rejected.
 ```
 
-## What's next (optional; 859 chars)
+## What's next (optional; 899 chars)
 
 ```text
-Rio–Miami is our first corridor, not the product. Our goal is a shared, SWIFT-like custody standard and an end-to-end rail that companies along a supply chain could use; neither exists yet. Next we will connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint already reads this registry in a local test run), seek introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, ask a Stellar engineer to review the design, and prepare an SCF Build application. Mainnet waits for an audit and the issuer-account lock described in the README. We intend to approach chambers of commerce, ports and airports about integrating their systems. Today no such standard, integration, adoption or partnership exists: this weekend proves the record on Stellar testnet with test keys.
+Rio–Miami is our first corridor, not the product. Our goal is a shared, SWIFT-like custody standard and an end-to-end rail that companies along a supply chain could use; neither exists yet. Next we will connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint already reads this registry in a local development run, not reproducible from this repo), seek introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, ask a Stellar engineer to review the design, and prepare an SCF Build application. Mainnet waits for an audit and the issuer-account lock described in the README. We intend to approach chambers of commerce, ports and airports about integrating their systems. Today no such standard, integration, adoption or partnership exists: this weekend proves the record on Stellar testnet with test keys.
 ```
 
 ## Repository link (required, public HTTPS)
