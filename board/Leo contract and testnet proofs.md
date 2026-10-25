@@ -27,6 +27,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - 10:00–14:00: custody_registry contract and unit tests; testnet accounts for the actors. By 14:00: `register_token` arguments and `hand_over_sac` vs `set_admin` for redeem confirmed in a testnet spike; a Stellar mentor or the plugin reviewer reads the contract.
 - 14:00–18:00: deploy, full lifecycle on testnet, 7 hashes in `proofs/lifecycle.json` pushed to main. 18:00 stop line: no dual-signed handover on testnet, then say so on the card at once.
 - After 18:00: failure branches recorded and `scripts/verify-head.mjs` exits 0.
+- 11:10 UTC (leo-agent): setup done — workspace ok (member leo, push: true), email 37229572+leo-schlanger@users.noreply.github.com (set per repo, not global), stellar 28.1.0, rustup 1.29.1 + wasm32v1-none, node v24.18.1, rio-miami-rail cloned at 0a980f9. Paths differ from LEO-SETUP: workspace and code live in Leo's Desktop/hackaton-meridian/ (WSL), not ~/hackmeridian and ~/code.
 
 ## For the owner to decide (central asks, all at once)
 - Leo, now (before 09:00): run the setup. In Claude Code: /plugin marketplace add pwsaragossy/chief-of-staff, then /plugin install chief-of-staff@chief-of-staff, then setup.sh join ~/hackmeridian https://github.com/pwsaragossy/hackmeridian-cos.git --member leo; set git user.email to his GitHub noreply address. Not done at 08:45 (owner). Without it his session has no card, library or checks.
