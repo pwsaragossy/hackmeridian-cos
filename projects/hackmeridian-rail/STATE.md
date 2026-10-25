@@ -1,7 +1,7 @@
 ---
 status: in-progress
 updated: 2026-10-24
-next: Stage 1 — read the HackMeridian rules in the portal (login needed), extract the Scale criteria and the submission requirements, then propose target and check for the owner's approval
+next: Sun 09:00 — review-1 by Vhendala (reviewer card) on RULES, SUBMISSION, CRITERIA, IDEA, KICKOFF; owner approves the check in central; Leo starts LEO-BRIEF.md
 dispatch: off
 member: pedro
 ---

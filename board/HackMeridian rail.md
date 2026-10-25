@@ -1,7 +1,7 @@
 ---
 tags:
   - board
-status: in-progress
+status: waiting-owner
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
@@ -15,6 +15,8 @@ updated: 2026-10-25
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
+- Sun 09:00, in central: approve the frozen check `python3 check.py` for the approved target (track.sh ok … check; the hook asks for one click).
+- Scope freeze (stage 2, proposal in projects/hackmeridian-rail/IDEA.md): add a public read-only shipment page (reads the contract on testnet) as the 3rd must-have — covers Product Design & UX (10%) and the public URL; the Radox API connection stays as the conditional 4th, cut at the 18:00 stop line if behind (recommended).
 
 ## Decided
 - 2026-10-25: stop criterion — if by Sun 25 18:00 Lisbon no two-custodian handover has run on testnet, cut the API connection and deliver contract + harness + recorded demo (owner).

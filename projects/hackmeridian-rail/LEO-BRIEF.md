@@ -40,6 +40,10 @@ Done = the 4 checks at the bottom pass, with testnet hashes.
 6. No secrets in the repo: keys in env vars or `stellar keys`, `.env` gitignored.
 7. No partner or client names in code, README or commits — roles only (exporter, warehouse, port,
    carrier, customs, event source, operator).
+8. **AI attribution is required by the rules** (RULES.md, SUBMISSION.md). Keep `AI_USAGE.md` at the repo
+   root: one line per file or folder saying it was generated with AI (tool + model) and what a human
+   reviewed. Undisclosed prior work disqualifies; so add nothing written before Sun 09:00.
+9. Commit small and often: the commit history is the judges' evidence of work during the event.
 
 ## Design (decided; change only with a reason written on the card)
 
@@ -105,7 +109,21 @@ cancelled delivery request stays `Open`.
    matches the on-chain `head`.
 
 Pedro's session uses `proofs/lifecycle.json` and the contract ID for the README, the Radox API
-connection and the demo, so keep those two file names.
+connection, the public shipment page and the demo, so keep those two file names. The proof file
+shape is fixed — the target check (`check.py` in this folder) reads it from `main`:
+
+```json
+{
+  "network": "testnet",
+  "custody_registry": "C…", "transfer_agent_instance": "C…", "token": "C…",
+  "setup":     [{ "step": "issuer_flags", "hash": "<64 hex>" }, "…"],
+  "lifecycle": [{ "step": "open", "hash": "…" }, { "step": "handover", "hash": "…" }, "×4",
+                { "step": "deliver", "hash": "…" }, { "step": "redeem", "hash": "…" }],
+  "failures":  [{ "case": "wrong_signer", "error": "…", "hash_or_sim": "…" }, "…"]
+}
+```
+
+`lifecycle` must hold exactly 7 entries in that order: open, handover ×4, deliver, redeem.
 
 ## Checks (done when all pass)
 
