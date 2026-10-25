@@ -1,7 +1,7 @@
 ---
-status: waiting-owner
+status: in-progress
 updated: 2026-10-25
-next: Sun 09:00 — Pedro copies the portal rules + submission form fields + editing-window dates into PORTAL-SEEN.md; central re-records the check OK (check.py changed); Vhendala's human pass on REVIEW-1.md; Leo starts LEO-BRIEF.md
+next: Sun 09:00 — Pedro pastes portal rules + form fields + editing-window dates into PORTAL-SEEN.md; Leo re-runs the wasm check, then starts LEO-BRIEF.md; Vhendala human pass on REVIEW-1.md, then stage 2
 dispatch: off
 member: pedro
 ---
@@ -14,7 +14,7 @@ What looks wrong: section 3 still says the full rules are "not read yet", but RU
 Fact checked on disk: `deadline: 2026-10-26 10:00 +0000` is in TRACK.md front matter (matches KICKOFF.md); `RESEARCH-raven.md` and `knowledge/inbox/raven-custody-research.md` are the same research.
 
 ## 1. State in one line
-green. Stage 1 redone with specialists and an independent reviewer (approve with changes, fixes applied, REVIEW-1.md); all stage-1 items closed; nothing built yet. Waiting on the owner for the check OK re-record and the questions on the card.
+green. Stage 1 redone with specialists and an independent reviewer (approve with changes, fixes applied, REVIEW-1.md); all stage-1 items closed; nothing built yet. Owner answered the stage-1 questions (card, 2026-10-25).
 
 ## 2. Intent (what counts as "done")
 - What the owner wants, in their words (Scale intake, sent before the event): "a chain-of-custody contract for a tokenized physical asset in transit (Rio-Miami). Each handover between custodians (warehouse, port, carrier, customs) is signed by both the outgoing and incoming custodian with an event attestation; ownership stays with the token holder and final delivery burns the token. Proven end to end on testnet with signed transactions and connected to our API."
@@ -30,7 +30,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 - Requirements verified in the portal PDF and public pages: RULES.md, SUBMISSION.md. Video 2–4 min YouTube/Vimeo, deck ≤20 MiB, mandatory AI attribution and the prior-work disqualifier come only from Pedro's paste of the portal rules (in the central session transcript); planned to anyway.
 - Portal rules page and submission form need login: not seen by any agent.
 - The burn's `transfer_agent` wasm (`3870748b…`) is on testnet with `fn redeem` (checked 2026-10-25 01:02 UTC).
-- check.py no longer names any document (only the proof file it reads); its OK must be re-recorded by central.
+- check.py names only the proof file it reads and requires 7 distinct hashes; check OK re-recorded by central (owner: "Sim, travar"). Do not edit it without a new OK; propose the "each tx calls our contract" check after deploy.
 - Library: 8 notes from this project (Raven research processed, rubric, rules, time zone).
 - Repos: `pwsaragossy/rio-miami-rail` (private, empty, created 24/10); team board `pwsaragossy/hackmeridian-cos`. leo-schlanger invited with write to both on 24/10.
 - `radox-internal` branch `hackmeridian` exists (from main), only for a backend change the API connection may need; never public.
@@ -42,7 +42,7 @@ green. Stage 1 redone with specialists and an independent reviewer (approve with
 
 ## 5. Next actions
 1. **Pedro (via central), Sun 09:00:** portal rules + form fields + editing window into `PORTAL-SEEN.md`; organizer question on the closed-platform repo.
-2. **central:** re-record the check OK (check.py changed); ask the card's waiting-owner questions.
+2. **session-hackmeridian-rail, after deploy:** propose the "each tx calls our contract" check to the owner via the card. If the wasm is gone at 09:00, the redeem fallback goes back on the card.
 3. **Vhendala:** human pass on REVIEW-1.md and the five files; then stage → 2.
 4. **Leo:** Sun 09:00 re-run the wasm check (KICKOFF §8), then LEO-BRIEF.md.
 
