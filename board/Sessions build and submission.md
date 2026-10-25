@@ -27,7 +27,7 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 - rail-page-host: page reads the testnet contract (real data, Verify head on screen) once Leo posts the contract ID; llms.txt gets the contract ID; robots.txt and sitemap.xml stay in the deploy, Sun 14:00–18:00
 - rail-page-host: redeploy to https://rio-miami-rail.vercel.app (Pedro's standing OK), head verified on screen, opened logged out, Sun 18:00–19:00
 - rail session: README (Prior work, Built here, AI usage, contract IDs, Production path, mentor log, dependency licence list for TRACK `licences`) and FORM-ANSWERS.md drafts (Description, Problem, What's next, Prior work, AI tooling), Sun 20:30–22:00
-- rail session (Pedro's side only; Leo has no radox-internal access): Radox API read-only connection, only if the lifecycle ran by 18:00, conditional, Sun 20:30–21:00 hard stop
+- rail session (Pedro's side only): Radox API read-only endpoint on radox-internal branch hackmeridian (dev stack, testnet), curl proof with head matching verify-head in API-PROOF.md, started 13:50 on Pedro's "Adiantar agora", by Sun 18:00
 - rail session: deck from DECK-TEMPLATE.pptx with real hashes (template slide order) and team photo; demo script ending on the page; bridge sentence names ZIS only if Paulo OKs by 18:00 (then his words only), Sun 22:00–Mon 00:00
 - central: independent reviewer on the README and form drafts (review-2), Sun 20:30–22:00
 - rail session: scrub (secret-key grep plus partner and client names, must be empty) and every link opened logged out, Sun 22:00–Mon 00:00
