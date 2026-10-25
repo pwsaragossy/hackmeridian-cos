@@ -1,7 +1,7 @@
 // Design fidelity: every colour, font and radius in the page comes from the Radox Signal tokens.
 // Usage: node check-design.mjs <rio-miami-rail page dir> <radox-internal frontend/src/index.css>
 // Reads only the token values from the Radox file. Exit 0 when clean; the last line is the number of violations.
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 const [page, tokensFile] = process.argv.slice(2);
@@ -16,7 +16,7 @@ const NAMED = /\b(white|black|red|green|blue|gray|grey|silver|yellow|orange|purp
 const bad = [];
 const html = readFileSync(join(page, "index.html"), "utf8");
 const css = [...html.matchAll(/<style>([\s\S]*?)<\/style>/g)].map((m) => m[1]).join("\n") + "\n" + [...html.matchAll(/style="([^"]*)"/g)].map((m) => m[1]).join("\n");
-const js = ["app.js", "globe.js"].map((f) => [f, readFileSync(join(page, f), "utf8")]);
+const js = ["app.js", "globe.js", "chains.js"].filter((f) => existsSync(join(page, f))).map((f) => [f, readFileSync(join(page, f), "utf8")]);
 
 // :root values must equal the .dark token of the same name (radius and font from the same file)
 const root = /:root\s*{([^}]*)}/.exec(css)?.[1] ?? "";
