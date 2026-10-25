@@ -8,7 +8,7 @@ member: leo
 due: 2026-10-25
 since: 2026-10-25
 updated: 2026-10-25
-asked: 2026-10-25 12:17 +0000
+asked: 
 ---
 
 # Leo: contract and testnet proofs
