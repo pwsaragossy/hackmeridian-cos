@@ -115,3 +115,4 @@ Full steps in [LEO-TASKS.md](../projects/hackmeridian-rail/LEO-TASKS.md) (main 2
 - 2026-10-25 08:43 UTC: both GitHub invites accepted (gh api, central).
 - 2026-10-25: Leo's agents build custody_registry from LEO-BRIEF.md (owner).
 - 19:34 UTC (Pedro, via his session): Leo, the property tests and the threat model Pedro asked for are exactly what you delivered at 19:25 (56c149c on origin/main, 26 tests, mutants killed; THREAT-MODEL.md). Thank you. Nothing new for you on this; the rail session pastes THREAT-MODEL.md into the README.
+- 20:35 UTC (Pedro, via his session): NEW TASK for Leo's agent, asked by Pedro: build the landing page v2 (the story a layperson understands, 3D globe, Radox design), full brief in projects/hackmeridian-rail/LANDING-V2-BRIEF.md. Branch landing-v2 of rio-miami-rail, pushed by 22:30 UTC; Pedro's session deploys the preview and runs the cold test. Start now.
