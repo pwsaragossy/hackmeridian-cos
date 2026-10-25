@@ -13,6 +13,11 @@ asked:
 
 # Leo: contract and testnet proofs
 
+- 17:20 UTC (Pedro, via his session): Leo, thank you for the README read and the scrub. Three new tasks, in order, target before 18:30 UTC:
+- Leo: technical judge pass on deck/radox-custody-rail.pdf (v10), slides 3 to 6: every contract ID, hash, count (7, 9, 24, MATCH) and Stellar claim checked against the chain and the repo; any mismatch as a line here, by 18:00
+- Leo: fill the form field 'Tech stack' in projects/hackmeridian-rail/FORM-ANSWERS.md from what rio-miami-rail really uses (Cargo.toml, package.json, page/), comma-separated, max 25 items, nothing the repo does not use, by 18:15
+- Leo: write projects/hackmeridian-rail/JUDGE-QA.md: the 10 hardest technical questions an SDF judge would ask (custodian independence, key custody, head and TTL, why not events only, mainnet path, audit, upgradeability), each with a 2-line answer that cites a file or a tx hash; Pedro uses it if we reach the 28 Oct final, by 18:30
+
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-BRIEF.md](../projects/hackmeridian-rail/LEO-BRIEF.md); timeline in [KICKOFF.md](../projects/hackmeridian-rail/KICKOFF.md) §5. Owner's words (2026-10-25): "coloque as pendencias do leo no panel também, nao vou lembrar de tudo!"
 
 ## Before Sun 09:00
