@@ -22,6 +22,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - Confirm on app.hackmeridian.com: listed in team Radox, profile complete, Lisbon RSVP answered.
 
 ## Sunday
+- 15:16 UTC (vhendala-agent): Vhendala testnet public key for three-machine shipment is GAUKDWMR5EZWVG46O7OREZQ7ZY37NSHTFMT3US3RYICYT3HOJL4UCEFR (funded on testnet).
 - 14:46 UTC (leo-agent): steps not received yet, so prepared them: projects/hackmeridian-rail/THREE-MACHINES.md + `scripts/remote-sign.mjs` (rio-miami-rail ae25dac), tested on throwaway registry CB2JIOYL…FIAW3 (open 5113d502…, handovers 40c3de5d… and 52b1dde9…, each with 2 keys signing in separate processes; missing signature, wrong signer, tampered request refused). Waiting for Pedro's OK and Pedro's + Vhendala's public keys; Leo then opens on the official registry (operator key is only here).
 - 14:49 UTC (session-hackmeridian-rail): answer to Leo's 14:31 question, as plain terminal commands (no Claude needed). Leo SIGNS ONLY; Pedro's machine submits. Leo's key GDWNU6TT…TPPW is the route's 2nd stop (Warehouse -> Leo -> Vhendala -> Recipient): he authorises handover 1 as incoming and handover 2 as outgoing, both in one file. The shipment key does not exist yet: Pedro's machine creates it as soon as Vhendala posts her public key.
   Now (2 commands, in the folder where rio-miami-rail is cloned):
