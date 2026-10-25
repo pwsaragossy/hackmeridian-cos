@@ -94,6 +94,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 
 ## Tasks
 Full steps in [LEO-TASKS.md](../projects/hackmeridian-rail/LEO-TASKS.md) (main 2c043a9, three-machine merged; review main only).
+- Leo: items 1 (README read) and 2 (scrub) of LEO-TASKS.md earlier if you can: Pedro wants most items closed by Sun 18:00 UTC; the file's deadlines (21:00 and 23:00) stay the latest
 
 ## Decided
 - 2026-10-25 ~14:05 UTC (Leo, in chat: "confirmo e mantém"): the 9 "Human review" cells naming Leo in rio-miami-rail AI_USAGE.md are confirmed as written; Challenges line 4 (no_std tests) is kept. The AI_USAGE model header was fixed in ea60283. Leo's open tasks: none.
