@@ -77,7 +77,7 @@ const CLIPS = {
     await markCall(p);
     await wait(p, 8500);
   } },
-  // 2:30-3:00, 30 s; click at 20 s (2:50), hold MATCH to the end
+  // 2:30-3:00, 30 s; 08b-terminal-radox-api covers 8-15 s (2:38-2:45); click at 17 s (2:47), hold MATCH to the end
   "08-page-live": { len: 30, run: (p, ready) => pageTake(p, ready, "Live from Stellar testnet") },
   // same take with RPC and Horizon blocked
   "09-page-snapshot": { len: 30, block: true, run: (p, ready) => pageTake(p, ready, "Snapshot, not live") },
@@ -94,18 +94,18 @@ async function pageTake(p, ready, expect) {
   ready();
   await wait(p, 5000);                                                      // label, source, h1
   await p.evaluate(() => document.getElementById("source").scrollIntoView({ block: "start", behavior: "smooth" }));
-  await wait(p, 5000);                                                      // container, status, handovers
+  await wait(p, 3000);                                                      // container, status, handovers (to 8 s)
   await p.evaluate(() => document.querySelector("h2").scrollIntoView({ block: "start", behavior: "smooth" }));
-  await wait(p, 5000);
+  await wait(p, 3500);                                                      // under the 08b overlay
   await p.evaluate(() => document.getElementById("verify").scrollIntoView({ block: "center", behavior: "smooth" }));
-  await wait(p, 4000);
+  await wait(p, 3500);                                                      // Verify head in view at 15 s
   const b = await p.locator("#verify").boundingBox();
   await p.mouse.move(b.x + b.width / 2, b.y + b.height / 2, { steps: 25 });
   await wait(p, 1000);
   await p.mouse.click(b.x + b.width / 2, b.y + b.height / 2);
   await p.getByText("MATCH", { exact: true }).waitFor({ timeout: 10000 });
   await p.evaluate(() => document.getElementById("result").scrollIntoView({ block: "center", behavior: "smooth" }));
-  await wait(p, 10500);
+  await wait(p, 13500);
   return p.textContent("#result");
 }
 

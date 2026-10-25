@@ -7,8 +7,8 @@ API, PROFILE = "http://127.0.0.1:17493", "316a059e-bbaa-4e3b-a392-f1606759ba8a"
 # spoken forms only: identifiers read as words
 SAY = {"custody_registry": "custody registry", "require_auth": "require auth", "verify-head": "verify head",
        "TEST4627832": "test four six two seven eight three two"}
-# seeds that read back cleanest in a local transcription (DEMO-SCRIPT 5bc5ca6)
-SEEDS = {1: 23, 2: 23}
+# seeds that read back cleanest in a local transcription (DEMO-SCRIPT 6f674db)
+SEEDS = {1: 23, 2: 23, 7: 42}
 os.makedirs(out, exist_ok=True)
 for _ in range(120):
     try: urllib.request.urlopen(API + "/health", timeout=2); break
