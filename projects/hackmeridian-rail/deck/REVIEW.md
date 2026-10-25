@@ -77,6 +77,34 @@ Open:
 
 Round 4b (same day): the spoken script PITCH-FINAL.md was moved to the same wording. An independent reviewer approved it with changes, all applied: each DCSA figure keeps its year, the TT Club figure names its year and source, and the script is 388 words.
 
+## Fifth round (v11: problem, standard, rail, proof; owner reframe 2026-10-25)
+
+Owner's request, relayed by chief-of-staff: start with the problem, then the SWIFT-like standard, then the double signature. The real solution is an end-to-end rail across many companies, and the double signature is only the rule of each link.
+
+v10 is kept at the session scratchpad for comparison.
+
+check_deck.py has a new story-order rule. The slide pills must run PROBLEM, STANDARD, RAIL, TESTNET, and no headline of 36 pt or more before the rail slide may mention signing. v10 failed it with 4 failures; v11 passes with 0.
+
+Independent reviewer verdict: approve with changes. The rubric, estimated by the reviewer and not a judge, scored v10 at 67 and v11 at 71.5, about 73 with the fixes. All the fixes against overclaiming were applied:
+- the cover says "could share";
+- slide 6 is titled "The lifecycle ran on testnet";
+- the three-machine line reads "own registry ... still test keys"; the branch three-machine exists on GitHub;
+- the rule bullet reads "both sides (delivery: recipient and holder)";
+- the slide 5 pill reads "DESIGN, LIFECYCLE BUILT" and its subtitle says "would follow ... today it runs across five test keys";
+- slide 7 is titled "all signers, one call";
+- the slide 2 hypothesis says "not yet tested with a customer";
+- the 9 refused calls are labelled "e.g. wrong signer".
+
+Slide 4 uses the rail session's wording, so the deck, the video and the README match: "a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, could use. Neither the standard nor the rail exists yet." The ask was not changed, because the video quotes it word for word.
+
+Claims row added: "2 signatures" on Recipient → Delivered comes from REVIEW-contract.md item 7 (deliver needs the final custodian and the holder; lib.rs 356-360).
+
+PITCH-FINAL.md was rewritten in the v11 order. The marketing specialist drafted it, and the wording was aligned to the rail session. It is 387 words by wc -w, and two timed reads are still needed.
+
+Open:
+- slide 2 keeps the unnamed bridge line, which [[zis-in-public-material-radox-is-bc05]] allows without Paulo's OK;
+- User Value stays capped near 7 until a customer exists.
+
 ## Findings (ranked)
 1. [major, FACT] Slide 8 prior-work list is incomplete against the disqualifier ("Undisclosed prior work is a disqualification", PORTAL-PASTE.md:47). Missing: (a) the explainer video and the Rio-Miami initiative that slide 2's bridge cites ("our explainer video") - pre-event work shown as context; (b) the chief-of-staff plugin (public repo, first commit 2026-10-22, SUBMISSION.md:55 says "declared as prior work"; it ran the team's work); (c) the 2026-10-20 architecture panel (wording note rule 9); (d) the sentence "no contract code before Sun 09:00" (rule 9). Git supports it: rio-miami-rail first commit is 2026-10-25T09:00:17Z (placeholder page); contract commit 11:29Z. Slide shows only "Planning files, 24-25 Oct". Fix with no new fact: add those items and "first commit 25 Oct 09:00 UTC".
 2. [major, FACT] Slide 10 shows a dashed "Team photo" placeholder in a final deck; card says photo is Vhendala's, due Sun 09:00. Replace or remove the box before sending.

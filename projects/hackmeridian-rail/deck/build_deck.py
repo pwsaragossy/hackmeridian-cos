@@ -174,7 +174,7 @@ set_run_text(find(s, "100"), "#HackMeridian26", LIME)
 for k in ("95", "96", "97"):
     find(s, k).fill.fore_color.rgb = rgb(LIME)
 text(s, 1.0, 2.55, 12.5, 1.5, ["Radox Custody Rail"], size=100, font=TITLE, bold=True, color=LIME, spacing=0.95)
-text(s, 1.0, 4.15, 12.3, 1.6, ["One record for the goods, from origin to delivery, across every company that touches them."],
+text(s, 1.0, 4.15, 12.3, 1.6, ["One record for the goods, from origin to delivery, that every company along the way could share."],
      size=36, font=TITLE, bold=True, color=TEXT_D, spacing=1.0)
 text(s, 1.0, 5.95, 12.5, 0.5, ["Toward a SWIFT-like standard on Stellar  ·  Pilot corridor: Rio–Miami"],
      size=24, color=SEC_D)
@@ -216,7 +216,7 @@ for i, name in enumerate(stops):  # broken line: each company is its own island
     dot(s, cx, ly, 0.3, LIME_C)
     text(s, cx - 1.3, ly + 0.22, 2.6, 0.5, [name], size=22, bold=True, align=PP_ALIGN.CENTER)
 text(s, 1.0, 4.45, 18.0, 0.5, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
-                               ("each company keeps its own record of its own leg; nobody holds the chain end to end.", {})]], size=22)
+                               ("each company records only its own leg; no shared record follows the goods. Not yet tested with a customer.", {})]], size=22)
 stats(s, P_HANDS, 5.15)
 text(s, 1.0, 8.65, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
 
@@ -269,8 +269,8 @@ text(s, 1.0, 8.42, 18.0, 0.9, [
     size=18, after=2)
 
 # ---------- 5. The rail, end to end; the double signature is the rule of each link ----------
-s = content_slide(5, "THE RAIL · END TO END", "One rail, origin to delivery", "NEXT ▸ LIVE ON TESTNET")
-text(s, 1.0, 3.35, 18.0, 0.6, ["One record follows the goods across company boundaries, not inside one company's system."], size=24, color=INK)
+s = content_slide(5, "THE RAIL · DESIGN, LIFECYCLE BUILT", "One rail, origin to delivery", "NEXT ▸ LIVE ON TESTNET")
+text(s, 1.0, 3.35, 18.0, 0.6, ["One record would follow the goods across company boundaries; today it runs across five test keys."], size=24, color=INK)
 nodes = [("Open", "operator", LIME_C), ("Warehouse", "", INK), ("Port", "", INK), ("Carrier", "", INK), ("Customs", "", INK),
          ("Recipient", "", INK), ("Delivered", "to the holder", LIME_C), ("Burned", "existing redeem¹", LIME_C)]
 x0, x1, ly = 1.3, 18.7, 5.0
@@ -285,35 +285,35 @@ for i, (name, sub, c) in enumerate(nodes):
     if 1 <= i <= 5:  # the four handovers plus delivery: each signed by both sides (proofs: "both signed")
         text(s, cx + 0.15, ly - 0.62, gap - 0.3, 0.45, ["2 signatures"], size=18, font=MONO, color=LIME_C, align=PP_ALIGN.CENTER)
 text(s, 1.0, 6.45, 18.0, 1.7, [
-    [("— ", {"color": LIME_C}), ("Rule of every link: ", {"bold": True}), ("both companies sign the same Stellar transaction, or custody does not move.", {})],
+    [("— ", {"color": LIME_C}), ("Rule of every link: ", {"bold": True}), ("both sides sign one Stellar transaction (delivery: recipient and holder), or the call fails.", {})],
     [("— ", {"color": LIME_C}), ("Each step extends an on-chain hash chain, the ", {}), ("head", {"font": MONO}), (": anyone can rebuild the history.", {})],
     [("— ", {"color": LIME_C}), ("The token stays with its holder in transit; only custody moves.", {})]],
-    size=24, after=6)
-text(s, 1.0, 8.45, 18.0, 1.2, [
+    size=23, after=6)
+text(s, 1.0, 8.55, 18.0, 1.1, [
     [("Built: this lifecycle on testnet, test keys. Design, not built: real companies on the rail, the standard, integrations.", {"bold": True, "color": INK})],
     "Keyed to the container number; would sit beside the carrier's bill of lading, not integrated. ¹ Radox policy, not enforced on-chain; redeem needs the holder's signature."],
     size=18, color=SEC_C, after=2)
 
 # ---------- 6. Proof: the whole chain ran on testnet ----------
-s = content_slide(6, "THE PROOF · LIVE ON TESTNET", "The whole chain ran on testnet", "NEXT ▸ WHY STELLAR", dark=True)
+s = content_slide(6, "THE PROOF · LIVE ON TESTNET", "The lifecycle ran on testnet", "NEXT ▸ WHY STELLAR", dark=True)
 s.shapes.add_picture(SHOT("page-handovers-rows.png"), Inches(1.0), Inches(3.4), width=Inches(7.4))
 box(s, 1.0, 3.4, 7.4, 7.4 * 950 / 1400, line=LINE_D)
 tx = 9.0
 for i, (step, who, h) in enumerate(HASHES):
-    y = 3.35 + i * 0.4
+    y = 3.3 + i * 0.37
     text(s, tx, y, 10.0, 0.4, [[(h, {"color": LIME, "font": MONO}), (f"   {step} · {who}", {"color": TEXT_D})]], size=18)
-for i, (num, label) in enumerate([("7", "successful"), ("9", "refused (simulated)"), ("24", "unit tests"), ("MATCH", "head check, 25 Oct")]):
+for i, (num, label) in enumerate([("7", "successful"), ("9", "refused, e.g. wrong signer (simulated)"), ("24", "unit tests"), ("MATCH", "head check, 25 Oct")]):
     x = tx + i * 2.55
-    text(s, x, 6.3, 2.5, 0.8, [num], size=44, font=TITLE, bold=True, color=LIME, spacing=0.9)
-    text(s, x, 7.1, 2.45, 0.7, [label], size=18, color=TEXT_D)
-text(s, tx, 7.5, 10.0, 1.6, [
+    text(s, x, 5.95, 2.5, 0.8, [num], size=44, font=TITLE, bold=True, color=LIME, spacing=0.9)
+    text(s, x, 6.72, 2.45, 0.7, [label], size=18, color=TEXT_D, spacing=1.0, after=0)
+text(s, tx, 7.6, 10.0, 1.6, [
     [("custody_registry ", {"color": SEC_D}), (CONTRACT, {"color": TEXT_D})],
-    [("Second run (branch three-machine): two team members, as two companies, signed from their own computers and testnet keys.", {"color": SEC_D, "font": BODY})],
+    [("Second run, own registry (branch three-machine): two team members each signed their handovers from their own computers and keys; still test keys.", {"color": SEC_D, "font": BODY})],
     [("All test keys: this proves the mechanism, not independent companies.", {"color": TEXT_D, "font": BODY, "bold": True})]],
     size=18, font=MONO, after=4)
 
 # ---------- 7. Why Stellar ----------
-s = content_slide(7, "ECOSYSTEM · WHY STELLAR", "Why Stellar: many companies, one ledger", "NEXT ▸ BUILT THIS WEEKEND")
+s = content_slide(7, "ECOSYSTEM · WHY STELLAR", "Why Stellar: all signers, one call", "NEXT ▸ BUILT THIS WEEKEND")
 rows = [("01", "Multi-party auth in one call", "Soroban authorises both companies of a link inside one contract invocation: the handover is atomic."),
         ("02", "Events plus an on-chain head", "RPC keeps contract events about 7 days. The head stored in the contract lets anyone rebuild the full history later."),
         ("03", "The token stays put, then burns", "The shipment token never moves in transit; the existing Radox redeem burns it after delivery.")]

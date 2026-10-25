@@ -1,8 +1,8 @@
-# PITCH-FINAL: Radox Custody Rail deck (9 slides) + spoken pitch
+# PITCH-FINAL: Radox Custody Rail deck (10 slides, v11) + spoken pitch
 
 Built from PITCH.md (binding: Claims guard, Copy rules), DEMO-SCRIPT.md, SUBMISSION.md, VERIFY-LEO.md, `proofs/lifecycle.json` (rio-miami-rail, read with `gh api` 2026-10-25), template order from [[hackmeridian-2026-official-pitch-deck-template-d5c7]]. Wording rules: [[wording-the-rio-miami-deck-readme-ef38]], [[claims-hackmeridian-material-may-and-may-3e4f]]. ZIS: [[zis-in-public-material-radox-is-bc05]], no OK assumed, so ZIS and Paulo appear nowhere and the corridor is the "unnamed bridge".
 
-Order = template (Cover, Solution, PMF/problem, Technical workflow) + 4 added slides after Technical workflow + Team last. Look: LOOK.md (dark proof slides, cream text slides, min 24 pt body, 40 pt titles).
+Order (owner, 2026-10-25): problem → SWIFT-like standard → end-to-end rail → testnet proof; the double signature is only the rule of each link. check_deck.py enforces it. Slide text lives in deck/build_deck.py; this file holds the outline, the portal item and the spoken pitch.
 
 Unnamed bridge (slide 7 only): "a Rio–Miami trade-corridor initiative". No ZIS, no person, no "part of", no "supported by".
 
@@ -20,91 +20,52 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 
 `custody_registry` testnet: CCBJVXMJYWPHTDJHDFPRGKPGXGEP24JOPJAMUS5C3BMZJTRTWR2H4LII. Final head: 2d74fec064a6796c34be93ede6241e0e067650dcfb2e058382f2f9cf83195414.
 
-## Slides
+## Slides (v11)
 
-### 1. Cover (dark)
-- Title: Radox Custody Rail: dual-signed custody, on Stellar
-- On-slide : First corridor: Rio–Miami. HackMeridian 2026, Scale track. Testnet build, test keys.
-- Proof element: the Rio → Miami hairline with four lime dots; label "Testnet - test keys - not real custodians"; repo `github.com/pwsaragossy/rio-miami-rail`.
-- Speaker notes : Full title: "Radox Custody Rail: dual-signed custody for goods in transit, on Stellar". We built a public record of who holds a shipment, signed by both sides of every handover. Everything shown ran on Stellar testnet this weekend.
-
-### 2. Solution: Every handover, signed by both hands (cream)
-- Title: Every handover, signed by both hands
-- On-slide : `custody_registry`: outgoing and incoming custodian sign the same transaction. The token stays with its holder in transit. After Delivered, the operator burns it.
-- Proof element: screenshot `shot-handover-expert.png` (one dual-signed handover on stellar.expert, both auth entries visible; handover 1, hash 635c99ac...).
-- Speaker notes : Two custodians must authorise one call, or it fails. The record keeps a hash chain, `head`. The burn is the existing `redeem`. The operator runs it only after the registry shows Delivered. That is Radox platform policy, not enforced on-chain by the registry, and `redeem` still needs the holder's signature. We found none in the directories searched 2026-10-25.
-
-### 3. PMF (problem), now deck slides 2 and 3 (cream)
-Deck v8 (deck/build_deck.py) puts the problem before the solution, in two slides. Every number is a row of PROBLEM-NUMBERS.md, wording per REVIEW-PROBLEM.md and deck/REVIEW.md round 4. Do not write "paper" or "inside job".
-- Slide 2 "Who holds the cargo right now?": 45M ocean bills of lading issued a year (DCSA, Feb 2023, 2021 data); ~11% of bills of lading issued electronically, 2025 (DCSA, as of 2025; Jan 2025 guide: 5.7%); 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI, Apr 2026). The two DCSA figures are separate scopes and years, never one population.
-- Slide 3 "Cargo goes missing. A bank got fooled.": R$900M est. direct loss, 8,570 cargo robberies in Brazil, 2025 (NTC&Logística, 28 Mar 2026); US$85M HSBC loss on forged documents for oil trades that never happened (Hin Leong, Global Trade Review, 18 Nov 2024); US$2.5T global trade finance gap, market size only (ADB, Dec 2025). Hypothesis line: a financier cannot see who holds the goods before paying; no customer has confirmed it. Closing line: "These numbers size the market problem. They are not results of ours, and we do not claim our build prevents any of it."
-- Speaker notes : These are market figures, not our results. No number here measures the handover itself; the insider share is the closest. Our hypothesis is that a financier cannot easily see who holds the goods. No customer has confirmed it yet.
-
-### 4. Technical workflow: How it runs on Stellar (dark)
-- Title: How it runs on Stellar
-- On-slide : open, 4 dual-signed handovers, deliver, burn. 7 successful testnet transactions. 9 invalid cases refused. 24 contract tests pass. `verify-head` recomputes the chain: MATCH.
-- Proof element: diagram (open → h1 → h2 → h3 → h4 → deliver → redeem) with contract ID `CCBJVXMJ…H4LII` and 8-character hashes 2b3d51f0, 635c99ac, 56a0f006, ac268a49, 5199d4fb, 919def8c, 864fd164; full table above in the appendix link / README.
-- Speaker notes : Six actors, all test keys held by one harness: this proves the mechanism, not independent custodians. Nine refusals (wrong custodian, wrong signer, early delivery and six more) were checked as simulations. Events last about seven days on the RPC, so `head`, a hash chain on the contract, lets anyone recompute the history. Holder balance after the burn is zero.
-
-### 5. (added) Prior work vs HackMeridian: What we built this weekend (cream)
-- Title: Prior work versus this weekend
-- On-slide : Existed: Radox platform, 3 Soroban contracts on mainnet, `transfer_agent`. Built here: `custody_registry`, test harness, `verify-head`, shipment page. Code written by AI coding agents.
-- Proof element: two-column table (existed / built here) plus commit timeline after Sun 25 Oct 09:00; pointer to `AI_USAGE.md` (per-file: tool, and which named person read it). API connection row only if a hash exists; otherwise "not delivered" {{fill: Mon 06:00 check}}.
-- Speaker notes : Radox's three mainnet contracts, public since 2026-08-19, and `transfer_agent` are prior work, disclosed. No contract code existed before Sunday 09:00; planning files dated 24 and 25 October did. The burn is the existing `redeem`, not new work. Code, tests and scripts were written by Claude Code agents. `AI_USAGE.md` lists who read what.
-
-### 6. (added) Users and value: Who uses it (cream)
-- Title: Who uses it, and why
-- On-slide : Exporter, custodians (warehouse, port, carrier, customs), buyer, financier. Value: a financier can see where the goods are, and who signed for them, before paying. No users yet.
-- Proof element: the public shipment page screenshot `shot-page-delivered.png` (rio-miami-rail.vercel.app, label "Testnet - test keys - not real custodians").
-- Speaker notes : No customers, exporters or pilot exist yet. These are the roles the contract models. The page is read-only and public: anyone with a container number sees the chain and can press Verify head. A custody record keyed to the container number; in production it would sit beside the carrier's bill of lading, not integrated here.
-
-### 7. (added) Business model and go-to-market: The rail is ours, the format is public (cream)
-- Title: The rail is ours; the format is public
-- On-slide : SWIFT model: public record format; Radox runs the rail and API. Revenue: fee from the institution operating it; not priced yet. Next: one pilot shipment with one producer; none agreed.
-- Proof element: none beyond the Rio → Miami line; footnote "Context: a Rio–Miami trade-corridor initiative. No agreement, endorsement or pilot." (unnamed bridge). Pricing line {{fill: only if Pedro confirms}}; otherwise left as "not priced yet".
-- Speaker notes : Radox is the rail, never the issuer; the client is a financial institution. Regulation and licences belong to the client and local counsel. Go-to-market is one corridor, Rio to Miami, and one pilot shipment with one producer; nobody has agreed yet. We would approach a financial institution and a logistics operator. No endorsement or letter from any body exists.
-
-### 8. (added) Market and next steps: From one corridor to a standard (cream)
-- Title: From one corridor to a standard
-- On-slide : Next: full testnet matrix, then mainnet; an audit is not done. Planned: an SCF Build application (not yet submitted). Future: a USD on-ramp leg; not built.
-- Proof element: link to the open question "which ramp delivers USD to a C-address (SEP-45 draft)". No anchor or ramp named.
-- Speaker notes : Mainnet is not this weekend. Physical-asset offers stay blocked outside testnet until the test matrix passes. No audit has happened; an SCF audit would start only after an award. We plan to apply to SCF; nothing is filed and we claim no eligibility. The USD leg is future tense: nothing is built or under contract.
-
-### 9. Team: Why us (cream)
-- Title: Why us
-- On-slide : Pedro Saragossy, founder, captain. Leo Schlanger, developer. Vhendala, supervision, product review. Leo and Vhendala joined for the hackathon. Narration is an AI voice generated from Pedro's voice.
-- Proof element: team photo (each person's consent first; max 3 lines per member); footer line "Code written with AI coding agents (Claude Code); see AI_USAGE.md"; line "Radox: 3 Soroban contracts on Stellar mainnet (public repo, created 2026-08-19)".
-- Speaker notes : Pedro built Radox and its three mainnet contracts. Leo and Vhendala joined this weekend. The video narration is an AI voice generated from Pedro's voice, not a person reading live. Code, tests and scripts were written with AI coding agents; humans decided scope and checked the proofs. Radox has no users or revenue yet.
+1. Cover: "Radox Custody Rail". One record for the goods, from origin to delivery, that every company along the way could share. Toward a SWIFT-like standard on Stellar; pilot corridor Rio–Miami. Testnet, test keys.
+2. Problem, "Who holds the whole chain?": hypothesis (each company records only its own leg; not yet tested with a customer); 45M ocean bills of lading a year (DCSA, Feb 2023, 2021 data); ~11% electronic, 2025 (DCSA); 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI, Apr 2026); unnamed bridge line.
+3. What it costs, "Cargo goes missing. A bank got fooled.": R$900M (NTC, 8,570 robberies, 2025); US$85M HSBC, Hin Leong (GTR); US$2.5T gap, market size only (ADB). "Not results of ours."
+4. The proposal, "A SWIFT-like standard: integrate once": the goal is a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, could use. Neither the standard nor the rail exists yet. 10 vs 5 links; open (contract, Apache-2.0; verify without login) vs Radox operates (onboarding, closed API, paid by the financial institution, not priced).
+5. The rail, "One rail, origin to delivery": open → warehouse → port → carrier → customs → recipient → delivered → burned; rule of every link: both sides sign one transaction (delivery: recipient and holder), or the call fails; head hash chain; token stays with holder. Built: the lifecycle on testnet; design: real companies, standard, integrations.
+6. The proof, "The lifecycle ran on testnet": 7 hashes, 7 successful, 9 refused (simulated), 24 unit tests, verify-head MATCH; second run on its own registry (branch three-machine), two team members signing from their own computers; all test keys.
+7. "Why Stellar: all signers, one call": multi-party auth, events plus head, token stays then burns; nearest neighbours, no SEP; Apache-2.0.
+8. "Built this weekend, on disclosed prior work": prior work, built here, AI attribution.
+9. "Vision: one rail, every corridor": now, next, planned, future; the ask (locked: the video 2:30 row quotes it).
+10. Team: Pedro Wakigawa Saragossy, Leo Schlanger, Vhendala; links; AI line.
 
 ## Pitch item (portal)
 
-- Problem: About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023), and DCSA reports only about 11% were electronic in 2025; insiders were involved in 22% of recorded cargo thefts in 2025 (TT Club & BSI, Apr 2026). These are market figures, not our traction. Our hypothesis: a financier cannot easily see who holds the goods (no customers yet).
-- Solution: `custody_registry`: both custodians sign every handover in one Stellar transaction; a hash chain makes the history checkable; the existing `redeem` burns the token after Delivered.
+- Problem: Goods cross borders through many companies, and each keeps its own record of its own leg; no shared record follows the goods, so a financier cannot see who holds them before paying. Our hypothesis; no customer has confirmed it. (About 45M ocean bills of lading a year, DCSA 2023; ~11% electronic in 2025, DCSA.)
+- Solution: Radox Custody Rail: one public record on Stellar that would follow the goods from origin to delivery across the companies in the chain. Each link moves only when both sides sign one transaction. The lifecycle is proven on testnet with test keys (Rio–Miami). The SWIFT-like standard, real companies and integrations are future work, none confirmed.
 - Demo: Rio–Miami lifecycle on testnet: 7 successful transactions, 9 refusals, `verify-head` MATCH, public shipment page; test keys, one harness.
 - Why this team: Pedro runs Radox with 3 Soroban contracts on mainnet; Leo and Vhendala joined this weekend; AI agents wrote the code and we say so.
 - Next step: a first pilot shipment with one producer (none agreed), full testnet matrix, SCF Build application (planned), then mainnet.
 
-## Spoken pitch (finalists, 3:00)
+## Spoken pitch (finalists, 3:00, v11 order)
 
 Rehearsal: not yet; timed reads by Pedro needed twice.
 
-Words (388, wc -w from "A container" to "Thank you.", 2026-10-25; limit 396 for 3:00 at 2.2 words a second):
+Words (387, wc -w, 2026-10-25; limit 396 for 3:00 at 2.2 words a second):
 
-A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. DCSA reports about 45 million ocean bills of lading are issued a year, and only about 11% of bills of lading were electronic in 2025. In 2025, insiders were involved in more than one in five recorded cargo thefts, TT Club and BSI report. Those are market figures, not our results. Our hypothesis is that a financier cannot easily see who holds the goods. No customer has confirmed it yet.
+A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. DCSA reports about 45 million ocean bills of lading are issued a year, and only about 11% were electronic in 2025. TT Club and BSI report insiders were involved in 22% of recorded cargo thefts in 2025. These are market figures, not our results. Our hypothesis: each company keeps its own record of its own leg, nobody holds the chain end to end, and a financier cannot see who holds the goods before paying. No customer has confirmed it yet.
 
-So we built a public record of the chain on Stellar. It is called Radox Custody Rail. Its contract, custody registry, has one rule: every handover needs both signatures, the custodian handing over and the custodian receiving, in the same transaction. If either one is missing, the call fails.
+So our goal is a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, could use: each would integrate once, not pair by pair. Neither the standard nor the rail exists yet.
 
-Here is what ran on Stellar testnet. One shipment, seven successful transactions: open, four dual-signed handovers, deliver, and a burn. Nine invalid cases were refused: the wrong custodian, out of route, a wrong signer, early delivery, and more. Twenty-four contract tests pass. And one command recomputes the whole history from the chain and matches the contract's head hash. The public shipment page does the same with a button.
+What we are building toward is one rail, origin to delivery, across the companies in the chain, not inside one company's system. The double signature is only the rule of each link: both sides sign one Stellar transaction, or the call fails.
 
-I want to be exact about what this proves. All six actors are test keys held by one harness. This proves the mechanism, not independent custodians. The burn is the existing redeem from our platform; the operator runs it only after the registry shows Delivered. That is our platform policy, not something the registry enforces. And the record is not a bill of lading. In production it would sit beside the carrier's one.
+On Stellar testnet, one shipment: seven successful transactions, open, four dual-signed handovers, deliver, and a burn. Nine invalid calls refused. Twenty-four unit tests pass. All keys are test keys: this proves the mechanism, not independent companies. The burn is our existing redeem, Radox policy, not enforced on-chain. The record would sit beside the carrier's bill of lading, not replace it.
 
-Why us. Pedro built Radox, which already has three Soroban contracts deployed on Stellar mainnet. Leo and Vhendala joined for this hackathon. We used AI coding agents to write the code, and the narration in our video is an AI voice generated from Pedro's voice. Our repository lists, file by file, who wrote what and who read it.
+Why Stellar. Soroban authorizes both companies of a link in one call, so the handover is atomic. The on-chain head lets anyone rebuild the history later. We found no Stellar project recording a handover signed by two custodians.
 
-Next. We want one pilot shipment with one producer; none is agreed yet. Then the full testnet matrix, and only then mainnet. We plan to apply to the Stellar Community Fund; nothing is filed. A USD leg is future work, not built.
+This weekend we built the custody registry contract, the testnet harness and the public shipment page, on disclosed prior work: Radox, with three Soroban contracts on mainnet. AI coding agents wrote the code; the video narration is an AI voice generated from Pedro's voice.
 
-One corridor, one public format, every handover signed by both hands. Thank you.
+Next: one Rio-Miami pilot shipment, none agreed yet. We plan to apply to the Stellar Community Fund; nothing is filed. A USD leg is not built. Our ask: introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, and a Stellar engineer's review of the design.
+
+Pedro built Radox; Leo and Vhendala joined for this hackathon. One rail for goods, every corridor. Thank you.
 
 ## Claims check
+
+Slide numbers in this table are from the earlier 9-slide order; the claims for the deck v11 are tracked in deck/REVIEW.md (rounds 4 and 5).
 
 Count: 27 claims (numbers and factual assertions on slides). Sources are files in this folder unless stated.
 
