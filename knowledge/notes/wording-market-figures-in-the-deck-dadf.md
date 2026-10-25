@@ -25,5 +25,8 @@ A second independent reviewer subagent attacked the ready sentences of MARKET-NU
 6. A rounded figure on a slide is fine only if the footnote carries the exact figure. An undated source page is footnoted as "undated page, opened <date>".
 7. End with "Market figures, not our volumes" and, in the README and form, "we have no pilot or traction yet".
 
+
+Superseded in part (2026-10-25 19:40, owner): rule 7 is withdrawn. Do not add "not our volumes" or "we have no pilot or traction yet"; attribution of each figure to its source stays. See [[founder-voice-in-public-text-sell-d820]].
+
 Compared: [[wording-the-rio-miami-deck-readme-ef38]] coexists (that note holds the general deck wording rules, this one only the market-figure rules) ; [[market-numbers-reviewer-pass-corridor-teu-2a95]] coexists (that note is the verdict on the numbers, this one on the sentences) ; [[iata-one-record-is-a-live-e27f]] coexists (different subject, no overlap in what it states) ; [[adb-trade-finance-gap-survey-dec-d033]] coexists (different subject, no overlap in what it states) ; [[claims-hackmeridian-material-may-and-may-3e4f]] coexists (different subject, no overlap in what it states) ; [[dcsa-45-million-bills-of-lading-1af2]] coexists (different subject, no overlap in what it states)
 
