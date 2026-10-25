@@ -36,7 +36,7 @@ async function explorer(p, hash, z = "1.875") {
   for (let i = 0; ; i++) {
     await p.goto(EXP + hash, { waitUntil: "networkidle", timeout: 60000 });
     try { await p.getByText("Successful").first().waitFor({ timeout: 30000 }); break; }
-    catch (e) { if (i === 2) throw e; }                                      // the explorer sometimes renders empty; reload
+    catch (e) { if (i === 5) throw e; await p.waitForTimeout(5000); }                                      // the explorer sometimes renders empty; reload
   }
   await zoom(p, z);
   await p.evaluate(() => document.fonts.ready);
@@ -49,7 +49,8 @@ const markCall = (p) => p.evaluate(() => {
   el.style.outline = "4px solid #C6F24E";
   el.style.outlineOffset = "6px";
   // bottom of the frame, so the Signatures box (operator only) stays out of shot
-  el.scrollIntoView({ block: "end", behavior: "smooth" });
+  el.scrollIntoView({ block: "end" });
+  scrollBy({ top: -90, behavior: "instant" });
 });
 
 async function verify(p) {

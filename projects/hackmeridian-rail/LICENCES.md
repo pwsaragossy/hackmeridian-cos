@@ -285,14 +285,23 @@ Command: `jq -r '.packages|to_entries[]|select(.key!="")|...license' package-loc
 | smol-toml | 1.9.1 | BSD-3-Clause |
 | uint8array-extras | 1.6.0 | MIT |
 
-## Assets the page loads from a CDN at run time (not in the repo)
+## Assets the page serves or loads at run time
 
 | asset | source | licence |
 |---|---|---|
-| @stellar/stellar-sdk 17.3.0 dist/stellar-sdk.min.js | cdn.jsdelivr.net | Apache-2.0 (same package as the npm row) |
+| @stellar/stellar-sdk 17.3.0 dist/stellar-sdk.min.js | in the repo as page/stellar-sdk.min.js since rio-miami-rail be4bcb9 (unmodified, SRI sha384 unchanged; was cdn.jsdelivr.net), named in NOTICE | Apache-2.0 (same package as the npm row) |
 | Inter 400/600/700 | fonts.googleapis.com / fonts.gstatic.com | SIL Open Font License 1.1 |
 
-No copyleft licence (GPL, LGPL, AGPL, MPL) in Cargo, npm or the CDN assets.
+No copyleft licence (GPL, LGPL, AGPL, MPL) in Cargo, npm or the page assets.
+
+## Video narration tools (run locally on Pedro's Mac, not in the repo)
+
+Checked 2026-10-25 against the GitHub API and the Hugging Face model card in the local cache.
+
+- Voicebox 0.5.0 (sh.voicebox.app), MIT, https://github.com/jamiepine/voicebox
+- Qwen3-TTS-12Hz-1.7B-Base (voice-cloning model), Apache-2.0, https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base (code: https://github.com/QwenLM/Qwen3-TTS, Apache-2.0)
+- mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16 (MLX conversion of the same model; the one Voicebox loads on this Mac, per its /models/status), Apache-2.0, https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16
+- mlx-audio (runtime for the MLX model), MIT, https://github.com/Blaizzy/mlx-audio
 
 ## Distinct licence strings (counts)
 
