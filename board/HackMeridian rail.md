@@ -59,7 +59,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - Official deck template saved as `projects/hackmeridian-rail/DECK-TEMPLATE.pptx` ([[hackmeridian-2026-official-pitch-deck-template-d5c7]]): Solution, PMF (problem), Technical workflow, Team; PITCH.md claims template order but puts the problem first: fix one or the other.
 
 ## Decided
-- 2026-10-25 14:29 UTC: custody_registry stays on testnet, no mainnet deploy before submission (no audit; testnet proves the mechanism). Owner: "Não, fica na testnet (Recomendado)".
+- 2026-10-25 14:29 UTC: custody_registry stays on testnet, no mainnet deploy before submission (no audit; testnet proves the mechanism). Owner: "Não, fica na testnet (Recomendado)". Confirmed via the status session: "Não fazemos deploy na mainnet; fica só testnet, e o README explica o caminho para produção." README Production path says plainly: testnet only this weekend, no audit yet, and the steps to mainnet. Mainnet question closed.
 - 2026-10-25 before 14:21 UTC (stamp corrected from ~14:30): the cloned-voice test sounds like Pedro; generate the full 3:00 narration once DEMO-SCRIPT.md is final (owner: "Sim, pode gerar").
 - 2026-10-25 before 14:21 UTC (stamp corrected from ~14:30): the voice sample and demo clips pushed by the sync to the private team-board repo stay in its history; no history rewrite (owner: "Deixar como está").
 - 2026-10-25 before 14:21 UTC (stamp corrected from ~14:30) (central): the page redeploy of be4bcb9 is covered by Pedro's standing redeploy OK until Mon 12:00; rail-page-host deploys by the Vercel CLI path it already used, no question to Pedro.
