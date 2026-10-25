@@ -18,6 +18,10 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 ## For the owner to decide (central asks, all at once)
 - (nothing)
 
+## Next (from central, 2026-10-25)
+- session-hackmeridian-rail: redo stage 1 with the specialists skill (researcher: RULES, SUBMISSION; product: CRITERIA, IDEA, KICKOFF/deadline) and an independent reviewer subagent for review-1, before stage 2. Process `knowledge/inbox/raven-custody-research.md` into library notes. Vhendala's human review stays as the final pass. Owner's words: "Refaz também a etapa 1 com especialistas e revisor antes de seguir."
+- If the redo changes the target or the scope, put it back here as a question (status: waiting-owner). Editing files that check.py reaches (it names LEO-BRIEF.md) voids the check OK: make check.py name only what it measures, then central re-records the check OK.
+
 ## Decided
 - 2026-10-25: target + check OK recorded with track.sh (frozen with check.py) — owner's words: "acho que pode colocar o burn aí no último, para fechar o ciclo".
 - 2026-10-25: scope OK recorded with track.sh — owner's words: "Sim, inclui a página pública do embarque como terceira entrega obrigatória; a ligação com a API fica como quarta condicional."
