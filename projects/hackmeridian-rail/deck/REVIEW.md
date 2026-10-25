@@ -258,3 +258,5 @@ Slide 4, pitch and COPY-V13 §4 now say "Radox has openings with ports and airpo
 
 ### Round 7 delta 2 (20:09 UTC, owner answers via chief of staff)
 Direct conversations are with chambers of commerce; ports and airports come through the corridor initiative ("a zis fechando, nós fechamos"; "se adotar a zis, nós somos consequência"). Slide 4, pitch and COPY-V13 §4 now read: "Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it joins the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami." Initiative unnamed. This replaces delta 1 ("openings with ports and airports"), which overstated direct contact. Reviewer (REVIEW-V13-DELTA2.md): pass, its safer "part of ... and its technology rail" applied. check_deck exit 0; signed-ports mutant fails; pitch 394 words. User Value 8.5.
+
+- Delta 3: "joins it joins the rail" became "joins it will join the rail" (rail-leo-brief request; reviewer reason in REVIEW-CORRIDOR-SENTENCE.md: no adapter exists today). Deck, pitch (395 words) and COPY-V13 §4 identical. check_deck exit 0.
