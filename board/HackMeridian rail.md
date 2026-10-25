@@ -1,14 +1,14 @@
 ---
 tags:
   - board
-status: in-progress
+status: waiting-owner
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
 due: 2026-10-26
 since: 2026-10-24
 updated: 2026-10-25
-asked: 
+asked: 2026-10-25 14:38 +0000
 ---
 
 # HackMeridian rail
@@ -16,6 +16,8 @@ asked:
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
+- AI tool names (session-hackmeridian-rail, 14:38 UTC): the public AI_USAGE.md in rio-miami-rail names the models (Claude Opus 5.5, claude-sonnet-5-5); your rule says public material does not name Claude, while the hackathon asks to note which AI generated code. Keep the model names there (recommended: the judges asked for it, and the form field already names them), or replace them with "AI coding agents"?
+- Team titles (session-hackmeridian-rail, 14:38 UTC): README says "Leo Schlanger, developer" and "Vhendala, supervision and product review". The reviewer suggests adding "(joined for the hackathon)" to both, and "product review" for Vhendala. Keep as is, or change?
 ## Tasks
 - 14:31 UTC (leo-agent) for Pedro / rail session, from Leo's re-validation (rio-miami-rail 54dc401: check.py 7, verify-head MATCH, cargo test 24/24): (1) three-machine shipment: Leo's public key is GDWNU6TTJCZOQ3ZQI5NYALATL7IVMHR4PWEP5E3TXEK7EKOJNDORTPPW (testnet, funded); send Leo the steps on his card (shipment key, route slot, sign-entry-only or submit), by Sun 23:30. (2) Live page is still the old build: index.html and app.js served differ from page/ at 54dc401 and /stellar-sdk.min.js is 404, so be4bcb9 is not deployed (Vercel login on Pedro's Mac). (3) AI_USAGE.md still has no row for `scripts/handover-signers.mjs` nor `page/stellar-sdk.min.js` (checked at 54dc401), before the repo goes public.
 - Leo's part is closed (Leo, ~14:10 UTC): contract, 7/7 lifecycle, verify-head, refusal branches, Challenges (4 final lines, Leo card 12:55; line 4 kept), AI_USAGE.md (Human review cells confirmed by Leo, model header ea60283). Leo has no open task. Only Pedro's side remains on AI_USAGE.md: rows for `scripts/handover-signers.mjs` and `page/stellar-sdk.min.js` before the repo goes public.
@@ -119,3 +121,4 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 - 14:21 UTC (session-hackmeridian-rail): DEMO-SCRIPT.md wording fixes from rail-page-host marketing review: row 0:40 "authorise it inside the call" (no "two signatures"; screen adds clip 03b handover-signers), search date October 24 per [[no-sep-and-no-stellar-project-aa39]]; row 1:05 spoken order matches screen (attest, deliver, then handovers); row 2:30 "we intend to approach chambers of commerce, ports and airports" (intent, not partnership), click at 2:47. Same intent wording in FORM-ANSWERS What's next and the README Future plan in SUBMISSION.md. rail-page-host regenerates rows 0:40, 1:05, 2:30.
 - 14:33 UTC (session-hackmeridian-rail): README.md written for rio-miami-rail, committed locally in ~/code/rio-miami-rail c014c85 (not pushed): 174 lines, verify-head run today = MATCH, all 8 txs (7 lifecycle + attest) successful on Horizon, cargo test 24 passed, 21 commits from 09:00 UTC. No Claude/ZIS/partner names, no 'two signatures', Future in intent only. Independent reviewer running now (REVIEW-README.md). Open: video URL placeholder; llms.txt 'private until submission' (m5) to edit when public; AI_USAGE.md names models (conflicts with the no-Claude-name rule for public text, owner question if it stays).
 - 14:34 UTC (session-hackmeridian-rail): DEMO-SCRIPT.md row 2:30 now shows the Radox API curl (2:38-2:45, terminal replay from API-PROOF.md, caption 'Radox backend (private), local test run', head 2d74fec0...5414 = verify-head) and says so in the narration; vision line kept in intent form; 73 words in 30 s, total 338. rail-page-host asked to regenerate that row and lay in the curl shot, due Mon 03:00.
+- 14:38 UTC (session-hackmeridian-rail): README independent review done (projects/hackmeridian-rail/REVIEW-README.md): approve with changes, no false fact; all 8 txs, 3 contract IDs, wasm hash, Quick verify on a fresh clone and cargo test re-run by the reviewer. Applied locally in ~/code/rio-miami-rail e649bb4 (not pushed): pre-event planning disclosed in Prior work, one-harness test keys stated, token_sale v7 deployed vs v8 published, problem marked as assumption, admin-control wording, AI_USAGE line no longer says 'every path'. Gates left: video URL in 2 places (grep '{' before push), repo public then logged-out clone re-run. AI_USAGE.md lacks rows for README.md and scripts/handover-signers.mjs (central mentions an unpushed 82899be 'AI_USAGE rows' in another clone; whoever owns it should add those two). Two owner questions added above.
