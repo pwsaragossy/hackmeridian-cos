@@ -1,25 +1,49 @@
-# HackMeridian 2026 — rules, eligibility and submission requirements
+# HackMeridian 2026 — rules and eligibility (re-checked 2026-10-25)
 
-Source: hackmeridian.com and the portal (tracks page, event rules), pasted by Pedro on 2026-10-25;
-portal tracks PDF of 2026-10-24. Quotes are short; the rest is summary.
+Tags: [PDF] = portal tracks PDF saved 2026-10-24 23:41 (app.hackmeridian.com/portal/tracks), read in full.
+[WEB] = public page on hackmeridian.com fetched 2026-10-25 (home, /faq, /build, /schedule, /terms.html);
+the fetch tool summarises, so wording is second-hand. [PASTE] = text Pedro pasted from the portal rules;
+the paste is not on disk, so anything only from it is **not verified**. Details: [[hackmeridian-2026-rules-and-submission-requirement-5868]].
+The portal rules page (app.hackmeridian.com/portal/rules) needs login: not reachable, not opened.
 
 ## Our entry
+- Builder track Scale, "assigned" [PDF p4]. Thematic Stellar Unlocked, saved on the team or submission page;
+  changes follow "the project editing window" [PDF p4]. The PDF says Genesis and Scale "can also enter" a
+  thematic track [PDF p2]; the home page is said to say Scale does not pick one [WEB home] — conflict, see Open items.
+- Team: Pedro (captain), Leo, Vhendala = 3. Limit: up to 5 people [WEB /faq]. Event: Warehouse ONE16, Lisbon [WEB /build].
+- Hacking: Sun 25 Oct 09:00 → Mon 26 Oct 12:00, "No late submissions" [WEB /build, /schedule]. **All times are Lisbon local time** [WEB /schedule]
+  (no UTC stated). Lisbon is UTC+0 from 25 Oct 01:00 UTC [[lisbon-is-utc-0-for-the-9963]], so deadline = 12:00 UTC.
+  Our own deadline Mon 10:00 +0000 (TRACK.md) leaves 2 h.
+- Finalists pitch live Wed 28 Oct at Meridian, 13:50 [WEB /faq]. Judging Mon 13:30–14:45, closing 15:30–16:00 [WEB /schedule].
 
-- Builder track: **Scale** (assigned: "Your builder track is assigned"). Thematic: **Stellar Unlocked**
-  (saved on the team or submission page; changes follow the project editing window).
-- Team: Pedro Saragossy (captain), Leo Schlanger, Vhendala. Event: ONE16, Lisbon.
-- Hacking: Sun 25 Oct 09:00 → Mon 26 Oct 12:00 Lisbon, "No late submissions". Our own deadline:
-  Mon 10:00 (TRACK.md). Live pitch for finalists only, Wed 28 Oct at Meridian.
-- Prizes: US$30,000 across 6 winners, paid in XLM equivalent. "You own what you build."
+## Scale requirements [PDF p1-2, matches PASTE]
+1. Existing Stellar-based project at MVP, pilot or live stage on arrival: Radox, 3 contracts on mainnet (our fact).
+2. Clear execution scope for the new feature, integration, improvement or experiment.
+3. Substantive new work during the event, "clearly distinguished from existing functionality".
+4. Technical architecture for the new work, target users, value proposition, business or sustainability model, future goals, next steps.
+5. Pitch deck: problem, solution, target users, value proposition, team, future vision, business/sustainability model, market opportunity, go-to-market.
+- Scale is judged on milestones vs "goals set at pre-event intake", SCF eligibility, production readiness, ecosystem impact [WEB home, /build]; rubric weights: [[hackmeridian-rubric-7-criteria-weights-scored-50e2]].
 
-## Scale requirements
+## Code, AI, IP
+- Prior work: "Disclose prior work and show what you built during the event" [PDF p4]. Reusing an existing codebase if declared, and
+  "undisclosed prior work is a disqualification": [PASTE] only, not verified (not in PDF, FAQ or terms.html).
+- AI: "AI-assisted development is allowed", Claude Code named [WEB home, /faq]. A duty to say where AI generated code or assets: [PASTE] only, not verified. We declare it anyway.
+- IP: "You own what you build" [WEB home]. terms.html sec 06 (13 Aug 2026): you keep IP, subject to third-party and open-source licences;
+  Guava and event partners get a non-exclusive, worldwide, royalty-free licence to show and promote the submission, team name and description.
+  You warrant the work is original or properly licensed. [WEB /terms.html]
+- Conduct: no harassment, discrimination, illegal activity, cheating, plagiarism, disruption; organizers may remove violators [WEB /terms.html sec 05].
+  "Misrepresenting your work" is also named [WEB home].
 
-1. An existing Stellar-based project at MVP, pilot or live stage on arrival — Radox (3 contracts on mainnet).
-2. A clear execution scope for the new work — the intake text (STATE.md §2) + scope freeze in stage 2.
-3. Substantive new work during the event, **clearly distinguished from existing functionality**.
-4. Technical architecture for the new work, target users, value proposition, business or
-   sustainability model, future goals, next steps.
-5. Pitch deck covering: problem, solution, target users, value proposition, team, future vision,
-   business/sustainability model, market opportunity, go-to-market.
+## Prize
+- US$30,000 across 6 winners; amounts in USD "paid in the equivalent value of XLM" [WEB home]. FAQ: split across Genesis and Scale, breakdown announced before the event [WEB /faq].
+- Prizes non-transferable, generally not exchangeable for cash; winners pay taxes or fees; organizers may substitute a prize of equal or greater value; judging final [WEB /terms.html sec 07].
+- Prize, judging and travel rules are "set out in separate Event-specific rules" that are part of the Terms [WEB /terms.html sec 07]: the portal rules, not read.
+- KYC / payout identity checks: not stated on any page read. Not verified (home, /faq, /terms.html, PDF). Ask meridian@growwithguava.com.
 
-Submission package and what it means for us: SUBMISSION.md.
+## Eligibility
+- 18 or the local age of majority; acceptance discretionary, "review and verification" possible [WEB /terms.html sec 03]. Portal sign-up requires accepting a Code of Conduct and Liability Waiver [WEB portal login page].
+
+## Open items (not verified)
+- Does a Scale entry need a public repo for the platform that existed before? Not answered in any source read; PDF only says repo with "the project source code" and prior work disclosed. Plan stays: public repo with new work, prior work linked and disclosed. Ask an organizer at check-in.
+- Track conflict (Scale picks a thematic track: PDF yes, home page no). PDF is the portal's own text; check the portal team page that Stellar Unlocked is saved.
+- Portal rules text, KYC, exact disqualifier list, video and deck specs: see SUBMISSION.md.
