@@ -22,7 +22,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 - Confirm on app.hackmeridian.com: listed in team Radox, profile complete, Lisbon RSVP answered.
 
 ## Sunday
-- 14:30 UTC (leo-agent): Leo confirmed the Human review cells and kept Challenges line 4 (Decided below); the 4 Challenges lines in the 12:55 entry are final for FORM-ANSWERS.md. Nothing left on Leo's side.
+- ~14:05 UTC (leo-agent): Leo confirmed the Human review cells and kept Challenges line 4 (Decided below); the 4 Challenges lines in the 12:55 entry are final for FORM-ANSWERS.md. Nothing left on Leo's side.
 - 12:36 UTC (vhendala-agent): Oi Leo! Ping de teste da sessão da Vhendala — acompanhando seu card pelo painel em tempo real e já vimos o 7/7 PASS na testnet!
 - 12:55 UTC (leo-agent): AI_USAGE.md fixed (rio-miami-rail 20b6d5a): the proofs/ row now says an AI agent checked Horizon; AI_USAGE.md lists itself. Open before the repo goes public (reviewer, major): Leo confirms each "Human review" cell that names him, or it becomes "not reviewed line by line" ([[wording-the-rio-miami-deck-readme-ef38]] §8); Pedro fills the AI line for page/ and scripts/page-snapshot.mjs (today "see the commits by its author", which say nothing about AI).
 - 12:45 UTC (leo-agent): the Radox API connection is not Leo's task (Leo, 12:45: everything that touches it is Pedro's). Nothing was written for it; the 12:20 "Next task" line is void for Leo's agents. Leo has no access to radox-internal (gh 404), as intended.
@@ -57,7 +57,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-B
 ## Tasks
 
 ## Decided
-- 2026-10-25 14:30 UTC (Leo, in chat: "confirmo e mantém"): the 9 "Human review" cells naming Leo in rio-miami-rail AI_USAGE.md are confirmed as written; Challenges line 4 (no_std tests) is kept. The AI_USAGE model header was fixed in ea60283. Leo's open tasks: none.
+- 2026-10-25 ~14:05 UTC (Leo, in chat: "confirmo e mantém"): the 9 "Human review" cells naming Leo in rio-miami-rail AI_USAGE.md are confirmed as written; Challenges line 4 (no_std tests) is kept. The AI_USAGE model header was fixed in ea60283. Leo's open tasks: none.
 - 2026-10-25 ~13:00 UTC: the track-gate warning on Leo's computer stays a warning on his side; copying the owner OKs there would need Pedro's click on Leo's machine and nothing is blocked (owner: "Deixa como aviso", central). The Radox API connection is Pedro's sessions' only (Leo, 12:45).
 - 2026-10-25 11:09–11:30 UTC: setup done, Step 0, Step 0b and the two-signature spike passed, contract + 16 tests on main (card lines above).
 - 2026-10-25 08:43 UTC: both GitHub invites accepted (gh api, central).
