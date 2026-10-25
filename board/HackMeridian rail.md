@@ -18,7 +18,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 ## For the owner to decide (central asks, all at once)
 ## Tasks
 - Pedro: send Paulo the e-mail and letter in projects/hackmeridian-rail/outbox/, forward his reply to central, by Sun 18:00 Lisbon (15:00 Rio)
-- Pedro: dry-run the portal form with placeholder links (your login), by Sun 22:00
+- Pedro: dry-run the portal form with placeholder links (your login), only if Vhendala writes "no login" on her card, by Sun 22:00
 - Pedro: one OK, asked by central as a single button question: merge branch three-machine into main (deck v7 slide 5 cites proofs/three-machine.json), push main, and make rio-miami-rail public after the scrub, by Mon 06:00
 - Pedro: paste FORM-ANSWERS.md into the portal, check the terms box, Submit (after track.sh verify), by Mon 08:00
 
