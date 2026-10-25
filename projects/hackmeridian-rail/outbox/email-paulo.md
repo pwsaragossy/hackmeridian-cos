@@ -1,5 +1,5 @@
 Para: [e-mail do Paulo]
-Anexo: carta em inglês, sem timbre e sem assinatura
+Anexo: carta-participacao-radox-zis.docx (carta em inglês, sem timbre e sem assinatura)
 Assunto: ZIS em Lisboa: sua confirmação, se possível até hoje 15h (Rio)
 
 Paulo, tudo bem?
