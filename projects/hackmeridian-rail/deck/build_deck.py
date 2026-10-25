@@ -230,8 +230,8 @@ text(s, 1.0, 8.2, 18.0, 0.9, ["These numbers size the market problem. They are n
 # ---------- 4. The proposal: a public SWIFT-like standard, integrate once; open vs operated ----------
 s = content_slide(4, "THE PROPOSAL · A PUBLIC STANDARD", "A SWIFT-like standard: integrate once", "NEXT ▸ THE RAIL")
 text(s, 1.0, 3.35, 18.0, 1.2, [[("The goal is ", {"bold": True}),
-                                ("a public, SWIFT-like custody standard on Stellar: a port, airport, carrier, chamber of commerce or financier "
-                                 "would integrate once and reach every company that joins, corridor after corridor.", {})]], size=24, color=INK)
+                                ("a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, could use. ", {}),
+                                ("Neither the standard nor the rail exists yet.", {"bold": True})]], size=24, color=INK)
 
 
 def link(x1, y1, x2, y2, color, w=1.5):
@@ -264,7 +264,7 @@ for x, head, hc, items in cols:
     text(s, x, 5.15, 4.75, 3.0, [[("— ", {"color": hc}), (t_, {})] for t_ in items], size=21, after=8)
 hline(s, 1.0, 8.3, 18.0, LINE_C, 0.02)
 text(s, 1.0, 8.42, 18.0, 0.9, [
-    "Future tense: no standard, port, airport or chamber link exists yet (none confirmed). Each company would still need a key and one connection to the rail.",
+    "Each company would integrate once instead of pair by pair, but would still need a key and one connection. No port, airport or chamber link: none confirmed.",
     [("Radox is the rail, never the issuer. Regulation and licences stay with the client and its local counsel.", {"color": SEC_C})]],
     size=18, after=2)
 
