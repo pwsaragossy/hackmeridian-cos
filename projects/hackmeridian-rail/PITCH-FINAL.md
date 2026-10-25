@@ -30,7 +30,7 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 6. The proof, "The lifecycle ran on testnet": 7 hashes, 7 successful, 9 refused (simulated), 24 unit tests, verify-head MATCH; second shipment (proofs/three-machine.json), two team members signing from their own computers; all test keys.
 7. "Why Stellar: all signers, one call": multi-party auth, events plus head, token stays then burns; nearest neighbours, no SEP; Apache-2.0.
 8. "Built this weekend, on disclosed prior work": prior work, built here, AI attribution.
-9. "Vision: one rail, every corridor": now, next, planned, future; the ask (locked: the video 2:30 row quotes it).
+9. "One rail, every corridor": market figures from MARKET-NUMBERS.md section 4 (US$94.2B US–Brazil goods trade, US$6.1B Florida to Brazil, global line), labelled "figures, not ours"; the model, a subscription per connected institution plus a fee per shipment, after Swift's billing shape, with no prices; now and next; the ask (locked: the video 2:30 row quotes it).
 10. Team: Pedro Wakigawa Saragossy, Leo Schlanger, Vhendala; links; AI line.
 
 ## Pitch item (portal)
