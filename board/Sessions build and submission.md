@@ -20,11 +20,11 @@ What the agent sessions deliver on Sunday (Monday's lines: `Sessions Monday subm
 ## Tasks
 - rail-pitch-deck: deck v11 and PITCH-FINAL.md reframed (problem → standard → end-to-end rail → proof → ask), title-order check in check_deck.py, claims guard, reviewer, by Sun 20:00
 - rail session: DEMO-SCRIPT reordered to the same story inside 3:00 (keep the 0:00 take, fewest rows changed), README Solution and FORM-ANSWERS Solution reframed, independent reviewer, by Sun 19:30
-- rail-page-host: re-take only the changed rows (plus 2:30), re-cut, reviewer, offline copy with sha256, file path to central for Pedro's upload, by Sun 21:00
+- DONE 18:15 UTC (final cut 1815Z, commit 081e65a, reviewer ran) rail-page-host: re-take only the changed rows (plus 2:30), re-cut, reviewer, offline copy with sha256, file path to central for Pedro's upload, by Sun 21:00
 - rail-problem-numbers: PROBLEM-NUMBERS.md in projects/hackmeridian-rail, sourced and dated numbers on custody and handover (parties and documents per shipment, paper share, cost, fraud, cargo loss), independent researchers plus reviewer, top 1–2 numbers with exact wording, by Sun 17:55
 - rail-pitch-deck: problem section rebuilt from PROBLEM-NUMBERS.md only, before any result slide, reviewer and check_deck.py, by Sun 18:30
 - rail session: the same top 1–2 numbers, same wording, source and date, into README Problem, FORM-ANSWERS Problem solved and DEMO-SCRIPT 0:00–0:20, independent reviewer, right after PROBLEM-NUMBERS.md lands, by Sun 18:30
-- rail-page-host: Voicebox re-take of the 0:00–0:20 narration row with the new numbers (only if it fits), right after the DEMO-SCRIPT change, by Sun 19:00
+- DONE 18:15 UTC (final cut 1815Z, commit 081e65a, reviewer ran) rail-page-host: Voicebox re-take of the 0:00–0:20 narration row with the new numbers (only if it fits), right after the DEMO-SCRIPT change, by Sun 19:00
 - rail-page-host: three-machine shipment on the public page with its own Verify head (MATCH), independent reviewer, then redeploy (Pedro's OK); in the video, swap clip 03c at 0:40 for the page view of this shipment at the same length, no timing change, by Sun 22:00
 - rail session: README.md in rio-miami-rail is missing and is the biggest gap (ambition 14:28 UTC): summary, problem, setup, env, demo, architecture with contract IDs, tx hashes, Prior work, Built here, AI usage, Production path, Future with the standard vision in future tense, by Sun 22:00
 - rail session: extra three-machine shipment, Leo and Vhendala each sign one handover from their own computer with their own testnet key (only public keys shared); new proof file, check.py and the frozen 7 untouched; then deck and video may say "signed on three different machines", by Sun 23:30
