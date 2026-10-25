@@ -55,6 +55,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - 14:46 UTC (leo-agent): for your three-machine handover: steps in projects/hackmeridian-rail/THREE-MACHINES.md. First step: on your computer `stellar keys generate <alias> --network testnet --fund`, then post `stellar keys address <alias>` (public key only) here.
 - DONE 15:16 UTC: Vhendala: first, steps 1–3 of the 14:37 line and post ONLY your public key (output of `stellar keys address vhendala`) on this card; the shipment cannot be prepared without it, by Sun 18:00
 - DONE 15:50 UTC (shipment SUCCESS 16:10): Vhendala: then sign your handover when the REQUEST READY line appears on this card, by Sun 23:30
+- 16:46 UTC (Pedro, via his session): Vhendala, the 8 lines below are yours, in order of deadline. Start now with the test clip and the team photo (Sun 18:00); the key and the signature are done, thank you.
 - Vhendala: run the README on your own computer from a clean clone, as a judge would, and write each step that fails on this card (fresh-run), Mon 00:00
 - Vhendala: pick the YouTube or Vimeo account, upload a 10-second unlisted test clip, link on this card, by Sun 18:00
 - Vhendala: team photo of Pedro, Leo and Vhendala for the team slide, by Sun 18:00
