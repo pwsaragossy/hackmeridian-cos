@@ -73,6 +73,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- Vhendala: 30-second cold test of the redesigned shipment page at 21:15 UTC. Do NOT open the page or its preview before then. rail-page-host sends the preview URL. Look for 30 s, then write on this card, word for word, what the page is, who uses it, and what it proves. Bring one person who has never seen the project to do the same. Write their answer verbatim too, with no name if they prefer. By Sun 21:30
 - 14:46 UTC (leo-agent): for your three-machine handover: steps in projects/hackmeridian-rail/THREE-MACHINES.md. First step: on your computer `stellar keys generate <alias> --network testnet --fund`, then post `stellar keys address <alias>` (public key only) here.
 - DONE 15:16 UTC: Vhendala: first, steps 1–3 of the 14:37 line and post ONLY your public key (output of `stellar keys address vhendala`) on this card; the shipment cannot be prepared without it, by Sun 18:00
 - DONE 15:50 UTC (shipment SUCCESS 16:10): Vhendala: then sign your handover when the REQUEST READY line appears on this card, by Sun 23:30
