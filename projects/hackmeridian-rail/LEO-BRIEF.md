@@ -27,7 +27,7 @@ Done = the 4 checks at the bottom pass, with testnet hashes.
    The burn stays in its `redeem`. Its compiled code is already on testnet (wasm hash
    `3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1`, checked 2026-10-25), so the
    harness **deploys its own instance** from that hash with test keys
-   (`stellar contract deploy --wasm-hash 3870748b… -- --config '{"admin":"<G>","operator":"<G>"}'`) —
+   (`stellar contract deploy --wasm-hash 3870748b709f7b8531c7ebbbc975712333f61949831350ff7192f7076fc6bff1 --source exporter --network testnet -- --config '{"admin":"<G of exporter>","operator":"<G of rail operator>"}'`) —
    no Radox key, no Radox source. Read its interface with
    `stellar contract info interface --wasm-hash 3870748b… --network testnet`. Never use the Radox
    instance `CAF4JIUZ…SFC7`. In production the intended policy (not enforced on-chain) is that the Radox backend co-signs `redeem` only after the registry
@@ -115,9 +115,14 @@ not open, duplicate key, unknown source, paused, frozen).
 Why `head`: RPC `getEvents` keeps only ~7 days, so events are not the history source. The history is
 the arguments of the shipment's own transactions, read from **Horizon**
 (`GET https://horizon-testnet.stellar.org/transactions/<hash>/operations`: the `invoke_host_function`
-record carries `function` and `parameters`, each a base64 `ScVal`), for the hashes listed in
+record's `parameters` is expected to be [contract address, function-name Symbol, arg0, arg1, …],
+each `{type, value}` with `value` a base64 `ScVal` (`xdr.ScVal.fromXDR(value, "base64")`), so the
+function name is `parameters[1]`, not `function`; Step 0 point 5 confirms this layout), for the hashes listed in
 `proofs/lifecycle.json` (`open` + the 4 `handover`, plus a top-level `"attest": [{ "hash": "…" }]`
-if any attest ran). `verify-head.mjs` and the public page read the **same** list from the **same**
+if any attest ran). The verifier fetches every listed hash (`/transactions/<hash>` gives `ledger`,
+`application_order`, `successful`), keeps only `successful: true`, sorts by (`ledger`,
+`application_order`) and replays in that order, `seq` 0 at `open` and +1 per `handover`.
+`verify-head.mjs` and the public page read the **same** list from the **same**
 Horizon endpoint, recompute `head` with the layout above, and compare with the on-chain `head(key)`
 (simulated read). SDF's public Horizon keeps one year of history; the next testnet reset
 (scheduled 2026-12-16, [[stellar-testnet-resets-wipe-contracts-and-dfe4]]) wipes it anyway, and the
@@ -135,11 +140,12 @@ Prove it in a throwaway folder **outside** the repo (so the repo's first commit 
 1. `stellar --version` → 28.1.0; `rustup target add wasm32v1-none`.
 2. `stellar contract init /tmp/hello-spike`; in its `contracts/hello-world/Cargo.toml` (and the workspace
    `Cargo.toml`) set `soroban-sdk = "29.0.1"`; `stellar contract build`.
-3. `stellar keys generate spike --network testnet --fund`; `stellar contract deploy --wasm <the .wasm>
-   --source spike --network testnet` → contract ID.
+3. `stellar keys generate spike --network testnet --fund`; `stellar contract deploy --wasm target/wasm32v1-none/release/hello_world.wasm
+   --source spike --network testnet` → contract ID (`ls target/wasm32v1-none/release/*.wasm` if the name differs).
 4. `stellar contract invoke --id <C…> --source spike --network testnet -- hello --to spike` → tx hash.
 5. `curl -s https://horizon-testnet.stellar.org/transactions/<hash>/operations` shows `parameters`
-   (this is the history source for verify-head and the page).
+   (this is the history source for verify-head and the page): print the array and confirm
+   `parameters[1]` is the function name and the args follow; if not, write the real layout on the card.
 
 Pass = all five ran; write CLI version, sdk version and the tx hash as one line on the card. Fail at
 any step = one card line with the exact error before building anything else (fallbacks: build with
@@ -156,13 +162,15 @@ The interface read at 2026-10-25 08:50 UTC (`stellar contract info interface --w
   `seller` = exporter, `settlement` = exporter, `payment_asset` = the native XLM SAC
   (`stellar contract id asset --asset native --network testnet`).
 - `mint(token, to, amount)`, `deliver(token, to, amount)`, `redeem(token, holder, amount, ref_id: u64)`.
-- `hand_over_sac(token, new_admin)`: moves the SAC admin **away** from the agent (the exit path). It is
-  **not** how the agent gets control. For `redeem` to burn, the issuer calls the SAC's own
+- `hand_over_sac(token, new_admin)`: by its name and signature it moves the SAC admin **away** from the
+  agent (the exit path; inference, the spike confirms). It is **not** how the agent gets control. For `redeem` to burn, the issuer calls the SAC's own
   `set_admin(<transfer_agent instance>)` in setup; `hand_over_sac` is not used in the demo.
 
 Not in the interface, so the spike decides it: who must sign each call (admin, operator, seller,
 holder) and whether `register_token` needs the agent to already be SAC admin. Method: on a throwaway
-asset, run setup → `set_admin` → `register_token` → `mint` 1 → `deliver` 1 → `redeem` 1, each with a
+asset, run setup → `set_admin` → `register_token` → `mint` → `deliver` → `redeem`, all with the same
+raw amount `AMOUNT = 10000000` (i128; 1.0000000 of a 7-decimal SAC) and `ref_id = 1` (u64), so the
+holder's `balance` reads 0 after `redeem`; each call with a
 **simulation first** (`--send=no`, or js-stellar-sdk `simulateTransaction`) and record the auth
 entries it asks for. Write the result as one card line ("register_token auth: …; redeem auth: …;
 set_admin before register_token: yes/no") and keep the script as the harness's setup. If `redeem`
@@ -178,7 +186,12 @@ clawback was on) and the redeem fallback goes back to the card for Pedro's sessi
    the test accounts (issuer, agent admin, operator, seller, holder, warehouse, port, carrier, customs,
    recipient); issuer flags `auth_required` + `auth_revocable` + `auth_clawback_enabled` **before any
    trustline** (a trustline created before clawback is on makes `redeem` fail with `SAC #10` — this cost
-   Radox a ceremony once); trustlines of seller and holder; deploy the asset's SAC; issuer `set_admin`
+   Radox a ceremony once: `stellar tx new set-options --set-required --set-revocable --set-clawback-enabled`);
+   trustlines of seller and holder (`stellar tx new change-trust`), then **authorise** both (with
+   `auth_required` a new trustline cannot receive `mint`/`deliver`): either the issuer's
+   `stellar tx new set-trustline-flags --set-authorize` before `set_admin`, or
+   `transfer_agent.set_authorized(token, addr, true)` after it — Step 0b records which one works;
+   deploy the asset's SAC (`stellar contract asset deploy`); issuer `set_admin`
    → the harness's own `transfer_agent` instance; `register_token`; `mint` to the seller; `transfer_agent.deliver` (sends the minted token to the holder; not the registry's `deliver`). **Lifecycle** (the 7 that count): `open` → 4 `handover` (route warehouse → port → carrier
    → customs → recipient) → `deliver` → `transfer_agent.redeem(token, holder, amount, ref_id)` with
    operator + holder auth, burning the token. Write every hash to `proofs/lifecycle.json`. Also the failure branches: wrong signer, out-of-route, after freeze,
