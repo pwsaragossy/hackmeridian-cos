@@ -40,6 +40,7 @@ The `ask-guard` hook enforces this outside `central/`.
   `~/hackmeridian/projects/<project>`), reads its result and brings questions and results back
   here. The owner is never sent to another session.
 - A paused project is listed, never offered as work.
+- **Parallel, short turns** (pedro, 2026-10-25, through the plugin session; confirmed by pedro in central): central starts or messages each project's session itself (cwd `~/hackmeridian/projects/<slug>`, `permission_mode: "auto"`) and runs independent projects, and independent pieces of one project, in parallel sessions at the same time. Central's own turn stays short: it briefs, reads results and asks pedro; it does not do the work itself, and it never sends pedro to another session.
 
 ## How pedro works with central (pedro's own words, 2026-10-25)
 
