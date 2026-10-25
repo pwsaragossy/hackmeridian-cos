@@ -190,11 +190,11 @@ text(s, 17.13, 6.42, 2.0, 0.4, ["MIAMI"], size=18, font=MONO, bold=True, color=S
 # ---------- 2-3. Problem, in numbers: only rows of PROBLEM-NUMBERS.md (verified 2026-10-25), wording kept ----------
 # (big number, what it measures, source line). check_deck fails on any {{ placeholder.
 P_HANDS = [("45M", "ocean bills of lading issued a year", "DCSA, Feb 2023 (2021 data)"),  # PROBLEM-NUMBERS.md row 1, [[dcsa-45-million-bills-of-lading-1af2]]
-           ("~11%", "of them electronic in 2025", "DCSA, figure as of 2025"),  # row 2
-           ("22%", "of global cargo thefts in 2025 involved insiders", "TT Club & BSI Cargo Theft Report, Apr 2026")]  # row 3, [[tt-club-bsi-2025-cargo-theft-12f4]]
-P_COST = [("R$900M", "est. direct loss, 8,570 cargo thefts in Brazil, 2025", "NTC&Logística survey, 28 Mar 2026"),  # row 7
+           ("~11%", "of bills of lading issued electronically, 2025", "DCSA, as of 2025 (Jan 2025 guide: 5.7%)"),  # row 2
+           ("22%", "of recorded cargo thefts in 2025 involved insiders", "TT Club & BSI Cargo Theft Report, Apr 2026")]  # row 3, [[tt-club-bsi-2025-cargo-theft-12f4]]
+P_COST = [("R$900M", "est. direct loss, 8,570 cargo robberies in Brazil, 2025", "NTC&Logística survey, 28 Mar 2026"),  # row 7
           ("US$85M", "HSBC's loss on forged documents for oil trades that never happened", "Hin Leong case, Global Trade Review, 18 Nov 2024"),  # row 5
-          ("US$2.5T", "global trade finance gap", "ADB Global Trade Finance Gap Survey, Dec 2025")]  # [[adb-trade-finance-gap-survey-dec-d033]]
+          ("US$2.5T", "global trade finance gap (market size only)", "ADB survey of banks, Dec 2025")]  # [[adb-trade-finance-gap-survey-dec-d033]]
 
 
 def stats(s, items, y, step=6.1, w=5.6):
@@ -217,11 +217,11 @@ for i, name in enumerate(stops):
 stats(s, P_HANDS, 4.85)
 text(s, 1.0, 8.6, 18.0, 0.9, [BRIDGE], size=18, color=SEC_C)
 
-s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. Banks get fooled.", "NEXT ▸ THE SOLUTION")
+s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. A bank got fooled.", "NEXT ▸ THE SOLUTION")
 text(s, 1.0, 3.4, 18.0, 0.9, [[("Our hypothesis: ", {"bold": True, "color": LIME_C}),
                                ("a financier cannot see who holds the goods before paying. No customer has confirmed it yet.", {})]], size=24)
 stats(s, P_COST, 4.6)
-text(s, 1.0, 8.2, 18.0, 0.9, ["These numbers size the problem in the market, not results of ours. This build does not solve all of it."],
+text(s, 1.0, 8.2, 18.0, 0.9, ["These numbers size the market problem. They are not results of ours, and we do not claim our build prevents any of it."],
      size=20, color=SEC_C)
 
 # ---------- 3. Solution ----------
