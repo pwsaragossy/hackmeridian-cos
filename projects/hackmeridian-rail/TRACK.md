@@ -5,7 +5,7 @@ delivery: 4
 stale_hours: 3
 owner_wait_minutes: 20
 deadline: 2026-10-26 10:00 +0000
-target: 7 lifecycle transactions SUCCESS on Stellar testnet (open, 4 dual-signed handovers, deliver, redeem)
+target: a judge, logged out, opens the public repo, the site, the live testnet API and its docs, the video and the deck from the form (7 gates in check.py)
 check: python3 check.py
 baseline: 22
 baseline_delivery: 4
@@ -40,7 +40,8 @@ Gate: the demo runs without live dependencies, a recorded backup exists, and the
 - [ ] review-3 | Independent review of stage 3: verdict and fixes | card: reviewer | needs: demo-script, demo-offline, fresh-run, pitch, deck | evidence:
 ## Stage 4: Submission
 Gate: the submission is sent before the deadline, confirmed, and every link opens from a logged-out browser.
+- [ ] api | Public testnet API live: GET /api/shipments/<key> answers JSON read from the registry, /docs page with parameters and examples, request access, mainnet enabled in code but not deployed | card: engineer | needs: fresh-run | evidence:
 - [ ] repo | Repository with README (what it does, how to run, team, licence), no secrets, set to the visibility the rules require | card: engineer | needs: fresh-run, secrets | evidence:
-- [ ] package | Every item in the submission requirements prepared: video, deck, description, links, team details | card: product | needs: submission-reqs, deck, demo-offline, repo | evidence:
+- [ ] package | Every item in the submission requirements prepared: video, deck, description, links, team details | card: product | needs: submission-reqs, deck, demo-offline, repo, api | evidence:
 - [ ] review-4 | Independent review before sending: submission checklist walked item by item against the rules, every link opened in a logged-out browser, verdict and fixes | card: reviewer | needs: repo, package | evidence:
 - [ ] submit | Submission sent at least 2 hours before the deadline (default, adjust to the case) and the confirmation saved | card: product | needs: review-4 | owner: ok | evidence:
