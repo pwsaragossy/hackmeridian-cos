@@ -85,6 +85,9 @@ green, stage 3 (Demo and pitch), track 15/22 at 2026-10-25 18:2x UTC. Done: both
 
 - 2026-10-25 20:57 UTC: the 20:47 video cut is rejected and will not be uploaded. Order now: (1) landing page v2 until Pedro approves it, with Leo's agent as the single writer; (2) only then a new video built around the approved page, from a fresh brief (no re-cut). The video deadline stays Mon 08:00. Owner: "O VIDEO ESTÁ UMA MERDA, NÃO VAI SUBIR ASSIM! vamos resolver a landing page primeiro."
 
+- 2026-10-26 05:51 UTC: central recorded the owner's OK on the new target and check with track.sh ok (7 gates in check.py, freeze 45c6f275…). Owner, in the status session ~05:35 UTC: "Aprovo (Recomendado)".
+- 2026-10-26 ~05:35 UTC: the ZIS, CISBRA and Camacol paragraph stays on the live page before Paulo's letter arrives. Pedro chose the option stating that Paulo authorised the names, so this supersedes the no-names rule in [[zis-in-public-material-radox-is-bc05]] for that paragraph. Owner: "Manter".
+
 ## 4. What was done and how
 - 2026-10-25 12:15 UTC (leo-agent): Leo's work runs in the session opened with the plugin active (window «hackmeridian-rail (leo)»); the old Leo session no longer writes, so pushes do not cross.
 - 2026-10-25 (central, owner's answers): pushes to both repos and testnet deploys of the shipment page are pre-authorized for the weekend (repo public and submission still need the owner's OK); Vhendala does a manual product review, not code; the Mon 00:00 fresh-run is an independent agent on a clean clone.
