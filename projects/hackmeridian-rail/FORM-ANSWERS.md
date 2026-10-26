@@ -112,10 +112,10 @@ Blocker: the video is on hold by Pedro ("Vídeo ainda não"). Required field; th
 ## Deck file (required, PDF/PPTX/PPT/HTML up to 20 MiB)
 
 ```text
-{{UPLOAD: deck/yc/radox-custody-rail-yc.pdf}}
+{{UPLOAD: deck/radox-custody-rail.pdf}}
 ```
 
-Waits on Pedro's OK for the YC-style deck (deck-yc session, commit 4804ded). Checked 26 Oct: 407,709 bytes (0.39 MiB, under 20 MiB), 10 pages; cover "Radox Custody Rail", "SWIFT for goods in transit, on Stellar", "Every handover signed by both companies, checkable by anyone. Running on Stellar testnet." If Pedro keeps the earlier deck: deck/radox-custody-rail.pdf (760,710 bytes, 10 pages, cover matches). In that case the AI tooling note goes back to "python-pptx scripts, written by Claude Code, for the deck" (1009 chars).
+Pedro's choice: deck v14 (central, 26 Oct). Checked: 792,698 bytes (0.76 MiB, under 20 MiB), 11 pages, built 07:00 UTC; cover "Radox Custody Rail", "SWIFT for goods in transit, on Stellar". Built by build_deck.py (python-pptx, converted to PDF with LibreOffice).
 
 ## Thematic track (optional, pick one)
 
@@ -137,10 +137,10 @@ Stellar testnet, Soroban, Rust, soroban-sdk 29.0.1, wasm32v1-none, Cargo, Stella
 Before HackMeridian (2026-10-25 09:00 UTC) we built Radox, a platform for tokenized real-world assets. Its three Soroban contracts (token_sale, yield_distributor, maturity_settlement) run on Stellar mainnet since June-July 2026; their source is public, contracts only, at https://github.com/pwsaragossy/radox since 2026-08-19 (the published token_sale is a newer version, v8, than the deployed v7; the other two match). That repo carries its own, different licence. The Radox backend is closed and not published. The cargo token is registered, minted and delivered to the holder in setup, and burned in our redeem transaction with `redeem(token, from, amount, ref_id)`, through an instance of Radox's existing transfer_agent contract (`CAYD3EFT…SJWH`), deployed on testnet from its existing wasm; its source is closed and we did not write it at the event. A read-only Radox API endpoint, `GET /api/custody/shipments/:key`, which calls this registry's `get(key)`, was written during the event, on a private branch of the closed Radox backend (2026-10-25); it is not part of this repo and its source is not published. Nothing from the public Radox repo was copied into this repo. Before the event we also wrote design notes (2026-10-20, no code) and planning documents (2026-10-24 and 25), and chief-of-staff, a Claude Code plugin we use for planning and review (first commit 2026-10-22). The GitHub repository was created empty on 2026-10-24 22:49 UTC; the first commit is at 2026-10-25 09:00:17 UTC.
 ```
 
-## AI tooling note (optional; 1045 chars)
+## AI tooling note (optional; 1009 chars)
 
 ```text
-Tools: Claude Code (Anthropic's coding agent) mainly with Claude Opus 5.5 (`claude-opus-5-5`), and Claude Sonnet 5.5 for some review subagents; chief-of-staff, a Claude Code plugin we wrote before the event (declared as prior work); Voicebox 0.5.0 (Qwen3-TTS 1.7B via mlx-audio), run locally on Pedro's Mac, for the video narration ("Narration: AI voice generated from Pedro's voice"); Playwright for the screen recordings; deck build scripts written by Claude Code (an HTML deck rendered to PDF with headless Chrome); Raven, a Stellar documentation gateway, for Stellar lookups. What they did: Claude Code agents wrote the Soroban contract, unit tests, testnet harness, verification scripts, shipment page, documentation, the deck and its build script, and separate AI reviewer agents checked the contract, the scripts and every public text. A human developer reviewed the contract's functions, auth checks and error codes, the dependency pin and the signing logic. AI_USAGE.md in the repo lists every file, how it was made and who reviewed it.
+Tools: Claude Code (Anthropic's coding agent) mainly with Claude Opus 5.5 (`claude-opus-5-5`), and Claude Sonnet 5.5 for some review subagents; chief-of-staff, a Claude Code plugin we wrote before the event (declared as prior work); Voicebox 0.5.0 (Qwen3-TTS 1.7B via mlx-audio), run locally on Pedro's Mac, for the video narration ("Narration: AI voice generated from Pedro's voice"); Playwright for the screen recordings; python-pptx scripts, written by Claude Code, for the deck; Raven, a Stellar documentation gateway, for Stellar lookups. What they did: Claude Code agents wrote the Soroban contract, unit tests, testnet harness, verification scripts, shipment page, documentation, the deck and its build script, and separate AI reviewer agents checked the contract, the scripts and every public text. A human developer reviewed the contract's functions, auth checks and error codes, the dependency pin and the signing logic. AI_USAGE.md in the repo lists every file, how it was made and who reviewed it.
 ```
 
 ## Accepted terms (required)
