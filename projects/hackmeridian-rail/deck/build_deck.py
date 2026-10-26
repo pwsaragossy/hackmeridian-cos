@@ -173,10 +173,11 @@ set_run_text(find(s, "100"), "#HackMeridian26", LIME)
 for k in ("95", "96", "97"):
     find(s, k).fill.fore_color.rgb = rgb(LIME)
 text(s, 1.0, 2.55, 12.5, 1.5, ["Radox Custody Rail"], size=100, font=TITLE, bold=True, color=LIME, spacing=0.95)
-text(s, 1.0, 4.15, 12.3, 1.6, ["One record for the goods, from origin to delivery, that every company along the way will share."],
-     size=36, font=TITLE, bold=True, color=TEXT_D, spacing=1.0)
-text(s, 1.0, 5.95, 12.5, 0.5, ["Toward a SWIFT-like standard on Stellar  ·  Pilot corridor: Rio–Miami"],
-     size=24, color=SEC_D)
+# Submission title and tagline, owner-approved 2026-10-26 ~01:30 UTC (README ec97106, FORM-ANSWERS.md).
+text(s, 1.0, 4.15, 12.3, 0.9, ["SWIFT for goods in transit, on Stellar"], size=44, font=TITLE, bold=True, color=TEXT_D, spacing=1.0)
+text(s, 1.0, 5.25, 12.3, 1.2, ["One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone."],
+     size=26, color=TEXT_D)
+text(s, 1.0, 6.65, 12.5, 0.5, ["Pilot corridor: Rio–Miami"], size=24, color=SEC_D)
 s.shapes.add_picture(SHOT("qr-page-dark.png"), Inches(15.75), Inches(1.75), Inches(2.6), Inches(2.6))
 text(s, 14.3, 4.5, 5.5, 0.9, ["Scan: the live shipment", [("rio-miami-rail.vercel.app", {"font": MONO, "color": LIME, "size": 18})]],
      size=20, color=TEXT_D, align=PP_ALIGN.CENTER, after=2)
@@ -192,8 +193,8 @@ P_HANDS = [("45M", "ocean bills of lading issued a year", "DCSA, Feb 2023"),  # 
            ("~11%", "of bills of lading issued electronically, 2025", "DCSA, as of 2025"),  # row 2
            ("22%", "of recorded cargo thefts in 2025 involved insiders", "TT Club & BSI Cargo Theft Report, Apr 2026")]  # row 3, [[tt-club-bsi-2025-cargo-theft-12f4]]
 P_COST = [("R$900M", "est. direct loss, 8,570 cargo robberies in Brazil, 2025", "NTC&Logística survey, 28 Mar 2026"),  # row 7
-          ("US$85M", "HSBC's loss on forged documents for oil trades that never happened", "Hin Leong case, Global Trade Review, 18 Nov 2024"),  # row 5
-          ("US$2.5T", "global trade finance gap (market size)", "ADB survey of banks, Dec 2025")]  # [[adb-trade-finance-gap-survey-dec-d033]]
+          ("80–90%", "of world trade relies on trade finance", "WTO (undated page)"),  # Hin Leong cut: forgery by a signer is not stopped by dual signing (submission reviewer, 2026-10-26)
+          ("US$2.5T", "global trade finance gap, unchanged from 2023", "ADB Global Trade Finance Gap Survey, Dec 2025")]  # [[adb-trade-finance-gap-survey-dec-d033]]
 
 
 def stats(s, items, y, step=6.1, w=5.6):
@@ -223,7 +224,7 @@ text(s, 1.0, 8.5, 18.0, 1.2, [
       "IMO guidance plans for legacy systems with proprietary formats (FAL.5/Circ.54, 2024).", {})],
     BRIDGE], size=18, color=SEC_C, after=4)
 
-s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. A bank got fooled.", "NEXT ▸ THE STANDARD")
+s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. Finance runs blind.", "NEXT ▸ THE STANDARD")
 text(s, 1.0, 3.4, 18.0, 0.9, [[("The gap: ", {"bold": True, "color": LIME_C}),
                                ("a financier cannot see who holds the goods before paying.", {})]], size=24)
 stats(s, P_COST, 4.6)
