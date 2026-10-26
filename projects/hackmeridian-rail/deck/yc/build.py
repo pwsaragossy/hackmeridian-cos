@@ -1,7 +1,7 @@
 """Build deck/yc/radox-custody-rail-yc.pdf: minimalist deck, YC design rules ([[yc-pitch-deck-design-rules-kevin-bd35]]).
 
 Run: python3 deck/yc/build.py [--png]   (needs Google Chrome; --png also needs pdftoppm)
-One idea per slide, the headline is the line a judge repeats. Radox Signal tokens only (LANDING-V2-BRIEF.md "Design").
+Opens with three lost-cargo cases, then the cover. One idea per slide, the headline is the line a judge repeats. Radox Signal tokens only (LANDING-V2-BRIEF.md "Design").
 Every number on a slide is traced in check.py (TRACE). Story and title follow FORM-ANSWERS.md.
 """
 import os
@@ -105,6 +105,10 @@ h1 { font-size:84px; line-height:1.06; font-weight:700; letter-spacing:-.025em; 
 .team p { font-size:30px; line-height:1.4; color:var(--soft); }
 svg text { font-family:'Inter', sans-serif; }
 .ic { margin-bottom:24px; line-height:0; }
+/* opening cases: one lost shipment per slide, the number first */
+.case .big { font-size:200px; font-weight:700; letter-spacing:-.04em; line-height:1; color:var(--lime); margin-bottom:48px; }
+.case h1 { font-size:76px; max-width:1560px; }
+.case .lead { font-size:44px; color:var(--fg); margin-top:48px; }
 .ph { width:240px; height:240px; border-radius:50%; object-fit:cover; border:2px solid var(--border-h); margin-bottom:32px; display:block; }
 """
 
@@ -119,7 +123,23 @@ def route(problem):
 
 
 SLIDES = [
-    # 1 cover
+    # 1-3 opening cases (owner's order 2026-10-26): lost cargo, then who held it. Sources: [[three-lost-cargo-cases-for-the-cfc4]].
+    """<div class="kicker">October 2026 · Guarulhos airport, São Paulo</div>
+    <div class="grow case"><div class="big">R$2.5M</div>
+      <h1>Two pallets of RTX 5090s arrived at the airport. Inside, they vanished.</h1>
+      <p class="lead">Nobody has shown who last held them.</p></div>
+    <div class="src">Canaltech, 19 Oct 2026, from the importer's account (Oderço). Cause unknown; theft not confirmed.</div>""",
+    """<div class="kicker">April 2023 · Toronto Pearson airport</div>
+    <div class="grow case"><div class="big">C$20M</div>
+      <h1>Gold left an airline cargo warehouse 40 minutes after it arrived, on a fake waybill.</h1>
+      <p class="lead">Brink's sued the airline. The court capped what the airline owed at about C$18,500.</p></div>
+    <div class="src">CP24: 11 Oct 2023; court ruling Jan 2025 (Montreal Convention limit, value not declared); settled Aug 2026, amount undisclosed. Fake waybill: Peel police, April 2024.</div>""",
+    """<div class="kicker">Court ruling, September 2025 · UAE to India</div>
+    <div class="grow case"><div class="big">49.9 t</div>
+      <h1>A copper shipment vanished on the way from the UAE to India.</h1>
+      <p class="lead">One transporter said its leg had ended. The other said nothing proved the copper was loaded. A court had to decide.</p></div>
+    <div class="src">Khaleej Times, 27 Sep 2025. Dubai courts held all defendants jointly liable.</div>""",
+    # 4 cover
     """<div class="grow">
       <div class="kicker">HackMeridian 2026 · Scale track</div>
       <h1 style="font-size:150px;letter-spacing:-.035em">Radox Custody Rail</h1>
@@ -127,42 +147,41 @@ SLIDES = [
       <p class="lead" style="font-size:36px">Every handover signed by both companies, checkable by anyone.</p>
     </div>
     <div class="src">Running on Stellar testnet.</div>""",
-    # 2 problem
+    # 5 problem
     f"""<div class="kicker">Problem</div>
-    <h1>One container, five parties, five separate records.</h1>
+    <h1>The owner of the goods is partly blind the whole way.</h1>
     <div class="grow">{route(True)}
-      <div class="recs">{''.join('<div>own record</div>' for _ in ROUTE)}</div>
-      <p class="lead" style="margin-top:64px">None of them can check what the others say about who held the goods.</p>
+      <p class="lead" style="margin-top:64px">Each company keeps its own record. When cargo goes missing, no one can show who held it last.</p>
       <p class="lead" style="font-size:32px;margin-top:40px">Why now: ICC set digital standards for all 36 key trade documents (2024); about US$4B of real-world assets is tokenized on Stellar (SDF, Sep 2026). The custody record is missing.</p>
     </div>""",
-    # 3 solution
+    # 6 solution
     f"""<div class="kicker">Solution</div>
     <h1>One shared record. Both companies sign every handover.</h1>
     <div class="grow">{route(False)}
       <div class="three">
         <div><b>Both sign</b><p>The company giving the goods and the one receiving them both sign.</p></div>
         <div><b>Nobody rewrites</b><p>Each step is chained to the one before, so no one can rewrite history.</p></div>
-        <div><b>Anyone checks</b><p>A buyer, insurer or lender checks the whole history against one public 32-byte value.</p></div>
+        <div><b>Anyone checks</b><p>The owner, a buyer, insurer or lender checks the whole history against one public 32-byte value.</p></div>
       </div>
     </div>""",
-    # 4 target users
+    # 7 target users
     f"""<div class="kicker">Target users</div>
-    <h1>The companies that hand over goods, and the ones that pay on them.</h1>
+    <h1>The companies that hand over goods, and the ones that own or pay on them.</h1>
     <div class="grow"><div class="cols">
       <div class="col">{ic("pen-line")}<h2>They sign</h2><p>Warehouses, ports, carriers, customs, buyers</p></div>
-      <div class="col">{ic("search-check", True)}<h2>They check</h2><p class="lime">Buyers, insurers, lenders</p></div>
+      <div class="col">{ic("search-check", True)}<h2>They check</h2><p class="lime">Owners, buyers, insurers, lenders</p></div>
     </div>
     <p class="lead" style="margin-top:72px">First corridor: US–Brazil. Later, any Stellar issuer of a tokenized good, through the open spec.</p></div>""",
-    # 5 value proposition
+    # 8 value proposition
     f"""<div class="kicker">Value proposition</div>
-    <h1>Every handover becomes proof that lenders can check.</h1>
+    <h1>Every handover becomes proof the owner and lenders can check.</h1>
     <div class="grow"><div class="three big" style="margin-top:0">
-        <div>{ic("landmark", True)}<b class="lime">Lenders see the proof</b><p>Lenders and insurers will see which company last signed for the goods before paying.</p></div>
+        <div>{ic("landmark", True)}<b class="lime">Owners see the proof</b><p>Owners, lenders and insurers will see which company last signed for the goods before paying.</p></div>
         <div>{ic("handshake")}<b>Companies prove their leg</b><p>Your handover carries the receiver's signature, so you can show you passed the goods.</p></div>
         <div>{ic("link")}<b>Cargo token, linked record</b><p>Each cargo token links to one shipment record of signed handovers.</p></div>
     </div></div>
     <div class="src">Proof on Stellar testnet.</div>""",
-    # 6 proof
+    # 9 proof
     f"""<div class="kicker">Proof</div>
     <h1>Live on Stellar testnet. Check every handover yourself.</h1>
     <div class="grow"><div class="stats" style="grid-template-columns:repeat(3,1fr)">
@@ -173,7 +192,7 @@ SLIDES = [
     <p class="lead" style="margin-top:56px;font-size:34px">Second shipment: two teammates signed handovers on their own computers.</p>
     <p class="lead" style="margin-top:20px;font-size:34px">Local mainnet-state dry run, nothing sent: 15 transactions applied, 9 refusals rejected, 13.72 XLM gross simulated fees.</p></div>
     <div class="src"><a href="https://stellar.expert/explorer/testnet/contract/{CONTRACT}" style="text-decoration:none"><span class="mono">custody_registry {CONTRACT} · testnet · stellar.expert</span></a></div>""",
-    # 7 market
+    # 10 market
     f"""<div class="kicker">Market opportunity</div>
     <h1>45 million ocean bills of lading a year. Each one a chain of handovers.</h1>
     <div class="grow"><div class="nums">
@@ -182,7 +201,7 @@ SLIDES = [
       <div class="num">{ic("banknote")}<div class="n">US$2.5T</div><div class="l">global trade finance gap</div><div class="s">ADB, Dec 2025</div></div>
     </div></div>
     <div class="src">Illustration: 45M × 4 handovers; the 4 is our design assumption.</div>""",
-    # 8 business model
+    # 11 business model
     f"""<div class="kicker">Business model</div>
     <h1>Companies on the route subscribe, and pay per shipment.</h1>
     <div class="grow"><div class="cols tight" style="grid-template-columns:repeat(3,1fr);gap:64px">
@@ -192,7 +211,7 @@ SLIDES = [
     </div>
     <p class="lead" style="margin-top:44px">Every handover has two signers, so each shipment brings in the next company on the route.</p></div>
     <div class="src">Same shape as Swift's published fees: entry, annual, per-message usage (swift.com, accessed 25 Oct 2026). Radox is not affiliated with Swift.</div>""",
-    # 9 go-to-market and vision
+    # 12 go-to-market and vision
     f"""<div class="kicker">Go-to-market and vision</div>
     <h1>One corridor first. Then every route.</h1>
     <div class="grow"><div class="steps">
@@ -201,7 +220,7 @@ SLIDES = [
       <div class="step">{ic("network", True)}<div class="k">Then</div><p class="lime">More ports and chambers of commerce already in conversation. More rails.</p></div>
     </div></div>
     <div class="src">Our design target: US–Brazil goods trade, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports).</div>""",
-    # 10 team
+    # 13 team
     f"""<div class="kicker">Team</div>
     <div class="grow"><div class="team">
       <div><img class="ph" src="img/pedro.jpg" alt=""><b>Pedro Wakigawa Saragossy</b><p>Founder. Built the Radox platform before the event.</p></div>
