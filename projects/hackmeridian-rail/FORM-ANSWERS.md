@@ -115,7 +115,7 @@ Blocker: the video is on hold by Pedro ("Vídeo ainda não"). Required field; th
 {{UPLOAD: deck/radox-custody-rail.pdf}}
 ```
 
-Pedro's choice: deck v14 (central, 26 Oct). Checked: 792,698 bytes (0.76 MiB, under 20 MiB), 11 pages, built 07:00 UTC; cover "Radox Rail", "SWIFT for goods in transit, on Stellar". Built by build_deck.py (python-pptx, converted to PDF with LibreOffice).
+Pedro's choice: deck v14 (central, 26 Oct). Checked: 792,186 bytes (0.76 MiB, under 20 MiB), 11 pages, rebuilt 09:22 UTC with the new name; cover "Radox Rail", "SWIFT for goods in transit, on Stellar". Built by build_deck.py (python-pptx, converted to PDF with LibreOffice).
 
 ## Thematic track (optional, pick one)
 
