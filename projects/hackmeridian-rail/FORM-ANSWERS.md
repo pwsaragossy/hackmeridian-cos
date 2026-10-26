@@ -16,7 +16,7 @@ SWIFT for goods in transit, on Stellar: every handover signed by both companies,
 
 Pedro's choice (26 Oct ~03:10 UTC): both approved lines joined. The portal holds `SWIFT for goods in transit, on Stellar` now; replace it with this text.
 
-## Description (required, Markdown, up to 8000 chars; 7667 chars)
+## Description (required, Markdown, up to 8000 chars; 7719 chars)
 
 ```text
 **A container crosses a border through several companies and agencies (for example a warehouse, a port, a carrier, customs and the buyer), and each keeps its own records. No record is shared among them, so none of them can check what the others say about who held the goods. The money that rides on those records is large: the WTO says 80 to 90 per cent of world trade relies on trade finance. Radox Custody Rail is a shared record that each company on the route signs into, like SWIFT for goods: at each handover, the company giving the goods and the company receiving them both sign, the step is added to a hash chain that no one can rewrite (an administrator can freeze a shipment but cannot change past steps), and anyone who needs to know (the buyer, an insurer, a lender) can check the whole history against one 32-byte value stored on the contract. This repo is its first piece, running on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
@@ -52,31 +52,37 @@ Judges can use the rail now, with no account or key: https://rio-miami-rail.verc
 
 **Rehearsed against mainnet state.** The same contract build (wasm `8230ed93…`) ran its custody lifecycle (without the token and burn steps) against a local fork of Stellar mainnet (soroban-sim, protocol 29): all 15 transactions applied, all 9 refusal branches were refused, and the run was charged 13.72 XLM in fees (`scripts/mainnet-rehearsal.mjs`, `proofs/mainnet-rehearsal.json`). Nothing was sent to mainnet; the mainnet deploy is a later signing ceremony.
 
-**Existed before / built here.** Before the event: the Radox platform, its three mainnet contracts and the `transfer_agent` contract used for the burn. Built at HackMeridian, from the first commit at 2026-10-25 09:00 UTC: the `custody_registry` contract and its 26 tests, the testnet harness, the verification scripts, the public page, the open spec and four proof sets.
+**Existed before / built here.** Before the event: the Radox platform, its three mainnet contracts and the `transfer_agent` contract used for the burn. Built at HackMeridian, from the first commit at 2026-10-25 09:00 UTC: the `custody_registry` contract and its 26 tests, the testnet harness, the verification scripts, the public page, the open testnet API with its /docs reference page, the open spec and four proof sets.
 
 Runs on Stellar testnet.
 ```
 
-## Problem solved (optional; 1247 chars)
+## Problem solved (optional; 1566 chars)
 
 ```text
-About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 data); in 2025 about 11% were issued electronically (DCSA, as of 2025). 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI Cargo Theft Report, Apr 2026). ADB estimates the global trade finance gap at about US$2.5 trillion, unchanged from 2023 (ADB Global Trade Finance Gap Survey, Dec 2025). These are market figures, not results of this project. Our design target is the US–Brazil goods corridor, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports); Brazil was Florida's largest goods export market in 2025 (USTR). A container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it. Ports and airports run legacy systems that are hard to integrate. With the rail, each company will integrate once, not pair by pair: a legacy system will join through one adapter to the Radox API, and a financier can read which custodian last signed for the goods before paying.
+A company that hands a container to the next one, and a lender or insurer that pays against that container, face the same gap. Each company keeps its own record of who held the goods, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token can check custody only by trusting the party that reports it. Ports and airports run legacy systems that are hard to integrate, so links pair by pair do not scale.
+
+Size of the problem (market figures, not results of this project): about 45 million ocean bills of lading a year, about 11% of them issued electronically in 2025 (DCSA, Feb 2023, 2021 data; DCSA, as of 2025); 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI Cargo Theft Report, Apr 2026); a global trade finance gap of about US$2.5 trillion, unchanged from 2023 (ADB Global Trade Finance Gap Survey, Dec 2025). Our design target is the US–Brazil goods corridor, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports).
+
+What changes. For a company: it joins once, through one adapter to the Radox API, not pair by pair, and a handover is recorded only when both it and the next company sign. For a financier: before paying, it will ask the Radox API which custodian last signed for the goods and how many signed handovers there are, and can recompute the whole history to check the answer. On Stellar testnet, anyone can already read a shipment and check its history and head on the open rail API, with no account or key: https://rio-miami-rail.vercel.app/docs.
 ```
 
-## Challenges (optional; 1327 chars)
+## Challenges (optional; 1638 chars)
 
 ```text
-1. Our first two-signer script crashed before submitting anything: with js-stellar-sdk 17.3.0 the simulated auth entries are plain objects, not accessor methods, and protocol 29 returns `sorobanCredentialsAddressV2`. Fixed by signing each custodian's entry with `authorizeEntry` and passing them to `Operation.invokeContractFunction({ auth })`.
-2. `stellar contract invoke` on a read-only call only simulates and returns no hash; `--send=yes` was needed to get on-chain proof.
-3. An AI reviewer agent found, before the testnet deploy, that a route that revisits an address let `deliver` succeed with zero handovers, and that the contract instance TTL was never extended, so it could have archived about a week after deploy, possibly during judging. Both were fixed with tests (commit `9b66e00`, with three more review fixes).
-4. The first unit tests did not compile: the contract is `no_std`, so the test module needed `extern crate std`, and the `try_` assertions only type-checked once entry points returned `Result<_, Error>` instead of panicking.
-5. For the second shipment, our check of the teammates' signed entries first rejected valid signatures. Protocol 29 address-bound credentials are signed over a different payload than the legacy ones; we changed the check to use that payload, and a wrong key is still rejected.
+1. Two companies, two machines, one transaction. A handover needs both custodians' signatures, and on protocol 29 each signs a Soroban authorisation entry with address-bound credentials (`sorobanCredentialsAddressV2`). Our first two-signer script crashed before submitting anything because js-stellar-sdk 17.3.0 returns plain objects, and our own check first rejected valid signatures because these credentials are signed over a different payload. We fixed both with `authorizeEntry` and the right payload; a wrong key is still rejected. Result: each company can sign with its own key on its own machine, exchanging only public keys and signed entries, as two teammates did for the second shipment (`proofs/three-machine.json`).
+2. An AI reviewer agent found two defects before the testnet deploy: a route that revisits an address let `deliver` succeed with zero handovers, and the contract's storage lifetime was never extended, so it could have archived about a week after deploy, possibly during judging. Both were fixed with tests (commit `9b66e00`). Result: goods cannot be marked delivered before every handover is signed, and a shipment that receives writes stays live for about 30 days.
+3. History does not last on testnet: the RPC keeps events about seven days, and testnet resets about quarterly (next on 2026-12-16). We recompute each shipment's head from the transactions' own arguments on Horizon and commit Horizon copies of the proof transactions. Result: a buyer, insurer or lender can check a shipment's history later from public data without trusting us (`scripts/verify-head.mjs`: MATCH on every shipment in `proofs/`).
 ```
 
-## What's next (optional; 1210 chars)
+## What's next (optional; 1545 chars)
 
 ```text
-Rio–Miami is our first corridor, not the product. We are building the end-to-end custody rail for goods in transit: a shared, SWIFT-like standard for every company along a supply chain. Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it will join the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami. Next we connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint reads this registry in a local development run), run the first live shipment with a financial institution and a port or logistics operator, have a Stellar engineer review the design, and apply to SCF Build. Mainnet follows an audit and the issuer-account lock described in the README. Business model: a recurring fee per connected institution plus a fee per shipment. It borrows the shape of SWIFT's published fee structure: Swift, a cooperative owned by its members, charges an entry fee, annual charges (including network connection) and network-usage fees on message traffic (swift.com billing rules, accessed 25 October 2026). We are not affiliated with Swift.
+Radox already tokenizes real-world assets: its three Soroban contracts (token_sale, yield_distributor, maturity_settlement) run on Stellar mainnet since June-July 2026. The custody rail is Radox's new custody feature: it adds to a tokenized asset a record of who holds the goods, signed by both companies at each handover. Rio–Miami is our first corridor, not the product. Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it will join the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami.
+
+Next: connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint already reads this registry in a local development run); open the rail API to Stellar issuers, building on the open testnet API and sandbox that are live now; run the first live shipment with a financial institution and a port or logistics operator; have a Stellar engineer review the design; apply to SCF Build with this contract as its first milestone. Mainnet follows an audit and the issuer-account lock described in the README.
+
+Business model: a recurring fee per connected institution plus a fee per shipment. It borrows the shape of SWIFT's published fee structure: Swift, a cooperative owned by its members, charges an entry fee, annual charges (including network connection) and network-usage fees on message traffic (swift.com billing rules, accessed 25 October 2026). We are not affiliated with Swift.
 ```
 
 ## Repository link (required, public HTTPS)
@@ -119,10 +125,10 @@ Stellar Unlocked
 
 Pedro's choice (24 Oct). Check that the option is still in the portal list when pasting.
 
-## Tech stack (optional, comma-separated, up to 25; 21 items)
+## Tech stack (optional, comma-separated, up to 25; 23 items)
 
 ```text
-Stellar testnet, Soroban, Rust, soroban-sdk 29.0.1, wasm32v1-none, Cargo, Stellar CLI 28.1.0, Soroban authorization (require_auth), Stellar Asset Contract, Stellar RPC, Horizon, Friendbot, JavaScript, Node.js, npm, @stellar/stellar-sdk 17.3.0, HTML, CSS, Vercel, soroban-sim (local mainnet fork), Radox transfer_agent (prior work)
+Stellar testnet, Soroban, Rust, soroban-sdk 29.0.1, wasm32v1-none, Cargo, Stellar CLI 28.1.0, Soroban authorization (require_auth), Stellar Asset Contract, Stellar RPC, Horizon, Friendbot, JavaScript, Node.js, npm, @stellar/stellar-sdk 17.3.0, HTML, CSS, Vercel, Vercel Functions, OpenAPI 3.1, soroban-sim (local mainnet fork), Radox transfer_agent (prior work)
 ```
 
 ## Prior work disclosure (optional; 1499 chars)

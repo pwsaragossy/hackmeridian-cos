@@ -15,7 +15,7 @@ const LIME = "#C6F24E", INK = "#0E0F11", FG = "#E8E9EB", MUTED = "#A8ABB0";
 // ---- picture segments: [input, in-start s, duration s]; clip middles drop the 2 s pad. Still = image, looped.
 const clip = (n, s, d) => [path.join(V2, "clips", `b${n}.mp4`), s, d];
 // B7: 72 s raw take -> 26 s, cut points found from frame-change times of the response pane
-const b7 = [[8.4, 3.6], [13.9, 4.4], [20.4, 0.8], [25.4, 2.4], [28.1, 0.8], [33.9, 4.3], [40.5, 1.5], [45.8, 1.5], [58.0, 1.5], [59.3, 0.7], [66.4, 4.6]];
+const b7 = [[8.4, 3.6], [13.9, 4.4], [20.4, 0.8], [25.4, 2.4], [28.1, 0.8], [33.9, 4.3], [40.5, 1.5], [45.8, 1.5], [58.0, 1.5], [59.3, 0.7], [66.4, 4.5]];
 const beats = [ // name, start (video s), length, segments
   ["B1", 0, 19, [clip(1, 2, 19)]],
   ["B2", 19, 12, [clip(2, 2, 12)]],
@@ -52,7 +52,7 @@ const card = (last) => `${FONT}<style>${BASE}body{background:${INK};color:${FG};
   <div style="font-size:38px;margin-top:30px;opacity:${last ? 1 : 0}">New: <b style="color:${LIME}">Radox Custody Rail</b> · built at HackMeridian · Stellar testnet</div>`;
 
 (async () => {
-  const b = await chromium.launch();
+  const b = await chromium.launch({ executablePath: "/Users/pedrosaragossy/Library/Caches/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-mac-arm64/chrome-headless-shell" });
   const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
   const shot = async (html, file, transparent) => {
     await p.setContent(html, { waitUntil: "load" });
