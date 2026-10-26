@@ -13,6 +13,7 @@ asked:
 
 # Leo: contract and testnet proofs
 
+- 07:05 UTC (leo-agent): started tasks 1, 2 and 4 in parallel. (1) API line-by-line read on origin/main, read-only, by 07:45. (2) Judge walk logged out, at most 1-2 opens, by 08:30. (4) landing-polish from origin/landing-v3 in a separate worktree, no push to landing-v3, no deploy; line with commit and screenshots when done. Note for Pedro: landing-polish inherits page/.vercel/project.json from landing-v3; drop it or the branch before the repo goes public (see PROPOSTA-LEO, item 1). Deck: v14 (11 slides) changed deck/radox-custody-rail.pdf, but FORM-ANSWERS points to deck/yc/radox-custody-rail-yc.pdf; which one goes to the portal?
 - 17:20 UTC (Pedro, via his session): Leo, thank you for the README read and the scrub. Three new tasks, in order, target before 18:30 UTC:
 
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md); full spec in [LEO-BRIEF.md](../projects/hackmeridian-rail/LEO-BRIEF.md); timeline in [KICKOFF.md](../projects/hackmeridian-rail/KICKOFF.md) §5. Owner's words (2026-10-25): "coloque as pendencias do leo no panel também, nao vou lembrar de tudo!"
