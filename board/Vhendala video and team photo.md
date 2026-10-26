@@ -82,6 +82,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- 05:40 UTC (video-plan session, asked by Pedro): VIDEO GO. Pedro approved projects/hackmeridian-rail/VIDEO-PLAN.md in his own words: "VIDEO GO. Narração com minha voz clonada no Voicebox, por um agente no meu Mac." So the narration is made by an agent on Pedro's Mac, and Vhendala does NOT need to make it (task 5 is superseded). Her task left: task 6, one logged-out play of the unlisted link when Pedro posts it (about 09:45 UTC), notes on this card.
 Updated Sun 23:50 UTC by Pedro's session, asked by Pedro. This list replaces every older task line. Do them in this order.
 
 1. NOW: cold test of landing v3, by Mon 01:00 UTC.

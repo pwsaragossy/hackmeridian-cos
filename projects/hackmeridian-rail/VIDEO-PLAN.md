@@ -1,6 +1,6 @@
 # Demo video plan (v2, built on landing v3)
 
-Status: PLAN, waiting for Pedro's approval in his own words. Nothing is recorded, narrated or uploaded, and "VIDEO GO" is not written on Vhendala's card, until he approves.
+Status: APPROVED 05:40 UTC. Pedro: "VIDEO GO. Narração com minha voz clonada no Voicebox, por um agente no meu Mac." Production started.
 Written Mon 2026-10-26 05:05 UTC. Marketing specialist draft, independent reviewer verdict "approve with changes", every must-fix applied below. Page: https://rio-miami-rail.vercel.app = rio-miami-rail landing-v3 0c7dd19.
 
 ## Story in one line
