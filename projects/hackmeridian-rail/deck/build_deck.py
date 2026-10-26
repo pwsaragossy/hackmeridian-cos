@@ -177,7 +177,7 @@ text(s, 1.0, 2.55, 12.5, 1.5, ["Radox Custody Rail"], size=100, font=TITLE, bold
 text(s, 1.0, 4.15, 12.3, 0.9, ["SWIFT for goods in transit, on Stellar"], size=44, font=TITLE, bold=True, color=TEXT_D, spacing=1.0)
 text(s, 1.0, 5.25, 12.3, 1.2, ["One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone."],
      size=26, color=TEXT_D)
-text(s, 1.0, 6.65, 12.5, 0.5, ["Pilot corridor: Rio–Miami"], size=24, color=SEC_D)
+text(s, 1.0, 6.65, 12.5, 0.5, ["First corridor: Rio–Miami"], size=24, color=SEC_D)
 s.shapes.add_picture(SHOT("qr-page-dark.png"), Inches(15.75), Inches(1.75), Inches(2.6), Inches(2.6))
 text(s, 14.3, 4.5, 5.5, 0.9, ["Scan: the live shipment", [("rio-miami-rail.vercel.app", {"font": MONO, "color": LIME, "size": 18})]],
      size=20, color=TEXT_D, align=PP_ALIGN.CENTER, after=2)
@@ -224,7 +224,7 @@ text(s, 1.0, 8.5, 18.0, 1.2, [
       "IMO guidance plans for legacy systems with proprietary formats (FAL.5/Circ.54, 2024).", {})],
     BRIDGE], size=18, color=SEC_C, after=4)
 
-s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. Finance runs blind.", "NEXT ▸ THE STANDARD")
+s = content_slide(3, "PMF · WHAT IT COSTS", "Cargo goes missing. No shared record.", "NEXT ▸ THE STANDARD")
 text(s, 1.0, 3.4, 18.0, 0.9, [[("The gap: ", {"bold": True, "color": LIME_C}),
                                ("a financier cannot see who holds the goods before paying.", {})]], size=24)
 stats(s, P_COST, 4.6)
