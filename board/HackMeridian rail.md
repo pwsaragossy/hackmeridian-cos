@@ -1,14 +1,14 @@
 ---
 tags:
   - board
-status: in-progress
+status: waiting-owner
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
 due: 2026-10-26
 since: 2026-10-24
 updated: 2026-10-26
-asked: 
+asked: 2026-10-26 09:16 +0000
 ---
 
 # HackMeridian rail
@@ -16,12 +16,13 @@ asked:
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
+- 09:16 UTC (Leo) URGENT, do NOT deploy main 1ff079e: it changes the page pills to 'Stellar mainnet', but the rail, the API and every proof are testnet only (your decisions 25/10 14:29 and 23:45). Revert 1ff079e? Reply 'reverte mainnet'.
 - 09:14 UTC (Leo) Name changed to 'Radox Rail' by Vhendala at 09:11, but the final video, the deck PDF and production still say 'Radox Custody Rail'. Your call? Reply 'Radox Rail' (then redo deck PDF + redeploy) or 'volta Custody Rail'.
 - 09:08 UTC (Leo) 'Request access' now opens an email form to the team (pedro@radox.net), branch request-access-form 4cdd173. Works today via mailto fallback; real send needs RESEND_API_KEY in Vercel. Publish? Reply 'publica form' or 'não'.
 - 09:05 UTC (Leo) Partner logos on the landing (scene 7: Cisbra, Camacol under the partners paragraph; 'Built on Stellar' mark) ready on branch partner-logos df140f7. Logos imply more than names: publish? Reply 'publica logos' or 'não'. Screens: partner-logos/
-(nothing waiting; the remaining owner steps are the video upload, the repo going public, and submit)
 
 ## Tasks
+- 09:16 UTC (Leo, via leo-agent) URGENT for Pedro, session-hackmeridian-rail and Vhendala: main 1ff079e (vhendala, 09:15) replaces 'Stellar testnet · test keys' with 'Stellar mainnet' in page/index.html (header pill, Try the API tag t-tag, terminal bar) and page/docs/index.html. That is a false claim: custody_registry, the sandbox API (responses say network: testnet), all proofs and the video strip are testnet; Pedro decided testnet only (25/10 14:29 'fica na testnet', 23:45 'só o ensaio no fork'); FORM-ANSWERS says 'Runs on Stellar testnet'. It is on main but NOT in production yet (production title still 'Radox Custody Rail'). Do not redeploy from main as is. Fix: git revert 1ff079e (keeps the 429c21b rename for Pedro's separate call). The video's 'Stellar testnet · test keys' strip and the API's testnet answers would contradict a mainnet page.
 - 09:14 UTC (Leo, via leo-agent) for Pedro and session-hackmeridian-rail, on the 09:11 rename to 'Radox Rail' (main 429c21b, vhendala noreply, scrub clean): the card line cites no words from Pedro, and Pedro's recorded title is 'Radox Custody Rail' (portal-answers 03:15; README H1 42add0a 'owner's title'). Four mismatches if it stays: (1) the video is final and says 'Radox Custody Rail' (B2b card, end card); the portal title should match the video. (2) deck/radox-custody-rail.pdf was NOT rebuilt (file 07:03, 792,698 bytes, unchanged), yet FORM-ANSWERS now says its cover reads 'Radox Rail': false until build_deck.py is re-run. (3) FORM-ANSWERS title heading still says '18 chars'; 'Radox Rail' is 10. (4) production is not redeployed: rio-miami-rail.vercel.app title still 'Radox Custody Rail', so main and production differ (and llms.txt, /docs, openapi). Leo's branches: partner-logos merges clean on 429c21b; request-access-form rebased on it, now 68b537f (header shows 'Radox Rail', test 9/9).
 - 09:11 UTC (Vhendala via vhendala-agent) for Pedro / rail / deck / page-host sessions: **NAME CHANGED FROM `Radox Custody Rail` TO `Radox Rail` (no 'Custody')**: Pushed to `rio-miami-rail` `origin/main` (`README.md`, `page/index.html`, `page/llms.txt`, `page/docs/index.html`, `page/docs/openapi.json`, `page/api/_lib/rail.js`) and to `hackmeridian-cos` (`FORM-ANSWERS.md`, `PITCH-FINAL.md`, `DEMO-SCRIPT.md`, `VIDEO-PLAN.md`, `deck/build_deck.py`, `deck/yc/*`, `video/tools/*`). **Action needed on Pedro's Mac**: (1) `git pull` on `rio-miami-rail` and redeploy `page/` to Vercel (`rio-miami-rail.vercel.app`) so the live header/title/footer show `Radox Rail`; (2) re-run `deck/build_deck.py` (or `deck/yc/build.py`) to regenerate the PDF with `Radox Rail` on the cover.
 - 09:08 UTC (Leo, via leo-agent) for session-hackmeridian-rail, Leo's request: Request access form on branch request-access-form 4cdd173 (from main 42add0a; merges clean with partner-logos). Files: page/access.js +148, page/access.css +29, page/api/access.js +58, scripts/access.test.mjs +93, README +7, index.html and docs/index.html 3 lines each (data-access on the button, one link, one module script). How: the header and /docs 'Request access' links keep their mailto href (no-JS fallback); JS opens a <dialog> form (name, work email, company, role optional, use case <=1000, honeypot), POST /api/access; the function reuses handler/limitIp/ApiError, 3 per 10 min per IP, validates server-side, strips CR/LF, sends via Resend to ACCESS_TO (default pedro@radox.net) with reply_to = visitor; no key -> 503 and the modal opens the visitor's mail app pre-filled. Tests: scripts/access.test.mjs 9 checks pass offline (re-run by Leo's session), browser at 390/1280/1440 on / and /docs (focus, Esc, validation, fallback, success with mocked 200), no overflow; scrub clean, no key or .vercel. To send for real (Pedro): Resend account + API key; verify radox.net in Resend (DKIM/SPF DNS); Vercel env RESEND_API_KEY and ACCESS_FROM='Custody Rail <access@radox.net>' (ACCESS_TO optional); redeploy; send one test from the live page. Not deployed; merge and deploy are yours after Pedro's yes.
