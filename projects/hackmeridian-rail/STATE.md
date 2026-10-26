@@ -53,7 +53,7 @@ green, stage 3 (Demo and pitch), track 15/22 at 2026-10-25 18:2x UTC. Done: both
 
 - 2026-10-25 14:29 UTC (owner): custody_registry stays on testnet; no mainnet deploy before submission ("Não, fica na testnet").
 
-- 2026-10-25 23:45 UTC (owner): after judges asked for mainnet, custody_registry is rehearsed on a local mainnet fork only; no real mainnet deploy ("Fica só o ensaio no fork; não publica em mainnet"). Rehearsal: 16 tx, 9 refusals, 13.73 XLM fees (landing-v3 40d3c26).
+- 2026-10-25 23:45 UTC (owner): after judges asked for mainnet, custody_registry is rehearsed on a local mainnet fork only; no real mainnet deploy ("Fica só o ensaio no fork; não publica em mainnet"). Rehearsal (clean re-run fd84b68 by the rail session): 15 tx, 9 refusals, 13.72 XLM charged, custody lifecycle only, no burn.
 
 - 2026-10-25 18:26 UTC: no early submission and edit. Every portal field is prepared outside the portal, in FORM-ANSWERS.md, in portal order and as final text only, so Pedro pastes once on Monday. Owner: "vamos preparar tudo por fora, organizado, e depois copiamos."
 - 2026-10-25 18:26 UTC: the repo goes public at 06:00 Mon as planned, not earlier. Owner: "Manter 06:00".
