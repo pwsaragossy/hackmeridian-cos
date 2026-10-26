@@ -8,7 +8,7 @@ member: pedro
 due: 2026-10-26
 since: 2026-10-24
 updated: 2026-10-26
-asked: 2026-10-26 09:16 +0000
+asked: 2026-10-26 09:27 +0000
 ---
 
 # HackMeridian rail
@@ -16,6 +16,7 @@ asked: 2026-10-26 09:16 +0000
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
+- 09:27 UTC (Leo) Pedro, PRESSA: portal fecha 12:00 UTC (2h30). Mainnet + vídeo do zero levaram ~2h50 da última vez. Financia a chave mainnet assim que chegar e decide já um corte: se às 11:00 não houver vídeo, sobe o atual. Responde 'ok corte 11:00'.
 - 09:15 UTC (chief-of-staff status session) Pedro's steps to submit, in order (team deadline 10:00 UTC, portal closes 12:00):
   1. Video: tell the status session which parts are wrong; the video session redoes only those lines.
   2. Upload the video to YouTube as unlisted and send the link to the status session (it goes into FORM-ANSWERS and the README).
