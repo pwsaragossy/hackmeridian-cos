@@ -6,7 +6,7 @@ stayed green while the API, the docs, the video and the public repo were missing
   lifecycle  the 7 lifecycle transactions are SUCCESS on testnet Horizon, 7 distinct hashes
   repo       github.com/pwsaragossy/rio-miami-rail is PUBLIC
   site       the demo site answers 200
-  api        GET /api/shipments/<shipment 1 key> answers 200 JSON with a status (read live on testnet)
+  api        GET /api/shipments/<shipment 1 key> answers 200 JSON with a status under shipment (read live on testnet)
   docs       /docs answers 200 and shows the parameters and a request-access link
   form       FORM-ANSWERS.md has no {{placeholder}} left (video link and deck upload included)
   deck       the deck named in the form exists and is under 20 MiB
@@ -67,7 +67,7 @@ def api():
     code, body = get(f"{SITE}/api/shipments/{SHIPMENT_1}")
     try:
         d = json.loads(body)
-        status = (d.get("data") or d).get("status")
+        status = (d.get("shipment") or d.get("data") or d).get("status")
     except Exception:
         status = None
     return code == 200 and bool(status), f"HTTP {code}, status {status}"
