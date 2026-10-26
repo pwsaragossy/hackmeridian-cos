@@ -1,4 +1,4 @@
-# PITCH-FINAL: Radox Custody Rail deck (10 slides, v13) + spoken pitch
+# PITCH-FINAL: Radox Custody Rail deck (11 slides, v14) + spoken pitch
 
 Built from PITCH.md (binding: Claims guard, Copy rules), DEMO-SCRIPT.md, SUBMISSION.md, VERIFY-LEO.md, `proofs/lifecycle.json` (rio-miami-rail, read with `gh api` 2026-10-25), template order from [[hackmeridian-2026-official-pitch-deck-template-d5c7]]. Wording rules: [[wording-the-rio-miami-deck-readme-ef38]], [[claims-hackmeridian-material-may-and-may-3e4f]]. ZIS: [[zis-in-public-material-radox-is-bc05]], no OK assumed, so ZIS and Paulo appear nowhere and the corridor is the "unnamed bridge".
 
@@ -37,23 +37,25 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 
 The README and FORM wording for User Value and Ecosystem is in COPY-V13.md section 4, handed to the rail session.
 
-## Spoken pitch (finalists, 3:00, v13)
+## Spoken pitch (finalists, 3:00, v14: platform opening, owner 2026-10-26)
 
 Rehearsal: timed reads by Pedro needed twice.
 
-Words (395, counted 2026-10-25; limit 396 for 3:00 at 2.2 words a second):
+Words (387, counted 2026-10-26; limit 396 for 3:00 at 2.2 words a second). Cut for the platform opening: the legacy-systems line, the TT Club 22% line, the US$4B line and the 24 unit tests (all four stay on the slides):
 
-A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. DCSA reports about 45 million ocean bills of lading are issued a year, and only about 11% were electronic in 2025. TT Club and BSI report insiders were involved in 22% of recorded cargo thefts in 2025. Each company keeps its own record of its own leg, nobody holds the chain end to end, and a financier cannot see who holds the goods before paying.
+I'm Pedro. Radox is a full tokenization platform on Stellar: a financial institution onboards, issues, sells, pays, stays compliant and holds assets on one rail. Three Soroban contracts on mainnet; every stage built on testnet. This weekend we added one small piece: the Custody Rail.
 
-Our goal is a shared, SWIFT-like custody standard that companies along a supply chain will use: each integrates once, not pair by pair. Ports and airports run hard-to-integrate legacy systems. Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it will join the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami.
+A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. DCSA reports about 45 million ocean bills of lading a year, and only about 11% electronic in 2025. Each company keeps its own record of its own leg, nobody holds the chain end to end, and a financier cannot see who holds the goods before paying.
+
+Our goal is a shared, SWIFT-like custody standard that companies along a supply chain will use: each integrates once, not pair by pair. Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it will join the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami.
 
 We are building one rail, origin to delivery. The double signature is the rule of each link: both sides sign one Stellar transaction, or the call fails.
 
-On Stellar testnet, one shipment: seven successful transactions, open, four dual-signed handovers, deliver, and a burn. Nine invalid calls refused. Twenty-four unit tests pass. Testnet, test keys. The burn is our existing redeem.
+On Stellar testnet, one shipment: seven successful transactions, open, four dual-signed handovers, deliver, and a burn. Nine invalid calls refused. Testnet, test keys. The burn is our existing redeem.
 
-Why Stellar. Soroban authorizes both companies of a link in one call, so the handover is atomic. We replay the history from Horizon and check it against the head stored in the contract. Stellar holds about 4 billion dollars of tokenized assets, the Stellar Development Foundation says. We found no Stellar project recording a handover signed by two custodians. The record never calls the token, so any tokenized Stellar asset can carry a custody record, and Radox will open API access to them, end to end.
+Why Stellar. Soroban authorizes both companies of a link in one call, so the handover is atomic. We replay the history from Horizon and check it against the head stored in the contract. We found no Stellar project recording a handover signed by two custodians. The record never calls the token, so any tokenized Stellar asset can carry a custody record, and Radox will open API access to them.
 
-This weekend we built the custody registry contract, the testnet harness and the public shipment page, on disclosed prior work: Radox, with three Soroban contracts on mainnet. AI coding agents wrote the code; the video narration is an AI voice generated from Pedro's voice.
+This weekend we built the custody registry contract, the testnet harness and the public shipment page, on disclosed prior work: Radox. AI coding agents wrote the code; the video narration is an AI voice generated from Pedro's voice.
 
 Next: the Rio-Miami pilot shipment, then the Stellar Community Fund, audit and mainnet. Our ask: introductions to one financial institution and one port, airport or logistics operator for a first pilot shipment, and a Stellar engineer's review of the design.
 

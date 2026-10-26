@@ -263,3 +263,11 @@ Direct conversations are with chambers of commerce; ports and airports come thro
 
 ## Eighth round (v14 cover, 2026-10-26)
 Cover: submission title "Radox Custody Rail: SWIFT for goods in transit, on Stellar" and the owner-approved tagline; "First corridor: Rio–Miami". Slide 3: Hin Leong US$85M cut (dual signing does not stop forgery by a signer), WTO 80–90% of trade relies on trade finance, ADB US$2.5T gap unchanged from 2023; headline "Cargo goes missing. No shared record." Reviewer (REVIEW-V14-COVER.md): pass, both must-fixes applied; WTO and ADB passages re-opened. check_deck exit 0.
+
+## Ninth round (v14 platform slide, 2026-10-26)
+Owner: "faça um slide do zero que diga tudo que a radox é, teoricamente, capaz de entregar. não diminua a radox, ela quem sustenta uma feature incremental pequena", then "coloca no deck como slide 2, com 11 slides, e ajusta a fala de abertura".
+New slide 2 "Radox: the full tokenization stack on Stellar" (Signal dark): Onboard, Issue, Sell, Pay, Comply, Hold, three capabilities each, and a small dashed "THIS WEEKEND · Custody Rail" end. Chip: "3 Soroban contracts on Stellar mainnet · every stage built, on testnet".
+Designer + independent reviewer ([[radox-platform-slide-what-holds-and-992c]], [[platform-breadth-slide-cannot-fit-the-f19c]]): approve with changes, all applied. Chip no longer says "full lifecycle"; stage "Custody" renamed "Hold" (no echo with the Custody Rail); "BRL ramp via PIX" became "BRL ramp adapters" (providers simulated or mocked); equity replaced by real estate (equity is flag-gated off); sub-line singular, "Radox is the rail for every stage" (never the issuer); captions grey.
+Deck now 11 slides: N = 11, slides 2–10 renumbered 3–11, slide 5 cross-references now "(slide 7)" and "(slide 10)", check_deck cap 11 (our own cap, TRACK.md; the old docstring cited SUBMISSION.md, which has no slide count). On-slide words on slide 2: 89 (the 30-word guide in PITCH-FINAL does not fit the breadth; owner asked for breadth).
+Spoken pitch v14: platform opening; cut the legacy-systems, TT Club 22%, US$4B and 24-unit-tests lines (all stay on slides); 387 words, limit 396. Two timed reads by Pedro still needed.
+Judge: check_deck exit 0 (11 slides, 792,698 bytes). PDF page 2 rendered and read; counters 01–11 and cross-references checked with pdftotext.

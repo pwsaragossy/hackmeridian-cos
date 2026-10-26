@@ -36,7 +36,7 @@ Gate: the demo runs without live dependencies, a recorded backup exists, and the
 - [x] fresh-run | Product runs from the README on a clean machine or account by someone who did not build it | card: engineer | needs: demo-offline | evidence: FRESH-RUN.md
 - [ ] pitch | Pitch covering problem, solution, demo, why this team, next step, rehearsed at least twice with a timer | card: marketing | needs: demo-script | evidence:
   Evidence rule (central, 2026-10-25, from Leo's 18:06 line and Vhendala's 17:36 line): judging is async and only the demo video is required, so the pitch is the final 3:00 video; two timed full plays of the final cut by Vhendala, each logged with start, end and length, count as the two rehearsals. Proof file: PITCH-REHEARSALS.md.
-- [ ] deck | Slide deck of at most 10 slides (default), one message per slide, readable at distance, exported as the format the rules require | card: designer | needs: pitch, look | evidence: deck/REVIEW.md
+- [ ] deck | Slide deck of at most 11 slides (owner, 2026-10-26: platform slide added), one message per slide, readable at distance, exported as the format the rules require | card: designer | needs: pitch, look | evidence: deck/REVIEW.md
 - [ ] review-3 | Independent review of stage 3: verdict and fixes | card: reviewer | needs: demo-script, demo-offline, fresh-run, pitch, deck | evidence:
 ## Stage 4: Submission
 Gate: the submission is sent before the deadline, confirmed, and every link opens from a logged-out browser.

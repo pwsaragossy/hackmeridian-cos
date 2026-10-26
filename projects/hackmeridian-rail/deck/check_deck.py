@@ -2,7 +2,7 @@
 
 Run: python deck/check_deck.py [path/to/lifecycle.json]
 (default: proofs/lifecycle.json read from pwsaragossy/rio-miami-rail with gh)
-Rules: SUBMISSION.md (PDF <= 20 MiB, max 10 slides), LOOK.md (nothing to read under 18 pt),
+Rules: SUBMISSION.md (PDF <= 20 MiB), max 11 slides (our own cap, TRACK.md; raised from 10 by the owner on 2026-10-26 for the platform slide), LOOK.md (nothing to read under 18 pt),
 PITCH.md Claims guard (banned words), proofs/lifecycle.json (every hash and the contract ID on the slides are real).
 """
 import base64
@@ -49,8 +49,8 @@ def main():
     fails = []
     prs = Presentation(PPTX)
     n = len(prs.slides)
-    if n > 10:
-        fails.append(f"{n} slides, max 10")
+    if n > 11:
+        fails.append(f"{n} slides, max 11")
     if not os.path.exists(PDF):
         fails.append("PDF missing")
     elif os.path.getsize(PDF) > 20 * 1024 * 1024:
