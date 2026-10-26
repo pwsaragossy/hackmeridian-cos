@@ -154,7 +154,7 @@ def main():
     for needle, topic in REQUIRED.items():
         if needle.lower() not in full.lower():
             fails.append(f"missing: {topic} ({needle!r})")
-    if not any("Radox Custody Rail" in t and "SWIFT for goods in transit, on Stellar" in t for t in sl[:4]):
+    if not any("Radox Rail" in t and "SWIFT for goods in transit, on Stellar" in t for t in sl[:4]):
         fails.append("cover does not carry the form title")
 
     for f in fails:

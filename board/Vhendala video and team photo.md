@@ -21,6 +21,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 09:11 UTC (Vhendala via vhendala-agent): **Rename `Radox Custody Rail` -> `Radox Rail` DONE**: Substituído `Radox Custody Rail` por `Radox Rail` em todo o repositório `rio-miami-rail` (`README.md`, `page/index.html`, `page/llms.txt`, `page/docs/index.html`, `page/docs/openapi.json`, `page/api/_lib/rail.js`) e nos arquivos de submissão/deck/vídeo em `projects/hackmeridian-rail/` (`FORM-ANSWERS.md`, `PITCH-FINAL.md`, `DEMO-SCRIPT.md`, `VIDEO-PLAN.md`, `deck/build_deck.py`, `deck/yc/*`, `video/tools/*`).
 - 08:59 UTC (Vhendala): **Todas as pendências da Vhendala fechadas:**
   1. **Google Antigravity (SIM):** Usei o **Google Antigravity** para supervisão do projeto, revisão de produto e do formulário (`FORM-ANSWERS.md`), assinatura do embarque `three-machine`, execução do `fresh-run` no Windows, documentação em código das fronteiras fechadas da Radox (`67c2b13`) e revisão/ajuste visual da landing page (`6251e8e`). Pode incluir no `AI tooling note` e no `AI_USAGE.md`.
   2. **Foto da equipe:** Não precisa mais subir por aqui — o Pedro já pegou as fotos pelo WhatsApp.

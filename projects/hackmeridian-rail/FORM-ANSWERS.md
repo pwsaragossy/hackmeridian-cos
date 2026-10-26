@@ -5,7 +5,7 @@ Portal fields in the order of the live portal (Pedro's paste, 26 Oct ~02:00 UTC)
 ## Project title (required; 18 chars)
 
 ```text
-Radox Custody Rail
+Radox Rail
 ```
 
 ## Tagline (optional, up to 120 chars; 101 chars)
@@ -19,7 +19,7 @@ Pedro's choice (26 Oct ~03:10 UTC): both approved lines joined. The portal holds
 ## Description (required, Markdown, up to 8000 chars; 7820 chars)
 
 ```text
-**A container crosses a border through several companies and agencies (for example a warehouse, a port, a carrier, customs and the buyer), and each keeps its own records. No record is shared among them, so none of them can check what the others say about who held the goods. The money that rides on those records is large: the WTO says 80 to 90 per cent of world trade relies on trade finance. Radox Custody Rail is a shared record that each company on the route signs into, like SWIFT for goods: at each handover, the company giving the goods and the company receiving them both sign, the step is added to a hash chain that no one can rewrite (an administrator can freeze a shipment but cannot change past steps), and anyone who needs to know (the buyer, an insurer, a lender) can check the whole history against one 32-byte value stored on the contract. This repo is its first piece, running on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
+**A container crosses a border through several companies and agencies (for example a warehouse, a port, a carrier, customs and the buyer), and each keeps its own records. No record is shared among them, so none of them can check what the others say about who held the goods. The money that rides on those records is large: the WTO says 80 to 90 per cent of world trade relies on trade finance. Radox Rail is a shared record that each company on the route signs into, like SWIFT for goods: at each handover, the company giving the goods and the company receiving them both sign, the step is added to a hash chain that no one can rewrite (an administrator can freeze a shipment but cannot change past steps), and anyone who needs to know (the buyer, an insurer, a lender) can check the whole history against one 32-byte value stored on the contract. This repo is its first piece, running on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
 
 **What it does.** One shipment is one record in our `custody_registry` contract, keyed by `sha256(container | origin)`. Its life has five steps. *Open*: the rail operator registers the ordered route of custodians. *Handover*: one call, with `require_auth()` from both the outgoing and the incoming custodian and an assurance level from 1 to 3; a wrong custodian, an out-of-route step or a bad level is refused. *Attest*: an allow-listed source (for example a gate scanner) adds an event hash without moving custody. *Deliver*: the final custodian and the token holder both authorise, and only after every handover is done. *Redeem*: the cargo token is burned through Radox's existing transfer agent (prior work, disclosed below). Custody moves; ownership stays with the token holder. Every step folds into one 32-byte `head` on the contract. The admin can freeze or pause but cannot change a route, a custodian or past steps, and the contract has no upgrade function.
 
@@ -78,7 +78,7 @@ What changes. For a company: it will join once, through one adapter to the Radox
 ## What's next (optional; 1681 chars)
 
 ```text
-Radox is a platform for tokenized real-world assets; its three Soroban contracts (token_sale, yield_distributor, maturity_settlement) run on Stellar mainnet since June-July 2026. Radox Custody Rail, on Stellar testnet, is our next step from tokenized assets to goods in transit: it adds to a tokenized asset a record of who holds the goods, signed by both companies at each handover. We aim to grow it into a shared, SWIFT-like standard for custody of goods across trade corridors. Rio–Miami is our first corridor, not the product. Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it will join the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami.
+Radox is a platform for tokenized real-world assets; its three Soroban contracts (token_sale, yield_distributor, maturity_settlement) run on Stellar mainnet since June-July 2026. Radox Rail, on Stellar testnet, is our next step from tokenized assets to goods in transit: it adds to a tokenized asset a record of who holds the goods, signed by both companies at each handover. We aim to grow it into a shared, SWIFT-like standard for custody of goods across trade corridors. Rio–Miami is our first corridor, not the product. Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it will join the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami.
 
 Next: connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint already reads this registry in a local development run); let Stellar issuers run their own shipments on the rail, beyond the open testnet sandbox that is live now; run the first live shipment with a financial institution and a port or logistics operator; apply to SCF Build with this contract as its first milestone. The rail reaches mainnet after an audit and the issuer-account lock described in the README.
 
@@ -115,7 +115,7 @@ Blocker: the video is on hold by Pedro ("Vídeo ainda não"). Required field; th
 {{UPLOAD: deck/radox-custody-rail.pdf}}
 ```
 
-Pedro's choice: deck v14 (central, 26 Oct). Checked: 792,698 bytes (0.76 MiB, under 20 MiB), 11 pages, built 07:00 UTC; cover "Radox Custody Rail", "SWIFT for goods in transit, on Stellar". Built by build_deck.py (python-pptx, converted to PDF with LibreOffice).
+Pedro's choice: deck v14 (central, 26 Oct). Checked: 792,698 bytes (0.76 MiB, under 20 MiB), 11 pages, built 07:00 UTC; cover "Radox Rail", "SWIFT for goods in transit, on Stellar". Built by build_deck.py (python-pptx, converted to PDF with LibreOffice).
 
 ## Thematic track (optional, pick one)
 

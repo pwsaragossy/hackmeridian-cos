@@ -1,4 +1,4 @@
-# Look: Radox Custody Rail (page + deck)
+# Look: Radox Rail (page + deck)
 
 Decided 2026-10-25 by the owner ("Usar Signal (Recomendado)"). The look reuses Radox's own identity "Signal" (radox-internal `DESIGN.md`): dark graphite, monochrome, one lime accent. It is adapted for a projector. Source and contrast numbers: [[radox-custody-rail-look-signal-adapted-d030]]. Effect: "sóbrio, tipo terminal de porto: grafite com uma só linha lime marcando o corredor Rio-Miami, legível do fundo da sala."
 

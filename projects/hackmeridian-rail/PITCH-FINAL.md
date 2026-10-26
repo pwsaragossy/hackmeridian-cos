@@ -1,4 +1,4 @@
-# PITCH-FINAL: Radox Custody Rail deck (11 slides, v14) + spoken pitch
+# PITCH-FINAL: Radox Rail deck (11 slides, v14) + spoken pitch
 
 Built from PITCH.md (binding: Claims guard, Copy rules), DEMO-SCRIPT.md, SUBMISSION.md, VERIFY-LEO.md, `proofs/lifecycle.json` (rio-miami-rail, read with `gh api` 2026-10-25), template order from [[hackmeridian-2026-official-pitch-deck-template-d5c7]]. Wording rules: [[wording-the-rio-miami-deck-readme-ef38]], [[claims-hackmeridian-material-may-and-may-3e4f]]. ZIS: [[zis-in-public-material-radox-is-bc05]], no OK assumed, so ZIS and Paulo appear nowhere and the corridor is the "unnamed bridge".
 
@@ -22,7 +22,7 @@ Full hashes (testnet; explorer pattern `https://stellar.expert/explorer/testnet/
 
 ## Slides (v13, founder voice: owner 2026-10-25 "NÃO É PRA LOWBALL NOSSO PROJETO, VENDA APENAS A PARTE BOA"; no false claim, no partner named)
 
-1. Cover: "Radox Custody Rail: SWIFT for goods in transit, on Stellar". Tagline: "One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone." First corridor: Rio–Miami. Pill: testnet, test keys.
+1. Cover: "Radox Rail: SWIFT for goods in transit, on Stellar". Tagline: "One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone." First corridor: Rio–Miami. Pill: testnet, test keys.
 2. Problem, "Who holds the whole chain?": the gap (each company records only its own leg); 45M ocean bills of lading a year (DCSA); ~11% electronic, 2025 (DCSA); 22% of cargo thefts with insiders (TT Club & BSI); ports run legacy systems: over 90% of ports in low- and middle-income countries have no port community system (World Bank remark relayed by IAPH, Nov 2023), IMO FAL.5/Circ.54 plans for legacy proprietary systems; unnamed bridge line.
 3. What it costs: the gap (a financier cannot see who holds the goods before paying); R$900M cargo robberies, 80–90% of trade relies on trade finance (WTO), US$2.5T gap unchanged from 2023 (ADB, Dec 2025) (market size; Hin Leong cut); "These figures size the market problem the rail addresses."
 4. The proposal: the goal is a shared, SWIFT-like custody standard that companies along a supply chain will use; "We are building it on Stellar, starting with the custody rail." 10 vs 5 links; open vs Radox operates (per-institution subscription + fee per shipment). Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it will join the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami.
@@ -43,7 +43,7 @@ Rehearsal: timed reads by Pedro needed twice.
 
 Words (387, counted 2026-10-26; limit 396 for 3:00 at 2.2 words a second). Cut for the platform opening: the legacy-systems line, the TT Club 22% line, the US$4B line and the 24 unit tests (all four stay on the slides):
 
-I'm Pedro. Radox is a full tokenization platform on Stellar: a financial institution onboards, issues, sells, pays, stays compliant and holds assets on one rail. Three Soroban contracts on mainnet; every stage built on testnet. This weekend we added one small piece: the Custody Rail.
+I'm Pedro. Radox is a full tokenization platform on Stellar: a financial institution onboards, issues, sells, pays, stays compliant and holds assets on one rail. Three Soroban contracts on mainnet; every stage built on testnet. This weekend we added one small piece: Radox Rail.
 
 A container leaves Rio for Miami and changes hands several times: warehouse, port, carrier, customs. DCSA reports about 45 million ocean bills of lading a year, and only about 11% electronic in 2025. Each company keeps its own record of its own leg, nobody holds the chain end to end, and a financier cannot see who holds the goods before paying.
 
