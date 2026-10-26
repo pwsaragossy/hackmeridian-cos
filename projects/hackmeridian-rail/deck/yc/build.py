@@ -14,6 +14,21 @@ PDF = os.path.join(HERE, "radox-custody-rail-yc.pdf")
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 CONTRACT = "CCBJVXMJYWPHTDJHDFPRGKPGXGEP24JOPJAMUS5C3BMZJTRTWR2H4LII"
 ROUTE = ["Warehouse", "Port", "Carrier", "Customs", "Buyer"]
+# Lucide icons 0.553.0 (ISC licence), path data copied from lucide-react: they name each actor, nothing else gets an icon.
+ICONS = {
+    "Warehouse": ['M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11', 'M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z', 'M6 13h12', 'M6 17h12'],
+    "Port": ['M12 22V8', 'M5 12H2a10 10 0 0 0 20 0h-3', 'C12 5 3'],
+    "Carrier": ['M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2', 'M15 18H9', 'M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14', 'C17 18 2', 'C7 18 2'],
+    "Customs": ['M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13', 'M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z', 'M5 22h14'],
+    "Buyer": ['M10 12h4', 'M10 8h4', 'M14 21v-3a2 2 0 0 0-4 0v3', 'M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2', 'M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16'],
+}
+
+
+def icon(name):
+    parts = "".join(f'<circle cx="{e.split()[0][1:]}" cy="{e.split()[1]}" r="{e.split()[2]}"/>' if e[0] == "C" else f'<path d="{e}"/>'
+                    for e in ICONS[name])
+    return (f'<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C8CBD0" stroke-width="1.6" '
+            f'stroke-linecap="round" stroke-linejoin="round">{parts}</svg>')
 
 CSS = """
 @page { size: 1920px 1080px; margin: 0; }
@@ -33,12 +48,12 @@ h1 { font-size:84px; line-height:1.06; font-weight:700; letter-spacing:-.025em; 
 .grow { flex:1; display:flex; flex-direction:column; justify-content:center; }
 /* route diagram */
 .route { display:flex; align-items:center; margin-top:8px; }
-.node { flex:0 0 230px; height:120px; border:2px solid var(--border-h); border-radius:10px; background:var(--card);
-        display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:600; }
+.node { flex:0 0 230px; height:170px; border:2px solid var(--border-h); border-radius:10px; background:var(--card);
+        display:flex; flex-direction:column; gap:14px; align-items:center; justify-content:center; font-size:32px; font-weight:600; }
 .gap { flex:1; text-align:center; font-size:40px; color:var(--faint); }
-.link { flex:1; position:relative; height:120px; }
-.link::before { content:""; position:absolute; left:0; right:0; top:59px; height:3px; background:var(--lime); }
-.link span { position:absolute; left:-20px; right:-20px; white-space:nowrap; top:90px; text-align:center; font-size:24px; color:var(--soft); }
+.link { flex:1; position:relative; height:170px; }
+.link::before { content:""; position:absolute; left:0; right:0; top:84px; height:3px; background:var(--lime); }
+.link span { position:absolute; left:-20px; right:-20px; white-space:nowrap; top:106px; text-align:center; font-size:24px; color:var(--soft); }
 .recs { display:flex; justify-content:space-between; margin-top:20px; }
 .recs div { flex:0 0 230px; text-align:center; font-size:26px; color:var(--faint); }
 .bar { margin-top:36px; border:2px solid var(--lime); border-radius:10px; padding:22px 32px; font-size:32px; color:var(--fg); }
@@ -70,7 +85,7 @@ svg text { font-family:'Inter', sans-serif; }
 def route(problem):
     cells = []
     for i, name in enumerate(ROUTE):
-        cells.append(f'<div class="node">{name}</div>')
+        cells.append(f'<div class="node">{icon(name)}<span>{name}</span></div>')
         if i < len(ROUTE) - 1:
             cells.append('<div class="gap">?</div>' if problem else '<div class="link"><span>both sign</span></div>')
     return f'<div class="route">{"".join(cells)}</div>'
@@ -163,8 +178,8 @@ SLIDES = [
     """<div class="kicker">Go-to-market and vision</div>
     <h1>One corridor first. Then every route.</h1>
     <div class="grow"><div class="steps">
-      <div class="step"><div class="k">Now</div><p>The rail on testnet and an open spec any Stellar issuer can implement (Apache-2.0).</p></div>
-      <div class="step"><div class="k">Next</div><p>First live shipment on the US–Brazil corridor with a lender and a logistics operator. Mainnet after an audit.</p></div>
+      <div class="step"><div class="k">Now</div><p>The rail on testnet. An open spec any Stellar issuer can implement.</p></div>
+      <div class="step"><div class="k">Next</div><p>First live shipment on the US–Brazil corridor. Mainnet after an audit.</p></div>
       <div class="step"><div class="k">Then</div><p class="lime">Every route. Each company joins once, through one adapter to the Radox API.</p></div>
     </div></div>
     <div class="src">US–Brazil goods trade was about US$94.2 billion in 2025 (US Census Bureau, exports plus imports).</div>""",
@@ -173,11 +188,11 @@ SLIDES = [
     <h1>Built by people who already ship on Stellar.</h1>
     <div class="grow"><div class="team">
       <div><b>Pedro Wakigawa Saragossy</b><p>Founder. Built Radox: 3 Soroban contracts on Stellar mainnet.</p></div>
-      <div><b>Leo Schlanger</b><p>Developer: the custody_registry contract, the testnet harness and the proofs.</p></div>
-      <div><b>Vhendala</b><p>QA and product review: reads every deliverable as a judge would.</p></div>
+      <div><b>Leo Schlanger</b><p>Developer: the contract, the testnet harness and the proofs.</p></div>
+      <div><b>Vhendala</b><p>QA and product review.</p></div>
     </div>
     <p class="lead" style="margin-top:80px;color:var(--fg)">github.com/pwsaragossy/rio-miami-rail · <span class="lime">rio-miami-rail.vercel.app</span></p></div>
-    <div class="src">Built at HackMeridian on the Radox platform (prior work, listed in the repo). Code, docs and this deck were made with AI coding agents (Claude Code); AI_USAGE.md lists every file.</div>""",
+    <div class="src">Built at HackMeridian on the Radox platform (prior work, listed in the repo). Made with AI coding agents (Claude Code); see AI_USAGE.md.</div>""",
 ]
 
 
