@@ -1,18 +1,20 @@
 # Form answers: one final paste
 
-Portal fields in form order. Copy the text inside each box as it is; paste everything in one go and never reload the form page. Two fields wait: video link and deck file. Only Pedro checks the terms box and submits.
+Portal fields in the order of the live portal (Pedro's paste, 26 Oct ~02:00 UTC). Copy the text inside each box as it is; paste everything in one go and never reload the form page. Two fields wait: video link and deck file. Only Pedro checks the terms box and submits.
 
-## Project title (required; 58 chars)
-
-```text
-Radox Custody Rail: SWIFT for goods in transit, on Stellar
-```
-
-## Tagline (optional, up to 120 chars; 109 chars)
+## Project title (required; 18 chars)
 
 ```text
-One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone.
+Radox Custody Rail
 ```
+
+## Tagline (optional, up to 120 chars; 101 chars)
+
+```text
+SWIFT for goods in transit, on Stellar: every handover signed by both companies, checkable by anyone.
+```
+
+Waits on Pedro's button. Alternatives: `SWIFT for goods in transit, on Stellar` (38 chars, what the portal holds now) or `One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone.` (109 chars).
 
 ## Description (required, Markdown, up to 8000 chars; 5807 chars)
 
@@ -78,11 +80,15 @@ Rio–Miami is our first corridor, not the product. We are building the end-to-e
 https://github.com/pwsaragossy/rio-miami-rail
 ```
 
-## Demo link (optional)
+The repo is private (github.com returns 404 to a visitor, checked 26 Oct). It goes public only on Pedro's OK, planned 06:00 UTC.
+
+## Project website link (optional)
 
 ```text
 https://rio-miami-rail.vercel.app
 ```
+
+The portal asks for llms.txt, robots.txt and sitemap.xml on this site. Production already serves all three (HTTP 200, same as page/ on main). The llms.txt there describes only the first shipment; a refreshed draft with the rail story, the spec and the four proof sets is in website-files/llms.txt. Putting it live is a production deploy and waits on Pedro. Landing v3 (branch landing-v3) is not approved, so the link stays on production.
 
 ## Video link (required, YouTube or Vimeo)
 
@@ -90,11 +96,15 @@ https://rio-miami-rail.vercel.app
 {{VIDEO URL: central sends it after Pedro's upload}}
 ```
 
+Blocker: the video is on hold by Pedro ("Vídeo ainda não"). Required field; the form cannot be submitted without it.
+
 ## Deck file (required, PDF/PPTX/PPT/HTML up to 20 MiB)
 
 ```text
-{{UPLOAD: final deck PDF from the deck session}}
+{{UPLOAD: deck/radox-custody-rail.pdf}}
 ```
+
+File checked 26 Oct: 760,710 bytes (0.73 MiB, under 20 MiB), 10 pages, built 01:07 UTC. Cover: "Radox Custody Rail", "SWIFT for goods in transit, on Stellar" and the line "One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone." It matches the title field whichever tagline Pedro picks.
 
 ## Thematic track (optional, pick one)
 
@@ -102,16 +112,18 @@ https://rio-miami-rail.vercel.app
 Stellar Unlocked
 ```
 
+Pedro's choice (24 Oct). Check that the option is still in the portal list when pasting.
+
 ## Tech stack (optional, comma-separated, up to 25; 20 items)
 
 ```text
 Stellar testnet, Soroban, Rust, soroban-sdk 29.0.1, wasm32v1-none, Cargo, Stellar CLI 28.1.0, Soroban authorization (require_auth), Stellar Asset Contract, Stellar RPC, Horizon, Friendbot, JavaScript, Node.js, npm, @stellar/stellar-sdk 17.3.0, HTML, CSS, Vercel, Radox transfer_agent (prior work)
 ```
 
-## Prior work disclosure (optional; 1416 chars)
+## Prior work disclosure (optional; 1499 chars)
 
 ```text
-Before HackMeridian (2026-10-25 09:00 UTC) we built Radox, a platform for tokenized real-world assets. Its three Soroban contracts (token_sale, yield_distributor, maturity_settlement) run on Stellar mainnet since June-July 2026; their source is public, contracts only, at https://github.com/pwsaragossy/radox since 2026-08-19 (the published token_sale is a newer version, v8, than the deployed v7; the other two match). That repo carries its own, different licence. The Radox backend is closed and not published. The burn in our redeem transaction calls `redeem(token, from, amount, ref_id)` on an instance of Radox's existing transfer_agent contract (`CAYD3EFT…SJWH`), deployed on testnet from its existing wasm; its source is closed and we did not write it at the event. A read-only Radox API endpoint, `GET /api/custody/shipments/:key`, which calls this registry's `get(key)`, was written during the event, on a private branch of the closed Radox backend (2026-10-25); it is not part of this repo and its source is not published. Nothing from the public Radox repo was copied into this repo. Before the event we also wrote design notes (2026-10-20, no code) and planning documents (2026-10-24 and 25), and chief-of-staff, a Claude Code plugin we use for planning and review (first commit 2026-10-22). The GitHub repository was created empty on 2026-10-24 22:49 UTC; the first commit is at 2026-10-25 09:00:17 UTC.
+Before HackMeridian (2026-10-25 09:00 UTC) we built Radox, a platform for tokenized real-world assets. Its three Soroban contracts (token_sale, yield_distributor, maturity_settlement) run on Stellar mainnet since June-July 2026; their source is public, contracts only, at https://github.com/pwsaragossy/radox since 2026-08-19 (the published token_sale is a newer version, v8, than the deployed v7; the other two match). That repo carries its own, different licence. The Radox backend is closed and not published. The cargo token is registered, minted and delivered to the holder in setup, and burned in our redeem transaction with `redeem(token, from, amount, ref_id)`, through an instance of Radox's existing transfer_agent contract (`CAYD3EFT…SJWH`), deployed on testnet from its existing wasm; its source is closed and we did not write it at the event. A read-only Radox API endpoint, `GET /api/custody/shipments/:key`, which calls this registry's `get(key)`, was written during the event, on a private branch of the closed Radox backend (2026-10-25); it is not part of this repo and its source is not published. Nothing from the public Radox repo was copied into this repo. Before the event we also wrote design notes (2026-10-20, no code) and planning documents (2026-10-24 and 25), and chief-of-staff, a Claude Code plugin we use for planning and review (first commit 2026-10-22). The GitHub repository was created empty on 2026-10-24 22:49 UTC; the first commit is at 2026-10-25 09:00:17 UTC.
 ```
 
 ## AI tooling note (optional; 1009 chars)
