@@ -38,7 +38,7 @@ h1 { font-size:84px; line-height:1.06; font-weight:700; letter-spacing:-.025em; 
 .gap { flex:1; text-align:center; font-size:40px; color:var(--faint); }
 .link { flex:1; position:relative; height:120px; }
 .link::before { content:""; position:absolute; left:0; right:0; top:59px; height:3px; background:var(--lime); }
-.link span { position:absolute; left:-20px; right:-20px; white-space:nowrap; top:76px; text-align:center; font-size:24px; color:var(--soft); }
+.link span { position:absolute; left:-20px; right:-20px; white-space:nowrap; top:90px; text-align:center; font-size:24px; color:var(--soft); }
 .recs { display:flex; justify-content:space-between; margin-top:20px; }
 .recs div { flex:0 0 230px; text-align:center; font-size:26px; color:var(--faint); }
 .bar { margin-top:36px; border:2px solid var(--lime); border-radius:10px; padding:22px 32px; font-size:32px; color:var(--fg); }
