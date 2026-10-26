@@ -113,11 +113,11 @@ SLIDES = [
       <div class="kicker">HackMeridian 2026 · Scale track</div>
       <h1 style="font-size:150px;letter-spacing:-.035em">Radox Custody Rail</h1>
       <p class="lead" style="font-size:60px;margin-top:36px;color:var(--fg)">SWIFT for goods in transit, <span class="lime">on Stellar</span></p>
-      <p class="lead" style="font-size:36px">Every handover signed by both companies, checkable by anyone.</p>
+      <p class="lead" style="font-size:36px">Every handover signed by both companies, checkable by anyone. Running on Stellar testnet.</p>
     </div>""",
     # 2 problem
     f"""<div class="kicker">Problem</div>
-    <h1>One container, five companies, five separate records.</h1>
+    <h1>One container, five parties, five separate records.</h1>
     <div class="grow">{route(True)}
       <div class="recs">{''.join('<div>own record</div>' for _ in ROUTE)}</div>
       <p class="lead" style="margin-top:64px">None of them can check what the others say about who held the goods.</p>
@@ -137,7 +137,7 @@ SLIDES = [
     """<div class="kicker">Target users</div>
     <h1>The companies that hand over goods, and the ones that pay on them.</h1>
     <div class="grow"><div class="cols">
-      <div class="col"><h2>They sign</h2><p>Warehouses, ports, carriers, customs brokers, buyers</p></div>
+      <div class="col"><h2>They sign</h2><p>Warehouses, ports, carriers, customs, buyers</p></div>
       <div class="col"><h2>They check</h2><p class="lime">Buyers, insurers, lenders</p></div>
     </div>
     <p class="lead" style="margin-top:72px">And any Stellar issuer of a tokenized good, through the open spec.</p></div>""",
@@ -145,21 +145,21 @@ SLIDES = [
     f"""<div class="kicker">Value proposition</div>
     <h1>Each company connects once, not to every other company.</h1>
     <div class="grow">{mesh()}
-    <p class="lead" style="margin-top:56px">A lender sees which company last signed for the goods before it pays.</p></div>""",
+    <p class="lead" style="margin-top:56px">A lender will read which company last signed for the goods, straight from the contract, before it pays.</p></div>""",
     # 6 proof
     f"""<div class="kicker">Proof</div>
     <h1>It runs on Stellar testnet today.</h1>
     <div class="grow"><div class="stats">
       <div class="stat"><div class="n">7</div><div class="l">transactions: one shipment from open to delivery and burn</div></div>
-      <div class="stat"><div class="n">9</div><div class="l">refusal branches, each refused (wrong signer, out of route)</div></div>
+      <div class="stat"><div class="n">9</div><div class="l">refusal cases, each rejected in simulation (wrong signer, out of route)</div></div>
       <div class="stat"><div class="n">26</div><div class="l">contract tests</div></div>
       <div class="stat"><div class="n lime">MATCH</div><div class="l">anyone recomputes the head from Horizon</div></div>
     </div>
-    <p class="lead" style="margin-top:72px">Rehearsed on a local fork of Stellar mainnet: 15 transactions applied, 9 refusals refused, 13.72 XLM in fees.</p></div>
+    <p class="lead" style="margin-top:72px">Dry run on a local copy of mainnet state, nothing sent to mainnet: 15 transactions applied, 9 refusals rejected, 13.72 XLM simulated fees.</p></div>
     <div class="src"><span class="mono">custody_registry {CONTRACT} · testnet</span></div>""",
     # 7 market
     """<div class="kicker">Market opportunity</div>
-    <h1>The trade that runs on these records is enormous.</h1>
+    <h1>The market around the rail: bills of lading, a financing gap, tokenized assets.</h1>
     <div class="grow"><div class="nums">
       <div class="num"><div class="n">45M</div><div class="l">ocean bills of lading issued a year</div><div class="s">DCSA, Feb 2023</div></div>
       <div class="num"><div class="n">US$2.5T</div><div class="l">global trade finance gap</div><div class="s">ADB, Dec 2025</div></div>
@@ -180,19 +180,19 @@ SLIDES = [
     <div class="grow"><div class="steps">
       <div class="step"><div class="k">Now</div><p>The rail on testnet. An open spec any Stellar issuer can implement.</p></div>
       <div class="step"><div class="k">Next</div><p>First live shipment on the US–Brazil corridor. Mainnet after an audit.</p></div>
-      <div class="step"><div class="k">Then</div><p class="lime">Every route. Each company joins once, through one adapter to the Radox API.</p></div>
+      <div class="step"><div class="k">Then</div><p class="lime">Every route. Each company joins once, through one adapter.</p></div>
     </div></div>
     <div class="src">US–Brazil goods trade was about US$94.2 billion in 2025 (US Census Bureau, exports plus imports).</div>""",
     # 10 team
     """<div class="kicker">Team</div>
     <h1>Built by people who already ship on Stellar.</h1>
     <div class="grow"><div class="team">
-      <div><b>Pedro Wakigawa Saragossy</b><p>Founder. Built Radox: 3 Soroban contracts on Stellar mainnet.</p></div>
-      <div><b>Leo Schlanger</b><p>Developer: the contract, the testnet harness and the proofs.</p></div>
-      <div><b>Vhendala</b><p>QA and product review.</p></div>
+      <div><b>Pedro Wakigawa Saragossy</b><p>Founder. Built Radox before the event: 3 Soroban contracts on Stellar mainnet (prior work).</p></div>
+      <div><b>Leo Schlanger</b><p>Developer: reviewed the contract, the signing logic and the proofs.</p></div>
+      <div><b>Vhendala</b><p>Supervision and product review.</p></div>
     </div>
     <p class="lead" style="margin-top:80px;color:var(--fg)">github.com/pwsaragossy/rio-miami-rail · <span class="lime">rio-miami-rail.vercel.app</span></p></div>
-    <div class="src">Built at HackMeridian on the Radox platform (prior work, listed in the repo). Made with AI coding agents (Claude Code); see AI_USAGE.md.</div>""",
+    <div class="src">Prior work is listed in the repo. Made with AI coding agents (Claude Code); see AI_USAGE.md.</div>""",
 ]
 
 

@@ -53,7 +53,7 @@ DATES = [r"(?:\d{1,2} )?(?:Feb|Dec|Sep|Oct) \d{4}"]
 BANNED = [r"\bpartner", r"\bchamber", r"\bZIS\b", r"\bPaulo\b", r"PortMiami", r"\bairport", r"Hin Leong", r"\bcustomers?\b",
           r"\busers have\b", r"\brevenue\b", r"\btraction\b", r"\bpilot\b", r"(live|deployed|running|launched) on (Stellar )?mainnet",
           r"mainnet-ready", r"publicly hosted", r"api\.radox", r"\bendorse", r"\bbacked by\b", r"\bin talks\b", r"\bsponsor",
-          r"title to", r"document of title", r"bill of lading replace", r"\bLeo-agent\b", r"\{\{", r"\bdemo\b"]
+          r"(port|bank|airport|chamber).{0,40}(signed|agreed|committed|joined)", r"(?<!nothing sent to )\b(ran|runs) on (Stellar )?mainnet", r"\bcustoms brokers?\b", r"title to", r"document of title", r"bill of lading replace", r"\bLeo-agent\b", r"\{\{", r"\bdemo\b"]
 REQUIRED = {"Problem": "problem", "Solution": "solution", "Target users": "target users", "Value proposition": "value proposition",
             "Team": "team", "vision": "future vision", "Business model": "business model", "Market opportunity": "market opportunity",
             "Go-to-market": "go-to-market", "testnet": "network named", "Claude Code": "AI disclosure", "prior work": "prior work disclosure",
