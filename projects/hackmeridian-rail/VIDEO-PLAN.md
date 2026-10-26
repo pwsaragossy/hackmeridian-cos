@@ -74,7 +74,8 @@ Other fallbacks:
 
 ## Pedro decides
 1. Approve this plan and give VIDEO GO (recommended), or ask for changes first.
-2. The live page names ZIS, Cisbra and Camacol in scene 7, and B11 sends judges there. The video hides the paragraph in every case. The question is whether the page keeps it: (a) take it off the page until Paulo's written OK arrives (recommended, rule [[zis-in-public-material-radox-is-bc05]]); (b) keep it, because Paulo already authorised it.
+2. DECIDED 05:35 UTC (Pedro, via the chief-of-staff session): "Manter". The paragraph stays on the live page, and the option he picked says Paulo authorised the names. The video still hides it in B10, under the video brief's no-partner-name rule.
+2b. Still open:
 3. Narration: (a) an agent on Pedro's Mac with the cloned profile, which is fastest and keeps Vhendala's rule (synthetic voice) (recommended); (b) Vhendala on her machine with a stock voice, about 30 min more.
 
 ## Sources
