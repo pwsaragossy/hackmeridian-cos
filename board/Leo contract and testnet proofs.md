@@ -5,7 +5,7 @@ status: doing
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: leo
-due: 2026-10-26 09:00
+due: 
 since: 2026-10-25
 updated: 2026-10-26
 asked: 
