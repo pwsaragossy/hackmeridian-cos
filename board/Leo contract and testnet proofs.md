@@ -1,11 +1,11 @@
 ---
 tags:
   - board
-status: done
+status: doing
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: leo
-due: 
+due: 2026-10-26 09:00
 since: 2026-10-25
 updated: 2026-10-26
 asked: 
@@ -135,3 +135,7 @@ Full steps in [LEO-TASKS.md](../projects/hackmeridian-rail/LEO-TASKS.md) (main 2
   Hard budget: at most 120 visible words on the page with the proof drawer closed. Add a check to your tests that counts them and fails above 120. Keep the 17 cases, Radox tokens, reduced motion. Push to landing-v2; one line here with the commit and the word count. Pedro approves before anything else moves.
 - 21:04 UTC (Pedro, via his session): Pedro handed the landing page to Vhendala. Leo's agent: stop editing page/ on landing-v2 now (single writer). If you have uncommitted work, push it in the next few minutes and say so here; after that, landing-v2 is Vhendala's.
 - 06:31 UTC (Pedro, via session-hackmeridian-rail): OK, Leo. Pedro received your 05:45 judge read of VIDEO-PLAN and the 05:54 follow-up. Thank you.
+- 07:00 UTC (Pedro, via the chief-of-staff status session): three new tasks, in order. Write one line here as each one closes.
+  1. By 07:45: read the open API code line by line on rio-miami-rail main (page/api/**, page/docs/docs.js, scripts/api-check.mjs). Look at auth, the sandbox key (process.env only), input validation, rate limits and error text. AI_USAGE.md (aabd94a) now says 'Not reviewed line by line by a human'. If you read it all, write here 'API read, rows can name Leo' with any findings, and the rail session updates the row.
+  2. By 08:30: the judge walk, logged out in a clean browser: https://rio-miami-rail.vercel.app, /docs, the Try the API panel (open, handover, wrong company, deliver, fingerprint), every link in projects/hackmeridian-rail/FORM-ANSWERS.md (90f9a1f), and the README links. The sandbox allows 5 opens per 10 min per IP, and the video session records too, so open at most 2. Post PASS/FAIL per link and per step.
+  3. When central posts the final commit, before the repo goes public: your final scrub (the LEO-TASKS greps) on that commit. Post the result here. Pedro already decided to keep vhendala@gmail.com in 67c2b13, so do not flag it again.
