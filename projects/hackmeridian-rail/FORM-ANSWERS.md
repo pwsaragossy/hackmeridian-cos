@@ -2,7 +2,7 @@
 
 Portal fields in the order of the live portal (Pedro's paste, 26 Oct ~02:00 UTC). Copy the text inside each box as it is; paste everything in one go and never reload the form page. Two fields wait: video link and deck file. Only Pedro checks the terms box and submits.
 
-## Project title (required; 18 chars)
+## Project title (required; 10 chars)
 
 ```text
 Radox Rail
@@ -16,7 +16,7 @@ SWIFT for goods in transit, on Stellar: every handover signed by both companies,
 
 Pedro's choice (26 Oct ~03:10 UTC): both approved lines joined. The portal holds `SWIFT for goods in transit, on Stellar` now; replace it with this text.
 
-## Description (required, Markdown, up to 8000 chars; 7820 chars)
+## Description (required, Markdown, up to 8000 chars; 7812 chars)
 
 ```text
 **A container crosses a border through several companies and agencies (for example a warehouse, a port, a carrier, customs and the buyer), and each keeps its own records. No record is shared among them, so none of them can check what the others say about who held the goods. The money that rides on those records is large: the WTO says 80 to 90 per cent of world trade relies on trade finance. Radox Rail is a shared record that each company on the route signs into, like SWIFT for goods: at each handover, the company giving the goods and the company receiving them both sign, the step is added to a hash chain that no one can rewrite (an administrator can freeze a shipment but cannot change past steps), and anyone who needs to know (the buyer, an insurer, a lender) can check the whole history against one 32-byte value stored on the contract. This repo is its first piece, running on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
@@ -75,7 +75,7 @@ What changes. For a company: it will join once, through one adapter to the Radox
 3. History does not last on testnet: the RPC keeps events about seven days, and testnet resets about quarterly (next on 2026-12-16). We recompute each shipment's head from the transactions' own arguments on Horizon and commit Horizon copies of the proof transactions. Result: a buyer, insurer or lender can check a shipment's history later from public data without trusting us (`scripts/verify-head.mjs`: MATCH on every shipment in `proofs/`).
 ```
 
-## What's next (optional; 1681 chars)
+## What's next (optional; 1673 chars)
 
 ```text
 Radox is a platform for tokenized real-world assets; its three Soroban contracts (token_sale, yield_distributor, maturity_settlement) run on Stellar mainnet since June-July 2026. Radox Rail, on Stellar testnet, is our next step from tokenized assets to goods in transit: it adds to a tokenized asset a record of who holds the goods, signed by both companies at each handover. We aim to grow it into a shared, SWIFT-like standard for custody of goods across trade corridors. Rio–Miami is our first corridor, not the product. Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it will join the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami.
