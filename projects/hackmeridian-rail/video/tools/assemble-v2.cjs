@@ -40,7 +40,10 @@ const pill = (text, css, extra = "") => `${FONT}<style>${BASE}html,body{backgrou
   div{position:absolute;bottom:8px;${css};padding:8px 20px;border-radius:10px;background:${INK};color:${FG};font-size:24px;font-weight:600;white-space:nowrap;${extra}}</style><div>${text}</div>`;
 const cap = (t) => pill(t, "right:40px", `font-size:22px;font-weight:400;color:${MUTED}`);
 const OVER = {
-  label: [pill("Stellar testnet · test keys", "left:40px", `border:2px solid ${LIME}`), 0, TOTAL],
+  // B2b (31-45 s) is the Radox mainnet card: no testnet pill over it
+  label: [pill("Stellar testnet · test keys", "left:40px", `border:2px solid ${LIME}`), 0, 31],
+  label2: [pill("Stellar testnet · test keys", "left:40px", `border:2px solid ${LIME}`), 45, TOTAL],
+  prior: [pill("Prior work · Radox", "left:40px"), 31, 45],
   lower: [pill("Narration: AI voice generated from Pedro's voice", "left:50%;transform:translateX(-50%)"), 0, 8],
   wto: [cap("Source: WTO, trade finance"), 21, 31],
   b7: [cap("Live on Stellar testnet · open rail API"), 94, 120],

@@ -43,7 +43,7 @@ The API session (local_119461cd) answered at about 05:15 UTC. The /docs page and
 - If /docs is not in production by 08:30 UTC, the fallback B7 is: the explorer clip 03 for tx 635c99ac73cb13416e6b52f29ac9a067fbc615e01b8de962eb36245db3f0bd38 (captioned "recorded 2026-10-25"), then the clip 08b (captioned "Radox API, local test run on testnet · recorded response"). The narration becomes: "Now the real thing: a handover on Stellar testnet, one call to our contract, naming both companies. And a recorded response from the Radox API, in a local test run on testnet: delivered, four handovers." Nothing in this fallback says the Radox API is publicly hosted.
 
 ## Hard limits (every frame and every line was checked against these)
-- Testnet only. Mainnet is left out of the video.
+- Mainnet appears only in B2b, as disclosed prior work (Radox's three existing contracts). The rail itself is testnet only. During B2b the bottom pill reads "Prior work · Radox" instead of "Stellar testnet · test keys".
 - The Radox backend is never called public. The public piece is "the open rail API on Stellar testnet" (/docs).
 - No partner, chamber, port, initiative or person outside the team is named. ZIS, Cisbra and Camacol are hidden in B10.
 - No users, pilots or revenue are claimed.
