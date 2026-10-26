@@ -16,7 +16,7 @@ SWIFT for goods in transit, on Stellar: every handover signed by both companies,
 
 Pedro's choice (26 Oct ~03:10 UTC): both approved lines joined. The portal holds `SWIFT for goods in transit, on Stellar` now; replace it with this text.
 
-## Description (required, Markdown, up to 8000 chars; 7583 chars)
+## Description (required, Markdown, up to 8000 chars; 7667 chars)
 
 ```text
 **A container crosses a border through several companies and agencies (for example a warehouse, a port, a carrier, customs and the buyer), and each keeps its own records. No record is shared among them, so none of them can check what the others say about who held the goods. The money that rides on those records is large: the WTO says 80 to 90 per cent of world trade relies on trade finance. Radox Custody Rail is a shared record that each company on the route signs into, like SWIFT for goods: at each handover, the company giving the goods and the company receiving them both sign, the step is added to a hash chain that no one can rewrite (an administrator can freeze a shipment but cannot change past steps), and anyone who needs to know (the buyer, an insurer, a lender) can check the whole history against one 32-byte value stored on the contract. This repo is its first piece, running on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
@@ -40,11 +40,11 @@ Around it: 26 contract tests pass (24 unit, 2 seeded property tests that draw ra
 
 **Check it yourself.** `node scripts/verify-head.mjs <key>` reads the shipment's transactions from Horizon (RPC events expire after about seven days, so we do not rely on them), recomputes the head and compares it with the value on the contract: MATCH. `node scripts/handover-signers.mjs` lists who authorised each handover. The public page, https://rio-miami-rail.vercel.app, reads Soroban RPC and Horizon from the browser, lists each transaction, recomputes the head with a Verify head button, and shows a labelled snapshot if testnet cannot be reached.
 
+Judges can use the rail now, with no account or key: https://rio-miami-rail.vercel.app/docs has the API reference and a live panel that opens a shipment on Stellar testnet, runs handovers that need both companies' authorisation, shows the contract refusing a wrong handover, and recomputes the record's head (a 32-byte fingerprint of its history) in the browser.
+
 **Against the pre-event intake.** Contract with both-custodian handovers and an event attestation: done (tx above). Delivery burns the token: done (redeem). Ownership stays with the holder: the registry records custody only. Proven end to end on testnet with signed transactions: done. Connected to our API: the Radox endpoint reads this contract and returned the same head as `verify-head` (details below).
 
 **Stellar ecosystem.** `custody_registry` is an open Apache-2.0 Soroban contract that stores a token address and never calls the token, so any tokenized Stellar asset can carry a custody record. Radox will open API access to Stellar issuers. Stellar holds about US$4 billion in tokenized real-world assets (SDF, as of 1 Sep 2026), and we found no Stellar project that records a handover signed by two custodians (LumenLoop directory and SCF submissions, plus Scout for SEPs, searched 24-25 Oct 2026).
-
-**Market.** Our first corridor is US-Brazil goods trade, about US$94.2 billion in 2025 (US Census Bureau). The business model is a recurring fee per connected institution plus a fee per shipment, in the shape of SWIFT's published fee structure; we are not affiliated with Swift.
 
 **Ask one question, get the answer.** A company on the route, or a financier, will be able to ask the Radox API, `GET /api/custody/shipments/:key`, and get the shipment's status, current custodian, route and number of signed handovers, read from this contract. The endpoint is in the closed Radox backend; it ran in a local development run on testnet, where it returned status `Delivered`, `seq` 4 and the same head as `verify-head`; it is not publicly hosted.
 
