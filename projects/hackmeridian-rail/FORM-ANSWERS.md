@@ -104,7 +104,7 @@ Blocker: the video is on hold by Pedro ("Vídeo ainda não"). Required field; th
 {{UPLOAD: deck/yc/radox-custody-rail-yc.pdf}}
 ```
 
-Waits on Pedro's OK for the YC-style deck (deck-yc session, commit 4804ded). Checked 26 Oct: 407,709 bytes (0.39 MiB, under 20 MiB), 10 pages; cover "Radox Custody Rail", "SWIFT for goods in transit, on Stellar", "Every handover signed by both companies, checkable by anyone. Running on Stellar testnet." If Pedro keeps the earlier deck: deck/radox-custody-rail.pdf (760,710 bytes, 10 pages, cover matches).
+Waits on Pedro's OK for the YC-style deck (deck-yc session, commit 4804ded). Checked 26 Oct: 407,709 bytes (0.39 MiB, under 20 MiB), 10 pages; cover "Radox Custody Rail", "SWIFT for goods in transit, on Stellar", "Every handover signed by both companies, checkable by anyone. Running on Stellar testnet." If Pedro keeps the earlier deck: deck/radox-custody-rail.pdf (760,710 bytes, 10 pages, cover matches). In that case the AI tooling note goes back to "python-pptx scripts, written by Claude Code, for the deck" (1009 chars).
 
 ## Thematic track (optional, pick one)
 

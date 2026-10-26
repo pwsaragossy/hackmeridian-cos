@@ -60,6 +60,7 @@ h1 { font-size:84px; line-height:1.06; font-weight:700; letter-spacing:-.025em; 
 .three { display:grid; grid-template-columns:repeat(3,1fr); gap:56px; margin-top:96px; }
 .three b { display:block; font-size:40px; margin-bottom:12px; }
 .three p { font-size:30px; line-height:1.4; color:var(--soft); }
+.three.big b { font-size:48px; margin-bottom:20px; } .three.big p { font-size:36px; }
 /* columns, stats */
 .cols { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
 .col h2 { font-size:30px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
@@ -89,22 +90,6 @@ def route(problem):
         if i < len(ROUTE) - 1:
             cells.append('<div class="gap">?</div>' if problem else '<div class="link"><span>both sign</span></div>')
     return f'<div class="route">{"".join(cells)}</div>'
-
-
-def mesh():
-    """Five companies: pair by pair (10 links) vs one rail (5 connections)."""
-    import math
-    pts = [(200 + 150 * math.cos(math.radians(-90 + 72 * i)), 190 + 150 * math.sin(math.radians(-90 + 72 * i))) for i in range(5)]
-    pair = "".join(f'<line x1="{a[0]:.0f}" y1="{a[1]:.0f}" x2="{b[0]:.0f}" y2="{b[1]:.0f}" stroke="#7F848E" stroke-width="3"/>'
-                   for i, a in enumerate(pts) for b in pts[i + 1:])
-    hub = "".join(f'<line x1="200" y1="190" x2="{p[0]:.0f}" y2="{p[1]:.0f}" stroke="#C6F24E" stroke-width="4"/>' for p in pts)
-    dots = "".join(f'<circle cx="{p[0]:.0f}" cy="{p[1]:.0f}" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/>' for p in pts)
-    left = f'<svg width="400" height="380">{pair}{dots}</svg>'
-    right = (f'<svg width="400" height="380">{hub}{dots}<rect x="150" y="160" width="100" height="60" rx="8" fill="#C6F24E"/>'
-             f'<text x="200" y="200" text-anchor="middle" font-size="26" font-weight="700" fill="#0E0F11">rail</text></svg>')
-    return (f'<div class="cols" style="align-items:center">'
-            f'<div class="col" style="display:flex;gap:40px;align-items:center">{left}<div><h2>Today</h2><p>10 links,<br>pair by pair</p></div></div>'
-            f'<div class="col" style="display:flex;gap:40px;align-items:center">{right}<div><h2>On the rail</h2><p class="lime">5 connections,<br>one each</p></div></div></div>')
 
 
 SLIDES = [
@@ -142,10 +127,14 @@ SLIDES = [
     </div>
     <p class="lead" style="margin-top:72px">And any Stellar issuer of a tokenized good, through the open spec.</p></div>""",
     # 5 value proposition
-    f"""<div class="kicker">Value proposition</div>
-    <h1>Each company connects once, not to every other company.</h1>
-    <div class="grow">{mesh()}
-    <p class="lead" style="margin-top:56px">A lender will read which company last signed for the goods, straight from the contract, before it pays.</p></div>""",
+    """<div class="kicker">Value proposition</div>
+    <h1>Every handover becomes proof that lenders can check.</h1>
+    <div class="grow"><div class="three big" style="margin-top:0">
+        <div><b class="lime">Lenders see the proof</b><p>Lenders and insurers will see which company last signed for the goods before paying.</p></div>
+        <div><b>Companies prove their leg</b><p>Your handover carries the receiver's signature, so you can show you passed the goods.</p></div>
+        <div><b>Cargo token, linked record</b><p>Each cargo token links to one shipment record of signed handovers.</p></div>
+    </div></div>
+    <div class="src">Proof on Stellar testnet.</div>""",
     # 6 proof
     f"""<div class="kicker">Proof</div>
     <h1>It runs on Stellar testnet today.</h1>

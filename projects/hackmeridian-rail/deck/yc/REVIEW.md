@@ -11,3 +11,6 @@ Applied (build.py), then check.py OK:
 6. check.py BANNED gained the signed/agreed-partner, "ran on mainnet" and "customs brokers" patterns.
 
 Open: name on slide 10 is "Pedro Wakigawa Saragossy", README says "Pedro Saragossy" (kept; both are the founder). check.py's number trace accepts small integers anywhere (ceiling: string filter, not a claims judge).
+
+## Slide 5 rewrite, 2026-10-26
+Owner rejected the connections slide. Marketing specialist drafted per-user values from FORM-ANSWERS and the contract; reviewer (approve after changes) cut "carries its own history" (the record points to the token), "when the goods left you" (no timestamp in the record) and "money can rely on" (no lender uses it yet). Applied; check.py OK.
