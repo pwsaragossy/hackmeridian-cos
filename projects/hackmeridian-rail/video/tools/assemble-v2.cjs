@@ -67,7 +67,7 @@ const OVER = {
 const card = (last) => `${FONT}<style>${BASE}body{background:${INK};color:${FG};width:1920px;height:1080px;display:grid;place-content:center;text-align:center;gap:34px;padding:0 120px}</style>
   <div style="font-size:60px;font-weight:700;letter-spacing:-.02em;color:${LIME}">Radox · tokenized real-world assets on Stellar</div>
   <div style="font-size:30px;color:${MUTED};line-height:1.45">token_sale, yield_distributor, maturity_settlement · Stellar mainnet since June–July 2026 · <span style="color:${LIME}">github.com/pwsaragossy/radox</span> (contracts only)</div>
-  <div style="font-size:38px;margin-top:30px;opacity:${last ? 1 : 0}">New: <b style="color:${LIME}">Radox Custody Rail</b> · built at HackMeridian · Stellar testnet</div>`;
+  <div style="font-size:38px;margin-top:30px;opacity:${last ? 1 : 0}">New: <b style="color:${LIME}">Radox Rail</b> · built at HackMeridian · Stellar testnet</div>`;
 
 (async () => {
   const b = await chromium.launch({ executablePath: "/Users/pedrosaragossy/Library/Caches/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-mac-arm64/chrome-headless-shell" });

@@ -172,7 +172,7 @@ pill.text_frame.paragraphs[0].runs[0].font.size = Pt(18)
 set_run_text(find(s, "100"), "#HackMeridian26", LIME)
 for k in ("95", "96", "97"):
     find(s, k).fill.fore_color.rgb = rgb(LIME)
-text(s, 1.0, 2.55, 12.5, 1.5, ["Radox Custody Rail"], size=100, font=TITLE, bold=True, color=LIME, spacing=0.95)
+text(s, 1.0, 2.55, 12.5, 1.5, ["Radox Rail"], size=100, font=TITLE, bold=True, color=LIME, spacing=0.95)
 # Submission title and tagline, owner-approved 2026-10-26 ~01:30 UTC (README ec97106, FORM-ANSWERS.md).
 text(s, 1.0, 4.15, 12.3, 0.9, ["SWIFT for goods in transit, on Stellar"], size=44, font=TITLE, bold=True, color=TEXT_D, spacing=1.0)
 text(s, 1.0, 5.25, 12.3, 1.2, ["One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone."],
@@ -187,7 +187,7 @@ for i in range(6):
 text(s, 13.87, 6.42, 2.0, 0.4, ["RIO"], size=18, font=MONO, bold=True, color=SEC_D)
 text(s, 17.13, 6.42, 2.0, 0.4, ["MIAMI"], size=18, font=MONO, bold=True, color=SEC_D, align=PP_ALIGN.RIGHT)
 
-# ---------- 2. The platform: Radox carries every stage; the Custody Rail is this weekend's piece ----------
+# ---------- 2. The platform: Radox carries every stage; Radox Rail is this weekend's piece ----------
 # Owner, 2026-10-26: "não diminua a radox, ela quem sustenta uma feature incremental pequena". Each caption is checked
 # against radox-internal code (Bible 02_feature_matrix.md); review: [[radox-platform-slide-what-holds-and-992c]].
 # Status in the chip: 3 contracts on mainnet (caatinga), every stage built on testnet (physical asset locked outside it).
@@ -216,7 +216,7 @@ c_.line.width = Pt(2.25)
 c_.line.dash_style = 4
 box(s, xn - 0.125, ly - 0.125, 0.25, 0.25, fill=INK, line=LIME, shape=MSO_SHAPE.OVAL, weight=2.25)
 text(s, xn - 0.125, ly - 0.65, 2.9, 0.4, ["THIS WEEKEND"], size=18, font=MONO, bold=True, color=LIME)
-text(s, xn - 0.125, ly + 0.35, 2.9, 0.5, ["Custody Rail"], size=26, font=TITLE, bold=True, color=TEXT_D)
+text(s, xn - 0.125, ly + 0.35, 2.9, 0.5, ["Radox Rail"], size=26, font=TITLE, bold=True, color=TEXT_D)
 text(s, xn - 0.125, ly + 0.88, 2.9, 0.5, ["goods in transit"], size=20, color=SEC_D)
 chip = box(s, 1.0, 8.94, 11.33, 0.56, line=LIME, shape=MSO_SHAPE.ROUNDED_RECTANGLE, weight=1.5)
 chip.adjustments[0] = 0.5
@@ -226,7 +226,7 @@ text(s, 1.0, 8.94, 11.33, 0.56, [[("3 Soroban contracts", {"color": LIME, "bold"
 s.notes_slide.notes_text_frame.text = (
     "Platform first, feature second. Radox is the rail for a financial institution's offering, from onboarding to holding: "
     "nine asset categories, atomic USDC sale, yield and maturity payouts, physical-asset holding. Three Soroban contracts are "
-    "on Stellar mainnet; every stage is built and runs on testnet. Radox existed before this weekend; only the Custody Rail is new.")
+    "on Stellar mainnet; every stage is built and runs on testnet. Radox existed before this weekend; only Radox Rail is new.")
 
 # ---------- 3-4. Problem, in numbers: only rows of PROBLEM-NUMBERS.md (verified 2026-10-25), wording kept ----------
 # (big number, what it measures, source line). check_deck fails on any {{ placeholder.

@@ -142,7 +142,7 @@ SLIDES = [
     # 4 cover
     """<div class="grow">
       <div class="kicker">HackMeridian 2026 · Scale track</div>
-      <h1 style="font-size:150px;letter-spacing:-.035em">Radox Custody Rail</h1>
+      <h1 style="font-size:150px;letter-spacing:-.035em">Radox Rail</h1>
       <p class="lead" style="font-size:60px;margin-top:36px;color:var(--fg)">SWIFT for goods in transit, <span class="lime">on Stellar</span></p>
       <p class="lead" style="font-size:36px">Every handover signed by both companies, checkable by anyone.</p>
     </div>
@@ -234,7 +234,7 @@ SLIDES = [
 
 def build():
     body = "".join(f'<section data-slide="{i}">{s}<div class="pg">{i}</div></section>' for i, s in enumerate(SLIDES, 1))
-    html = (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Radox Custody Rail</title>'
+    html = (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Radox Rail</title>'
             f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=block">'
             f'<style>{CSS}</style></head><body>{body}</body></html>')
     open(HTML, "w").write(html)

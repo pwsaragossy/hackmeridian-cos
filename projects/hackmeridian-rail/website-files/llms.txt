@@ -1,4 +1,4 @@
-# Radox Custody Rail
+# Radox Rail
 
 > A shared custody record for goods in transit, on Stellar testnet. At each handover between companies on a route (for example a warehouse, a port, a carrier, customs and the buyer), the company giving the goods and the company receiving them both sign; the step is added to a hash chain stored as one 32-byte head on a Soroban contract, and anyone can recompute it from public data. Built at HackMeridian 2026 on 25-26 Oct. First corridor: Rio-Miami.
 

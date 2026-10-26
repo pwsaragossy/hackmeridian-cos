@@ -25,7 +25,7 @@ Claims guard (reviewed 2026-10-25). Say: 'Radox: 3 Soroban contracts deployed on
 
 | # | Template slot | Title | Message (one per slide) | Proof on the slide |
 |---|---|---|---|---|
-| 1 | Cover | Radox Custody Rail: dual-signed custody for goods in transit, on Stellar | First corridor: Rio–Miami | team, track (Scale) |
+| 1 | Cover | Radox Rail: dual-signed custody for goods in transit, on Stellar | First corridor: Rio–Miami | team, track (Scale) |
 | 2 | Solution | Every handover, signed by both hands | `custody_registry`: outgoing and incoming custodian sign the same transaction; the token never leaves the holder during transit; after the registry shows Delivered, the operator burns with the existing `redeem` (Radox platform policy, not enforced on-chain by the registry; `redeem` still needs the holder's signature) | screenshot of one dual-signed handover on stellar.expert |
 | 3 | PMF (problem) | Who holds the cargo right now? | About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 data); in 2025 about 11% were issued electronically (DCSA, as of 2025). 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI Cargo Theft Report, Apr 2026). Market numbers, not our traction | US$2.5T global trade finance gap (ADB Global Trade Finance Gap Survey, Dec 2025): market size only, not evidence of the custody pain |
 | 4 | Technical workflow | How it runs on Stellar | open -> 4 dual-signed handovers -> deliver -> burn (existing `redeem`, run live in the same harness, which first checks status == Delivered); `head` hash chain survives the 7-day event window | diagram + contract ID + 7 tx hashes `{{fill: proofs/lifecycle.json}}` |

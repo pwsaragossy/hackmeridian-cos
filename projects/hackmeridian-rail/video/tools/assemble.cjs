@@ -41,7 +41,7 @@ const TITLE = `${FONT}<style>${BASE}body{background:#0E0F11;color:#E7E8EA;height
   .c{display:flex;align-items:center;gap:40px;font-size:34px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#A3A8B0}
   .l{flex:1;height:4px;background:#C6F24E;display:flex;justify-content:space-evenly;align-items:center}
   .l i{width:26px;height:26px;border-radius:50%;background:#C6F24E}</style>
-  <h1>Radox Custody Rail</h1><div class="c"><span>Rio de Janeiro</span><span class="l"><i></i><i></i><i></i><i></i></span><span>Miami</span></div>`;
+  <h1>Radox Rail</h1><div class="c"><span>Rio de Janeiro</span><span class="l"><i></i><i></i><i></i><i></i></span><span>Miami</span></div>`;
 const README = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown-dark.css">
   <style>body{margin:0;background:#0d1117}.markdown-body{max-width:1012px;margin:0 auto;padding:48px 32px}</style>
   <article class="markdown-body">${readmeHtml}</article>`;
