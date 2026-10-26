@@ -91,6 +91,7 @@ h1 { font-size:84px; line-height:1.06; font-weight:700; letter-spacing:-.025em; 
 .cols { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
 .col h2 { font-size:30px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
 .col p { font-size:52px; font-weight:600; line-height:1.3; }
+.cols.tight .col p { font-size:44px; }
 .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:48px; }
 .stat .n { font-size:120px; font-weight:700; letter-spacing:-.03em; line-height:1; }
 .stat .l { font-size:30px; line-height:1.35; color:var(--soft); margin-top:20px; }
@@ -186,7 +187,7 @@ SLIDES = [
     # 8 business model
     f"""<div class="kicker">Business model</div>
     <h1>Companies on the route subscribe, and pay per shipment.</h1>
-    <div class="grow"><div class="cols" style="grid-template-columns:repeat(3,1fr);gap:64px">
+    <div class="grow"><div class="cols tight" style="grid-template-columns:repeat(3,1fr);gap:64px">
       <div class="col">{ic("calendar-sync")}<h2>Subscription</h2><p>per connected company</p></div>
       <div class="col">{ic("receipt", True)}<h2>Fee</h2><p class="lime">per shipment on the rail</p></div>
       <div class="col">{ic("eye")}<h2>Open record</h2><p>checking needs no signature and no account</p></div>
