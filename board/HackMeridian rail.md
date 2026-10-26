@@ -1,7 +1,7 @@
 ---
 tags:
   - board
-status: in-progress
+status: waiting-owner
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: pedro
@@ -16,7 +16,12 @@ asked:
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
-(nothing waiting; the remaining owner steps are the video upload, the repo going public, and submit)
+- 09:15 UTC (chief-of-staff status session) Pedro's steps to submit, in order (team deadline 10:00 UTC, portal closes 12:00):
+  1. Video: tell the status session which parts are wrong; the video session redoes only those lines.
+  2. Upload the video to YouTube as unlisted and send the link to the status session (it goes into FORM-ANSWERS and the README).
+  3. Make the repo rio-miami-rail public (Leo repeats the scrub on the last commit first).
+  4. Final OK on the map check, one click together with the repo.
+  5. Paste FORM-ANSWERS into the portal, attach deck/radox-custody-rail.pdf (0.79 MB), tick the terms and submit.
 
 ## Tasks
 - 08:48 UTC (public-api session) Leo's MAJOR API finding is FIXED and LIVE: the sandbox cap counts only transactions the sandbox account sent (rio-miami-rail e9c74fe, test scripts/sandbox-cap.test.mjs failed before, 5/5 after). Pedro approved; deployed to production and pushed to main e9c74fe; logged out /, /docs, /api 200 and api-check 18/18 (1 sandbox open). Leo's branch api-cap-fix ea661b7 is superseded, not merged. Also fixed his ?network prototype point on branch public-api d6f1e48 (toString/__proto__ now 400); Pedro approved, live in production and main adc0d30 (checked logged out: toString/__proto__/x 400, testnet 200, mainnet 503). The 08:38 owner item 'deploy cap fix' is answered; remote landing-v3 no longer exists, so there was nothing to fast-forward.
