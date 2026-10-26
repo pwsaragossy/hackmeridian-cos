@@ -1,8 +1,8 @@
 # Radox Custody Rail
 
-> A shared custody record for goods in transit, on Stellar testnet. At each handover between companies on a route (for example a warehouse, a port, a carrier, customs and the buyer), the company giving the goods and the company receiving them both sign; the step is added to a hash chain stored as one 32-byte head on a Soroban contract, and anyone can recompute it from public data. Built at HackMeridian 2026 (Lisbon, 25-26 Oct) in the Scale track. First corridor: Rio-Miami.
+> A shared custody record for goods in transit, on Stellar testnet. At each handover between companies on a route (for example a warehouse, a port, a carrier, customs and the buyer), the company giving the goods and the company receiving them both sign; the step is added to a hash chain stored as one 32-byte head on a Soroban contract, and anyone can recompute it from public data. Built at HackMeridian 2026 on 25-26 Oct. First corridor: Rio-Miami.
 
-Everything runs on Stellar testnet with test keys. The custodians are test accounts, not real companies, and no real goods or money move. Nothing has been deployed to mainnet.
+Everything runs on Stellar testnet with test keys. The custodians are test accounts, not real companies, and no real goods or money move. Nothing of this rail has been deployed to mainnet.
 
 ## What was built at the event
 
@@ -11,7 +11,7 @@ Everything runs on Stellar testnet with test keys. The custodians are test accou
 - An open spec of the record format: CUSTODY-SPEC.md.
 - Four proof sets: the demo lifecycle (7 transactions, 9 refusal branches by simulation), a second shipment where two teammates signed with their own keys, two test companies' chains on one registry (10 transactions, both heads MATCH), and a rehearsal on a local fork of mainnet state (15 transactions applied, 9 refusals, nothing sent to mainnet).
 
-Prior work, from before the event: the Radox platform and its `transfer_agent` contract, which registers, mints and burns the demo cargo token. Its source is closed. Details in the README, section Prior work.
+Prior work, from before the event: the Radox platform and its `transfer_agent` contract, which registers, mints, delivers to the holder and burns the demo cargo token. Its source is closed. Details in the README, section Prior work.
 
 ## Links
 

@@ -114,10 +114,10 @@ Stellar Unlocked
 
 Pedro's choice (24 Oct). Check that the option is still in the portal list when pasting.
 
-## Tech stack (optional, comma-separated, up to 25; 20 items)
+## Tech stack (optional, comma-separated, up to 25; 21 items)
 
 ```text
-Stellar testnet, Soroban, Rust, soroban-sdk 29.0.1, wasm32v1-none, Cargo, Stellar CLI 28.1.0, Soroban authorization (require_auth), Stellar Asset Contract, Stellar RPC, Horizon, Friendbot, JavaScript, Node.js, npm, @stellar/stellar-sdk 17.3.0, HTML, CSS, Vercel, Radox transfer_agent (prior work)
+Stellar testnet, Soroban, Rust, soroban-sdk 29.0.1, wasm32v1-none, Cargo, Stellar CLI 28.1.0, Soroban authorization (require_auth), Stellar Asset Contract, Stellar RPC, Horizon, Friendbot, JavaScript, Node.js, npm, @stellar/stellar-sdk 17.3.0, HTML, CSS, Vercel, soroban-sim (local mainnet fork), Radox transfer_agent (prior work)
 ```
 
 ## Prior work disclosure (optional; 1499 chars)
