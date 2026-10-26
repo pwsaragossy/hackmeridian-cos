@@ -1,7 +1,7 @@
 ---
 tags:
   - board
-status: in-progress
+status: done
 project: hackmeridian-rail
 owner: session-hackmeridian-rail
 member: vhendala
@@ -21,6 +21,10 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 - Narration / Audio: Vhendala definiu que a locução NÃO será feita por voz humana direta; deve-se usar Voicebox para gerar o áudio e a narração sintética do vídeo a partir do script da demo (Mon 00:00–03:00).
 
 ## Sunday
+- 08:59 UTC (Vhendala): **Todas as pendências da Vhendala fechadas:**
+  1. **Google Antigravity (SIM):** Usei o **Google Antigravity** para supervisão do projeto, revisão de produto e do formulário (`FORM-ANSWERS.md`), assinatura do embarque `three-machine`, execução do `fresh-run` no Windows, documentação em código das fronteiras fechadas da Radox (`67c2b13`) e revisão/ajuste visual da landing page (`6251e8e`). Pode incluir no `AI tooling note` e no `AI_USAGE.md`.
+  2. **Foto da equipe:** Não precisa mais subir por aqui — o Pedro já pegou as fotos pelo WhatsApp.
+  3. **Revisão do vídeo no YouTube:** Tarefa removida do card da Vhendala a pedido dela (o Pedro / sessão cuidam da checagem final do upload).
 - 00:26 UTC (Vhendala via vhendala-agent): **2 bugs encontrados ao clicar em `'See the raw record'` na `landing-v3` (`b42c521`)** (não fizemos push em `landing-v3` conforme regra #2, reportando aqui para a sessão do Pedro aplicar):
   1. **Tela quebrada ao clicar em `'See the raw record'` (`#proof.open`)**: Em `page/index.html` linha 60, `.verifybox` tem `backdrop-filter: blur(6px)`, o que no CSS cria um novo containing block para filhos `position: fixed`. Quando `.proof.open` (linha 77, filho de `.verifybox`) aplica `position: fixed; inset: 6vh max(1rem, calc(50vw - 24rem));`, o `50vw - 24rem` de cada lado é calculado dentro da largura de `.verifybox` (~500px), esmagando o `#proof.open` numa caixinha quebrada de ~30px de largura! **Fix sugerido:** remover `position: fixed; inset: ...` de `.proof.open` para expandir inline dentro do modal `#check` (`display: block; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid hsl(var(--border));`) ou remover `backdrop-filter: blur(6px)` de `.verifybox`.
   2. **Erro `Cannot read properties of undefined (reading 'scValToNative')` no Windows**: Sem um `.gitattributes` com `* text=auto eol=lf`, o Git no Windows faz checkout de `page/stellar-sdk.min.js` com CRLF (`\r\n`), alterando o hash SHA-384 e fazendo o navegador bloquear o `stellar-sdk.min.js` no check de `integrity="sha384-..."`! **Fix sugerido:** adicionar `.gitattributes` (`* text=auto eol=lf`) na raiz do `rio-miami-rail`.
@@ -82,27 +86,9 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
-- 06:57 UTC (Leo, via leo-agent) Oi Vhendala! Do que estava na lista das 23:50, ainda vale (horários novos, plano do vídeo aprovado às 05:40): (a) AGORA, uma linha: usaste o Google Antigravity? Para quê? Sem linha até 09:00, fica fora do AI tooling. (b) AGORA: foto da equipe em projects/hackmeridian-rail/deck/screens/team.jpg e 'photo pushed', ou 'no photo'. (c) ~09:45 UTC (não 06:00): o Pedro sobe o vídeo não listado; vê uma vez deslogada e anota som, nomes, números e cortes aqui. (d) Proposto ao Pedro (espera o sim dele): logo depois, duas reproduções cronometradas do vídeo final, cada uma com início, fim e duração aqui; fecham o item pitch. O teste a frio da landing já não é necessário. Escreve aqui se não estiveres disponível às 09:45.
-- 05:40 UTC (video-plan session, asked by Pedro): VIDEO GO. Pedro approved projects/hackmeridian-rail/VIDEO-PLAN.md in his own words: "VIDEO GO. Narração com minha voz clonada no Voicebox, por um agente no meu Mac." So the narration is made by an agent on Pedro's Mac, and Vhendala does NOT need to make it (task 5 is superseded). Her task left: task 6, one logged-out play of the unlisted link when Pedro posts it (about 09:45 UTC), notes on this card.
-Updated Sun 23:50 UTC by Pedro's session, asked by Pedro. This list replaces every older task line. Do them in this order.
-
-1. NOW: cold test of landing v3, by Mon 01:00 UTC.
-   - Pedro sends you a link in the chat. Open it on your phone and stay logged out.
-   - Before the test, do not open page/ or the landing-v3 branch.
-   - Scroll from the top to the bottom one time, at your own speed (about 60 seconds). Press "Run it live" when you get to it.
-   - Then write four lines on this card, in your own words, without reading the page again:
-     (a) What does this company do?
-     (b) Who uses it, and who pays?
-     (c) What does the page prove?
-     (d) What was confusing, or what did you skip?
-   - You edited a button on this page at 23:02 UTC (6251e8e), so you already know part of it. Write that down too. Pedro brings a second tester who has not seen the page.
-2. Until Pedro approves the landing page, do not push to page/ on landing-v3. Pedro's session is the one writer there. Write a suggestion as a line on this card, and that session applies it.
-3. By Mon 02:00 UTC: one line, as Vhendala, that answers: "Did you use Google Antigravity? For what?" If you write yes, it goes into the AI tooling note and into AI_USAGE.md. If there is no line, it stays out.
-4. By Mon 02:00 UTC: the team photo of Pedro, Leo and Vhendala. If one was taken today, put it at projects/hackmeridian-rail/deck/screens/team.jpg, push it, and write "photo pushed" here. If there is none, write "no photo". The deck then keeps names without a photo.
-5. ON HOLD: the video. Start only when Pedro's session writes "VIDEO GO" on this card. That line will have the screen recording and the script. Then make the narration with Voicebox from that script and keep a copy offline. Until then, do nothing on the video.
-6. ON HOLD: after Pedro uploads the final video as unlisted on his YouTube, play it one time logged out. Write anything wrong (sound, a name, a number, a cut) on this card. Mon 06:00 UTC.
-
-Not your task: mainnet. Pedro decided at 23:45 UTC that the contract stays on testnet, with a mainnet rehearsal on a local fork only.
+- DONE 08:59 UTC (Vhendala): (a) **Google Antigravity — YES**: Vhendala confirmed she used Google Antigravity for project supervision, product & form review, `three-machine` handover signing, Windows `fresh-run` verification, code comment documentation (`67c2b13`), and landing-v3 UI testing/button styling (`6251e8e`).
+- DONE 08:59 UTC (Vhendala): (b) **Team photo**: Pedro already collected the photos from WhatsApp (no upload needed from here).
+- REMOVED 08:59 UTC (by Vhendala): (c) Watch the unlisted YouTube video — removed from Vhendala's tasks; Pedro/sessions handle the final video check.
 
 ## Decided
 - 2026-10-25 16:12 UTC (Vhendala): Não será criada conta nova no YouTube; será usado o canal do YouTube do Pedro que já está pronto para subir o vídeo (teste e final).
