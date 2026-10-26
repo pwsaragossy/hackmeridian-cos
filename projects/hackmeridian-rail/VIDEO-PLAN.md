@@ -34,6 +34,10 @@ Rubric coverage: User Value 20 (B1, B2) · Ecosystem Alignment 20 (B4, B7, B8) �
 
 ### B7 depends on the public API going live
 The API session (local_119461cd) answered at about 05:15 UTC. The /docs page and the "Try the API" card are built as a preview, waiting for Pedro's yes, and are not in production yet. Wording it asked for: "open rail API on Stellar testnet", not "Radox API". Its limits: 5 opens per 10 min per IP and 20 per hour for everyone, so take 1 and take 2 must sit inside one 10-minute window, and nothing else may open shipments meanwhile.
+- Facts confirmed by the API session (05:20 UTC):
+  - It is the open Custody Rail API of rio-miami-rail (Vercel functions next to the page), not the closed Radox platform API. Once it is in production it is publicly hosted, so "open rail API on Stellar testnet" is true.
+  - Endpoints: POST /api/sandbox/shipments (open, about 9–15 s, two confirmed transactions), POST /api/sandbox/shipments/{key}/handover (about 5 s, both the giving and the receiving company sign: 2 signers in tx.signers, throwaway test keys held by the server), POST /api/sandbox/shipments/{key}/deliver, and GET /api/shipments/{key}.
+  - Production needs Pedro's yes plus the sandbox key in Vercel.
 - If /docs is not in production by 08:30 UTC, the fallback B7 is: the explorer clip 03 for tx 635c99ac73cb13416e6b52f29ac9a067fbc615e01b8de962eb36245db3f0bd38 (captioned "recorded 2026-10-25"), then the clip 08b (captioned "Radox API, local test run on testnet · recorded response"). The narration becomes: "Now the real thing: a handover on Stellar testnet, one call to our contract, naming both companies. And a recorded response from the Radox API, in a local test run on testnet: delivered, four handovers." Nothing in this fallback says the Radox API is publicly hosted.
 
 ## Hard limits (every frame and every line was checked against these)

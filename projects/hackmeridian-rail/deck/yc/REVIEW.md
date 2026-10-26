@@ -21,3 +21,6 @@ Open for the owner: repo link on slide 10 is dead until the repo is public.
 
 ## Icons on slides 4-10 (2026-10-26, owner request)
 Owner asked for icons on the remaining slides, like the actor icons on slides 2-3. One Lucide 0.553.0 icon per column heading (same stroke and grey; lime only where the column is already lime). Cover left without an icon: a cover icon would be decoration. Slide 8 column text 52->44px so the lead clears the footer. check.py OK, 0 failures.
+
+## Team photos (2026-10-26, owner request)
+Owner removed the slide 10 headline ("Founder with 3 Soroban contracts on mainnet...") and asked for the team photos in its place. Photos supplied by the owner in chat (Pedro, Leo, Vhendala), cropped square into deck/yc/img/, shown as circles where the icons were. check.py OK, 0 failures.

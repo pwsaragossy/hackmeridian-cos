@@ -39,9 +39,6 @@ ICONS = {
     "rocket": '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>',
     "plane": '<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>',
     "network": '<rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/>',
-    "layers": '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>',
-    "code-xml": '<path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>',
-    "clipboard-check": '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>',
 }
 ACTOR = {"Warehouse": "warehouse", "Port": "anchor", "Carrier": "truck", "Customs": "stamp", "Buyer": "building-2"}
 
@@ -108,6 +105,7 @@ h1 { font-size:84px; line-height:1.06; font-weight:700; letter-spacing:-.025em; 
 .team p { font-size:30px; line-height:1.4; color:var(--soft); }
 svg text { font-family:'Inter', sans-serif; }
 .ic { margin-bottom:24px; line-height:0; }
+.ph { width:240px; height:240px; border-radius:50%; object-fit:cover; border:2px solid var(--border-h); margin-bottom:32px; display:block; }
 """
 
 
@@ -205,11 +203,10 @@ SLIDES = [
     <div class="src">Our design target: US–Brazil goods trade, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports).</div>""",
     # 10 team
     f"""<div class="kicker">Team</div>
-    <h1>Founder with 3 Soroban contracts on mainnet. This rail, built at the event.</h1>
     <div class="grow"><div class="team">
-      <div>{ic("layers")}<b>Pedro Wakigawa Saragossy</b><p>Founder. Built the Radox platform before the event.</p></div>
-      <div>{ic("code-xml")}<b>Leo Schlanger</b><p>Developer. Reviewed the contract's auth and signing logic. Signed testnet handovers.</p></div>
-      <div>{ic("clipboard-check")}<b>Vhendala</b><p>Supervision and product review. Signed testnet handovers.</p></div>
+      <div><img class="ph" src="img/pedro.jpg" alt=""><b>Pedro Wakigawa Saragossy</b><p>Founder. Built the Radox platform before the event.</p></div>
+      <div><img class="ph" src="img/leo.jpg" alt=""><b>Leo Schlanger</b><p>Developer. Reviewed the contract's auth and signing logic. Signed testnet handovers.</p></div>
+      <div><img class="ph" src="img/vhendala.jpg" alt=""><b>Vhendala</b><p>Supervision and product review. Signed testnet handovers.</p></div>
     </div>
     <p class="lead" style="margin-top:80px;color:var(--fg)">github.com/pwsaragossy/rio-miami-rail · <span class="lime">rio-miami-rail.vercel.app</span></p></div>
     <div class="src">Radox is prior work. A Claude Code agent wrote the contract; Leo reviewed it (AI_USAGE.md).</div>""",
