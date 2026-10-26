@@ -41,6 +41,10 @@ TRACE = {
     "1 Sep 2026": (os.path.join(NOTES, "stellar-tokenized-rwa-size-on-2026-a455.md"), "as of September 1, 2026"),
     "25 Oct 2026": (os.path.join(PROJ, "MARKET-NUMBERS.md"), "2026-10-25 at 19:20 UTC"),
     "US$94.2 billion": (os.path.join(PROJ, "MARKET-NUMBERS.md"), "about US$94.2 billion in 2025"),
+    "20": (None, "G20: owner statement in chat, 2026-10-26 (pilot to be presented at the G20 in the US in December)"),
+    "Sep 2026": (os.path.join(NOTES, "stellar-tokenized-rwa-size-on-2026-a455.md"), "as of September 1, 2026"),
+    "36": (os.path.join(PROJ, "PROBLEM-NUMBERS.md"), "covering all 36 key trade documents"),
+    "2024": (os.path.join(PROJ, "PROBLEM-NUMBERS.md"), "24 Apr 2024"),
     "5.7%": (os.path.join(PROJ, "PROBLEM-NUMBERS.md"), "5,7% in January 2025"),
     "January 2025": (os.path.join(PROJ, "PROBLEM-NUMBERS.md"), "5,7% in January 2025"),
     "1.2%": (os.path.join(PROJ, "PROBLEM-NUMBERS.md"), "In 2021, only 1.2%"),
@@ -59,8 +63,8 @@ NUM = re.compile(r"US\$[\d.,]+\s?(?:billion|[TBM])?|\d+(?:[.,]\d+)?(?:–\d+)?%?
 DATES = [r"(?:\d{1,2} )?(?:Feb|Dec|Sep|Oct) \d{4}"]
 
 # Claims guard + owner limits for this deck (brief 2026-10-26).
-BANNED = [r"\bpartner", r"\bchamber", r"\bZIS\b", r"\bPaulo\b", r"PortMiami", r"\bairport", r"Hin Leong", r"\bcustomers?\b",
-          r"\busers have\b", r"\brevenue\b", r"\btraction\b", r"\bpilot\b", r"(live|deployed|running|launched) on (Stellar )?mainnet",
+BANNED = [r"\bpartner", r"\bZIS\b", r"\bPaulo\b", r"PortMiami", r"\bairport", r"Hin Leong", r"\bcustomers?\b",
+          r"\busers have\b", r"\brevenue\b", r"\btraction\b", r"(live|deployed|running|launched) on (Stellar )?mainnet",
           r"mainnet-ready", r"publicly hosted", r"api\.radox", r"\bendorse", r"\bbacked by\b", r"\bin talks\b", r"\bsponsor",
           r"(port|bank|airport|chamber).{0,40}(signed|agreed|committed|joined)", r"(?<!nothing sent to )\b(ran|runs) on (Stellar )?mainnet", r"\bcustoms brokers?\b", r"title to", r"document of title", r"bill of lading replace", r"\bLeo-agent\b", r"\{\{", r"\bdemo\b"]
 REQUIRED = {"Problem": "problem", "Solution": "solution", "Target users": "target users", "Value proposition": "value proposition",

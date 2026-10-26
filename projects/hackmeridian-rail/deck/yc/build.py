@@ -14,21 +14,47 @@ PDF = os.path.join(HERE, "radox-custody-rail-yc.pdf")
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 CONTRACT = "CCBJVXMJYWPHTDJHDFPRGKPGXGEP24JOPJAMUS5C3BMZJTRTWR2H4LII"
 ROUTE = ["Warehouse", "Port", "Carrier", "Customs", "Buyer"]
-# Lucide icons 0.553.0 (ISC licence), path data copied from lucide-react: they name each actor, nothing else gets an icon.
+# Lucide icons 0.553.0 (ISC licence), SVG markup copied from lucide-react: one per actor and one per column heading.
 ICONS = {
-    "Warehouse": ['M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11', 'M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z', 'M6 13h12', 'M6 17h12'],
-    "Port": ['M12 22V8', 'M5 12H2a10 10 0 0 0 20 0h-3', 'C12 5 3'],
-    "Carrier": ['M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2', 'M15 18H9', 'M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14', 'C17 18 2', 'C7 18 2'],
-    "Customs": ['M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13', 'M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z', 'M5 22h14'],
-    "Buyer": ['M10 12h4', 'M10 8h4', 'M14 21v-3a2 2 0 0 0-4 0v3', 'M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2', 'M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16'],
+    "warehouse": '<path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/>',
+    "anchor": '<path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/>',
+    "truck": '<path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>',
+    "stamp": '<path d="M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13"/><path d="M20 15.5a2.5 2.5 0 0 0-2.5-2.5h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1z"/><path d="M5 22h14"/>',
+    "building-2": '<path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/>',
+    "pen-line": '<path d="M13 21h8"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>',
+    "search-check": '<path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+    "landmark": '<path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/>',
+    "handshake": '<path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/>',
+    "package": '<path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/>',
+    "link": '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+    "arrow-right-left": '<path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/>',
+    "shield-x": '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m14.5 9.5-5 5"/><path d="m9.5 9.5 5 5"/>',
+    "circle-check": '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+    "ship": '<path d="M12 10.189V14"/><path d="M12 2v3"/><path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-8.188-3.639a2 2 0 0 0-1.624 0L3 14a11.6 11.6 0 0 0 2.81 7.76"/><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>',
+    "repeat": '<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',
+    "banknote": '<rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>',
+    "calendar-sync": '<path d="M11 10v4h4"/><path d="m11 14 1.535-1.605a5 5 0 0 1 8 1.5"/><path d="M16 2v4"/><path d="m21 18-1.535 1.605a5 5 0 0 1-8-1.5"/><path d="M21 22v-4h-4"/><path d="M21 8.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4.3"/><path d="M3 10h4"/><path d="M8 2v4"/>',
+    "receipt": '<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/>',
+    "eye": '<path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/>',
+    "rocket": '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>',
+    "plane": '<path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>',
+    "network": '<rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/>',
+    "layers": '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>',
+    "code-xml": '<path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>',
+    "clipboard-check": '<rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>',
 }
+ACTOR = {"Warehouse": "warehouse", "Port": "anchor", "Carrier": "truck", "Customs": "stamp", "Buyer": "building-2"}
 
 
-def icon(name):
-    parts = "".join(f'<circle cx="{e.split()[0][1:]}" cy="{e.split()[1]}" r="{e.split()[2]}"/>' if e[0] == "C" else f'<path d="{e}"/>'
-                    for e in ICONS[name])
-    return (f'<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#C8CBD0" stroke-width="1.6" '
-            f'stroke-linecap="round" stroke-linejoin="round">{parts}</svg>')
+def icon(name, size=48, color="#C8CBD0"):
+    return (f'<svg width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="{color}" stroke-width="1.6" '
+            f'stroke-linecap="round" stroke-linejoin="round">{ICONS[name]}</svg>')
+
+
+def ic(name, lime=False):
+    """Column-heading icon: same stroke as the actor icons, lime only where the column is already lime."""
+    return f'<div class="ic">{icon(name, 60, "#C6F24E" if lime else "#C8CBD0")}</div>'
+
 
 CSS = """
 @page { size: 1920px 1080px; margin: 0; }
@@ -45,7 +71,7 @@ h1 { font-size:84px; line-height:1.06; font-weight:700; letter-spacing:-.025em; 
 .src { position:absolute; left:128px; right:200px; bottom:56px; font-size:24px; color:var(--faint); line-height:1.4; }
 .pg { position:absolute; right:128px; bottom:56px; font-size:24px; color:var(--faint); }
 .lime { color:var(--lime); }
-.grow { flex:1; display:flex; flex-direction:column; justify-content:center; }
+.grow { flex:1; display:flex; flex-direction:column; justify-content:center; padding-top:32px; }
 /* route diagram */
 .route { display:flex; align-items:center; margin-top:8px; }
 .node { flex:0 0 230px; height:170px; border:2px solid var(--border-h); border-radius:10px; background:var(--card);
@@ -80,13 +106,14 @@ h1 { font-size:84px; line-height:1.06; font-weight:700; letter-spacing:-.025em; 
 .team b { display:block; font-size:44px; margin-bottom:16px; }
 .team p { font-size:30px; line-height:1.4; color:var(--soft); }
 svg text { font-family:'Inter', sans-serif; }
+.ic { margin-bottom:24px; line-height:0; }
 """
 
 
 def route(problem):
     cells = []
     for i, name in enumerate(ROUTE):
-        cells.append(f'<div class="node">{icon(name)}<span>{name}</span></div>')
+        cells.append(f'<div class="node">{icon(ACTOR[name])}<span>{name}</span></div>')
         if i < len(ROUTE) - 1:
             cells.append('<div class="gap">?</div>' if problem else '<div class="link"><span>handover</span></div>')
     return f'<div class="route">{"".join(cells)}</div>'
@@ -107,7 +134,7 @@ SLIDES = [
     <div class="grow">{route(True)}
       <div class="recs">{''.join('<div>own record</div>' for _ in ROUTE)}</div>
       <p class="lead" style="margin-top:64px">None of them can check what the others say about who held the goods.</p>
-      <p class="lead" style="font-size:32px;margin-top:40px">Why now: carriers are digitizing ocean bills of lading, but only 5.7% were electronic in January 2025 (DCSA). The record shared between companies is still missing.</p>
+      <p class="lead" style="font-size:32px;margin-top:40px">Why now: ICC set digital standards for all 36 key trade documents (2024); about US$4B of real-world assets is tokenized on Stellar (SDF, Sep 2026). The custody record is missing.</p>
     </div>""",
     # 3 solution
     f"""<div class="kicker">Solution</div>
@@ -120,68 +147,68 @@ SLIDES = [
       </div>
     </div>""",
     # 4 target users
-    """<div class="kicker">Target users</div>
+    f"""<div class="kicker">Target users</div>
     <h1>The companies that hand over goods, and the ones that pay on them.</h1>
     <div class="grow"><div class="cols">
-      <div class="col"><h2>They sign</h2><p>Warehouses, ports, carriers, customs, buyers</p></div>
-      <div class="col"><h2>They check</h2><p class="lime">Buyers, insurers, lenders</p></div>
+      <div class="col">{ic("pen-line")}<h2>They sign</h2><p>Warehouses, ports, carriers, customs, buyers</p></div>
+      <div class="col">{ic("search-check", True)}<h2>They check</h2><p class="lime">Buyers, insurers, lenders</p></div>
     </div>
     <p class="lead" style="margin-top:72px">First corridor: US–Brazil. Later, any Stellar issuer of a tokenized good, through the open spec.</p></div>""",
     # 5 value proposition
-    """<div class="kicker">Value proposition</div>
+    f"""<div class="kicker">Value proposition</div>
     <h1>Every handover becomes proof that lenders can check.</h1>
     <div class="grow"><div class="three big" style="margin-top:0">
-        <div><b class="lime">Lenders see the proof</b><p>Lenders and insurers will see which company last signed for the goods before paying.</p></div>
-        <div><b>Companies prove their leg</b><p>Your handover carries the receiver's signature, so you can show you passed the goods.</p></div>
-        <div><b>Cargo token, linked record</b><p>Each cargo token links to one shipment record of signed handovers.</p></div>
+        <div>{ic("landmark", True)}<b class="lime">Lenders see the proof</b><p>Lenders and insurers will see which company last signed for the goods before paying.</p></div>
+        <div>{ic("handshake")}<b>Companies prove their leg</b><p>Your handover carries the receiver's signature, so you can show you passed the goods.</p></div>
+        <div>{ic("link")}<b>Cargo token, linked record</b><p>Each cargo token links to one shipment record of signed handovers.</p></div>
     </div></div>
     <div class="src">Proof on Stellar testnet.</div>""",
     # 6 proof
     f"""<div class="kicker">Proof</div>
     <h1>Live on Stellar testnet. Check every handover yourself.</h1>
     <div class="grow"><div class="stats" style="grid-template-columns:repeat(3,1fr)">
-      <div class="stat"><div class="n">7</div><div class="l">transactions: one shipment from open to delivery and burn</div></div>
-      <div class="stat"><div class="n">9</div><div class="l">refusal cases, each rejected in simulation (wrong signer, out of route)</div></div>
-      <div class="stat"><div class="n lime">MATCH</div><div class="l">anyone recomputes the head from Horizon</div></div>
+      <div class="stat">{ic("arrow-right-left")}<div class="n">7</div><div class="l">transactions: one shipment from open to delivery and burn</div></div>
+      <div class="stat">{ic("shield-x")}<div class="n">9</div><div class="l">refusal cases, each rejected in simulation (wrong signer, out of route)</div></div>
+      <div class="stat">{ic("circle-check", True)}<div class="n lime">MATCH</div><div class="l">anyone recomputes the head from Horizon</div></div>
     </div>
     <p class="lead" style="margin-top:56px;font-size:34px">Second shipment: two teammates signed handovers on their own computers.</p>
     <p class="lead" style="margin-top:20px;font-size:34px">Local mainnet-state dry run, nothing sent: 15 transactions applied, 9 refusals rejected, 13.72 XLM gross simulated fees.</p></div>
     <div class="src"><a href="https://stellar.expert/explorer/testnet/contract/{CONTRACT}" style="text-decoration:none"><span class="mono">custody_registry {CONTRACT} · testnet · stellar.expert</span></a></div>""",
     # 7 market
-    """<div class="kicker">Market opportunity</div>
+    f"""<div class="kicker">Market opportunity</div>
     <h1>45 million ocean bills of lading a year. Each one a chain of handovers.</h1>
     <div class="grow"><div class="nums">
-      <div class="num"><div class="n">45M</div><div class="l">ocean bills of lading issued a year</div><div class="s">DCSA, Feb 2023</div></div>
-      <div class="num"><div class="n lime">~180M</div><div class="l">custody handovers a year, if every bill of lading had our 4 signed handovers</div><div class="s">Illustration, not a forecast</div></div>
-      <div class="num"><div class="n">US$2.5T</div><div class="l">global trade finance gap</div><div class="s">ADB, Dec 2025</div></div>
+      <div class="num">{ic("ship")}<div class="n">45M</div><div class="l">ocean bills of lading issued a year</div><div class="s">DCSA, Feb 2023</div></div>
+      <div class="num">{ic("repeat", True)}<div class="n lime">~180M</div><div class="l">custody handovers a year, if every bill of lading had our 4 signed handovers</div><div class="s">Illustration, not a forecast</div></div>
+      <div class="num">{ic("banknote")}<div class="n">US$2.5T</div><div class="l">global trade finance gap</div><div class="s">ADB, Dec 2025</div></div>
     </div></div>
     <div class="src">Illustration: 45M × 4 handovers; the 4 is our design assumption.</div>""",
     # 8 business model
-    """<div class="kicker">Business model</div>
+    f"""<div class="kicker">Business model</div>
     <h1>Companies on the route subscribe, and pay per shipment.</h1>
     <div class="grow"><div class="cols" style="grid-template-columns:repeat(3,1fr);gap:64px">
-      <div class="col"><h2>Subscription</h2><p>per connected company</p></div>
-      <div class="col"><h2>Fee</h2><p class="lime">per shipment on the rail</p></div>
-      <div class="col"><h2>Open record</h2><p>checking needs no signature and no account</p></div>
+      <div class="col">{ic("calendar-sync")}<h2>Subscription</h2><p>per connected company</p></div>
+      <div class="col">{ic("receipt", True)}<h2>Fee</h2><p class="lime">per shipment on the rail</p></div>
+      <div class="col">{ic("eye")}<h2>Open record</h2><p>checking needs no signature and no account</p></div>
     </div>
-    <p class="lead" style="margin-top:64px">Every handover has two signers, so each shipment brings in the next company on the route.</p></div>
+    <p class="lead" style="margin-top:44px">Every handover has two signers, so each shipment brings in the next company on the route.</p></div>
     <div class="src">Same shape as Swift's published fees: entry, annual, per-message usage (swift.com, accessed 25 Oct 2026). Radox is not affiliated with Swift.</div>""",
     # 9 go-to-market and vision
-    """<div class="kicker">Go-to-market and vision</div>
+    f"""<div class="kicker">Go-to-market and vision</div>
     <h1>One corridor first. Then every route.</h1>
     <div class="grow"><div class="steps">
-      <div class="step"><div class="k">Now</div><p>The rail and an open spec on Stellar testnet.</p></div>
-      <div class="step"><div class="k">Next</div><p>One financed shipment on US–Brazil, with a lender and a logistics operator. Then Stellar engineer review, SCF Build application, audit, mainnet.</p></div>
-      <div class="step"><div class="k">Then</div><p class="lime">Every route. Each company joins once, through one adapter.</p></div>
+      <div class="step">{ic("rocket")}<div class="k">First</div><p>Apply to SCF Build: fund and build everything the operation needs.</p></div>
+      <div class="step">{ic("plane")}<div class="k">Next</div><p>The Rio–Miami pilot, which we aim to present at the G20 in the US in December.</p></div>
+      <div class="step">{ic("network", True)}<div class="k">Then</div><p class="lime">More ports and chambers of commerce already in conversation. More rails.</p></div>
     </div></div>
     <div class="src">Our design target: US–Brazil goods trade, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports).</div>""",
     # 10 team
-    """<div class="kicker">Team</div>
+    f"""<div class="kicker">Team</div>
     <h1>Founder with 3 Soroban contracts on mainnet. This rail, built at the event.</h1>
     <div class="grow"><div class="team">
-      <div><b>Pedro Wakigawa Saragossy</b><p>Founder. Built the Radox platform before the event.</p></div>
-      <div><b>Leo Schlanger</b><p>Developer. Reviewed the contract's auth and signing logic. Signed testnet handovers.</p></div>
-      <div><b>Vhendala</b><p>Supervision and product review. Signed testnet handovers.</p></div>
+      <div>{ic("layers")}<b>Pedro Wakigawa Saragossy</b><p>Founder. Built the Radox platform before the event.</p></div>
+      <div>{ic("code-xml")}<b>Leo Schlanger</b><p>Developer. Reviewed the contract's auth and signing logic. Signed testnet handovers.</p></div>
+      <div>{ic("clipboard-check")}<b>Vhendala</b><p>Supervision and product review. Signed testnet handovers.</p></div>
     </div>
     <p class="lead" style="margin-top:80px;color:var(--fg)">github.com/pwsaragossy/rio-miami-rail · <span class="lime">rio-miami-rail.vercel.app</span></p></div>
     <div class="src">Radox is prior work. A Claude Code agent wrote the contract; Leo reviewed it (AI_USAGE.md).</div>""",
