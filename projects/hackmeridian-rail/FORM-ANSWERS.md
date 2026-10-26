@@ -14,7 +14,7 @@ Radox Custody Rail
 SWIFT for goods in transit, on Stellar: every handover signed by both companies, checkable by anyone.
 ```
 
-Waits on Pedro's button. Alternatives: `SWIFT for goods in transit, on Stellar` (38 chars, what the portal holds now) or `One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone.` (109 chars).
+Pedro's choice (26 Oct ~03:10 UTC): both approved lines joined. The portal holds `SWIFT for goods in transit, on Stellar` now; replace it with this text.
 
 ## Description (required, Markdown, up to 8000 chars; 5807 chars)
 
@@ -80,7 +80,7 @@ Rio–Miami is our first corridor, not the product. We are building the end-to-e
 https://github.com/pwsaragossy/rio-miami-rail
 ```
 
-The repo is private (github.com returns 404 to a visitor, checked 26 Oct). It goes public only on Pedro's OK, planned 06:00 UTC.
+The repo is private (github.com returns 404 to a visitor, checked 26 Oct). It goes public only on Pedro's word; it is no longer automatic at 06:00 (Pedro, 26 Oct ~03:10 UTC).
 
 ## Project website link (optional)
 
@@ -88,7 +88,7 @@ The repo is private (github.com returns 404 to a visitor, checked 26 Oct). It go
 https://rio-miami-rail.vercel.app
 ```
 
-The portal asks for llms.txt, robots.txt and sitemap.xml on this site. Production already serves all three (HTTP 200, same as page/ on main). The llms.txt there describes only the first shipment; a refreshed draft with the rail story, the spec and the four proof sets is in website-files/llms.txt. Putting it live is a production deploy and waits on Pedro. Landing v3 (branch landing-v3) is not approved, so the link stays on production.
+The portal asks for llms.txt, robots.txt and sitemap.xml on this site. Production already serves all three (HTTP 200, same as page/ on main). The llms.txt there describes only the first shipment; a refreshed draft with the rail story, the spec and the four proof sets is in website-files/llms.txt. Pedro approved putting it live (26 Oct ~03:10 UTC). Landing v3 (branch landing-v3) is not approved, so the link stays on production.
 
 ## Video link (required, YouTube or Vimeo)
 

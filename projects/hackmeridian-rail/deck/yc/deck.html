@@ -1,0 +1,115 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Radox Custody Rail</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=block"><style>
+@page { size: 1920px 1080px; margin: 0; }
+:root { --bg:#0E0F11; --fg:#E7E8EA; --card:#131517; --muted:#8A8F98; --soft:#C8CBD0; --faint:#7F848E;
+        --border:#1F2329; --border-h:#303740; --lime:#C6F24E; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { background:var(--bg); }
+body { font-family:'Inter', sans-serif; color:var(--fg); -webkit-font-smoothing:antialiased; }
+section { width:1920px; height:1080px; padding:110px 128px 96px; position:relative; overflow:hidden;
+          page-break-after:always; display:flex; flex-direction:column; background:var(--bg); }
+.kicker { font-size:28px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:36px; }
+h1 { font-size:84px; line-height:1.06; font-weight:700; letter-spacing:-.025em; max-width:1600px; }
+.lead { font-size:40px; line-height:1.35; color:var(--soft); margin-top:40px; max-width:1500px; }
+.src { position:absolute; left:128px; right:200px; bottom:56px; font-size:24px; color:var(--faint); line-height:1.4; }
+.pg { position:absolute; right:128px; bottom:56px; font-size:24px; color:var(--faint); }
+.lime { color:var(--lime); }
+.grow { flex:1; display:flex; flex-direction:column; justify-content:center; }
+/* route diagram */
+.route { display:flex; align-items:center; margin-top:8px; }
+.node { flex:0 0 230px; height:120px; border:2px solid var(--border-h); border-radius:10px; background:var(--card);
+        display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:600; }
+.gap { flex:1; text-align:center; font-size:40px; color:var(--faint); }
+.link { flex:1; position:relative; height:120px; }
+.link::before { content:""; position:absolute; left:0; right:0; top:59px; height:3px; background:var(--lime); }
+.link span { position:absolute; left:-20px; right:-20px; white-space:nowrap; top:76px; text-align:center; font-size:24px; color:var(--soft); }
+.recs { display:flex; justify-content:space-between; margin-top:20px; }
+.recs div { flex:0 0 230px; text-align:center; font-size:26px; color:var(--faint); }
+.bar { margin-top:36px; border:2px solid var(--lime); border-radius:10px; padding:22px 32px; font-size:32px; color:var(--fg); }
+.three { display:grid; grid-template-columns:repeat(3,1fr); gap:56px; margin-top:96px; }
+.three b { display:block; font-size:40px; margin-bottom:12px; }
+.three p { font-size:30px; line-height:1.4; color:var(--soft); }
+/* columns, stats */
+.cols { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
+.col h2 { font-size:30px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
+.col p { font-size:52px; font-weight:600; line-height:1.3; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:48px; }
+.stat .n { font-size:120px; font-weight:700; letter-spacing:-.03em; line-height:1; }
+.stat .l { font-size:30px; line-height:1.35; color:var(--soft); margin-top:20px; }
+.mono { font-family:ui-monospace, Menlo, monospace; font-size:24px; color:var(--faint); }
+.nums { display:grid; grid-template-columns:repeat(3,1fr); gap:64px; }
+.num .n { font-size:110px; font-weight:700; letter-spacing:-.03em; line-height:1; }
+.num .l { font-size:32px; line-height:1.35; color:var(--soft); margin-top:22px; }
+.num .s { font-size:24px; color:var(--faint); margin-top:14px; }
+.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:56px; }
+.step .k { font-size:30px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:18px; }
+.step p { font-size:38px; line-height:1.35; font-weight:500; }
+.team { display:grid; grid-template-columns:repeat(3,1fr); gap:64px; }
+.team b { display:block; font-size:44px; margin-bottom:16px; }
+.team p { font-size:30px; line-height:1.4; color:var(--soft); }
+svg text { font-family:'Inter', sans-serif; }
+</style></head><body><section data-slide="1"><div class="grow">
+      <div class="kicker">HackMeridian 2026 · Scale track</div>
+      <h1 style="font-size:150px;letter-spacing:-.035em">Radox Custody Rail</h1>
+      <p class="lead" style="font-size:60px;margin-top:36px;color:var(--fg)">SWIFT for goods in transit, <span class="lime">on Stellar</span></p>
+      <p class="lead" style="font-size:36px">Every handover signed by both companies, checkable by anyone.</p>
+    </div><div class="pg">1</div></section><section data-slide="2"><div class="kicker">Problem</div>
+    <h1>One container, five companies, five separate records.</h1>
+    <div class="grow"><div class="route"><div class="node">Warehouse</div><div class="gap">?</div><div class="node">Port</div><div class="gap">?</div><div class="node">Carrier</div><div class="gap">?</div><div class="node">Customs</div><div class="gap">?</div><div class="node">Buyer</div></div>
+      <div class="recs"><div>own record</div><div>own record</div><div>own record</div><div>own record</div><div>own record</div></div>
+      <p class="lead" style="margin-top:64px">None of them can check what the others say about who held the goods.</p>
+    </div>
+    <div class="src">The money that rides on those records is large: 80–90% of world trade relies on trade finance (WTO).</div><div class="pg">2</div></section><section data-slide="3"><div class="kicker">Solution</div>
+    <h1>One shared record. Both companies sign every handover.</h1>
+    <div class="grow"><div class="route"><div class="node">Warehouse</div><div class="link"><span>both sign</span></div><div class="node">Port</div><div class="link"><span>both sign</span></div><div class="node">Carrier</div><div class="link"><span>both sign</span></div><div class="node">Customs</div><div class="link"><span>both sign</span></div><div class="node">Buyer</div></div>
+      <div class="three">
+        <div><b>Both sign</b><p>The company giving the goods and the one receiving them authorise the step.</p></div>
+        <div><b>Nobody rewrites</b><p>Each step folds into a hash chain. One 32-byte head commits to the whole history.</p></div>
+        <div><b>Anyone checks</b><p>A buyer, insurer or lender recomputes the head from public data.</p></div>
+      </div>
+    </div><div class="pg">3</div></section><section data-slide="4"><div class="kicker">Target users</div>
+    <h1>The companies that hand over goods, and the ones that pay on them.</h1>
+    <div class="grow"><div class="cols">
+      <div class="col"><h2>They sign</h2><p>Warehouses, ports, carriers, customs brokers, buyers</p></div>
+      <div class="col"><h2>They check</h2><p class="lime">Buyers, insurers, lenders</p></div>
+    </div>
+    <p class="lead" style="margin-top:72px">And any Stellar issuer of a tokenized good, through the open spec.</p></div><div class="pg">4</div></section><section data-slide="5"><div class="kicker">Value proposition</div>
+    <h1>Each company connects once, not to every other company.</h1>
+    <div class="grow"><div class="cols" style="align-items:center"><div class="col" style="display:flex;gap:40px;align-items:center"><svg width="400" height="380"><line x1="200" y1="40" x2="343" y2="144" stroke="#7F848E" stroke-width="3"/><line x1="200" y1="40" x2="288" y2="311" stroke="#7F848E" stroke-width="3"/><line x1="200" y1="40" x2="112" y2="311" stroke="#7F848E" stroke-width="3"/><line x1="200" y1="40" x2="57" y2="144" stroke="#7F848E" stroke-width="3"/><line x1="343" y1="144" x2="288" y2="311" stroke="#7F848E" stroke-width="3"/><line x1="343" y1="144" x2="112" y2="311" stroke="#7F848E" stroke-width="3"/><line x1="343" y1="144" x2="57" y2="144" stroke="#7F848E" stroke-width="3"/><line x1="288" y1="311" x2="112" y2="311" stroke="#7F848E" stroke-width="3"/><line x1="288" y1="311" x2="57" y2="144" stroke="#7F848E" stroke-width="3"/><line x1="112" y1="311" x2="57" y2="144" stroke="#7F848E" stroke-width="3"/><circle cx="200" cy="40" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/><circle cx="343" cy="144" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/><circle cx="288" cy="311" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/><circle cx="112" cy="311" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/><circle cx="57" cy="144" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/></svg><div><h2>Today</h2><p>10 links,<br>pair by pair</p></div></div><div class="col" style="display:flex;gap:40px;align-items:center"><svg width="400" height="380"><line x1="200" y1="190" x2="200" y2="40" stroke="#C6F24E" stroke-width="4"/><line x1="200" y1="190" x2="343" y2="144" stroke="#C6F24E" stroke-width="4"/><line x1="200" y1="190" x2="288" y2="311" stroke="#C6F24E" stroke-width="4"/><line x1="200" y1="190" x2="112" y2="311" stroke="#C6F24E" stroke-width="4"/><line x1="200" y1="190" x2="57" y2="144" stroke="#C6F24E" stroke-width="4"/><circle cx="200" cy="40" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/><circle cx="343" cy="144" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/><circle cx="288" cy="311" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/><circle cx="112" cy="311" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/><circle cx="57" cy="144" r="22" fill="#131517" stroke="#E7E8EA" stroke-width="3"/><rect x="150" y="160" width="100" height="60" rx="8" fill="#C6F24E"/><text x="200" y="200" text-anchor="middle" font-size="26" font-weight="700" fill="#0E0F11">rail</text></svg><div><h2>On the rail</h2><p class="lime">5 connections,<br>one each</p></div></div></div>
+    <p class="lead" style="margin-top:56px">A lender sees which company last signed for the goods before it pays.</p></div><div class="pg">5</div></section><section data-slide="6"><div class="kicker">Proof</div>
+    <h1>It runs on Stellar testnet today.</h1>
+    <div class="grow"><div class="stats">
+      <div class="stat"><div class="n">7</div><div class="l">transactions: one shipment from open to delivery and burn</div></div>
+      <div class="stat"><div class="n">9</div><div class="l">refusal branches, each refused (wrong signer, out of route)</div></div>
+      <div class="stat"><div class="n">26</div><div class="l">contract tests</div></div>
+      <div class="stat"><div class="n lime">MATCH</div><div class="l">anyone recomputes the head from Horizon</div></div>
+    </div>
+    <p class="lead" style="margin-top:72px">Rehearsed on a local fork of Stellar mainnet: 15 transactions applied, 9 refusals refused, 13.72 XLM in fees.</p></div>
+    <div class="src"><span class="mono">custody_registry CCBJVXMJYWPHTDJHDFPRGKPGXGEP24JOPJAMUS5C3BMZJTRTWR2H4LII · testnet</span></div><div class="pg">6</div></section><section data-slide="7"><div class="kicker">Market opportunity</div>
+    <h1>The trade that runs on these records is enormous.</h1>
+    <div class="grow"><div class="nums">
+      <div class="num"><div class="n">45M</div><div class="l">ocean bills of lading issued a year</div><div class="s">DCSA, Feb 2023</div></div>
+      <div class="num"><div class="n">US$2.5T</div><div class="l">global trade finance gap</div><div class="s">ADB, Dec 2025</div></div>
+      <div class="num"><div class="n lime">US$4B</div><div class="l">tokenized real-world assets on Stellar</div><div class="s">SDF, as of 1 Sep 2026</div></div>
+    </div></div>
+    <div class="src">Market figures, not Radox volumes.</div><div class="pg">7</div></section><section data-slide="8"><div class="kicker">Business model</div>
+    <h1>The SWIFT model: pay to connect, pay per shipment.</h1>
+    <div class="grow"><div class="cols">
+      <div class="col"><h2>Subscription</h2><p>per connected company</p></div>
+      <div class="col"><h2>Fee</h2><p class="lime">per shipment on the rail</p></div>
+    </div></div>
+    <div class="src">The shape follows Swift's published billing rules: entry fee, annual charges and usage fees (swift.com, accessed 25 Oct 2026). Radox is not affiliated with Swift.</div><div class="pg">8</div></section><section data-slide="9"><div class="kicker">Go-to-market and vision</div>
+    <h1>One corridor first. Then every route.</h1>
+    <div class="grow"><div class="steps">
+      <div class="step"><div class="k">Now</div><p>The rail on testnet and an open spec any Stellar issuer can implement (Apache-2.0).</p></div>
+      <div class="step"><div class="k">Next</div><p>First live shipment on the US–Brazil corridor with a lender and a logistics operator. Mainnet after an audit.</p></div>
+      <div class="step"><div class="k">Then</div><p class="lime">Every route. Each company joins once, through one adapter to the Radox API.</p></div>
+    </div></div>
+    <div class="src">US–Brazil goods trade was about US$94.2 billion in 2025 (US Census Bureau, exports plus imports).</div><div class="pg">9</div></section><section data-slide="10"><div class="kicker">Team</div>
+    <h1>Built by people who already ship on Stellar.</h1>
+    <div class="grow"><div class="team">
+      <div><b>Pedro Wakigawa Saragossy</b><p>Founder. Built Radox: 3 Soroban contracts on Stellar mainnet.</p></div>
+      <div><b>Leo Schlanger</b><p>Developer: the custody_registry contract, the testnet harness and the proofs.</p></div>
+      <div><b>Vhendala</b><p>QA and product review: reads every deliverable as a judge would.</p></div>
+    </div>
+    <p class="lead" style="margin-top:80px;color:var(--fg)">github.com/pwsaragossy/rio-miami-rail · <span class="lime">rio-miami-rail.vercel.app</span></p></div>
+    <div class="src">Built at HackMeridian on the Radox platform (prior work, listed in the repo). Code, docs and this deck were made with AI coding agents (Claude Code); AI_USAGE.md lists every file.</div><div class="pg">10</div></section></body></html>
