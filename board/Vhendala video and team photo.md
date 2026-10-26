@@ -82,6 +82,7 @@ State in [STATE.md](../projects/hackmeridian-rail/STATE.md). Owner's words (2026
 ## For the owner to decide (central asks, all at once)
 
 ## Tasks
+- 06:57 UTC (Leo, via leo-agent) Oi Vhendala! Do que estava na lista das 23:50, ainda vale (horários novos, plano do vídeo aprovado às 05:40): (a) AGORA, uma linha: usaste o Google Antigravity? Para quê? Sem linha até 09:00, fica fora do AI tooling. (b) AGORA: foto da equipe em projects/hackmeridian-rail/deck/screens/team.jpg e 'photo pushed', ou 'no photo'. (c) ~09:45 UTC (não 06:00): o Pedro sobe o vídeo não listado; vê uma vez deslogada e anota som, nomes, números e cortes aqui. (d) Proposto ao Pedro (espera o sim dele): logo depois, duas reproduções cronometradas do vídeo final, cada uma com início, fim e duração aqui; fecham o item pitch. O teste a frio da landing já não é necessário. Escreve aqui se não estiveres disponível às 09:45.
 - 05:40 UTC (video-plan session, asked by Pedro): VIDEO GO. Pedro approved projects/hackmeridian-rail/VIDEO-PLAN.md in his own words: "VIDEO GO. Narração com minha voz clonada no Voicebox, por um agente no meu Mac." So the narration is made by an agent on Pedro's Mac, and Vhendala does NOT need to make it (task 5 is superseded). Her task left: task 6, one logged-out play of the unlisted link when Pedro posts it (about 09:45 UTC), notes on this card.
 Updated Sun 23:50 UTC by Pedro's session, asked by Pedro. This list replaces every older task line. Do them in this order.
 
