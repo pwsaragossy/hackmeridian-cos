@@ -2,22 +2,22 @@
 
 Portal fields in form order. Copy the text inside each box as it is; paste everything in one go and never reload the form page. Two fields wait: video link and deck file. Only Pedro checks the terms box and submits.
 
-## Project title (required; 72 chars)
+## Project title (required; 58 chars)
 
 ```text
-Radox Custody Rail: dual-signed custody for goods in transit, on Stellar
+Radox Custody Rail: SWIFT for goods in transit, on Stellar
 ```
 
-## Tagline (optional, up to 120 chars; 25 chars)
+## Tagline (optional, up to 120 chars; 109 chars)
 
 ```text
-First corridor: Rio–Miami
+One shared custody record for goods in transit: every handover signed by both companies, checkable by anyone.
 ```
 
-## Description (required, Markdown, up to 8000 chars; 4270 chars)
+## Description (required, Markdown, up to 8000 chars; 5735 chars)
 
 ```text
-**We are building the end-to-end custody rail for goods in transit: a shared, SWIFT-like standard for every company along a supply chain, from origin to destination. This repo is its first piece, running on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
+**A container crosses a border through five companies (a warehouse, a port, a ship, customs and the buyer), and each keeps its own records. Nobody can prove who held the goods at each step. The money that rides on those records is large: the WTO says 80 to 90 per cent of world trade relies on trade finance, and a Singapore court found that the founder of the oil trader Hin Leong deceived HSBC into nearly US$112 million in financing for oil trades that did not actually occur (Global Trade Review, Nov 2024). Radox Custody Rail is one shared record for every company on the route, like SWIFT for goods: at each handover, the company giving the goods and the company receiving them both sign, the step is saved where no one can edit it, and anyone who needs to know (the buyer, an insurer, a lender) checks the whole history in one call. This repo is its first piece, running on Stellar testnet: a Soroban contract where every handover is authorised by both custodians, hash-chained, and checkable by anyone from public data.**
 
 One shipment is one record in our `custody_registry` contract. The operator opens it with an ordered route of custodians. Each handover calls the contract once, and the call requires `require_auth()` from both the outgoing and the incoming custodian; a wrong custodian, an out-of-route step or a bad assurance level is refused. Delivery needs the final custodian and the token holder. Every step folds into one 32-byte `head` kept on the contract, so one value commits to the whole history. After delivery, the cargo token is burned through Radox's existing transfer agent (prior work, disclosed below).
 
@@ -41,15 +41,19 @@ Nine refusal branches, run by simulation, are recorded with their error results 
 
 **Check it yourself.** `node scripts/verify-head.mjs <key>` reads the shipment's transactions from Horizon, recomputes the head and compares it with the value on the contract (MATCH). The public page, https://rio-miami-rail.vercel.app, does the same in the browser with its Verify head button. `node scripts/handover-signers.mjs` lists who authorised each handover.
 
-**Existed before / built here.** Before the event: the Radox platform, its three mainnet contracts and the `transfer_agent` contract used for the burn. Built at HackMeridian, from the first commit at 2026-10-25 09:00 UTC: the `custody_registry` contract and its 26 tests, the testnet harness, the verification scripts, the public page, the open spec and three proof sets.
+**Ask one question, get the answer.** Any company or financier on the route can ask the Radox API, `GET /api/custody/shipments/:key`, and get the shipment's status, current custodian, route and number of signed handovers, read from this contract. The endpoint is in the closed Radox backend; it was shown only in a local development run and is not publicly hosted.
+
+**Rehearsed against mainnet state.** The same contract build (wasm `8230ed93…`) ran its custody lifecycle against a local fork of Stellar mainnet (soroban-sim, protocol 29): 15 transactions succeeded, all 9 refusal branches were refused, and the run was charged 13.72 XLM in fees (`scripts/mainnet-rehearsal.mjs`, `proofs/mainnet-rehearsal.json`). Nothing was sent to mainnet; the mainnet deploy is a later signing ceremony.
+
+**Existed before / built here.** Before the event: the Radox platform, its three mainnet contracts and the `transfer_agent` contract used for the burn. Built at HackMeridian, from the first commit at 2026-10-25 09:00 UTC: the `custody_registry` contract and its 26 tests, the testnet harness, the verification scripts, the public page, the open spec and four proof sets.
 
 Runs on Stellar testnet.
 ```
 
-## Problem solved (optional; 1054 chars)
+## Problem solved (optional; 1188 chars)
 
 ```text
-About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 data); in 2025 about 11% were issued electronically (DCSA, as of 2025). 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI Cargo Theft Report, Apr 2026). Our design target is the US–Brazil goods corridor, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports); Brazil was Florida's largest goods export market in 2025 (USTR). A container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it. Ports and airports run legacy systems that are hard to integrate. With the rail, each company will integrate once, not pair by pair: a legacy system will join through one adapter to the Radox API, and a financier can read which custodian last signed for the goods before paying.
+About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 data); in 2025 about 11% were issued electronically (DCSA, as of 2025). 22% of recorded cargo thefts in 2025 involved insiders (TT Club & BSI Cargo Theft Report, Apr 2026). The global gap between trade finance requested and approved is about US$2.5 trillion (ADB Global Trade Finance Gap Survey, Dec 2025). Our design target is the US–Brazil goods corridor, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports); Brazil was Florida's largest goods export market in 2025 (USTR). A container that crosses a border changes hands many times: warehouse, port, carrier, customs, recipient. Each party keeps its own record, and a token that represents the cargo has no trustworthy link to where the cargo physically is. Whoever holds the token cannot check the custody history without trusting the party that reports it. Ports and airports run legacy systems that are hard to integrate. With the rail, each company will integrate once, not pair by pair: a legacy system will join through one adapter to the Radox API, and a financier can read which custodian last signed for the goods before paying.
 ```
 
 ## Challenges (optional; 1327 chars)
@@ -62,7 +66,7 @@ About 45 million ocean bills of lading are issued a year (DCSA, Feb 2023, 2021 d
 5. For the second shipment, our check of the teammates' signed entries first rejected valid signatures. Protocol 29 address-bound credentials are signed over a different payload than the legacy ones; we changed the check to use that payload, and a wrong key is still rejected.
 ```
 
-## What's next (optional; 1180 chars)
+## What's next (optional; 1210 chars)
 
 ```text
 Rio–Miami is our first corridor, not the product. We are building the end-to-end custody rail for goods in transit: a shared, SWIFT-like standard for every company along a supply chain. Radox is part of the Rio–Miami trade-corridor initiative and its technology rail: every port, airport and chamber that joins it will join the rail, through one adapter to the Radox API. Radox is in conversations with chambers of commerce in Brazil and Miami. Next we connect the rail to the Radox platform's physical-asset flow (a read-only Radox API endpoint reads this registry in a local development run), run the first live shipment with a financial institution and a port or logistics operator, have a Stellar engineer review the design, and apply to SCF Build. Mainnet follows an audit and the issuer-account lock described in the README. Business model: a recurring fee per connected institution plus a fee per shipment. It borrows the shape of SWIFT's published fee structure: Swift, a cooperative owned by its members, charges an entry fee, annual charges (including network connection) and network-usage fees on message traffic (swift.com billing rules, accessed 25 October 2026). We are not affiliated with Swift.
