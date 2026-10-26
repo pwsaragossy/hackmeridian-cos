@@ -76,6 +76,7 @@ function encode(video, ss, len, vf, out) {
 
 // ---------- landing ----------
 const LAND = { vw: 1536, vh: 864, dsf: 1.25 };
+const LAND15 = { vw: 1280, vh: 720, dsf: 1.5 };                            // the API cards (B6, B9): page zoom 150%, card text 21 px
 async function openLanding(p, n) {
   await p.goto(PAGE, { waitUntil: "networkidle" });
   await p.addStyleTag({ content: HIDE7 });
@@ -84,6 +85,7 @@ async function openLanding(p, n) {
   await wait(p, 1200);                                                      // globe dots and fonts settled
   if (n > 0) await p.evaluate((n) => document.querySelectorAll(".ch")[n].scrollIntoView({ behavior: "instant", block: "start" }), n);
 }
+const until = (p, h, sec) => wait(p, Math.max(0, (sec - (h.now() - h.t.start)) * 1000));
 const noZis = (p) => p.evaluate(() => /ZIS|Cisbra|Camacol/.test(document.body.innerText));
 
 // scene n, beat seconds, pad 2 s each end; still taken mid-beat
@@ -93,23 +95,23 @@ function sceneClip(name) {
   return (b) => take(b, name, LAND, async (p, h) => {
     await openLanding(p, n);
     h.ready();
-    await wait(p, 2000 + beat * 500);
+    await until(p, h, 2 + beat / 2);
     await h.still(still);
     if (await noZis(p)) throw new Error("ZIS/Cisbra/Camacol text is visible");
-    await wait(p, 2000 + beat * 500);
+    await until(p, h, 4 + beat);
     h.end();
   });
 }
 
 // B6, scene 5: slow taps, stop before the 4th handover completes (that would show the simulated GET COFFEE-0042 card)
-const b6 = (b) => take(b, "b6", LAND, async (p, h) => {
+const b6 = (b) => take(b, "b6", LAND15, async (p, h) => {
   await openLanding(p, 5);
   const A = await p.locator("#d-a").boundingBox(), B = await p.locator("#d-b").boundingBox();
   let pos = [A.x + A.width + 160, A.y - 160];
   await p.mouse.move(...pos);
   h.ready();
   await wait(p, 2200);
-  const at = (bb) => [bb.x + bb.width / 2, bb.y + bb.height / 2];
+  const at = (bb) => [bb.x + bb.width * 0.86, bb.y + bb.height / 2];
   for (let i = 0; i < 7; i++) {                                              // a b a b a b a: three handovers done, the fourth half signed
     const bb = await p.locator(i % 2 ? "#d-b" : "#d-a").boundingBox();
     await slowMove(p, pos, at(bb), 800); pos = at(bb);
@@ -118,12 +120,12 @@ const b6 = (b) => take(b, "b6", LAND, async (p, h) => {
     await wait(p, 900);
   }
   if (await p.locator("#d-read").isVisible()) throw new Error("simulated GET card is visible");
-  await wait(p, 1500);
+  await until(p, h, 18);
   h.end();
 });
 
 // B9, scene 6, read live. hold top 9 s (7 + pad), scroll the signers list 10 s, cursor to the button 5 s, click, hold MATCH 15 s
-const b9 = (b) => take(b, "b9", LAND, async (p, h) => {
+const b9 = (b) => take(b, "b9", LAND15, async (p, h) => {
   await p.goto(PAGE, { waitUntil: "networkidle" });
   await p.waitForFunction(() => !document.getElementById("verify").disabled, null, { timeout: 40000 });
   const src = (await p.textContent("#source")).trim();
@@ -132,7 +134,7 @@ const b9 = (b) => take(b, "b9", LAND, async (p, h) => {
   await p.addStyleTag({ content: HIDE7 });
   await p.evaluate(() => { document.documentElement.style.scrollBehavior = "auto"; document.querySelectorAll(".ch")[6].scrollIntoView({ behavior: "instant", block: "start" }); });
   await wait(p, 800);
-  await p.mouse.move(1250, 330);
+  await p.mouse.move(1180, 200);
   h.ready();
   await wait(p, 6000);
   await h.still("S09");
@@ -148,14 +150,16 @@ const b9 = (b) => take(b, "b9", LAND, async (p, h) => {
   await smoothScroll(p, yEnd, 5000);                                         // 19 s
   const vb = await p.locator("#verify").boundingBox();
   const target = [vb.x + vb.width / 2, vb.y + vb.height / 2];
-  await slowMove(p, [1250, 330], target, 5000);                              // 24 s
+  await slowMove(p, [1180, 200], target, 5000);                              // 24 s
   const click = h.now() - h.t.start;
   await p.mouse.down(); await wait(p, 100); await p.mouse.up();
   fs.writeFileSync(path.join(OUT, "clips", "b9-click.txt"), `click at ${click.toFixed(2)} s from the start of clips/b9.mp4 (B9a beat starts at 2.0 s, so ${(click - 2).toFixed(2)} s into the beat)\n`);
   await p.getByText("MATCH", { exact: true }).waitFor({ timeout: 20000 });
   const m = h.now() - h.t.start;
   h.log.push(`click ${click.toFixed(2)} s, MATCH seen ${m.toFixed(2)} s`);
-  await wait(p, 1500);
+  await wait(p, 800);
+  await smoothScroll(p, (await p.evaluate(() => scrollY)) + 150, 1200);       // MATCH row clear of the bottom edge
+  await wait(p, 500);
   await h.still("S10");
   await wait(p, 13500);
   h.end();
@@ -216,7 +220,7 @@ const b7 = (b) => take(b, "b7", { vw: 1920, vh: 1080, noEncode: true }, async (p
   await p.goto(PAGE + "/docs", { waitUntil: "networkidle" });
   await zoom(p, "1.5");
   await p.evaluate(() => document.fonts.ready);
-  await p.evaluate(() => { document.querySelector("#try").scrollIntoView({ block: "start" }); scrollBy({ top: -10, behavior: "instant" }); });
+  await p.evaluate(() => { document.querySelector("#try").scrollIntoView({ block: "start" }); scrollBy({ top: -125, behavior: "instant" }); });
   await wait(p, 500);
   const click = async (sel) => { const bb = await p.locator(sel).boundingBox(); const to = [bb.x + bb.width / 2, bb.y + bb.height / 2]; await slowMove(p, cur, to, 600); cur = to; await p.mouse.down(); await wait(p, 80); await p.mouse.up(); };
   let cur = [1500, 700];
@@ -233,10 +237,13 @@ const b7 = (b) => take(b, "b7", { vw: 1920, vh: 1080, noEncode: true }, async (p
   // the explorer link opens a second tab: it has its own video, joined in after the take
   const bb = await p.locator("#t-tx a").boundingBox(), to = [bb.x + bb.width / 2, bb.y + bb.height / 2];
   await slowMove(p, cur, to, 700); cur = to;
-  const popupP = ctx.waitForEvent("page");
+  const href = await p.locator("#t-tx a").getAttribute("href");
+  h.log.push(`link ${href}`);
+  const popupP = ctx.waitForEvent("page", { timeout: 8000 }).catch(() => null);
   TR.link = h.now() - h.t.start;
   await p.mouse.down(); await wait(p, 80); await p.mouse.up();
-  const pop = await popupP;
+  let pop = await popupP;
+  if (!pop) { h.log.push("popup did not open from the click: opened the same link in a new tab"); pop = await ctx.newPage(); await pop.goto(href).catch(() => {}); }
   const popStart = h.now();
   await pop.setViewportSize({ width: 1920, height: 1080 });
   for (let i = 0; i < 6; i++) {
