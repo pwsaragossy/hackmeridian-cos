@@ -276,7 +276,7 @@ text(s, 1.0, 8.2, 18.0, 0.9, ["These figures size the market problem the rail ad
 s = content_slide(5, "THE PROPOSAL · A PUBLIC STANDARD", "A SWIFT-like standard: integrate once", "NEXT ▸ THE RAIL")
 text(s, 1.0, 3.35, 18.0, 1.2, [[("The goal is ", {"bold": True}),
                                 ("a shared, SWIFT-like custody standard that companies along a supply chain, from origin to destination, will use. ", {}),
-                                ("We are building it on Stellar, starting with the custody rail.", {"bold": True})]], size=24, color=INK)
+                                ("We are building it on Stellar, starting with Radox Rail.", {"bold": True})]], size=24, color=INK)
 
 
 def link(x1, y1, x2, y2, color, w=1.5):
