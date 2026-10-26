@@ -24,7 +24,8 @@ L.B9b = fr(0.45 + dur("B9b") + 6.05);   // click, MATCH at +0.15, "Match" at +0.
 L.B11 = fr(0.4 + dur("B11") + 2.0);     // the 2 s silent tail comes after the last word
 // B7 (beat-relative s, speech times from whisper word timestamps of B07.wav + 0.4 s lead): "open a shipment" 4.06, "transaction on the public
 // explorer" 5.84-7.42, "Next handover" 8.0, "wrong company" 10.5-10.98, "deliver" ~14.2. Raw take cut points come from frame-change times of the response pane.
-const b7 = [[4.7, 5.8], [13.9, 3.0], [20.4, 0.6], [25.6, 0.8], [28.0, 0.3], [34.5, 3.3, "hold"], [59.3, 0.4]];
+// 28.3 = first clean frame of the handover 200 (two signers), frozen under "Both companies sign" until the 409 click.
+const b7 = [[4.7, 5.8], [13.9, 2.6], [28.3, 2.1, "hold"], [34.5, 3.3, "hold"], [59.3, 0.4]];
 const b7Sum = b7.reduce((t, x) => t + x[1], 0);
 const B7TAIL = [66.6, Math.max(0.5, L.B7 - b7Sum)];
 if (Math.abs(dur("B7") - 14.24) > 0.5) console.warn("B07.wav changed: re-check the B7 cut points against the word times");
