@@ -12,3 +12,6 @@ Findings and what was applied:
 7. Note: WTO "page undated" qualifier. Not applied: the figure is the size of the problem only, already reviewed in REVIEW-OPENING.md.
 
 Recomputed by the reviewer: every heading count, 7 lifecycle hashes, 9 refusals, 26 tests, 10 multi-chain tx, 15 rehearsal tx, 13.72 XLM, all market figures trace to the README. Library: [[product-framing-rio-miami-is-the-34f9]] [[wto-80-to-90-percent-of-98f6]] [[adb-trade-finance-gap-survey-dec-d033]] [[zis-in-public-material-radox-is-bc05]].
+
+## Description pass (2026-10-26 ~04:30 UTC)
+Marketing specialist (Sonnet) proposed 7325 chars: five steps incl. attest, Signers column, intake mapping, market, production path, known limits. Reviewer (Sonnet): approve with changes. Applied: cut "has not been audited" and the colluding-custodians sentence (owner's no-lowballing rule; the README threat model carries them); "Connected to our API: partly" replaced by the plain fact; owner-approved API and rehearsal paragraphs restored, with only README-confirmed facts added (Delivered, seq 4, same head); "money" dropped (nothing in the repo moves money). Checked by the coordinator: attest tx 33379211…8905 in README and lifecycle.json; landing v3 app.js keeps Verify head, snapshot and testnet reads. Final 7583 chars.

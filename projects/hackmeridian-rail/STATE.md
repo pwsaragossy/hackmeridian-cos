@@ -9,6 +9,10 @@ member: pedro
 # HackMeridian — rail Rio-Miami — state
 
 ## Arrival synthesis
+- 2026-10-26 04:50 UTC (video-plan session, started by the rail session; Pedro: "abra uma sessão com /specialists para planejar o video"): plan only, nothing recorded, narrated or uploaded, no VIDEO GO, until Pedro approves in his own words. Deliverable: VIDEO-PLAN.md + one message with buttons.
+- First action: marketing specialist drafts the beat sheet on landing v3 (`?play` mode, 8 scenes), reviewer attacks it against the hard limits.
+- Disagree: production landing v3 (0c7dd19, scene 8, added f4319e6 02:33 UTC) names ZIS, Cisbra and Camacol, which the video brief forbids on screen; the plan must crop or skip that paragraph, and Pedro decides whether the live page keeps it. Upload is Pedro's YouTube (card, 17:43 UTC), not Vhendala's.
+- Fact checked on disk: `curl` of https://rio-miami-rail.vercel.app at 04:48 UTC shows the "Rio–Miami first. Every lane next." scene with the ZIS paragraph, so production = landing-v3 0c7dd19 as STATE says.
 - 2026-10-25 (soroban-sim session, owner request): set up github.com/theahaco/soroban-sim so we can call a Stellar RPC that is a local fork of mainnet (`soroban-sim serve --fork mainnet`). Nothing is submitted to mainnet; it is a local tool, outside the frozen submission scope (owner: custody_registry stays on testnet).
 - First action: build the CLI from source (no crates.io release yet per its README), start `serve`, prove getLatestLedger/getLedgerEntries answer with mainnet data.
 - Disagree: none. It does not touch the submission track.

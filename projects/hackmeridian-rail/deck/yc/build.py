@@ -88,7 +88,7 @@ def route(problem):
     for i, name in enumerate(ROUTE):
         cells.append(f'<div class="node">{icon(name)}<span>{name}</span></div>')
         if i < len(ROUTE) - 1:
-            cells.append('<div class="gap">?</div>' if problem else '<div class="link"><span>both sign</span></div>')
+            cells.append('<div class="gap">?</div>' if problem else '<div class="link"><span>handover</span></div>')
     return f'<div class="route">{"".join(cells)}</div>'
 
 
@@ -98,24 +98,25 @@ SLIDES = [
       <div class="kicker">HackMeridian 2026 · Scale track</div>
       <h1 style="font-size:150px;letter-spacing:-.035em">Radox Custody Rail</h1>
       <p class="lead" style="font-size:60px;margin-top:36px;color:var(--fg)">SWIFT for goods in transit, <span class="lime">on Stellar</span></p>
-      <p class="lead" style="font-size:36px">Every handover signed by both companies, checkable by anyone. Running on Stellar testnet.</p>
-    </div>""",
+      <p class="lead" style="font-size:36px">Every handover signed by both companies, checkable by anyone.</p>
+    </div>
+    <div class="src">Running on Stellar testnet.</div>""",
     # 2 problem
     f"""<div class="kicker">Problem</div>
     <h1>One container, five parties, five separate records.</h1>
     <div class="grow">{route(True)}
       <div class="recs">{''.join('<div>own record</div>' for _ in ROUTE)}</div>
       <p class="lead" style="margin-top:64px">None of them can check what the others say about who held the goods.</p>
-    </div>
-    <div class="src">The money that rides on those records is large: 80–90% of world trade relies on trade finance (WTO).</div>""",
+      <p class="lead" style="font-size:32px;margin-top:40px">Why now: carriers are digitizing ocean bills of lading, but only 5.7% were electronic in January 2025 (DCSA). The record shared between companies is still missing.</p>
+    </div>""",
     # 3 solution
     f"""<div class="kicker">Solution</div>
     <h1>One shared record. Both companies sign every handover.</h1>
     <div class="grow">{route(False)}
       <div class="three">
-        <div><b>Both sign</b><p>The company giving the goods and the one receiving them authorise the step.</p></div>
-        <div><b>Nobody rewrites</b><p>Each step folds into a hash chain. One 32-byte head commits to the whole history.</p></div>
-        <div><b>Anyone checks</b><p>A buyer, insurer or lender recomputes the head from public data.</p></div>
+        <div><b>Both sign</b><p>The company giving the goods and the one receiving them both sign.</p></div>
+        <div><b>Nobody rewrites</b><p>Each step is chained to the one before, so no one can rewrite history.</p></div>
+        <div><b>Anyone checks</b><p>A buyer, insurer or lender checks the whole history against one public 32-byte value.</p></div>
       </div>
     </div>""",
     # 4 target users
@@ -125,7 +126,7 @@ SLIDES = [
       <div class="col"><h2>They sign</h2><p>Warehouses, ports, carriers, customs, buyers</p></div>
       <div class="col"><h2>They check</h2><p class="lime">Buyers, insurers, lenders</p></div>
     </div>
-    <p class="lead" style="margin-top:72px">And any Stellar issuer of a tokenized good, through the open spec.</p></div>""",
+    <p class="lead" style="margin-top:72px">First corridor: US–Brazil. Later, any Stellar issuer of a tokenized good, through the open spec.</p></div>""",
     # 5 value proposition
     """<div class="kicker">Value proposition</div>
     <h1>Every handover becomes proof that lenders can check.</h1>
@@ -137,51 +138,53 @@ SLIDES = [
     <div class="src">Proof on Stellar testnet.</div>""",
     # 6 proof
     f"""<div class="kicker">Proof</div>
-    <h1>It runs on Stellar testnet today.</h1>
-    <div class="grow"><div class="stats">
+    <h1>Live on Stellar testnet. Check every handover yourself.</h1>
+    <div class="grow"><div class="stats" style="grid-template-columns:repeat(3,1fr)">
       <div class="stat"><div class="n">7</div><div class="l">transactions: one shipment from open to delivery and burn</div></div>
       <div class="stat"><div class="n">9</div><div class="l">refusal cases, each rejected in simulation (wrong signer, out of route)</div></div>
-      <div class="stat"><div class="n">26</div><div class="l">contract tests</div></div>
       <div class="stat"><div class="n lime">MATCH</div><div class="l">anyone recomputes the head from Horizon</div></div>
     </div>
-    <p class="lead" style="margin-top:72px">Dry run on a local copy of mainnet state, nothing sent to mainnet: 15 transactions applied, 9 refusals rejected, 13.72 XLM simulated fees.</p></div>
-    <div class="src"><span class="mono">custody_registry {CONTRACT} · testnet</span></div>""",
+    <p class="lead" style="margin-top:56px;font-size:34px">Second shipment: two teammates signed handovers on their own computers.</p>
+    <p class="lead" style="margin-top:20px;font-size:34px">Local mainnet-state dry run, nothing sent: 15 transactions applied, 9 refusals rejected, 13.72 XLM gross simulated fees.</p></div>
+    <div class="src"><a href="https://stellar.expert/explorer/testnet/contract/{CONTRACT}" style="text-decoration:none"><span class="mono">custody_registry {CONTRACT} · testnet · stellar.expert</span></a></div>""",
     # 7 market
     """<div class="kicker">Market opportunity</div>
-    <h1>The market around the rail: bills of lading, a financing gap, tokenized assets.</h1>
+    <h1>45 million ocean bills of lading a year. Each one a chain of handovers.</h1>
     <div class="grow"><div class="nums">
       <div class="num"><div class="n">45M</div><div class="l">ocean bills of lading issued a year</div><div class="s">DCSA, Feb 2023</div></div>
+      <div class="num"><div class="n lime">~180M</div><div class="l">custody handovers a year, if every bill of lading had our 4 signed handovers</div><div class="s">Illustration, not a forecast</div></div>
       <div class="num"><div class="n">US$2.5T</div><div class="l">global trade finance gap</div><div class="s">ADB, Dec 2025</div></div>
-      <div class="num"><div class="n lime">US$4B</div><div class="l">tokenized real-world assets on Stellar</div><div class="s">SDF, as of 1 Sep 2026</div></div>
     </div></div>
-    <div class="src">Market figures, not Radox volumes.</div>""",
+    <div class="src">Illustration: 45M × 4 handovers; the 4 is our design assumption.</div>""",
     # 8 business model
     """<div class="kicker">Business model</div>
-    <h1>The SWIFT model: pay to connect, pay per shipment.</h1>
-    <div class="grow"><div class="cols">
+    <h1>Companies on the route subscribe, and pay per shipment.</h1>
+    <div class="grow"><div class="cols" style="grid-template-columns:repeat(3,1fr);gap:64px">
       <div class="col"><h2>Subscription</h2><p>per connected company</p></div>
       <div class="col"><h2>Fee</h2><p class="lime">per shipment on the rail</p></div>
-    </div></div>
-    <div class="src">The shape follows Swift's published billing rules: entry fee, annual charges and usage fees (swift.com, accessed 25 Oct 2026). Radox is not affiliated with Swift.</div>""",
+      <div class="col"><h2>Open record</h2><p>checking needs no signature and no account</p></div>
+    </div>
+    <p class="lead" style="margin-top:64px">Every handover has two signers, so each shipment brings in the next company on the route.</p></div>
+    <div class="src">Same shape as Swift's published fees: entry, annual, per-message usage (swift.com, accessed 25 Oct 2026). Radox is not affiliated with Swift.</div>""",
     # 9 go-to-market and vision
     """<div class="kicker">Go-to-market and vision</div>
     <h1>One corridor first. Then every route.</h1>
     <div class="grow"><div class="steps">
-      <div class="step"><div class="k">Now</div><p>The rail on testnet. An open spec any Stellar issuer can implement.</p></div>
-      <div class="step"><div class="k">Next</div><p>First live shipment on the US–Brazil corridor. Mainnet after an audit.</p></div>
+      <div class="step"><div class="k">Now</div><p>The rail and an open spec on Stellar testnet.</p></div>
+      <div class="step"><div class="k">Next</div><p>One financed shipment on US–Brazil, with a lender and a logistics operator. Then Stellar engineer review, SCF Build application, audit, mainnet.</p></div>
       <div class="step"><div class="k">Then</div><p class="lime">Every route. Each company joins once, through one adapter.</p></div>
     </div></div>
-    <div class="src">US–Brazil goods trade was about US$94.2 billion in 2025 (US Census Bureau, exports plus imports).</div>""",
+    <div class="src">Our design target: US–Brazil goods trade, about US$94.2 billion in 2025 (US Census Bureau, exports plus imports).</div>""",
     # 10 team
     """<div class="kicker">Team</div>
-    <h1>Built by people who already ship on Stellar.</h1>
+    <h1>Founder with 3 Soroban contracts on mainnet. This rail, built at the event.</h1>
     <div class="grow"><div class="team">
-      <div><b>Pedro Wakigawa Saragossy</b><p>Founder. Built Radox before the event: 3 Soroban contracts on Stellar mainnet (prior work).</p></div>
-      <div><b>Leo Schlanger</b><p>Developer: reviewed the contract, the signing logic and the proofs.</p></div>
-      <div><b>Vhendala</b><p>Supervision and product review.</p></div>
+      <div><b>Pedro Wakigawa Saragossy</b><p>Founder. Built the Radox platform before the event.</p></div>
+      <div><b>Leo Schlanger</b><p>Developer. Reviewed the contract's auth and signing logic. Signed testnet handovers.</p></div>
+      <div><b>Vhendala</b><p>Supervision and product review. Signed testnet handovers.</p></div>
     </div>
     <p class="lead" style="margin-top:80px;color:var(--fg)">github.com/pwsaragossy/rio-miami-rail · <span class="lime">rio-miami-rail.vercel.app</span></p></div>
-    <div class="src">Prior work is listed in the repo. Made with AI coding agents (Claude Code); see AI_USAGE.md.</div>""",
+    <div class="src">Radox is prior work. A Claude Code agent wrote the contract; Leo reviewed it (AI_USAGE.md).</div>""",
 ]
 
 

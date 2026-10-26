@@ -14,3 +14,7 @@ Open: name on slide 10 is "Pedro Wakigawa Saragossy", README says "Pedro Saragos
 
 ## Slide 5 rewrite, 2026-10-26
 Owner rejected the connections slide. Marketing specialist drafted per-user values from FORM-ANSWERS and the contract; reviewer (approve after changes) cut "carries its own history" (the record points to the token), "when the goods left you" (no timestamp in the record) and "money can rely on" (no lender uses it yet). Applied; check.py OK.
+
+## Specialist pass on slides 1-4, 6-10, 2026-10-26 ~05:00 UTC
+Owner asked for pitch-deck-architect + specialists on every slide. Product (2-4, why-now), marketing (1, 9, 10), researcher (7), finance (8), engineer (6; 5 three-machine hashes re-checked on Horizon testnet). Main session kept the mainnet-fork dry-run line on slide 6 (brief requires it) against the engineer, and used the contract fact on reads instead of "free" (pricing is the owner's). Reviewer: 6 fixes applied (DCSA 5.7% Jan 2025 instead of 1.2%->11%, founder-only mainnet headline, pricing-neutral slide 8 headline, gross fee, per-bill wording, SCF Build application). check.py OK.
+Open for the owner: repo link on slide 10 is dead until the repo is public.
