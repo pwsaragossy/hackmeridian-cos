@@ -16,6 +16,7 @@ asked: 2026-10-26 05:10 +0000
 State in [STATE.md](../projects/hackmeridian-rail/STATE.md).
 
 ## For the owner to decide (central asks, all at once)
+- 08:29 UTC (Leo) Scrub: old commit 5cd9c14 put page/.vercel/project.json (Vercel project and org IDs, no credential) in main's history. Accept it as is (recommended) or rewrite history before public? Reply 'aceita vercel' or 'reescreve'.
 - 08:26 UTC (Leo) Delete remote branches globe (4 internal names, not merged), landing-v3, public-api (.vercel IDs), landing-v2, three-machine before the repo goes public? Reply 'apaga os branches'. Details: PROPOSTA-LEO-2026-10-26-0700.md §1
 - 08:26 UTC (Leo) Submit once at ~10:15 UTC (video link ~10:00; portal closes 12:00 UTC), cut-off 11:30, TRACK deadline 10:00 -> 11:00? Reply 'submete às 10:15'.
 - 08:26 UTC (Leo) Pitch item: Vhendala's two timed plays of the final cut at 09:45-10:05, or 'waive pitch'? Is Vhendala available at 09:45? (no line from her since 23:50)
