@@ -18,3 +18,6 @@ Owner rejected the connections slide. Marketing specialist drafted per-user valu
 ## Specialist pass on slides 1-4, 6-10, 2026-10-26 ~05:00 UTC
 Owner asked for pitch-deck-architect + specialists on every slide. Product (2-4, why-now), marketing (1, 9, 10), researcher (7), finance (8), engineer (6; 5 three-machine hashes re-checked on Horizon testnet). Main session kept the mainnet-fork dry-run line on slide 6 (brief requires it) against the engineer, and used the contract fact on reads instead of "free" (pricing is the owner's). Reviewer: 6 fixes applied (DCSA 5.7% Jan 2025 instead of 1.2%->11%, founder-only mainnet headline, pricing-neutral slide 8 headline, gross fee, per-bill wording, SCF Build application). check.py OK.
 Open for the owner: repo link on slide 10 is dead until the repo is public.
+
+## Icons on slides 4-10 (2026-10-26, owner request)
+Owner asked for icons on the remaining slides, like the actor icons on slides 2-3. One Lucide 0.553.0 icon per column heading (same stroke and grey; lime only where the column is already lime). Cover left without an icon: a cover icon would be decoration. Slide 8 column text 52->44px so the lead clears the footer. check.py OK, 0 failures.
